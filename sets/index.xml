@@ -4,8 +4,5 @@
 ..\..\..\FrameXML\UI.xsd">
 	<Script file="landmarks.lua"/>
 	<Script file="graveyards.lua"/>
-	<Script file="mapnotes.lua"/>
-	<Script file="gatherer.lua"/>
-	<Script file="ctmapmod.lua"/>
 	<Script file="players.lua"/>
 </Ui>

@@ -7,7 +7,7 @@ function set.getpoints(name, map)
             if(CT_UserMap_Notes[zonename]) then
                 local real_zid;
                 for h,v in pairs(Yatlas_areadb) do
-                    if(v[2] == zonename) then
+                    if(v[2] == zonename and Yatlas_mapareas[map][h]) then
                         real_zid = h;
                         break;
                     end

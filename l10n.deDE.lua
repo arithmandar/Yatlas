@@ -26,17 +26,17 @@ YATLAS_TAB_DATA = "Zeige Daten";
 YATLAS_TAB_OPTIONS = "Optionen";
 
 YATLAS_BUTTON_TOOLTIP1 = "Yatlas";
-YATLAS_BUTTON_TOOLTIP2 = "- Klicken, zum \195\182ffnen des Yatlas";
-YATLAS_BUTTON_TOOLTIP3 = "- Rechtsklicken, zum Schieben des Minimap Buttons";
+YATLAS_BUTTON_TOOLTIP2 = "- Klicken, zum \195\182ffnen von Yatlas";
+YATLAS_BUTTON_TOOLTIP3 = "- Rechtsklicken, zum Schieben des Minimap-Buttons";
 YATLAS_PLAYERJUMP = "Spielerposition";
 YATLAS_OPTIONSBUTTON = "Optionen";
 
-YATLAS_OPTIONS_BUTTONPOS = " Position des Minimap-Icon";
+YATLAS_OPTIONS_BUTTONPOS = " Position des Minimap-Icons";
 YATLAS_OPTIONS_BUTTONPOS_TIP = "%d\°";
 YATLAS_OPTIONS_ENABLEBUTTON = "Aktiviere Minimap-Icon";
 YATLAS_OPTIONS_ALPHA = "Transparenz";
 YATLAS_OPTIONS_ICONSIZE = "Icon Gr\195\182\195\159e";
-YATLAS_OPTIONS_ENABLECOORD = "Aktiviere Cursor Koordinaten";
+YATLAS_OPTIONS_ENABLECOORD = "Aktiviere Cursor-Koordinaten";
 
 YATLAS_OVERLAY_SHOWPOINTS_TITLE = "Zeige Punkte";
 -- Landmarks would tranlsate to "Landmarken", "wichtige Orte" would be translated to English: "important places"
@@ -54,8 +54,9 @@ YATLAS_UNKNOWN_ZONE = "Unbekannt";
 
 YATLAS_BIGDRAGMESSAGE = "Klicke und ziehe die Karte um den Ausschnitt zu verschieben."
 
-BINDING_NAME_YATLAS_TOGGLE = "Ein- und Ausblenden des Yatlas-Fenster";
+BINDING_NAME_YATLAS_TOGGLE = "Ein- und Ausblenden des Yatlas-Fensters";
 BINDING_NAME_YATLAS_BIG_TOGGLE = "Ein- und Ausblenden des gro\195\159en Yatlas-Fensters";
 BINDING_HEADER_YATLAS = YATLAS_TITLE;
 
 end
+

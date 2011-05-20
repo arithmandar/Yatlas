@@ -1,9 +1,9 @@
-## Interface: 20100
+## Interface: 20300
 ## Title: Yatlas
-## Version: 0.7.7
+## Version: 0.7.8
 ## Author: robin.schoonover@gmail.com
 ## Notes: Yet another atlas
-## X-LastChangedDate: $LastChangedDate: 2007-07-16 22:56:51 -0600 (Mon, 16 Jul 2007) $
+## X-LastChangedDate: $LastChangedDate: 2007-11-25 19:46:30 -0700 (Sun, 25 Nov 2007) $
 ## OptionalDeps: MapNotes, Gatherer, myAddOns, CT_MapMod
 ## SavedVariables: YatlasOptions
 l10n.lua

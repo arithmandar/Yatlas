@@ -16,7 +16,7 @@ YA_FRAME_OPTION_DEFAULTS = {
     ["Zoom"] = 256,
 };
 
-local dummyv = {nil, {0,256}};
+local dummyv = nil;
 local nilfunc = function() end
 
 YatlasFrameTemplate = {};
@@ -341,10 +341,10 @@ function YatlasFrameDropDown2_Initialize()
     end
 
     table.sort(frame.zonepulldowns,
-        function (a,b) return Yatlas_areadb[a][2] < Yatlas_areadb[b][2]; end);
+        function (a,b) return Yatlas_areadb[a] < Yatlas_areadb[b]; end);
     for j,v in ipairs(frame.zonepulldowns) do
         info = {
-            text = Yatlas_areadb[v][2];
+            text = Yatlas_areadb[v];
             value = frame;
             func = YatlasFrameDropDownButton2_OnClick;
         };
@@ -394,7 +394,7 @@ function YatlasFrameTemplate:UpdateDropDown2()
         for i,v in ipairs(self.zonepulldowns) do
             if(v == zid) then
                 UIDropDownMenu_SetSelectedID(dd2, i);
-                UIDropDownMenu_SetText(Yatlas_areadb[zid][2], dd2);
+                UIDropDownMenu_SetText(Yatlas_areadb[zid], dd2);
                 break;
             end
         end
@@ -500,7 +500,6 @@ function YatlasFrameTemplate:SetZoom(z, nocenter)
             self.texturelayout[hw][hh]:SetTexCoord(0, 1, 0, 1);
             self.texturelayout[hw][hh]:SetHeight(z);
             self.texturelayout[hw][hh]:SetWidth(z);
-            self.texturelayout[hw][hh].areaids = {};
         end
     end
 
@@ -558,12 +557,9 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
                     v[hx][hy] = dummyv;
                 end
 
-                -- save area info
-                tex.areaids = v[hx][hy][2];
-
                 -- set textures
-                if(v[hx][hy][1]) then
-                    tex:SetTexture(pre..v[hx][hy][1]);
+                if(v[hx][hy]) then
+                    tex:SetTexture(pre..v[hx][hy]);
                     tex:SetVertexColor(1,1,1,1);
                 else
                     tex:SetTexture("Interface\\Buttons\\WHITE8X8");
@@ -791,7 +787,7 @@ function YatlasFrameTemplate:GetZoneText(offx, offy)
 
     local r = {};
     for h,v in pairs(f) do
-        r[h] = Yatlas_areadb[v][1];
+        r[h] = Yatlas_areadb[v];
     end
 
     return unpack(r);
@@ -801,45 +797,20 @@ function YatlasFrameTemplate:GetZoneIDs(offx, offy)
     local fm = self:GetName();
     local x, y = unpack(self.opt.Location);
     local zoom = self:GetZoom();
+    local viewframe = getglobal(fm.."ViewFrame");
 
-    if(offx == nil) then offx = 0 end
-    if(offy == nil) then offy = 0 end
-       
-    local roffx = math.floor((x+offx-math.floor(x))*16);
-    local roffy = math.floor((y+offx-math.floor(y))*16);
+    local cx = x+(viewframe:GetWidth()/2)/zoom
+    local cy = y+(viewframe:GetHeight()/2)/zoom
 
-    local cv = (mod(roffx,16)+1)+(mod(roffy,16)+1)*16;
-    local v = self.texturelayout[math.floor(offx)+1][math.floor(offy)+1].areaids;
-    local nsv = getn(v)/2 - 1;
-    local id;
-    local jbase = 1;
+    local cbx, cby = Yatlas_Mini2Big_Coord(cx, cy)
 
-    for i = 0,nsv do
-        local joff = v[2*i+2];
-
-        if(cv <= jbase + joff) then
-            id = v[2*i+1];
-            break;
+    -- TODO: this isn't very accurate
+    local maparea = Yatlas_mapareas[self.opt.Map];
+    for h,k in pairs(maparea) do
+        if(h ~= 0 and cbx < k[1] and cbx > k[2] and cby < k[3] and cby > k[4])then
+            return h
         end
-        jbase = jbase + joff;
     end
-
-    local wd = 0;
-    if(id == nil or Yatlas_areadb[id] == nil) then
-        return nil;
-    end
-
-    local r = {id};
-
-    while(id ~= nil and Yatlas_areadb[id] ~= nil and wd < 100) do
-        id = Yatlas_areadb[id][1];
-        if(id ~= nil and Yatlas_areadb[id] ~= nil) then
-            tinsert(r, 1, id);
-        end
-        wd = wd + 1;
-    end
-
-    return unpack(r);
 end
 
 function YatlasFrameTemplate:OnWorldMapUpdate()
@@ -1029,7 +1000,7 @@ function Yatlas_GetMapZones(map)
     local ret = {};    
     if(Yatlas_ZoneIds[map]) then
 	for h,v in ipairs(Yatlas_ZoneIds[map]) do
-    	    tinsert(ret, Yatlas_areadb[v][2]);
+    	    tinsert(ret, Yatlas_areadb[v]);
 	end
     end
     table.sort(ret);

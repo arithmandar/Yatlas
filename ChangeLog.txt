@@ -2,6 +2,23 @@
 Yatlas ChangeLog
 ================
 
+0.7.8 (11/25/2007)
+-----
+
+- Update for WoW 2.3.x  As a result of updating, the complete area
+  ids are no longer stored, and thus the detection of the current
+  zone is less accurate.
+- Update German localization (blackrat)
+
+
+0.7.7 (07/16/2007)
+-----
+
+- Update for WoW 2.1.x
+- NOTE: Much of the support for other AddOns might not work at this
+  point in time.
+
+
 0.7.6 (01/09/2007)
 -----
 - Update for WoW 2.0.3

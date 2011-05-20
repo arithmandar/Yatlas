@@ -2,6 +2,12 @@
 Yatlas ChangeLog
 ================
 
+0.8.0 (12/24/2008)
+----
+
+- Update for WoW 3.0 (smexy)
+- Quick and dirty updates to make it work again, not sure if all bugs have been burnt.
+
 0.7.8 (11/25/2007)
 -----
 

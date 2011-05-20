@@ -567,8 +567,8 @@ function YFOO_Init(frame)
     end
 
     UIDropDownMenu_Initialize(frame, YFOODropDown_Initialize, "MENU");
-    UIDropDownMenu_SetButtonWidth(50,frame);
-    UIDropDownMenu_SetWidth(50,frame);
+    UIDropDownMenu_SetButtonWidth(frame,50);
+    UIDropDownMenu_SetWidth(frame,50);
 end
 
 function YFOODropDown_Initialize()
@@ -613,7 +613,7 @@ function YFOO_OnClick()
 end
 
 function YFOODropDown_do_toggle_normal()
-    YatlasOptions.Frames[current_frame:GetName()].PointCfg[this.value] = UIDropDownMenuButton_GetChecked()
+    YatlasOptions.Frames[current_frame:GetName()].PointCfg[this.value] = UIDropDownMenuButton_GetChecked(this)
     YAPoints_ForceUpdate(current_frame)
 end
 

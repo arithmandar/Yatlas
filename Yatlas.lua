@@ -1,4 +1,4 @@
-
+﻿
 local pre = "textures\\Minimap\\";
 
 local MINI2BIGX = 533.3333;
@@ -232,7 +232,7 @@ function YatlasFrameDropDown_OnEvent(event)
     if(event == "VARIABLES_LOADED") then
         UIDropDownMenu_Initialize(this, YatlasFrameDropDown_Initialize);
         UIDropDownMenu_SetSelectedID(this, 1);
-        UIDropDownMenu_SetWidth(150);
+        UIDropDownMenu_SetWidth(this, 150);
     end
 end
 
@@ -243,7 +243,7 @@ function YatlasFrameDropDown_Initialize()
             info = {
                     text = h;
                     func = YatlasFrameDropDownButton_OnClick;
-                    value = getglobal(UIDROPDOWNMENU_INIT_MENU):GetParent();
+                    --value = getglobal(UIDROPDOWNMENU_INIT_MENU):GetParent();
             };
             UIDropDownMenu_AddButton(info);
             i = i + 1;
@@ -255,7 +255,8 @@ function YatlasFrameDropDownButton_OnClick()
 	i = this:GetID();
         for h,v in pairs(YA_MAPS) do
             if(d == i) then
-                return this.value:SetMap(v[1]);
+                --print(tostring(this.value).." "..tostring(v[1]))
+                return getglobal("YatlasFrame"):SetMap(v[1]);
             end
             d = d + 1;
         end
@@ -297,7 +298,7 @@ function YatlasFrameTemplate:SetMap(mapname)
         for h,v in pairs(YA_MAPS) do
             if(v[1] == mapname) then
                 UIDropDownMenu_SetSelectedID(mapdropdown, i);
-                UIDropDownMenu_SetText(h,mapdropdown);
+                UIDropDownMenu_SetText(mapdropdown,h);
             end
             i = i + 1;
         end
@@ -321,12 +322,13 @@ end
 
 function YatlasFrameDropDown2_OnEvent(event)
     if(event == "VARIABLES_LOADED") then
-        UIDropDownMenu_SetWidth(150);
+        UIDropDownMenu_SetWidth(this, 150);
     end
 end
 
 function YatlasFrameDropDown2_Initialize()
-    local lm = string.gsub(UIDROPDOWNMENU_INIT_MENU,"DropDown2","");
+    --local lm = string.gsub(UIDROPDOWNMENU_INIT_MENU,"DropDown2","");
+    local lm = "YatlasFrame";
 
     local frame = getglobal(lm);
     frame.zonepulldowns = {};
@@ -387,14 +389,15 @@ function YatlasFrameTemplate:UpdateDropDown2()
     local vf = getglobal(vfname);
     local zoom = self.opt.Zoom;
     local dd2 = getglobal(framename.."DropDown2");
-
+--print(tostring(framename).." "..tostring(vfname).." "..tostring(zoom).." "..tostring(dd2))
     if(dd2 and self.zonepulldowns) then
         -- FIXME this isn't quite right somehow!! (besides height/width being flipped)
         local zid = self:GetZoneIDs((vf:GetHeight()/zoom/2),(vf:GetWidth()/zoom/2));
         for i,v in ipairs(self.zonepulldowns) do
+	--print(tostring(v).." "..tostring(vid))
             if(v == zid) then
                 UIDropDownMenu_SetSelectedID(dd2, i);
-                UIDropDownMenu_SetText(Yatlas_areadb[zid], dd2);
+                UIDropDownMenu_SetText(dd2,Yatlas_areadb[zid]);
                 break;
             end
         end
@@ -559,7 +562,7 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
 
                 -- set textures
                 if(v[hx][hy]) then
-                    tex:SetTexture(pre..v[hx][hy]);
+		    tex:SetTexture(pre..v[hx][hy][1]);
                     tex:SetVertexColor(1,1,1,1);
                 else
                     tex:SetTexture("Interface\\Buttons\\WHITE8X8");

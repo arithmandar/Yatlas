@@ -3,13 +3,15 @@ YA_MAPS = {
     ["Eastern Kingdoms"] = {"Azeroth"},
     ["Kalimdor"] = {"Kalimdor"},
     ["Outland"] = {"Expansion01"},
+    ["Northrend"] = {"Northrend"},
     --
 };
 
 Yatlas_WorldMapIds = {
     ["Azeroth"] = 2,
     ["Kalimdor"] = 1,
-    ["Expansion01"] = 3
+    ["Expansion01"] = 3,
+    ["Northrend"] = 4
 };
 
 

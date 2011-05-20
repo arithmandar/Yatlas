@@ -219,7 +219,7 @@
 								if(event == "VARIABLES_LOADED") then
 									UIDropDownMenu_Initialize(this, YatlasOptionsFrameSelect_Initialize);
 									UIDropDownMenu_SetSelectedID(this, 1);
-									UIDropDownMenu_SetWidth(150);
+									UIDropDownMenu_SetWidth(this, 150);
 									YatlasOptionsFrame_Update();
 								end
 							</OnEvent>

@@ -977,7 +977,7 @@ function YatlasFrameTemplate:OnUpdate(elapsed)
     self.update_time = self.update_time + elapsed;
 
     if(self.update_time > 0.5) then
-        YAPoints_OnUpdate(self, self.update_time);
+       YAPoints_OnUpdate(self, self.update_time);
 
         if(GetMapInfo() ~= self.opt.Map) then
             self.resetmapzoom = 1;

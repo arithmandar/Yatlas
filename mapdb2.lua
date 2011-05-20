@@ -1,17 +1,21 @@
 
+-- Yatlas map mapping
+-- Display_Name - Actual Map Folder Name
 YA_MAPS = {
     ["Eastern Kingdoms"] = {"Azeroth"},
     ["Kalimdor"] = {"Kalimdor"},
     ["Outland"] = {"Expansion01"},
     ["Northrend"] = {"Northrend"},
+    ["TolBarad"] = {"TolBarad"},
     --
 };
 
 Yatlas_WorldMapIds = {
-    ["Azeroth"] = 2,
     ["Kalimdor"] = 1,
+    ["Azeroth"] = 2,
     ["Expansion01"] = 3,
-    ["Northrend"] = 4
+    ["Northrend"] = 4,
+    ["TolBarad"] = 5,
 };
 
 

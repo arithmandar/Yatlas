@@ -44,27 +44,7 @@
 			</OnDragStop>
 			<OnUpdate>
 				if(self.OnUpdate) then
-					<!--local arg1, arg2 = ...;
-					self.update_time = self.update_time + arg1;
-
-					if(self.update_time > 0.5) then
-						YAPoints_OnUpdate(self, self.update_time);
-
-						if(GetMapInfo() ~= self.opt.Map) then
-							self.resetmapzoom = 1;
-							SetMapZoom(Yatlas_WorldMapIds[self.opt.Map]);
-						else
-							self:OnWorldMapUpdate();
-						end
-						self.update_time = 0;
-
-						if(self.resetmapzoom) then
-							self.resetmapzoom = nil;
-							SetMapToCurrentZone();
-						end
-					end-->
 					self:OnUpdate(elapsed);
-
 				end
 			</OnUpdate>
 			<OnEvent>

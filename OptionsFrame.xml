@@ -1,5 +1,4 @@
-<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
-..\..\FrameXML\UI.xsd">
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/../../FrameXML/UI.xsd">
 	<Frame name="YatlasOptionsFrame" hidden="true" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" parent="UIParent">
 		<Size>
 			<AbsDimension x="420" y="410"/>
@@ -58,32 +57,32 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-                <Layers>
-                    <Layer level="ARTWORK">
-                        <FontString inherits="GameFontHighlight" justifyH="LEFT" text="YATLAS_OPTIONS_ENABLEBUTTON">
-                            <Size>
-                                <AbsDimension x="275" y="16"/>
-                            </Size>
-                            <Anchors>
-                                <Anchor point="LEFT">
-                                    <Offset>
-                                        <AbsDimension x="24" y="0"/>
-                                    </Offset>
-                                </Anchor>
-                            </Anchors>
-                        </FontString>
-                    </Layer>
-                </Layers>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString inherits="GameFontHighlight" justifyH="LEFT" text="YATLAS_OPTIONS_ENABLEBUTTON">
+							<Size>
+								<AbsDimension x="275" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="LEFT">
+									<Offset>
+										<AbsDimension x="24" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() + 4);
-						this:RegisterEvent("VARIABLES_LOADED");
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
+						self:RegisterEvent("VARIABLES_LOADED");
 					</OnLoad>
 					<OnEvent>
-						this:SetChecked(YatlasOptions.ShowButton);
+						self:SetChecked(YatlasOptions.ShowButton);
 					</OnEvent>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							YatlasOptions.ShowButton = true;
 						else
 							YatlasOptions.ShowButton = false;
@@ -105,25 +104,25 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() + 4);
-						getglobal(this:GetName().."Text"):SetText(YATLAS_OPTIONS_BUTTONPOS);
-						getglobal(this:GetName().."High"):SetText();
-						getglobal(this:GetName().."Low"):SetText();
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
+						_G[self:GetName().."Text"]:SetText(YATLAS_OPTIONS_BUTTONPOS);
+						_G[self:GetName().."High"]:SetText();
+						_G[self:GetName().."Low"]:SetText();
 						YatlasOptionsButtonSlider:SetMinMaxValues(0,360);
 						YatlasOptionsButtonSlider:SetValueStep(1);
 					</OnLoad>
 					<OnValueChanged>
 						if(YatlasButton_GetPosition() ~= YatlasOptionsButtonSlider:GetValue()) then
 							YatlasButton_SetPosition(YatlasOptionsButtonSlider:GetValue())
-							if(this:IsVisible()) then
-								GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+							if(self:IsVisible()) then
+								GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 								GameTooltip:SetText(format(YATLAS_OPTIONS_BUTTONPOS_TIP,
 										YatlasOptionsButtonSlider:GetValue()));
 							end
 						end
 					</OnValueChanged>
 					<OnEnter>
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 						GameTooltip:SetText(format(YATLAS_OPTIONS_BUTTONPOS_TIP,
 								YatlasOptionsButtonSlider:GetValue()));
 					</OnEnter>
@@ -143,35 +142,35 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-                <Layers>
-                    <Layer level="ARTWORK">
-                        <FontString inherits="GameFontHighlight" justifyH="LEFT" text="YATLAS_OPTIONS_TRACKONSHOW">
-                            <Size>
-                                <AbsDimension x="275" y="16"/>
-                            </Size>
-                            <Anchors>
-                                <Anchor point="LEFT">
-                                    <Offset>
-                                        <AbsDimension x="24" y="0"/>
-                                    </Offset>
-                                </Anchor>
-                            </Anchors>
-                        </FontString>
-                    </Layer>
-                </Layers>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString inherits="GameFontHighlight" justifyH="LEFT" text="YATLAS_OPTIONS_TRACKONSHOW">
+							<Size>
+								<AbsDimension x="275" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="LEFT">
+									<Offset>
+										<AbsDimension x="24" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() + 4);
-						this:RegisterEvent("VARIABLES_LOADED");
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
+						self:RegisterEvent("VARIABLES_LOADED");
 					</OnLoad>
 					<OnEvent>
 						local aframe = next(YatlasOptions.Frames);
-						this:SetChecked(YatlasOptions.Frames[aframe].trackonshow ~= nil);
+						self:SetChecked(YatlasOptions.Frames[aframe].trackonshow ~= nil);
 					</OnEvent>
 					<OnClick>
-						-- control all frames at once
+						<!-- control all frames at once -->
 						for h,v in pairs(YatlasOptions.Frames) do
-							if(this:GetChecked()) then
+							if(self:GetChecked()) then
 								v.trackonshow = "player"
 							else
 								v.trackonshow = nil
@@ -199,7 +198,7 @@
 				</Size>
 				<Scripts>
 					<OnLoad>
-						this:SetBackdropColor(0,0,0)	
+						self:SetBackdropColor(0,0,0)	
 					</OnLoad>
 				</Scripts>
 				<Frames>
@@ -213,13 +212,13 @@
 						</Anchors>
 						<Scripts>
 							<OnLoad>
-								this:RegisterEvent("VARIABLES_LOADED");
+								self:RegisterEvent("VARIABLES_LOADED");
 							</OnLoad>
 							<OnEvent>
 								if(event == "VARIABLES_LOADED") then
-									UIDropDownMenu_Initialize(this, YatlasOptionsFrameSelect_Initialize);
-									UIDropDownMenu_SetSelectedID(this, 1);
-									UIDropDownMenu_SetWidth(this, 150);
+									UIDropDownMenu_Initialize(self, YatlasOptionsFrameSelect_Initialize);
+									UIDropDownMenu_SetSelectedID(self, 1);
+									UIDropDownMenu_SetWidth(self, 150);
 									YatlasOptionsFrame_Update();
 								end
 							</OnEvent>
@@ -238,12 +237,12 @@
 						</Anchors>
 						<Scripts>
 							<OnLoad>
-								this:SetFrameLevel(this:GetFrameLevel() + 4);
-								getglobal(this:GetName().."Text"):SetText(YATLAS_OPTIONS_ALPHA);
-								getglobal(this:GetName().."High"):SetText();
-								getglobal(this:GetName().."Low"):SetText();
-								this:SetMinMaxValues(.1,1);
-								this:SetValueStep(.05);
+								self:SetFrameLevel(self:GetFrameLevel() + 4);
+								_G[self:GetName().."Text"]:SetText(YATLAS_OPTIONS_ALPHA);
+								_G[self:GetName().."High"]:SetText();
+								_G[self:GetName().."Low"]:SetText();
+								self:SetMinMaxValues(.1,1);
+								self:SetValueStep(.05);
 							</OnLoad>
 							<OnValueChanged>
 								local frame = YatlasOptionsFrameSelect.currFrame;
@@ -265,12 +264,12 @@
 						</Anchors>
 						<Scripts>
 							<OnLoad>
-								this:SetFrameLevel(this:GetFrameLevel() + 4);
-								getglobal(this:GetName().."Text"):SetText(YATLAS_OPTIONS_ICONSIZE);
-								getglobal(this:GetName().."High"):SetText();
-								getglobal(this:GetName().."Low"):SetText();
-								this:SetMinMaxValues(8,36);
-								this:SetValueStep(1);
+								self:SetFrameLevel(self:GetFrameLevel() + 4);
+								_G[self:GetName().."Text"]:SetText(YATLAS_OPTIONS_ICONSIZE);
+								_G[self:GetName().."High"]:SetText();
+								_G[self:GetName().."Low"]:SetText();
+								self:SetMinMaxValues(8,36);
+								self:SetValueStep(1);
 							</OnLoad>
 							<OnValueChanged>
 								local frame = YatlasOptionsFrameSelect.currFrame;
@@ -304,8 +303,8 @@
 
 		<Scripts>
 			<OnLoad>
-		--		UIPanelWindows[this:GetName()] = { area = "center", pushable = 0, whileDead = 1 };
-				this:RegisterEvent("VARIABLES_LOADED");
+				UIPanelWindows[self:GetName()] = { area = "center", pushable = 0, whileDead = 1 };
+				self:RegisterEvent("VARIABLES_LOADED");
 			</OnLoad>
 			<OnEvent>
 

@@ -1,4 +1,4 @@
-## Interface: 30200
+## Interface: 40000
 ## Title: Yatlas
 ## Version: 0.8.3
 ## Notes: Yet another atlas
@@ -18,6 +18,6 @@ Points.lua
 Yatlas.lua
 Templates.xml
 Yatlas.xml
-sets\index.xml
 OptionsFrame.xml
 YatlasButton.xml
+sets\index.xml

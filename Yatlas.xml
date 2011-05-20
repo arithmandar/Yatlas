@@ -1,7 +1,4 @@
-<Ui xmlns="http://www.blizzard.com/wow/ui/"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.blizzard.com/wow/ui/
-..\..\FrameXML\UI.xsd">
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\..\FrameXML\UI.xsd">
 	<Frame name="YatlasFrame" frameStrata="HIGH" toplevel="true" movable="true" parent="UIParent" inherits="YatlasFrameTemplatePreBuilt" hidden="true">
 		<Size>
 			<AbsDimension x="539" y="628"/>
@@ -117,7 +114,7 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() + 4);
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
 					</OnLoad>
 				</Scripts>
 			</Button>
@@ -134,7 +131,7 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() + 4);
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
 					</OnLoad>
 					<OnClick>
 						YatlasFrame:ToggleLock();
@@ -166,10 +163,10 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						YatlasFrameDropDown_OnLoad();
+						YatlasFrameDropDown_OnLoad(self);
 					</OnLoad>
 					<OnEvent>
-						YatlasFrameDropDown_OnEvent(event);
+						YatlasFrameDropDown_OnEvent(self, event);
 					</OnEvent>
 				</Scripts>
 			</Button>
@@ -183,10 +180,10 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						YatlasFrameDropDown2_OnLoad();
+						YatlasFrameDropDown2_OnLoad(self);
 					</OnLoad>
 					<OnEvent>
-						YatlasFrameDropDown2_OnEvent(event);
+						YatlasFrameDropDown2_OnEvent(self, event);
 					</OnEvent>
 				</Scripts>
 			</Button>
@@ -203,24 +200,24 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() + 4);
-						this:RegisterEvent("VARIABLES_LOADED");
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
+						self:RegisterEvent("VARIABLES_LOADED");
 					</OnLoad>
 					<OnEvent>
-						YatlasFramePlayerJumpButton_Update(this);
+						YatlasFramePlayerJumpButton_Update(self);
 					</OnEvent>
 					<OnClick>
 						if(IsShiftKeyDown()) then
-							YatlasFramePlayerJumpButton_Toggle(this);
+							YatlasFramePlayerJumpButton_Toggle(self);
 						else
-							YatlasFramePlayerJumpButton_Jump(this);
+							YatlasFramePlayerJumpButton_Jump(self);
 						end
 					</OnClick>
 					<OnMouseUp>
-						YatlasFramePlayerJumpButton_Update(this);
+						YatlasFramePlayerJumpButton_Update(self);
 					</OnMouseUp>
 					<OnShow>
-						YatlasFramePlayerJumpButton_Update(this);
+						YatlasFramePlayerJumpButton_Update(self);
 					</OnShow>
 				</Scripts>
 			</Button>
@@ -237,14 +234,10 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() + 4);
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
 					</OnLoad>
 					<OnClick>
-						if(YatlasOptionsFrame:IsShown()) then
-							YatlasOptionsFrame:Hide()
-						else
-							YatlasOptionsFrame:Show();
-						end
+						YatlasOptions_Toggle();
 					</OnClick>
 				</Scripts>
 			</Button>
@@ -252,7 +245,7 @@
 		<Scripts>
 			<OnLoad>
 				tinsert(UISpecialFrames,"YatlasFrame");
-				YatlasFrame_Bootstrap();
+				YatlasFrame_Bootstrap(self);
 				YatlasFrame_OnLoadExtra();
 			</OnLoad>
 		</Scripts>
@@ -290,17 +283,17 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						YFOO_Init();
+						YFOO_Init(self);
 					</OnLoad>
 				</Scripts>
 			</Frame>
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				this:SetFrameLevel(this:GetFrameLevel() + 4);
+				self:SetFrameLevel(self:GetFrameLevel() + 4);
 			</OnLoad>
 			<OnClick>
-				YFOO_OnClick();
+				YFOO_OnClick(self);
 			</OnClick>
 		</Scripts>
 		<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
@@ -543,10 +536,10 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						YatlasFrameDropDown_OnLoad();
+						YatlasFrameDropDown_OnLoad(self);
 					</OnLoad>
 					<OnEvent>
-						YatlasFrameDropDown_OnEvent(event);
+						YatlasFrameDropDown_OnEvent(self, event);
 					</OnEvent>
 				</Scripts>
 			</Button>
@@ -573,10 +566,10 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						YatlasFrameDropDown2_OnLoad();
+						YatlasFrameDropDown2_OnLoad(self);
 					</OnLoad>
 					<OnEvent>
-						YatlasFrameDropDown2_OnEvent(event);
+						YatlasFrameDropDown2_OnEvent(self, event);
 					</OnEvent>
 				</Scripts>
 			</Button>
@@ -593,24 +586,24 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() + 4);
-						this:RegisterEvent("VARIABLES_LOADED");
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
+						self:RegisterEvent("VARIABLES_LOADED");
 					</OnLoad>
 					<OnEvent>
-						YatlasFramePlayerJumpButton_Update(this);
+						YatlasFramePlayerJumpButton_Update(self);
 					</OnEvent>
 					<OnClick>
 						if(IsShiftKeyDown()) then
-							YatlasFramePlayerJumpButton_Toggle(this);
+							YatlasFramePlayerJumpButton_Toggle(self);
 						else
-							YatlasFramePlayerJumpButton_Jump(this);
+							YatlasFramePlayerJumpButton_Jump(self);
 						end
 					</OnClick>
 					<OnMouseUp>
-						YatlasFramePlayerJumpButton_Update(this);
+						YatlasFramePlayerJumpButton_Update(self);
 					</OnMouseUp>
 					<OnShow>
-						YatlasFramePlayerJumpButton_Update(this);
+						YatlasFramePlayerJumpButton_Update(self);
 					</OnShow>
 				</Scripts>
 			</Button>
@@ -629,7 +622,7 @@
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				YatlasFrame_Bootstrap();
+				YatlasFrame_Bootstrap(self);
 				BigYatlasFrame_OnLoadExtra();
 			</OnLoad>
 			<OnKeyDown>
@@ -685,17 +678,17 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						YFOO_Init();
+						YFOO_Init(self);
 					</OnLoad>
 				</Scripts>
 			</Frame>
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				this:SetFrameLevel(this:GetFrameLevel() + 4);
+				self:SetFrameLevel(self:GetFrameLevel() + 4);
 			</OnLoad>
 			<OnClick>
-				YFOO_OnClick();
+				YFOO_OnClick(self);
 			</OnClick>
 		</Scripts>
 		<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>

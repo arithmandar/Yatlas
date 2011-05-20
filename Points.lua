@@ -21,7 +21,7 @@ end
 function YAPoints_ForceUpdate(frame)
     if( not frame) then
         for h,v in pairs(frames) do
-            YAPoints_OnMapChange(getglobal(h));
+            YAPoints_OnMapChange(_G[h]);
         end
     else
         YAPoints_OnMapChange(frame);
@@ -34,7 +34,7 @@ function YAPoints_OnMapChange(frame)
     -- clear all points
     local h = 1;
     while h > 0 do
-        local point = getglobal(lm.."Point"..h);
+        local point = _G[lm.."Point"..h];
         if(point) then
             point:Clear();
             h = h + 1;
@@ -43,7 +43,7 @@ function YAPoints_OnMapChange(frame)
         end
     end
 
-    local pd_resetlist = getglobal(frame.YA_PD_ResetList);
+    local pd_resetlist = _G[frame.YA_PD_ResetList];
     if(pd_resetlist) then pd_resetlist(); end
 
     -- store all points for this map
@@ -132,7 +132,7 @@ function YAPoints_Update(frame, x, y)
     current_locy_xact = y;
 
     current_frame = frame;
-    current_viewframe = getglobal(lm.."ViewFrame");
+    current_viewframe = _G[lm.."ViewFrame"];
 
     -- ensure that we have loaded the points already
     if(frame.points == nil) then
@@ -230,7 +230,7 @@ function YAPoints_GetPoint(frame, id)
     end
 
     -- create
-    local viewframe = getglobal(frame:GetName().."ViewFrame");
+    local viewframe = _G[frame:GetName().."ViewFrame"];
     local f = CreateFrame("Button");
 
     f:SetHeight(16);
@@ -269,7 +269,7 @@ function YAPoints_AllocMobilePoint(frame, id)
     end
 
     -- create
-    local viewframe = getglobal(frame:GetName().."ViewFrame");
+    local viewframe = _G[frame:GetName().."ViewFrame"];
     local f = CreateFrame("Button");
 
     f:SetHeight(16);
@@ -333,7 +333,7 @@ function YAPoints_UpdateTooltip(frame, tooltip, point, op)
     };
 
     if(tooltip.points[1]) then
-        local vf = getglobal(lm.."ViewFrame");
+        local vf = _G[lm.."ViewFrame"];
         tooltip:Clear();
         for h,point in ipairs(tooltip.points) do
             local legendfunc = sets[point.dat.setname].setuplegend;
@@ -385,10 +385,10 @@ function YP_SetOffset(point, x, y)
            (current_locy_xact - y)*z + iconsz/2);
 end
 
-function YP_OnEnter()
-    local vf = this:GetParent(); 
+function YP_OnEnter(self)
+    local vf = self:GetParent(); 
     local f = vf:GetParent();
-    local tp = getglobal(f.hoverTooltip);
+    local tp = _G[f.hoverTooltip];
     
     vf.inpoint = true;
     if(tp and tp.knownshownlines == nil) then
@@ -398,9 +398,9 @@ function YP_OnEnter()
 end
 
 
-function YatlasFrameViewFrame_UpdatePointTooltip() 
-    local f = this:GetParent();
-    local tp = getglobal(f.hoverTooltip);
+function YatlasFrameViewFrame_UpdatePointTooltip(self) 
+    local f = self:GetParent();
+    local tp = _G[f.hoverTooltip];
 
     for h,v in pairs(f.pointframes) do
         if(v.intooltip and not MouseIsOver(v)) then
@@ -423,7 +423,7 @@ function YatlasFrameViewFrame_UpdatePointTooltip()
     end
 
     if(tp.knownshownlines == 0) then
-        this.inpoint = nil;
+        self.inpoint = nil;
     end
 end
 
@@ -495,7 +495,7 @@ end
 
 function YAPoints_Mobile_SetLocation(setname, name, map, x, y) 
     for framename,v in pairs(frames) do
-        local frame = getglobal(framename);
+        local frame = _G[framename];
         if(frame:IsVisible()) then
             local d = frame.mobilepoints[setname..":"..name];
             d.locx = x;
@@ -510,7 +510,7 @@ function YAPoints_SetupMobilePoint(setname, name, itahm, prop, ...)
     local whut;
     
     for framename,v in pairs(frames) do
-        local frame = getglobal(framename);
+        local frame = _G[framename];
         whut = frame.mobilepoints[setname..":"..name][itahm];
         whut[prop](whut, ...);
     end
@@ -529,7 +529,7 @@ end
 
 function YAPoints_HideMobile(setname, name) 
     for framename,v in pairs(frames) do
-        local frame = getglobal(framename);
+        local frame = _G[framename];
         if(frame:IsVisible()) then
             local d = frame.mobilepoints[setname..":"..name];
             d.locmap = nil;
@@ -540,7 +540,7 @@ end
 
 function YMP_Update(point, frame)
     local zoom = frame:GetZoom();
-    local vf = getglobal(frame:GetName().."ViewFrame")
+    local vf = _G[frame:GetName().."ViewFrame"]
     local map = frame:GetMap();
     local minx, miny = frame:GetLocation();
     local maxx, maxy = minx + vf:GetWidth()/zoom, miny + vf:GetHeight()/zoom;
@@ -561,9 +561,9 @@ end
 ---       historical significance
 ---
 
-function YFOO_Init(frame)
+function YFOO_Init(self, frame)
     if(not frame) then
-        frame = this;
+        frame = self;
     end
 
     UIDropDownMenu_Initialize(frame, YFOODropDown_Initialize, "MENU");
@@ -599,8 +599,8 @@ function YFOODropDown_Initialize()
     end
 end
 
-function YFOO_OnClick()
-    current_frame = this;
+function YFOO_OnClick(self)
+    current_frame = self;
     while(current_frame and not current_frame.SetLocation) do
         current_frame = current_frame:GetParent()
     end
@@ -609,11 +609,11 @@ function YFOO_OnClick()
         BigYatlasTooltip:Hide();
     end
 
-    ToggleDropDownMenu(1, nil, getglobal(this:GetName().."DropDown"), this:GetName(), 0, 0);
+    ToggleDropDownMenu(1, nil, _G[self:GetName().."DropDown"], self:GetName(), 0, 0);
 end
 
-function YFOODropDown_do_toggle_normal()
-    YatlasOptions.Frames[current_frame:GetName()].PointCfg[this.value] = UIDropDownMenuButton_GetChecked(this)
+function YFOODropDown_do_toggle_normal(self)
+    YatlasOptions.Frames[current_frame:GetName()].PointCfg[self.value] = UIDropDownMenuButton_GetChecked(self)
     YAPoints_ForceUpdate(current_frame)
 end
 

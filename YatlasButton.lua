@@ -30,8 +30,8 @@ function YatlasButton_BeingDragged()
     YatlasButton_SetPosition(math.deg(math.atan2(ypos,xpos)));
 end
 
-function YatlasButton_OnEnter()
-    GameTooltip:SetOwner(this, "ANCHOR_LEFT");
+function YatlasButton_OnEnter(self)
+    GameTooltip:SetOwner(self, "ANCHOR_LEFT");
     GameTooltip:SetText(YATLAS_BUTTON_TOOLTIP1);
     GameTooltip:AddLine(YATLAS_BUTTON_TOOLTIP2);
     GameTooltip:AddLine(YATLAS_BUTTON_TOOLTIP3);

@@ -18,37 +18,57 @@
 	<Frame name="YatlasFrameTemplate" virtual="true">
 		<Scripts>
 			<OnLoad>
-			    YatlasFrame_Bootstrap();
+			    YatlasFrame_Bootstrap(self);
 			</OnLoad>
 			<OnShow>
 				if(YatlasOptions and YatlasOptions.Frames) then
-					local o = YatlasOptions.Frames[this:GetName()];
+					local o = YatlasOptions.Frames[self:GetName()];
 					if(o.track) then
-						YatlasFramePlayerJumpButton_Seek(this, o.track);
+						YatlasFramePlayerJumpButton_Seek(self, o.track);
 					elseif(o.trackonshow) then
-						 YatlasFramePlayerJumpButton_Seek(this, o.trackonshow);
+						 YatlasFramePlayerJumpButton_Seek(self, o.trackonshow);
 					end
 				end
 			</OnShow>
 			<OnDragStart>
-				if(YatlasOptions.Frames and not YatlasOptions.Frames[this:GetName()].Locked) then
-					this:StartMoving();
-					this.isMoving = true;
+				if(YatlasOptions.Frames and not YatlasOptions.Frames[self:GetName()].Locked) then
+					self:StartMoving();
+					self.isMoving = true;
 				end
 			</OnDragStart>
 			<OnDragStop>
-				if(this.isMoving) then
-					this:StopMovingOrSizing();
-					this.isMoving = false;
+				if(self.isMoving) then
+					self:StopMovingOrSizing();
+					self.isMoving = false;
 				end
 			</OnDragStop>
 			<OnUpdate>
-				if(this.OnUpdate) then
-					this:OnUpdate(arg1);
+				if(self.OnUpdate) then
+					<!--local arg1, arg2 = ...;
+					self.update_time = self.update_time + arg1;
+
+					if(self.update_time > 0.5) then
+						YAPoints_OnUpdate(self, self.update_time);
+
+						if(GetMapInfo() ~= self.opt.Map) then
+							self.resetmapzoom = 1;
+							SetMapZoom(Yatlas_WorldMapIds[self.opt.Map]);
+						else
+							self:OnWorldMapUpdate();
+						end
+						self.update_time = 0;
+
+						if(self.resetmapzoom) then
+							self.resetmapzoom = nil;
+							SetMapToCurrentZone();
+						end
+					end-->
+					self:OnUpdate(elapsed);
+
 				end
 			</OnUpdate>
 			<OnEvent>
-				this:OnEvent(event);
+				self:OnEvent(event);
 			</OnEvent>
 		</Scripts>
 	</Frame>
@@ -56,41 +76,41 @@
 	<Frame name="YatlasFrameViewTemplate" virtual="true">
 		<Scripts>
 			<OnLoad>
-				this.lastoux = 0;
-				this.lastouy = 0;
+				self.lastoux = 0;
+				self.lastouy = 0;
 			</OnLoad>
 			<OnEnter>
-				this.inme = true;
+				self.inme = true;
 			</OnEnter>
 			<OnLeave>
-				this.inme = false;
+				self.inme = false;
 			</OnLeave>
 			<OnDragStart>
-				this.dragme = true;
+				self.dragme = true;
 				ya_lastdragx = nil;
 				ya_lastdragy = nil;
 				YA_elapsed = 0;
 			</OnDragStart>
 			<OnDragStop>
-				this.dragme = false;
-				this:GetParent():UpdateDropDown2();
+				self.dragme = false;
+				self:GetParent():UpdateDropDown2();
 			</OnDragStop>
 			<OnHide>
-				this.dragme = false;
+				self.dragme = false;
 			</OnHide>
 			<OnUpdate>
-				if(this.dragme) then
-					YatlasFrameViewFrame_OnDrag();
+				if(self.dragme) then
+					YatlasFrameViewFrame_OnDrag(self);
 				end
-				if(this.inme and this:GetParent() == YatlasFrame and YatlasOptions.ShowCursorCoords) then
-					YatlasFrameViewFrame_UpdateCursorCoord();
+				if(self.inme and self:GetParent() == YatlasFrame and YatlasOptions.ShowCursorCoords) then
+					YatlasFrameViewFrame_UpdateCursorCoord(self);
 				end
-				if(this.inpoint) then
-					YatlasFrameViewFrame_UpdatePointTooltip();
+				if(self.inpoint) then
+					YatlasFrameViewFrame_UpdatePointTooltip(self);
 				end
 			</OnUpdate>
 			<OnMouseWheel>
-				this:GetParent():SetZoom(this:GetParent():GetZoom()+arg1*24);
+				self:GetParent():SetZoom(self:GetParent():GetZoom()+delta*24);
 			</OnMouseWheel>
 		</Scripts>
 	</Frame>
@@ -872,7 +892,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						local p = this:GetParent():GetParent():GetParent():GetParent();
+						local p = self:GetParent():GetParent():GetParent():GetParent();
 						p:SetZoom(p:GetZoom()+24);
 					</OnClick>
 				</Scripts>
@@ -890,7 +910,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						local p = this:GetParent():GetParent():GetParent():GetParent();
+						local p = self:GetParent():GetParent():GetParent():GetParent();
 						p:SetZoom(p:GetZoom()-24);
 					</OnClick>
 				</Scripts>
@@ -898,8 +918,8 @@
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				this:SetBackdropBorderColor(1, 1, 1);
-				this:SetBackdropColor(0, 0, 0, 1);
+				self:SetBackdropBorderColor(1, 1, 1);
+				self:SetBackdropColor(0, 0, 0, 1);
 			</OnLoad>
 		</Scripts>
 	</Frame>
@@ -978,9 +998,9 @@
 		<Scripts>
 			<OnLoad>
 				for h,v in pairs(YatlasTooltipTemplate) do
-					this[h] = v;
+					self[h] = v;
 				end
-				this:OnLoad();
+				self:OnLoad();
 			</OnLoad>
 		</Scripts>
 	</Frame>

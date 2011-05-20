@@ -512,7 +512,7 @@ function YAPoints_SetupMobilePoint(setname, name, itahm, prop, ...)
     for framename,v in pairs(frames) do
         local frame = getglobal(framename);
         whut = frame.mobilepoints[setname..":"..name][itahm];
-        whut[prop](whut, unpack(arg));
+        whut[prop](whut, ...);
     end
 end
 

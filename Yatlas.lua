@@ -79,13 +79,13 @@ function YatlasFrame_OnLoadExtra()
     if(MapNotes_DeleteNote) then
         YA_old_MapNotes_DeleteNote = MapNotes_DeleteNote;
         MapNotes_DeleteNote = function(...)
-            local v = YA_old_MapNotes_DeleteNote(unpack(arg))
+            local v = YA_old_MapNotes_DeleteNote(...)
             YAPoints_ForceUpdate();
             return v;
         end
         YA_old_MapNotes_WriteNote = MapNotes_WriteNote;
         MapNotes_WriteNote = function(...)
-            local v = YA_old_MapNotes_WriteNote(unpack(arg));
+            local v = YA_old_MapNotes_WriteNote(...);
             YAPoints_ForceUpdate();
             return v;
         end
@@ -95,7 +95,7 @@ function YatlasFrame_OnLoadExtra()
     if(Gatherer_AddGatherHere) then
          YA_old_Gatherer_AddGatherHere = Gatherer_AddGatherHere;
          Gatherer_AddGatherHere = function(...)
-            local v = YA_old_Gatherer_AddGatherHere(unpack(arg))
+            local v = YA_old_Gatherer_AddGatherHere(...)
             YAPoints_ForceUpdate();
             return v;
         end

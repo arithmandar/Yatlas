@@ -27,9 +27,6 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\Yatlas\images\Button"/>
-				<PushedTexture file="Interface\AddOns\Yatlas\images\Button-Down"/>
-				<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
 				<Scripts>
 					<OnLoad>
 						this:RegisterForDrag("RightButton");
@@ -58,6 +55,9 @@
 						GameTooltip:Hide();
 					</OnLeave>
 				</Scripts>
+				<NormalTexture file="Interface\AddOns\Yatlas\images\Button"/>
+				<PushedTexture file="Interface\AddOns\Yatlas\images\Button-Down"/>
+				<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
 			</Button>
 		</Frames>
 		<Scripts>

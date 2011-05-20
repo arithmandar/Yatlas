@@ -14,8 +14,8 @@ function YAPoints_RegisterSet(set)
     sets[set.name] = set;
 end
 
-function YAPoints_RegisterFrame(...)
-    frames[arg[1]] = 0;
+function YAPoints_RegisterFrame(a)
+    frames[a] = 0;
 end
 
 function YAPoints_ForceUpdate(frame)
@@ -524,7 +524,7 @@ function YAPoints_SetupMobilePointF(frame, setname, name, itahm, prop, ...)
     end
 
     whut = frame.mobilepoints[setname..":"..name][itahm];
-    whut[prop](whut, unpack(arg));
+    whut[prop](whut, ...);
 end
 
 function YAPoints_HideMobile(setname, name) 

@@ -808,7 +808,7 @@ function YatlasFrameTemplate:GetZoneIDs(offx, offy)
     local roffx = math.floor((x+offx-math.floor(x))*16);
     local roffy = math.floor((y+offx-math.floor(y))*16);
 
-    local cv = (math.mod(roffx,16)+1)+(math.mod(roffy,16)+1)*16;
+    local cv = (mod(roffx,16)+1)+(mod(roffy,16)+1)*16;
     local v = self.texturelayout[math.floor(offx)+1][math.floor(offy)+1].areaids;
     local nsv = getn(v)/2 - 1;
     local id;
@@ -1070,13 +1070,6 @@ function YatlasOptionsFrame_Update()
 
         YatlasOptionsAlphaSlider:SetValue(opt.Alpha);
         YatlasOptionsIconSizeSlider:SetValue(opt.IconSize);
-
-        if(frame == YatlasFrame) then
-            YatlasOptionsCoordBEnable:Show();
-            YatlasOptionsCoordBEnable:SetChecked(YatlasOptions.ShowCursorCoords);
-        else
-            YatlasOptionsCoordBEnable:Hide();
-        end
     end
 end
 
@@ -1096,7 +1089,7 @@ function YatlasTooltipTemplate:OnLoad()
 end
 
 function YatlasTooltipTemplate:Show()
-    local r = getmetatable(self).__index(self, "Show")(self);
+    local r = getmetatable(self).__index.Show(self);
     self:FixSize();
     return r;
 end

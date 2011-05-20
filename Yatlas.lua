@@ -1,4 +1,4 @@
-﻿
+--local GatherMate = LibStub("AceAddon-3.0"):GetAddon("GatherMate")
 local pre = "textures\\Minimap\\";
 
 local MINI2BIGX = 533.3333;
@@ -92,10 +92,12 @@ function YatlasFrame_OnLoadExtra()
     end
 
     -- wrap gatherer
-    if(Gatherer_AddGatherHere) then
-         YA_old_Gatherer_AddGatherHere = Gatherer_AddGatherHere;
-         Gatherer_AddGatherHere = function(...)
-            local v = YA_old_Gatherer_AddGatherHere(...)
+    --print("Test for GatherMate")
+    if(GatherMate) then
+        --print("Found")
+         YA_old_GatherMate = GatherMate;
+         GatherMate = function(...)
+            local v = YA_old_GatherMate(...)
             YAPoints_ForceUpdate();
             return v;
         end

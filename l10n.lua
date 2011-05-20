@@ -1,13 +1,13 @@
-local _;
+﻿local _;
 
 -- metadata magic
 YATLAS_TITLE = GetAddOnMetadata("Yatlas", "Title") or "Y";
 YATLAS_VERSION = GetAddOnMetadata("Yatlas","Version") or "???";
 _,_,YATLAS_RELEASE_DATE = string.find(GetAddOnMetadata("Yatlas","X-LastChangedDate") or "", "[(](.+)[)]");
 
-YATLAS_WEBSITE = "http://cornhooves.org/wowui/Yatlas/"
-YATLAS_AUTHOR = "Robin Schoonover (endx7)";
-YATLAS_AUTHOR_EMAIL = "robin.schoonover@gmail.com";
+YATLAS_WEBSITE = ""
+YATLAS_AUTHOR = "Boo Diddly";
+YATLAS_AUTHOR_EMAIL = "";
 
 -- localize from this point on as needed
 YATLAS_HELP_TEXT = {

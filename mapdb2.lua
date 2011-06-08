@@ -1,3 +1,4 @@
+local BZ = Yatlas_GetLocaleLibBabble("LibBabble-SubZone-3.0");
 
 -- Yatlas map mapping
 -- Display_Name - Actual Map Folder Name

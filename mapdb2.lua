@@ -2,11 +2,10 @@
 -- Yatlas map mapping
 -- Display_Name - Actual Map Folder Name
 YA_MAPS = {
-    ["Eastern Kingdoms"] = {"Azeroth"},
-    ["Kalimdor"] = {"Kalimdor"},
-    ["Outland"] = {"Expansion01"},
-    ["Northrend"] = {"Northrend"},
-    ["TolBarad"] = {"TolBarad"},
+    [BZ["Eastern Kingdoms"]] = {"Azeroth"},
+    [BZ["Kalimdor"]] = {"Kalimdor"},
+    [BZ["Outland"]] = {"Expansion01"},
+    [BZ["Northrend"]] = {"Northrend"},
     --
 };
 
@@ -15,7 +14,6 @@ Yatlas_WorldMapIds = {
     ["Azeroth"] = 2,
     ["Expansion01"] = 3,
     ["Northrend"] = 4,
-    ["TolBarad"] = 5,
 };
 
 
@@ -23,12 +21,14 @@ Yatlas_WorldMapIds = {
 -- (These are the id versions)
 Yatlas_ZoneIds = {
     ["Azeroth"] =   {
-    	1, 3, 4, 8, 10, 11, 12, 28, 33, 36, 38, 40, 41, 44, 45, 46,
-        47, 51, 85, 130, 139, 267, 1497, 1519, 1537
+	0, 1, 3, 4, 8, 10, 11, 12, 28, 33, 38, 40, 41, 44, 45, 
+	46, 47, 51, 85, 130, 139, 267, 1497, 1519, 1537, 4706, 
+	4815, 4922, 5144, 5145, 5146, 5287, 5339, 5351
     },
     ["Kalimdor"] =  {
-    	14, 15, 16, 17, 141, 148, 215, 331, 357, 361, 400, 405,
-	406, 440, 490, 493, 618, 1377, 1637, 1638, 1657
+	0, 14, 15, 16, 17, 141, 148, 215, 331, 357, 361, 400, 
+	405, 406, 440, 490, 493, 616, 618, 1377, 1637, 1638, 
+	1657, 4709, 5034, 5695
     },	
 }
 

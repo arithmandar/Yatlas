@@ -1,4 +1,4 @@
-## Interface: 40100
+## Interface: 40200
 ## Title: Yatlas
 ## Version: 0.8.4
 ## Notes: Yet another atlas

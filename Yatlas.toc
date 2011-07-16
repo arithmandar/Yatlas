@@ -1,9 +1,8 @@
 ## Interface: 40200
 ## Title: Yatlas
-## Version: 0.8.4
+## Version: 0.8.5
 ## Notes: Yet another atlas
-## X-LastChangedDate: $LastChangedDate: 2009-08-05 12:01:01 -0000 (Wed, 5 Aug 2009) $
-## OptionalDeps: myAddOns
+## OptionalDeps: myAddOns, Ace3, LibBabble-SubZone-3.0
 ## DefaultState: Enabled
 ## LoadOnDemand: 0
 ## SavedVariables: YatlasOptions

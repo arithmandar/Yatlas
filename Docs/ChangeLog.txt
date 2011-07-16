@@ -1,6 +1,14 @@
 
 Yatlas ChangeLog
 ================
+0.8.5 beta 2 (July 17, 2011)
+----------------------------
+- Enable no-libs packaging in CurseForge
+
+0.8.5 beta 1 (June 28, 2011) - never release
+----------------------------
+- TOC update to support WoW 4.2
+
 0.8.4 beta 1, 2 (June 08, 2011)
 ------------------------------
 - Map data update to WoW 4.1

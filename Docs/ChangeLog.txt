@@ -1,6 +1,10 @@
 
 Yatlas ChangeLog
 ================
+0.8.5 (August 15, 2011)
+----------------------------
+- Tag for official release
+
 0.8.5 beta 2 (July 17, 2011)
 ----------------------------
 - Enable no-libs packaging in CurseForge

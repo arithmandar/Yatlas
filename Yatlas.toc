@@ -1,6 +1,6 @@
-## Interface: 40200
+## Interface: 50200
 ## Title: Yatlas
-## Version: 0.8.5
+## Version: 0.9.1
 ## Notes: Yet another atlas
 ## OptionalDeps: myAddOns, Ace3, LibBabble-SubZone-3.0
 ## DefaultState: Enabled

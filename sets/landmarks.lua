@@ -63,7 +63,7 @@ function set.setuppoint(point, env, dat)
             bgtextname = "Interface\\AddOns\\Yatlas\\images\\Icons\\Icon-Exclaim";
         end
     else
-       x1, x2, y1, y2 = WorldMap_GetPOITextureCoords(dat.userdat[5]);
+       x1, x2, y1, y2 = GetPOITextureCoords(dat.userdat[5]);
        r,g,b = 1,1,1;
        bgtextname  = "Interface\\Minimap\\POIIcons"
     end

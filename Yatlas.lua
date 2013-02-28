@@ -4,6 +4,7 @@ local pre = "World\\Minimaps\\";
 
 local MINI2BIGX = 533.3333;
 local MINI2BIGY = 533.3333;
+local _G=_G;
 
 YatlasOptions = {}
 
@@ -456,9 +457,9 @@ function YatlasFramePlayerJumpButton_Update(btn)
         else
             tex = "Interface\\Buttons\\UI-Panel-Button-Up";
         end
-        _G[btn:GetName().."Left"]:SetTexture(tex);
-        _G[btn:GetName().."Middle"]:SetTexture(tex);
-        _G[btn:GetName().."Right"]:SetTexture(tex);
+--        _G[btn:GetName().."Left"]:SetTexture(tex);
+--        _G[btn:GetName().."Middle"]:SetTexture(tex);
+--        _G[btn:GetName().."Right"]:SetTexture(tex);
     end
 end
 

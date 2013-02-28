@@ -1,6 +1,13 @@
 
 Yatlas ChangeLog
 ================
+0.9.1 (Feb. XX, 2013)
+- TOC update to support WoW 5.2
+
+0.9.0 (September XX, 2012)
+----------------------------
+- TOC update to support WoW 5.0
+
 0.8.5 (August 15, 2011)
 ----------------------------
 - Tag for official release

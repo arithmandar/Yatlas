@@ -43,10 +43,10 @@ end
 
 function set.internal.OnWorldMapUpdate()
     set.internal.OnWorldMapUpdateUnit("player");
-    for h = 1,GetNumPartyMembers() do
+    for h = 1,GetNumSubgroupMembers() do
         set.internal.OnWorldMapUpdateUnit("party"..h);
     end
-    for h = 1,GetNumRaidMembers() do
+    for h = 1,GetNumSubgroupMembers() do
         set.internal.OnWorldMapUpdateUnit("raid"..h);
     end
 end

@@ -8,6 +8,7 @@ YA_MAPS = {
     [BZ["Outland"]] = {"Expansion01"},
     [BZ["Northrend"]] = {"Northrend"},
     [BZ["Pandaria"]] = {"HawaiiMainLand"},
+    [BZ["Draenor"]] = {"Draenor"},
 };
 
 Yatlas_WorldMapIds = {
@@ -16,6 +17,7 @@ Yatlas_WorldMapIds = {
     ["Expansion01"] = 3,
     ["Northrend"] = 4,
     ["HawaiiMainLand"] = 5,
+    ["Draenor"] = 6,
 };
 
 

@@ -1,7 +1,7 @@
 ﻿local BZ = Yatlas_GetLocaleLibBabble("LibBabble-SubZone-3.0");
 
 -- Map data extracted from Map.dbc
--- Feb. 28, 2013: updated to 16634
+-- Oct. 21, 2014: updated to 19005
 Yatlas_WorldMapIds2 = {
 	["Azeroth"] = 0,
 	["Kalimdor"] = 1,
@@ -6332,4630 +6332,4632 @@ Yatlas_mapdb1 = {
 -- Oct. 21, 2014: updated to 19207
 Yatlas_areadb = 
 {
-	[1] = BZ["DunMorogh"],
+	[1] = BZ["Dun Morogh"],
 	[2] = BZ["Longshore"],
 	[3] = BZ["Badlands"],
-	[4] = BZ["BlastedLands"],
-	[7] = BZ["DarkwaterCove"],
-	[8] = BZ["SwampofSorrows"],
-	[9] = BZ["NorthshireValley"],
+	[4] = BZ["Blasted Lands"],
+	[7] = BZ["Blackwater Cove"],
+	[8] = BZ["Swamp of Sorrows"],
+	[9] = BZ["Northshire Valley"],
 	[10] = BZ["Duskwood"],
 	[11] = BZ["Wetlands"],
-	[12] = BZ["ElwynnForest"],
-	[13] = BZ["TheWorldTree"],
+	[12] = BZ["Elwynn Forest"],
+	[13] = BZ["The World Tree"],
 	[14] = BZ["Durotar"],
-	[15] = BZ["Dustwallow"],
+	[15] = BZ["Dustwallow Marsh"],
 	[16] = BZ["Azshara"],
-	[17] = BZ["TheBarrens"],
-	[18] = BZ["CrystalLake"],
+	[17] = BZ["Northern Barrens"],
+	[18] = BZ["Crystal Lake"],
 	[19] = BZ["Zul'Gurub"],
 	[20] = BZ["Moonbrook"],
-	[21] = BZ["KulTiras"],
-	[22] = BZ["ProgrammerIsle"],
-	[23] = BZ["NorthshireRiver"],
-	[24] = BZ["Northshireabbey"],
-	[25] = BZ["BlackrockMountain"],
+	[21] = BZ["Kul Tiras"],
+	[22] = BZ["Programmer Isle"],
+	[23] = BZ["Northshire River"],
+	[24] = BZ["Northshire Abbey"],
+	[25] = BZ["Blackrock Mountain"],
 	[26] = BZ["Lighthouse"],
-	[28] = BZ["WesternPlaguelands"],
+	[28] = BZ["Western Plaguelands"],
 	[30] = BZ["Nine"],
-	[32] = BZ["TheCemetary"],
-	[33] = BZ["StranglethornJungle"],
-	[34] = BZ["EchoRidgeMine"],
-	[35] = BZ["BootyBay"],
-	[36] = BZ["AlteracMountains"],
-	[37] = BZ["LakeNazferiti"],
-	[38] = BZ["LochModan"],
+	[32] = BZ["The Cemetary"],
+	[33] = BZ["Northern Stranglethorn"],
+	[34] = BZ["Echo Ridge Mine"],
+	[35] = BZ["Booty Bay"],
+	[36] = BZ["Alterac Mountains"],
+	[37] = BZ["Lake Nazferiti"],
+	[38] = BZ["Loch Modan"],
 	[40] = BZ["Westfall"],
-	[41] = BZ["DeadwindPass"],
+	[41] = BZ["Deadwind Pass"],
 	[42] = BZ["Darkshire"],
-	[43] = BZ["WildShore"],
-	[44] = BZ["RedridgeMountains"],
-	[45] = BZ["ArathiHighlands"],
-	[46] = BZ["BurningSteppes"],
-	[47] = BZ["TheHinterlands"],
-	[49] = BZ["DeadMansHole"],
-	[51] = BZ["SearingGorge"],
-	[53] = BZ["ThievesCamp"],
-	[54] = BZ["JasperlodeMine"],
-	[55] = BZ["ValleyofHeroesUNUSED"],
-	[56] = BZ["Heroes'Vigil"],
-	[57] = BZ["FargodeepMine"],
-	[59] = BZ["NorthshireVineyards"],
-	[60] = BZ["Forest'sEdge"],
-	[61] = BZ["ThunderFalls"],
-	[62] = BZ["PumpkinPatch"],
-	[63] = BZ["TheStonefieldFarm"],
-	[64] = BZ["TheMaclureVineyards"],
+	[43] = BZ["Wild Shore"],
+	[44] = BZ["Redridge Mountains"],
+	[45] = BZ["Arathi Highlands"],
+	[46] = BZ["Burning Steppes"],
+	[47] = BZ["The Hinterlands"],
+	[49] = BZ["Dead Man's Hole"],
+	[51] = BZ["Searing Gorge"],
+	[53] = BZ["Thieves Camp"],
+	[54] = BZ["Jasperlode Mine"],
+	[55] = BZ["Valley of Heroes UNUSED"],
+	[56] = BZ["Heroes' Vigil"],
+	[57] = BZ["Fargodeep Mine"],
+	[59] = BZ["Northshire Vineyards"],
+	[60] = BZ["Forest's Edge"],
+	[61] = BZ["Thunder Falls"],
+	[62] = BZ["Brackwell Pumpkin Patch"],
+	[63] = BZ["The Stonefield Farm"],
+	[64] = BZ["The Maclure Vineyards"],
 	[65] = BZ["Dragonblight"],
-	[66] = BZ["ZulDrak"],
-	[67] = BZ["TheStormPeaks"],
-	[68] = BZ["LakeEverstill"],
+	[66] = BZ["Zul'Drak"],
+	[67] = BZ["The Storm Peaks"],
+	[68] = BZ["Lake Everstill"],
 	[69] = BZ["Lakeshire"],
 	[70] = BZ["Stonewatch"],
-	[71] = BZ["StonewatchFalls"],
-	[72] = BZ["TheDarkPortal"],
-	[73] = BZ["TheTaintedScar"],
-	[74] = BZ["PoolofTears"],
+	[71] = BZ["Stonewatch Falls"],
+	[72] = BZ["The Dark Portal"],
+	[73] = BZ["The Tainted Scar"],
+	[74] = BZ["Pool of Tears"],
 	[75] = BZ["Stonard"],
-	[76] = BZ["FallowSanctuary"],
+	[76] = BZ["Fallow Sanctuary"],
 	[77] = BZ["Anvilmar"],
-	[80] = BZ["StormwindMountains"],
-	[81] = BZ["JeffNEQuadrantChanged"],
-	[82] = BZ["JeffNWQuadrant"],
-	[83] = BZ["JeffSEQuadrant"],
-	[84] = BZ["JeffSWQuadrant"],
-	[85] = BZ["TirisfalGlades"],
-	[86] = BZ["StoneCircleLake"],
+	[80] = BZ["Stormwind Mountains"],
+	[81] = BZ["Jeff NE Quadrant Changed"],
+	[82] = BZ["Jeff NW Quadrant"],
+	[83] = BZ["Jeff SE Quadrant"],
+	[84] = BZ["Jeff SW Quadrant"],
+	[85] = BZ["Tirisfal Glades"],
+	[86] = BZ["Stone Cairn Lake"],
 	[87] = BZ["Goldshire"],
-	[88] = BZ["EastvaleLoggingCamp"],
-	[89] = BZ["ThunderFallsOrchard"],
-	[91] = BZ["TowerofAzora"],
-	[92] = BZ["MirrorLake"],
-	[93] = BZ["Vul'GolOgreMound"],
-	[94] = BZ["RavenHill"],
-	[95] = BZ["RedridgeCanyon"],
-	[96] = BZ["TowerofIlgalar"],
-	[97] = BZ["Alther'sMill"],
-	[98] = BZ["RethbanCaverns"],
-	[99] = BZ["RebelCamp"],
-	[100] = BZ["Nesingwary'sExpedition"],
-	[101] = BZ["Kurzen'sCompound"],
-	[102] = BZ["RuinsofZul'Kunda"],
-	[103] = BZ["RuinsofZul'Mamwe"],
-	[104] = BZ["TheVileReef"],
-	[105] = BZ["Mosh'OggOgreMound"],
-	[106] = BZ["TheStockpile"],
-	[107] = BZ["Saldean'sFarm"],
-	[108] = BZ["SentinelHill"],
-	[109] = BZ["Furlbrow'sPumpkinFarm"],
-	[111] = BZ["JangolodeMine"],
-	[113] = BZ["GoldCoastQuarry"],
-	[115] = BZ["WestfallLighthouse"],
-	[116] = BZ["MistyValley"],
-	[117] = BZ["Grom'golBaseCamp"],
-	[118] = BZ["Whelgar'sExcavationSite"],
-	[120] = BZ["WestbrookGarrison"],
-	[121] = BZ["TranquilGardensCemetery"],
-	[122] = BZ["ZuuldaiaRuins"],
-	[123] = BZ["Bal'lalRuins"],
-	[125] = BZ["Kal'aiRuins"],
-	[126] = BZ["TkashiRuins"],
-	[127] = BZ["Balia'mahRuins"],
-	[128] = BZ["Ziata'jaiRuins"],
-	[129] = BZ["MizjahRuins"],
-	[130] = BZ["SilverpineForest"],
+	[88] = BZ["Eastvale Logging Camp"],
+	[89] = BZ["Mirror Lake Orchard"],
+	[91] = BZ["Tower of Azora"],
+	[92] = BZ["Mirror Lake"],
+	[93] = BZ["Vul'Gol Ogre Mound"],
+	[94] = BZ["Raven Hill"],
+	[95] = BZ["Redridge Canyons"],
+	[96] = BZ["Tower of Ilgalar"],
+	[97] = BZ["Alther's Mill"],
+	[98] = BZ["Rethban Caverns"],
+	[99] = BZ["Rebel Camp"],
+	[100] = BZ["Nesingwary's Expedition"],
+	[101] = BZ["Kurzen's Compound"],
+	[102] = BZ["Ruins of Zul'Kunda"],
+	[103] = BZ["Ruins of Zul'Mamwe"],
+	[104] = BZ["The Vile Reef"],
+	[105] = BZ["Mosh'Ogg Ogre Mound"],
+	[106] = BZ["The Stockpile"],
+	[107] = BZ["Saldean's Farm"],
+	[108] = BZ["Sentinel Hill"],
+	[109] = BZ["Furlbrow's Pumpkin Farm"],
+	[111] = BZ["Jangolode Mine"],
+	[113] = BZ["Gold Coast Quarry"],
+	[115] = BZ["Westfall Lighthouse"],
+	[116] = BZ["Misty Valley"],
+	[117] = BZ["Grom'gol Base Camp"],
+	[118] = BZ["Whelgar's Excavation Site"],
+	[120] = BZ["Westbrook Garrison"],
+	[121] = BZ["Tranquil Gardens Cemetery"],
+	[122] = BZ["Zuuldaia Ruins"],
+	[123] = BZ["Bal'lal Ruins"],
+	[125] = BZ["Kal'ai Ruins"],
+	[126] = BZ["Tkashi Ruins"],
+	[127] = BZ["Balia'mah Ruins"],
+	[128] = BZ["Ziata'jai Ruins"],
+	[129] = BZ["Mizjah Ruins"],
+	[130] = BZ["Silverpine Forest"],
 	[131] = BZ["Kharanos"],
-	[132] = BZ["ColdridgeValley"],
-	[133] = BZ["Gnomeregan"],
-	[134] = BZ["GolBolarQuarry"],
-	[135] = BZ["FrostmaneHold"],
-	[136] = BZ["TheGrizzledDen"],
-	[137] = BZ["BrewnallVillage"],
-	[138] = BZ["MistyPineRefuge"],
-	[139] = BZ["EasternPlaguelands"],
+	[132] = BZ["Coldridge Valley"],
+	[133] = BZ["New Tinkertown"],
+	[134] = BZ["Gol'Bolar Quarry"],
+	[135] = BZ["Frostmane Hold"],
+	[136] = BZ["The Grizzled Den"],
+	[137] = BZ["Brewnall Village"],
+	[138] = BZ["Misty Pine Refuge"],
+	[139] = BZ["Eastern Plaguelands"],
 	[141] = BZ["Teldrassil"],
-	[142] = BZ["Ironband'sExcavationSite"],
-	[143] = BZ["Mo'groshStronghold"],
+	[142] = BZ["Ironband's Excavation Site"],
+	[143] = BZ["Mo'grosh Stronghold"],
 	[144] = BZ["Thelsamar"],
-	[145] = BZ["AlgazGate"],
-	[146] = BZ["StonewroughtDam"],
-	[147] = BZ["TheFarstriderLodge"],
+	[145] = BZ["Algaz Gate"],
+	[146] = BZ["Stonewrought Dam"],
+	[147] = BZ["The Farstrider Lodge"],
 	[148] = BZ["Darkshore"],
-	[149] = BZ["SilverStreamMine"],
-	[150] = BZ["MenethilHarbor"],
-	[151] = BZ["DesignerIsland"],
-	[152] = BZ["TheBulwark"],
-	[153] = BZ["RuinsofLordaeron"],
+	[149] = BZ["Silver Stream Mine"],
+	[150] = BZ["Menethil Harbor"],
+	[151] = BZ["Designer Island"],
+	[152] = BZ["The Bulwark"],
+	[153] = BZ["Ruins of Lordaeron"],
 	[154] = BZ["Deathknell"],
-	[155] = BZ["NightWebsHollow"],
-	[156] = BZ["SollidenFarmstead"],
-	[157] = BZ["AgamandMills"],
-	[158] = BZ["AgamandFamilyCrypt"],
+	[155] = BZ["Night Web's Hollow"],
+	[156] = BZ["Solliden Farmstead"],
+	[157] = BZ["Agamand Mills"],
+	[158] = BZ["Agamand Family Crypt"],
 	[159] = BZ["Brill"],
-	[160] = BZ["WhisperingGardens"],
-	[161] = BZ["TerraceofRepose"],
-	[162] = BZ["BrightwaterLake"],
-	[163] = BZ["Gunther'sRetreat"],
-	[164] = BZ["Garren'sHaunt"],
-	[165] = BZ["BalnirFarmstead"],
-	[166] = BZ["ColdHearthManor"],
-	[167] = BZ["CrusaderOutpost"],
-	[168] = BZ["TheNorthCoast"],
+	[160] = BZ["Whispering Gardens"],
+	[161] = BZ["Terrace of Repose"],
+	[162] = BZ["Brightwater Lake"],
+	[163] = BZ["Gunther's Retreat"],
+	[164] = BZ["Garren's Haunt"],
+	[165] = BZ["Balnir Farmstead"],
+	[166] = BZ["Cold Hearth Manor"],
+	[167] = BZ["Crusader Outpost"],
+	[168] = BZ["The North Coast"],
 	[169] = BZ["Whispering Shore"],
-	[170] = BZ["LordamereLake"],
-	[172] = BZ["FenrisIsle"],
-	[173] = BZ["Faol'sRest"],
+	[170] = BZ["Lordamere Lake"],
+	[172] = BZ["Fenris Isle"],
+	[173] = BZ["Faol's Rest"],
 	[186] = BZ["Dolanaar"],
-	[187] = BZ["DarnassusUNUSED"],
+	[187] = BZ["Darnassus UNUSED"],
 	[188] = BZ["Shadowglen"],
-	[189] = BZ["Steelgrill'sDepot"],
+	[189] = BZ["Steelgrill's Depot"],
 	[190] = BZ["Hearthglen"],
-	[192] = BZ["NorthridgeLumberCamp"],
-	[193] = BZ["RuinsofAndorhal"],
-	[195] = BZ["SchoolofNecromancy"],
-	[196] = BZ["Uther'sTomb"],
-	[197] = BZ["SorrowHill"],
-	[198] = BZ["TheWeepingCave"],
-	[199] = BZ["FelstoneField"],
-	[200] = BZ["Dalson'sTears"],
-	[201] = BZ["Gahrron'sWithering"],
-	[202] = BZ["TheWrithingHaunt"],
-	[203] = BZ["MardenholdeKeep"],
-	[204] = BZ["PyrewoodVillage"],
-	[205] = BZ["DunModr"],
-	[206] = BZ["UtgardeKeep"],
-	[207] = BZ["TheGreatSea"],
-	[208] = BZ["UnusedIroncladcove"],
-	[209] = BZ["ShadowfangKeep"],
+	[192] = BZ["Northridge Lumber Camp"],
+	[193] = BZ["Andorhal"],
+	[195] = BZ["School of Necromancy"],
+	[196] = BZ["Uther's Tomb"],
+	[197] = BZ["Sorrow Hill"],
+	[198] = BZ["The Weeping Cave"],
+	[199] = BZ["Felstone Field"],
+	[200] = BZ["Dalson's Farm"],
+	[201] = BZ["Gahrron's Withering"],
+	[202] = BZ["The Writhing Haunt"],
+	[203] = BZ["Mardenholde Keep"],
+	[204] = BZ["Pyrewood Village"],
+	[205] = BZ["Dun Modr"],
+	[206] = BZ["Utgarde Keep"],
+	[207] = BZ["The Great Sea"],
+	[208] = BZ["Unused Ironcladcove"],
+	[209] = BZ["Shadowfang Keep"],
 	[210] = BZ["Icecrown"],
-	[211] = BZ["IceflowLake"],
-	[212] = BZ["Helm'sBedLake"],
-	[213] = BZ["DeepElemMine"],
-	[214] = BZ["TheGreatSea"],
+	[211] = BZ["Iceflow Lake"],
+	[212] = BZ["Helm's Bed Lake"],
+	[213] = BZ["Deep Elem Mine"],
+	[214] = BZ["The Great Sea"],
 	[215] = BZ["Mulgore"],
-	[219] = BZ["AlexstonFarmstead"],
-	[220] = BZ["RedCloudMesa"],
-	[221] = BZ["CampNarache"],
-	[222] = BZ["BloodhoofVillage"],
-	[223] = BZ["StonebullLake"],
-	[224] = BZ["RavagedCaravan"],
-	[225] = BZ["RedRocks"],
-	[226] = BZ["TheSkitteringDark"],
-	[227] = BZ["Valgan'sField"],
-	[228] = BZ["TheSepulcher"],
-	[229] = BZ["Olsen'sFarthing"],
-	[230] = BZ["TheGreymaneWall"],
-	[231] = BZ["Beren'sPeril"],
-	[232] = BZ["TheDawningIsles"],
+	[219] = BZ["Alexston Farmstead"],
+	[220] = BZ["Red Cloud Mesa"],
+	[221] = BZ["Camp Narache"],
+	[222] = BZ["Bloodhoof Village"],
+	[223] = BZ["Stonebull Lake"],
+	[224] = BZ["Ravaged Caravan"],
+	[225] = BZ["Red Rocks"],
+	[226] = BZ["The Skittering Dark"],
+	[227] = BZ["Valgan's Field"],
+	[228] = BZ["The Sepulcher"],
+	[229] = BZ["Olsen's Farthing"],
+	[230] = BZ["The Greymane Wall"],
+	[231] = BZ["Beren's Peril"],
+	[232] = BZ["The Dawning Isles"],
 	[233] = BZ["Ambermill"],
-	[235] = BZ["FenrisKeep"],
+	[235] = BZ["Fenris Keep"],
 	[236] = BZ["Shadowfang Keep"],
-	[237] = BZ["TheDecrepitFields"],
-	[238] = BZ["Malden'sOrchard"],
-	[239] = BZ["TheIvarPatch"],
-	[240] = BZ["TheDeadField"],
-	[241] = BZ["TheRottingOrchard"],
-	[242] = BZ["BrightwoodGrove"],
-	[243] = BZ["ForlornRowe"],
-	[244] = BZ["TheWhippleEstate"],
-	[245] = BZ["TheYorgenFarmstead"],
-	[246] = BZ["TheCauldron"],
-	[247] = BZ["GrimesiltDigSite"],
-	[249] = BZ["DreadmaulRock"],
-	[250] = BZ["RuinsofThaurisan"],
-	[251] = BZ["FlameCrest"],
-	[252] = BZ["BlackrockStronghold"],
-	[253] = BZ["ThePillarofAsh"],
-	[254] = BZ["BlackrockMountain"],
-	[255] = BZ["AltarofStorms"],
+	[237] = BZ["The Decrepit Fields"],
+	[238] = BZ["Malden's Orchard"],
+	[239] = BZ["The Ivar Patch"],
+	[240] = BZ["The Dead Field"],
+	[241] = BZ["The Rotting Orchard"],
+	[242] = BZ["Brightwood Grove"],
+	[243] = BZ["Forlorn Rowe"],
+	[244] = BZ["The Whipple Estate"],
+	[245] = BZ["The Yorgen Farmstead"],
+	[246] = BZ["The Cauldron"],
+	[247] = BZ["Grimesilt Dig Site"],
+	[249] = BZ["Dreadmaul Rock"],
+	[250] = BZ["Ruins of Thaurissan"],
+	[251] = BZ["Flame Crest"],
+	[252] = BZ["Blackrock Stronghold"],
+	[253] = BZ["The Pillar of Ash"],
+	[254] = BZ["Blackrock Mountain"],
+	[255] = BZ["Altar of Storms"],
 	[256] = BZ["Aldrassil"],
-	[257] = BZ["ShadowthreadCave"],
-	[258] = BZ["FelRock"],
-	[259] = BZ["LakeIl'Ameth"],
-	[260] = BZ["StarbreezeVillage"],
-	[261] = BZ["GnarlpineHold"],
-	[262] = BZ["BanethilBarrowDen"],
-	[263] = BZ["TheCleft"],
-	[264] = BZ["TheOracleGlade"],
-	[265] = BZ["WellspringRiver"],
-	[266] = BZ["WellspringLake"],
-	[267] = BZ["HillsbradFoothills"],
-	[268] = BZ["AzsharaCrater"],
-	[269] = BZ["DunAlgaz"],
-	[271] = BZ["RuinsofSouthshore"],
-	[272] = BZ["TarrenMill"],
-	[275] = BZ["DurnholdeKeep"],
-	[276] = BZ["StonewroughtPass"],
-	[277] = BZ["TheFoothillCaverns"],
-	[278] = BZ["BrazieFarmstead"],
-	[279] = BZ["DalaranCrater"],
+	[257] = BZ["Shadowthread Cave"],
+	[258] = BZ["Fel Rock"],
+	[259] = BZ["Lake Al'Ameth"],
+	[260] = BZ["Starbreeze Village"],
+	[261] = BZ["Gnarlpine Hold"],
+	[262] = BZ["Ban'ethil Barrow Den"],
+	[263] = BZ["The Cleft"],
+	[264] = BZ["The Oracle Glade"],
+	[265] = BZ["Wellspring River"],
+	[266] = BZ["Wellspring Lake"],
+	[267] = BZ["Hillsbrad Foothills"],
+	[268] = BZ["Azshara Crater"],
+	[269] = BZ["Dun Algaz"],
+	[271] = BZ["Ruins of Southshore"],
+	[272] = BZ["Tarren Mill"],
+	[275] = BZ["Durnholde Keep"],
+	[276] = BZ["UNUSED Stonewrought Pass"],
+	[277] = BZ["The Foothill Caverns"],
+	[278] = BZ["Brazie Farmstead"],
+	[279] = BZ["Dalaran Crater"],
 	[280] = BZ["Strahnbrad"],
-	[281] = BZ["RuinsofAlterac"],
-	[282] = BZ["CrushridgeHold"],
-	[283] = BZ["SlaughterHollow"],
-	[284] = BZ["TheUplands"],
-	[285] = BZ["SouthpointGate"],
-	[286] = BZ["TheSludgeFields"],
+	[281] = BZ["Ruins of Alterac"],
+	[282] = BZ["Crushridge Hold"],
+	[283] = BZ["Slaughter Hollow"],
+	[284] = BZ["The Uplands"],
+	[285] = BZ["Southpoint Gate"],
+	[286] = BZ["The Sludge Fields"],
 	[287] = BZ["Hillsbrad"],
-	[288] = BZ["AzurelodeMine"],
-	[289] = BZ["NethanderStead"],
-	[290] = BZ["DunGarok"],
-	[293] = BZ["Thoradin'sWall"],
-	[294] = BZ["EasternStrand"],
-	[295] = BZ["WesternStrand"],
-	[296] = BZ["SouthSeasUNUSED"],
-	[297] = BZ["JagueroIsle"],
-	[298] = BZ["BaradinBay"],
-	[299] = BZ["MenethilBay"],
-	[300] = BZ["MistyReedStrand"],
-	[301] = BZ["TheSavageCoast"],
-	[302] = BZ["TheCrystalShore"],
-	[303] = BZ["ShellBeach"],
-	[305] = BZ["NorthTide'sRun"],
-	[306] = BZ["SouthTide'sRun"],
-	[307] = BZ["TheOverlookCliffs"],
-	[308] = BZ["TheForbiddingSea"],
-	[309] = BZ["Ironbeard'sTomb"],
-	[310] = BZ["CrystalveinMine"],
-	[311] = BZ["RuinsofAboraz"],
-	[312] = BZ["Janeiro'sPoint"],
-	[313] = BZ["NorthfoldManor"],
-	[314] = BZ["Go'ShekFarm"],
-	[315] = BZ["Dabyrie'sFarmstead"],
-	[316] = BZ["BoulderfistHall"],
-	[317] = BZ["WitherbarkVillage"],
-	[318] = BZ["DrywhiskerGorge"],
-	[320] = BZ["RefugePointe"],
+	[288] = BZ["Azurelode Mine"],
+	[289] = BZ["Nethander Stead"],
+	[290] = BZ["Dun Garok"],
+	[293] = BZ["Thoradin's Wall"],
+	[294] = BZ["Eastern Strand"],
+	[295] = BZ["Western Strand"],
+	[296] = BZ["South Seas UNUSED"],
+	[297] = BZ["Jaguero Isle"],
+	[298] = BZ["Baradin Bay"],
+	[299] = BZ["Menethil Bay"],
+	[300] = BZ["Misty Reed Strand"],
+	[301] = BZ["The Savage Coast"],
+	[302] = BZ["The Crystal Shore"],
+	[303] = BZ["Shell Beach"],
+	[305] = BZ["North Tide's Run"],
+	[306] = BZ["South Tide's Run"],
+	[307] = BZ["The Overlook Cliffs"],
+	[308] = BZ["The Forbidding Sea"],
+	[309] = BZ["Ironbeard's Tomb"],
+	[310] = BZ["Crystalvein Mine"],
+	[311] = BZ["Ruins of Aboraz"],
+	[312] = BZ["Janeiro's Point"],
+	[313] = BZ["Northfold Manor"],
+	[314] = BZ["Go'Shek Farm"],
+	[315] = BZ["Dabyrie's Farmstead"],
+	[316] = BZ["Boulderfist Hall"],
+	[317] = BZ["Witherbark Village"],
+	[318] = BZ["Drywhisker Gorge"],
+	[320] = BZ["Refuge Pointe"],
 	[321] = BZ["Hammerfall"],
-	[322] = BZ["BlackwaterShipwrecks"],
-	[323] = BZ["O'Breen'sCamp"],
-	[324] = BZ["StromgardeKeep"],
-	[325] = BZ["TheTowerofArathor"],
-	[326] = BZ["TheSanctum"],
-	[327] = BZ["Faldir'sCove"],
-	[328] = BZ["TheDrownedReef"],
-	[330] = BZ["ThandolSpan"],
+	[322] = BZ["Blackwater Shipwrecks"],
+	[323] = BZ["O'Breen's Camp"],
+	[324] = BZ["Stromgarde Keep"],
+	[325] = BZ["The Tower of Arathor"],
+	[326] = BZ["The Sanctum"],
+	[327] = BZ["Faldir's Cove"],
+	[328] = BZ["The Drowned Reef"],
+	[330] = BZ["Thandol Span"],
 	[331] = BZ["Ashenvale"],
-	[332] = BZ["TheGreatSea"],
-	[333] = BZ["CircleofEastBinding"],
-	[334] = BZ["CircleofWestBinding"],
-	[335] = BZ["CircleofInnerBinding"],
-	[336] = BZ["CircleofOuterBinding"],
-	[337] = BZ["Apocryphan'sRest"],
-	[338] = BZ["AngorFortress"],
-	[339] = BZ["LethlorRavine"],
-	[340] = BZ["Kargath"],
-	[341] = BZ["CampKosh"],
-	[342] = BZ["CampBoff"],
-	[343] = BZ["CampWurg"],
-	[344] = BZ["CampCagg"],
-	[345] = BZ["Agmond'sEnd"],
-	[346] = BZ["Hammertoe'sDigsite"],
-	[347] = BZ["DustbelchGrotto"],
-	[348] = BZ["AeriePeak"],
-	[349] = BZ["WildhammerKeep"],
-	[350] = BZ["Quel'DanilLodge"],
-	[351] = BZ["SkulkRock"],
+	[332] = BZ["The Great Sea"],
+	[333] = BZ["Circle of East Binding"],
+	[334] = BZ["Circle of West Binding"],
+	[335] = BZ["Circle of Inner Binding"],
+	[336] = BZ["Circle of Outer Binding"],
+	[337] = BZ["Apocryphan's Rest"],
+	[338] = BZ["Angor Fortress"],
+	[339] = BZ["Lethlor Ravine"],
+	[340] = BZ["Ruins of Kargath"],
+	[341] = BZ["Camp Kosh"],
+	[342] = BZ["Camp Boff"],
+	[343] = BZ["Camp Wurg"],
+	[344] = BZ["Camp Cagg"],
+	[345] = BZ["Agmond's End"],
+	[346] = BZ["Hammertoe's Digsite"],
+	[347] = BZ["Dustbelch Grotto"],
+	[348] = BZ["Aerie Peak"],
+	[349] = BZ["Wildhammer Keep"],
+	[350] = BZ["Quel'Danil Lodge"],
+	[351] = BZ["Skulk Rock"],
 	[352] = BZ["Zun'watha"],
 	[353] = BZ["Shadra'Alor"],
 	[354] = BZ["Jintha'Alor"],
-	[355] = BZ["TheAltarofZul"],
+	[355] = BZ["The Altar of Zul"],
 	[356] = BZ["Seradane"],
 	[357] = BZ["Feralas"],
-	[358] = BZ["BramblebladeRavine"],
-	[359] = BZ["BaelModan"],
-	[360] = BZ["TheVentureCoMine"],
+	[358] = BZ["Brambleblade Ravine"],
+	[359] = BZ["Bael Modan [UNUSED]"],
+	[360] = BZ["The Venture Co. Mine"],
 	[361] = BZ["Felwood"],
-	[362] = BZ["RazorHill"],
-	[363] = BZ["ValleyofTrials"],
-	[364] = BZ["TheDen"],
-	[365] = BZ["BurningBladeCoven"],
-	[366] = BZ["NorthwatchFoothold"],
-	[367] = BZ["Sen'jinVillage"],
-	[368] = BZ["EchoIsles"],
-	[369] = BZ["ThunderRidge"],
-	[370] = BZ["DrygulchRavine"],
-	[371] = BZ["DustwindCave"],
-	[372] = BZ["TiragardeKeep"],
-	[373] = BZ["ScuttleCoast"],
-	[374] = BZ["BladefistBay"],
-	[375] = BZ["DeadeyeShore"],
-	[377] = BZ["SouthfuryRiver"],
-	[378] = BZ["CampTaurajo"],
-	[379] = BZ["FarWatchPost"],
-	[380] = BZ["TheCrossroads"],
-	[381] = BZ["BoulderLodeMine"],
-	[382] = BZ["TheSludgeFen"],
-	[383] = BZ["TheDryHills"],
-	[384] = BZ["DreadmistPeak"],
-	[385] = BZ["NorthwatchHold"],
-	[386] = BZ["TheForgottenPools"],
-	[387] = BZ["LushwaterOasis"],
-	[388] = BZ["TheStagnantOasis"],
-	[390] = BZ["FieldofGiants"],
-	[391] = BZ["TheMerchantCoast"],
+	[362] = BZ["Razor Hill"],
+	[363] = BZ["Valley of Trials"],
+	[364] = BZ["The Den"],
+	[365] = BZ["Burning Blade Coven"],
+	[366] = BZ["Northwatch Foothold"],
+	[367] = BZ["Sen'jin Village"],
+	[368] = BZ["Echo Isles"],
+	[369] = BZ["Thunder Ridge"],
+	[370] = BZ["Drygulch Ravine"],
+	[371] = BZ["Dustwind Cave"],
+	[372] = BZ["Tiragarde Keep"],
+	[373] = BZ["Scuttle Coast"],
+	[374] = BZ["Bladefist Bay"],
+	[375] = BZ["Deadeye Shore"],
+	[377] = BZ["Southfury River"],
+	[378] = BZ["Camp Taurajo [UNUSED]"],
+	[379] = BZ["Far Watch Post"],
+	[380] = BZ["The Crossroads"],
+	[381] = BZ["Boulder Lode Mine"],
+	[382] = BZ["The Sludge Fen"],
+	[383] = BZ["The Dry Hills"],
+	[384] = BZ["Dreadmist Peak"],
+	[385] = BZ["Northwatch Hold [UNUSED]"],
+	[386] = BZ["The Forgotten Pools"],
+	[387] = BZ["Lushwater Oasis"],
+	[388] = BZ["The Stagnant Oasis"],
+	[390] = BZ["Field of Giants [UNUSED]"],
+	[391] = BZ["The Merchant Coast"],
 	[392] = BZ["Ratchet"],
-	[393] = BZ["DarkspearStrand"],
-	[394] = BZ["GrizzlyHills"],
+	[393] = BZ["Darkspear Strand"],
+	[394] = BZ["Grizzly Hills"],
 	[395] = BZ["Grizzlemaw"],
-	[396] = BZ["WinterhoofWaterWell"],
-	[397] = BZ["ThunderhornWaterWell"],
-	[398] = BZ["WildmaneWaterWell"],
-	[399] = BZ["SkylineRidge"],
-	[400] = BZ["ThousandNeedles"],
-	[401] = BZ["TheTidusStair"],
-	[403] = BZ["ShadyRestInn"],
-	[404] = BZ["Bael'dunDigsite"],
+	[396] = BZ["Winterhoof Water Well"],
+	[397] = BZ["Thunderhorn Water Well"],
+	[398] = BZ["Wildmane Water Well"],
+	[399] = BZ["Skyline Ridge"],
+	[400] = BZ["Thousand Needles"],
+	[401] = BZ["The Tidus Stair"],
+	[403] = BZ["Shady Rest Inn"],
+	[404] = BZ["Bael'dun Digsite"],
 	[405] = BZ["Desolace"],
-	[406] = BZ["StonetalonMountains"],
-	[407] = BZ["OrgrimmarUNUSED"],
-	[408] = BZ["Gillijim'sIsle"],
-	[409] = BZ["IslandofDoctorLapidis"],
-	[410] = BZ["RazorwindCanyon"],
-	[411] = BZ["Bathran'sHaunt"],
-	[412] = BZ["TheRuinsofOrdil'Aran"],
-	[413] = BZ["Maestra'sPost"],
-	[414] = BZ["TheZoramStrand"],
+	[406] = BZ["Stonetalon Mountains"],
+	[407] = BZ["Orgrimmar UNUSED"],
+	[408] = BZ["Gillijim's Isle"],
+	[409] = BZ["Island of Doctor Lapidis"],
+	[410] = BZ["Razorwind Canyon"],
+	[411] = BZ["Bathran's Haunt"],
+	[412] = BZ["The Ruins of Ordil'Aran"],
+	[413] = BZ["Maestra's Post"],
+	[414] = BZ["The Zoram Strand"],
 	[415] = BZ["Astranaar"],
-	[416] = BZ["TheShrineofAessina"],
-	[417] = BZ["FireScarShrine"],
-	[418] = BZ["TheRuinsofStardust"],
-	[419] = BZ["TheHowlingVale"],
-	[420] = BZ["SilverwindRefuge"],
-	[421] = BZ["MystralLake"],
-	[422] = BZ["FallenSkyLake"],
-	[424] = BZ["RemainsofIrisLake"],
-	[425] = BZ["MoonwellofPurity"],
-	[426] = BZ["RaynewoodRetreat"],
-	[427] = BZ["TheShadyNook"],
+	[416] = BZ["The Shrine of Aessina"],
+	[417] = BZ["Fire Scar Shrine"],
+	[418] = BZ["The Ruins of Stardust"],
+	[419] = BZ["The Howling Vale"],
+	[420] = BZ["Silverwind Refuge"],
+	[421] = BZ["Mystral Lake"],
+	[422] = BZ["Fallen Sky Lake"],
+	[424] = BZ["Remains of Iris Lake"],
+	[425] = BZ["Moonwell of Purity"],
+	[426] = BZ["Raynewood Retreat"],
+	[427] = BZ["The Shady Nook"],
 	[428] = BZ["Night Run"],
 	[429] = BZ["Xavian"],
 	[430] = BZ["Satyrnaar"],
 	[431] = BZ["Splintertree Post"],
-	[432] = BZ["TheDor'DanilBarrowDen"],
-	[433] = BZ["FalfarrenRiver"],
-	[434] = BZ["FelfireHill"],
-	[435] = BZ["DemonFallCanyon"],
-	[436] = BZ["DemonFallRidge"],
+	[432] = BZ["The Dor'Danil Barrow Den"],
+	[433] = BZ["Falfarren River"],
+	[434] = BZ["Felfire Hill"],
+	[435] = BZ["Demon Fall Canyon"],
+	[436] = BZ["Demon Fall Ridge"],
 	[437] = BZ["Warsong Lumber Camp"],
-	[438] = BZ["BoughShadow"],
-	[439] = BZ["TheShimmeringFlats"],
+	[438] = BZ["Bough Shadow"],
+	[439] = BZ["The Shimmering Flats"],
 	[440] = BZ["Tanaris"],
-	[441] = BZ["LakeFalathim"],
-	[442] = BZ["RuinsofAuberdine"],
-	[443] = BZ["RuinsofMathystra"],
-	[444] = BZ["TowerofAlthalaxx"],
-	[445] = BZ["CliffspringFalls"],
+	[441] = BZ["Lake Falathim"],
+	[442] = BZ["Ruins of Auberdine"],
+	[443] = BZ["Ruins of Mathystra"],
+	[444] = BZ["Tower of Althalaxx"],
+	[445] = BZ["Cliffspring Falls"],
 	[446] = BZ["Bashal'Aran"],
 	[447] = BZ["Ameth'Aran"],
-	[448] = BZ["GroveoftheAncients"],
-	[449] = BZ["TheMaster'sGlaive"],
-	[450] = BZ["Remtravel'sExcavation"],
-	[452] = BZ["Mist'sEdge"],
-	[453] = BZ["TheLongWash"],
-	[454] = BZ["WildbendRiver"],
-	[455] = BZ["BlackwoodDen"],
-	[456] = BZ["CliffspringRiver"],
-	[457] = BZ["TheVeiledSea"],
-	[458] = BZ["GoldRoad"],
-	[459] = BZ["ScarletWatchPost"],
-	[460] = BZ["SunRockRetreat"],
+	[448] = BZ["Grove of the Ancients"],
+	[449] = BZ["The Master's Glaive"],
+	[450] = BZ["Remtravel's Excavation"],
+	[452] = BZ["Mist's Edge"],
+	[453] = BZ["The Long Wash"],
+	[454] = BZ["Wildbend River"],
+	[455] = BZ["Blackwood Den"],
+	[456] = BZ["Cliffspring River"],
+	[457] = BZ["The Veiled Sea"],
+	[458] = BZ["Gold Road"],
+	[459] = BZ["Scarlet Watch Post"],
+	[460] = BZ["Sun Rock Retreat"],
 	[461] = BZ["Windshear Crag"],
-	[463] = BZ["CragpoolLake"],
-	[464] = BZ["MirkfallonLake"],
-	[465] = BZ["TheCharredVale"],
-	[466] = BZ["ValleyoftheBloodfuries"],
-	[467] = BZ["StonetalonPeak"],
-	[468] = BZ["TheTalonDen"],
-	[469] = BZ["GreatwoodVale"],
-	[470] = BZ["ThunderBluffUNUSED"],
-	[471] = BZ["BraveWindMesa"],
-	[472] = BZ["FireStoneMesa"],
-	[473] = BZ["MantleRock"],
-	[474] = BZ["HunterRiseUNUSED"],
-	[475] = BZ["SpiritRiseUNUSED"],
-	[476] = BZ["ElderRiseUNUSED"],
-	[477] = BZ["RuinsofJubuwal"],
-	[478] = BZ["PoolsofArlithrien"],
-	[479] = BZ["TheRustmaulDigSite"],
-	[480] = BZ["CampE'thok"],
-	[481] = BZ["SplithoofCrag"],
+	[463] = BZ["Cragpool Lake"],
+	[464] = BZ["Mirkfallon Lake"],
+	[465] = BZ["The Charred Vale"],
+	[466] = BZ["Valley of the Bloodfuries"],
+	[467] = BZ["Stonetalon Peak"],
+	[468] = BZ["The Talon Den"],
+	[469] = BZ["Greatwood Vale"],
+	[470] = BZ["Thunder Bluff UNUSED"],
+	[471] = BZ["Brave Wind Mesa"],
+	[472] = BZ["Fire Stone Mesa"],
+	[473] = BZ["Mantle Rock"],
+	[474] = BZ["Hunter Rise UNUSED"],
+	[475] = BZ["Spirit RiseUNUSED"],
+	[476] = BZ["Elder RiseUNUSED"],
+	[477] = BZ["Ruins of Jubuwal"],
+	[478] = BZ["Pools of Arlithrien"],
+	[479] = BZ["The Rustmaul Dig Site"],
+	[480] = BZ["Camp E'thok"],
+	[481] = BZ["Splithoof Crag"],
 	[482] = BZ["Highperch"],
-	[483] = BZ["TheScreechingCanyon"],
-	[484] = BZ["FreewindPost"],
-	[485] = BZ["TheGreatLift"],
-	[486] = BZ["GalakHold"],
-	[487] = BZ["RoguefeatherDen"],
-	[488] = BZ["TheWeatheredNook"],
+	[483] = BZ["The Screeching Canyon"],
+	[484] = BZ["Freewind Post"],
+	[485] = BZ["The Great Lift"],
+	[486] = BZ["Galak Hold"],
+	[487] = BZ["Roguefeather Den"],
+	[488] = BZ["The Weathered Nook"],
 	[489] = BZ["Thalanaar"],
-	[490] = BZ["Un'GoroCrater"],
-	[491] = BZ["RazorfenKraul"],
-	[492] = BZ["RavenHillCemetery"],
+	[490] = BZ["Un'Goro Crater"],
+	[491] = BZ["Razorfen Kraul"],
+	[492] = BZ["Raven Hill Cemetery"],
 	[493] = BZ["Moonglade"],
-	[495] = BZ["HowlingFjord"],
-	[496] = BZ["BrackenwallVillage"],
-	[497] = BZ["SwamplightManor"],
-	[498] = BZ["BloodfenBurrow"],
-	[499] = BZ["DarkmistCavern"],
-	[500] = BZ["MogglePoint"],
-	[501] = BZ["Beezil'sWreck"],
-	[502] = BZ["WitchHill"],
-	[503] = BZ["SentryPoint"],
-	[504] = BZ["NorthPointTower"],
-	[505] = BZ["WestPointTower"],
-	[506] = BZ["LostPoint"],
+	[495] = BZ["Howling Fjord"],
+	[496] = BZ["Brackenwall Village"],
+	[497] = BZ["Swamplight Manor"],
+	[498] = BZ["Bloodfen Burrow"],
+	[499] = BZ["Darkmist Cavern"],
+	[500] = BZ["Moggle Point"],
+	[501] = BZ["Beezil's Wreck"],
+	[502] = BZ["Witch Hill"],
+	[503] = BZ["Sentry Point"],
+	[504] = BZ["North Point Tower"],
+	[505] = BZ["West Point Tower"],
+	[506] = BZ["Lost Point"],
 	[507] = BZ["Bluefen"],
-	[508] = BZ["StonemaulRuins"],
-	[509] = BZ["TheDenofFlame"],
-	[510] = BZ["TheDragonmurk"],
+	[508] = BZ["Stonemaul Ruins"],
+	[509] = BZ["The Den of Flame"],
+	[510] = BZ["The Dragonmurk"],
 	[511] = BZ["Wyrmbog"],
-	[512] = BZ["BlackhoofVillage"],
-	[513] = BZ["TheramoreIsle"],
-	[514] = BZ["FootholdCitadel"],
-	[515] = BZ["IroncladPrison"],
-	[516] = BZ["DustwallowBay"],
-	[517] = BZ["TidefuryCove"],
-	[518] = BZ["DreadmurkShore"],
-	[536] = BZ["Addle'sStead"],
-	[537] = BZ["FirePlumeRidge"],
-	[538] = BZ["LakkariTarPits"],
-	[539] = BZ["TerrorRun"],
-	[540] = BZ["TheSlitheringScar"],
-	[541] = BZ["Marshal'sRefuge"],
-	[542] = BZ["FungalRock"],
-	[543] = BZ["GolakkaHotSprings"],
-	[556] = BZ["TheLoch"],
-	[576] = BZ["Beggar'sHaunt"],
-	[596] = BZ["KodoGraveyard"],
-	[597] = BZ["GhostWalkerPost"],
-	[598] = BZ["Sar'therisStrand"],
-	[599] = BZ["ThunderAxeFortress"],
-	[600] = BZ["Bolgan'sHole"],
-	[602] = BZ["MannorocCoven"],
+	[512] = BZ["Blackhoof Village"],
+	[513] = BZ["Theramore Isle"],
+	[514] = BZ["Foothold Citadel"],
+	[515] = BZ["Ironclad Prison"],
+	[516] = BZ["Dustwallow Bay"],
+	[517] = BZ["Tidefury Cove"],
+	[518] = BZ["Dreadmurk Shore"],
+	[536] = BZ["Addle's Stead"],
+	[537] = BZ["Fire Plume Ridge"],
+	[538] = BZ["Lakkari Tar Pits"],
+	[539] = BZ["Terror Run"],
+	[540] = BZ["The Slithering Scar"],
+	[541] = BZ["Marshal's Refuge"],
+	[542] = BZ["Fungal Rock"],
+	[543] = BZ["Golakka Hot Springs"],
+	[556] = BZ["The Loch"],
+	[576] = BZ["Beggar's Haunt"],
+	[596] = BZ["Kodo Graveyard"],
+	[597] = BZ["Ghost Walker Post"],
+	[598] = BZ["Sar'theris Strand"],
+	[599] = BZ["Thunder Axe Fortress"],
+	[600] = BZ["Bolgan's Hole"],
+	[602] = BZ["Mannoroc Coven"],
 	[603] = BZ["Sargeron"],
 	[604] = BZ["Shok'Thokar"],
-	[606] = BZ["GelkisVillage"],
-	[607] = BZ["ValleyofSpears"],
-	[608] = BZ["Nijel'sPoint"],
-	[609] = BZ["KolkarVillage"],
-	[616] = BZ["Hyjal"],
+	[606] = BZ["Gelkis Village"],
+	[607] = BZ["Valley of Spears"],
+	[608] = BZ["Nijel's Point"],
+	[609] = BZ["Kolkar Village"],
+	[616] = BZ["Mount Hyjal"],
 	[618] = BZ["Winterspring"],
-	[636] = BZ["BlackwolfRiver"],
-	[637] = BZ["KodoRock"],
-	[638] = BZ["HiddenPath"],
-	[639] = BZ["SpiritRock"],
-	[640] = BZ["ShrineoftheDormantFlame"],
-	[656] = BZ["LakeElune'ara"],
-	[657] = BZ["TheHarborage"],
+	[636] = BZ["Blackwolf River"],
+	[637] = BZ["Kodo Rock"],
+	[638] = BZ["Hidden Path"],
+	[639] = BZ["Spirit Rock"],
+	[640] = BZ["Shrine of the Dormant Flame"],
+	[656] = BZ["Lake Elune'ara"],
+	[657] = BZ["The Harborage"],
 	[676] = BZ["Outland"],
-	[696] = BZ["Craftsmen'sTerraceUNUSED"],
-	[697] = BZ["Tradesmen'sTerraceUNUSED"],
-	[698] = BZ["TheTempleGardensUNUSED"],
-	[699] = BZ["TempleofEluneUNUSED"],
-	[700] = BZ["CenarionEnclaveUNUSED"],
-	[701] = BZ["Warrior'sTerraceUNUSED"],
-	[702] = BZ["Rut'theranVillage"],
-	[716] = BZ["Ironband'sCompound"],
-	[717] = BZ["TheStockade"],
-	[718] = BZ["WailingCaverns"],
-	[719] = BZ["BlackfathomDeeps"],
-	[720] = BZ["FrayIsland"],
+	[696] = BZ["Craftsmen's Terrace UNUSED"],
+	[697] = BZ["Tradesmen's Terrace UNUSED"],
+	[698] = BZ["The Temple Gardens UNUSED"],
+	[699] = BZ["Temple of Elune UNUSED"],
+	[700] = BZ["Cenarion Enclave UNUSED"],
+	[701] = BZ["Warrior's Terrace UNUSED"],
+	[702] = BZ["Rut'theran Village"],
+	[716] = BZ["Ironband's Compound"],
+	[717] = BZ["The Stockade"],
+	[718] = BZ["Wailing Caverns"],
+	[719] = BZ["Blackfathom Deeps"],
+	[720] = BZ["Fray Island"],
 	[721] = BZ["Gnomeregan"],
-	[722] = BZ["RazorfenDowns"],
-	[736] = BZ["Ban'ethilHollow"],
-	[796] = BZ["ScarletMonastery"],
-	[797] = BZ["Jerod'sLanding"],
-	[798] = BZ["RidgepointTower"],
-	[799] = BZ["TheDarkenedBank"],
-	[800] = BZ["ColdridgePass"],
-	[801] = BZ["ChillBreezeValley"],
-	[802] = BZ["ShimmerRidge"],
-	[803] = BZ["AmberstillRanch"],
-	[804] = BZ["TheTundridHills"],
-	[805] = BZ["SouthGatePass"],
-	[806] = BZ["SouthGateOutpost"],
-	[807] = BZ["NorthGatePass"],
-	[808] = BZ["NorthGateOutpost"],
-	[809] = BZ["GatesofIronforge"],
-	[810] = BZ["StillwaterPond"],
-	[811] = BZ["NightmareVale"],
-	[812] = BZ["VenomwebVale"],
-	[813] = BZ["TheBulwark"],
-	[814] = BZ["SouthfuryRiver"],
-	[815] = BZ["SouthfuryRiver"],
-	[816] = BZ["RazormaneGrounds"],
-	[817] = BZ["SkullRock"],
-	[818] = BZ["PalemaneRock"],
-	[819] = BZ["WindfuryRidge"],
-	[820] = BZ["TheGoldenPlains"],
-	[821] = BZ["TheRollingPlains"],
-	[836] = BZ["DunAlgaz"],
-	[837] = BZ["DunAlgaz"],
-	[838] = BZ["NorthGatePass"],
-	[839] = BZ["SouthGatePass"],
-	[856] = BZ["TwilightGrove"],
-	[876] = BZ["GMIsland"],
+	[722] = BZ["Razorfen Downs"],
+	[736] = BZ["Ban'ethil Hollow"],
+	[796] = BZ["Scarlet Monastery"],
+	[797] = BZ["Jerod's Landing"],
+	[798] = BZ["Ridgepoint Tower"],
+	[799] = BZ["The Darkened Bank"],
+	[800] = BZ["Coldridge Pass"],
+	[801] = BZ["Chill Breeze Valley"],
+	[802] = BZ["Shimmer Ridge"],
+	[803] = BZ["Amberstill Ranch"],
+	[804] = BZ["The Tundrid Hills"],
+	[805] = BZ["South Gate Pass"],
+	[806] = BZ["South Gate Outpost"],
+	[807] = BZ["North Gate Pass"],
+	[808] = BZ["North Gate Outpost"],
+	[809] = BZ["Gates of Ironforge"],
+	[810] = BZ["Stillwater Pond"],
+	[811] = BZ["Nightmare Vale"],
+	[812] = BZ["Venomweb Vale"],
+	[813] = BZ["The Bulwark"],
+	[814] = BZ["Southfury River"],
+	[815] = BZ["Southfury River"],
+	[816] = BZ["Razormane Grounds"],
+	[817] = BZ["Skull Rock"],
+	[818] = BZ["Palemane Rock"],
+	[819] = BZ["Windfury Ridge"],
+	[820] = BZ["The Golden Plains"],
+	[821] = BZ["The Rolling Plains"],
+	[836] = BZ["Dun Algaz"],
+	[837] = BZ["Dun Algaz"],
+	[838] = BZ["North Gate Pass"],
+	[839] = BZ["South Gate Pass"],
+	[856] = BZ["Twilight Grove"],
+	[876] = BZ["GM Island"],
 	[877] = BZ["Delete ME"],
-	[878] = BZ["SouthfuryRiver"],
-	[879] = BZ["SouthfuryRiver"],
-	[880] = BZ["ThandolSpan"],
-	[881] = BZ["ThandolSpan"],
-	[896] = BZ["PurgationIsle"],
-	[916] = BZ["TheJansenStead"],
-	[917] = BZ["TheDeadAcre"],
-	[918] = BZ["TheMolsenFarm"],
-	[919] = BZ["Stendel'sPond"],
-	[920] = BZ["TheDaggerHills"],
-	[921] = BZ["Demont'sPlace"],
-	[922] = BZ["TheDustPlains"],
-	[923] = BZ["StonesplinterValley"],
-	[924] = BZ["ValleyofKings"],
-	[925] = BZ["AlgazStation"],
-	[926] = BZ["BucklebreeFarm"],
-	[927] = BZ["TheShiningStrand"],
-	[928] = BZ["NorthTide'sBeachhead"],
-	[936] = BZ["GrizzlepawRidge"],
-	[956] = BZ["TheVerdantFields"],
+	[878] = BZ["Southfury River"],
+	[879] = BZ["Southfury River"],
+	[880] = BZ["Thandol Span"],
+	[881] = BZ["Thandol Span"],
+	[896] = BZ["Purgation Isle"],
+	[916] = BZ["The Jansen Stead"],
+	[917] = BZ["The Dead Acre"],
+	[918] = BZ["The Molsen Farm"],
+	[919] = BZ["Stendel's Pond"],
+	[920] = BZ["The Dagger Hills"],
+	[921] = BZ["Demont's Place"],
+	[922] = BZ["The Dust Plains"],
+	[923] = BZ["Stonesplinter Valley"],
+	[924] = BZ["Valley of Kings"],
+	[925] = BZ["Algaz Station"],
+	[926] = BZ["Bucklebree Farm"],
+	[927] = BZ["The Shining Strand"],
+	[928] = BZ["North Tide's Beachhead"],
+	[936] = BZ["Grizzlepaw Ridge"],
+	[956] = BZ["The Verdant Fields"],
 	[976] = BZ["Gadgetzan"],
-	[977] = BZ["SteamwheedlePort"],
+	[977] = BZ["Steamwheedle Port"],
 	[978] = BZ["Zul'Farrak"],
-	[979] = BZ["SandsorrowWatch"],
-	[980] = BZ["ThistleshrubValley"],
-	[981] = BZ["TheGapingChasm"],
-	[982] = BZ["TheNoxiousLair"],
-	[983] = BZ["DunemaulCompound"],
-	[984] = BZ["EastmoonRuins"],
-	[985] = BZ["WaterspringField"],
-	[986] = BZ["Zalashji'sDen"],
-	[987] = BZ["Land'sEndBeach"],
-	[988] = BZ["WavestriderBeach"],
-	[989] = BZ["RuinsofUldum"],
-	[990] = BZ["ValleyoftheWatchers"],
-	[991] = BZ["Gunstan'sPost"],
-	[992] = BZ["SouthmoonRuins"],
-	[996] = BZ["Render'sCamp"],
-	[997] = BZ["Render'sValley"],
-	[998] = BZ["Render'sRock"],
-	[999] = BZ["StonewatchTower"],
-	[1000] = BZ["GalardellValley"],
-	[1001] = BZ["LakeridgeHighway"],
-	[1002] = BZ["ThreeCorners"],
-	[1016] = BZ["DireforgeHill"],
-	[1017] = BZ["RaptorRidge"],
-	[1018] = BZ["BlackChannelMarsh"],
-	[1019] = BZ["TheGreenBelt"],
-	[1020] = BZ["MosshideFen"],
-	[1021] = BZ["ThelgenRock"],
-	[1022] = BZ["BluegillMarsh"],
-	[1023] = BZ["SaltsprayGlen"],
-	[1024] = BZ["SundownMarsh"],
-	[1025] = BZ["TheGreenBelt"],
-	[1036] = BZ["AngerfangEncampment"],
-	[1037] = BZ["GrimBatol"],
-	[1038] = BZ["DragonmawGates"],
-	[1039] = BZ["TheLostFleet"],
-	[1056] = BZ["DarrowHill"],
-	[1057] = BZ["Thoradin'sWall"],
-	[1076] = BZ["WebwinderPath"],
-	[1097] = BZ["TheHushedBank"],
-	[1098] = BZ["ManorMistmantle"],
-	[1099] = BZ["CampMojache"],
-	[1100] = BZ["GrimtotemCompound"],
-	[1101] = BZ["TheWrithingDeep"],
-	[1102] = BZ["WildwindLake"],
-	[1103] = BZ["GordunniOutpost"],
+	[979] = BZ["Sandsorrow Watch"],
+	[980] = BZ["Thistleshrub Valley"],
+	[981] = BZ["The Gaping Chasm"],
+	[982] = BZ["The Noxious Lair"],
+	[983] = BZ["Dunemaul Compound"],
+	[984] = BZ["Eastmoon Ruins"],
+	[985] = BZ["Waterspring Field"],
+	[986] = BZ["Zalashji's Den"],
+	[987] = BZ["Land's End Beach"],
+	[988] = BZ["Wavestrider Beach"],
+	[989] = BZ["Ruins of Uldum"],
+	[990] = BZ["Valley of the Watchers"],
+	[991] = BZ["Gunstan's Post"],
+	[992] = BZ["Southmoon Ruins"],
+	[996] = BZ["Render's Camp"],
+	[997] = BZ["Render's Valley"],
+	[998] = BZ["Render's Rock"],
+	[999] = BZ["Stonewatch Tower"],
+	[1000] = BZ["Galardell Valley"],
+	[1001] = BZ["Lakeridge Highway"],
+	[1002] = BZ["Three Corners"],
+	[1016] = BZ["Direforge Hill"],
+	[1017] = BZ["Raptor Ridge"],
+	[1018] = BZ["Black Channel Marsh"],
+	[1019] = BZ["The Green Belt"],
+	[1020] = BZ["Mosshide Fen"],
+	[1021] = BZ["Thelgen Rock"],
+	[1022] = BZ["Bluegill Marsh"],
+	[1023] = BZ["Saltspray Glen"],
+	[1024] = BZ["Sundown Marsh"],
+	[1025] = BZ["The Green Belt"],
+	[1036] = BZ["Angerfang Encampment"],
+	[1037] = BZ["Grim Batol"],
+	[1038] = BZ["Dragonmaw Gates"],
+	[1039] = BZ["The Lost Fleet"],
+	[1056] = BZ["Darrow Hill"],
+	[1057] = BZ["Thoradin's Wall"],
+	[1076] = BZ["Webwinder Path"],
+	[1097] = BZ["The Hushed Bank"],
+	[1098] = BZ["Manor Mistmantle"],
+	[1099] = BZ["Camp Mojache"],
+	[1100] = BZ["Grimtotem Compound"],
+	[1101] = BZ["The Writhing Deep"],
+	[1102] = BZ["Wildwind Lake"],
+	[1103] = BZ["Gordunni Outpost"],
 	[1104] = BZ["Mok'Gordun"],
-	[1105] = BZ["FeralScarVale"],
-	[1106] = BZ["FrayfeatherHighlands"],
-	[1107] = BZ["IdlewindLake"],
-	[1108] = BZ["TheForgottenCoast"],
-	[1109] = BZ["EastPillar"],
-	[1110] = BZ["WestPillar"],
-	[1111] = BZ["DreamBough"],
-	[1112] = BZ["JademirLake"],
+	[1105] = BZ["Feral Scar Vale"],
+	[1106] = BZ["Frayfeather Highlands"],
+	[1107] = BZ["Idlewind Lake"],
+	[1108] = BZ["The Forgotten Coast"],
+	[1109] = BZ["East Pillar"],
+	[1110] = BZ["West Pillar"],
+	[1111] = BZ["Dream Bough"],
+	[1112] = BZ["Jademir Lake"],
 	[1113] = BZ["Oneiros"],
-	[1114] = BZ["RuinsofRavenwind"],
-	[1115] = BZ["RageScarHold"],
-	[1116] = BZ["RuinsofFeathermoon"],
-	[1117] = BZ["RuinsofSolarsal"],
-	[1118] = BZ["LowerWilds UNUSED"],
-	[1119] = BZ["TheTwinColossals"],
-	[1120] = BZ["SardorIsle"],
-	[1121] = BZ["IsleofDread"],
-	[1136] = BZ["HighWilderness"],
-	[1137] = BZ["LowerWilds"],
-	[1156] = BZ["SouthernBarrens"],
-	[1157] = BZ["SouthernGoldRoad"],
-	[1176] = BZ["ZulFarrak"],
-	[1196] = BZ["UtgardePinnacle"],
-	[1216] = BZ["TimbermawHold"],
-	[1217] = BZ["VanndirEncampment"],
+	[1114] = BZ["Ruins of Ravenwind"],
+	[1115] = BZ["Rage Scar Hold"],
+	[1116] = BZ["Ruins of Feathermoon"],
+	[1117] = BZ["Ruins of Solarsal"],
+	[1118] = BZ["Lower Wilds UNUSED"],
+	[1119] = BZ["The Twin Colossals"],
+	[1120] = BZ["Sardor Isle"],
+	[1121] = BZ["Isle of Dread"],
+	[1136] = BZ["High Wilderness"],
+	[1137] = BZ["Lower Wilds"],
+	[1156] = BZ["Southern Barrens [UNUSED]"],
+	[1157] = BZ["Southern Gold Road"],
+	[1176] = BZ["Zul'Farrak"],
+	[1196] = BZ["Utgarde Pinnacle"],
+	[1216] = BZ["Blackmaw Hold"],
+	[1217] = BZ["Vanndir Encampment"],
 	[1218] = BZ["TESTAzshara"],
-	[1219] = BZ["LegashEncampment"],
-	[1220] = BZ["DarnassianBaseCamp"],
-	[1221] = BZ["RuinsofEldarath"],
-	[1222] = BZ["Hetaera'sClutch"],
-	[1223] = BZ["TempleofZin-Malor"],
-	[1224] = BZ["Bear'sHead"],
+	[1219] = BZ["Legash Encampment"],
+	[1220] = BZ["Darnassian Base Camp"],
+	[1221] = BZ["Ruins of Eldarath "],
+	[1222] = BZ["Hetaera's Clutch"],
+	[1223] = BZ["Temple of Zin-Malor"],
+	[1224] = BZ["Bear's Head"],
 	[1225] = BZ["Ursolan"],
-	[1226] = BZ["RuinsofArkkoran"],
-	[1227] = BZ["BayofStorms"],
-	[1228] = BZ["TheShatteredStrand"],
-	[1229] = BZ["TowerofEldara"],
-	[1230] = BZ["JaggedReef"],
-	[1231] = BZ["SouthridgeBeach"],
-	[1232] = BZ["RavencrestMonument"],
-	[1233] = BZ["ForlornRidge"],
-	[1234] = BZ["LakeMennar"],
-	[1235] = BZ["ShadowsongShrine"],
-	[1236] = BZ["HaldarrEncampment"],
+	[1226] = BZ["Ruins of Arkkoran"],
+	[1227] = BZ["Bay of Storms"],
+	[1228] = BZ["The Shattered Strand"],
+	[1229] = BZ["Tower of Eldara"],
+	[1230] = BZ["Jagged Reef"],
+	[1231] = BZ["Southridge Beach"],
+	[1232] = BZ["Ravencrest Monument"],
+	[1233] = BZ["Forlorn Ridge"],
+	[1234] = BZ["Lake Mennar"],
+	[1235] = BZ["Shadowsong Shrine"],
+	[1236] = BZ["Haldarr Encampment"],
 	[1237] = BZ["Valormok"],
-	[1256] = BZ["TheRuinedReaches"],
-	[1276] = BZ["TalondeepVale"],
-	[1277] = BZ["TheTalondeepPath"],
-	[1296] = BZ["RocktuskFarm"],
-	[1297] = BZ["JaggedswineFarm"],
-	[1316] = BZ["RazorfenDowns"],
-	[1336] = BZ["LostRiggerCove"],
+	[1256] = BZ["The Ruined Reaches"],
+	[1276] = BZ["Talondeep Vale"],
+	[1277] = BZ["The Talondeep Path"],
+	[1296] = BZ["Rocktusk Farm"],
+	[1297] = BZ["Jaggedswine Farm"],
+	[1316] = BZ["Razorfen Downs [UNUSED]"],
+	[1336] = BZ["Lost Rigger Cove"],
 	[1337] = BZ["Uldaman"],
-	[1338] = BZ["LordamereLake"],
-	[1339] = BZ["LordamereLake"],
-	[1357] = BZ["Gallows'Corner"],
+	[1338] = BZ["Lordamere Lake"],
+	[1339] = BZ["Lordamere Lake"],
+	[1357] = BZ["Gallows' Corner"],
 	[1377] = BZ["Silithus"],
-	[1397] = BZ["EmeraldForest"],
-	[1417] = BZ["SunkenTemple"],
-	[1437] = BZ["Rockard"],
-	[1438] = BZ["NethergardeKeep"],
-	[1439] = BZ["DreadmaulPost"],
-	[1440] = BZ["Serpent'sCoil"],
-	[1441] = BZ["AltarofStorms"],
-	[1442] = BZ["FirewatchRidge"],
-	[1443] = BZ["TheSlagPit"],
-	[1444] = BZ["TheSeaofCinders"],
-	[1445] = BZ["BlackrockMountain"],
-	[1446] = BZ["ThoriumPoint"],
-	[1457] = BZ["NethergardeMines"],
-	[1477] = BZ["TheTempleOfAtalHakkar"],
+	[1397] = BZ["Emerald Forest"],
+	[1417] = BZ["Sunken Temple"],
+	[1437] = BZ["Dreadmaul Hold"],
+	[1438] = BZ["Nethergarde Keep"],
+	[1439] = BZ["Dreadmaul Post"],
+	[1440] = BZ["Serpent's Coil"],
+	[1441] = BZ["Altar of Storms"],
+	[1442] = BZ["Firewatch Ridge"],
+	[1443] = BZ["The Slag Pit"],
+	[1444] = BZ["The Sea of Cinders"],
+	[1445] = BZ["Blackrock Mountain"],
+	[1446] = BZ["Thorium Point"],
+	[1457] = BZ["Nethergarde Mines"],
+	[1477] = BZ["The Temple of Atal'Hakkar"],
 	[1497] = BZ["Undercity"],
 	[1517] = BZ["Uldaman"],
-	[1518] = BZ["NotIUsedDeadmines"],
-	[1519] = BZ["StormwindCity"],
+	[1518] = BZ["Not Used Deadmines"],
+	[1519] = BZ["Stormwind City"],
 	[1537] = BZ["Ironforge"],
-	[1557] = BZ["SplithoofHold"],
-	[1577] = BZ["TheCapeofStranglethorn"],
-	[1578] = BZ["SouthernSavageCoast"],
-	[1579] = BZ["UnusedTheDeadmines002"],
-	[1580] = BZ["UnusedIroncladCove003"],
-	[1581] = BZ["TheDeadmines"],
-	[1582] = BZ["IroncladCove"],
-	[1583] = BZ["BlackrockSpire"],
-	[1584] = BZ["BlackrockDepths"],
-	[1597] = BZ["RaptorGroundsUNUSED"],
-	[1598] = BZ["Grol'domFarmUNUSED"],
-	[1599] = BZ["Mor'shanBaseCamp"],
-	[1600] = BZ["Honor'sStandUNUSED"],
-	[1601] = BZ["BlackthornRidgeUNUSED"],
-	[1602] = BZ["BramblescarUNUSED"],
-	[1603] = BZ["Agama'gorUNUSED"],
-	[1617] = BZ["ValleyofHeroes"],
+	[1557] = BZ["Splithoof Hold"],
+	[1577] = BZ["Cape of Stranglethorn"],
+	[1578] = BZ["Southern Savage Coast"],
+	[1579] = BZ["Unused The Deadmines 002"],
+	[1580] = BZ["Unused Ironclad Cove 003"],
+	[1581] = BZ["The Deadmines"],
+	[1582] = BZ["Ironclad Cove"],
+	[1583] = BZ["Blackrock Spire"],
+	[1584] = BZ["Blackrock Depths"],
+	[1597] = BZ["Raptor Grounds UNUSED"],
+	[1598] = BZ["Grol'dom Farm UNUSED"],
+	[1599] = BZ["Mor'shan Base Camp"],
+	[1600] = BZ["Honor's Stand UNUSED"],
+	[1601] = BZ["Blackthorn Ridge UNUSED"],
+	[1602] = BZ["Bramblescar UNUSED"],
+	[1603] = BZ["Agama'gor UNUSED"],
+	[1617] = BZ["Valley of Heroes"],
 	[1637] = BZ["Orgrimmar"],
-	[1638] = BZ["ThunderBluff"],
-	[1639] = BZ["ElderRise"],
-	[1640] = BZ["SpiritRise"],
-	[1641] = BZ["HunterRise"],
+	[1638] = BZ["Thunder Bluff"],
+	[1639] = BZ["Elder Rise"],
+	[1640] = BZ["Spirit Rise"],
+	[1641] = BZ["Hunter Rise"],
 	[1657] = BZ["Darnassus"],
-	[1658] = BZ["CenarionEnclave"],
-	[1659] = BZ["Craftsmen'sTerrace"],
-	[1660] = BZ["Warrior'sTerrace"],
-	[1661] = BZ["TheTempleGardens"],
-	[1662] = BZ["Tradesmen'sTerrace"],
-	[1677] = BZ["Gavin'sNaze"],
-	[1678] = BZ["Sofera'sNaze"],
-	[1679] = BZ["Corrahn'sDagger"],
-	[1680] = BZ["TheHeadland"],
-	[1681] = BZ["MistyShore"],
-	[1682] = BZ["Dandred'sFold"],
-	[1683] = BZ["GrowlessCave"],
-	[1684] = BZ["ChillwindPoint"],
-	[1697] = BZ["RaptorGrounds"],
+	[1658] = BZ["Cenarion Enclave"],
+	[1659] = BZ["Craftsmen's Terrace"],
+	[1660] = BZ["Warrior's Terrace"],
+	[1661] = BZ["The Temple Gardens"],
+	[1662] = BZ["Tradesmen's Terrace"],
+	[1677] = BZ["Gavin's Naze"],
+	[1678] = BZ["Sofera's Naze"],
+	[1679] = BZ["Corrahn's Dagger"],
+	[1680] = BZ["The Headland"],
+	[1681] = BZ["Misty Shore"],
+	[1682] = BZ["Dandred's Fold"],
+	[1683] = BZ["Growless Cave"],
+	[1684] = BZ["Chillwind Point"],
+	[1697] = BZ["Raptor Grounds [UNUSED]"],
 	[1698] = BZ["Bramblescar"],
-	[1699] = BZ["ThornHill"],
-	[1700] = BZ["Agama'gor"],
-	[1701] = BZ["BlackthornRidge"],
-	[1702] = BZ["Honor'sStand"],
-	[1703] = BZ["TheMor'shanRampart"],
-	[1704] = BZ["Grol'domFarm"],
-	[1717] = BZ["RazorfenKraul"],
-	[1718] = BZ["TheGreatLift"],
-	[1737] = BZ["MistvaleValley"],
-	[1738] = BZ["Nek'maniWellspring"],
-	[1739] = BZ["BloodsailCompound"],
-	[1740] = BZ["VentureCo.BaseCamp"],
-	[1741] = BZ["GurubashiArena"],
-	[1742] = BZ["SpiritDen"],
-	[1757] = BZ["TheCrimsonVeil"],
-	[1758] = BZ["TheRiptide"],
-	[1759] = BZ["TheDamsel'sLuck"],
-	[1760] = BZ["VentureCo.OperationsCenter"],
-	[1761] = BZ["DeadwoodVillage"],
-	[1762] = BZ["FelpawVillage"],
+	[1699] = BZ["Thorn Hill"],
+	[1700] = BZ["Agama'gor [UNUSED]"],
+	[1701] = BZ["Blackthorn Ridge [UNUSED]"],
+	[1702] = BZ["Honor's Stand"],
+	[1703] = BZ["The Mor'shan Rampart"],
+	[1704] = BZ["Grol'dom Farm"],
+	[1717] = BZ["Razorfen Kraul"],
+	[1718] = BZ["The Great Lift [UNUSED]"],
+	[1737] = BZ["Mistvale Valley"],
+	[1738] = BZ["Nek'mani Wellspring"],
+	[1739] = BZ["Hardwrench Hideaway"],
+	[1740] = BZ["Venture Co. Base Camp"],
+	[1741] = BZ["Gurubashi Arena"],
+	[1742] = BZ["Spirit Den"],
+	[1757] = BZ["The Crimson Veil"],
+	[1758] = BZ["The Riptide"],
+	[1759] = BZ["The Damsel's Luck"],
+	[1760] = BZ["Venture Co. Operations Center"],
+	[1761] = BZ["Deadwood Village"],
+	[1762] = BZ["Felpaw Village"],
 	[1763] = BZ["Jaedenar"],
-	[1764] = BZ["BloodvenomRiver"],
-	[1765] = BZ["BloodvenomFalls"],
-	[1766] = BZ["ShatterScarVale"],
-	[1767] = BZ["IrontreeWoods"],
-	[1768] = BZ["IrontreeCavern"],
-	[1769] = BZ["TimbermawHold"],
-	[1770] = BZ["ShadowHold"],
-	[1771] = BZ["ShrineoftheDeceiver"],
-	[1777] = BZ["Itharius'sCave"],
+	[1764] = BZ["Bloodvenom River"],
+	[1765] = BZ["Bloodvenom Falls"],
+	[1766] = BZ["Shatter Scar Vale"],
+	[1767] = BZ["Irontree Woods"],
+	[1768] = BZ["Irontree Cavern"],
+	[1769] = BZ["Timbermaw Hold"],
+	[1770] = BZ["Shadow Hold"],
+	[1771] = BZ["Shrine of the Deceiver"],
+	[1777] = BZ["Purespring Cavern"],
 	[1778] = BZ["Sorrowmurk"],
-	[1779] = BZ["Draenil'durVillage"],
-	[1780] = BZ["SplinterspearJunction"],
+	[1779] = BZ["Draenil'dur Village"],
+	[1780] = BZ["Splinterspear Junction"],
 	[1797] = BZ["Stagalbog"],
-	[1798] = BZ["TheShiftingMire"],
-	[1817] = BZ["StagalbogCave"],
-	[1837] = BZ["WitherbarkCaverns"],
-	[1857] = BZ["Thoradin'sWall"],
+	[1798] = BZ["The Shifting Mire"],
+	[1817] = BZ["Stagalbog Cave"],
+	[1837] = BZ["Witherbark Caverns"],
+	[1857] = BZ["Thoradin's Wall"],
 	[1858] = BZ["Boulder'gor"],
-	[1877] = BZ["ValleyofFangs"],
-	[1878] = BZ["TehDustbowl"],
-	[1879] = BZ["MirageFlats"],
-	[1880] = BZ["Featherbeard'sHovel"],
-	[1881] = BZ["Shindigger'sCamp"],
-	[1882] = BZ["PlaguemistRavine"],
-	[1883] = BZ["ValorwindLake"],
+	[1877] = BZ["Valley of Fangs"],
+	[1878] = BZ["The Dustbowl"],
+	[1879] = BZ["Mirage Flats"],
+	[1880] = BZ["Featherbeard's Hovel"],
+	[1881] = BZ["Shindigger's Camp"],
+	[1882] = BZ["Plaguemist Ravine"],
+	[1883] = BZ["Valorwind Lake"],
 	[1884] = BZ["Agol'watha"],
-	[1885] = BZ["Hiri'wathaResearchStation"],
-	[1886] = BZ["TheCreepingRuin"],
-	[1887] = BZ["Bogen'sLedge"],
-	[1897] = BZ["TheMaker'sTerrace"],
-	[1898] = BZ["DustwindGulch"],
+	[1885] = BZ["Hiri'watha Research Station"],
+	[1886] = BZ["The Creeping Ruin"],
+	[1887] = BZ["Bogen's Ledge"],
+	[1897] = BZ["The Maker's Terrace"],
+	[1898] = BZ["Dustwind Gulch"],
 	[1917] = BZ["Shaol'watha"],
-	[1937] = BZ["NoonshadeRuins"],
-	[1938] = BZ["BrokenPillar"],
-	[1939] = BZ["AbyssalSands"],
-	[1940] = BZ["SouthbreakShore"],
-	[1941] = BZ["CavernsofTime"],
-	[1942] = BZ["TheMarshlands"],
-	[1943] = BZ["IronstonePlateau"],
-	[1957] = BZ["BlackcharCave"],
-	[1958] = BZ["TannerCamp"],
-	[1959] = BZ["DustfireValley"],
-	[1977] = BZ["ZulGurub"],
-	[1978] = BZ["MistyReedPost"],
-	[1997] = BZ["BloodvenomPost"],
-	[1998] = BZ["TalonbranchGlade"],
+	[1937] = BZ["Noonshade Ruins"],
+	[1938] = BZ["Broken Pillar"],
+	[1939] = BZ["Abyssal Sands"],
+	[1940] = BZ["Southbreak Shore"],
+	[1941] = BZ["Caverns of Time"],
+	[1942] = BZ["The Marshlands"],
+	[1943] = BZ["Ironstone Plateau"],
+	[1957] = BZ["Blackchar Cave"],
+	[1958] = BZ["Tanner Camp"],
+	[1959] = BZ["Dustfire Valley"],
+	[1977] = BZ["Zul'Gurub"],
+	[1978] = BZ["Misty Reed Post"],
+	[1997] = BZ["Bloodvenom Post "],
+	[1998] = BZ["Talonbranch Glade "],
 	[2017] = BZ["Stratholme"],
 	[2037] = BZ["Quel'thalas"],
-	[2057] = BZ["Scholomance"],
-	[2077] = BZ["TwilightVale"],
-	[2078] = BZ["TwilightShore"],
-	[2079] = BZ["AlcazIsland"],
-	[2097] = BZ["DarkcloudPinnacle"],
-	[2098] = BZ["DawningWoodCatacombs"],
-	[2099] = BZ["StonewatchKeep"],
+	[2057] = BZ["ScholomanceOLD"],
+	[2077] = BZ["Twilight Vale"],
+	[2078] = BZ["Twilight Shore"],
+	[2079] = BZ["Alcaz Island"],
+	[2097] = BZ["Darkcloud Pinnacle"],
+	[2098] = BZ["Dawning Wood Catacombs"],
+	[2099] = BZ["Stonewatch Keep"],
 	[2100] = BZ["Maraudon"],
-	[2101] = BZ["StoutlagerInn"],
-	[2102] = BZ["ThunderbrewDistillery"],
-	[2103] = BZ["MenethilKeep"],
-	[2104] = BZ["DeepwaterTavern"],
-	[2117] = BZ["ShadowGrave"],
-	[2118] = BZ["BrillTownHall"],
-	[2119] = BZ["Gallows'EndTavern"],
-	[2137] = BZ["ThePoolsofVisionUNUSED"],
-	[2138] = BZ["DreadmistDen"],
-	[2157] = BZ["Bael'dunKeep"],
-	[2158] = BZ["Emberstrife'sDen"],
-	[2159] = BZ["Onyxia'sLair"],
-	[2160] = BZ["WindshearMine"],
-	[2161] = BZ["Roland'sDoom"],
-	[2177] = BZ["BattleRing"],
-	[2197] = BZ["ThePoolsofVision"],
-	[2198] = BZ["ShadowbreakRavine"],
-	[2217] = BZ["BrokenSpearVillage"],
-	[2237] = BZ["WhitereachPost"],
+	[2101] = BZ["Stoutlager Inn"],
+	[2102] = BZ["Thunderbrew Distillery"],
+	[2103] = BZ["Menethil Keep"],
+	[2104] = BZ["Deepwater Tavern"],
+	[2117] = BZ["Shadow Grave"],
+	[2118] = BZ["Brill Town Hall"],
+	[2119] = BZ["Gallows' End Tavern"],
+	[2137] = BZ["The Pools of VisionUNUSED"],
+	[2138] = BZ["Dreadmist Den"],
+	[2157] = BZ["Bael'dun Keep [UNUSED]"],
+	[2158] = BZ["Emberstrife's Den"],
+	[2159] = BZ["Onyxia's Lair"],
+	[2160] = BZ["Windshear Mine"],
+	[2161] = BZ["Roland's Doom"],
+	[2177] = BZ["Battle Ring"],
+	[2197] = BZ["The Pools of Vision"],
+	[2198] = BZ["Shadowbreak Ravine"],
+	[2217] = BZ["Broken Spear Village"],
+	[2237] = BZ["Whitereach Post"],
 	[2238] = BZ["Gornia"],
-	[2239] = BZ["Zane'sEyeCrater"],
-	[2240] = BZ["MirageRaceway"],
-	[2241] = BZ["FrostsaberRock"],
-	[2242] = BZ["TheHiddenGrove"],
-	[2243] = BZ["TimbermawPost"],
-	[2244] = BZ["WinterfallVillage"],
+	[2239] = BZ["Zane's Eye Crater"],
+	[2240] = BZ["Mirage Raceway"],
+	[2241] = BZ["Frostsaber Rock"],
+	[2242] = BZ["The Hidden Grove"],
+	[2243] = BZ["Timbermaw Post"],
+	[2244] = BZ["Winterfall Village"],
 	[2245] = BZ["Mazthoril"],
-	[2246] = BZ["FrostfireHotSprings"],
-	[2247] = BZ["IceThistleHills"],
-	[2248] = BZ["DunMandarr"],
-	[2249] = BZ["FrostwhisperGorge"],
-	[2250] = BZ["OwlWingThicket"],
-	[2251] = BZ["LakeKel'Theril"],
-	[2252] = BZ["TheRuinsofKel'Theril"],
-	[2253] = BZ["StarfallVillage"],
-	[2254] = BZ["Ban'ThallowBarrowDen"],
+	[2246] = BZ["Frostfire Hot Springs"],
+	[2247] = BZ["Ice Thistle Hills"],
+	[2248] = BZ["Dun Mandarr"],
+	[2249] = BZ["Frostwhisper Gorge"],
+	[2250] = BZ["Owl Wing Thicket"],
+	[2251] = BZ["Lake Kel'Theril"],
+	[2252] = BZ["The Ruins of Kel'Theril"],
+	[2253] = BZ["Starfall Village"],
+	[2254] = BZ["Ban'Thallow Barrow Den"],
 	[2255] = BZ["Everlook"],
-	[2256] = BZ["DarkwhisperGorge"],
-	[2257] = BZ["DeeprunTram"],
-	[2258] = BZ["TheFungalVale"],
-	[2259] = BZ["UNUSEDTheMarrisStead"],
-	[2260] = BZ["TheMarrisStead"],
-	[2261] = BZ["TheUndercroft"],
+	[2256] = BZ["Darkwhisper Gorge"],
+	[2257] = BZ["Deeprun Tram"],
+	[2258] = BZ["The Fungal Vale"],
+	[2259] = BZ["UNUSEDThe Marris Stead"],
+	[2260] = BZ["The Marris Stead"],
+	[2261] = BZ["The Undercroft"],
 	[2262] = BZ["Darrowshire"],
-	[2263] = BZ["CrownGuardTower"],
-	[2264] = BZ["Corin'sCrossing"],
-	[2265] = BZ["ScarletBaseCamp"],
-	[2266] = BZ["Tyr'sHand"],
-	[2267] = BZ["TheScarletBasilica"],
-	[2268] = BZ["Light'sHopeChapel"],
-	[2269] = BZ["BrowmanMill"],
-	[2270] = BZ["TheNoxiousGlade"],
-	[2271] = BZ["EastwallTower"],
+	[2263] = BZ["Crown Guard Tower"],
+	[2264] = BZ["Corin's Crossing"],
+	[2265] = BZ["Death Cultist Base Camp"],
+	[2266] = BZ["Tyr's Hand"],
+	[2267] = BZ["The Scarlet Basilica"],
+	[2268] = BZ["Light's Hope Chapel"],
+	[2269] = BZ["Browman Mill"],
+	[2270] = BZ["The Noxious Glade"],
+	[2271] = BZ["Eastwall Tower"],
 	[2272] = BZ["Northdale"],
 	[2273] = BZ["Zul'Mashar"],
 	[2274] = BZ["Mazra'Alor"],
-	[2275] = BZ["NorthpassTower"],
-	[2276] = BZ["Quel'LithienLodge"],
+	[2275] = BZ["Northpass Tower"],
+	[2276] = BZ["Quel'Lithien Lodge"],
 	[2277] = BZ["Plaguewood"],
 	[2278] = BZ["Scourgehold"],
 	[2279] = BZ["Stratholme"],
-	[2280] = BZ["DONOTUSE"],
-	[2297] = BZ["DarrowmereLake"],
-	[2298] = BZ["CaerDarrow"],
-	[2299] = BZ["DarrowmereLake"],
-	[2300] = BZ["CavernsofTime"],
-	[2301] = BZ["ThistlefurVillage"],
-	[2302] = BZ["TheQuagmire"],
-	[2303] = BZ["WindbreakCanyon"],
-	[2317] = BZ["SouthSeas"],
-	[2318] = BZ["TheGreatSea"],
-	[2319] = BZ["TheGreatSea"],
-	[2320] = BZ["TheGreatSea"],
-	[2321] = BZ["TheGreatSea"],
-	[2322] = BZ["TheVeiledSea"],
-	[2323] = BZ["TheVeiledSea"],
-	[2324] = BZ["TheVeiledSea"],
-	[2325] = BZ["TheVeiledSea"],
-	[2326] = BZ["TheVeiledSea"],
-	[2337] = BZ["RazorHillBarracks"],
-	[2338] = BZ["SouthSeas"],
-	[2339] = BZ["TheGreatSea"],
-	[2357] = BZ["BloodtoothCamp"],
-	[2358] = BZ["ForestSong"],
+	[2280] = BZ["DO NOT USE"],
+	[2297] = BZ["Darrowmere Lake"],
+	[2298] = BZ["Caer Darrow"],
+	[2299] = BZ["Darrowmere Lake"],
+	[2300] = BZ["Caverns of Time"],
+	[2301] = BZ["Thistlefur Village"],
+	[2302] = BZ["The Quagmire"],
+	[2303] = BZ["Windbreak Canyon"],
+	[2317] = BZ["South Seas"],
+	[2318] = BZ["The Great Sea"],
+	[2319] = BZ["The Great Sea"],
+	[2320] = BZ["The Great Sea"],
+	[2321] = BZ["The Great Sea"],
+	[2322] = BZ["The Veiled Sea"],
+	[2323] = BZ["The Veiled Sea"],
+	[2324] = BZ["The Veiled Sea"],
+	[2325] = BZ["The Veiled Sea"],
+	[2326] = BZ["The Veiled Sea"],
+	[2337] = BZ["Razor Hill Barracks"],
+	[2338] = BZ["South Seas"],
+	[2339] = BZ["The Great Sea"],
+	[2357] = BZ["Bloodtooth Camp"],
+	[2358] = BZ["Forest Song"],
 	[2359] = BZ["Greenpaw Village"],
-	[2360] = BZ["SilverwingOutpost"],
+	[2360] = BZ["Silverwing Outpost"],
 	[2361] = BZ["Nighthaven"],
-	[2362] = BZ["ShrineofRemulos"],
-	[2363] = BZ["StormrageBarrowDens"],
-	[2364] = BZ["TheGreatSea"],
-	[2365] = BZ["TheGreatSea"],
-	[2366] = BZ["CoTTheBlackMorass"],
-	[2367] = BZ["CoTHillsbradFoothills"],
-	[2368] = BZ["TarrenMill"],
+	[2362] = BZ["Shrine of Remulos"],
+	[2363] = BZ["Stormrage Barrow Dens"],
+	[2364] = BZ["The Great Sea"],
+	[2365] = BZ["The Great Sea"],
+	[2366] = BZ["The Black Morass"],
+	[2367] = BZ["Old Hillsbrad Foothills"],
+	[2368] = BZ["Tarren Mill"],
 	[2369] = BZ["Southshore"],
-	[2370] = BZ["DurnholdeKeep"],
-	[2371] = BZ["DunGarok"],
+	[2370] = BZ["Durnholde Keep"],
+	[2371] = BZ["Dun Garok"],
 	[2372] = BZ["Hillsbrad Fields"],
-	[2373] = BZ["EasternStrand"],
-	[2374] = BZ["NethanderStead"],
-	[2375] = BZ["DarrowHill"],
-	[2376] = BZ["SouthpointTower"],
-	[2377] = BZ["Thoradin'sWall"],
-	[2378] = BZ["WesternStrand"],
-	[2379] = BZ["AzurelodeMine"],
-	[2397] = BZ["TheGreatSea"],
-	[2398] = BZ["TheGreatSea"],
-	[2399] = BZ["TheGreatSea"],
-	[2400] = BZ["TheForbiddingSea"],
-	[2401] = BZ["TheForbiddingSea"],
-	[2402] = BZ["TheForbiddingSea"],
-	[2403] = BZ["TheForbiddingSea"],
-	[2404] = BZ["TethrisAran"],
-	[2405] = BZ["EthelRethor"],
-	[2406] = BZ["RanazjarIsle"],
-	[2407] = BZ["Kormek'sHut"],
-	[2408] = BZ["ShadowpreyVillage"],
-	[2417] = BZ["BlackrockPass"],
-	[2418] = BZ["Morgan'sVigil"],
-	[2419] = BZ["SlitherRock"],
-	[2420] = BZ["TerrorWingPath"],
+	[2373] = BZ["Eastern Strand"],
+	[2374] = BZ["Nethander Stead"],
+	[2375] = BZ["Darrow Hill"],
+	[2376] = BZ["Southpoint Tower"],
+	[2377] = BZ["Thoradin's Wall"],
+	[2378] = BZ["Western Strand"],
+	[2379] = BZ["Azurelode Mine"],
+	[2397] = BZ["The Great Sea"],
+	[2398] = BZ["The Great Sea"],
+	[2399] = BZ["The Great Sea"],
+	[2400] = BZ["The Forbidding Sea"],
+	[2401] = BZ["The Forbidding Sea"],
+	[2402] = BZ["The Forbidding Sea"],
+	[2403] = BZ["The Forbidding Sea"],
+	[2404] = BZ["Tethris Aran"],
+	[2405] = BZ["Ethel Rethor"],
+	[2406] = BZ["Ranazjar Isle"],
+	[2407] = BZ["Kormek's Hut"],
+	[2408] = BZ["Shadowprey Village"],
+	[2417] = BZ["Blackrock Pass"],
+	[2418] = BZ["Morgan's Vigil"],
+	[2419] = BZ["Slither Rock"],
+	[2420] = BZ["Terror Wing Path"],
 	[2421] = BZ["Draco'dar"],
-	[2437] = BZ["Ragefire"],
-	[2457] = BZ["NightsongWoods"],
-	[2477] = BZ["TheVeiledSea"],
+	[2437] = BZ["Ragefire Chasm"],
+	[2457] = BZ["Nightsong Woods"],
+	[2477] = BZ["The Veiled Sea"],
 	[2478] = BZ["Morlos'Aran"],
-	[2479] = BZ["EmeraldSanctuary"],
-	[2480] = BZ["JadefireGlen"],
-	[2481] = BZ["RuinsofConstellas"],
-	[2497] = BZ["BitterReaches"],
-	[2517] = BZ["RiseoftheDefiler"],
-	[2518] = BZ["LarissPavilion"],
-	[2519] = BZ["WoodpawHills"],
-	[2520] = BZ["WoodpawDen"],
-	[2521] = BZ["VerdantisRiver"],
-	[2522] = BZ["RuinsofIsildien"],
-	[2537] = BZ["GrimtotemPost"],
-	[2538] = BZ["CampAparaje"],
+	[2479] = BZ["Emerald Sanctuary"],
+	[2480] = BZ["Jadefire Glen"],
+	[2481] = BZ["Ruins of Constellas"],
+	[2497] = BZ["Bitter Reaches"],
+	[2517] = BZ["Rise of the Defiler"],
+	[2518] = BZ["Lariss Pavilion"],
+	[2519] = BZ["Woodpaw Hills"],
+	[2520] = BZ["Woodpaw Den"],
+	[2521] = BZ["Verdantis River"],
+	[2522] = BZ["Ruins of Isildien"],
+	[2537] = BZ["Grimtotem Post"],
+	[2538] = BZ["Camp Aparaje"],
 	[2539] = BZ["Malaka'jin"],
-	[2540] = BZ["BoulderslideRavine"],
-	[2541] = BZ["SishirCanyon"],
-	[2557] = BZ["DireMaul"],
-	[2558] = BZ["DeadwindRavine"],
-	[2559] = BZ["DiamondheadRiver"],
-	[2560] = BZ["Ariden'sCamp"],
-	[2561] = BZ["TheVice"],
+	[2540] = BZ["Boulderslide Ravine"],
+	[2541] = BZ["Sishir Canyon"],
+	[2557] = BZ["Dire Maul"],
+	[2558] = BZ["Deadwind Ravine"],
+	[2559] = BZ["Diamondhead River"],
+	[2560] = BZ["Ariden's Camp"],
+	[2561] = BZ["The Vice"],
 	[2562] = BZ["Karazhan"],
-	[2563] = BZ["Morgan'sPlot"],
-	[2577] = BZ["DireMaul"],
-	[2597] = BZ["AlteracValley"],
-	[2617] = BZ["Scrabblescrew'sCamp"],
-	[2618] = BZ["JadefireRun"],
-	[2619] = BZ["ThondrorilRiver"],
-	[2620] = BZ["ThondrorilRiver"],
-	[2621] = BZ["LakeMereldar"],
-	[2622] = BZ["PestilentScar"],
-	[2623] = BZ["TheInfectisScar"],
-	[2624] = BZ["BlackwoodLake"],
-	[2625] = BZ["EastwallGate"],
-	[2626] = BZ["TerrorwebTunnel"],
+	[2563] = BZ["Morgan's Plot"],
+	[2577] = BZ["Dire Maul"],
+	[2597] = BZ["Alterac Valley"],
+	[2617] = BZ["Scrabblescrew's Camp"],
+	[2618] = BZ["Jadefire Run"],
+	[2619] = BZ["Thondroril River"],
+	[2620] = BZ["Thondroril River"],
+	[2621] = BZ["Lake Mereldar"],
+	[2622] = BZ["Pestilent Scar"],
+	[2623] = BZ["The Infectis Scar"],
+	[2624] = BZ["Blackwood Lake"],
+	[2625] = BZ["Eastwall Gate"],
+	[2626] = BZ["Terrorweb Tunnel"],
 	[2627] = BZ["Terrordale"],
-	[2637] = BZ["KargathiaKeep"],
-	[2657] = BZ["ValleyofBones"],
-	[2677] = BZ["BlackwingLair"],
-	[2697] = BZ["Deadman'sCrossing"],
-	[2717] = BZ["MoltenCore"],
-	[2737] = BZ["TheScarabWall"],
+	[2637] = BZ["Kargathia Keep"],
+	[2657] = BZ["Valley of Bones"],
+	[2677] = BZ["Blackwing Lair"],
+	[2697] = BZ["Deadman's Crossing"],
+	[2717] = BZ["Molten Core"],
+	[2737] = BZ["The Scarab Wall"],
 	[2738] = BZ["Southwind Village"],
-	[2739] = BZ["TwilightBaseCamp"],
-	[2740] = BZ["TheCrystalVale"],
-	[2741] = BZ["TheScarabDais"],
-	[2742] = BZ["HiveAshi"],
+	[2739] = BZ["Twilight Base Camp"],
+	[2740] = BZ["The Crystal Vale"],
+	[2741] = BZ["The Scarab Dais"],
+	[2742] = BZ["Hive'Ashi"],
 	[2743] = BZ["Hive'Zora"],
 	[2744] = BZ["Hive'Regal"],
-	[2757] = BZ["Shrineofthefallenwarrior"],
-	[2777] = BZ["AlteracValley"],
-	[2797] = BZ["BlackfathomDeeps"],
-	[2817] = BZ["CrystalsongForest"],
-	[2837] = BZ["TheMaster'sCellar"],
-	[2838] = BZ["StonewroughtPass"],
-	[2839] = BZ["AlteracValley"],
-	[2857] = BZ["TheRumbleCage"],
-	[2877] = BZ["ChunkTest"],
-	[2897] = BZ["Zoram'garOutpost"],
-	[2917] = BZ["HallofLegends"],
-	[2918] = BZ["Champions'Hall"],
-	[2937] = BZ["Grosh'gokCompound"],
-	[2938] = BZ["SleepingGorge"],
-	[2957] = BZ["IrondeepMine"],
-	[2958] = BZ["StonehearthOutpost"],
-	[2959] = BZ["DunBaldar"],
-	[2960] = BZ["IcewingPass"],
-	[2961] = BZ["FrostwolfVillage"],
-	[2962] = BZ["TowerPoint"],
-	[2963] = BZ["ColdtoothMine"],
-	[2964] = BZ["WinteraxHold"],
-	[2977] = BZ["IcebloodGarrison"],
-	[2978] = BZ["FrostwolfKeep"],
-	[2979] = BZ["Tor'krenFarm"],
-	[3017] = BZ["FrostDaggerPass"],
-	[3037] = BZ["IronstoneCamp"],
-	[3038] = BZ["Weazel'sCrater"],
-	[3039] = BZ["TahondaRuins"],
-	[3057] = BZ["FieldofStrife"],
-	[3058] = BZ["IcewingCavern"],
-	[3077] = BZ["Valor'sRest"],
-	[3097] = BZ["TheSwarmingPillar"],
-	[3098] = BZ["TwilightPost"],
-	[3099] = BZ["TwilightOutpost"],
-	[3100] = BZ["RavagedTwilightCamp"],
-	[3117] = BZ["Shalzaru'sLair"],
-	[3137] = BZ["TalrendisPoint"],
-	[3138] = BZ["RethressSanctum"],
-	[3139] = BZ["MoonHorrorDen"],
-	[3140] = BZ["Scalebeard'sCave"],
-	[3157] = BZ["BoulderslideCavern"],
-	[3177] = BZ["WarsongLaborCamp"],
-	[3197] = BZ["ChillwindCamp"],
-	[3217] = BZ["TheMaul"],
-	[3237] = BZ["TheMaulUNUSED"],
-	[3257] = BZ["BonesofGrakkarond"],
-	[3277] = BZ["WarsongGulch"],
-	[3297] = BZ["FrostwolfGraveyard"],
-	[3298] = BZ["FrostwolfPass"],
-	[3299] = BZ["DunBaldarPass"],
-	[3300] = BZ["IcebloodGraveyard"],
-	[3301] = BZ["SnowfallGraveyard"],
-	[3302] = BZ["StonehearthGraveyard"],
-	[3303] = BZ["StormpikeGraveyard"],
-	[3304] = BZ["IcewingBunker"],
-	[3305] = BZ["StonehearthBunker"],
-	[3306] = BZ["WildpawRidge"],
-	[3317] = BZ["RevantuskVillage"],
-	[3318] = BZ["RockofDurotan"],
-	[3319] = BZ["SilverwingGrove"],
-	[3320] = BZ["WarsongLumberMill"],
-	[3321] = BZ["SilverwingHold"],
-	[3337] = BZ["WildpawCavern"],
-	[3338] = BZ["TheVeiledCleft"],
-	[3357] = BZ["YojambaIsle"],
-	[3358] = BZ["ArathiBasin"],
-	[3377] = BZ["TheCoil"],
-	[3378] = BZ["MandokirsDomain"],
-	[3380] = BZ["AltaroftheBloodGod"],
-	[3382] = BZ["TempleofBethekk"],
-	[3384] = BZ["TheDevilsTerrace"],
-	[3398] = BZ["CacheofMadness"],
-	[3417] = BZ["TrollbaneHall"],
-	[3418] = BZ["Defiler'sDen"],
+	[2757] = BZ["Shrine of the Fallen Warrior"],
+	[2777] = BZ["UNUSED Alterac Valley"],
+	[2797] = BZ["Blackfathom Deeps"],
+	[2817] = BZ["Crystalsong Forest"],
+	[2837] = BZ["The Master's Cellar"],
+	[2838] = BZ["Stonewrought Pass"],
+	[2839] = BZ["Alterac Valley"],
+	[2857] = BZ["The Rumble Cage"],
+	[2877] = BZ["Chunk Test"],
+	[2897] = BZ["Zoram'gar Outpost"],
+	[2917] = BZ["Hall of Legends"],
+	[2918] = BZ["Champions' Hall"],
+	[2937] = BZ["Grosh'gok Compound"],
+	[2938] = BZ["Sleeping Gorge"],
+	[2957] = BZ["Irondeep Mine"],
+	[2958] = BZ["Stonehearth Outpost"],
+	[2959] = BZ["Dun Baldar"],
+	[2960] = BZ["Icewing Pass"],
+	[2961] = BZ["Frostwolf Village"],
+	[2962] = BZ["Tower Point"],
+	[2963] = BZ["Coldtooth Mine"],
+	[2964] = BZ["Winterax Hold"],
+	[2977] = BZ["Iceblood Garrison"],
+	[2978] = BZ["Frostwolf Keep"],
+	[2979] = BZ["Tor'kren Farm"],
+	[3017] = BZ["Frost Dagger Pass"],
+	[3037] = BZ["Ironstone Camp"],
+	[3038] = BZ["Weazel's Crater"],
+	[3039] = BZ["Tahonda Ruins"],
+	[3057] = BZ["Field of Strife"],
+	[3058] = BZ["Icewing Cavern"],
+	[3077] = BZ["Valor's Rest"],
+	[3097] = BZ["The Swarming Pillar"],
+	[3098] = BZ["Twilight Post"],
+	[3099] = BZ["Twilight Outpost"],
+	[3100] = BZ["Ravaged Twilight Camp"],
+	[3117] = BZ["Shalzaru's Lair"],
+	[3137] = BZ["Talrendis Point"],
+	[3138] = BZ["Rethress Sanctum"],
+	[3139] = BZ["Moon Horror Den"],
+	[3140] = BZ["Scalebeard's Cave"],
+	[3157] = BZ["Boulderslide Cavern"],
+	[3177] = BZ["Warsong Labor Camp"],
+	[3197] = BZ["Chillwind Camp"],
+	[3217] = BZ["The Maul"],
+	[3237] = BZ["The Maul UNUSED"],
+	[3257] = BZ["Bones of Grakkarond"],
+	[3277] = BZ["Warsong Gulch"],
+	[3297] = BZ["Frostwolf Graveyard"],
+	[3298] = BZ["Frostwolf Pass"],
+	[3299] = BZ["Dun Baldar Pass"],
+	[3300] = BZ["Iceblood Graveyard"],
+	[3301] = BZ["Snowfall Graveyard"],
+	[3302] = BZ["Stonehearth Graveyard"],
+	[3303] = BZ["Stormpike Graveyard"],
+	[3304] = BZ["Icewing Bunker"],
+	[3305] = BZ["Stonehearth Bunker"],
+	[3306] = BZ["Wildpaw Ridge"],
+	[3317] = BZ["Revantusk Village"],
+	[3318] = BZ["Rock of Durotan"],
+	[3319] = BZ["Silverwing Grove"],
+	[3320] = BZ["Warsong Lumber Mill"],
+	[3321] = BZ["Silverwing Hold"],
+	[3337] = BZ["Wildpaw Cavern"],
+	[3338] = BZ["The Veiled Cleft"],
+	[3357] = BZ["Yojamba Isle"],
+	[3358] = BZ["Arathi Basin"],
+	[3377] = BZ["The Coil"],
+	[3378] = BZ["Mandokir's Domain"],
+	[3380] = BZ["Altar of the Blood God"],
+	[3382] = BZ["Temple of Bethekk"],
+	[3384] = BZ["The Devil's Terrace"],
+	[3398] = BZ["The Cache of Madness"],
+	[3417] = BZ["Trollbane Hall"],
+	[3418] = BZ["Defiler's Den"],
 	[3420] = BZ["Farm"],
 	[3421] = BZ["Blacksmith"],
-	[3422] = BZ["LumberMill"],
-	[3423] = BZ["GoldMine"],
+	[3422] = BZ["Lumber Mill"],
+	[3423] = BZ["Gold Mine"],
 	[3424] = BZ["Stables"],
-	[3425] = BZ["CenarionHold"],
-	[3426] = BZ["StaghelmPoint"],
-	[3427] = BZ["BronzebeardEncampment"],
+	[3425] = BZ["Cenarion Hold"],
+	[3426] = BZ["Staghelm Point"],
+	[3427] = BZ["Bronzebeard Encampment"],
 	[3428] = BZ["Ahn'Qiraj"],
-	[3429] = BZ["RuinsofAhn'Qiraj"],
-	[3430] = BZ["EversongWoods"],
-	[3431] = BZ["SunstriderIsle"],
-	[3432] = BZ["ShrineofDath'Remar"],
+	[3429] = BZ["Ruins of Ahn'Qiraj"],
+	[3430] = BZ["Eversong Woods"],
+	[3431] = BZ["Sunstrider Isle"],
+	[3432] = BZ["Shrine of Dath'Remar"],
 	[3433] = BZ["Ghostlands"],
-	[3434] = BZ["ScarabTerrace"],
-	[3435] = BZ["General'sTerrace"],
-	[3436] = BZ["TheReservoir"],
-	[3437] = BZ["TheHatchery"],
-	[3438] = BZ["TheComb"],
-	[3439] = BZ["Watchers'Terrace"],
-	[3440] = BZ["ScarabTerrace"],
-	[3441] = BZ["General'sTerrace"],
-	[3442] = BZ["TheReservoir"],
-	[3443] = BZ["TheHatchery"],
-	[3444] = BZ["TheComb"],
-	[3445] = BZ["Watchers'Terrace"],
-	[3446] = BZ["TwilightsRun"],
-	[3447] = BZ["Ortell'sHideout"],
-	[3448] = BZ["ScarabTerrace"],
-	[3449] = BZ["General'sTerrace"],
-	[3450] = BZ["TheReservoir"],
-	[3451] = BZ["TheHatchery"],
-	[3452] = BZ["TheComb"],
-	[3453] = BZ["Watchers'Terrace"],
-	[3454] = BZ["RuinsofAhn'Qiraj"],
-	[3455] = BZ["TheNorthSea"],
-	[3456] = BZ["Naxxrammas"],
+	[3434] = BZ["Scarab Terrace"],
+	[3435] = BZ["General's Terrace"],
+	[3436] = BZ["The Reservoir"],
+	[3437] = BZ["The Hatchery"],
+	[3438] = BZ["The Comb"],
+	[3439] = BZ["Watchers' Terrace"],
+	[3440] = BZ["Scarab Terrace"],
+	[3441] = BZ["General's Terrace"],
+	[3442] = BZ["The Reservoir"],
+	[3443] = BZ["The Hatchery"],
+	[3444] = BZ["The Comb"],
+	[3445] = BZ["Watchers' Terrace"],
+	[3446] = BZ["Twilight's Run"],
+	[3447] = BZ["Ortell's Hideout"],
+	[3448] = BZ["Scarab Terrace"],
+	[3449] = BZ["General's Terrace"],
+	[3450] = BZ["The Reservoir"],
+	[3451] = BZ["The Hatchery"],
+	[3452] = BZ["The Comb"],
+	[3453] = BZ["Watchers' Terrace"],
+	[3454] = BZ["Ruins of Ahn'Qiraj"],
+	[3455] = BZ["The North Sea"],
+	[3456] = BZ["Naxxramas"],
 	[3457] = BZ["Karazhan"],
-	[3459] = BZ["CityChannel"],
-	[3460] = BZ["GoldenStrand"],
-	[3461] = BZ["SunsailAnchorage"],
-	[3462] = BZ["FairbreezeVillage"],
-	[3463] = BZ["MagistersGate"],
-	[3464] = BZ["FarstriderRetreat"],
-	[3465] = BZ["NorthSanctum"],
-	[3466] = BZ["WestSanctum"],
-	[3467] = BZ["EastSnactum"],
-	[3468] = BZ["Saltheril'sHaven"],
-	[3469] = BZ["Thuron'sLivery"],
-	[3470] = BZ["StillwhisperPond"],
-	[3471] = BZ["TheLivingWood"],
-	[3472] = BZ["AzurebreezeCoast"],
-	[3473] = BZ["LakeElrendar"],
-	[3474] = BZ["TheScorchedGrove"],
+	[3459] = BZ["City"],
+	[3460] = BZ["Golden Strand"],
+	[3461] = BZ["Sunsail Anchorage"],
+	[3462] = BZ["Fairbreeze Village"],
+	[3463] = BZ["Magisters Gate"],
+	[3464] = BZ["Farstrider Retreat"],
+	[3465] = BZ["North Sanctum"],
+	[3466] = BZ["West Sanctum"],
+	[3467] = BZ["East Sanctum"],
+	[3468] = BZ["Saltheril's Haven"],
+	[3469] = BZ["Thuron's Livery"],
+	[3470] = BZ["Stillwhisper Pond"],
+	[3471] = BZ["The Living Wood"],
+	[3472] = BZ["Azurebreeze Coast"],
+	[3473] = BZ["Lake Elrendar"],
+	[3474] = BZ["The Scorched Grove"],
 	[3475] = BZ["Zeb'Watha"],
 	[3476] = BZ["Tor'Watha"],
-	[3477] = BZ["AzjolNerub"],
-	[3478] = BZ["GatesofAhn'Qiraj"],
-	[3479] = BZ["TheGreatSeaDraeneiIsles"],
-	[3480] = BZ["DuskwitherGrounds"],
-	[3481] = BZ["DuskwitherSpire"],
-	[3482] = BZ["TheDeadScar"],
-	[3483] = BZ["Hellfire"],
-	[3484] = BZ["TheSunspire"],
-	[3485] = BZ["FalthrienAcademy"],
-	[3486] = BZ["RavenholdtManor"],
-	[3487] = BZ["SilvermoonCity"],
+	[3477] = BZ["Azjol-Nerub"],
+	[3478] = BZ["Gates of Ahn'Qiraj"],
+	[3479] = BZ["The Veiled Sea"],
+	[3480] = BZ["Duskwither Grounds"],
+	[3481] = BZ["Duskwither Spire"],
+	[3482] = BZ["The Dead Scar"],
+	[3483] = BZ["Hellfire Peninsula"],
+	[3484] = BZ["The Sunspire"],
+	[3485] = BZ["Falthrien Academy"],
+	[3486] = BZ["Ravenholdt Manor"],
+	[3487] = BZ["Silvermoon City"],
 	[3488] = BZ["Tranquillien"],
-	[3489] = BZ["SuncrownVillage"],
-	[3490] = BZ["GoldenmistVillage"],
-	[3491] = BZ["WindrunnerVillage"],
-	[3492] = BZ["WindrunnerSpire"],
-	[3493] = BZ["SanctumoftheSun"],
-	[3494] = BZ["SanctumoftheMoon"],
-	[3495] = BZ["DawnstarSpire"],
-	[3496] = BZ["FarstriderEnclave"],
+	[3489] = BZ["Suncrown Village"],
+	[3490] = BZ["Goldenmist Village"],
+	[3491] = BZ["Windrunner Village"],
+	[3492] = BZ["Windrunner Spire"],
+	[3493] = BZ["Sanctum of the Sun"],
+	[3494] = BZ["Sanctum of the Moon"],
+	[3495] = BZ["Dawnstar Spire"],
+	[3496] = BZ["Farstrider Enclave"],
 	[3497] = BZ["An'daroth"],
 	[3498] = BZ["An'telas"],
 	[3499] = BZ["An'owyn"],
 	[3500] = BZ["Deatholme"],
-	[3501] = BZ["BleedingZiggurat"],
-	[3502] = BZ["HowlingZiggurat"],
-	[3503] = BZ["ShalandisIsle"],
-	[3504] = BZ["TorylEstate"],
-	[3505] = BZ["UnderlightMines"],
-	[3506] = BZ["AndilienEstate"],
-	[3507] = BZ["HatchetHills"],
-	[3508] = BZ["AmaniPass"],
-	[3509] = BZ["SungrazePeak"],
-	[3510] = BZ["AmaniCatacombs"],
-	[3511] = BZ["ToweroftheDamned"],
+	[3501] = BZ["Bleeding Ziggurat"],
+	[3502] = BZ["Howling Ziggurat"],
+	[3503] = BZ["Shalandis Isle"],
+	[3504] = BZ["Toryl Estate"],
+	[3505] = BZ["Underlight Mines"],
+	[3506] = BZ["Andilien Estate"],
+	[3507] = BZ["Hatchet Hills"],
+	[3508] = BZ["Amani Pass"],
+	[3509] = BZ["Sungraze Peak"],
+	[3510] = BZ["Amani Catacombs"],
+	[3511] = BZ["Tower of the Damned"],
 	[3512] = BZ["Zeb'Sora"],
-	[3513] = BZ["LakeElrendar"],
-	[3514] = BZ["TheDeadScar"],
-	[3515] = BZ["ElrendarRiver"],
+	[3513] = BZ["Lake Elrendar"],
+	[3514] = BZ["The Dead Scar"],
+	[3515] = BZ["Elrendar River"],
 	[3516] = BZ["Zeb'Tela"],
 	[3517] = BZ["Zeb'Nowa"],
 	[3518] = BZ["Nagrand"],
-	[3519] = BZ["TerokkarForest"],
-	[3520] = BZ["ShadowmoonValley"],
+	[3519] = BZ["Terokkar Forest"],
+	[3520] = BZ["Shadowmoon Valley"],
 	[3521] = BZ["Zangarmarsh"],
-	[3522] = BZ["BladesEdgeMountains"],
+	[3522] = BZ["Blade's Edge Mountains"],
 	[3523] = BZ["Netherstorm"],
-	[3524] = BZ["AzuremystIsle"],
-	[3525] = BZ["BloodmystIsle"],
-	[3526] = BZ["AmmenVale"],
-	[3527] = BZ["CrashSite"],
-	[3528] = BZ["SilverlineLake"],
-	[3529] = BZ["NestlewoodThicket"],
-	[3530] = BZ["ShadowRidge"],
-	[3531] = BZ["SkulkingRow"],
-	[3532] = BZ["DawningLane"],
-	[3533] = BZ["RuinsofSilvermoon"],
-	[3534] = BZ["Feth'sWay"],
+	[3524] = BZ["Azuremyst Isle"],
+	[3525] = BZ["Bloodmyst Isle"],
+	[3526] = BZ["Ammen Vale"],
+	[3527] = BZ["Crash Site"],
+	[3528] = BZ["Silverline Lake"],
+	[3529] = BZ["Nestlewood Thicket"],
+	[3530] = BZ["Shadow Ridge"],
+	[3531] = BZ["Skulking Row"],
+	[3532] = BZ["Dawning Lane"],
+	[3533] = BZ["Ruins of Silvermoon"],
+	[3534] = BZ["Feth's Way"],
 	[3536] = BZ["Thrallmar"],
-	[3537] = BZ["BoreanTundra"],
-	[3538] = BZ["HonorHold"],
-	[3539] = BZ["TheStairofDestiny"],
-	[3540] = BZ["TwistingNether"],
-	[3541] = BZ["ForgeCamp:Mageddon"],
-	[3542] = BZ["ThePathofGlory"],
-	[3543] = BZ["TheGreatFissure"],
-	[3544] = BZ["PlainofShards"],
-	[3545] = BZ["HellfireCitadel"],
-	[3546] = BZ["ExpeditionArmory"],
-	[3547] = BZ["ThroneofKil'jaeden"],
-	[3548] = BZ["ForgeCamp:Rage"],
-	[3549] = BZ["InvasionPoint:Annihilator"],
-	[3550] = BZ["BoruneRuins"],
-	[3551] = BZ["RuinsofShanaar"],
-	[3552] = BZ["TempleofTelhamat"],
-	[3553] = BZ["PoolsofAggonar"],
-	[3554] = BZ["FalconWatch"],
-	[3555] = BZ["Mag'harPost"],
-	[3556] = BZ["DenofHaal'esh"],
-	[3557] = BZ["TheExodar"],
-	[3558] = BZ["ElrendarFalls"],
-	[3559] = BZ["NestlewoodHills"],
-	[3560] = BZ["AmmenFields"],
-	[3561] = BZ["TheSacredGrove"],
-	[3562] = BZ["HellfireRamparts"],
-	[3563] = BZ["HellfireCitadel"],
+	[3537] = BZ["Borean Tundra"],
+	[3538] = BZ["Honor Hold"],
+	[3539] = BZ["The Stair of Destiny"],
+	[3540] = BZ["Twisting Nether"],
+	[3541] = BZ["Forge Camp: Mageddon"],
+	[3542] = BZ["The Path of Glory"],
+	[3543] = BZ["The Great Fissure"],
+	[3544] = BZ["Plain of Shards"],
+	[3545] = BZ["Hellfire Citadel"],
+	[3546] = BZ["Expedition Armory"],
+	[3547] = BZ["Throne of Kil'jaeden"],
+	[3548] = BZ["Forge Camp: Rage"],
+	[3549] = BZ["Invasion Point: Annihilator"],
+	[3550] = BZ["Borune Ruins"],
+	[3551] = BZ["Ruins of Sha'naar"],
+	[3552] = BZ["Temple of Telhamat"],
+	[3553] = BZ["Pools of Aggonar"],
+	[3554] = BZ["Falcon Watch"],
+	[3555] = BZ["Mag'har Post"],
+	[3556] = BZ["Den of Haal'esh"],
+	[3557] = BZ["The Exodar"],
+	[3558] = BZ["Elrendar Falls"],
+	[3559] = BZ["Nestlewood Hills"],
+	[3560] = BZ["Ammen Fields"],
+	[3561] = BZ["The Sacred Grove"],
+	[3562] = BZ["Hellfire Ramparts"],
+	[3563] = BZ["Hellfire Citadel"],
 	[3564] = BZ["Emberglade"],
-	[3565] = BZ["CenarionRefuge"],
-	[3566] = BZ["MoonwingDen"],
-	[3567] = BZ["PodCluster"],
-	[3568] = BZ["PodWreckage"],
-	[3569] = BZ["TidesHollow"],
-	[3570] = BZ["WrathscalePoint"],
-	[3571] = BZ["BristlelimbVillage"],
-	[3572] = BZ["StillpineHold"],
-	[3573] = BZ["Odesyus'Landing"],
-	[3574] = BZ["Valaar'sBerth"],
-	[3575] = BZ["SiltingShore"],
-	[3576] = BZ["AzureWatch"],
-	[3577] = BZ["Geezle'sCamp"],
-	[3578] = BZ["MenagerieWreckage"],
-	[3579] = BZ["Traitor'sCove"],
-	[3580] = BZ["WildwindPeak"],
-	[3581] = BZ["WildwindPath"],
-	[3582] = BZ["ZethGor"],
-	[3583] = BZ["BerylCoast"],
-	[3584] = BZ["BloodWatch"],
+	[3565] = BZ["Cenarion Refuge"],
+	[3566] = BZ["Moonwing Den"],
+	[3567] = BZ["Pod Cluster"],
+	[3568] = BZ["Pod Wreckage"],
+	[3569] = BZ["Tides' Hollow"],
+	[3570] = BZ["Wrathscale Point"],
+	[3571] = BZ["Bristlelimb Village"],
+	[3572] = BZ["Stillpine Hold"],
+	[3573] = BZ["Odesyus' Landing"],
+	[3574] = BZ["Valaar's Berth"],
+	[3575] = BZ["Silting Shore"],
+	[3576] = BZ["Azure Watch"],
+	[3577] = BZ["Geezle's Camp"],
+	[3578] = BZ["Menagerie Wreckage"],
+	[3579] = BZ["Traitor's Cove"],
+	[3580] = BZ["Wildwind Peak"],
+	[3581] = BZ["Wildwind Path"],
+	[3582] = BZ["Zeth'Gor"],
+	[3583] = BZ["Beryl Coast"],
+	[3584] = BZ["Blood Watch"],
 	[3585] = BZ["Bladewood"],
-	[3586] = BZ["TheVectorCoil"],
-	[3587] = BZ["TheWarpPiston"],
-	[3588] = BZ["TheCryo-Core"],
-	[3589] = BZ["TheCrimsonReach"],
-	[3590] = BZ["WrathscaleLair"],
-	[3591] = BZ["RuinsofLoreth'Aran"],
+	[3586] = BZ["The Vector Coil"],
+	[3587] = BZ["The Warp Piston"],
+	[3588] = BZ["The Cryo-Core"],
+	[3589] = BZ["The Crimson Reach"],
+	[3590] = BZ["Wrathscale Lair"],
+	[3591] = BZ["Ruins of Loreth'Aran"],
 	[3592] = BZ["Nazzivian"],
 	[3593] = BZ["Axxarien"],
-	[3594] = BZ["BlacksiltShore"],
-	[3595] = BZ["TheFoulPool"],
-	[3596] = BZ["TheHiddenReef"],
-	[3597] = BZ["AmberwebPass"],
-	[3598] = BZ["WyrmscarIsland"],
-	[3599] = BZ["TalonStand"],
-	[3600] = BZ["BristlelimbEnclave"],
-	[3601] = BZ["RagefeatherRidge"],
-	[3602] = BZ["Kessel'sCrossing"],
-	[3603] = BZ["Tel'athion'sCamp"],
-	[3604] = BZ["TheBloodcursedReef"],
-	[3605] = BZ["HyjalPast"],
-	[3606] = BZ["CoTMountHyjal"],
-	[3607] = BZ["CoilfangReservoir"],
-	[3608] = BZ["Vindicator'sRest"],
+	[3594] = BZ["Blacksilt Shore"],
+	[3595] = BZ["The Foul Pool"],
+	[3596] = BZ["The Hidden Reef"],
+	[3597] = BZ["Amberweb Pass"],
+	[3598] = BZ["Wyrmscar Island"],
+	[3599] = BZ["Talon Stand"],
+	[3600] = BZ["Bristlelimb Enclave"],
+	[3601] = BZ["Ragefeather Ridge"],
+	[3602] = BZ["Kessel's Crossing"],
+	[3603] = BZ["Tel'athion's Camp"],
+	[3604] = BZ["The Bloodcursed Reef"],
+	[3605] = BZ["Hyjal Past"],
+	[3606] = BZ["Hyjal Summit"],
+	[3607] = BZ["Serpentshrine Cavern"],
+	[3608] = BZ["Vindicator's Rest"],
 	[3609] = BZ["Unused3"],
-	[3610] = BZ["BurningBladeRuins"],
-	[3611] = BZ["ClanWatch"],
-	[3612] = BZ["BloodcurseIsle"],
+	[3610] = BZ["Burning Blade Ruins"],
+	[3611] = BZ["Clan Watch"],
+	[3612] = BZ["Bloodcurse Isle"],
 	[3613] = BZ["Garadar"],
-	[3614] = BZ["SkysongLake"],
-	[3615] = BZ["ThroneoftheElements"],
-	[3616] = BZ["LaughingSkullRuins"],
-	[3617] = BZ["WarmaulHill"],
-	[3618] = BZ["Gruul'sLair"],
-	[3619] = BZ["AurenRidge"],
-	[3620] = BZ["AurenFalls"],
-	[3621] = BZ["LakeSunspring"],
-	[3622] = BZ["SunspringPost"],
-	[3623] = BZ["AerisLanding"],
-	[3624] = BZ["ForgeCamp:Fear"],
-	[3625] = BZ["ForgeCamp:Hate"],
+	[3614] = BZ["Skysong Lake"],
+	[3615] = BZ["Throne of the Elements"],
+	[3616] = BZ["Laughing Skull Ruins"],
+	[3617] = BZ["Warmaul Hill"],
+	[3618] = BZ["Gruul's Lair"],
+	[3619] = BZ["Auren Ridge"],
+	[3620] = BZ["Auren Falls"],
+	[3621] = BZ["Lake Sunspring"],
+	[3622] = BZ["Sunspring Post"],
+	[3623] = BZ["Aeris Landing"],
+	[3624] = BZ["Forge Camp: Fear"],
+	[3625] = BZ["Forge Camp: Hate"],
 	[3626] = BZ["Telaar"],
-	[3627] = BZ["NorthwindCleft"],
+	[3627] = BZ["Northwind Cleft"],
 	[3628] = BZ["Halaa"],
-	[3629] = BZ["SouthwindCleft"],
-	[3630] = BZ["Oshugun"],
-	[3631] = BZ["SpiritFields"],
+	[3629] = BZ["Southwind Cleft"],
+	[3630] = BZ["Oshu'gun"],
+	[3631] = BZ["Spirit Fields"],
 	[3632] = BZ["Shamanar"],
-	[3633] = BZ["AncestralGrounds"],
-	[3634] = BZ["WindyreedVillage"],
+	[3633] = BZ["Ancestral Grounds"],
+	[3634] = BZ["Windyreed Village"],
 	[3635] = BZ["Unused2"],
-	[3636] = BZ["ElementalPlateau"],
-	[3637] = BZ["KilsorrowFortress"],
-	[3638] = BZ["TheRingofTrials"],
-	[3639] = BZ["SilvermystIsle"],
-	[3640] = BZ["DaggerfenVillage"],
-	[3641] = BZ["UmbrafenVillage"],
-	[3642] = BZ["FeralfenVillage"],
-	[3643] = BZ["BloodscaleEnclave"],
+	[3636] = BZ["Elemental Plateau"],
+	[3637] = BZ["Kil'sorrow Fortress"],
+	[3638] = BZ["The Ring of Trials"],
+	[3639] = BZ["Silvermyst Isle"],
+	[3640] = BZ["Daggerfen Village"],
+	[3641] = BZ["Umbrafen Village"],
+	[3642] = BZ["Feralfen Village"],
+	[3643] = BZ["Bloodscale Enclave"],
 	[3644] = BZ["Telredor"],
-	[3645] = BZ["Zabrajin"],
-	[3646] = BZ["QuaggRidge"],
-	[3647] = BZ["TheSpawningGlen"],
-	[3648] = BZ["TheDeadMire"],
+	[3645] = BZ["Zabra'jin"],
+	[3646] = BZ["Quagg Ridge"],
+	[3647] = BZ["The Spawning Glen"],
+	[3648] = BZ["The Dead Mire"],
 	[3649] = BZ["Sporeggar"],
-	[3650] = BZ["AngoroshGrounds"],
-	[3651] = BZ["AngoroshStronghold"],
-	[3652] = BZ["FunggorCavern"],
-	[3653] = BZ["SerpentLake"],
-	[3654] = BZ["TheDrain"],
-	[3655] = BZ["UmbrafenLake"],
-	[3656] = BZ["MarshlightLake"],
-	[3657] = BZ["PortalClearing"],
-	[3658] = BZ["SporewindLake"],
-	[3659] = BZ["TheLagoon"],
-	[3660] = BZ["BladesRun"],
-	[3661] = BZ["BladeToothCanyon"],
-	[3662] = BZ["CommonsHall"],
-	[3663] = BZ["DerelictManor"],
-	[3664] = BZ["HuntressoftheSun"],
-	[3665] = BZ["FalconwingSquare"],
-	[3666] = BZ["HalaaniBasin"],
-	[3667] = BZ["HewnBog"],
-	[3668] = BZ["Boha'muRuins"],
-	[3669] = BZ["TheStadium"],
-	[3670] = BZ["TheOverlook"],
-	[3671] = BZ["BrokenHill"],
-	[3672] = BZ["Mag'hariProcession"],
-	[3673] = BZ["NesingwarySafari"],
-	[3674] = BZ["CenarionThicket"],
+	[3650] = BZ["Ango'rosh Grounds"],
+	[3651] = BZ["Ango'rosh Stronghold"],
+	[3652] = BZ["Funggor Cavern"],
+	[3653] = BZ["Serpent Lake"],
+	[3654] = BZ["The Drain"],
+	[3655] = BZ["Umbrafen Lake"],
+	[3656] = BZ["Marshlight Lake"],
+	[3657] = BZ["Portal Clearing"],
+	[3658] = BZ["Sporewind Lake"],
+	[3659] = BZ["The Lagoon"],
+	[3660] = BZ["Blades' Run"],
+	[3661] = BZ["Blade Tooth Canyon"],
+	[3662] = BZ["Commons Hall"],
+	[3663] = BZ["Derelict Manor"],
+	[3664] = BZ["Huntress of the Sun"],
+	[3665] = BZ["Falconwing Square"],
+	[3666] = BZ["Halaani Basin"],
+	[3667] = BZ["Hewn Bog"],
+	[3668] = BZ["Boha'mu Ruins"],
+	[3669] = BZ["The Stadium"],
+	[3670] = BZ["The Overlook"],
+	[3671] = BZ["Broken Hill"],
+	[3672] = BZ["Mag'hari Procession"],
+	[3673] = BZ["Nesingwary Safari"],
+	[3674] = BZ["Cenarion Thicket"],
 	[3675] = BZ["Tuurem"],
-	[3676] = BZ["VeilShienor"],
-	[3677] = BZ["VeilSkith"],
-	[3678] = BZ["VeilShalas"],
+	[3676] = BZ["Veil Shienor"],
+	[3677] = BZ["Veil Skith"],
+	[3678] = BZ["Veil Shalas"],
 	[3679] = BZ["Skettis"],
-	[3680] = BZ["BlackwindValley"],
-	[3681] = BZ["FirewingPoint"],
-	[3682] = BZ["GrangolvarVillage"],
-	[3683] = BZ["StonebreakerHold"],
-	[3684] = BZ["AllerianStronghold"],
-	[3685] = BZ["BonechewerRuins"],
-	[3686] = BZ["VeilLithic"],
+	[3680] = BZ["Blackwind Valley"],
+	[3681] = BZ["Firewing Point"],
+	[3682] = BZ["Grangol'var Village"],
+	[3683] = BZ["Stonebreaker Hold"],
+	[3684] = BZ["Allerian Stronghold"],
+	[3685] = BZ["Bonechewer Ruins"],
+	[3686] = BZ["Veil Lithic"],
 	[3687] = BZ["Olembas"],
 	[3688] = BZ["Auchindoun"],
-	[3689] = BZ["VeilReskk"],
-	[3690] = BZ["BlackwindLake"],
-	[3691] = BZ["LakeEre'Noru"],
-	[3692] = BZ["LakeJorune"],
-	[3693] = BZ["SkethylMountains"],
-	[3694] = BZ["MistyRidge"],
-	[3695] = BZ["TheBrokenHills"],
-	[3696] = BZ["TheBarrierHills"],
-	[3697] = BZ["TheBoneWastes"],
-	[3698] = BZ["NagrandArena"],
-	[3699] = BZ["LaughingSkullCourtyard"],
-	[3700] = BZ["TheRingofBlood"],
-	[3701] = BZ["ArenaFloor"],
-	[3702] = BZ["BladesEdgeArena"],
-	[3703] = BZ["ShattrathCity"],
-	[3704] = BZ["TheShepherdsGate"],
-	[3705] = BZ["TelaariBasin"],
-	[3706] = BZ["TheDarkPortal"],
-	[3707] = BZ["AllianceBase"],
-	[3708] = BZ["HordeEncampment"],
-	[3709] = BZ["NightElfVillage"],
+	[3689] = BZ["Veil Reskk"],
+	[3690] = BZ["Blackwind Lake"],
+	[3691] = BZ["Lake Ere'Noru"],
+	[3692] = BZ["Lake Jorune"],
+	[3693] = BZ["Skethyl Mountains"],
+	[3694] = BZ["Misty Ridge"],
+	[3695] = BZ["The Broken Hills"],
+	[3696] = BZ["The Barrier Hills"],
+	[3697] = BZ["The Bone Wastes"],
+	[3698] = BZ["Nagrand Arena"],
+	[3699] = BZ["Laughing Skull Courtyard"],
+	[3700] = BZ["The Ring of Blood"],
+	[3701] = BZ["Arena Floor"],
+	[3702] = BZ["Blade's Edge Arena"],
+	[3703] = BZ["Shattrath City"],
+	[3704] = BZ["The Shepherd's Gate"],
+	[3705] = BZ["Telaari Basin"],
+	[3706] = BZ["The Dark Portal"],
+	[3707] = BZ["Alliance Base"],
+	[3708] = BZ["Horde Encampment"],
+	[3709] = BZ["Night Elf Village"],
 	[3710] = BZ["Nordrassil"],
-	[3711] = BZ["SholazarBasin"],
-	[3712] = BZ["Area52"],
-	[3713] = BZ["TheBloodFurnace"],
-	[3714] = BZ["TheShatteredHalls"],
-	[3715] = BZ["TheSteamvault"],
-	[3716] = BZ["TheUnderbog"],
-	[3717] = BZ["TheSlavePens"],
-	[3718] = BZ["SwampratPost"],
-	[3719] = BZ["BleedingHollowRuins"],
-	[3720] = BZ["TwinSpireRuins"],
-	[3721] = BZ["TheCrumblingWaste"],
-	[3722] = BZ["ManaforgeAra"],
-	[3723] = BZ["ArklonRuins"],
+	[3711] = BZ["Sholazar Basin"],
+	[3712] = BZ["Area 52"],
+	[3713] = BZ["The Blood Furnace"],
+	[3714] = BZ["The Shattered Halls"],
+	[3715] = BZ["The Steamvault"],
+	[3716] = BZ["The Underbog"],
+	[3717] = BZ["The Slave Pens"],
+	[3718] = BZ["Swamprat Post"],
+	[3719] = BZ["Bleeding Hollow Ruins"],
+	[3720] = BZ["Twin Spire Ruins"],
+	[3721] = BZ["The Crumbling Waste"],
+	[3722] = BZ["Manaforge Ara"],
+	[3723] = BZ["Arklon Ruins"],
 	[3724] = BZ["Cosmowrench"],
-	[3725] = BZ["RuinsofEnkaat"],
-	[3726] = BZ["ManaforgeBnaar"],
-	[3727] = BZ["TheScrapField"],
-	[3728] = BZ["TheVortexFields"],
-	[3729] = BZ["TheHeap"],
-	[3730] = BZ["ManaforgeCoruu"],
-	[3731] = BZ["TheTempestRift"],
-	[3732] = BZ["KirinVarVillage"],
-	[3733] = BZ["TheVioletTower"],
-	[3734] = BZ["ManaforgeDuro"],
-	[3735] = BZ["VoidwindPlateau"],
-	[3736] = BZ["ManaforgeUltris"],
-	[3737] = BZ["CelestialRidge"],
-	[3738] = BZ["TheStormspire"],
-	[3739] = BZ["ForgeBaseOblivion"],
-	[3740] = BZ["ForgeBaseGehenna"],
-	[3741] = BZ["RuinsofFarahlon"],
-	[3742] = BZ["SocretharsSeat"],
-	[3743] = BZ["LegionHold"],
-	[3744] = BZ["ShadowmoonVillage"],
-	[3745] = BZ["WildhammerStronghold"],
-	[3746] = BZ["TheHandofGuldan"],
-	[3747] = BZ["TheFelPits"],
-	[3748] = BZ["TheDeathforge"],
-	[3749] = BZ["CoilskarCistern"],
-	[3750] = BZ["CoilskarPoint"],
-	[3751] = BZ["SunfirePoint"],
-	[3752] = BZ["IllidariPoint"],
-	[3753] = BZ["RuinsofBaari"],
-	[3754] = BZ["AltarofShatar"],
-	[3755] = BZ["TheStairofDoom"],
-	[3756] = BZ["RuinsofKarabor"],
-	[3757] = BZ["Ata'malTerrace"],
-	[3758] = BZ["NetherwingFields"],
-	[3759] = BZ["NetherwingLedge"],
-	[3760] = BZ["TheBarrierHills"],
-	[3761] = BZ["TheHighPath"],
-	[3762] = BZ["WindyreedPass"],
-	[3763] = BZ["ZangarRidge"],
-	[3764] = BZ["TheTwilightRidge"],
-	[3765] = BZ["RazorthornTrail"],
-	[3766] = BZ["OreborHarborage"],
-	[3767] = BZ["BladesRun"],
-	[3768] = BZ["JaggedRidge"],
-	[3769] = BZ["ThunderlordStronghold"],
-	[3770] = BZ["BladeToothCanyon"],
-	[3771] = BZ["TheLivingGrove"],
+	[3725] = BZ["Ruins of Enkaat"],
+	[3726] = BZ["Manaforge B'naar"],
+	[3727] = BZ["The Scrap Field"],
+	[3728] = BZ["The Vortex Fields"],
+	[3729] = BZ["The Heap"],
+	[3730] = BZ["Manaforge Coruu"],
+	[3731] = BZ["The Tempest Rift"],
+	[3732] = BZ["Kirin'Var Village"],
+	[3733] = BZ["The Violet Tower"],
+	[3734] = BZ["Manaforge Duro"],
+	[3735] = BZ["Voidwind Plateau"],
+	[3736] = BZ["Manaforge Ultris"],
+	[3737] = BZ["Celestial Ridge"],
+	[3738] = BZ["The Stormspire"],
+	[3739] = BZ["Forge Base: Oblivion"],
+	[3740] = BZ["Forge Base: Gehenna"],
+	[3741] = BZ["Ruins of Farahlon"],
+	[3742] = BZ["Socrethar's Seat"],
+	[3743] = BZ["Legion Hold"],
+	[3744] = BZ["Shadowmoon Village"],
+	[3745] = BZ["Wildhammer Stronghold"],
+	[3746] = BZ["The Hand of Gul'dan"],
+	[3747] = BZ["The Fel Pits"],
+	[3748] = BZ["The Deathforge"],
+	[3749] = BZ["Coilskar Cistern"],
+	[3750] = BZ["Coilskar Point"],
+	[3751] = BZ["Sunfire Point"],
+	[3752] = BZ["Illidari Point"],
+	[3753] = BZ["Ruins of Baa'ri"],
+	[3754] = BZ["Altar of Sha'tar"],
+	[3755] = BZ["The Stair of Doom"],
+	[3756] = BZ["Ruins of Karabor"],
+	[3757] = BZ["Ata'mal Terrace"],
+	[3758] = BZ["Netherwing Fields"],
+	[3759] = BZ["Netherwing Ledge"],
+	[3760] = BZ["The Barrier Hills"],
+	[3761] = BZ["The High Path"],
+	[3762] = BZ["Windyreed Pass"],
+	[3763] = BZ["Zangar Ridge"],
+	[3764] = BZ["The Twilight Ridge"],
+	[3765] = BZ["Razorthorn Trail"],
+	[3766] = BZ["Orebor Harborage"],
+	[3767] = BZ["Blades' Run"],
+	[3768] = BZ["Jagged Ridge"],
+	[3769] = BZ["Thunderlord Stronghold"],
+	[3770] = BZ["Blade Tooth Canyon"],
+	[3771] = BZ["The Living Grove"],
 	[3772] = BZ["Sylvanaar"],
-	[3773] = BZ["BladespireHold"],
-	[3774] = BZ["GruulsLair"],
-	[3775] = BZ["CircleofBlood"],
-	[3776] = BZ["BloodmaulOutpost"],
-	[3777] = BZ["BloodmaulCamp"],
-	[3778] = BZ["DraenethystMine"],
-	[3779] = BZ["TrogmasClaim"],
-	[3780] = BZ["BlackwingCoven"],
+	[3773] = BZ["Bladespire Hold"],
+	[3774] = BZ["Gruul's Lair"],
+	[3775] = BZ["Circle of Blood"],
+	[3776] = BZ["Bloodmaul Outpost"],
+	[3777] = BZ["Bloodmaul Camp"],
+	[3778] = BZ["Draenethyst Mine"],
+	[3779] = BZ["Trogma's Claim"],
+	[3780] = BZ["Blackwing Coven"],
 	[3781] = BZ["Grishnath"],
-	[3782] = BZ["VeilLashh"],
-	[3783] = BZ["VeilVekh"],
-	[3784] = BZ["ForgeCampTerror"],
-	[3785] = BZ["ForgeCampWrath"],
-	[3786] = BZ["Ogrila"],
-	[3787] = BZ["ForgeCampAnger"],
-	[3788] = BZ["TheLowPath"],
-	[3789] = BZ["ShadowLabyrinth"],
-	[3790] = BZ["AuchenaiCrypts"],
-	[3791] = BZ["SethekkHalls"],
-	[3792] = BZ["ManaTombs"],
-	[3793] = BZ["FelsparkRavine"],
-	[3794] = BZ["ValleyofBones"],
-	[3795] = BZ["Sha'naariWastes"],
-	[3796] = BZ["TheWarpFields"],
-	[3797] = BZ["FallenSkyRidge"],
-	[3798] = BZ["Haal'eshiGorge"],
-	[3799] = BZ["StonewallCanyon"],
-	[3800] = BZ["ThornfangHill"],
-	[3801] = BZ["MagharGrounds"],
-	[3802] = BZ["VoidRidge"],
-	[3803] = BZ["TheAbyssalShelf"],
-	[3804] = BZ["TheLegionFront"],
-	[3805] = BZ["ZulAman"],
-	[3806] = BZ["SupplyCaravan"],
-	[3807] = BZ["Reaver'sFall"],
-	[3808] = BZ["CenarionPost"],
-	[3809] = BZ["SouthernRampart"],
-	[3810] = BZ["NorthernRampart"],
-	[3811] = BZ["Gor'gazOutpost"],
-	[3812] = BZ["SpinebreakerPost"],
-	[3813] = BZ["ThePathofAnguish"],
-	[3814] = BZ["EastSupplyCaravan"],
-	[3815] = BZ["ExpeditionPoint"],
-	[3816] = BZ["ZeppelinCrash"],
+	[3782] = BZ["Veil Lashh"],
+	[3783] = BZ["Veil Vekh"],
+	[3784] = BZ["Forge Camp: Terror"],
+	[3785] = BZ["Forge Camp: Wrath"],
+	[3786] = BZ["Ogri'la"],
+	[3787] = BZ["Forge Camp: Anger"],
+	[3788] = BZ["The Low Path"],
+	[3789] = BZ["Shadow Labyrinth"],
+	[3790] = BZ["Auchenai Crypts"],
+	[3791] = BZ["Sethekk Halls"],
+	[3792] = BZ["Mana-Tombs"],
+	[3793] = BZ["Felspark Ravine"],
+	[3794] = BZ["Valley of Bones"],
+	[3795] = BZ["Sha'naari Wastes"],
+	[3796] = BZ["The Warp Fields"],
+	[3797] = BZ["Fallen Sky Ridge"],
+	[3798] = BZ["Haal'eshi Gorge"],
+	[3799] = BZ["Stonewall Canyon"],
+	[3800] = BZ["Thornfang Hill"],
+	[3801] = BZ["Mag'har Grounds"],
+	[3802] = BZ["Void Ridge"],
+	[3803] = BZ["The Abyssal Shelf"],
+	[3804] = BZ["The Legion Front"],
+	[3805] = BZ["Zul'Aman"],
+	[3806] = BZ["Supply Caravan"],
+	[3807] = BZ["Reaver's Fall"],
+	[3808] = BZ["Cenarion Post"],
+	[3809] = BZ["Southern Rampart"],
+	[3810] = BZ["Northern Rampart"],
+	[3811] = BZ["Gor'gaz Outpost"],
+	[3812] = BZ["Spinebreaker Post"],
+	[3813] = BZ["The Path of Anguish"],
+	[3814] = BZ["East Supply Caravan"],
+	[3815] = BZ["Expedition Point"],
+	[3816] = BZ["Zeppelin Crash"],
 	[3817] = BZ["Testing"],
-	[3818] = BZ["BloodscaleGrounds"],
-	[3819] = BZ["DarkcrestEnclave"],
-	[3820] = BZ["EyeoftheStorm"],
-	[3821] = BZ["Warden'sCage"],
-	[3822] = BZ["EclipsePoint"],
-	[3823] = BZ["IsleofTribulations"],
-	[3824] = BZ["BloodmaulRavine"],
-	[3825] = BZ["DragonsEnd"],
-	[3826] = BZ["DaggermawCanyon"],
-	[3827] = BZ["VekhaarStand"],
-	[3828] = BZ["RuuanWeald"],
-	[3829] = BZ["VeilRuuan"],
-	[3830] = BZ["RavensWood"],
-	[3831] = BZ["DeathsDoor"],
-	[3832] = BZ["VortexSummit"],
-	[3833] = BZ["RazorRidge"],
-	[3834] = BZ["RidgeofMadness"],
-	[3835] = BZ["DustquillRavine"],
-	[3836] = BZ["MagtheridonsLair"],
-	[3837] = BZ["SunfuryHold"],
-	[3838] = BZ["SpinebreakerMountains"],
-	[3839] = BZ["AbandonedArmory"],
-	[3840] = BZ["BlackTemple"],
-	[3841] = BZ["DarkcrestShore"],
-	[3842] = BZ["TempestKeepNetherstorm"],
-	[3844] = BZ["MoknathalVillage"],
-	[3845] = BZ["TempestKeep"],
-	[3846] = BZ["TheArcatraz"],
-	[3847] = BZ["TheBotanica"],
-	[3848] = BZ["TheArcatraz"],
-	[3849] = BZ["TheMechanar"],
+	[3818] = BZ["Bloodscale Grounds"],
+	[3819] = BZ["Darkcrest Enclave"],
+	[3820] = BZ["Eye of the Storm"],
+	[3821] = BZ["Warden's Cage"],
+	[3822] = BZ["Eclipse Point"],
+	[3823] = BZ["Isle of Tribulations"],
+	[3824] = BZ["Bloodmaul Ravine"],
+	[3825] = BZ["Dragons' End"],
+	[3826] = BZ["Daggermaw Canyon"],
+	[3827] = BZ["Vekhaar Stand"],
+	[3828] = BZ["Ruuan Weald"],
+	[3829] = BZ["Veil Ruuan"],
+	[3830] = BZ["Raven's Wood"],
+	[3831] = BZ["Death's Door"],
+	[3832] = BZ["Vortex Summit"],
+	[3833] = BZ["Razor Ridge"],
+	[3834] = BZ["Ridge of Madness"],
+	[3835] = BZ["Dustquill Ravine"],
+	[3836] = BZ["Magtheridon's Lair"],
+	[3837] = BZ["Sunfury Hold"],
+	[3838] = BZ["Spinebreaker Mountains"],
+	[3839] = BZ["Abandoned Armory"],
+	[3840] = BZ["The Black Temple"],
+	[3841] = BZ["Darkcrest Shore"],
+	[3842] = BZ["Tempest Keep"],
+	[3844] = BZ["Mok'Nathal Village"],
+	[3845] = BZ["Tempest Keep"],
+	[3846] = BZ["The Arcatraz"],
+	[3847] = BZ["The Botanica"],
+	[3848] = BZ["The Arcatraz"],
+	[3849] = BZ["The Mechanar"],
 	[3850] = BZ["Netherstone"],
-	[3851] = BZ["MidrealmPost"],
-	[3852] = BZ["Tuluman'sLanding"],
-	[3854] = BZ["ProtectorateWatchPost"],
-	[3855] = BZ["CircleofBloodArena"],
-	[3856] = BZ["ElrendarCrossing"],
-	[3857] = BZ["AmmenFord"],
-	[3858] = BZ["RazorthornShelf"],
-	[3859] = BZ["SilmyrLake"],
-	[3860] = BZ["RaastokGlade"],
-	[3861] = BZ["ThalassianPass"],
-	[3862] = BZ["ChurningGulch"],
-	[3863] = BZ["BrokenWilds"],
-	[3864] = BZ["Bash'irLanding"],
-	[3865] = BZ["CrystalSpine"],
+	[3851] = BZ["Midrealm Post"],
+	[3852] = BZ["Tuluman's Landing"],
+	[3854] = BZ["Protectorate Watch Post"],
+	[3855] = BZ["Circle of Blood Arena"],
+	[3856] = BZ["Elrendar Crossing"],
+	[3857] = BZ["Ammen Ford"],
+	[3858] = BZ["Razorthorn Shelf"],
+	[3859] = BZ["Silmyr Lake"],
+	[3860] = BZ["Raastok Glade"],
+	[3861] = BZ["Thalassian Pass"],
+	[3862] = BZ["Churning Gulch"],
+	[3863] = BZ["Broken Wilds"],
+	[3864] = BZ["Bash'ir Landing"],
+	[3865] = BZ["Crystal Spine"],
 	[3866] = BZ["Skald"],
-	[3867] = BZ["BladedGulch"],
-	[3868] = BZ["GyroPlankBridge"],
-	[3869] = BZ["MageTower"],
-	[3870] = BZ["BloodElfTower"],
-	[3871] = BZ["DraeneiRuins"],
-	[3872] = BZ["FelReaverRuins"],
-	[3873] = BZ["TheProvingGrounds"],
-	[3874] = BZ["EcoDomeFarfield"],
-	[3875] = BZ["EcoDomeSkyperch"],
-	[3876] = BZ["EcoDomeSutheron"],
-	[3877] = BZ["EcoDomeMidrealm"],
-	[3878] = BZ["EthereumStagingGrounds"],
-	[3879] = BZ["ChapelYard"],
-	[3880] = BZ["AccessShaftZeon"],
-	[3881] = BZ["TrelleumMine"],
-	[3882] = BZ["InvasionPointDestroyer"],
-	[3883] = BZ["CampofBoom"],
-	[3884] = BZ["SpinebreakerPass"],
-	[3885] = BZ["NetherwebRidge"],
-	[3886] = BZ["DerelictCaravan"],
-	[3887] = BZ["RefugeeCaravan"],
-	[3888] = BZ["ShadowTomb"],
-	[3889] = BZ["VeilRhaze"],
-	[3890] = BZ["TombofLights"],
-	[3891] = BZ["CarrionHill"],
-	[3892] = BZ["WrithingMound"],
-	[3893] = BZ["RingofObservance"],
-	[3894] = BZ["AuchenaiGrounds"],
-	[3895] = BZ["CenarionWatchpost"],
-	[3896] = BZ["AldorRise"],
-	[3897] = BZ["TerraceofLight"],
-	[3898] = BZ["ScryersTier"],
-	[3899] = BZ["LowerCity"],
-	[3900] = BZ["InvasionPointOverlord"],
-	[3901] = BZ["AllerianPost"],
-	[3902] = BZ["StonebreakerCamp"],
+	[3867] = BZ["Bladed Gulch"],
+	[3868] = BZ["Gyro-Plank Bridge"],
+	[3869] = BZ["Mage Tower"],
+	[3870] = BZ["Blood Elf Tower"],
+	[3871] = BZ["Draenei Ruins"],
+	[3872] = BZ["Fel Reaver Ruins"],
+	[3873] = BZ["The Proving Grounds"],
+	[3874] = BZ["Eco-Dome Farfield"],
+	[3875] = BZ["Eco-Dome Skyperch"],
+	[3876] = BZ["Eco-Dome Sutheron"],
+	[3877] = BZ["Eco-Dome Midrealm"],
+	[3878] = BZ["Ethereum Staging Grounds"],
+	[3879] = BZ["Chapel Yard"],
+	[3880] = BZ["Access Shaft Zeon"],
+	[3881] = BZ["Trelleum Mine"],
+	[3882] = BZ["Invasion Point: Destroyer"],
+	[3883] = BZ["Camp of Boom"],
+	[3884] = BZ["Spinebreaker Pass"],
+	[3885] = BZ["Netherweb Ridge"],
+	[3886] = BZ["Derelict Caravan"],
+	[3887] = BZ["Refugee Caravan"],
+	[3888] = BZ["Shadow Tomb"],
+	[3889] = BZ["Veil Rhaze"],
+	[3890] = BZ["Tomb of Lights"],
+	[3891] = BZ["Carrion Hill"],
+	[3892] = BZ["Writhing Mound"],
+	[3893] = BZ["Ring of Observance"],
+	[3894] = BZ["Auchenai Grounds"],
+	[3895] = BZ["Cenarion Watchpost"],
+	[3896] = BZ["Aldor Rise"],
+	[3897] = BZ["Terrace of Light"],
+	[3898] = BZ["Scryer's Tier"],
+	[3899] = BZ["Lower City"],
+	[3900] = BZ["Invasion Point: Overlord"],
+	[3901] = BZ["Allerian Post"],
+	[3902] = BZ["Stonebreaker Camp"],
 	[3903] = BZ["Boulder'mok"],
-	[3904] = BZ["CursedHollow"],
-	[3905] = BZ["CoilfangReservoir"],
-	[3906] = BZ["TheBloodwash"],
-	[3907] = BZ["VeridianPoint"],
+	[3904] = BZ["Cursed Hollow"],
+	[3905] = BZ["Coilfang Reservoir"],
+	[3906] = BZ["The Bloodwash"],
+	[3907] = BZ["Veridian Point"],
 	[3908] = BZ["Middenvale"],
-	[3909] = BZ["TheLostFold"],
+	[3909] = BZ["The Lost Fold"],
 	[3910] = BZ["Mystwood"],
-	[3911] = BZ["TranquilShore"],
-	[3912] = BZ["GoldenboughPass"],
-	[3913] = BZ["RunestoneFalithas"],
-	[3914] = BZ["RunestoneShandor"],
-	[3915] = BZ["FairbridgeStrand"],
-	[3916] = BZ["MoongrazeWoods"],
+	[3911] = BZ["Tranquil Shore"],
+	[3912] = BZ["Goldenbough Pass"],
+	[3913] = BZ["Runestone Falithas"],
+	[3914] = BZ["Runestone Shan'dor"],
+	[3915] = BZ["Fairbridge Strand"],
+	[3916] = BZ["Moongraze Woods"],
 	[3917] = BZ["Auchindoun"],
-	[3918] = BZ["ToshleysStation"],
-	[3919] = BZ["SingingRidge"],
-	[3920] = BZ["ShatterPoint"],
-	[3921] = BZ["ArklonisRidge"],
-	[3922] = BZ["BladespireOutpost"],
-	[3923] = BZ["GruulsLair"],
-	[3924] = BZ["NorthmaulTower"],
-	[3925] = BZ["SouthmaulTower"],
-	[3926] = BZ["ShatteredPlains"],
-	[3927] = BZ["OronoksFarm"],
-	[3928] = BZ["TheAltarofDamnation"],
-	[3929] = BZ["ThePathofConquest"],
-	[3930] = BZ["EclipsionFields"],
-	[3931] = BZ["BladespireGrounds"],
-	[3932] = BZ["SkethlonBaseCamp"],
-	[3933] = BZ["SkethlonWreckage"],
-	[3934] = BZ["TownSquare"],
-	[3935] = BZ["WizardRow"],
-	[3936] = BZ["DeathforgeTower"],
-	[3937] = BZ["SlagWatch"],
-	[3938] = BZ["SanctumoftheStars"],
-	[3939] = BZ["DragonmawFortress"],
-	[3940] = BZ["TheFetidPool"],
+	[3918] = BZ["Toshley's Station"],
+	[3919] = BZ["Singing Ridge"],
+	[3920] = BZ["Shatter Point"],
+	[3921] = BZ["Arklonis Ridge"],
+	[3922] = BZ["Bladespire Outpost"],
+	[3923] = BZ["Gruul's Lair"],
+	[3924] = BZ["Northmaul Tower"],
+	[3925] = BZ["Southmaul Tower"],
+	[3926] = BZ["Shattered Plains"],
+	[3927] = BZ["Oronok's Farm"],
+	[3928] = BZ["The Altar of Damnation"],
+	[3929] = BZ["The Path of Conquest"],
+	[3930] = BZ["Eclipsion Fields"],
+	[3931] = BZ["Bladespire Grounds"],
+	[3932] = BZ["Sketh'lon Base Camp"],
+	[3933] = BZ["Sketh'lon Wreckage"],
+	[3934] = BZ["Town Square"],
+	[3935] = BZ["Wizard Row"],
+	[3936] = BZ["Deathforge Tower"],
+	[3937] = BZ["Slag Watch"],
+	[3938] = BZ["Sanctum of the Stars"],
+	[3939] = BZ["Dragonmaw Fortress"],
+	[3940] = BZ["The Fetid Pool"],
 	[3941] = BZ["Test"],
-	[3942] = BZ["RazaansLanding"],
-	[3943] = BZ["InvasionPointCataclysm"],
-	[3944] = BZ["TheAltarofShadows"],
-	[3945] = BZ["NetherwingPass"],
-	[3946] = BZ["WaynesRefuge"],
-	[3947] = BZ["TheScaldingPools"],
-	[3948] = BZ["BrianandPatTest"],
-	[3949] = BZ["MagmaFields"],
-	[3950] = BZ["CrimsonWatch"],
+	[3942] = BZ["Razaan's Landing"],
+	[3943] = BZ["Invasion Point: Cataclysm"],
+	[3944] = BZ["The Altar of Shadows"],
+	[3945] = BZ["Netherwing Pass"],
+	[3946] = BZ["Wayne's Refuge"],
+	[3947] = BZ["The Scalding Pools"],
+	[3948] = BZ["Brian and Pat Test"],
+	[3949] = BZ["Magma Fields"],
+	[3950] = BZ["Crimson Watch"],
 	[3951] = BZ["Evergrove"],
-	[3952] = BZ["WyrmskullBridge"],
-	[3953] = BZ["ScalewingShelf"],
-	[3954] = BZ["WyrmskullTunnel"],
-	[3955] = BZ["HellfireBasin"],
-	[3956] = BZ["TheShadowStair"],
-	[3957] = BZ["Sha'tariOutpost"],
-	[3958] = BZ["Sha'tariBaseCamp"],
-	[3959] = BZ["BlackTemple"],
-	[3960] = BZ["Soulgrinder'sBarrow"],
-	[3961] = BZ["SorrowWingPoint"],
-	[3962] = BZ["Vim'gol'sCircle"],
-	[3963] = BZ["DragonspineRidge"],
-	[3964] = BZ["SkyguardOutpost"],
-	[3965] = BZ["NetherwingMines"],
-	[3966] = BZ["DragonmawBaseCamp"],
-	[3967] = BZ["DragonmawSkyway"],
-	[3968] = BZ["RuinsofLordaeronPvP"],
-	[3969] = BZ["RivendarksPerch"],
-	[3970] = BZ["ObsidiasPerch"],
-	[3971] = BZ["InsidionsPerch"],
-	[3972] = BZ["FurywingsPerch"],
-	[3973] = BZ["BlackwindLanding"],
-	[3974] = BZ["VeilHarr'ik"],
-	[3975] = BZ["Terokk'sRest"],
-	[3976] = BZ["VeilAlarak"],
-	[3977] = BZ["UpperVeilShil'ak"],
-	[3978] = BZ["LowerVeilShil'ak"],
-	[3979] = BZ["TheFrozenSea"],
-	[3980] = BZ["DaggercapBay"],
+	[3952] = BZ["Wyrmskull Bridge"],
+	[3953] = BZ["Scalewing Shelf"],
+	[3954] = BZ["Wyrmskull Tunnel"],
+	[3955] = BZ["Hellfire Basin"],
+	[3956] = BZ["The Shadow Stair"],
+	[3957] = BZ["Sha'tari Outpost"],
+	[3958] = BZ["Sha'tari Base Camp"],
+	[3959] = BZ["Black Temple"],
+	[3960] = BZ["Soulgrinder's Barrow"],
+	[3961] = BZ["Sorrow Wing Point"],
+	[3962] = BZ["Vim'gol's Circle"],
+	[3963] = BZ["Dragonspine Ridge"],
+	[3964] = BZ["Skyguard Outpost"],
+	[3965] = BZ["Netherwing Mines"],
+	[3966] = BZ["Dragonmaw Base Camp"],
+	[3967] = BZ["Dragonmaw Skyway"],
+	[3968] = BZ["Ruins of Lordaeron"],
+	[3969] = BZ["Rivendark's Perch"],
+	[3970] = BZ["Obsidia's Perch"],
+	[3971] = BZ["Insidion's Perch"],
+	[3972] = BZ["Furywing's Perch"],
+	[3973] = BZ["Blackwind Landing"],
+	[3974] = BZ["Veil Harr'ik"],
+	[3975] = BZ["Terokk's Rest"],
+	[3976] = BZ["Veil Ala'rak"],
+	[3977] = BZ["Upper Veil Shil'ak"],
+	[3978] = BZ["Lower Veil Shil'ak"],
+	[3979] = BZ["The Frozen Sea"],
+	[3980] = BZ["Daggercap Bay"],
 	[3981] = BZ["Valgarde"],
-	[3982] = BZ["WyrmskullVillage"],
-	[3983] = BZ["UtgardeKeep"],
+	[3982] = BZ["Wyrmskull Village"],
+	[3983] = BZ["Utgarde Keep"],
 	[3984] = BZ["Nifflevar"],
-	[3985] = BZ["FallsofYmiron"],
-	[3986] = BZ["EchoReach"],
-	[3987] = BZ["TheIsleofSpears"],
+	[3985] = BZ["Falls of Ymiron"],
+	[3986] = BZ["Echo Reach"],
+	[3987] = BZ["The Isle of Spears"],
 	[3988] = BZ["Kamagua"],
-	[3989] = BZ["GarvansReef"],
-	[3990] = BZ["ScalawagPoint"],
-	[3991] = BZ["NewAgamand"],
-	[3992] = BZ["TheAncientLift"],
-	[3993] = BZ["WestguardTurret"],
+	[3989] = BZ["Garvan's Reef"],
+	[3990] = BZ["Scalawag Point"],
+	[3991] = BZ["New Agamand"],
+	[3992] = BZ["The Ancient Lift"],
+	[3993] = BZ["Westguard Turret"],
 	[3994] = BZ["Halgrind"],
-	[3995] = BZ["TheLaughingStand"],
-	[3996] = BZ["BaelgunsExcavationSite"],
-	[3997] = BZ["ExplorersLeagueOutpost"],
-	[3998] = BZ["WestguardKeep"],
-	[3999] = BZ["SteelGate"],
-	[4000] = BZ["VengeanceLanding"],
+	[3995] = BZ["The Laughing Stand"],
+	[3996] = BZ["Baelgun's Excavation Site"],
+	[3997] = BZ["Explorers' League Outpost"],
+	[3998] = BZ["Westguard Keep"],
+	[3999] = BZ["Steel Gate"],
+	[4000] = BZ["Vengeance Landing"],
 	[4001] = BZ["Baleheim"],
 	[4002] = BZ["Skorn"],
-	[4003] = BZ["FortWildervar"],
-	[4004] = BZ["VilepreyVillage"],
-	[4005] = BZ["IvaldsRuin"],
+	[4003] = BZ["Fort Wildervar"],
+	[4004] = BZ["Vileprey Village"],
+	[4005] = BZ["Ivald's Ruin"],
 	[4006] = BZ["Gjalerbron"],
-	[4007] = BZ["TomboftheLostKings"],
-	[4008] = BZ["Shartuul'sTransporter"],
-	[4009] = BZ["IllidariTrainingGrounds"],
+	[4007] = BZ["Tomb of the Lost Kings"],
+	[4008] = BZ["Shartuul's Transporter"],
+	[4009] = BZ["Illidari Training Grounds"],
 	[4010] = BZ["Mudsprocket"],
-	[4018] = BZ["CampWinterhoof"],
-	[4019] = BZ["DevelopmentLand"],
-	[4020] = BZ["MightstoneQuarry"],
-	[4021] = BZ["BloodsporePlains"],
+	[4018] = BZ["Camp Winterhoof"],
+	[4019] = BZ["Development Land"],
+	[4020] = BZ["Mightstone Quarry"],
+	[4021] = BZ["Bloodspore Plains"],
 	[4022] = BZ["Gammoth"],
-	[4023] = BZ["AmberLedge"],
+	[4023] = BZ["Amber Ledge"],
 	[4024] = BZ["Coldarra"],
-	[4025] = BZ["TheWestrift"],
-	[4026] = BZ["TheTransitusStair"],
-	[4027] = BZ["CoastofEchoes"],
-	[4028] = BZ["RiplashStrand"],
-	[4029] = BZ["RiplashRuins"],
-	[4030] = BZ["CoastofIdols"],
-	[4031] = BZ["Palea"],
-	[4032] = BZ["ValianceKeep"],
-	[4033] = BZ["WinterfinVillage"],
-	[4034] = BZ["TheBoreanWall"],
-	[4035] = BZ["TheGeyserFields"],
-	[4036] = BZ["FizzcrankPumpingStation"],
-	[4037] = BZ["Taunka'leVillage"],
-	[4038] = BZ["MagnamothCaverns"],
-	[4039] = BZ["ColdrockQuarry"],
-	[4040] = BZ["NjordsBreathBay"],
+	[4025] = BZ["The Westrift"],
+	[4026] = BZ["The Transitus Stair"],
+	[4027] = BZ["Coast of Echoes"],
+	[4028] = BZ["Riplash Strand"],
+	[4029] = BZ["Riplash Ruins"],
+	[4030] = BZ["Coast of Idols"],
+	[4031] = BZ["Pal'ea"],
+	[4032] = BZ["Valiance Keep"],
+	[4033] = BZ["Winterfin Village"],
+	[4034] = BZ["The Borean Wall"],
+	[4035] = BZ["The Geyser Fields"],
+	[4036] = BZ["Fizzcrank Pumping Station"],
+	[4037] = BZ["Taunka'le Village"],
+	[4038] = BZ["Magnamoth Caverns"],
+	[4039] = BZ["Coldrock Quarry"],
+	[4040] = BZ["Njord's Breath Bay"],
 	[4041] = BZ["Kaskala"],
 	[4042] = BZ["Transborea"],
-	[4043] = BZ["TheFloodPlains"],
-	[4046] = BZ["DirehornPost"],
-	[4047] = BZ["NatsLanding"],
-	[4048] = BZ["EmberClutch"],
-	[4049] = BZ["TabethasFarm"],
-	[4050] = BZ["DerelictStrand"],
-	[4051] = BZ["TheFrozenGlade"],
-	[4052] = BZ["TheVibrantGlade"],
-	[4053] = BZ["TheTwistedGlade"],
+	[4043] = BZ["The Flood Plains"],
+	[4046] = BZ["Direhorn Post"],
+	[4047] = BZ["Nat's Landing"],
+	[4048] = BZ["Ember Clutch"],
+	[4049] = BZ["Tabetha's Farm"],
+	[4050] = BZ["Derelict Strand"],
+	[4051] = BZ["The Frozen Glade"],
+	[4052] = BZ["The Vibrant Glade"],
+	[4053] = BZ["The Twisted Glade"],
 	[4054] = BZ["Rivenwood"],
-	[4055] = BZ["CaldemereLake"],
-	[4056] = BZ["UtgardeCatacombs"],
-	[4057] = BZ["ShieldHill"],
-	[4058] = BZ["LakeCauldros"],
-	[4059] = BZ["CauldrosIsle"],
-	[4060] = BZ["BleedingVale"],
-	[4061] = BZ["GiantsRun"],
-	[4062] = BZ["ApothecaryCamp"],
-	[4063] = BZ["EmberSpearTower"],
-	[4064] = BZ["ShatteredStraits"],
+	[4055] = BZ["Caldemere Lake"],
+	[4056] = BZ["Utgarde Catacombs"],
+	[4057] = BZ["Shield Hill"],
+	[4058] = BZ["Lake Cauldros"],
+	[4059] = BZ["Cauldros Isle"],
+	[4060] = BZ["Bleeding Vale"],
+	[4061] = BZ["Giants' Run"],
+	[4062] = BZ["Apothecary Camp"],
+	[4063] = BZ["Ember Spear Tower"],
+	[4064] = BZ["Shattered Straits"],
 	[4065] = BZ["Gjalerhorn"],
-	[4066] = BZ["FrostbladePeak"],
-	[4067] = BZ["PlaguewoodTower"],
-	[4068] = BZ["WestSpearTower"],
-	[4069] = BZ["NorthSpearTower"],
-	[4070] = BZ["ChillmereCoast"],
-	[4071] = BZ["WhisperGulch"],
-	[4072] = BZ["Subzone"],
-	[4073] = BZ["Winter'sTerrace"],
-	[4074] = BZ["TheWakingHalls"],
-	[4075] = BZ["SunwellPlateau"],
-	[4076] = BZ["ReuseMe7"],
-	[4077] = BZ["Sorlof'sStrand"],
-	[4078] = BZ["RazorthornRise"],
-	[4079] = BZ["FrostbladePass"],
-	[4080] = BZ["IsleofQuel'Danas"],
-	[4081] = BZ["TheDawnchaser"],
-	[4082] = BZ["TheSin'loren"],
-	[4083] = BZ["Silvermoon'sPride"],
-	[4084] = BZ["TheBloodoath"],
-	[4085] = BZ["ShatteredSunStagingArea"],
-	[4086] = BZ["Sun'sReachSanctum"],
-	[4087] = BZ["Sun'sReachHarbor"],
-	[4088] = BZ["Sun'sReachArmory"],
-	[4089] = BZ["DawnstarVillage"],
-	[4090] = BZ["TheDawningSquare"],
-	[4091] = BZ["GreengillCoast"],
-	[4092] = BZ["TheDeadScar"],
-	[4093] = BZ["TheSunForge"],
-	[4094] = BZ["SunwellPlateau"],
-	[4095] = BZ["Magisters'Terrace"],
-	[4096] = BZ["Clayton'sWoWEditLand"],
-	[4097] = BZ["WinterfinCaverns"],
-	[4098] = BZ["GlimmerBay"],
-	[4099] = BZ["WinterfinRetreat"],
-	[4100] = BZ["CoTStratholme"],
-	[4101] = BZ["SandsofNasam"],
-	[4102] = BZ["Krom'sLanding"],
-	[4103] = BZ["Nasam'sTalon"],
-	[4104] = BZ["EchoCove"],
-	[4105] = BZ["BerylPoint"],
-	[4106] = BZ["Garrosh'sLanding"],
-	[4107] = BZ["WarsongJetty"],
-	[4108] = BZ["FizzcrankAirstrip"],
-	[4109] = BZ["LakeKum'uya"],
-	[4110] = BZ["FarshireFields"],
+	[4066] = BZ["Frostblade Peak"],
+	[4067] = BZ["Plaguewood Tower"],
+	[4068] = BZ["West Spear Tower"],
+	[4069] = BZ["North Spear Tower"],
+	[4070] = BZ["Chillmere Coast"],
+	[4071] = BZ["Whisper Gulch"],
+	[4072] = BZ["Sub zone"],
+	[4073] = BZ["Winter's Terrace"],
+	[4074] = BZ["The Waking Halls"],
+	[4075] = BZ["Sunwell Plateau"],
+	[4076] = BZ["Reuse Me 7"],
+	[4077] = BZ["Sorlof's Strand"],
+	[4078] = BZ["Razorthorn Rise"],
+	[4079] = BZ["Frostblade Pass"],
+	[4080] = BZ["Isle of Quel'Danas"],
+	[4081] = BZ["The Dawnchaser"],
+	[4082] = BZ["The Sin'loren"],
+	[4083] = BZ["Silvermoon's Pride"],
+	[4084] = BZ["The Bloodoath"],
+	[4085] = BZ["Shattered Sun Staging Area"],
+	[4086] = BZ["Sun's Reach Sanctum"],
+	[4087] = BZ["Sun's Reach Harbor"],
+	[4088] = BZ["Sun's Reach Armory"],
+	[4089] = BZ["Dawnstar Village"],
+	[4090] = BZ["The Dawning Square"],
+	[4091] = BZ["Greengill Coast"],
+	[4092] = BZ["The Dead Scar"],
+	[4093] = BZ["The Sun Forge"],
+	[4094] = BZ["Sunwell Plateau"],
+	[4095] = BZ["Magisters' Terrace"],
+	[4096] = BZ["Claytön's WoWEdit Land"],
+	[4097] = BZ["Winterfin Caverns"],
+	[4098] = BZ["Glimmer Bay"],
+	[4099] = BZ["Winterfin Retreat"],
+	[4100] = BZ["The Culling of Stratholme"],
+	[4101] = BZ["Sands of Nasam"],
+	[4102] = BZ["Krom's Landing"],
+	[4103] = BZ["Nasam's Talon"],
+	[4104] = BZ["Echo Cove"],
+	[4105] = BZ["Beryl Point"],
+	[4106] = BZ["Garrosh's Landing"],
+	[4107] = BZ["Warsong Jetty"],
+	[4108] = BZ["Fizzcrank Airstrip"],
+	[4109] = BZ["Lake Kum'uya"],
+	[4110] = BZ["Farshire Fields"],
 	[4111] = BZ["Farshire"],
-	[4112] = BZ["FarshireLighthouse"],
+	[4112] = BZ["Farshire Lighthouse"],
 	[4113] = BZ["Unu'pe"],
-	[4114] = BZ["Death'sStand"],
-	[4115] = BZ["TheAbandonedReach"],
-	[4116] = BZ["ScaldingPools"],
-	[4117] = BZ["SteamSprings"],
+	[4114] = BZ["Death's Stand"],
+	[4115] = BZ["The Abandoned Reach"],
+	[4116] = BZ["Scalding Pools"],
+	[4117] = BZ["Steam Springs"],
 	[4118] = BZ["Talramas"],
-	[4119] = BZ["FesteringPools"],
-	[4120] = BZ["TheNexus"],
-	[4121] = BZ["TransitusShield"],
-	[4122] = BZ["Bor'gorokOutpost"],
+	[4119] = BZ["Festering Pools"],
+	[4120] = BZ["The Nexus"],
+	[4121] = BZ["Transitus Shield"],
+	[4122] = BZ["Bor'gorok Outpost"],
 	[4123] = BZ["Magmoth"],
-	[4124] = BZ["TheDensofDying"],
-	[4125] = BZ["TempleCityofEn'kilah"],
-	[4126] = BZ["TheWailingZiggurat"],
-	[4127] = BZ["Steeljaw'sCaravan"],
+	[4124] = BZ["The Dens of Dying"],
+	[4125] = BZ["Temple City of En'kilah"],
+	[4126] = BZ["The Wailing Ziggurat"],
+	[4127] = BZ["Steeljaw's Caravan"],
 	[4128] = BZ["Naxxanar"],
-	[4129] = BZ["WarsongHold"],
-	[4130] = BZ["PlainsofNasam"],
-	[4131] = BZ["MagistersTerrace"],
-	[4132] = BZ["RuinsofEldra'nath"],
-	[4133] = BZ["CharredRise"],
-	[4134] = BZ["BlisteringPool"],
-	[4135] = BZ["SpireofBlood"],
-	[4136] = BZ["SpireofDecay"],
-	[4137] = BZ["SpireofPain"],
-	[4138] = BZ["FrozenReach"],
-	[4139] = BZ["ParhelionPlaza"],
-	[4140] = BZ["TheDeadScar"],
-	[4141] = BZ["Torp'sFarm"],
-	[4142] = BZ["WarsongGranary"],
-	[4143] = BZ["WarsongSlaughterhouse"],
-	[4144] = BZ["WarsongFarmsOutpost"],
-	[4145] = BZ["WestPointStation"],
-	[4146] = BZ["NorthPointStation"],
-	[4147] = BZ["MidPointStation"],
-	[4148] = BZ["SouthPointStation"],
-	[4149] = BZ["D.E.H.T.A.Encampment"],
-	[4150] = BZ["Kaw'sRoost"],
-	[4151] = BZ["WestwindRefugeeCamp"],
-	[4152] = BZ["Moa'kiHarbor"],
-	[4153] = BZ["Indu'leVillage"],
-	[4154] = BZ["SnowfallGlade"],
-	[4155] = BZ["TheHalfShell"],
-	[4156] = BZ["SurgeNeedle"],
-	[4157] = BZ["MoonrestGardens"],
-	[4158] = BZ["Stars'Rest"],
-	[4159] = BZ["WestfallBrigadeEncampment"],
-	[4160] = BZ["LothalorWoodlands"],
-	[4161] = BZ["WyrmrestTemple"],
-	[4162] = BZ["IcemistFalls"],
-	[4163] = BZ["IcemistVillage"],
-	[4164] = BZ["ThePitofNarjun"],
-	[4165] = BZ["Agmar'sHammer"],
-	[4166] = BZ["LakeIndu'le"],
-	[4167] = BZ["ObsidianDragonshrine"],
-	[4168] = BZ["RubyDragonshrine"],
-	[4169] = BZ["FordragonHold"],
-	[4170] = BZ["Kor'kronVanguard"],
-	[4171] = BZ["TheCourtofSkulls"],
-	[4172] = BZ["AngrathartheWrathgate"],
-	[4173] = BZ["Galakrond'sRest"],
-	[4174] = BZ["TheWickedCoil"],
-	[4175] = BZ["BronzeDragonshrine"],
-	[4176] = BZ["TheMirrorofDawn"],
-	[4177] = BZ["WintergardeKeep"],
-	[4178] = BZ["WintergardeMine"],
-	[4179] = BZ["EmeraldDragonshrine"],
-	[4180] = BZ["NewHearthglen"],
-	[4181] = BZ["Crusader'sLanding"],
-	[4182] = BZ["Sinner'sFolly"],
-	[4183] = BZ["AzureDragonshrine"],
-	[4184] = BZ["PathoftheTitans"],
-	[4185] = BZ["TheForgottenShore"],
+	[4129] = BZ["Warsong Hold"],
+	[4130] = BZ["Plains of Nasam"],
+	[4131] = BZ["Magisters' Terrace"],
+	[4132] = BZ["Ruins of Eldra'nath"],
+	[4133] = BZ["Charred Rise"],
+	[4134] = BZ["Blistering Pool"],
+	[4135] = BZ["Spire of Blood"],
+	[4136] = BZ["Spire of Decay"],
+	[4137] = BZ["Spire of Pain"],
+	[4138] = BZ["Frozen Reach"],
+	[4139] = BZ["Parhelion Plaza"],
+	[4140] = BZ["The Dead Scar"],
+	[4141] = BZ["Torp's Farm"],
+	[4142] = BZ["Warsong Granary"],
+	[4143] = BZ["Warsong Slaughterhouse"],
+	[4144] = BZ["Warsong Farms Outpost"],
+	[4145] = BZ["West Point Station"],
+	[4146] = BZ["North Point Station"],
+	[4147] = BZ["Mid Point Station"],
+	[4148] = BZ["South Point Station"],
+	[4149] = BZ["D.E.H.T.A. Encampment"],
+	[4150] = BZ["Kaw's Roost"],
+	[4151] = BZ["Westwind Refugee Camp"],
+	[4152] = BZ["Moa'ki Harbor"],
+	[4153] = BZ["Indu'le Village"],
+	[4154] = BZ["Snowfall Glade"],
+	[4155] = BZ["The Half Shell"],
+	[4156] = BZ["Surge Needle"],
+	[4157] = BZ["Moonrest Gardens"],
+	[4158] = BZ["Stars' Rest"],
+	[4159] = BZ["Westfall Brigade Encampment"],
+	[4160] = BZ["Lothalor Woodlands"],
+	[4161] = BZ["Wyrmrest Temple"],
+	[4162] = BZ["Icemist Falls"],
+	[4163] = BZ["Icemist Village"],
+	[4164] = BZ["The Pit of Narjun"],
+	[4165] = BZ["Agmar's Hammer"],
+	[4166] = BZ["Lake Indu'le"],
+	[4167] = BZ["Obsidian Dragonshrine"],
+	[4168] = BZ["Ruby Dragonshrine"],
+	[4169] = BZ["Fordragon Hold"],
+	[4170] = BZ["Kor'kron Vanguard"],
+	[4171] = BZ["The Court of Skulls"],
+	[4172] = BZ["Angrathar the Wrathgate"],
+	[4173] = BZ["Galakrond's Rest"],
+	[4174] = BZ["The Wicked Coil"],
+	[4175] = BZ["Bronze Dragonshrine"],
+	[4176] = BZ["The Mirror of Dawn"],
+	[4177] = BZ["Wintergarde Keep"],
+	[4178] = BZ["Wintergarde Mine"],
+	[4179] = BZ["Emerald Dragonshrine"],
+	[4180] = BZ["New Hearthglen"],
+	[4181] = BZ["Crusader's Landing"],
+	[4182] = BZ["Sinner's Folly"],
+	[4183] = BZ["Azure Dragonshrine"],
+	[4184] = BZ["Path of the Titans"],
+	[4185] = BZ["The Forgotten Shore"],
 	[4186] = BZ["Venomspite"],
-	[4187] = BZ["TheCrystalVice"],
-	[4188] = BZ["TheCarrionFields"],
-	[4189] = BZ["OnslaughtBaseCamp"],
-	[4190] = BZ["Thorson'sPost"],
-	[4191] = BZ["Light'sTrust"],
-	[4192] = BZ["FrostmourneCavern"],
-	[4193] = BZ["ScarletPoint"],
+	[4187] = BZ["The Crystal Vice"],
+	[4188] = BZ["The Carrion Fields"],
+	[4189] = BZ["Onslaught Base Camp"],
+	[4190] = BZ["Thorson's Post"],
+	[4191] = BZ["Light's Trust"],
+	[4192] = BZ["Frostmourne Cavern"],
+	[4193] = BZ["Scarlet Point"],
 	[4194] = BZ["Jintha'kalar"],
-	[4195] = BZ["IceHeartCavern"],
-	[4196] = BZ["DrakTharonKeep"],
+	[4195] = BZ["Ice Heart Cavern"],
+	[4196] = BZ["Drak'Tharon Keep"],
 	[4197] = BZ["Wintergrasp"],
-	[4198] = BZ["Kili'ua'sAtoll"],
+	[4198] = BZ["Kili'ua's Atoll"],
 	[4199] = BZ["Silverbrook"],
-	[4200] = BZ["Vordrassil'sHeart"],
+	[4200] = BZ["Vordrassil's Heart"],
 	[4201] = BZ["Vordrassil's Tears"],
-	[4202] = BZ["Vordrassil'sTears"],
-	[4203] = BZ["Vordrassil'sLimb"],
-	[4204] = BZ["AmberpineLodge"],
-	[4205] = BZ["SolsticeVillage"],
-	[4206] = BZ["ConquestHold"],
+	[4202] = BZ["Vordrassil's Tears"],
+	[4203] = BZ["Vordrassil's Limb"],
+	[4204] = BZ["Amberpine Lodge"],
+	[4205] = BZ["Solstice Village"],
+	[4206] = BZ["Conquest Hold"],
 	[4207] = BZ["Voldrune"],
-	[4208] = BZ["GraniteSprings"],
+	[4208] = BZ["Granite Springs"],
 	[4209] = BZ["Zeb'Halak"],
-	[4210] = BZ["Drak'TharonKeep"],
-	[4211] = BZ["CampOneqwah"],
-	[4212] = BZ["EastwindShore"],
-	[4213] = BZ["BrokenBluffs"],
-	[4214] = BZ["BoulderHills"],
-	[4215] = BZ["RageFangShrine"],
-	[4216] = BZ["Drakil'jinRuins"],
-	[4217] = BZ["BlackriverLoggingCamp"],
-	[4218] = BZ["Heart'sBloodShrine"],
-	[4219] = BZ["HollowstoneMine"],
-	[4220] = BZ["DunArgol"],
-	[4221] = BZ["ThorModan"],
-	[4222] = BZ["BlueSkyLoggingGrounds"],
-	[4223] = BZ["MawofNeltharion"],
-	[4224] = BZ["TheBrinyPinnacle"],
-	[4225] = BZ["GlitteringStrand"],
+	[4210] = BZ["Drak'Tharon Keep"],
+	[4211] = BZ["Camp Oneqwah"],
+	[4212] = BZ["Eastwind Shore"],
+	[4213] = BZ["The Broken Bluffs"],
+	[4214] = BZ["Boulder Hills"],
+	[4215] = BZ["Rage Fang Shrine"],
+	[4216] = BZ["Drakil'jin Ruins"],
+	[4217] = BZ["Blackriver Logging Camp"],
+	[4218] = BZ["Heart's Blood Shrine"],
+	[4219] = BZ["Hollowstone Mine"],
+	[4220] = BZ["Dun Argol"],
+	[4221] = BZ["Thor Modan"],
+	[4222] = BZ["Blue Sky Logging Grounds"],
+	[4223] = BZ["Maw of Neltharion"],
+	[4224] = BZ["The Briny Pinnacle"],
+	[4225] = BZ["Glittering Strand"],
 	[4226] = BZ["Iskaal"],
-	[4227] = BZ["Dragon'sFall"],
-	[4228] = BZ["Nexus80"],
-	[4229] = BZ["Prospector'sPoint"],
-	[4230] = BZ["ColdwindHeights"],
-	[4231] = BZ["RedwoodTradingPost"],
-	[4232] = BZ["VengeancePass"],
-	[4233] = BZ["Dawn'sReach"],
+	[4227] = BZ["Dragon's Fall"],
+	[4228] = BZ["The Oculus"],
+	[4229] = BZ["Prospector's Point"],
+	[4230] = BZ["Coldwind Heights"],
+	[4231] = BZ["Redwood Trading Post"],
+	[4232] = BZ["Vengeance Pass"],
+	[4233] = BZ["Dawn's Reach"],
 	[4234] = BZ["Naxxramas"],
-	[4235] = BZ["HeartwoodTradingPost"],
-	[4236] = BZ["EvergreenTradingPost"],
-	[4237] = BZ["SprucePointPost"],
-	[4238] = BZ["WhitePineTradingPost"],
-	[4239] = BZ["AspenGrovePost"],
-	[4240] = BZ["Forest'sEdgePost"],
-	[4241] = BZ["EldritchHeights"],
-	[4242] = BZ["VentureBay"],
-	[4243] = BZ["WintergardeCrypt"],
-	[4244] = BZ["BloodmoonIsle"],
-	[4245] = BZ["ShadowfangTower"],
-	[4246] = BZ["WintergardeMausoleum"],
-	[4247] = BZ["DuskhowlDen"],
-	[4248] = BZ["ConquestPit"],
-	[4249] = BZ["ThePathofIron"],
-	[4250] = BZ["RuinsofTethys"],
-	[4251] = BZ["SilverbrookHills"],
-	[4252] = BZ["TheBrokenBluffs"],
-	[4253] = BZ["7thLegionFront"],
-	[4254] = BZ["TheDragonWastes"],
-	[4255] = BZ["Drak'Zin"],
-	[4256] = BZ["Drak'MarLake"],
-	[4257] = BZ["DragonspineTributary"],
-	[4258] = BZ["TheNorthSeaNorthrend"],
-	[4259] = BZ["Thorvald'sCamp"],
-	[4260] = BZ["Thorvald'sCamp"],
-	[4261] = BZ["GhostbladePost"],
-	[4262] = BZ["AshwoodPost"],
-	[4263] = BZ["Lydell'sAmbush"],
-	[4264] = BZ["Ulduar77"],
-	[4265] = BZ["TheNexus"],
-	[4266] = BZ["Harkor'sCamp"],
-	[4267] = BZ["VordrassilPass"],
-	[4268] = BZ["Ruuna'sCamp"],
-	[4269] = BZ["ShrineofScales"],
-	[4270] = BZ["Drak'atalPassage"],
-	[4271] = BZ["UtgardePinnacle"],
-	[4272] = BZ["HallsofLightning"],
+	[4235] = BZ["Heartwood Trading Post"],
+	[4236] = BZ["Evergreen Trading Post"],
+	[4237] = BZ["Spruce Point Post"],
+	[4238] = BZ["White Pine Trading Post"],
+	[4239] = BZ["Aspen Grove Post"],
+	[4240] = BZ["Forest's Edge Post"],
+	[4241] = BZ["Eldritch Heights"],
+	[4242] = BZ["Venture Bay"],
+	[4243] = BZ["Wintergarde Crypt"],
+	[4244] = BZ["Bloodmoon Isle"],
+	[4245] = BZ["Shadowfang Tower"],
+	[4246] = BZ["Wintergarde Mausoleum"],
+	[4247] = BZ["Duskhowl Den"],
+	[4248] = BZ["The Conquest Pit"],
+	[4249] = BZ["The Path of Iron"],
+	[4250] = BZ["Ruins of Tethys"],
+	[4251] = BZ["Silverbrook Hills"],
+	[4252] = BZ["The Broken Bluffs"],
+	[4253] = BZ["7th Legion Front"],
+	[4254] = BZ["The Dragon Wastes"],
+	[4255] = BZ["Ruins of Drak'Zin"],
+	[4256] = BZ["Drak'Mar Lake"],
+	[4257] = BZ["Dragonspine Tributary"],
+	[4258] = BZ["The North Sea"],
+	[4259] = BZ["Drak'ural"],
+	[4260] = BZ["Thorvald's Camp"],
+	[4261] = BZ["Ghostblade Post"],
+	[4262] = BZ["Ashwood Post"],
+	[4263] = BZ["Lydell's Ambush"],
+	[4264] = BZ["Halls of Stone"],
+	[4265] = BZ["The Nexus"],
+	[4266] = BZ["Harkor's Camp"],
+	[4267] = BZ["Vordrassil Pass"],
+	[4268] = BZ["Ruuna's Camp"],
+	[4269] = BZ["Shrine of Scales"],
+	[4270] = BZ["Drak'atal Passage"],
+	[4271] = BZ["Utgarde Pinnacle"],
+	[4272] = BZ["Halls of Lightning"],
 	[4273] = BZ["Ulduar"],
-	[4275] = BZ["TheArgentStand"],
-	[4276] = BZ["AltarofSseratus"],
-	[4277] = BZ["AzjolNerub"],
-	[4278] = BZ["Drak'SotraFields"],
+	[4275] = BZ["The Argent Stand"],
+	[4276] = BZ["Altar of Sseratus"],
+	[4277] = BZ["Azjol-Nerub"],
+	[4278] = BZ["Drak'Sotra Fields"],
 	[4279] = BZ["Drak'Sotra"],
 	[4280] = BZ["Drak'Agal"],
-	[4281] = BZ["Acherus:TheEbonHold"],
-	[4282] = BZ["TheAvalanche"],
-	[4283] = BZ["TheLostLands"],
-	[4284] = BZ["NesingwaryBaseCamp"],
-	[4285] = BZ["TheSeabreachFlow"],
-	[4286] = BZ["TheBonesofNozronn"],
-	[4287] = BZ["Kartak'sHold"],
-	[4288] = BZ["SparkspeakerHaven"],
-	[4289] = BZ["ThePathoftheLifewarden"],
-	[4290] = BZ["River'sHeart"],
-	[4291] = BZ["RainspeakerCanopy"],
-	[4292] = BZ["FrenzyheartHill"],
-	[4293] = BZ["WildgrowthMangal"],
+	[4281] = BZ["Acherus: The Ebon Hold"],
+	[4282] = BZ["The Avalanche"],
+	[4283] = BZ["The Lost Lands"],
+	[4284] = BZ["Nesingwary Base Camp"],
+	[4285] = BZ["The Seabreach Flow"],
+	[4286] = BZ["The Bones of Nozronn"],
+	[4287] = BZ["Kartak's Hold"],
+	[4288] = BZ["Sparktouched Haven"],
+	[4289] = BZ["The Path of the Lifewarden"],
+	[4290] = BZ["River's Heart"],
+	[4291] = BZ["Rainspeaker Canopy"],
+	[4292] = BZ["Frenzyheart Hill"],
+	[4293] = BZ["Wildgrowth Mangal"],
 	[4294] = BZ["Heb'Valok"],
-	[4295] = BZ["TheSunderedShard"],
-	[4296] = BZ["TheLifebloodPillar"],
-	[4297] = BZ["MosswalkerVillage"],
-	[4298] = BZ["Plaguelands:TheScarletEnclave"],
+	[4295] = BZ["The Sundered Shard"],
+	[4296] = BZ["The Lifeblood Pillar"],
+	[4297] = BZ["Mosswalker Village"],
+	[4298] = BZ["Plaguelands: The Scarlet Enclave"],
 	[4299] = BZ["Kolramas"],
 	[4300] = BZ["Waygate"],
-	[4302] = BZ["TheSkyreachPillar"],
-	[4303] = BZ["HardknuckleClearing"],
-	[4304] = BZ["SapphireHive"],
-	[4306] = BZ["MistwhisperRefuge"],
-	[4307] = BZ["TheGlimmeringPillar"],
-	[4308] = BZ["SpearbornEncampment"],
-	[4309] = BZ["Drak'TharonKeep"],
+	[4302] = BZ["The Skyreach Pillar"],
+	[4303] = BZ["Hardknuckle Clearing"],
+	[4304] = BZ["Sapphire Hive"],
+	[4306] = BZ["Mistwhisper Refuge"],
+	[4307] = BZ["The Glimmering Pillar"],
+	[4308] = BZ["Spearborn Encampment"],
+	[4309] = BZ["Drak'Tharon Keep"],
 	[4310] = BZ["Zeramas"],
-	[4311] = BZ["ReliquaryofAgony"],
-	[4312] = BZ["EbonWatch"],
-	[4313] = BZ["Thrym'sEnd"],
+	[4311] = BZ["Reliquary of Agony"],
+	[4312] = BZ["Ebon Watch"],
+	[4313] = BZ["Thrym's End"],
 	[4314] = BZ["Voltarus"],
-	[4315] = BZ["ReliquaryofPain"],
-	[4316] = BZ["RageclawDen"],
-	[4317] = BZ["Light'sBreach"],
-	[4318] = BZ["PoolsofZha'Jin"],
+	[4315] = BZ["Reliquary of Pain"],
+	[4316] = BZ["Rageclaw Den"],
+	[4317] = BZ["Light's Breach"],
+	[4318] = BZ["Pools of Zha'Jin"],
 	[4319] = BZ["Zim'Abwa"],
-	[4320] = BZ["AmphitheaterofAnguish"],
-	[4321] = BZ["AltarofRhunok"],
-	[4322] = BZ["AltarofHar'koa"],
+	[4320] = BZ["Amphitheater of Anguish"],
+	[4321] = BZ["Altar of Rhunok"],
+	[4322] = BZ["Altar of Har'koa"],
 	[4323] = BZ["Zim'Torga"],
-	[4324] = BZ["PoolsofJin'Alai"],
-	[4325] = BZ["AltarofQuetz'lun"],
+	[4324] = BZ["Pools of Jin'Alai"],
+	[4325] = BZ["Altar of Quetz'lun"],
 	[4326] = BZ["Heb'Drakkar"],
 	[4327] = BZ["Drak'Mabwa"],
 	[4328] = BZ["Zim'Rhuk"],
-	[4329] = BZ["AltarofMam'toth"],
-	[4342] = BZ["Acherus:TheEbonHold"],
-	[4343] = BZ["NewAvalon"],
-	[4344] = BZ["NewAvalonFields"],
-	[4345] = BZ["NewAvalonOrchard"],
-	[4346] = BZ["NewAvalonTownHall"],
+	[4329] = BZ["Altar of Mam'toth"],
+	[4342] = BZ["Acherus: The Ebon Hold"],
+	[4343] = BZ["New Avalon"],
+	[4344] = BZ["New Avalon Fields"],
+	[4345] = BZ["New Avalon Orchard"],
+	[4346] = BZ["New Avalon Town Hall"],
 	[4347] = BZ["Havenshire"],
-	[4348] = BZ["HavenshireFarms"],
-	[4349] = BZ["HavenshireLumberMill"],
-	[4350] = BZ["HavenshireStables"],
-	[4351] = BZ["ScarletHold"],
-	[4352] = BZ["ChapeloftheCrimsonFlame"],
-	[4353] = BZ["Light'sPointTower"],
-	[4354] = BZ["Light'sPoint"],
-	[4355] = BZ["CryptofRemembrance"],
-	[4356] = BZ["Death'sBreach"],
-	[4357] = BZ["TheNoxiousGlade"],
-	[4358] = BZ["Tyr'sHand"],
-	[4359] = BZ["King'sHarbor"],
-	[4360] = BZ["ScarletOverlook"],
-	[4361] = BZ["Light'sHopeChapel"],
-	[4362] = BZ["Sinner'sFolly"],
-	[4363] = BZ["PestilentScar"],
-	[4364] = BZ["BrowmanMill"],
-	[4365] = BZ["HavenshireMine"],
-	[4366] = BZ["Ursoc'sDen"],
-	[4367] = BZ["TheBlightLine"],
-	[4368] = BZ["TheBonefields"],
-	[4369] = BZ["Dorian'sOutpost"],
-	[4371] = BZ["Mam'tothCrater"],
-	[4372] = BZ["Zol'MazStronghold"],
+	[4348] = BZ["Havenshire Farms"],
+	[4349] = BZ["Havenshire Lumber Mill"],
+	[4350] = BZ["Havenshire Stables"],
+	[4351] = BZ["Scarlet Hold"],
+	[4352] = BZ["Chapel of the Crimson Flame"],
+	[4353] = BZ["Light's Point Tower"],
+	[4354] = BZ["Light's Point"],
+	[4355] = BZ["Crypt of Remembrance"],
+	[4356] = BZ["Death's Breach"],
+	[4357] = BZ["The Noxious Glade"],
+	[4358] = BZ["Tyr's Hand"],
+	[4359] = BZ["King's Harbor"],
+	[4360] = BZ["Scarlet Overlook"],
+	[4361] = BZ["Light's Hope Chapel"],
+	[4362] = BZ["Sinner's Folly"],
+	[4363] = BZ["Pestilent Scar"],
+	[4364] = BZ["Browman Mill"],
+	[4365] = BZ["Havenshire Mine"],
+	[4366] = BZ["Ursoc's Den"],
+	[4367] = BZ["The Blight Line"],
+	[4368] = BZ["The Bonefields"],
+	[4369] = BZ["Dorian's Outpost"],
+	[4371] = BZ["Mam'toth Crater"],
+	[4372] = BZ["Zol'Maz Stronghold"],
 	[4373] = BZ["Zol'Heb"],
-	[4374] = BZ["RageclawLake"],
+	[4374] = BZ["Rageclaw Lake"],
 	[4375] = BZ["Gundrak"],
-	[4376] = BZ["TheSavageThicket"],
-	[4377] = BZ["NewAvalonForge"],
-	[4378] = BZ["DalaranArena"],
+	[4376] = BZ["The Savage Thicket"],
+	[4377] = BZ["New Avalon Forge"],
+	[4378] = BZ["Dalaran Arena"],
 	[4379] = BZ["Valgarde"],
-	[4380] = BZ["WestguardInn"],
+	[4380] = BZ["Westguard Inn"],
 	[4381] = BZ["Waygate"],
-	[4382] = BZ["TheShaper'sTerrace"],
-	[4383] = BZ["LakesideLanding"],
-	[4384] = BZ["StrandoftheAncients"],
-	[4385] = BZ["BittertideLake"],
-	[4386] = BZ["IcecrownGlacierRiver"],
-	[4387] = BZ["NorthWintergraspRiver"],
-	[4388] = BZ["WintergraspRiver"],
-	[4389] = BZ["TheSuntouchedPillar"],
-	[4390] = BZ["FrigidBreach"],
-	[4391] = BZ["Swindlegrin'sDig"],
-	[4392] = BZ["TheStormwright'sShelf"],
-	[4393] = BZ["Death'sHandEncampment"],
-	[4394] = BZ["ScarletTavern"],
+	[4382] = BZ["The Shaper's Terrace"],
+	[4383] = BZ["Lakeside Landing"],
+	[4384] = BZ["Strand of the Ancients"],
+	[4385] = BZ["Bittertide Lake"],
+	[4386] = BZ["Rainspeaker Rapids"],
+	[4387] = BZ["Frenzyheart River"],
+	[4388] = BZ["Wintergrasp River"],
+	[4389] = BZ["The Suntouched Pillar"],
+	[4390] = BZ["Frigid Breach"],
+	[4391] = BZ["Swindlegrin's Dig"],
+	[4392] = BZ["The Stormwright's Shelf"],
+	[4393] = BZ["Death's Hand Encampment"],
+	[4394] = BZ["Scarlet Tavern"],
 	[4395] = BZ["Dalaran"],
-	[4396] = BZ["NozzlerustPost"],
-	[4399] = BZ["FarshireMine"],
-	[4400] = BZ["TheMosslightPillar"],
-	[4401] = BZ["Saragosa'sLanding"],
-	[4402] = BZ["VengeanceLift"],
-	[4403] = BZ["BalejarWatch"],
-	[4404] = BZ["NewAgamandInn"],
-	[4405] = BZ["PassageofLostFiends"],
-	[4406] = BZ["OrgrimmarArena"],
-	[4407] = BZ["HalloftheFrostwolf"],
-	[4408] = BZ["HalloftheStormpike"],
-	[4411] = BZ["StormwindHarbor"],
-	[4412] = BZ["TheMakers'Overlook"],
-	[4413] = BZ["TheMakers'Perch"],
-	[4414] = BZ["ScarletTower"],
-	[4415] = BZ["TheVioletHold"],
+	[4396] = BZ["Nozzlerust Post"],
+	[4399] = BZ["Farshire Mine"],
+	[4400] = BZ["The Mosslight Pillar"],
+	[4401] = BZ["Saragosa's Landing"],
+	[4402] = BZ["Vengeance Lift"],
+	[4403] = BZ["Balejar Watch"],
+	[4404] = BZ["New Agamand Inn"],
+	[4405] = BZ["Passage of Lost Fiends"],
+	[4406] = BZ["The Ring of Valor"],
+	[4407] = BZ["Hall of the Frostwolf"],
+	[4408] = BZ["Hall of the Stormpike"],
+	[4411] = BZ["Stormwind Harbor"],
+	[4412] = BZ["The Makers' Overlook"],
+	[4413] = BZ["The Makers' Perch"],
+	[4414] = BZ["Scarlet Tower"],
+	[4415] = BZ["The Violet Hold"],
 	[4416] = BZ["Gundrak"],
-	[4417] = BZ["OnslaughtHarbor"],
+	[4417] = BZ["Onslaught Harbor"],
 	[4418] = BZ["K3"],
-	[4419] = BZ["SnowblindHills"],
-	[4420] = BZ["SnowblindTerrace"],
+	[4419] = BZ["Snowblind Hills"],
+	[4420] = BZ["Snowblind Terrace"],
 	[4421] = BZ["Garm"],
-	[4422] = BZ["BrunnhildarVillage"],
-	[4423] = BZ["SifreldarVillage"],
+	[4422] = BZ["Brunnhildar Village"],
+	[4423] = BZ["Sifreldar Village"],
 	[4424] = BZ["Valkyrion"],
-	[4425] = BZ["TheForlornMine"],
-	[4426] = BZ["Bor'sBreathRiver"],
-	[4427] = BZ["ArgentVanguard"],
+	[4425] = BZ["The Forlorn Mine"],
+	[4426] = BZ["Bor's Breath River"],
+	[4427] = BZ["Argent Vanguard"],
 	[4428] = BZ["Frosthold"],
-	[4429] = BZ["Grom'arshCrash-Site"],
-	[4430] = BZ["TempleofStorms"],
-	[4431] = BZ["EngineoftheMakers"],
-	[4432] = BZ["TheFootSteppes"],
-	[4433] = BZ["DragonspinePeaks"],
+	[4429] = BZ["Grom'arsh Crash-Site"],
+	[4430] = BZ["Temple of Storms"],
+	[4431] = BZ["Engine of the Makers"],
+	[4432] = BZ["The Foot Steppes"],
+	[4433] = BZ["Dragonspine Peaks"],
 	[4434] = BZ["Nidavelir"],
-	[4435] = BZ["Narvir'sCradle"],
-	[4436] = BZ["SnowdriftPlains"],
-	[4437] = BZ["ValleyofAncientWinters"],
-	[4438] = BZ["DunNiffelem"],
-	[4439] = BZ["FrostfieldLake"],
+	[4435] = BZ["Narvir's Cradle"],
+	[4436] = BZ["Snowdrift Plains"],
+	[4437] = BZ["Valley of Ancient Winters"],
+	[4438] = BZ["Dun Niffelem"],
+	[4439] = BZ["Frostfield Lake"],
 	[4440] = BZ["Thunderfall"],
-	[4441] = BZ["CampTunka'lo"],
-	[4442] = BZ["Brann'sBase-Camp"],
-	[4443] = BZ["GateofEchoes"],
-	[4444] = BZ["PlainofEchoes"],
+	[4441] = BZ["Camp Tunka'lo"],
+	[4442] = BZ["Brann's Base-Camp"],
+	[4443] = BZ["Gate of Echoes"],
+	[4444] = BZ["Plain of Echoes"],
 	[4445] = BZ["Ulduar"],
-	[4446] = BZ["TerraceoftheMakers"],
-	[4447] = BZ["GateofLightning"],
-	[4448] = BZ["PathoftheTitans"],
+	[4446] = BZ["Terrace of the Makers"],
+	[4447] = BZ["Gate of Lightning"],
+	[4448] = BZ["Path of the Titans"],
 	[4449] = BZ["Uldis"],
-	[4450] = BZ["Loken'sBargain"],
-	[4451] = BZ["Bor'sFall"],
-	[4452] = BZ["Bor'sBreath"],
-	[4453] = BZ["RohemdalPass"],
-	[4454] = BZ["TheStormFoundry"],
-	[4455] = BZ["HibernalCavern"],
-	[4456] = BZ["VoldruneDwelling"],
-	[4457] = BZ["Torseg'sRest"],
-	[4458] = BZ["SparksocketMinefield"],
-	[4459] = BZ["Ricket'sFolly"],
-	[4460] = BZ["Garm'sBane"],
-	[4461] = BZ["Garm'sRise"],
-	[4462] = BZ["CrystalwebCavern"],
-	[4463] = BZ["TempleofLife"],
-	[4464] = BZ["TempleofOrder"],
-	[4465] = BZ["TempleofWinter"],
-	[4466] = BZ["TempleofInvention"],
-	[4467] = BZ["Death'sRise"],
-	[4468] = BZ["TheDeadFields"],
-	[4469] = BZ["Dargath'sDemise"],
-	[4470] = BZ["TheHiddenHollow"],
-	[4471] = BZ["Bernau'sHappyFunLand"],
-	[4472] = BZ["Frostgrip'sHollow"],
-	[4473] = BZ["TheFrigidTomb"],
-	[4474] = BZ["TwinShores"],
-	[4475] = BZ["Zim'bo'sHideout"],
-	[4476] = BZ["AbandonedCamp"],
-	[4477] = BZ["TheShadowVault"],
-	[4478] = BZ["ColdwindPass"],
-	[4479] = BZ["Winter'sBreathLake"],
-	[4480] = BZ["TheForgottenOverlook"],
-	[4481] = BZ["Jintha'kalarPassage"],
-	[4482] = BZ["ArrigaFootbridge"],
-	[4483] = BZ["TheLostPassage"],
-	[4484] = BZ["Bouldercrag'sRefuge"],
-	[4485] = BZ["TheInventor'sLibrary"],
-	[4486] = BZ["TheFrozenMine"],
-	[4487] = BZ["FrostfloeDeep"],
-	[4488] = BZ["TheHowlingHollow"],
-	[4489] = BZ["CrusaderForwardCamp"],
+	[4450] = BZ["Loken's Bargain"],
+	[4451] = BZ["Bor's Fall"],
+	[4452] = BZ["Bor's Breath"],
+	[4453] = BZ["Rohemdal Pass"],
+	[4454] = BZ["The Storm Foundry"],
+	[4455] = BZ["Hibernal Cavern"],
+	[4456] = BZ["Voldrune Dwelling"],
+	[4457] = BZ["Torseg's Rest"],
+	[4458] = BZ["Sparksocket Minefield"],
+	[4459] = BZ["Ricket's Folly"],
+	[4460] = BZ["Garm's Bane"],
+	[4461] = BZ["Garm's Rise"],
+	[4462] = BZ["Crystalweb Cavern"],
+	[4463] = BZ["Temple of Life"],
+	[4464] = BZ["Temple of Order"],
+	[4465] = BZ["Temple of Winter"],
+	[4466] = BZ["Temple of Invention"],
+	[4467] = BZ["Death's Rise"],
+	[4468] = BZ["The Dead Fields"],
+	[4469] = BZ["Dargath's Demise"],
+	[4470] = BZ["The Hidden Hollow"],
+	[4471] = BZ["Bernau's Happy Fun Land"],
+	[4472] = BZ["Frostgrip's Hollow"],
+	[4473] = BZ["The Frigid Tomb"],
+	[4474] = BZ["Twin Shores"],
+	[4475] = BZ["Zim'bo's Hideout"],
+	[4476] = BZ["Abandoned Camp"],
+	[4477] = BZ["The Shadow Vault"],
+	[4478] = BZ["Coldwind Pass"],
+	[4479] = BZ["Winter's Breath Lake"],
+	[4480] = BZ["The Forgotten Overlook"],
+	[4481] = BZ["Jintha'kalar Passage"],
+	[4482] = BZ["Arriga Footbridge"],
+	[4483] = BZ["The Lost Passage"],
+	[4484] = BZ["Bouldercrag's Refuge"],
+	[4485] = BZ["The Inventor's Library"],
+	[4486] = BZ["The Frozen Mine"],
+	[4487] = BZ["Frostfloe Deep"],
+	[4488] = BZ["The Howling Hollow"],
+	[4489] = BZ["Crusader Forward Camp"],
 	[4490] = BZ["Stormcrest"],
-	[4491] = BZ["Bonesnap'sCamp"],
-	[4492] = BZ["Ufrang'sHall"],
+	[4491] = BZ["Bonesnap's Camp"],
+	[4492] = BZ["Ufrang's Hall"],
 	[4493] = BZ["The Obsidian Sanctum"],
-	[4494] = BZ["Ahnkahet"],
-	[4495] = BZ["Fjorn'sAnvil"],
+	[4494] = BZ["Ahn'kahet: The Old Kingdom"],
+	[4495] = BZ["Fjorn's Anvil"],
 	[4496] = BZ["Jotunheim"],
-	[4497] = BZ["SavageLedge"],
-	[4498] = BZ["HallsoftheAncestors"],
-	[4499] = BZ["TheBlightedPool"],
-	[4500] = BZ["TheEyeofEternity"],
-	[4501] = BZ["TheArgentVanguard"],
-	[4502] = BZ["Mimir'sWorkshop"],
-	[4503] = BZ["IronwallDam"],
-	[4504] = BZ["ValleyofEchoes"],
-	[4505] = BZ["TheBreach"],
+	[4497] = BZ["Savage Ledge"],
+	[4498] = BZ["Halls of the Ancestors"],
+	[4499] = BZ["The Blighted Pool"],
+	[4500] = BZ["The Eye of Eternity"],
+	[4501] = BZ["The Argent Vanguard"],
+	[4502] = BZ["Mimir's Workshop"],
+	[4503] = BZ["Ironwall Dam"],
+	[4504] = BZ["Valley of Echoes"],
+	[4505] = BZ["The Breach"],
 	[4506] = BZ["Scourgeholme"],
-	[4507] = BZ["TheBrokenFront"],
-	[4508] = BZ["Mord'rethar:TheDeathGate"],
-	[4509] = BZ["TheBombardment"],
-	[4510] = BZ["Aldur'thar:TheDesolationGate"],
-	[4511] = BZ["TheSkybreaker"],
-	[4512] = BZ["Orgrim'sHammer"],
+	[4507] = BZ["The Broken Front"],
+	[4508] = BZ["Mord'rethar: The Death Gate"],
+	[4509] = BZ["The Bombardment"],
+	[4510] = BZ["Aldur'thar: The Desolation Gate"],
+	[4511] = BZ["The Skybreaker"],
+	[4512] = BZ["Orgrim's Hammer"],
 	[4513] = BZ["Ymirheim"],
-	[4514] = BZ["SaroniteMines"],
-	[4515] = BZ["TheConflagration"],
-	[4516] = BZ["IronwallRampart"],
-	[4517] = BZ["WeepingQuarry"],
-	[4518] = BZ["Corp'rethar:TheHorrorGate"],
-	[4519] = BZ["TheCourtofBones"],
-	[4520] = BZ["Malykriss:TheVileHold"],
-	[4521] = BZ["CathedralofDarkness"],
-	[4522] = BZ["IcecrownCitadel"],
-	[4523] = BZ["IcecrownGlacier"],
+	[4514] = BZ["Saronite Mines"],
+	[4515] = BZ["The Conflagration"],
+	[4516] = BZ["Ironwall Rampart"],
+	[4517] = BZ["Weeping Quarry"],
+	[4518] = BZ["Corp'rethar: The Horror Gate"],
+	[4519] = BZ["The Court of Bones"],
+	[4520] = BZ["Malykriss: The Vile Hold"],
+	[4521] = BZ["Cathedral of Darkness"],
+	[4522] = BZ["Icecrown Citadel"],
+	[4523] = BZ["Icecrown Glacier"],
 	[4524] = BZ["Valhalas"],
-	[4525] = BZ["TheUnderhalls"],
-	[4526] = BZ["NjorndarVillage"],
-	[4527] = BZ["BalargardeFortress"],
-	[4528] = BZ["Kul'galarKeep"],
-	[4529] = BZ["TheCrimsonCathedral"],
-	[4530] = BZ["SanctumofReanimation"],
-	[4531] = BZ["TheFleshwerks"],
-	[4532] = BZ["VengeanceLandingInn"],
-	[4533] = BZ["Sindragosa'sFall"],
-	[4534] = BZ["WildervarMine"],
-	[4535] = BZ["ThePitoftheFang"],
-	[4536] = BZ["FrosthowlCavern"],
-	[4537] = BZ["TheValleyofLostHope"],
-	[4538] = BZ["TheSunkenRing"],
-	[4539] = BZ["TheBroken"],
-	[4540] = BZ["TheValleyofFallenHeroes"],
-	[4541] = BZ["VanguardInfirmary"],
-	[4542] = BZ["HalloftheShaper"],
-	[4543] = BZ["TempleofWisdom"],
-	[4544] = BZ["Death'sBreach"],
-	[4545] = BZ["AbandonedMine"],
-	[4546] = BZ["RuinsoftheScarletEnclave"],
-	[4547] = BZ["HallsofStone"],
-	[4548] = BZ["HallsofLightning"],
-	[4549] = BZ["TheGreatTree"],
-	[4550] = BZ["TheMirrorofTwilight"],
-	[4551] = BZ["TheTwilightRivulet"],
-	[4552] = BZ["TheDecrepitFlow"],
-	[4553] = BZ["ForlornWoods"],
-	[4554] = BZ["RuinsofShandaral"],
-	[4555] = BZ["TheAzureFront"],
-	[4556] = BZ["VioletStand"],
-	[4557] = BZ["TheUnboundThicket"],
-	[4558] = BZ["Sunreaver'sCommand"],
-	[4559] = BZ["Windrunner'sOverlook"],
-	[4560] = BZ["TheUnderbelly"],
-	[4564] = BZ["Karasus'Landing"],
-	[4567] = BZ["TheVioletHold"],
-	[4568] = BZ["TheEventide"],
-	[4569] = BZ["SewerExitPipeInterior"],
-	[4570] = BZ["DalaranSewerDueling"],
-	[4571] = BZ["SilverwingFlagRoom"],
-	[4572] = BZ["WarsongFlagRoom"],
-	[4575] = BZ["WintergraspFortress"],
-	[4576] = BZ["CentralBridge"],
-	[4577] = BZ["EasternBridge"],
-	[4578] = BZ["WesternBridge"],
+	[4525] = BZ["The Underhalls"],
+	[4526] = BZ["Njorndar Village"],
+	[4527] = BZ["Balargarde Fortress"],
+	[4528] = BZ["Kul'galar Keep"],
+	[4529] = BZ["The Crimson Cathedral"],
+	[4530] = BZ["Sanctum of Reanimation"],
+	[4531] = BZ["The Fleshwerks"],
+	[4532] = BZ["Vengeance Landing Inn"],
+	[4533] = BZ["Sindragosa's Fall"],
+	[4534] = BZ["Wildervar Mine"],
+	[4535] = BZ["The Pit of the Fang"],
+	[4536] = BZ["Frosthowl Cavern"],
+	[4537] = BZ["The Valley of Lost Hope"],
+	[4538] = BZ["The Sunken Ring"],
+	[4539] = BZ["The Broken Temple"],
+	[4540] = BZ["The Valley of Fallen Heroes"],
+	[4541] = BZ["Vanguard Infirmary"],
+	[4542] = BZ["Hall of the Shaper"],
+	[4543] = BZ["Temple of Wisdom"],
+	[4544] = BZ["Death's Breach"],
+	[4545] = BZ["Abandoned Mine"],
+	[4546] = BZ["Ruins of the Scarlet Enclave"],
+	[4547] = BZ["Halls of Stone"],
+	[4548] = BZ["Halls of Lightning"],
+	[4549] = BZ["The Great Tree"],
+	[4550] = BZ["The Mirror of Twilight"],
+	[4551] = BZ["The Twilight Rivulet"],
+	[4552] = BZ["The Decrepit Flow"],
+	[4553] = BZ["Forlorn Woods"],
+	[4554] = BZ["Ruins of Shandaral"],
+	[4555] = BZ["The Azure Front"],
+	[4556] = BZ["Violet Stand"],
+	[4557] = BZ["The Unbound Thicket"],
+	[4558] = BZ["Sunreaver's Command"],
+	[4559] = BZ["Windrunner's Overlook"],
+	[4560] = BZ["The Underbelly"],
+	[4564] = BZ["Krasus' Landing"],
+	[4567] = BZ["The Violet Hold"],
+	[4568] = BZ["The Eventide"],
+	[4569] = BZ["Sewer Exit Pipe"],
+	[4570] = BZ["Circle of Wills"],
+	[4571] = BZ["Silverwing Flag Room"],
+	[4572] = BZ["Warsong Flag Room"],
+	[4575] = BZ["Wintergrasp Fortress"],
+	[4576] = BZ["Central Bridge"],
+	[4577] = BZ["Eastern Bridge"],
+	[4578] = BZ["Western Bridge"],
 	[4579] = BZ["Dubra'Jin"],
-	[4580] = BZ["Crusaders'Pinnacle"],
-	[4581] = BZ["FlamewatchTower"],
-	[4582] = BZ["WintersEdgeTower"],
-	[4583] = BZ["ShadowsightTower"],
-	[4584] = BZ["TheFieldofFlames"],
-	[4585] = BZ["TheFrozenPool"],
-	[4586] = BZ["TheWindyBluffs"],
-	[4587] = BZ["TheForestofShadows"],
+	[4580] = BZ["Crusaders' Pinnacle"],
+	[4581] = BZ["Flamewatch Tower"],
+	[4582] = BZ["Winter's Edge Tower"],
+	[4583] = BZ["Shadowsight Tower"],
+	[4584] = BZ["The Cauldron of Flames"],
+	[4585] = BZ["Glacial Falls"],
+	[4586] = BZ["Windy Bluffs"],
+	[4587] = BZ["The Forest of Shadows"],
 	[4588] = BZ["Blackwatch"],
-	[4589] = BZ["TheChilledQuagmire"],
-	[4590] = BZ["TheSteppeofLife"],
-	[4591] = BZ["SilentVigil"],
-	[4592] = BZ["Gimorak'sDen"],
-	[4593] = BZ["ThePitofFiends"],
-	[4594] = BZ["BattlescarSpire"],
-	[4595] = BZ["HallofHorrors"],
-	[4596] = BZ["TheCircleofSuffering"],
-	[4597] = BZ["RiseofSuffering"],
-	[4598] = BZ["Krasus'LandingInterior"],
-	[4599] = BZ["SewerExitPipe"],
-	[4601] = BZ["DalaranIsland"],
-	[4602] = BZ["ForceInterior"],
-	[4603] = BZ["VaultofArchavon"],
-	[4604] = BZ["GateoftheCrimsonSun"],
-	[4605] = BZ["GateoftheFrozenSapphire"],
-	[4606] = BZ["GateoftheEmeraldTriad"],
-	[4607] = BZ["GateofthePurpleAmethyst"],
-	[4608] = BZ["GateoftheYellowMoon"],
-	[4609] = BZ["CourtyardoftheAncients"],
-	[4610] = BZ["LandingBeach"],
-	[4611] = BZ["WestsparkWorkshop"],
-	[4612] = BZ["EastsparkWorkshop"],
-	[4613] = BZ["DalaranCity"],
-	[4614] = BZ["TheVioletCitadelSpire"],
-	[4615] = BZ["Naz'anak:TheForgottenDepths"],
-	[4616] = BZ["Sunreaver'sSanctuary"],
+	[4589] = BZ["The Chilled Quagmire"],
+	[4590] = BZ["The Steppe of Life"],
+	[4591] = BZ["Silent Vigil"],
+	[4592] = BZ["Gimorak's Den"],
+	[4593] = BZ["The Pit of Fiends"],
+	[4594] = BZ["Battlescar Spire"],
+	[4595] = BZ["Hall of Horrors"],
+	[4596] = BZ["The Circle of Suffering"],
+	[4597] = BZ["Rise of Suffering"],
+	[4598] = BZ["Krasus' Landing"],
+	[4599] = BZ["Sewer Exit Pipe"],
+	[4601] = BZ["Dalaran Island"],
+	[4602] = BZ["Force Interior"],
+	[4603] = BZ["Vault of Archavon"],
+	[4604] = BZ["Gate of the Red Sun"],
+	[4605] = BZ["Gate of the Blue Sapphire"],
+	[4606] = BZ["Gate of the Green Emerald"],
+	[4607] = BZ["Gate of the Purple Amethyst"],
+	[4608] = BZ["Gate of the Yellow Moon"],
+	[4609] = BZ["Courtyard of the Ancients"],
+	[4610] = BZ["Landing Beach"],
+	[4611] = BZ["Westspark Workshop"],
+	[4612] = BZ["Eastspark Workshop"],
+	[4613] = BZ["Dalaran City"],
+	[4614] = BZ["The Violet Citadel Spire"],
+	[4615] = BZ["Naz'anak: The Forgotten Depths"],
+	[4616] = BZ["Sunreaver's Sanctuary"],
 	[4617] = BZ["Elevator"],
-	[4618] = BZ["AntonidasMemorial"],
-	[4619] = BZ["TheVioletCitadel"],
-	[4620] = BZ["MagusCommerceExchange"],
+	[4618] = BZ["Antonidas Memorial"],
+	[4619] = BZ["The Violet Citadel"],
+	[4620] = BZ["Magus Commerce Exchange"],
 	[4621] = BZ["UNUSED"],
-	[4622] = BZ["FirstLegionForwardCamp"],
-	[4623] = BZ["HalloftheConqueredKings"],
-	[4624] = BZ["BefouledTerrace"],
-	[4625] = BZ["TheDesecratedAltar"],
-	[4626] = BZ["ShimmeringBog"],
-	[4627] = BZ["FallenTempleofAhn'kahet"],
-	[4628] = BZ["HallsofBinding"],
-	[4629] = BZ["Winter'sHeart"],
-	[4630] = BZ["TheNorthSeaNorthrendN"],
-	[4631] = BZ["TheBroodmother'sNest"],
-	[4632] = BZ["DalaranFloatingRocks"],
-	[4633] = BZ["RaptorPens"],
-	[4635] = BZ["Drak'TharonKeep"],
-	[4636] = BZ["TheNoxiousPass"],
-	[4637] = BZ["Vargoth'sRetreat"],
-	[4638] = BZ["VioletCitadelBalconys"],
-	[4639] = BZ["BandofVariance"],
-	[4640] = BZ["BandofAcceleration"],
-	[4641] = BZ["BandofTransmutation"],
-	[4642] = BZ["BandofAlignment"],
-	[4644] = BZ["Orendil'sRetreat"],
-	[4645] = BZ["BlackfathomCamp"],
-	[4646] = BZ["AshwoodLake"],
-	[4647] = BZ["Ruuzel'sIsle"],
-	[4648] = BZ["AuberdineRefugeeCamp"],
-	[4650] = BZ["IronConcourse"],
-	[4652] = BZ["FormationGrounds"],
-	[4653] = BZ["Razorscale'sAerie"],
-	[4654] = BZ["TheColossalForge"],
-	[4655] = BZ["TheScrapyard"],
-	[4656] = BZ["TheConservatoryofLife"],
-	[4657] = BZ["TheArchivum"],
-	[4658] = BZ["ArgentTournamentGrounds"],
+	[4622] = BZ["First Legion Forward Camp"],
+	[4623] = BZ["Hall of the Conquered Kings"],
+	[4624] = BZ["Befouled Terrace"],
+	[4625] = BZ["The Desecrated Altar"],
+	[4626] = BZ["Shimmering Bog"],
+	[4627] = BZ["Fallen Temple of Ahn'kahet"],
+	[4628] = BZ["Halls of Binding"],
+	[4629] = BZ["Winter's Heart"],
+	[4630] = BZ["The North Sea"],
+	[4631] = BZ["The Broodmother's Nest"],
+	[4632] = BZ["Dalaran Floating Rocks"],
+	[4633] = BZ["Raptor Pens"],
+	[4635] = BZ["Drak'Tharon Keep"],
+	[4636] = BZ["The Noxious Pass"],
+	[4637] = BZ["Vargoth's Retreat"],
+	[4638] = BZ["Violet Citadel Balcony"],
+	[4639] = BZ["Band of Variance"],
+	[4640] = BZ["Band of Acceleration"],
+	[4641] = BZ["Band of Transmutation"],
+	[4642] = BZ["Band of Alignment"],
+	[4644] = BZ["Orendil's Retreat"],
+	[4645] = BZ["Blackfathom Camp"],
+	[4646] = BZ["Ashwood Lake"],
+	[4647] = BZ["Ruuzel's Isle"],
+	[4648] = BZ["Auberdine Refugee Camp"],
+	[4650] = BZ["Iron Concourse"],
+	[4652] = BZ["Formation Grounds"],
+	[4653] = BZ["Razorscale's Aerie"],
+	[4654] = BZ["The Colossal Forge"],
+	[4655] = BZ["The Scrapyard"],
+	[4656] = BZ["The Conservatory of Life"],
+	[4657] = BZ["The Archivum"],
+	[4658] = BZ["Argent Tournament Grounds"],
 	[4659] = BZ["Lor'danel"],
-	[4660] = BZ["RuinsofLornesta"],
-	[4661] = BZ["CliffspringHollow"],
-	[4662] = BZ["ShatterspearWarCamp"],
-	[4663] = BZ["MawoftheVoid"],
-	[4664] = BZ["ShatterspearVale"],
-	[4665] = BZ["ExpeditionBaseCamp"],
-	[4666] = BZ["SunreaverPavilion"],
-	[4667] = BZ["SilverCovenantPavilion"],
-	[4668] = BZ["TheCooperResidence"],
-	[4669] = BZ["TheRingofChampions"],
-	[4670] = BZ["TheAspirants'Ring"],
-	[4671] = BZ["TheArgentValiants'Ring"],
-	[4672] = BZ["TheAllianceValiants'Ring"],
-	[4673] = BZ["TheHordeValiants'Ring"],
-	[4674] = BZ["ArgentPavilion"],
-	[4675] = BZ["WitheringThicket"],
-	[4676] = BZ["SunreaverPavilionOutside"],
-	[4677] = BZ["SilverCovenantPavilionOutside"],
-	[4679] = BZ["TheForlornCavern"],
+	[4660] = BZ["Ruins of Lornesta"],
+	[4661] = BZ["Cliffspring Hollow"],
+	[4662] = BZ["Shatterspear War Camp"],
+	[4663] = BZ["Maw of the Void"],
+	[4664] = BZ["Shatterspear Vale"],
+	[4665] = BZ["Expedition Base Camp"],
+	[4666] = BZ["Sunreaver Pavilion"],
+	[4667] = BZ["Silver Covenant Pavilion"],
+	[4668] = BZ["The Cooper Residence"],
+	[4669] = BZ["The Ring of Champions"],
+	[4670] = BZ["The Aspirants' Ring"],
+	[4671] = BZ["The Argent Valiants' Ring"],
+	[4672] = BZ["The Alliance Valiants' Ring"],
+	[4673] = BZ["The Horde Valiants' Ring"],
+	[4674] = BZ["Argent Pavilion"],
+	[4675] = BZ["Withering Thicket"],
+	[4676] = BZ["Sunreaver Pavilion"],
+	[4677] = BZ["Silver Covenant Pavilion"],
+	[4679] = BZ["The Forlorn Cavern"],
 	[4688] = BZ["claytonio test area"],
-	[4690] = BZ["ThunderPeak"],
-	[4691] = BZ["Hellscream'sWatch"],
-	[4692] = BZ["Quel'Delar'sRest"],
-	[4693] = BZ["SplintertreeMine"],
-	[4694] = BZ["ThistlefurHold"],
-	[4695] = BZ["TheEyeoftheVortex"],
-	[4696] = BZ["BlackwoodCamp"],
-	[4697] = BZ["TheBlazingStrand"],
-	[4698] = BZ["MoontouchedDen"],
-	[4702] = BZ["ShatterspearPass"],
-	[4705] = BZ["RaynewoodTower"],
-	[4706] = BZ["RuinsofGilneas"],
-	[4707] = BZ["TheLostIsles01"],
-	[4708] = BZ["EarthshatterCavern"],
-	[4709] = BZ["SouthernBarrens"],
-	[4710] = BZ["IsleofConquest"],
-	[4711] = BZ["StardustSpire"],
-	[4712] = BZ["MoonwellofCleansing"],
-	[4713] = BZ["Krolg'sHut"],
+	[4690] = BZ["Thunder Peak"],
+	[4691] = BZ["Hellscream's Watch"],
+	[4692] = BZ["Quel'Delar's Rest"],
+	[4693] = BZ["Splintertree Mine"],
+	[4694] = BZ["Thistlefur Hold"],
+	[4695] = BZ["The Eye of the Vortex"],
+	[4696] = BZ["Blackwood Camp"],
+	[4697] = BZ["The Blazing Strand"],
+	[4698] = BZ["Moontouched Den"],
+	[4702] = BZ["Shatterspear Pass"],
+	[4705] = BZ["Raynewood Tower"],
+	[4706] = BZ["Ruins of Gilneas"],
+	[4707] = BZ["The Lost Isles"],
+	[4708] = BZ["Earthshatter Cavern"],
+	[4709] = BZ["Southern Barrens"],
+	[4710] = BZ["Isle of Conquest"],
+	[4711] = BZ["Stardust Spire"],
+	[4712] = BZ["Moonwell of Cleansing"],
+	[4713] = BZ["Krolg's Hut"],
 	[4714] = BZ["Gilneas"],
-	[4715] = BZ["TheSkunkworks"],
-	[4716] = BZ["Bolyun'sCamp"],
-	[4717] = BZ["HouseofEdune"],
-	[4718] = BZ["WellspringHovel"],
+	[4715] = BZ["The Skunkworks"],
+	[4716] = BZ["Bolyun's Camp"],
+	[4717] = BZ["House of Edune"],
+	[4718] = BZ["Wellspring Hovel"],
 	[4719] = BZ["Familiars"],
-	[4720] = BZ["TheLostIsles"],
-	[4721] = BZ["ShipwreckShore"],
-	[4722] = BZ["TheArgentColiseum"],
-	[4723] = BZ["TheArgentColiseum"],
-	[4724] = BZ["DescenttoBan'ehtilBarrowDen"],
-	[4725] = BZ["TheHeadlands"],
-	[4726] = BZ["KeelHarbor"],
-	[4727] = BZ["AdericsRepose"],
-	[4728] = BZ["NothernHeadlands"],
+	[4720] = BZ["The Lost Isles"],
+	[4721] = BZ["Shipwreck Shore"],
+	[4722] = BZ["Trial of the Crusader"],
+	[4723] = BZ["Trial of the Champion"],
+	[4724] = BZ["Ban'ethil Barrow Descent"],
+	[4725] = BZ["The Headlands"],
+	[4726] = BZ["Keel Harbor"],
+	[4727] = BZ["Aderic's Repose"],
+	[4728] = BZ["Northern Headlands"],
 	[4729] = BZ["Northgate Woods"],
-	[4730] = BZ["TheBlackwald"],
+	[4730] = BZ["The Blackwald"],
 	[4731] = BZ["Stormglen Village"],
-	[4732] = BZ["EmberstoneMine"],
-	[4733] = BZ["GalewatchLighthouse"],
-	[4734] = BZ["EmberstoneVillage"],
-	[4735] = BZ["NorthgateBreach"],
+	[4732] = BZ["Emberstone Mine"],
+	[4733] = BZ["Galewatch Lighthouse"],
+	[4734] = BZ["Emberstone Village"],
+	[4735] = BZ["Northgate Breach"],
 	[4736] = BZ["The Bite"],
 	[4737] = BZ["Kezan"],
-	[4738] = BZ["AbyssalMaw"],
-	[4739] = BZ["RuneweaverSquare"],
-	[4740] = BZ["TheSilverEnclave"],
-	[4741] = BZ["IsleofConquestNoMansLand"],
-	[4742] = BZ["Hrothgar'sLanding"],
-	[4743] = BZ["Deathspeaker'sWatch"],
-	[4744] = BZ["TempQuarry"],
-	[4745] = BZ["OrgrimmarRearGate"],
+	[4738] = BZ["Abyssal Maw"],
+	[4739] = BZ["Runeweaver Square"],
+	[4740] = BZ["The Silver Enclave"],
+	[4741] = BZ["Isle of Conquest No Man's Land"],
+	[4742] = BZ["Hrothgar's Landing"],
+	[4743] = BZ["Deathspeaker's Watch"],
+	[4744] = BZ["Mountainfoot Strip Mine"],
+	[4745] = BZ["Orgrimmar Rear Gate"],
 	[4747] = BZ["Workshop"],
 	[4748] = BZ["Quarry"],
 	[4749] = BZ["Docks"],
 	[4750] = BZ["Hangar"],
 	[4751] = BZ["Refinery"],
-	[4752] = BZ["HordeKeep"],
-	[4753] = BZ["AllianceKeep"],
-	[4755] = BZ["GilneasCity"],
-	[4756] = BZ["MerchantSquare"],
-	[4757] = BZ["MilitaryDistrict"],
-	[4758] = BZ["GreymaneCourt"],
-	[4759] = BZ["CathedralQuarter"],
-	[4760] = BZ["TheSeaReaver'sRun"],
+	[4752] = BZ["Horde Keep"],
+	[4753] = BZ["Alliance Keep"],
+	[4755] = BZ["Gilneas City"],
+	[4756] = BZ["Merchant Square"],
+	[4757] = BZ["Military District"],
+	[4758] = BZ["Greymane Court"],
+	[4759] = BZ["Cathedral Quarter"],
+	[4760] = BZ["The Sea Reaver's Run"],
 	[4761] = BZ["Light's Dawn Cathedral"],
-	[4762] = BZ["StonewardPrison"],
-	[4763] = BZ["Transport:AllianceGunship"],
-	[4764] = BZ["Transport:HordeGunship"],
-	[4765] = BZ["KTCHeadquarters"],
-	[4766] = BZ["Kajamine"],
-	[4767] = BZ["BilgewaterPort"],
-	[4768] = BZ["Gallywix'sVilla"],
-	[4769] = BZ["Hrothgar'sLanding"],
-	[4770] = BZ["FirstBankofKezan"],
+	[4762] = BZ["Stoneward Prison"],
+	[4763] = BZ["Transport: Alliance Gunship"],
+	[4764] = BZ["Transport: Horde Gunship"],
+	[4765] = BZ["KTC Headquarters"],
+	[4766] = BZ["Kaja'mine"],
+	[4767] = BZ["Bilgewater Port"],
+	[4768] = BZ["Gallywix's Villa"],
+	[4769] = BZ["Hrothgar's Landing"],
+	[4770] = BZ["First Bank of Kezan"],
 	[4771] = BZ["Drudgetown"],
-	[4772] = BZ["TheSlick"],
-	[4773] = BZ["SwindleStreet"],
-	[4774] = BZ["Gilneas(DND)"],
-	[4778] = BZ["KajamiteCavern"],
-	[4779] = BZ["HordeBaseCamp"],
-	[4780] = BZ["TheViciousVale"],
-	[4781] = BZ["WildOverlook"],
-	[4782] = BZ["TheSavageGlen"],
-	[4783] = BZ["AllianceBeachhead"],
-	[4784] = BZ["VengeanceWake"],
-	[4785] = BZ["TheGreatSea"],
+	[4772] = BZ["The Slick"],
+	[4773] = BZ["Swindle Street"],
+	[4774] = BZ["Gilneas (Do Not Reuse)"],
+	[4778] = BZ["Kaja'mite Cavern"],
+	[4779] = BZ["Horde Base Camp"],
+	[4780] = BZ["The Vicious Vale"],
+	[4781] = BZ["Wild Overlook"],
+	[4782] = BZ["The Savage Glen"],
+	[4783] = BZ["Alliance Beachhead"],
+	[4784] = BZ["Vengeance Wake"],
+	[4785] = BZ["The Great Sea"],
 	[4786] = BZ["Duskhaven"],
-	[4787] = BZ["StagecoachCrashSite"],
-	[4788] = BZ["Tempest'sReach"],
-	[4789] = BZ["TheGreymaneWall"],
-	[4790] = BZ["NorthgateRiver"],
-	[4791] = BZ["HailwoodMarsh"],
-	[4792] = BZ["AllenFarmstead"],
-	[4793] = BZ["HammondFarmstead"],
-	[4794] = BZ["Koroth'sDen"],
-	[4795] = BZ["SlitherbladeShore"],
-	[4796] = BZ["SlitherbladeShore"],
-	[4797] = BZ["MagramTerritory"],
-	[4798] = BZ["Thargad'sCamp"],
-	[4799] = BZ["TrialofFire"],
-	[4800] = BZ["TrialofShadow"],
-	[4801] = BZ["ArcanePinnacle"],
-	[4802] = BZ["Draka'sFury"],
-	[4803] = BZ["Furien'sPost"],
-	[4804] = BZ["CenarionWildlands"],
-	[4805] = BZ["Karnum'sGlade"],
-	[4806] = BZ["WahlCottage"],
-	[4807] = BZ["CrowleyOrchard"],
-	[4808] = BZ["HaywardFishery"],
-	[4809] = BZ["TheForgeofSouls"],
-	[4810] = BZ["Queen'sGate"],
-	[4811] = BZ["King'sGate"],
-	[4812] = BZ["IcecrownCitadel"],
-	[4813] = BZ["PitofSaron"],
-	[4814] = BZ["SableRidge"],
-	[4815] = BZ["VashjirKelp'tharForest"],
-	[4816] = BZ["DireStrait"],
-	[4817] = BZ["GreymaneManor"],
-	[4818] = BZ["CrowleyStableGrounds"],
-	[4819] = BZ["TheAncientGrove"],
-	[4820] = BZ["HallsofReflection"],
-	[4821] = BZ["BilgewaterHarbor"],
-	[4822] = BZ["KajaroField"],
-	[4823] = BZ["SouthSeas"],
-	[4824] = BZ["GallywixPleasurePalace"],
-	[4825] = BZ["NorthernRocketwayExchange"],
-	[4826] = BZ["StormCliffs"],
-	[4827] = BZ["StormCliffs"],
-	[4828] = BZ["SouthernRocketwayTerminus"],
-	[4829] = BZ["TheSecretLab"],
-	[4830] = BZ["OrgrimmarRocketwayExchange"],
-	[4832] = BZ["Transport:AllianceGunship(IGB)"],
-	[4833] = BZ["Transport:HordeGunship(IGB)"],
-	[4834] = BZ["RuinsofNordressa"],
-	[4835] = BZ["CampSungraze"],
-	[4836] = BZ["StonetalonPass"],
-	[4837] = BZ["Whitebeard'sEncampment"],
-	[4838] = BZ["Gallywix'sYacht"],
-	[4839] = BZ["FargazeMesa"],
-	[4840] = BZ["ThePipe"],
+	[4787] = BZ["Stagecoach Crash Site"],
+	[4788] = BZ["Tempest's Reach"],
+	[4789] = BZ["The Greymane Wall"],
+	[4790] = BZ["Northgate River"],
+	[4791] = BZ["Hailwood Marsh"],
+	[4792] = BZ["Allen Farmstead"],
+	[4793] = BZ["Hammond Farmstead"],
+	[4794] = BZ["Koroth's Den"],
+	[4795] = BZ["Slitherblade Shore"],
+	[4796] = BZ["Slitherblade Shore"],
+	[4797] = BZ["Magram Territory"],
+	[4798] = BZ["Thargad's Camp"],
+	[4799] = BZ["Trial of Fire"],
+	[4800] = BZ["Trial of Shadow"],
+	[4801] = BZ["Arcane Pinnacle"],
+	[4802] = BZ["Draka's Fury"],
+	[4803] = BZ["Furien's Post"],
+	[4804] = BZ["Cenarion Wildlands"],
+	[4805] = BZ["Karnum's Glade"],
+	[4806] = BZ["Wahl Cottage"],
+	[4807] = BZ["Crowley Orchard"],
+	[4808] = BZ["Hayward Fishery"],
+	[4809] = BZ["The Forge of Souls"],
+	[4810] = BZ["Queen's Gate"],
+	[4811] = BZ["King's Gate"],
+	[4812] = BZ["Icecrown Citadel"],
+	[4813] = BZ["Pit of Saron"],
+	[4814] = BZ["Sable Ridge"],
+	[4815] = BZ["Kelp'thar Forest"],
+	[4816] = BZ["Dire Strait"],
+	[4817] = BZ["Greymane Manor"],
+	[4818] = BZ["Crowley Stable Grounds"],
+	[4819] = BZ["The Ancient Grove"],
+	[4820] = BZ["Halls of Reflection"],
+	[4821] = BZ["Bilgewater Harbor"],
+	[4822] = BZ["Kajaro Field"],
+	[4823] = BZ["South Seas"],
+	[4824] = BZ["Gallywix Pleasure Palace"],
+	[4825] = BZ["Northern Rocketway Exchange"],
+	[4826] = BZ["Storm Cliffs"],
+	[4827] = BZ["Storm Cliffs"],
+	[4828] = BZ["Southern Rocketway Terminus"],
+	[4829] = BZ["The Secret Lab"],
+	[4830] = BZ["Orgrimmar Rocketway Exchange"],
+	[4832] = BZ["Transport: Alliance Gunship (IGB)"],
+	[4833] = BZ["Transport: Horde Gunship (IGB)"],
+	[4834] = BZ["Ruins of Nordressa"],
+	[4835] = BZ["Camp Sungraze"],
+	[4836] = BZ["Stonetalon Pass"],
+	[4837] = BZ["Whitebeard's Encampment"],
+	[4838] = BZ["Gallywix's Yacht"],
+	[4839] = BZ["Fargaze Mesa"],
+	[4840] = BZ["The Pipe"],
 	[4841] = BZ["Tal'doren"],
-	[4842] = BZ["LiveryOutpost"],
-	[4843] = BZ["Honor'sStand"],
-	[4844] = BZ["Hunter'sHill"],
-	[4845] = BZ["TheOvergrowth"],
-	[4846] = BZ["CampUna'fe"],
-	[4847] = BZ["NorthwatchHold"],
-	[4848] = BZ["Teegan'sExpedition"],
-	[4849] = BZ["ForwardCommand"],
-	[4850] = BZ["FieldsofBlood"],
-	[4851] = BZ["TaurajoRuins"],
-	[4852] = BZ["MulgoreGate"],
-	[4853] = BZ["DesolationHold"],
-	[4854] = BZ["FortTriumph"],
+	[4842] = BZ["Livery Outpost"],
+	[4843] = BZ["Honor's Stand"],
+	[4844] = BZ["Hunter's Hill"],
+	[4845] = BZ["The Overgrowth"],
+	[4846] = BZ["Camp Una'fe"],
+	[4847] = BZ["Northwatch Hold"],
+	[4848] = BZ["Teegan's Expedition"],
+	[4849] = BZ["Forward Command"],
+	[4850] = BZ["Fields of Blood"],
+	[4851] = BZ["Ruins of Taurajo"],
+	[4852] = BZ["The Great Gate"],
+	[4853] = BZ["Desolation Hold"],
+	[4854] = BZ["Fort Triumph"],
 	[4855] = BZ["Battlescar"],
-	[4856] = BZ["BaelModan"],
-	[4857] = BZ["FirestonePoint"],
-	[4858] = BZ["Rygna'sLair"],
-	[4859] = BZ["TheFrozenThrone"],
-	[4860] = BZ["OvergrownCamp"],
-	[4861] = BZ["TheRegrowth"],
-	[4862] = BZ["TheFrozenHalls"],
-	[4863] = BZ["BloodtalonShore"],
-	[4864] = BZ["Zalazane'sFall"],
-	[4865] = BZ["DarkspearTrainingGrounds"],
-	[4866] = BZ["DarkspearHold"],
-	[4867] = BZ["SpitescaleCove"],
-	[4868] = BZ["TheBradshawMill"],
-	[4869] = BZ["Wood'sEndCabin"],
-	[4870] = BZ["LandingSite"],
+	[4856] = BZ["Bael Modan"],
+	[4857] = BZ["Firestone Point"],
+	[4858] = BZ["Rygna's Lair"],
+	[4859] = BZ["The Frozen Throne"],
+	[4860] = BZ["Overgrown Camp"],
+	[4861] = BZ["The Regrowth"],
+	[4862] = BZ["The Frozen Halls"],
+	[4863] = BZ["Bloodtalon Shore"],
+	[4864] = BZ["Zalazane's Fall"],
+	[4865] = BZ["Darkspear Training Grounds"],
+	[4866] = BZ["Darkspear Hold"],
+	[4867] = BZ["Spitescale Cove"],
+	[4868] = BZ["The Bradshaw Mill"],
+	[4869] = BZ["Wood's End Cabin"],
+	[4870] = BZ["Landing Site"],
 	[4871] = BZ["Town-In-A-Box"],
-	[4872] = BZ["Bael'dunKeep"],
-	[4873] = BZ["RaptorRise"],
-	[4874] = BZ["ScorchedGully"],
-	[4875] = BZ["DarkspearIsle"],
-	[4876] = BZ["RuinsofVashj'elan"],
-	[4877] = BZ["Vashj'elanSpawningPool"],
-	[4878] = BZ["TheThornsnarl"],
-	[4879] = BZ["TheBattleboarPen"],
-	[4880] = BZ["Thornmantle'sHideout"],
-	[4881] = BZ["StonetalonPass"],
-	[4882] = BZ["Marshal'sStand"],
-	[4883] = BZ["MossyPile"],
-	[4884] = BZ["TheScreamingReaches"],
-	[4885] = BZ["TheRoilingGardens"],
-	[4886] = BZ["OomlotVillage"],
-	[4887] = BZ["NightmareScar"],
-	[4888] = BZ["TheNightmareScar"],
-	[4889] = BZ["FrostwingLair"],
-	[4890] = BZ["Putricide'sLaboratoryof"],
-	[4891] = BZ["TheSanctumofBlood"],
-	[4892] = BZ["TheCrimsonHall"],
-	[4893] = BZ["FrostwingLair"],
-	[4894] = BZ["Putricide'sLaboratoryofAlchemicalHorrorsandFun"],
-	[4895] = BZ["TheCrimsonHall"],
-	[4896] = BZ["TheFrozenThrone"],
-	[4897] = BZ["TheSanctumofBlood"],
+	[4872] = BZ["Bael'dun Keep"],
+	[4873] = BZ["Raptor Rise"],
+	[4874] = BZ["Scorched Gully"],
+	[4875] = BZ["Darkspear Isle"],
+	[4876] = BZ["Ruins of Vashj'elan"],
+	[4877] = BZ["Vashj'elan Spawning Pool"],
+	[4878] = BZ["The Thornsnarl"],
+	[4879] = BZ["The Battleboar Pen"],
+	[4880] = BZ["Thornmantle's Hideout"],
+	[4881] = BZ["Stonetalon Pass"],
+	[4882] = BZ["Marshal's Stand"],
+	[4883] = BZ["Mossy Pile"],
+	[4884] = BZ["The Screaming Reaches"],
+	[4885] = BZ["The Roiling Gardens"],
+	[4886] = BZ["Oomlot Village"],
+	[4887] = BZ["Nightmare Scar"],
+	[4888] = BZ["The Nightmare Scar"],
+	[4889] = BZ["The Frost Queen's Lair"],
+	[4890] = BZ["Putricide's Laboratory of Alchemical Horrors and Fun"],
+	[4891] = BZ["The Sanctum of Blood"],
+	[4892] = BZ["The Crimson Hall"],
+	[4893] = BZ["The Frost Queen's Lair"],
+	[4894] = BZ["Putricide's Laboratory of Alchemical Horrors and Fun"],
+	[4895] = BZ["The Crimson Hall"],
+	[4896] = BZ["The Frozen Throne"],
+	[4897] = BZ["The Sanctum of Blood"],
 	[4898] = BZ["Frostmourne"],
-	[4899] = BZ["LostPeak"],
-	[4900] = BZ["OostanNord"],
-	[4901] = BZ["OostanSor"],
-	[4902] = BZ["OostanOst"],
+	[4899] = BZ["Lost Peak"],
+	[4900] = BZ["Oostan Nord"],
+	[4901] = BZ["Oostan Sor"],
+	[4902] = BZ["Oostan Ost"],
 	[4903] = BZ["Oostan"],
-	[4904] = BZ["TheDarkApproach"],
-	[4905] = BZ["Scourgelord'sCommand"],
-	[4906] = BZ["TheShadowThrone"],
-	[4908] = BZ["TheHiddenPassage"],
-	[4909] = BZ["LostCaldera"],
+	[4904] = BZ["The Dark Approach"],
+	[4905] = BZ["Scourgelord's Command"],
+	[4906] = BZ["The Shadow Throne"],
+	[4908] = BZ["The Hidden Passage"],
+	[4909] = BZ["Lost Caldera"],
 	[4910] = BZ["Frostmourne"],
-	[4911] = BZ["VolcanothsLair"],
-	[4912] = BZ["Warchief'sLookout"],
-	[4913] = BZ["SpitescaleCavern"],
-	[4914] = BZ["TranquilCoast"],
-	[4915] = BZ["ScarletCamp"],
-	[4916] = BZ["CalstonEstate"],
-	[4917] = BZ["ScarletPalisade"],
-	[4918] = BZ["ScarletEncampment"],
-	[4919] = BZ["Death'sWatchWaystation"],
-	[4920] = BZ["Crusader'sRun"],
-	[4921] = BZ["ScarletWatchtower"],
-	[4922] = BZ["TwilightHighlands"],
-	[4923] = BZ["SkyFalls"],
-	[4924] = BZ["GallywixLaborMine"],
-	[4925] = BZ["Thunk'sAbode"],
-	[4926] = BZ["BlackrockCaverns"],
-	[4927] = BZ["TheFold"],
-	[4928] = BZ["TalondeepPass"],
-	[4929] = BZ["WindshearHold"],
-	[4930] = BZ["WebwinderHollow"],
-	[4931] = BZ["RuinsofEldre'thar"],
-	[4932] = BZ["TheDeepReaches"],
-	[4933] = BZ["Krom'garFortress"],
-	[4934] = BZ["TheSludgewerks"],
-	[4935] = BZ["MirkfallonPost"],
-	[4936] = BZ["CliffwalkerPost"],
-	[4937] = BZ["Thal'darahOverlook"],
-	[4938] = BZ["BattlescarValley"],
-	[4939] = BZ["Farwatcher'sGlen"],
-	[4940] = BZ["NorthwatchExpeditionBaseCamp"],
-	[4941] = BZ["UnearthedGrounds"],
-	[4942] = BZ["WindshearHeights"],
-	[4943] = BZ["DaggerPass"],
-	[4944] = BZ["Thal'darahGrove"],
-	[4945] = BZ["HallsofOrigination"],
-	[4946] = BZ["BaelModanExcavation"],
-	[4947] = BZ["Twinbraid'sPatrol"],
-	[4948] = BZ["FrazzlecrazMotherlode"],
+	[4911] = BZ["Volcanoth's Lair"],
+	[4912] = BZ["Warchief's Lookout"],
+	[4913] = BZ["Spitescale Cavern"],
+	[4914] = BZ["Tranquil Coast"],
+	[4915] = BZ["Rotbrain Encampment"],
+	[4916] = BZ["Calston Estate"],
+	[4917] = BZ["Scarlet Palisade"],
+	[4918] = BZ["Scarlet Encampment"],
+	[4919] = BZ["Death's Watch Waystation"],
+	[4920] = BZ["Crusader's Run"],
+	[4921] = BZ["Scarlet Watchtower"],
+	[4922] = BZ["Twilight Highlands"],
+	[4923] = BZ["Sky Falls"],
+	[4924] = BZ["Gallywix Labor Mine"],
+	[4925] = BZ["Thunk's Abode"],
+	[4926] = BZ["Blackrock Caverns"],
+	[4927] = BZ["The Fold"],
+	[4928] = BZ["Talondeep Pass"],
+	[4929] = BZ["Windshear Hold"],
+	[4930] = BZ["Webwinder Hollow"],
+	[4931] = BZ["Ruins of Eldre'thar"],
+	[4932] = BZ["The Deep Reaches"],
+	[4933] = BZ["Krom'gar Fortress"],
+	[4934] = BZ["The Sludgewerks"],
+	[4935] = BZ["Mirkfallon Post"],
+	[4936] = BZ["Cliffwalker Post"],
+	[4937] = BZ["Thal'darah Overlook"],
+	[4938] = BZ["Battlescar Valley"],
+	[4939] = BZ["Farwatcher's Glen"],
+	[4940] = BZ["Northwatch Expedition Base Camp"],
+	[4941] = BZ["Unearthed Grounds"],
+	[4942] = BZ["Windshear Heights"],
+	[4943] = BZ["Dagger Pass"],
+	[4944] = BZ["Thal'darah Grove"],
+	[4945] = BZ["Halls of Origination"],
+	[4946] = BZ["Bael Modan Excavation"],
+	[4947] = BZ["Twinbraid's Patrol"],
+	[4948] = BZ["Frazzlecraz Motherlode"],
 	[4949] = BZ["Spearhead"],
-	[4950] = BZ["GrimBatol"],
-	[4951] = BZ["BilgewaterLumberYard"],
-	[4952] = BZ["KTCOilPlatform"],
-	[4953] = BZ["Kelp'tharForest"],
-	[4954] = BZ["GallywixDocks"],
-	[4955] = BZ["TheLightlessReaches"],
-	[4956] = BZ["TheSlavePits"],
-	[4958] = BZ["VerdantHighlands"],
-	[4961] = BZ["SilverTideTrench"],
+	[4950] = BZ["Grim Batol"],
+	[4951] = BZ["Bilgewater Lumber Yard"],
+	[4952] = BZ["KTC Oil Platform"],
+	[4953] = BZ["Kelp'thar Forest"],
+	[4954] = BZ["Gallywix Docks"],
+	[4955] = BZ["The Lightless Reaches"],
+	[4956] = BZ["The Slave Pits"],
+	[4958] = BZ["Verdant Highlands"],
+	[4961] = BZ["Silver Tide Trench"],
 	[4962] = BZ["Nespirah"],
-	[4963] = BZ["GlimmerdeepGorge"],
-	[4966] = BZ["Biel'aranRidge"],
-	[4967] = BZ["RuinsofVashj'ir"],
-	[4968] = BZ["Quel'DormirTerrace"],
-	[4969] = BZ["TranquilWash"],
-	[4970] = BZ["Legion'sRest"],
+	[4963] = BZ["Glimmerdeep Gorge"],
+	[4966] = BZ["Biel'aran Ridge"],
+	[4967] = BZ["Ruins of Vashj'ir"],
+	[4968] = BZ["Quel'Dormir Terrace"],
+	[4969] = BZ["Tranquil Wash"],
+	[4970] = BZ["Legion's Rest"],
 	[4971] = BZ["L'ghorek"],
-	[4972] = BZ["ThermalVents"],
-	[4973] = BZ["TheOverlook"],
-	[4974] = BZ["ColdlightChasm"],
-	[4975] = BZ["TenebrousCavern"],
-	[4976] = BZ["DarkbreakCove"],
-	[4977] = BZ["Korthun'sEnd"],
-	[4978] = BZ["Wolf'sRun"],
-	[4979] = BZ["ShrineofGoldrinn"],
-	[4980] = BZ["MawofLycanthoth"],
-	[4981] = BZ["SouthfuryWatershed"],
-	[4982] = BZ["TheDranosh'arBlockade"],
-	[4983] = BZ["TwilightCrossing"],
-	[4984] = BZ["TheTwilightGauntlet"],
-	[4985] = BZ["TheHighRoad"],
-	[4986] = BZ["VendettaPoint"],
-	[4987] = BZ["TheRubySanctum"],
-	[4988] = BZ["Gar'gol'sHovel"],
-	[4989] = BZ["GroveofAessina"],
-	[4990] = BZ["ShrineofAviana"],
-	[4991] = BZ["DarkwhisperGorge"],
-	[4992] = BZ["BrokenCommons"],
-	[4993] = BZ["DarkwhisperPass"],
-	[4994] = BZ["TheForgeOfSupplication"],
+	[4972] = BZ["Thermal Vents"],
+	[4973] = BZ["The Overlook"],
+	[4974] = BZ["Underlight Canyon"],
+	[4975] = BZ["Tenebrous Cavern"],
+	[4976] = BZ["Darkbreak Cove"],
+	[4977] = BZ["Korthun's End"],
+	[4978] = BZ["Wolf's Run"],
+	[4979] = BZ["Shrine of Goldrinn"],
+	[4980] = BZ["Maw of Lycanthoth"],
+	[4981] = BZ["Southfury Watershed"],
+	[4982] = BZ["The Dranosh'ar Blockade"],
+	[4983] = BZ["Twilight Crossing"],
+	[4984] = BZ["The Twilight Gauntlet"],
+	[4985] = BZ["The High Road"],
+	[4986] = BZ["Vendetta Point"],
+	[4987] = BZ["The Ruby Sanctum"],
+	[4988] = BZ["Gar'gol's Hovel"],
+	[4989] = BZ["Grove of Aessina"],
+	[4990] = BZ["Shrine of Aviana"],
+	[4991] = BZ["Darkwhisper Gorge"],
+	[4992] = BZ["Broken Commons"],
+	[4993] = BZ["Darkwhisper Pass"],
+	[4994] = BZ["The Forge of Supplication"],
 	[4995] = BZ["Seat of the Chosen"],
-	[4996] = BZ["Doom'sVigil"],
+	[4996] = BZ["Doom's Vigil"],
 	[4998] = BZ["Gates of Sothann"],
-	[4999] = BZ["LightningLedge"],
-	[5000] = BZ["VerrallRiver"],
-	[5002] = BZ["CampAtaya"],
-	[5003] = BZ["StonemaulHold"],
-	[5004] = BZ["ThroneofTides"],
-	[5005] = BZ["SilverTideHollow"],
-	[5006] = BZ["DamplightCavern"],
-	[5007] = BZ["RuinsofThelseraiTemple"],
-	[5008] = BZ["ShimmeringGrotto"],
+	[4999] = BZ["Lightning Ledge"],
+	[5000] = BZ["Verrall River"],
+	[5002] = BZ["Camp Ataya"],
+	[5003] = BZ["Stonemaul Hold"],
+	[5004] = BZ["Throne of the Tides"],
+	[5005] = BZ["Silver Tide Hollow"],
+	[5006] = BZ["Damplight Cavern"],
+	[5007] = BZ["Ruins of Thelserai Temple"],
+	[5008] = BZ["Shimmering Grotto"],
 	[5009] = BZ["Shadebough"],
-	[5010] = BZ["NewThalanaar"],
-	[5011] = BZ["WestreachSummit"],
-	[5012] = BZ["TheBrinyCutter"],
-	[5013] = BZ["Blackhorn'sPennance"],
-	[5014] = BZ["TheInferno"],
-	[5015] = BZ["LeyarasSorrow"],
-	[5016] = BZ["WhistlingGrove"],
-	[5017] = BZ["TheScorchedPlain"],
-	[5018] = BZ["AshenLake"],
-	[5019] = BZ["SanctuaryofMalorne"],
-	[5020] = BZ["TheFlamewake"],
-	[5021] = BZ["TheSearingGateway"],
-	[5022] = BZ["RimoftheWorld"],
-	[5023] = BZ["TheEmeraldSummit"],
-	[5024] = BZ["Dreamer'sRest"],
-	[5025] = BZ["TheShimmeringDeep"],
-	[5026] = BZ["RustmaulDiveSite"],
-	[5027] = BZ["SplithoofHeights"],
-	[5028] = BZ["SouthseaHoldfast"],
-	[5029] = BZ["TheAdmiral'sDen"],
-	[5030] = BZ["Shallow'sEnd"],
-	[5031] = BZ["TwinPeaks"],
-	[5032] = BZ["HyjalBarrowDens"],
-	[5033] = BZ["TwilightCommandPost"],
+	[5010] = BZ["New Thalanaar"],
+	[5011] = BZ["Westreach Summit"],
+	[5012] = BZ["The Briny Cutter"],
+	[5013] = BZ["Blackhorn's Penance"],
+	[5014] = BZ["The Inferno"],
+	[5015] = BZ["Leyara's Sorrow"],
+	[5016] = BZ["Whistling Grove"],
+	[5017] = BZ["The Scorched Plain"],
+	[5018] = BZ["Ashen Lake"],
+	[5019] = BZ["Sanctuary of Malorne"],
+	[5020] = BZ["The Flamewake"],
+	[5021] = BZ["The Searing Gateway"],
+	[5022] = BZ["Rim of the World"],
+	[5023] = BZ["The Emerald Summit"],
+	[5024] = BZ["Dreamer's Rest"],
+	[5025] = BZ["The Shimmering Deep"],
+	[5026] = BZ["Rustmaul Dive Site"],
+	[5027] = BZ["Splithoof Heights"],
+	[5028] = BZ["Southsea Holdfast"],
+	[5029] = BZ["The Admiral's Den"],
+	[5030] = BZ["Shallow's End"],
+	[5031] = BZ["Twin Peaks"],
+	[5032] = BZ["Hyjal Barrow Dens"],
+	[5033] = BZ["Twilight Command Post"],
 	[5034] = BZ["Uldum"],
-	[5035] = BZ["Skywall"],
-	[5036] = BZ["DarkmistRuins"],
-	[5037] = BZ["LakeEdunel"],
+	[5035] = BZ["The Vortex Pinnacle"],
+	[5036] = BZ["Darkmist Ruins"],
+	[5037] = BZ["Lake Edunel"],
 	[5038] = BZ["Nordrassil"],
-	[5039] = BZ["SulfuronSpire"],
-	[5040] = BZ["TheThroneOfFlame"],
-	[5041] = BZ["Fizzle&Pozzik'sSpeedbarge"],
+	[5039] = BZ["Sulfuron Spire"],
+	[5040] = BZ["The Throne of Flame"],
+	[5041] = BZ["Fizzle & Pozzik's Speedbarge"],
 	[5042] = BZ["Deepholm"],
-	[5044] = BZ["TheTaintedForest"],
-	[5045] = BZ["Ascendant'sRise"],
-	[5046] = BZ["MirageAbyss"],
-	[5047] = BZ["AbyssalBreach"],
-	[5048] = BZ["RacewayRuins"],
-	[5049] = BZ["SpeedbargeBar"],
-	[5050] = BZ["FirelandsHatchery"],
-	[5051] = BZ["Seafarer'sTomb"],
-	[5052] = BZ["Legion'sFate"],
-	[5053] = BZ["Gurboggle'sLedge"],
-	[5054] = BZ["TheSkeletalReef"],
-	[5055] = BZ["Gnaws'Boneyard"],
-	[5056] = BZ["TheImmortalCoil"],
-	[5057] = BZ["Smuggler'sScar"],
-	[5058] = BZ["DeepmistGrotto"],
-	[5059] = BZ["TheClutch"],
-	[5060] = BZ["SteelsparkStation"],
-	[5061] = BZ["SteelsparkStation"],
-	[5062] = BZ["BootleggerOutpost"],
-	[5063] = BZ["DunemaulRecruitmentCamp"],
-	[5064] = BZ["FirelandsForgeworks"],
-	[5065] = BZ["TowerofEstulan"],
-	[5066] = BZ["TrueshotPoint"],
-	[5067] = BZ["TheInnerSpire"],
-	[5068] = BZ["PattymackLand"],
-	[5070] = BZ["Budd'sDig"],
-	[5071] = BZ["Gorrok'sLament"],
-	[5072] = BZ["FeathermoonStronghold"],
-	[5073] = BZ["FallowmereInn"],
-	[5074] = BZ["Slabchisel'sSurvey"],
-	[5075] = BZ["Tirth'sHaunt"],
-	[5076] = BZ["NethergardeSupplyCamps"],
+	[5044] = BZ["The Tainted Forest"],
+	[5045] = BZ["Ascendant's Rise"],
+	[5046] = BZ["Mirage Abyss"],
+	[5047] = BZ["Abyssal Breach"],
+	[5048] = BZ["Raceway Ruins"],
+	[5049] = BZ["Speedbarge Bar"],
+	[5050] = BZ["The Hatchery"],
+	[5051] = BZ["Seafarer's Tomb"],
+	[5052] = BZ["Legion's Fate"],
+	[5053] = BZ["Gurboggle's Ledge"],
+	[5054] = BZ["The Skeletal Reef"],
+	[5055] = BZ["Gnaws' Boneyard"],
+	[5056] = BZ["The Immortal Coil"],
+	[5057] = BZ["Smuggler's Scar"],
+	[5058] = BZ["Deepmist Grotto"],
+	[5059] = BZ["The Clutch"],
+	[5060] = BZ["Steelspark Station"],
+	[5061] = BZ["Steelspark Station"],
+	[5062] = BZ["Bootlegger Outpost"],
+	[5063] = BZ["Dunemaul Recruitment Camp"],
+	[5064] = BZ["The Anvil of Flame"],
+	[5065] = BZ["Tower of Estulan"],
+	[5066] = BZ["Trueshot Point"],
+	[5067] = BZ["The Inner Spire"],
+	[5068] = BZ["Pattymack Land"],
+	[5070] = BZ["Budd's Dig"],
+	[5071] = BZ["Gorrok's Lament"],
+	[5072] = BZ["Feathermoon Stronghold"],
+	[5073] = BZ["Fallowmere Inn"],
+	[5074] = BZ["Slabchisel's Survey"],
+	[5075] = BZ["Tirth's Haunt"],
+	[5076] = BZ["Nethergarde Supply Camps"],
 	[5077] = BZ["Shattershore"],
-	[5078] = BZ["TheRedReaches"],
-	[5079] = BZ["RockpoolVillage"],
-	[5080] = BZ["BloodwashFightingPits"],
-	[5081] = BZ["BloodwashShrine"],
-	[5082] = BZ["BloodwashCavern"],
-	[5083] = BZ["SunveilExcursion"],
+	[5078] = BZ["The Red Reaches"],
+	[5079] = BZ["Rockpool Village"],
+	[5080] = BZ["Bloodwash Fighting Pits"],
+	[5081] = BZ["Bloodwash Shrine"],
+	[5082] = BZ["Bloodwash Cavern"],
+	[5083] = BZ["Sunveil Excursion"],
 	[5084] = BZ["Surwich"],
 	[5085] = BZ["Maldraz"],
-	[5086] = BZ["DreadmaulFurnace"],
-	[5087] = BZ["Sethria'sRoost"],
-	[5088] = BZ["TheStonecore"],
-	[5089] = BZ["TempleGardens"],
-	[5090] = BZ["Nar'sholaTerrace"],
-	[5092] = BZ["RazorfenDowns"],
-	[5093] = BZ["NorthwatchExpeditionBaseCampInn"],
-	[5094] = BZ["BlackwingDescent"],
-	[5095] = BZ["TolBarad"],
-	[5096] = BZ["TheForbiddingSea"],
-	[5097] = BZ["FrostmaneFront"],
-	[5098] = BZ["FrostmaneRetreat"],
-	[5099] = BZ["TheCrucibleofFlame"],
-	[5100] = BZ["PromontoryPoint"],
-	[5101] = BZ["DeepfinRidge"],
-	[5102] = BZ["NightmareDepths"],
-	[5103] = BZ["TheScaldingChasm"],
-	[5104] = BZ["TheUndershell"],
-	[5105] = BZ["PincerX2"],
-	[5106] = BZ["TheVerne"],
-	[5107] = BZ["Sira'kessFront"],
-	[5108] = BZ["BattleforGilneas"],
-	[5109] = BZ["CathedralQuarter"],
-	[5110] = BZ["GreymaneCourt"],
-	[5111] = BZ["LightsDawnCathedral"],
-	[5112] = BZ["StonewardPrison"],
-	[5113] = BZ["MerchantSquare"],
-	[5114] = BZ["Bahrum'sPost"],
-	[5115] = BZ["IronforgeAirfield"],
-	[5117] = BZ["Nozzlepot'sOutpost"],
-	[5118] = BZ["WindshearValley"],
-	[5121] = BZ["Galen'sFall"],
-	[5124] = BZ["Quel'DormirTemple"],
-	[5130] = BZ["SeatofLife"],
+	[5086] = BZ["Dreadmaul Furnace"],
+	[5087] = BZ["Sethria's Roost"],
+	[5088] = BZ["The Stonecore"],
+	[5089] = BZ["Quel'Dormir Gardens"],
+	[5090] = BZ["Nar'shola Terrace"],
+	[5092] = BZ["Razorfen Downs"],
+	[5093] = BZ["Northwatch Expedition Base Camp Inn"],
+	[5094] = BZ["Blackwing Descent"],
+	[5095] = BZ["Tol Barad"],
+	[5096] = BZ["The Forbidding Sea"],
+	[5097] = BZ["Frostmane Front"],
+	[5098] = BZ["Frostmane Retreat"],
+	[5099] = BZ["The Crucible"],
+	[5100] = BZ["Promontory Point"],
+	[5101] = BZ["Deepfin Ridge"],
+	[5102] = BZ["Nightmare Depths"],
+	[5103] = BZ["The Scalding Chasm"],
+	[5104] = BZ["The Undershell"],
+	[5105] = BZ["Pincer X2"],
+	[5106] = BZ["The Verne"],
+	[5107] = BZ["Sira'kess Front"],
+	[5108] = BZ["The Battle for Gilneas (Old City Map)"],
+	[5109] = BZ["Cathedral Quarter"],
+	[5110] = BZ["Greymane Court"],
+	[5111] = BZ["Light's Dawn Cathedral"],
+	[5112] = BZ["Stoneward Prison"],
+	[5113] = BZ["Merchant Square"],
+	[5114] = BZ["Bahrum's Post"],
+	[5115] = BZ["Ironforge Airfield"],
+	[5117] = BZ["Nozzlepot's Outpost"],
+	[5118] = BZ["Windshear Valley"],
+	[5121] = BZ["Galen's Fall"],
+	[5124] = BZ["Quel'Dormir Temple"],
+	[5130] = BZ["Seat of Life"],
 	[5134] = BZ["Seabrush"],
-	[5135] = BZ["AbandonedReef"],
-	[5136] = BZ["DragonmawPort"],
-	[5137] = BZ["TheKrazzworks"],
+	[5135] = BZ["Abandoned Reef"],
+	[5136] = BZ["Dragonmaw Port"],
+	[5137] = BZ["The Krazzworks"],
 	[5138] = BZ["Bloodgulch"],
-	[5139] = BZ["TheGullet"],
+	[5139] = BZ["The Gullet"],
 	[5140] = BZ["Highbank"],
-	[5141] = BZ["Firebeard'sPatrol"],
+	[5141] = BZ["Firebeard's Patrol"],
 	[5142] = BZ["Thundermar"],
 	[5143] = BZ["Kirthaven"],
-	[5144] = BZ["VashjirRuins"],
-	[5145] = BZ["VashjirDepths"],
-	[5146] = BZ["Vashjir"],
-	[5148] = BZ["TheTradeDistrict"],
-	[5149] = BZ["OldTown"],
-	[5150] = BZ["DwarvenDistrict"],
-	[5151] = BZ["CathedralSquare"],
-	[5152] = BZ["ThePark"],
-	[5154] = BZ["MageQuarter"],
-	[5155] = BZ["VermillionRedoubt"],
-	[5157] = BZ["ThePark"],
-	[5166] = BZ["CleftofShadow"],
-	[5167] = BZ["TheDrag"],
-	[5168] = BZ["ValleyofHonor"],
-	[5169] = BZ["ValleyofSpirits"],
-	[5170] = BZ["ValleyofStrength"],
-	[5171] = BZ["ValleyofWisdom"],
-	[5173] = BZ["TheSeveredSpan"],
-	[5174] = BZ["HoggerHill"],
-	[5176] = BZ["Goldtooth'sDen"],
-	[5177] = BZ["Crushcog'sArsenal"],
-	[5178] = BZ["TheToxicAirfield"],
-	[5247] = BZ["TheTidebreaker"],
-	[5248] = BZ["Voldrin'sHold"],
-	[5249] = BZ["StygianBounty"],
-	[5250] = BZ["Galerek'sRemorse"],
-	[5251] = BZ["TheIronReaper"],
-	[5252] = BZ["TheIntrepid"],
-	[5287] = BZ["TheCapeOfStranglethorn"],
-	[5288] = BZ["Ahn'QirajTerrace"],
-	[5289] = BZ["Mortwake'sTower"],
-	[5290] = BZ["TheRagingChasm"],
-	[5291] = BZ["JaggedWastes"],
-	[5292] = BZ["ScouredReach"],
-	[5293] = BZ["CrumblingDepths"],
-	[5294] = BZ["ShudderingSpires"],
-	[5295] = BZ["ThePaleRoost"],
-	[5296] = BZ["Therazane'sThrone"],
-	[5297] = BZ["HalcyonEgress"],
-	[5298] = BZ["TwilightPrecipice"],
-	[5299] = BZ["Lorthuna'sGate"],
-	[5300] = BZ["VerlokStand"],
-	[5301] = BZ["Grolluk'sGrave"],
-	[5302] = BZ["CrimsonExpanse"],
-	[5303] = BZ["TempleofEarth"],
-	[5304] = BZ["SwiftgearStation"],
-	[5305] = BZ["Greenwarden'sGrove"],
-	[5306] = BZ["HulloftheFoebreaker"],
-	[5311] = BZ["Transport:Onyxia/NefarianElevator"],
+	[5144] = BZ["Shimmering Expanse"],
+	[5145] = BZ["Abyssal Depths"],
+	[5146] = BZ["Vashj'ir"],
+	[5148] = BZ["Trade District"],
+	[5149] = BZ["Old Town"],
+	[5150] = BZ["Dwarven District"],
+	[5151] = BZ["Cathedral Square"],
+	[5152] = BZ["The Park"],
+	[5154] = BZ["Mage Quarter"],
+	[5155] = BZ["Vermillion Redoubt"],
+	[5157] = BZ["The Park"],
+	[5166] = BZ["Cleft of Shadow"],
+	[5167] = BZ["The Drag"],
+	[5168] = BZ["Valley of Honor"],
+	[5169] = BZ["Valley of Spirits"],
+	[5170] = BZ["Valley of Strength"],
+	[5171] = BZ["Valley of Wisdom"],
+	[5173] = BZ["The Severed Span"],
+	[5174] = BZ["Hogger Hill"],
+	[5176] = BZ["Goldtooth's Den"],
+	[5177] = BZ["Crushcog's Arsenal"],
+	[5178] = BZ["The Toxic Airfield"],
+	[5247] = BZ["The Tidebreaker"],
+	[5248] = BZ["Voldrin's Hold"],
+	[5249] = BZ["Stygian Bounty"],
+	[5250] = BZ["Galerek's Remorse"],
+	[5251] = BZ["The Iron Reaper"],
+	[5252] = BZ["The Intrepid"],
+	[5287] = BZ["The Cape of Stranglethorn"],
+	[5288] = BZ["Ahn'Qiraj Terrace"],
+	[5289] = BZ["Mortwake's Tower"],
+	[5290] = BZ["The Raging Chasm"],
+	[5291] = BZ["Jagged Wastes"],
+	[5292] = BZ["Scoured Reach"],
+	[5293] = BZ["Crumbling Depths"],
+	[5294] = BZ["Shuddering Spires"],
+	[5295] = BZ["The Pale Roost"],
+	[5296] = BZ["Therazane's Throne"],
+	[5297] = BZ["Halcyon Egress"],
+	[5298] = BZ["Twilight Precipice"],
+	[5299] = BZ["Lorthuna's Gate"],
+	[5300] = BZ["Verlok Stand"],
+	[5301] = BZ["Grolluk's Grave"],
+	[5302] = BZ["Crimson Expanse"],
+	[5303] = BZ["Temple of Earth"],
+	[5304] = BZ["Swiftgear Station"],
+	[5305] = BZ["Greenwarden's Grove"],
+	[5306] = BZ["Hull of the Foebreaker"],
+	[5311] = BZ["Transport: Onyxia/Nefarian Elevator"],
 	[5312] = BZ["Nazj'vel"],
-	[5313] = BZ["StormsFuryWreckage"],
+	[5313] = BZ["Storm's Fury Wreckage"],
 	[5314] = BZ["Stormwind Lake"],
-	[5315] = BZ["LlanesOath"],
-	[5316] = BZ["Olivia'sPond"],
+	[5315] = BZ["Llane's Oath"],
+	[5316] = BZ["Olivia's Pond"],
 	[5317] = BZ["Bambala"],
-	[5318] = BZ["TheSundering"],
-	[5320] = BZ["FortLivingston"],
-	[5321] = BZ["Yowler'sDen"],
-	[5322] = BZ["Aggramar's Hammer"],
-	[5323] = BZ["StormfeatherOutpost"],
-	[5324] = BZ["ShalewindCanyon"],
-	[5325] = BZ["Keeshan'sPost"],
-	[5326] = BZ["CampEverstill"],
-	[5327] = BZ["TowerWatch"],
-	[5328] = BZ["UpperSilvermarsh"],
-	[5329] = BZ["LowerSilvermarsh"],
+	[5318] = BZ["The Sundering"],
+	[5320] = BZ["Fort Livingston"],
+	[5321] = BZ["Yowler's Den"],
+	[5322] = BZ["Scar of the Worldbreaker"],
+	[5323] = BZ["Stormfeather Outpost"],
+	[5324] = BZ["Shalewind Canyon"],
+	[5325] = BZ["Keeshan's Post"],
+	[5326] = BZ["Camp Everstill"],
+	[5327] = BZ["Tower Watch"],
+	[5328] = BZ["Upper Silvermarsh"],
+	[5329] = BZ["Lower Silvermarsh"],
 	[5330] = BZ["Stonehearth"],
-	[5331] = BZ["FracturedFront"],
-	[5332] = BZ["GoblinSlums"],
-	[5333] = BZ["TrialofFrost"],
-	[5334] = BZ["TheBastionofTwilight"],
-	[5335] = BZ["QuartziteBasin"],
-	[5336] = BZ["RemainsoftheFleet"],
-	[5337] = BZ["SanctumoftheProphets"],
-	[5338] = BZ["FungalDeep"],
-	[5339] = BZ["StranglethornVale"],
-	[5340] = BZ["HallofArms"],
-	[5341] = BZ["HallofExplorers"],
-	[5342] = BZ["TheGreatForge"],
-	[5343] = BZ["TheMilitaryWard"],
-	[5344] = BZ["TheMysticWard"],
-	[5345] = BZ["ThunderBluff"],
-	[5346] = BZ["StormwindCityCemetery"],
-	[5347] = BZ["Render'sCrater"],
-	[5348] = BZ["AllianceMercenaryShiptoVashj'ir"],
-	[5349] = BZ["NeedlerockSlag"],
-	[5350] = BZ["NeedlerockChasm"],
-	[5351] = BZ["RuinsofGilneasCity"],
+	[5331] = BZ["Fractured Front"],
+	[5332] = BZ["Goblin Slums"],
+	[5333] = BZ["Trial of Frost"],
+	[5334] = BZ["The Bastion of Twilight"],
+	[5335] = BZ["Quartzite Basin"],
+	[5336] = BZ["Remains of the Fleet"],
+	[5337] = BZ["Sanctum of the Prophets"],
+	[5338] = BZ["Fungal Deep"],
+	[5339] = BZ["Stranglethorn Vale"],
+	[5340] = BZ["Hall of Arms"],
+	[5341] = BZ["Hall of Explorers"],
+	[5342] = BZ["The Great Forge"],
+	[5343] = BZ["The Military Ward"],
+	[5344] = BZ["The Mystic Ward"],
+	[5345] = BZ["Thunder Bluff"],
+	[5346] = BZ["Stormwind City Cemetery"],
+	[5347] = BZ["Render's Crater"],
+	[5348] = BZ["Alliance Mercenary Ship to Vashj'ir"],
+	[5349] = BZ["Needlerock Slag"],
+	[5350] = BZ["Needlerock Chasm"],
+	[5351] = BZ["Ruins of Gilneas City"],
 	[5352] = BZ["Alabaster Shelf"],
-	[5353] = BZ["VerrallRiverMouth"],
-	[5354] = BZ["TwilightOverlook"],
-	[5355] = BZ["Abyssion'sLair"],
-	[5356] = BZ["GrommashHold"],
-	[5357] = BZ["TheQuakingFields"],
-	[5358] = BZ["Deathwing'sFall"],
-	[5367] = BZ["TheMenders'Stead"],
-	[5368] = BZ["Avalanchion'sVault"],
-	[5369] = BZ["ForsakenHighCommand"],
-	[5374] = BZ["BlackrockCaverns"],
-	[5375] = BZ["WreckageoftheSilverDawning"],
-	[5382] = BZ["TheAbyssalMaw"],
+	[5353] = BZ["Verrall Delta"],
+	[5354] = BZ["Twilight Overlook"],
+	[5355] = BZ["Abyssion's Lair"],
+	[5356] = BZ["Grommash Hold"],
+	[5357] = BZ["The Quaking Fields"],
+	[5358] = BZ["Deathwing's Fall"],
+	[5367] = BZ["The Menders' Stead"],
+	[5368] = BZ["Avalanchion's Vault"],
+	[5369] = BZ["Forsaken High Command"],
+	[5374] = BZ["Blackrock Caverns Entrance"],
+	[5375] = BZ["Wreckage of the Silver Dawning"],
+	[5382] = BZ["The Abyssal Maw"],
 	[5383] = BZ["Den of the Devourer"],
-	[5385] = BZ["TheGreatDivide"],
-	[5386] = BZ["ForsakenRearGuard"],
-	[5387] = BZ["TheForsakenFront"],
-	[5388] = BZ["DawnriseExpedition"],
-	[5389] = BZ["TolBaradDailyArea"],
-	[5390] = BZ["TheCanals"],
-	[5391] = BZ["IronwingCavern"],
-	[5392] = BZ["CharredOutpost"],
-	[5394] = BZ["Masters'Gate"],
-	[5395] = BZ["ChamberofRespite"],
-	[5396] = BZ["LostCityofTolvir"],
-	[5397] = BZ["TheWollertonStead"],
-	[5398] = BZ["StormwindCityOutskirts"],
-	[5399] = BZ["BaradinHold"],
+	[5385] = BZ["The Great Divide"],
+	[5386] = BZ["Forsaken Rear Guard"],
+	[5387] = BZ["The Forsaken Front"],
+	[5388] = BZ["Dawnrise Expedition"],
+	[5389] = BZ["Tol Barad Peninsula"],
+	[5390] = BZ["The Canals"],
+	[5391] = BZ["Ironwing Cavern"],
+	[5392] = BZ["Charred Outpost"],
+	[5394] = BZ["Masters' Gate"],
+	[5395] = BZ["Chamber of Respite"],
+	[5396] = BZ["Lost City of the Tol'vir"],
+	[5397] = BZ["The Wollerton Stead"],
+	[5398] = BZ["Stormwind City Outskirts"],
+	[5399] = BZ["Baradin Hold"],
 	[5400] = BZ["Slagworks"],
-	[5401] = BZ["IroncladGarrison"],
-	[5402] = BZ["Warden'sVigil"],
-	[5403] = BZ["EastSpire"],
-	[5404] = BZ["SouthSpire"],
-	[5405] = BZ["WestSpire"],
-	[5406] = BZ["BlackstoneSpan"],
-	[5408] = BZ["Explorers'LeagueDigsite"],
-	[5409] = BZ["TheOldBarracks"],
-	[5410] = BZ["SilverlightCavern"],
-	[5411] = BZ["Malicia'sOutpost"],
-	[5416] = BZ["TheMaelstrom"],
-	[5418] = BZ["TheBloodTrail"],
-	[5420] = BZ["TheGateofUnendingCycles"],
-	[5421] = BZ["RedpineDell"],
-	[5422] = BZ["Taelan'sTower"],
-	[5423] = BZ["ObeliskoftheStars"],
-	[5424] = BZ["ObsidianBreakers"],
-	[5425] = BZ["TwilightShore"],
-	[5426] = BZ["PathofUther"],
-	[5427] = BZ["SorrowHillCrypt"],
-	[5428] = BZ["TheEasternEarthshrine"],
-	[5429] = BZ["TheWesternEarthshrine"],
-	[5431] = BZ["ChamberoftheStars"],
-	[5432] = BZ["ForsakenForwardCommand"],
-	[5433] = BZ["TheGreymaneWall"],
-	[5434] = BZ["ForsakenForwardCommand"],
-	[5435] = BZ["GilneasCity"],
-	[5436] = BZ["Tempest'sReach"],
-	[5437] = BZ["RingoftheElements"],
-	[5438] = BZ["TheMawofMadness"],
-	[5439] = BZ["RuinsofDrakgor"],
-	[5440] = BZ["NorthernHeadlands"],
-	[5441] = BZ["EmberstoneVillage"],
-	[5442] = BZ["EmberstoneMine"],
-	[5443] = BZ["DreadwatchOutpost"],
-	[5444] = BZ["Rutsak'sGuard"],
+	[5401] = BZ["Ironclad Garrison"],
+	[5402] = BZ["Warden's Vigil"],
+	[5403] = BZ["East Spire"],
+	[5404] = BZ["South Spire"],
+	[5405] = BZ["West Spire"],
+	[5406] = BZ["Blackstone Span"],
+	[5408] = BZ["Explorers' League Digsite"],
+	[5409] = BZ["The Old Barracks"],
+	[5410] = BZ["Silverlight Cavern"],
+	[5411] = BZ["Malicia's Outpost"],
+	[5416] = BZ["The Maelstrom"],
+	[5418] = BZ["The Blood Trail"],
+	[5420] = BZ["The Gate of Unending Cycles"],
+	[5421] = BZ["Redpine Dell"],
+	[5422] = BZ["Taelan's Tower"],
+	[5423] = BZ["Obelisk of the Stars"],
+	[5424] = BZ["Obsidian Breakers"],
+	[5425] = BZ["Twilight Shore"],
+	[5426] = BZ["Path of Uther"],
+	[5427] = BZ["Sorrow Hill Crypt"],
+	[5428] = BZ["The Eastern Earthshrine"],
+	[5429] = BZ["The Western Earthshrine"],
+	[5431] = BZ["Chamber of the Stars"],
+	[5432] = BZ["Forsaken Forward Command"],
+	[5433] = BZ["The Greymane Wall"],
+	[5434] = BZ["Forsaken Forward Command"],
+	[5435] = BZ["Gilneas City"],
+	[5436] = BZ["Tempest's Reach"],
+	[5437] = BZ["Ring of the Elements"],
+	[5438] = BZ["The Maw of Madness"],
+	[5439] = BZ["Ruins of Drakgor"],
+	[5440] = BZ["Northern Headlands"],
+	[5441] = BZ["Emberstone Village"],
+	[5442] = BZ["Emberstone Mine"],
+	[5443] = BZ["Dreadwatch Outpost"],
+	[5444] = BZ["Rutsak's Guard"],
 	[5445] = BZ["Glory"],
-	[5446] = BZ["Death'sStep"],
-	[5447] = BZ["ScarredTerrace"],
-	[5448] = BZ["LightsShieldTower"],
-	[5449] = BZ["GilneasBattleground2"],
-	[5450] = BZ["TheLighthouse"],
-	[5451] = BZ["TheWaterwheel"],
-	[5452] = BZ["TheMines"],
-	[5453] = BZ["TheLanding"],
-	[5454] = BZ["AllianceStart"],
-	[5455] = BZ["Khartut'sTomb"],
-	[5456] = BZ["TheBattlefront"],
-	[5457] = BZ["TheOverlook"],
+	[5446] = BZ["Death's Step"],
+	[5447] = BZ["Scarred Terrace"],
+	[5448] = BZ["Light's Shield Tower"],
+	[5449] = BZ["The Battle for Gilneas"],
+	[5450] = BZ["Lighthouse"],
+	[5451] = BZ["Waterworks"],
+	[5452] = BZ["Mines"],
+	[5453] = BZ["Horde Landing"],
+	[5454] = BZ["Gilnean Stronghold"],
+	[5455] = BZ["Khartut's Tomb"],
+	[5456] = BZ["The Battlefront"],
+	[5457] = BZ["The Overlook"],
 	[5458] = BZ["Bogpaddle"],
-	[5459] = BZ["MarshtideWatch"],
-	[5460] = BZ["TheBloodmire"],
-	[5461] = BZ["DragonmawPass"],
-	[5462] = BZ["Wyrms'Bend"],
-	[5463] = BZ["Ix'lar'sDomain"],
-	[5464] = BZ["DarrowshireHuntingGrounds"],
+	[5459] = BZ["Marshtide Watch"],
+	[5460] = BZ["The Bloodmire"],
+	[5461] = BZ["Dragonmaw Pass"],
+	[5462] = BZ["Wyrms' Bend"],
+	[5463] = BZ["Ix'lar's Domain"],
+	[5464] = BZ["Darrowshire Hunting Grounds"],
 	[5465] = BZ["Orsis"],
 	[5466] = BZ["Ramkahen"],
 	[5467] = BZ["Nahom"],
-	[5468] = BZ["GilneanCoast"],
-	[5469] = BZ["SiegeVice"],
-	[5470] = BZ["Victor'sPoint"],
+	[5468] = BZ["Gilnean Coast"],
+	[5469] = BZ["Siege Vise"],
+	[5470] = BZ["Victor's Point"],
 	[5471] = BZ["Crushblow"],
-	[5472] = BZ["TheTwilightGate"],
-	[5473] = BZ["TheTwilightCitadel"],
-	[5474] = BZ["ElementiumDepths"],
-	[5475] = BZ["DenoftheDisciples"],
-	[5476] = BZ["PyrewoodChapel"],
-	[5477] = BZ["PyrewoodInn"],
-	[5478] = BZ["PyrewoodTownHall"],
-	[5479] = BZ["SlitheringCove"],
-	[5480] = BZ["GilneasLiberationFrontBaseCamp"],
-	[5481] = BZ["7thLegionBaseCamp"],
-	[5483] = BZ["DunwaldRuins"],
-	[5484] = BZ["DunwaldHoldout"],
-	[5485] = BZ["DunwaldHovel"],
-	[5486] = BZ["DunwaldTownSquare"],
-	[5487] = BZ["DunwaldMarketRow"],
-	[5488] = BZ["GorshakWarCamp"],
-	[5489] = BZ["TheBoneyard"],
-	[5493] = BZ["TheDevouringBreach"],
+	[5472] = BZ["The Twilight Gate"],
+	[5473] = BZ["The Twilight Citadel"],
+	[5474] = BZ["Elementium Depths"],
+	[5475] = BZ["Den of the Disciples"],
+	[5476] = BZ["Pyrewood Chapel"],
+	[5477] = BZ["Pyrewood Inn"],
+	[5478] = BZ["Pyrewood Town Hall"],
+	[5479] = BZ["Slithering Cove"],
+	[5480] = BZ["Gilneas Liberation Front Base Camp"],
+	[5481] = BZ["7th Legion Base Camp"],
+	[5483] = BZ["Dunwald Ruins"],
+	[5484] = BZ["Dunwald Holdout"],
+	[5485] = BZ["Dunwald Hovel"],
+	[5486] = BZ["Dunwald Town Square"],
+	[5487] = BZ["Dunwald Market Row"],
+	[5488] = BZ["Gorshak War Camp"],
+	[5489] = BZ["The Boneyard"],
+	[5493] = BZ["The Devouring Breach"],
 	[5495] = BZ["Gnomeregan"],
 	[5496] = BZ["Fuselight"],
 	[5497] = BZ["Fuselight-by-the-Sea"],
 	[5498] = BZ["Mar'at"],
-	[5499] = BZ["AkhenetFields"],
-	[5500] = BZ["RamkahenLegionOutpost"],
-	[5501] = BZ["ShrineoftheElements"],
-	[5502] = BZ["ThundermarWreckage"],
-	[5503] = BZ["AltarofAscension"],
-	[5504] = BZ["LakeDumont"],
-	[5505] = BZ["ThePitofScales"],
-	[5506] = BZ["TheDefiledChapel"],
-	[5507] = BZ["TheCerebrillum"],
-	[5508] = BZ["SunstoneTerrace"],
-	[5510] = BZ["ShadowfangKeepEntrance"],
-	[5511] = BZ["ScarletMonasteryEntrance"],
-	[5512] = BZ["ScholomanceEntrance"],
-	[5513] = BZ["StratholmeEntrance"],
-	[5514] = BZ["StratholmeServiceEntrance"],
-	[5515] = BZ["BlackrockDepthsEntrance"],
-	[5516] = BZ["BlackrockSpireEntrance"],
-	[5517] = BZ["BlackfathomDeepsEntrance"],
-	[5518] = BZ["RazorfenKraulEntrance"],
-	[5519] = BZ["Rhea'sCamp"],
-	[5520] = BZ["MaraudonPurpleEntrance"],
-	[5521] = BZ["Maraudon-FoulsporeCavernEntrance"],
-	[5522] = BZ["Maraudon-EarthSongFallsEntrance"],
-	[5523] = BZ["UldamanEntrance"],
-	[5524] = BZ["BloodwatcherPoint"],
-	[5525] = BZ["DustwindDig"],
-	[5526] = BZ["TomboftheWatchers"],
-	[5527] = BZ["CrucibleofCarnage"],
-	[5529] = BZ["DireMaul-EastEntrance"],
-	[5530] = BZ["DireMaul-NorthEntrance"],
-	[5531] = BZ["DireMaul-WestEntrance"],
-	[5532] = BZ["RazorfenDownsEntrance"],
-	[5533] = BZ["Zul'farrakEntrance"],
-	[5534] = BZ["TheCapeofLostHope"],
-	[5535] = BZ["WellsonShipyard"],
-	[5536] = BZ["ForgottenHill"],
-	[5537] = BZ["TheDarkwood"],
-	[5538] = BZ["RustbergVillage"],
-	[5539] = BZ["FarsonHold"],
-	[5540] = BZ["Largo'sOverlook"],
-	[5541] = BZ["HellfireCitadel-RampartsEntrance"],
-	[5542] = BZ["TheRestlessFront"],
-	[5543] = BZ["HellfireCitadel-TheShatteredHallsEntrance"],
-	[5544] = BZ["HellfireCitadel-TheBloodFurnaceEntrance"],
-	[5545] = BZ["BaradinBaseCamp"],
-	[5546] = BZ["Hellscream'sGrasp"],
-	[5547] = BZ["Auchindoun-AuchenaiCryptsEntrance"],
-	[5548] = BZ["Auchindoun-Mana-TombsEntrance"],
-	[5549] = BZ["Auchindoun-SethekkHallsEntrance"],
-	[5550] = BZ["Auchindoun-ShadowLabyrinthEntrance"],
-	[5551] = BZ["Coilfang-TheSteamvaultEntrance"],
-	[5552] = BZ["Coilfang-TheUnderbogEntrance"],
-	[5553] = BZ["Coilfang-TheSlavePensEntrance"],
-	[5554] = BZ["TempestKeep-TheMechanarEntrance"],
-	[5555] = BZ["TempestKeep-TheBotanicaEntrance"],
-	[5556] = BZ["TempestKeep-TheArcatrazEntrance"],
-	[5557] = BZ["Magisters'TerraceEntrance"],
-	[5558] = BZ["TheEscapefromDurnholdeEntrance"],
-	[5559] = BZ["OpeningoftheDarkPortalEntrance"],
-	[5560] = BZ["TheCullingofStratholmeEntrance"],
-	[5561] = BZ["TheNexusEntrance"],
-	[5562] = BZ["TheOculusEntrance"],
-	[5563] = BZ["LochVerrall"],
-	[5564] = BZ["Dragon'sMouth"],
-	[5565] = BZ["NewKargath"],
-	[5566] = BZ["UtgardeKeepEntrance"],
-	[5567] = BZ["UtgardePinnacleEntrance"],
-	[5568] = BZ["Azjol-NerubEntrance"],
-	[5569] = BZ["Ahn'kahetEntrance"],
-	[5570] = BZ["Drak'TharonKeepEntrance"],
-	[5571] = BZ["VioletHoldEntrance"],
-	[5572] = BZ["GundrakEntrance"],
-	[5573] = BZ["HallsofStoneEntrance"],
-	[5574] = BZ["HallsofLightningEntrance"],
-	[5575] = BZ["TrialoftheChampionEntrance"],
-	[5576] = BZ["ForgeofSoulsEntrance"],
-	[5577] = BZ["PitofSaronEntrance"],
-	[5578] = BZ["HallsofReflectionEntrance"],
-	[5579] = BZ["ThroneoftheTidesEntrance"],
-	[5580] = BZ["GrimBatolEntrance"],
-	[5581] = BZ["TheStonecoreEntrance"],
-	[5582] = BZ["TheThreshold"],
-	[5583] = BZ["TheVortexPinnacle"],
-	[5584] = BZ["AltarofTwilight"],
+	[5499] = BZ["Akhenet Fields"],
+	[5500] = BZ["Ramkahen Legion Outpost"],
+	[5501] = BZ["Shrine of the Elements"],
+	[5502] = BZ["Thundermar Ruins"],
+	[5503] = BZ["Altar of Ascension"],
+	[5504] = BZ["Lake Dumont"],
+	[5505] = BZ["The Pit of Scales"],
+	[5506] = BZ["The Defiled Chapel"],
+	[5507] = BZ["The Cerebrillum"],
+	[5508] = BZ["Sunstone Terrace"],
+	[5510] = BZ["Shadowfang Keep Entrance"],
+	[5511] = BZ["Scarlet Monastery Entrance"],
+	[5512] = BZ["Scholomance Entrance"],
+	[5513] = BZ["Stratholme Entrance"],
+	[5514] = BZ["Stratholme Service Entrance"],
+	[5515] = BZ["Blackrock Depths Entrance"],
+	[5516] = BZ["Blackrock Spire Entrance"],
+	[5517] = BZ["Blackfathom Deeps Entrance"],
+	[5518] = BZ["Razorfen Kraul Entrance"],
+	[5519] = BZ["Rhea's Camp"],
+	[5520] = BZ["Maraudon - The Wicked Grotto Entrance"],
+	[5521] = BZ["Maraudon - Foulspore Cavern Entrance"],
+	[5522] = BZ["Maraudon - Earth Song Falls Entrance"],
+	[5523] = BZ["Uldaman Entrance"],
+	[5524] = BZ["Bloodwatcher Point"],
+	[5525] = BZ["Dustwind Dig"],
+	[5526] = BZ["Tomb of the Watchers"],
+	[5527] = BZ["Crucible of Carnage"],
+	[5529] = BZ["Dire Maul - Warpwood Quarter Entrance"],
+	[5530] = BZ["Dire Maul - Gordok Commons Entrance"],
+	[5531] = BZ["Dire Maul - Capital Gardens Entrance"],
+	[5532] = BZ["Razorfen Downs Entrance"],
+	[5533] = BZ["Zul'Farrak Entrance"],
+	[5534] = BZ["Cape of Lost Hope"],
+	[5535] = BZ["Wellson Shipyard"],
+	[5536] = BZ["Forgotten Hill"],
+	[5537] = BZ["The Darkwood"],
+	[5538] = BZ["Rustberg Village"],
+	[5539] = BZ["Farson Hold"],
+	[5540] = BZ["Largo's Overlook"],
+	[5541] = BZ["Hellfire Citadel - Ramparts Entrance"],
+	[5542] = BZ["The Restless Front"],
+	[5543] = BZ["Hellfire Citadel - The Shattered Halls Entrance"],
+	[5544] = BZ["Hellfire Citadel - The Blood Furnace Entrance"],
+	[5545] = BZ["Baradin Base Camp"],
+	[5546] = BZ["Hellscream's Grasp"],
+	[5547] = BZ["Auchindoun - Auchenai Crypts Entrance"],
+	[5548] = BZ["Auchindoun - Mana-Tombs Entrance"],
+	[5549] = BZ["Auchindoun - Sethekk Halls Entrance"],
+	[5550] = BZ["Auchindoun - Shadow Labyrinth Entrance"],
+	[5551] = BZ["Coilfang - The Steamvault Entrance"],
+	[5552] = BZ["Coilfang - The Underbog Entrance"],
+	[5553] = BZ["Coilfang - The Slave Pens Entrance"],
+	[5554] = BZ["Tempest Keep - The Mechanar Entrance"],
+	[5555] = BZ["Tempest Keep - The Botanica Entrance"],
+	[5556] = BZ["Tempest Keep - The Arcatraz Entrance"],
+	[5557] = BZ["Magisters' Terrace Entrance"],
+	[5558] = BZ["The Escape from Durnholde Entrance"],
+	[5559] = BZ["Opening of the Dark Portal Entrance"],
+	[5560] = BZ["The Culling of Stratholme Entrance"],
+	[5561] = BZ["The Nexus Entrance"],
+	[5562] = BZ["The Oculus Entrance"],
+	[5563] = BZ["Loch Verrall"],
+	[5564] = BZ["Dragon's Mouth"],
+	[5565] = BZ["New Kargath"],
+	[5566] = BZ["Utgarde Keep Entrance"],
+	[5567] = BZ["Utgarde Pinnacle Entrance"],
+	[5568] = BZ["Azjol-Nerub Entrance"],
+	[5569] = BZ["Ahn'kahet: The Old Kingdom Entrance"],
+	[5570] = BZ["Drak'Tharon Keep Entrance"],
+	[5571] = BZ["Violet Hold Entrance"],
+	[5572] = BZ["Gundrak Entrance"],
+	[5573] = BZ["Halls of Stone Entrance"],
+	[5574] = BZ["Halls of Lightning Entrance"],
+	[5575] = BZ["Trial of the Champion Entrance"],
+	[5576] = BZ["The Forge of Souls Entrance"],
+	[5577] = BZ["Pit of Saron Entrance"],
+	[5578] = BZ["Halls of Reflection Entrance"],
+	[5579] = BZ["Throne of the Tides Entrance"],
+	[5580] = BZ["Grim Batol Entrance"],
+	[5581] = BZ["The Stonecore Entrance"],
+	[5582] = BZ["The Threshold"],
+	[5583] = BZ["The Vortex Pinnacle"],
+	[5584] = BZ["Altar of Twilight"],
 	[5585] = BZ["Gate of Hamatep"],
-	[5586] = BZ["VirnaalRiver"],
-	[5588] = BZ["TwilightAerie"],
-	[5589] = BZ["TheTwilightWithering"],
-	[5590] = BZ["TwilightBulwark"],
-	[5591] = BZ["SunkenDigSite"],
-	[5592] = BZ["TheHiddenClutch"],
-	[5593] = BZ["TheNosebleeds"],
-	[5594] = BZ["HighlandForest"],
-	[5595] = BZ["ObsidianForest"],
-	[5596] = BZ["CradleoftheAncients"],
-	[5597] = BZ["ObeliskoftheSun"],
-	[5598] = BZ["SunkenTempleEntrance"],
-	[5599] = BZ["LostCityoftheTol'vir"],
-	[5600] = BZ["BaradinHold"],
-	[5601] = BZ["ChamberoftheSun"],
-	[5602] = BZ["Schnottz'sLanding"],
-	[5603] = BZ["EastpointTower"],
-	[5604] = BZ["SludgeguardTower"],
-	[5605] = BZ["ShriveledOasis"],
-	[5606] = BZ["RuinsofAmmon"],
-	[5609] = BZ["TheBlackSunder"],
-	[5610] = BZ["TomboftheEarthrager"],
-	[5611] = BZ["FirebeardCemetery"],
-	[5612] = BZ["TheCursedLanding"],
-	[5613] = BZ["TheStepsofFate"],
-	[5614] = BZ["TheTrailofDevastation"],
-	[5615] = BZ["PyroxFlats"],
-	[5622] = BZ["TheVerdantThicket"],
-	[5623] = BZ["TheCircleofCinders"],
-	[5624] = BZ["TheTranquilGrove"],
-	[5625] = BZ["RuinsofLar'donir"],
-	[5626] = BZ["ShadowlurkRidge"],
-	[5627] = BZ["BlackDrakeRoost"],
-	[5628] = BZ["IronSummit"],
-	[5629] = BZ["ThoriumAdvance"],
-	[5630] = BZ["TheMaelstromContinent"],
-	[5631] = BZ["OasisoftheFallenProphet"],
-	[5632] = BZ["TheTrapper'sEnclave"],
-	[5633] = BZ["TerraceoftheAugurs"],
-	[5634] = BZ["SanctumoftheSouthWind"],
-	[5635] = BZ["TheWarlord'sGarrison"],
-	[5637] = BZ["Lion'sPrideInn"],
-	[5638] = BZ["ThroneoftheFourWinds"],
-	[5639] = BZ["Glopgut'sHollow"],
-	[5640] = BZ["HumboldtConflagration"],
-	[5641] = BZ["TheTwilightSunder"],
-	[5642] = BZ["TahretGrounds"],
-	[5644] = BZ["SealoftheSunKing"],
-	[5645] = BZ["WhisperwindGrove"],
-	[5646] = BZ["SahketWastes"],
-	[5647] = BZ["RuinsofAhmtul"],
-	[5649] = BZ["WildheartPoint"],
-	[5650] = BZ["TheWhelpingDowns"],
-	[5651] = BZ["DarkstarPost"],
-	[5652] = BZ["BlackTooth"],
-	[5653] = BZ["BlackrockBattle-Plain"],
+	[5586] = BZ["Vir'naal River"],
+	[5588] = BZ["Twilight Aerie"],
+	[5589] = BZ["The Twilight Withering"],
+	[5590] = BZ["Twilight Bulwark"],
+	[5591] = BZ["Sunken Dig Site"],
+	[5592] = BZ["The Hidden Clutch"],
+	[5593] = BZ["The Nosebleeds"],
+	[5594] = BZ["Highland Forest"],
+	[5595] = BZ["Obsidian Forest"],
+	[5596] = BZ["Cradle of the Ancients"],
+	[5597] = BZ["Obelisk of the Sun"],
+	[5598] = BZ["Sunken Temple Entrance"],
+	[5599] = BZ["Lost City of the Tol'vir"],
+	[5600] = BZ["Baradin Hold"],
+	[5601] = BZ["Chamber of the Sun"],
+	[5602] = BZ["Schnottz's Landing"],
+	[5603] = BZ["Eastpoint Tower"],
+	[5604] = BZ["Sludgeguard Tower"],
+	[5605] = BZ["Shriveled Oasis"],
+	[5606] = BZ["Ruins of Ammon"],
+	[5609] = BZ["The Black Breach"],
+	[5610] = BZ["Tomb of the Earthrager"],
+	[5611] = BZ["Firebeard Cemetery"],
+	[5612] = BZ["The Cursed Landing"],
+	[5613] = BZ["The Steps of Fate"],
+	[5614] = BZ["The Trail of Devastation"],
+	[5615] = BZ["Pyrox Flats"],
+	[5622] = BZ["The Verdant Thicket"],
+	[5623] = BZ["The Circle of Cinders"],
+	[5624] = BZ["The Tranquil Grove"],
+	[5625] = BZ["Ruins of Lar'donir"],
+	[5626] = BZ["Shadowlurk Ridge"],
+	[5627] = BZ["Black Drake Roost"],
+	[5628] = BZ["Iron Summit"],
+	[5629] = BZ["Thorium Advance"],
+	[5630] = BZ["The Maelstrom"],
+	[5631] = BZ["Oasis of the Fallen Prophet"],
+	[5632] = BZ["The Trapper's Enclave"],
+	[5633] = BZ["Terrace of the Augurs"],
+	[5634] = BZ["Sanctum of the South Wind"],
+	[5635] = BZ["The Warlord's Garrison"],
+	[5637] = BZ["Lion's Pride Inn"],
+	[5638] = BZ["Throne of the Four Winds"],
+	[5639] = BZ["Glopgut's Hollow"],
+	[5640] = BZ["Humboldt Conflagration"],
+	[5641] = BZ["The Twilight Breach"],
+	[5642] = BZ["Tahret Grounds"],
+	[5644] = BZ["Seal of the Sun King"],
+	[5645] = BZ["Whisperwind Grove"],
+	[5646] = BZ["Sahket Wastes"],
+	[5647] = BZ["Ruins of Ahmtul"],
+	[5649] = BZ["Wildheart Point"],
+	[5650] = BZ["The Whelping Downs"],
+	[5651] = BZ["Flamestar Post"],
+	[5652] = BZ["Black Tooth Hovel"],
+	[5653] = BZ["Fields of Honor"],
 	[5654] = BZ["Chiselgrip"],
-	[5655] = BZ["FiregutFurnace"],
-	[5656] = BZ["TheSkullWarren"],
+	[5655] = BZ["Firegut Furnace"],
+	[5656] = BZ["The Skull Warren"],
 	[5657] = BZ["D-Block"],
-	[5658] = BZ["CursedDepths"],
-	[5659] = BZ["TheHole"],
-	[5660] = BZ["ObsidianLair"],
-	[5663] = BZ["NefersetCity"],
-	[5664] = BZ["Isorath"],
-	[5665] = BZ["SunwathersRidge"],
-	[5666] = BZ["Virnaal Dam"],
-	[5667] = BZ["Cannon'sInferno"],
-	[5668] = BZ["ObeliskoftheMoon"],
-	[5669] = BZ["TempleofUldum"],
-	[5670] = BZ["OasisofVir'sar"],
-	[5671] = BZ["RuinsofKhintaset"],
-	[5672] = BZ["ChamberoftheMoon"],
-	[5673] = BZ["Sullah'sSideshow"],
-	[5674] = BZ["Maker'sAscent"],
-	[5675] = BZ["Arikara'sNeedle"],
-	[5676] = BZ["IrontreeClearing"],
-	[5677] = BZ["ValleyofAshes"],
-	[5678] = BZ["Sindweller'sRise"],
-	[5679] = BZ["NefersetCityOutskirts"],
-	[5680] = BZ["WildhammerFlagRoom"],
-	[5681] = BZ["DragonmawFlagRoom"],
-	[5682] = BZ["ThunderstrikeMountain"],
-	[5683] = BZ["BeneathTheDoubleRainbow"],
-	[5684] = BZ["ThroneoftheFourWinds"],
-	[5685] = BZ["Pilgrim'sPrecipice"],
-	[5686] = BZ["BashalAranCollapse"],
-	[5687] = BZ["TheHowlingOak"],
-	[5688] = BZ["MountAkher"],
-	[5689] = BZ["TombsofthePrecursors"],
-	[5690] = BZ["ArsadTradePost"],
-	[5691] = BZ["DarkspearShore"],
-	[5692] = BZ["TheDeathknellGraves"],
-	[5693] = BZ["MurkdeepCavern"],
-	[5694] = BZ["KesetPass"],
-	[5695] = BZ["AhnQirajTheFallenKingdom"],
-	[5696] = BZ["Surveyors'Outpost"],
-	[5697] = BZ["M.A.C.Diver"],
-	[5698] = BZ["TomboftheSunKing"],
-	[5699] = BZ["TheCircleofLife"],
-	[5700] = BZ["Schnottz'sHostel"],
-	[5701] = BZ["HallsofOriginationEntrance"],
-	[5702] = BZ["TheVortexPinnacleEntrance"],
-	[5703] = BZ["GoodgrubSmokingPit"],
-	[5704] = BZ["TheCatacombs"],
-	[5705] = BZ["SnowdenChalet"],
-	[5706] = BZ["TheSteamPools"],
-	[5707] = BZ["BerylRegress"],
-	[5708] = BZ["LostCityoftheTol'virEntrance"],
-	[5709] = BZ["Atulhet'sTomb"],
-	[5710] = BZ["TheLightlessReaches3"],
-	[5711] = BZ["TheLightlessReaches2"],
-	[5712] = BZ["TheBlackwald"],
-	[5713] = BZ["HaywardFishery"],
-	[5714] = BZ["StormglenVillage"],
-	[5715] = BZ["Vir'naalOasis"],
-	[5716] = BZ["Vir'naalLake"],
-	[5717] = BZ["Vir'naalRiverDelta"],
-	[5718] = BZ["Fortune'sFist"],
-	[5719] = BZ["TheCommons"],
-	[5720] = BZ["DuskmistShore"],
-	[5721] = BZ["BrashtideAttackFleet"],
+	[5658] = BZ["Cursed Depths"],
+	[5659] = BZ["The Hole"],
+	[5660] = BZ["Obsidian Lair"],
+	[5663] = BZ["Neferset City"],
+	[5664] = BZ["Iso'rath"],
+	[5665] = BZ["Sunwatcher's Ridge"],
+	[5666] = BZ["Vir'naal Dam"],
+	[5667] = BZ["Cannon's Inferno"],
+	[5668] = BZ["Obelisk of the Moon"],
+	[5669] = BZ["Temple of Uldum"],
+	[5670] = BZ["Oasis of Vir'sar"],
+	[5671] = BZ["Ruins of Khintaset"],
+	[5672] = BZ["Chamber of the Moon"],
+	[5673] = BZ["Sullah's Sideshow"],
+	[5674] = BZ["Maker's Ascent"],
+	[5675] = BZ["Arikara's Needle"],
+	[5676] = BZ["Irontree Clearing"],
+	[5677] = BZ["Valley of Ashes"],
+	[5678] = BZ["Sindweller's Rise"],
+	[5679] = BZ["Neferset City Outskirts"],
+	[5680] = BZ["Wildhammer Flag Room"],
+	[5681] = BZ["Dragonmaw Flag Room"],
+	[5682] = BZ["Thunderstrike Mountain"],
+	[5683] = BZ["Beneath The Double Rainbow"],
+	[5684] = BZ["Throne of the Four Winds"],
+	[5685] = BZ["Pilgrim's Precipice"],
+	[5686] = BZ["Bashal'Aran Collapse"],
+	[5687] = BZ["The Howling Oak"],
+	[5688] = BZ["Mount Akher"],
+	[5689] = BZ["Tombs of the Precursors"],
+	[5690] = BZ["Arsad Trade Post"],
+	[5691] = BZ["Darkspear Shore"],
+	[5692] = BZ["The Deathknell Graves"],
+	[5693] = BZ["Murkdeep Cavern"],
+	[5694] = BZ["Keset Pass"],
+	[5695] = BZ["Ahn'Qiraj: The Fallen Kingdom"],
+	[5696] = BZ["Surveyors' Outpost"],
+	[5697] = BZ["M.A.C. Diver"],
+	[5698] = BZ["Tomb of the Sun King"],
+	[5699] = BZ["The Circle of Life"],
+	[5700] = BZ["Schnottz's Hostel"],
+	[5701] = BZ["Halls of Origination Entrance"],
+	[5702] = BZ["The Vortex Pinnacle Entrance"],
+	[5703] = BZ["Goodgrub Smoking Pit"],
+	[5704] = BZ["The Catacombs"],
+	[5705] = BZ["Snowden Chalet"],
+	[5706] = BZ["The Steam Pools"],
+	[5707] = BZ["Beryl Egress"],
+	[5708] = BZ["Lost City of the Tol'vir Entrance"],
+	[5709] = BZ["Atulhet's Tomb"],
+	[5710] = BZ["The Lightless Reaches"],
+	[5711] = BZ["The Lightless Reaches"],
+	[5712] = BZ["The Blackwald"],
+	[5713] = BZ["Hayward Fishery"],
+	[5714] = BZ["Stormglen Village"],
+	[5715] = BZ["Vir'naal Oasis"],
+	[5716] = BZ["Vir'naal Lake"],
+	[5717] = BZ["Vir'naal River Delta"],
+	[5718] = BZ["Fortune's Fist"],
+	[5719] = BZ["The Commons"],
+	[5720] = BZ["Duskmist Shore"],
+	[5721] = BZ["Brashtide Attack Fleet"],
 	[5723] = BZ["Firelands"],
-	[5724] = BZ["TwilightCamp"],
-	[5726] = BZ["CampMojacheLonghouse"],
-	[5727] = BZ["Scott'sSpookyArea"],
-	[5728] = BZ["FalconwingInn"],
-	[5729] = BZ["BlackwingDescent"],
-	[5730] = BZ["NordrassilInn"],
-	[5731] = BZ["Whelgar'sRetreat"],
-	[5732] = BZ["HallsofOrigination"],
-	[5733] = BZ["MoltenFront"],
+	[5724] = BZ["Twilight Camp"],
+	[5726] = BZ["Camp Mojache Longhouse"],
+	[5727] = BZ["Scott's Spooky Area"],
+	[5728] = BZ["Falconwing Inn"],
+	[5729] = BZ["Blackwing Descent"],
+	[5730] = BZ["Nordrassil Inn"],
+	[5731] = BZ["Whelgar's Retreat"],
+	[5732] = BZ["Halls of Origination"],
+	[5733] = BZ["Molten Front"],
 	[5734] = BZ["Sarahland"],
-	[5736] = BZ["TheWanderingIsle"],
-	[5737] = BZ["Pei-WuForest"],
-	[5738] = BZ["Malfurion'sBreach"],
-	[5739] = BZ["AshenFields"],
-	[5740] = BZ["MagmaSprings"],
-	[5741] = BZ["IgneousDepths"],
-	[5742] = BZ["ForlornSpire"],
-	[5743] = BZ["TheWidow'sClutch"],
-	[5744] = BZ["WildflamePoint"],
-	[5745] = BZ["TheFurnace"],
-	[5746] = BZ["TheMoltenFlow"],
-	[5747] = BZ["TheCrumblingStones"],
-	[5748] = BZ["FireplumePeak"],
-	[5749] = BZ["Ragnaros'Reach"],
-	[5758] = BZ["DreadmistCamp"],
-	[5763] = BZ["RhyolithPlateau"],
-	[5764] = BZ["Beth'tilac'sLair"],
+	[5736] = BZ["The Wandering Isle"],
+	[5737] = BZ["Pei-Wu Forest"],
+	[5738] = BZ["Malfurion's Breach"],
+	[5739] = BZ["Ashen Fields"],
+	[5740] = BZ["Magma Springs"],
+	[5741] = BZ["Igneous Depths"],
+	[5742] = BZ["Forlorn Spire"],
+	[5743] = BZ["The Widow's Clutch"],
+	[5744] = BZ["Wildflame Point"],
+	[5745] = BZ["The Furnace"],
+	[5746] = BZ["The Molten Flow"],
+	[5747] = BZ["Crumbling Stones"],
+	[5748] = BZ["Fireplume Peak"],
+	[5749] = BZ["Ragnaros' Reach"],
+	[5758] = BZ["Dreadmist Camp"],
+	[5763] = BZ["Rhyolith Plateau"],
+	[5764] = BZ["Beth'tilac's Lair"],
 	[5765] = BZ["Flamebreach"],
 	[5766] = BZ["Shatterstone"],
-	[5767] = BZ["Mortal'sDemise"],
-	[5768] = BZ["SulfuronSpan"],
-	[5769] = BZ["SulfuronKeepCourtyard"],
-	[5770] = BZ["SulfuronKeep"],
-	[5771] = BZ["TheMoltenFields"],
-	[5775] = BZ["DragonmawStronghold"],
-	[5776] = BZ["WildhammerStronghold"],
-	[5779] = BZ["ThalassianRange"],
-	[5780] = BZ["AmaniMountains"],
-	[5781] = BZ["NorduneRidge"],
-	[5782] = BZ["Darsok'sOutpost"],
-	[5783] = BZ["AlcazIsland"],
-	[5784] = BZ["CloudtopTerrace"],
-	[5785] = BZ["TheJadeForest"],
-	[5786] = BZ["TheNexusLegendary"],
-	[5787] = BZ["Schnottz'sFrigate"],
-	[5788] = BZ["WellofEternity"],
-	[5789] = BZ["TheFallofAzeroth"],
-	[5790] = BZ["RubyDragonshrine"],
-	[5791] = BZ["RidgeofAncientFlame"],
-	[5792] = BZ["ObsidianDragonshrine"],
-	[5793] = BZ["AzureDragonshrine"],
-	[5794] = BZ["EmeraldDragonshrine"],
-	[5795] = BZ["BronzeDragonshrine"],
-	[5796] = BZ["EntrywayofTime"],
-	[5797] = BZ["Staidridge"],
-	[5798] = BZ["TheAnvilofConflagration"],
-	[5799] = BZ["EyeoftheStorm2"],
-	[5800] = BZ["BloodElfTower"],
-	[5802] = BZ["DraeneiRuins"],
-	[5803] = BZ["FelReaverRuins"],
-	[5804] = BZ["MageTower"],
-	[5805] = BZ["ValleyoftheFourWinds"],
-	[5806] = BZ["SpineoftheDestroyer"],
-	[5807] = BZ["Beth'tilac'sLairDailies"],
-	[5808] = BZ["SulfuronKeepCourtyardDailies"],
-	[5809] = BZ["SulfuronKeepDailies"],
-	[5810] = BZ["AnvilofConflagrationDailies"],
-	[5811] = BZ["TheMoltenFieldsDailies"],
-	[5812] = BZ["Mortal'sDemiseDailies"],
-	[5813] = BZ["SulfuronSpanDailies"],
-	[5814] = BZ["ShatterstoneDailies"],
-	[5815] = BZ["FlamebreachDailies"],
-	[5816] = BZ["TheRidgeofAncientFlameDailies"],
-	[5817] = BZ["RhyolithPlateauDailies"],
-	[5818] = BZ["FirelandsRaidDailies"],
-	[5820] = BZ["TempleofFiveDawns"],
-	[5821] = BZ["ThePathofCorruption"],
-	[5823] = BZ["CircleofThorns"],
-	[5824] = BZ["BluffoftheSouthWind"],
-	[5825] = BZ["TheDawningValley"],
-	[5826] = BZ["TheSingingPools"],
-	[5827] = BZ["TheRows"],
-	[5828] = BZ["MandoriVillage"],
-	[5829] = BZ["RidgeofLaughingWinds"],
-	[5830] = BZ["MorningBreezeVillage"],
-	[5831] = BZ["FeFangVillage"],
-	[5832] = BZ["TheWoodofStaves"],
-	[5833] = BZ["SkyfireCrashSite"],
-	[5834] = BZ["ShangXiTrainingGrounds"],
-	[5835] = BZ["WuSongVillage"],
-	[5836] = BZ["ForestHeart"],
-	[5837] = BZ["TheDawningSpan"],
-	[5838] = BZ["WhisperingForest"],
-	[5839] = BZ["TheGreatDivide2"],
-	[5840] = BZ["ValeofEternalBlossoms"],
-	[5841] = BZ["KunLaiSummit"],
-	[5842] = BZ["TownlongWastes"],
-	[5843] = BZ["TranquilGrotto"],
-	[5844] = BZ["HourofTwilight"],
-	[5845] = BZ["WyrmrestTemple"],
-	[5846] = BZ["Fu'sPond"],
-	[5847] = BZ["TheDawningStair"],
-	[5848] = BZ["CaveofMeditation"],
-	[5849] = BZ["ShrineofInnerLight"],
-	[5850] = BZ["SilkenShore"],
-	[5851] = BZ["PawdonGlade"],
-	[5852] = BZ["SapphiresEnd"],
-	[5853] = BZ["GarrosharPoint"],
-	[5854] = BZ["NectarbreezeOrchard"],
-	[5855] = BZ["TianMonastery"],
-	[5856] = BZ["ShrineofRemembrance"],
-	[5857] = BZ["MoguCamp"],
-	[5859] = BZ["TheEldersPath"],
-	[5860] = BZ["LiangsRetreat"],
-	[5861] = BZ["DarkmoonFaireIsland"],
-	[5862] = BZ["PoolofReflection"],
-	[5863] = BZ["BanquetGrounds"],
-	[5865] = BZ["WreckofHellscreamsFist"],
-	[5866] = BZ["AscentofSwirlingWinds"],
-	[5867] = BZ["Hellscream'sFist"],
-	[5868] = BZ["TheRumpusPit"],
-	[5869] = BZ["TheGreatSea"],
-	[5870] = BZ["TheDarkmoonFaire"],
-	[5871] = BZ["ThePracticePit"],
-	[5872] = BZ["SlingtailPits"],
-	[5873] = BZ["SeaMistRidge"],
+	[5767] = BZ["Mortal's Demise"],
+	[5768] = BZ["Sulfuron Span"],
+	[5769] = BZ["Sulfuron Keep Courtyard"],
+	[5770] = BZ["Sulfuron Keep"],
+	[5771] = BZ["The Molten Fields"],
+	[5775] = BZ["Dragonmaw Stronghold"],
+	[5776] = BZ["Wildhammer Stronghold"],
+	[5779] = BZ["Thalassian Range"],
+	[5780] = BZ["Amani Mountains"],
+	[5781] = BZ["Nordune Ridge"],
+	[5782] = BZ["Darsok's Outpost"],
+	[5783] = BZ["Alcaz Island"],
+	[5784] = BZ["Cloudtop Terrace"],
+	[5785] = BZ["The Jade Forest"],
+	[5786] = BZ["The Nexus"],
+	[5787] = BZ["Schnottz's Frigate"],
+	[5788] = BZ["Well of Eternity"],
+	[5789] = BZ["End Time"],
+	[5790] = BZ["Ruby Dragonshrine"],
+	[5791] = BZ["The Ridge of Ancient Flame"],
+	[5792] = BZ["Obsidian Dragonshrine"],
+	[5793] = BZ["Azure Dragonshrine"],
+	[5794] = BZ["Emerald Dragonshrine"],
+	[5795] = BZ["Bronze Dragonshrine"],
+	[5796] = BZ["Entryway of Time"],
+	[5797] = BZ["The Staidridge"],
+	[5798] = BZ["The Anvil of Conflagration"],
+	[5799] = BZ["Eye of the Storm"],
+	[5800] = BZ["Blood Elf Tower"],
+	[5802] = BZ["Draenei Ruins"],
+	[5803] = BZ["Fel Reaver Ruins"],
+	[5804] = BZ["Mage Tower"],
+	[5805] = BZ["Valley of the Four Winds"],
+	[5806] = BZ["Spine of the Destroyer UNUSED"],
+	[5807] = BZ["Beth'tilac's Lair"],
+	[5808] = BZ["Sulfuron Keep Courtyard"],
+	[5809] = BZ["Sulfuron Keep"],
+	[5810] = BZ["Anvil of Conflagration"],
+	[5811] = BZ["The Molten Fields"],
+	[5812] = BZ["Mortal's Demise"],
+	[5813] = BZ["Sulfuron Span"],
+	[5814] = BZ["Shatterstone"],
+	[5815] = BZ["Flamebreach"],
+	[5816] = BZ["The Ridge of Ancient Flame"],
+	[5817] = BZ["Rhyolith Plateau"],
+	[5818] = BZ["Firelands"],
+	[5820] = BZ["Temple of Five Dawns"],
+	[5821] = BZ["The Path of Corruption"],
+	[5823] = BZ["Circle of Thorns"],
+	[5824] = BZ["Bluff of the South Wind"],
+	[5825] = BZ["The Dawning Valley"],
+	[5826] = BZ["The Singing Pools"],
+	[5827] = BZ["The Rows"],
+	[5828] = BZ["Mandori Village"],
+	[5829] = BZ["Ridge of Laughing Winds"],
+	[5830] = BZ["Morning Breeze Village"],
+	[5831] = BZ["Fe-Feng Village"],
+	[5832] = BZ["The Wood of Staves"],
+	[5833] = BZ["Wreck of the Skyseeker"],
+	[5834] = BZ["Shang Xi Training Grounds"],
+	[5835] = BZ["Wu-Song Village"],
+	[5836] = BZ["Forest Heart"],
+	[5837] = BZ["The Dawning Span"],
+	[5838] = BZ["Whispering Forest"],
+	[5839] = BZ["The Great Divide"],
+	[5840] = BZ["Vale of Eternal Blossoms"],
+	[5841] = BZ["Kun-Lai Summit"],
+	[5842] = BZ["Townlong Steppes"],
+	[5843] = BZ["Tranquil Grotto"],
+	[5844] = BZ["Hour of Twilight"],
+	[5845] = BZ["Wyrmrest Temple"],
+	[5846] = BZ["Fu's Pond"],
+	[5847] = BZ["The Dawning Stair"],
+	[5848] = BZ["Cave of Meditation"],
+	[5849] = BZ["Shrine of Inner-Light"],
+	[5850] = BZ["Silken Shore"],
+	[5851] = BZ["Paw'don Glade"],
+	[5852] = BZ["Wreck of the Vanguard"],
+	[5853] = BZ["Garrosh'ar Point"],
+	[5854] = BZ["Nectarbreeze Orchard"],
+	[5855] = BZ["Tian Monastery"],
+	[5856] = BZ["Shrine of Remembrance"],
+	[5857] = BZ["Camp Gormal"],
+	[5859] = BZ["The Elders' Path"],
+	[5860] = BZ["Liang's Retreat"],
+	[5861] = BZ["Darkmoon Island"],
+	[5862] = BZ["Pool of Reflection"],
+	[5863] = BZ["Banquet Grounds"],
+	[5865] = BZ["Wreck of Hellscream's Fist"],
+	[5866] = BZ["Ascent of Swirling Winds"],
+	[5867] = BZ["Strongarm Airstrip"],
+	[5868] = BZ["The Ring of Inner Focus"],
+	[5869] = BZ["The Great Sea"],
+	[5870] = BZ["The Darkmoon Faire"],
+	[5871] = BZ["The Ring of Balance"],
+	[5872] = BZ["Slingtail Pits"],
+	[5873] = BZ["Sea Mist Ridge"],
 	[5874] = BZ["Waxwood"],
-	[5875] = BZ["LairoftheJadeWitch"],
-	[5876] = BZ["Serpent'sHeart"],
-	[5877] = BZ["DarkmoonDeathmatch"],
-	[5878] = BZ["OrchidHollow"],
-	[5879] = BZ["TerraceofTenThunders"],
-	[5880] = BZ["MaelstromDeathwingFight"],
-	[5881] = BZ["TheDai-LoFarmstead"],
-	[5882] = BZ["VermingGrotto"],
-	[5883] = BZ["TeemingBurrow"],
-	[5884] = BZ["KiHanBrewery"],
-	[5885] = BZ["ShrineofDreamingStones"],
-	[5886] = BZ["ChamberofWhispers"],
-	[5887] = BZ["ShadybranchPocket"],
-	[5890] = BZ["FoxGrove"],
-	[5891] = BZ["ShangsValley"],
-	[5892] = BZ["DragonSoul"],
-	[5893] = BZ["TheMaelstrom"],
+	[5875] = BZ["Lair of the Jade Witch"],
+	[5876] = BZ["Serpent's Heart"],
+	[5877] = BZ["Darkmoon Deathmatch"],
+	[5878] = BZ["Orchid Hollow"],
+	[5879] = BZ["Terrace of Ten Thunders"],
+	[5880] = BZ["Maelstrom Deathwing Fight"],
+	[5881] = BZ["The Dai-Lo Farmstead"],
+	[5882] = BZ["Virmen Grotto"],
+	[5883] = BZ["Teeming Burrow"],
+	[5884] = BZ["Ki-Han Brewery"],
+	[5885] = BZ["Shrine of Dreaming Stones"],
+	[5886] = BZ["Chamber of Whispers"],
+	[5887] = BZ["Shadybranch Pocket"],
+	[5890] = BZ["Fox Grove"],
+	[5891] = BZ["Shang's Valley"],
+	[5892] = BZ["Dragon Soul"],
+	[5893] = BZ["The Maelstrom"],
 	[5894] = BZ["Testing02"],
-	[5895] = BZ["TestingSubZoneA"],
-	[5896] = BZ["TheOrchidPond"],
-	[5897] = BZ["TheFertileCopse"],
-	[5898] = BZ["SerenityFalls"],
-	[5899] = BZ["PathofEnlightenment"],
-	[5900] = BZ["ExclamationPoint"],
-	[5901] = BZ["CaveofWords"],
-	[5902] = BZ["DarkmoonPath"],
-	[5904] = BZ["DarkmoonBoardwalk"],
-	[5905] = BZ["CampNookaNooka"],
-	[5906] = BZ["SpireofSolitude"],
-	[5907] = BZ["LakeKittitata"],
-	[5908] = BZ["CircleofScale"],
-	[5909] = BZ["CircleofBlood"],
-	[5910] = BZ["CircleofBone"],
-	[5911] = BZ["CircleofStone"],
-	[5912] = BZ["TideviewThicket"],
-	[5913] = BZ["Dire Maul - Gordok Commons"],
-	[5914] = BZ["DireMaulWarpwoodQuarter"],
-	[5915] = BZ["DireMaul - Capital Gardens"],
-	[5916] = BZ["StratholmeMainGate"],
-	[5917] = BZ["StratholmeServiceEntrance"],
-	[5918] = BZ["ShadowpanHideout"],
-	[5919] = BZ["UnchartedSea"],
-	[5920] = BZ["EyeofEternity"],
-	[5921] = BZ["Tasters'Arena"],
-	[5922] = BZ["AbovetheFrozenSea"],
-	[5923] = BZ["TheDragonWastes"],
-	[5924] = BZ["AzureDragonshrine"],
-	[5925] = BZ["EmeraldDragonshrine"],
-	[5926] = BZ["PathoftheTitans"],
-	[5928] = BZ["WyrmrestSummit"],
-	[5929] = BZ["TheSilkwood"],
-	[5930] = BZ["DawnsBlossom"],
-	[5931] = BZ["TheArboretum"],
-	[5932] = BZ["ShrineoftheDawn"],
-	[5933] = BZ["TheGongofHope"],
-	[5934] = BZ["PearlLake"],
-	[5935] = BZ["PearlfinVillage"],
-	[5936] = BZ["Pang'sStead"],
-	[5937] = BZ["ThunderfootAcres"],
-	[5938] = BZ["ThunderfootRanch"],
-	[5939] = BZ["ThunderfootFarm"],
-	[5940] = BZ["Dreamer'sPavilion"],
-	[5941] = BZ["WITheGreatSea"],
-	[5942] = BZ["Tigers'Wood"],
-	[5943] = BZ["AmberflyBog"],
-	[5944] = BZ["ForlornHut"],
-	[5945] = BZ["PoolofthePaw"],
-	[5946] = BZ["MorningBreezeLake"],
-	[5947] = BZ["ShrineofFiveDawns"],
-	[5948] = BZ["GrassyCline"],
-	[5949] = BZ["Shang'sStead"],
-	[5950] = BZ["GrookinHill"],
-	[5951] = BZ["DookinGrounds"],
-	[5952] = BZ["ScenicOverlook"],
-	[5953] = BZ["MurkyBank"],
-	[5954] = BZ["DenOfSorrow"],
-	[5955] = BZ["GreenstoneQuarry"],
-	[5956] = BZ["EastTemple"],
-	[5957] = BZ["MudmugsPlace"],
-	[5958] = BZ["VermingTunnelsArea"],
-	[5959] = BZ["VermingTunnelsMicro"],
+	[5895] = BZ["Testing SubZone A"],
+	[5896] = BZ["The Orchid Pond - NOT USED"],
+	[5897] = BZ["The Fertile Copse"],
+	[5898] = BZ["Serenity Falls"],
+	[5899] = BZ["Path of Enlightenment"],
+	[5900] = BZ["Exclamation Point"],
+	[5901] = BZ["Cave of Words"],
+	[5902] = BZ["Darkmoon Path"],
+	[5904] = BZ["Darkmoon Boardwalk"],
+	[5905] = BZ["Camp Nooka Nooka"],
+	[5906] = BZ["Spire of Solitude"],
+	[5907] = BZ["Lake Kittitata"],
+	[5908] = BZ["Circle of Scale"],
+	[5909] = BZ["Circle of Blood"],
+	[5910] = BZ["Circle of Bone"],
+	[5911] = BZ["Circle of Stone"],
+	[5912] = BZ["Tideview Thicket"],
+	[5913] = BZ["Dire Maul - North"],
+	[5914] = BZ["Dire Maul - East"],
+	[5915] = BZ["Dire Maul - West"],
+	[5916] = BZ["Stratholme - Main Gate"],
+	[5917] = BZ["Stratholme - Service Entrance"],
+	[5918] = BZ["Shado-Pan Monastery"],
+	[5919] = BZ["Uncharted Sea"],
+	[5920] = BZ["Eye of Eternity"],
+	[5921] = BZ["Tasters' Arena"],
+	[5922] = BZ["Above the Frozen Sea"],
+	[5923] = BZ["The Dragon Wastes"],
+	[5924] = BZ["Azure Dragonshrine"],
+	[5925] = BZ["Emerald Dragonshrine"],
+	[5926] = BZ["Path of the Titans"],
+	[5928] = BZ["Wyrmrest Summit"],
+	[5929] = BZ["The Silkwood"],
+	[5930] = BZ["Dawn's Blossom"],
+	[5931] = BZ["The Arboretum"],
+	[5932] = BZ["Shrine of the Dawn"],
+	[5933] = BZ["The Gong of Hope"],
+	[5934] = BZ["Pearl Lake"],
+	[5935] = BZ["Pearlfin Village"],
+	[5936] = BZ["Pang's Stead"],
+	[5937] = BZ["Thunderfoot Fields"],
+	[5938] = BZ["Thunderfoot Ranch"],
+	[5939] = BZ["Thunderfoot Farm"],
+	[5940] = BZ["Dreamer's Pavilion"],
+	[5941] = BZ["The Great Sea"],
+	[5942] = BZ["Tigers' Wood"],
+	[5943] = BZ["Amberfly Bog"],
+	[5944] = BZ["Forlorn Hut"],
+	[5945] = BZ["Pool of the Paw"],
+	[5946] = BZ["Morning Breeze Lake"],
+	[5947] = BZ["Shrine of Five Dawns"],
+	[5948] = BZ["Grassy Cline"],
+	[5949] = BZ["Shang's Stead"],
+	[5950] = BZ["Grookin Hill"],
+	[5951] = BZ["Dookin' Grounds"],
+	[5952] = BZ["Scenic Overlook"],
+	[5953] = BZ["Murky Bank"],
+	[5954] = BZ["Den of Sorrow"],
+	[5955] = BZ["Greenstone Quarry"],
+	[5956] = BZ["Temple of the Jade Serpent"],
+	[5957] = BZ["Mudmug's Place"],
+	[5958] = BZ["Sunsoaked Meadow"],
+	[5959] = BZ["The Twisted Warren"],
 	[5960] = BZ["Deathwing"],
-	[5961] = BZ["SlickyStream"],
-	[5962] = BZ["EmperorsOmen"],
-	[5963] = BZ["StormstoutBrewery"],
-	[5964] = BZ["TheBambooWilds"],
-	[5966] = BZ["WoodsoftheLost"],
-	[5967] = BZ["PaoquanHollow"],
+	[5961] = BZ["Slicky Stream"],
+	[5962] = BZ["Emperor's Omen"],
+	[5963] = BZ["Stormstout Brewery"],
+	[5964] = BZ["The Bamboo Wilds"],
+	[5966] = BZ["Woods of the Lost"],
+	[5967] = BZ["Paoquan Hollow"],
 	[5968] = BZ["Stoneplow"],
-	[5969] = BZ["StoneplowFields"],
-	[5970] = BZ["SingingMarshes"],
-	[5972] = BZ["PoolsofPurity"],
-	[5973] = BZ["NewCifera"],
-	[5974] = BZ["JadeTempleGrounds"],
-	[5975] = BZ["TempleoftheJadeSerpent"],
-	[5976] = BZ["TheGreatWall"],
-	[5978] = BZ["AncientCourtyard"],
-	[5979] = BZ["TheGreatSea"],
+	[5969] = BZ["Stoneplow Fields"],
+	[5970] = BZ["Singing Marshes"],
+	[5972] = BZ["Pools of Purity"],
+	[5973] = BZ["New Cifera"],
+	[5974] = BZ["Jade Temple Grounds"],
+	[5975] = BZ["Temple of the Jade Serpent"],
+	[5976] = BZ["Gate of the Setting Sun"],
+	[5978] = BZ["Ancient Courtyard"],
+	[5979] = BZ["The Great Sea"],
 	[5980] = BZ["Halfhill"],
-	[5981] = BZ["TheHalfhillMarket"],
-	[5982] = BZ["TheImperialGranary"],
-	[5983] = BZ["PlainofThieves"],
-	[5984] = BZ["GildedFan"],
-	[5985] = BZ["WindsEdge"],
-	[5986] = BZ["SilkenFields"],
-	[5987] = BZ["TheGildingStream"],
-	[5988] = BZ["TheCrystalVice"],
-	[5989] = BZ["TheDragonWastes"],
-	[5990] = BZ["GalakrondsRest"],
-	[5991] = BZ["PathoftheTitans"],
-	[5992] = BZ["FruitedFields"],
-	[5993] = BZ["CourtyardofLights"],
-	[5994] = BZ["ShoresoftheWell"],
-	[5995] = BZ["AzsharasPalace"],
-	[5996] = BZ["SpringtailWarren"],
-	[6000] = BZ["SadPandaTown"],
-	[6001] = BZ["StormstoutBrewery"],
-	[6002] = BZ["ThirstyAlley"],
-	[6004] = BZ["KrasarangWilds"],
-	[6005] = BZ["ZhuProvince"],
-	[6006] = BZ["TheVeiledStair"],
-	[6007] = BZ["ThunderCleft"],
-	[6008] = BZ["RuinsofDojan"],
-	[6009] = BZ["TheIncursion"],
-	[6010] = BZ["DojaniRiver"],
-	[6011] = BZ["PoolsofYouth"],
-	[6012] = BZ["WindwardIsle"],
-	[6013] = BZ["DawnchaserRetreat"],
-	[6014] = BZ["KrasarangRiver"],
-	[6015] = BZ["RuinsofKorja"],
-	[6016] = BZ["SentinelBasecamp"],
-	[6017] = BZ["FallsongVillage"],
-	[6018] = BZ["KrasariFalls"],
-	[6019] = BZ["TheForbiddenJungle"],
-	[6020] = BZ["TheSouthernWall"],
-	[6021] = BZ["HuangtzeFalls"],
-	[6022] = BZ["MistveilSea"],
-	[6023] = BZ["WindspireBridge"],
-	[6024] = BZ["TheWindspire"],
-	[6025] = BZ["NesingwarysSafari"],
-	[6026] = BZ["TheKrasariRuins"],
-	[6027] = BZ["VermingNest"],
-	[6028] = BZ["DustbackGorge"],
-	[6029] = BZ["TheTorjariPit"],
-	[6030] = BZ["TheWildPlains"],
-	[6031] = BZ["MistfallVillage"],
-	[6032] = BZ["RuinsofGuoLai"],
-	[6033] = BZ["TheGoldenStair"],
-	[6034] = BZ["WhitepetalLake"],
-	[6035] = BZ["SettingSunGarrison"],
-	[6036] = BZ["TheGoldenPagoda"],
-	[6037] = BZ["TuShenBurialGround"],
-	[6038] = BZ["LairoftheBeast"],
-	[6039] = BZ["YourFarm"],
-	[6040] = BZ["DustwallowMarshScenarioHorde"],
-	[6041] = BZ["TheGreatSea"],
-	[6042] = BZ["TheramoreIsle"],
-	[6043] = BZ["DustwallowMarsh"],
-	[6044] = BZ["DustwallowBay"],
-	[6045] = BZ["AlcazIsland"],
-	[6046] = BZ["FootholdCitadel"],
-	[6047] = BZ["TheSeaWolf"],
-	[6048] = BZ["CraneTemple"],
-	[6049] = BZ["CraneRefugeeCamp"],
-	[6050] = BZ["SpiritsongRiver"],
-	[6051] = BZ["TempleofKotmogu"],
-	[6052] = BZ["ScarletHalls"],
-	[6053] = BZ["RuinsRise"],
-	[6054] = BZ["WinterboughGlade"],
-	[6055] = BZ["TheFiveSisters"],
-	[6058] = BZ["ShatteredConvoy"],
-	[6059] = BZ["BinanVillage"],
-	[6060] = BZ["ValleyofPower1"],
-	[6061] = BZ["ValleyofPower2"],
-	[6062] = BZ["KunLaiPass"],
-	[6063] = BZ["MoonwaterRetreat"],
+	[5981] = BZ["The Halfhill Market"],
+	[5982] = BZ["The Imperial Granary"],
+	[5983] = BZ["Plain of Thieves"],
+	[5984] = BZ["Gilded Fan"],
+	[5985] = BZ["Winds' Edge"],
+	[5986] = BZ["Silken Fields"],
+	[5987] = BZ["The Gilding Stream"],
+	[5988] = BZ["The Crystal Vice"],
+	[5989] = BZ["The Dragon Wastes"],
+	[5990] = BZ["Galakrond's Rest"],
+	[5991] = BZ["Path of the Titans"],
+	[5992] = BZ["The Heartland"],
+	[5993] = BZ["Courtyard of Lights"],
+	[5994] = BZ["Shores of the Well"],
+	[5995] = BZ["Azshara's Palace"],
+	[5996] = BZ["Springtail Warren"],
+	[6000] = BZ["Zhu's Watch"],
+	[6001] = BZ["Stormstout Brewery"],
+	[6002] = BZ["Thirsty Alley"],
+	[6004] = BZ["The Deepwild"],
+	[6005] = BZ["Zhu Province"],
+	[6006] = BZ["The Veiled Stair"],
+	[6007] = BZ["Thunder Cleft"],
+	[6008] = BZ["Ruins of Dojan"],
+	[6009] = BZ["The Incursion"],
+	[6010] = BZ["Dojani River"],
+	[6011] = BZ["Pools of Youth"],
+	[6012] = BZ["Windward Isle"],
+	[6013] = BZ["Dawnchaser Retreat"],
+	[6014] = BZ["Krasarang River"],
+	[6015] = BZ["Ruins of Korja"],
+	[6016] = BZ["Sentinel Basecamp"],
+	[6017] = BZ["Fallsong Village"],
+	[6018] = BZ["Krasari Falls"],
+	[6019] = BZ["The Forbidden Jungle"],
+	[6020] = BZ["The Southern Wall"],
+	[6021] = BZ["Huangtze Falls"],
+	[6022] = BZ["Mistveil Sea"],
+	[6023] = BZ["Windspire Bridge"],
+	[6024] = BZ["The Windspire"],
+	[6025] = BZ["Nesingwary's Safari"],
+	[6026] = BZ["The Krasari Ruins"],
+	[6027] = BZ["Virmen Nest"],
+	[6028] = BZ["Dustback Gorge"],
+	[6029] = BZ["The Torjari Pit"],
+	[6030] = BZ["The Wild Plains"],
+	[6031] = BZ["Mistfall Village"],
+	[6032] = BZ["Ruins of Guo-Lai"],
+	[6033] = BZ["The Golden Stair"],
+	[6034] = BZ["Whitepetal Lake"],
+	[6035] = BZ["Setting Sun Garrison"],
+	[6036] = BZ["The Golden Pagoda"],
+	[6037] = BZ["Tu Shen Burial Ground"],
+	[6038] = BZ["Lair of the Beast"],
+	[6039] = BZ["Sunsong Ranch"],
+	[6040] = BZ["Dustwallow Marsh"],
+	[6041] = BZ["The Great Sea"],
+	[6042] = BZ["Theramore Isle"],
+	[6043] = BZ["Dustwallow Marsh"],
+	[6044] = BZ["Dustwallow Bay"],
+	[6045] = BZ["Alcaz Island"],
+	[6046] = BZ["Foothold Citadel"],
+	[6047] = BZ["The Sea Wolf"],
+	[6048] = BZ["Temple of the Red Crane"],
+	[6049] = BZ["Crane Wing Refuge"],
+	[6050] = BZ["Spiritsong River"],
+	[6051] = BZ["Temple of Kotmogu"],
+	[6052] = BZ["Scarlet Halls"],
+	[6053] = BZ["Ruins Rise"],
+	[6054] = BZ["Winterbough Glade"],
+	[6055] = BZ["The Five Sisters"],
+	[6058] = BZ["Shattered Convoy"],
+	[6059] = BZ["Binan Village"],
+	[6060] = BZ["Temple of Kotmogu"],
+	[6061] = BZ["Temple of Kotmogu"],
+	[6062] = BZ["Kun-Lai Pass"],
+	[6063] = BZ["Moonwater Retreat"],
 	[6064] = BZ["Skyrange"],
-	[6065] = BZ["KunZenVillage"],
+	[6065] = BZ["Kunzen Village"],
 	[6066] = BZ["Scholomance"],
-	[6067] = BZ["TerraceOfEndlessSpring"],
-	[6069] = BZ["JinyuMere"],
-	[6071] = BZ["TheDrunkenHozen"],
-	[6072] = BZ["LaoSonsYakwash"],
-	[6073] = BZ["TheAutumnPlains"],
-	[6074] = BZ["GuoLaiHalls"],
-	[6075] = BZ["TheGoldenGateway"],
-	[6076] = BZ["AuburnBluffs"],
-	[6077] = BZ["SriLaVillage"],
-	[6078] = BZ["SeatoftheSpiritWaker"],
-	[6079] = BZ["TheGrummleBazaar"],
-	[6080] = BZ["SerpentsOverlook"],
-	[6081] = BZ["PeakofSerenity"],
-	[6082] = BZ["TheSplinteredPath"],
-	[6083] = BZ["CampBroketooth"],
-	[6084] = BZ["TheDeeper"],
-	[6085] = BZ["PandaMountainTown"],
-	[6086] = BZ["BroketoothOutpost"],
-	[6087] = BZ["TheDookerDome"],
-	[6088] = BZ["KnucklethumpHole"],
-	[6089] = BZ["YetiMountainBasecamp"],
-	[6090] = BZ["TheBurlapTrail"],
-	[6091] = BZ["TheBurlapValley"],
-	[6092] = BZ["GreenstoneSortingCenter"],
-	[6093] = BZ["YaungolTug"],
-	[6094] = BZ["EasterlyRest"],
-	[6095] = BZ["WesterlyRest"],
-	[6096] = BZ["CattailLake"],
-	[6097] = BZ["KunzenCave"],
-	[6098] = BZ["ChowFarmstead"],
-	[6099] = BZ["PrankstersHollow"],
-	[6100] = BZ["MuskpawRanch"],
-	[6101] = BZ["BrewmasterScenario01"],
-	[6102] = BZ["ThunderpawRefuge"],
-	[6103] = BZ["ThunderpawOverlook"],
-	[6104] = BZ["ThunderpawRefuge"],
-	[6105] = BZ["ThunderpawOverlook"],
-	[6106] = BZ["AnglersWharf"],
-	[6107] = BZ["VerdantBelt"],
-	[6108] = BZ["NarsongTrench"],
-	[6109] = BZ["ScarletCathedral"],
-	[6110] = BZ["TheThunderwood"],
-	[6111] = BZ["TheBurlapWaystation"],
+	[6067] = BZ["Terrace of Endless Spring"],
+	[6069] = BZ["Inkgill Mere"],
+	[6071] = BZ["The Drunken Hozen"],
+	[6072] = BZ["Lao & Son's Yakwash"],
+	[6073] = BZ["The Autumn Plains"],
+	[6074] = BZ["Guo-Lai Halls"],
+	[6075] = BZ["The Golden Gateway"],
+	[6076] = BZ["Auburn Bluffs"],
+	[6077] = BZ["Sri-La Village"],
+	[6078] = BZ["Seat of the Spirit Waker"],
+	[6079] = BZ["The Grummle Bazaar"],
+	[6080] = BZ["Serpent's Overlook"],
+	[6081] = BZ["Peak of Serenity"],
+	[6082] = BZ["The Splintered Path"],
+	[6083] = BZ["Camp Broketooth"],
+	[6084] = BZ["The Deeper"],
+	[6085] = BZ["One Keg"],
+	[6086] = BZ["Broketooth Outpost"],
+	[6087] = BZ["The Dooker Dome"],
+	[6088] = BZ["Knucklethump Hole"],
+	[6089] = BZ["Yeti Mountain Basecamp"],
+	[6090] = BZ["The Burlap Trail"],
+	[6091] = BZ["The Burlap Valley"],
+	[6092] = BZ["Greenstone Masons' Quarter"],
+	[6093] = BZ["Fire Camp Bataar"],
+	[6094] = BZ["Eastwind Rest"],
+	[6095] = BZ["Westwind Rest"],
+	[6096] = BZ["Cattail Lake"],
+	[6097] = BZ["Kunzen Cave"],
+	[6098] = BZ["Chow Farmstead"],
+	[6099] = BZ["Pranksters' Hollow"],
+	[6100] = BZ["Muskpaw Ranch"],
+	[6101] = BZ["A Brewing Storm"],
+	[6102] = BZ["Thunderpaw Refuge"],
+	[6103] = BZ["Thunderpaw Overlook"],
+	[6104] = BZ["Thunderpaw Refuge"],
+	[6105] = BZ["Thunderpaw Overlook"],
+	[6106] = BZ["Anglers Wharf"],
+	[6107] = BZ["Verdant Belt"],
+	[6108] = BZ["Narsong Trench"],
+	[6109] = BZ["Scarlet Monastery"],
+	[6110] = BZ["The Thunderwood"],
+	[6111] = BZ["The Burlap Waystation"],
 	[6112] = BZ["CTF3"],
-	[6113] = BZ["NarsongSpires"],
+	[6113] = BZ["Narsong Spires"],
 	[6114] = BZ["Mogujia"],
-	[6117] = BZ["FountainoftheEverseeing"],
-	[6118] = BZ["TheScrollkeepersSanctum"],
-	[6119] = BZ["TerraceoftheTwinDragons"],
-	[6120] = BZ["TheHeartofJade"],
-	[6121] = BZ["FireCampRuqin"],
-	[6122] = BZ["GroveofFallingBlossoms"],
-	[6123] = BZ["SMCathedralGYTEMP"],
-	[6124] = BZ["OrdoRagemesa"],
-	[6125] = BZ["MogushanVaults"],
-	[6126] = BZ["STVDiamondMineBG"],
-	[6127] = BZ["TheSilentSanctuary"],
-	[6128] = BZ["ShadoPanRetreat"],
-	[6129] = BZ["FireboughNook"],
-	[6134] = BZ["Krasarang"],
-	[6135] = BZ["NayeliLagoon"],
-	[6136] = BZ["ValleyofPower3"],
-	[6137] = BZ["FrostmaneHovel"],
-	[6138] = BZ["DreadWastes"],
-	[6140] = BZ["MoguRuinsBuralPitTEMP"],
-	[6141] = BZ["ShrineofTwoMoons"],
-	[6142] = BZ["ShrineofSevenStars"],
-	[6143] = BZ["MogushanPalace"],
-	[6144] = BZ["JinYangRoad"],
-	[6145] = BZ["TheSummerFields"],
+	[6117] = BZ["Fountain of the Everseeing"],
+	[6118] = BZ["The Scrollkeeper's Sanctum"],
+	[6119] = BZ["Terrace of the Twin Dragons"],
+	[6120] = BZ["The Heart of Jade"],
+	[6121] = BZ["Fire Camp Ruqin"],
+	[6122] = BZ["Grove of Falling Blossoms"],
+	[6123] = BZ["SM Cathedral/GY (TEMP)"],
+	[6124] = BZ["Fire Camp Ordo"],
+	[6125] = BZ["Mogu'shan Vaults"],
+	[6126] = BZ["Silvershard Mines"],
+	[6127] = BZ["The Silent Sanctuary"],
+	[6128] = BZ["Shado-Pan Fallback"],
+	[6129] = BZ["Firebough Nook"],
+	[6134] = BZ["Krasarang Wilds"],
+	[6135] = BZ["Nayeli Lagoon"],
+	[6136] = BZ["Temple of Kotmogu"],
+	[6137] = BZ["Frostmane Hovel"],
+	[6138] = BZ["Dread Wastes"],
+	[6140] = BZ["Mogu Ruins Bural Pit (TEMP)"],
+	[6141] = BZ["Shrine of Two Moons"],
+	[6142] = BZ["Shrine of Seven Stars"],
+	[6143] = BZ["Mogu'shan Palace"],
+	[6144] = BZ["Jin Yang Road"],
+	[6145] = BZ["The Summer Fields"],
 	[6146] = BZ["Marista"],
-	[6147] = BZ["KeaKrak"],
-	[6148] = BZ["UngooVillage"],
-	[6149] = BZ["AncestralRise"],
-	[6150] = BZ["GateofWintersBlossom"],
-	[6151] = BZ["MortbreathCove"],
-	[6152] = BZ["FireCampYongqi"],
-	[6153] = BZ["PeakofSerenityScenario"],
-	[6154] = BZ["YinyingVillage"],
-	[6155] = BZ["CradleofChiJi"],
-	[6156] = BZ["KotaPeak"],
-	[6157] = BZ["KotaBasecamp"],
-	[6158] = BZ["SandyShallows"],
-	[6159] = BZ["SarjunDepths"],
-	[6160] = BZ["AngkhalPavilion"],
-	[6161] = BZ["PedestalofHope"],
-	[6162] = BZ["DomeBalrissa"],
-	[6163] = BZ["FireCampOsul"],
-	[6164] = BZ["LowerMallisump"],
-	[6165] = BZ["UpperMallisump"],
-	[6166] = BZ["LongyingOutpost"],
-	[6168] = BZ["DestroyedFishingVillage"],
-	[6169] = BZ["OverrunPandaLanding"],
+	[6147] = BZ["Kea Krak"],
+	[6148] = BZ["Unga Ingoo"],
+	[6149] = BZ["Ancestral Rise"],
+	[6150] = BZ["The Ox Gate"],
+	[6151] = BZ["Mortbreath Grotto"],
+	[6152] = BZ["Fire Camp Yongqi"],
+	[6153] = BZ["Peak of Serenity"],
+	[6154] = BZ["Yinying Village"],
+	[6155] = BZ["Cradle of Chi-Ji"],
+	[6156] = BZ["Kota Peak"],
+	[6157] = BZ["Kota Basecamp"],
+	[6158] = BZ["Sandy Shallows"],
+	[6159] = BZ["Sarjun Depths"],
+	[6160] = BZ["Angkhal Pavilion"],
+	[6161] = BZ["Pedestal of Hope"],
+	[6162] = BZ["Dome Balrissa"],
+	[6163] = BZ["Fire Camp Osul"],
+	[6164] = BZ["Lower Sumprushes"],
+	[6165] = BZ["Upper Sumprushes"],
+	[6166] = BZ["Longying Outpost"],
+	[6168] = BZ["Zouchin Strand"],
+	[6169] = BZ["Zouchin Village"],
 	[6170] = BZ["Northshire"],
-	[6171] = BZ["Hatred'sVice"],
-	[6172] = BZ["TallmugsCamp"],
-	[6173] = BZ["ShadoPanMonastery"],
-	[6174] = BZ["TempleoftheWhiteTiger"],
-	[6175] = BZ["SeekersFolly"],
-	[6176] = BZ["ColdridgeValley"],
-	[6179] = BZ["OwensWishingWell"],
-	[6180] = BZ["NeverrestPinnacle"],
-	[6181] = BZ["InkgillRitualIsland"],
-	[6182] = BZ["MogushanPalace"],
-	[6184] = BZ["SeekersPoint"],
-	[6185] = BZ["MountNeverrest"],
-	[6186] = BZ["NeverrestBasecamp"],
-	[6187] = BZ["GaoRanBattlefront"],
-	[6188] = BZ["ShallowstepPass"],
-	[6189] = BZ["TheWideningDeep"],
-	[6190] = BZ["DampsoilBurrow"],
-	[6191] = BZ["DusklightHollow"],
-	[6192] = BZ["DusklightBridge"],
-	[6193] = BZ["Rensai'sWatchpost"],
-	[6194] = BZ["FarwatchOverlook"],
-	[6195] = BZ["Sikvess"],
-	[6196] = BZ["SikvessLair"],
-	[6197] = BZ["ShadoPanGarrison"],
-	[6198] = BZ["TheValleyofEmperors"],
-	[6199] = BZ["TombofShadows"],
-	[6200] = BZ["TombofSecrets"],
-	[6201] = BZ["TombofConquerors"],
-	[6202] = BZ["ShrineoftheMercilessOne"],
-	[6203] = BZ["EmperorRikktiksRest"],
-	[6204] = BZ["GreenstoneVillage"],
-	[6205] = BZ["Krivess"],
-	[6206] = BZ["WhispercloudRise"],
-	[6207] = BZ["TheZandalariVanguard"],
-	[6208] = BZ["AncientMoguCrypt"],
-	[6209] = BZ["TheJadeForestScenario"],
-	[6210] = BZ["GreenstoneVillageScenario"],
-	[6211] = BZ["GreenstoneMasonsQuarterScenario"],
-	[6212] = BZ["SrathikIncursion"],
-	[6213] = BZ["NiuzaoCatacombs"],
-	[6214] = BZ["SiegeofNiuzaoTemple"],
-	[6215] = BZ["ValleyOfPowerScenario"],
-	[6216] = BZ["ValleyOfPower"],
-	[6218] = BZ["TheDarkHollow"],
-	[6219] = BZ["ProvingGrounds"],
-	[6220] = BZ["FieldsofNiuzao"],
-	[6234] = BZ["DreadExpanse"],
-	[6292] = BZ["StormwindKeep"],
-	[6293] = BZ["LakeofStars"],
-	[6294] = BZ["ShadoPanApproach"],
-	[6295] = BZ["SeatofKnowledge"],
-	[6296] = BZ["TolVirArena"],
-	[6297] = BZ["HeartofFear"],
-	[6298] = BZ["RingofValorWorldtab"],
-	[6299] = BZ["TheAmberWomb"],
-	[6300] = BZ["KypariZar"],
-	[6301] = BZ["TrainingGrounds"],
-	[6302] = BZ["HuntsmansCloister"],
-	[6303] = BZ["TheKennel"],
-	[6304] = BZ["BlackOxTempleScenario"],
-	[6306] = BZ["TerraceofGurthan"],
-	[6307] = BZ["ShanzeDao"],
-	[6308] = BZ["SriLaInn"],
-	[6309] = BZ["UngaIngoo"],
-	[6310] = BZ["UngaIngooBrewmaster"],
-	[6311] = BZ["NiuzaoCatacombs"],
-	[6312] = BZ["GaiCho"],
-	[6313] = BZ["ScenarioBlackOxTemple"],
-	[6314] = BZ["SravessIsland"],
-	[6315] = BZ["Klaxxivess"],
-	[6316] = BZ["Ikvess"],
-	[6317] = BZ["Klikvess"],
-	[6318] = BZ["Setvess"],
-	[6319] = BZ["ScenarioMoguRuins"],
-	[6328] = BZ["ZanvessScenario"],
-	[6329] = BZ["Korvess"],
+	[6171] = BZ["Hatred's Vice"],
+	[6172] = BZ["Tallmug's Camp"],
+	[6173] = BZ["Shado-Pan Monastery"],
+	[6174] = BZ["Temple of the White Tiger"],
+	[6175] = BZ["Seeker's Folly"],
+	[6176] = BZ["Coldridge Valley"],
+	[6179] = BZ["Owen's Wishing Well"],
+	[6180] = BZ["Neverest Pinnacle"],
+	[6181] = BZ["Waterspeaker's Sanctuary"],
+	[6182] = BZ["Mogu'shan Palace"],
+	[6184] = BZ["Seeker's Point"],
+	[6185] = BZ["Mount Neverest"],
+	[6186] = BZ["Neverest Basecamp"],
+	[6187] = BZ["Gao-Ran Battlefront"],
+	[6188] = BZ["Shallowstep Pass"],
+	[6189] = BZ["The Widening Deep"],
+	[6190] = BZ["Dampsoil Burrow"],
+	[6191] = BZ["Dusklight Hollow"],
+	[6192] = BZ["Dusklight Bridge"],
+	[6193] = BZ["Rensai's Watchpost"],
+	[6194] = BZ["Farwatch Overlook"],
+	[6195] = BZ["Sik'vess"],
+	[6196] = BZ["Sik'vess Lair"],
+	[6197] = BZ["Shado-Pan Garrison"],
+	[6198] = BZ["Valley of Emperors"],
+	[6199] = BZ["Tomb of Shadows"],
+	[6200] = BZ["Tomb of Secrets"],
+	[6201] = BZ["Tomb of Conquerors"],
+	[6202] = BZ["Shrine of the Merciless One"],
+	[6203] = BZ["Emperor Rikktik's Rest"],
+	[6204] = BZ["Greenstone Village"],
+	[6205] = BZ["Kri'vess"],
+	[6206] = BZ["Whispercloud Rise"],
+	[6207] = BZ["The Zandalari Vanguard"],
+	[6208] = BZ["Crypt of Forgotten Kings"],
+	[6209] = BZ["The Jade Forest"],
+	[6210] = BZ["Greenstone Village"],
+	[6211] = BZ["Greenstone Masons' Quarter"],
+	[6212] = BZ["Sra'thik Incursion"],
+	[6213] = BZ["Niuzao Temple"],
+	[6214] = BZ["Siege of Niuzao Temple"],
+	[6215] = BZ["Valley Of Power - Scenario"],
+	[6216] = BZ["Valley of Power"],
+	[6218] = BZ["The Dark Hollow"],
+	[6219] = BZ["Arena of Annihilation"],
+	[6220] = BZ["Fields of Niuzao"],
+	[6234] = BZ["Dread Expanse"],
+	[6292] = BZ["Stormwind Keep"],
+	[6293] = BZ["Lake of Stars"],
+	[6294] = BZ["Shado-Li Basin"],
+	[6295] = BZ["Seat of Knowledge"],
+	[6296] = BZ["Tol'viron Arena"],
+	[6297] = BZ["Heart of Fear"],
+	[6298] = BZ["Brawl'gar Arena"],
+	[6299] = BZ["The Amber Womb"],
+	[6300] = BZ["Kypari Zar"],
+	[6301] = BZ["Training Grounds"],
+	[6302] = BZ["Huntsman's Cloister"],
+	[6303] = BZ["The Kennel"],
+	[6304] = BZ["Black Ox Temple"],
+	[6306] = BZ["Terrace of Gurthan"],
+	[6307] = BZ["Shan'ze Dao"],
+	[6308] = BZ["Sri-La Inn"],
+	[6309] = BZ["Unga Ingoo"],
+	[6310] = BZ["Unga Ingoo"],
+	[6311] = BZ["Niuzao Catacombs"],
+	[6312] = BZ["Fire Camp Gai-Cho"],
+	[6313] = BZ["Scenario - Black Ox Temple"],
+	[6314] = BZ["Sra'vess"],
+	[6315] = BZ["Klaxxi'vess"],
+	[6316] = BZ["Ik'vess"],
+	[6317] = BZ["Klik'vess"],
+	[6318] = BZ["Set'vess"],
+	[6319] = BZ["Scenario - Mogu Ruins"],
+	[6328] = BZ["Assault on Zan'vess"],
+	[6329] = BZ["Kor'vess"],
 	[6331] = BZ["Westersea"],
-	[6332] = BZ["TheOverlookInn"],
-	[6333] = BZ["PaursPub"],
-	[6334] = BZ["TheBrewgarden"],
-	[6335] = BZ["TheHorridApproach"],
-	[6336] = BZ["RikkitunVillage"],
-	[6337] = BZ["GokklokShallows"],
-	[6338] = BZ["TheAmberHibernal"],
+	[6332] = BZ["The Overlook Inn"],
+	[6333] = BZ["Paur's Pub"],
+	[6334] = BZ["The Sunset Brewgarden"],
+	[6335] = BZ["The Horrid March"],
+	[6336] = BZ["Rikkitun Village"],
+	[6337] = BZ["Gokk'lok Shallows"],
+	[6338] = BZ["The Amber Hibernal"],
 	[6339] = BZ["Rikkilea"],
-	[6340] = BZ["KunLaiPassScenario"],
-	[6341] = BZ["BinanVillageScenario"],
+	[6340] = BZ["Kun-Lai Pass"],
+	[6341] = BZ["Binan Village"],
 	[6342] = BZ["Ambermarsh"],
-	[6343] = BZ["KypariVor"],
-	[6345] = BZ["NookofKonk"],
+	[6343] = BZ["Kypari Vor"],
+	[6345] = BZ["Nook of Konk"],
 	[6346] = BZ["Morrowchamber"],
-	[6347] = BZ["TheAmberVault"],
-	[6348] = BZ["DeadtalkersPlateau"],
-	[6349] = BZ["TheDancingSerpent"],
-	[6354] = BZ["TheLazyTurnip"],
-	[6355] = BZ["ThunderfootInn"],
-	[6356] = BZ["StoneMugTavern"],
-	[6358] = BZ["WildsEdgeInn"],
-	[6359] = BZ["BinanBrewStew"],
-	[6360] = BZ["TheLuckyTraveller"],
-	[6361] = BZ["TheTwoFistedBrew"],
-	[6362] = BZ["NorthWindTavern"],
-	[6363] = BZ["TheGoldenRose"],
-	[6364] = BZ["TavernintheMistsInterior"],
-	[6365] = BZ["TheChumBucket"],
-	[6366] = BZ["MaristasBaitBrew"],
-	[6367] = BZ["GreenstoneInn"],
-	[6368] = BZ["SoggysGamble"],
-	[6369] = BZ["KrasarangCove"],
-	[6370] = BZ["TurtleBeach"],
-	[6371] = BZ["TheSouthernIsles"],
-	[6372] = BZ["GateofEndlessSpring"],
-	[6373] = BZ["TheSecretAerie"],
-	[6375] = BZ["TavernintheMists"],
-	[6376] = BZ["TheAncientPassage"],
-	[6377] = BZ["HatescaleBurrow"],
-	[6378] = BZ["FieldofKorja"],
-	[6379] = BZ["GreenstoneVillageScenario"],
-	[6380] = BZ["PathofaHundredSteps"],
-	[6381] = BZ["TheSpringRoad"],
-	[6382] = BZ["MasonsFolly"],
-	[6383] = BZ["WintersBlossom"],
-	[6384] = BZ["ForlornCloister"],
-	[6385] = BZ["CrusadersChapel"],
-	[6386] = BZ["ChapelGardens"],
-	[6387] = BZ["RumblingTerrace"],
-	[6388] = BZ["ZhusDescent"],
-	[6389] = BZ["HowlingwindCavern"],
-	[6390] = BZ["GaiChoBattlefield"],
-	[6391] = BZ["PHTheShallows"],
-	[6392] = BZ["TheUnderbough"],
-	[6393] = BZ["SerpentsSpine1"],
-	[6394] = BZ["SerpentsSpine2"],
-	[6395] = BZ["SerpentsSpine3"],
-	[6396] = BZ["GateoftheSettingSunGV"],
-	[6397] = BZ["TheClarionBell"],
-	[6398] = BZ["ShrineOfTwinSerpents"],
-	[6401] = BZ["ShelfofMazu"],
-	[6402] = BZ["WreckoftheMistHopper"],
-	[6403] = BZ["SaltscaleGrotto"],
-	[6404] = BZ["SaltscaleShallows"],
-	[6405] = BZ["OverrunPandaLanding"],
-	[6406] = BZ["OverrunPandaLanding"],
-	[6407] = BZ["OverrunPandaLanding"],
-	[6408] = BZ["ForwardAssaultCamp"],
-	[6409] = BZ["RearStagingArea"],
-	[6410] = BZ["HollowedOutTree"],
-	[6411] = BZ["ForwardAssaultCamp"],
-	[6412] = BZ["RearStagingArea"],
-	[6413] = BZ["HollowedOutTree"],
-	[6414] = BZ["GroveOfFallingBlossoms"],
-	[6415] = BZ["TheYaungolAdvance"],
-	[6417] = BZ["YanzheRiver"],
-	[6418] = BZ["VenomousLedge"],
-	[6419] = BZ["KunLaiSummitScenario"],
-	[6420] = BZ["TheFeedingPits"],
-	[6421] = BZ["KzzokWarcamp"],
-	[6422] = BZ["SrathikSwarmdock"],
-	[6423] = BZ["IkzkaRidge"],
-	[6424] = BZ["SravessRootchamber"],
-	[6425] = BZ["TheFrightfen"],
-	[6426] = BZ["BrewmoonFestivalScenario"],
-	[6427] = BZ["InkgillMereScenario"],
-	[6428] = BZ["TheAncientPassageScenario"],
-	[6429] = BZ["ChitteringCoast"],
-	[6430] = BZ["AnglersExpedition"],
-	[6431] = BZ["SeaspittleCove"],
-	[6432] = BZ["AmberglowHollow"],
-	[6433] = BZ["LonesomeCove"],
-	[6434] = BZ["TheThunderingRun"],
-	[6435] = BZ["HeartofFear"],
-	[6436] = BZ["DreadClutch"],
-	[6437] = BZ["FearClutch"],
-	[6438] = BZ["HorrorClutch"],
-	[6439] = BZ["PanicClutch"],
-	[6440] = BZ["KypariIk"],
-	[6441] = BZ["DuskrootFen"],
-	[6442] = BZ["TheClutchesofShekzeer"],
+	[6347] = BZ["The Amber Vault"],
+	[6348] = BZ["Deadtalker's Plateau"],
+	[6349] = BZ["The Dancing Serpent"],
+	[6354] = BZ["The Lazy Turnip"],
+	[6355] = BZ["Thunderfoot Inn"],
+	[6356] = BZ["Stone Mug Tavern"],
+	[6358] = BZ["Wilds' Edge Inn"],
+	[6359] = BZ["Binan Brew & Stew"],
+	[6360] = BZ["The Lucky Traveller"],
+	[6361] = BZ["The Two Fisted Brew"],
+	[6362] = BZ["North Wind Tavern"],
+	[6363] = BZ["The Golden Rose"],
+	[6364] = BZ["Tavern in the Mists"],
+	[6365] = BZ["The Chum Bucket"],
+	[6366] = BZ["Marista's Bait & Brew"],
+	[6367] = BZ["Greenstone Inn"],
+	[6368] = BZ["Soggy's Gamble"],
+	[6369] = BZ["Krasarang Cove"],
+	[6370] = BZ["Turtle Beach"],
+	[6371] = BZ["The Southern Isles"],
+	[6372] = BZ["Gate of Endless Spring"],
+	[6373] = BZ["The Secret Aerie"],
+	[6375] = BZ["Tavern in the Mists"],
+	[6376] = BZ["The Ancient Passage"],
+	[6377] = BZ["Hatescale Burrow"],
+	[6378] = BZ["Field of Korja"],
+	[6379] = BZ["Greenstone Dojo"],
+	[6380] = BZ["Path of a Hundred Steps"],
+	[6381] = BZ["The Spring Road"],
+	[6382] = BZ["Mason's Folly"],
+	[6383] = BZ["Winter's Blossom"],
+	[6384] = BZ["Forlorn Cloister"],
+	[6385] = BZ["Crusader's Chapel"],
+	[6386] = BZ["Chapel Gardens"],
+	[6387] = BZ["Rumbling Terrace"],
+	[6388] = BZ["Zhu's Descent"],
+	[6389] = BZ["Howlingwind Cavern"],
+	[6390] = BZ["Gai-Cho Battlefield"],
+	[6391] = BZ["The Briny Muck"],
+	[6392] = BZ["The Underbough"],
+	[6393] = BZ["Serpent's Spine"],
+	[6394] = BZ["Serpent's Spine"],
+	[6395] = BZ["Serpent's Spine"],
+	[6396] = BZ["Gate of the Setting Sun"],
+	[6397] = BZ["The Clarion Bell"],
+	[6398] = BZ["Shrine of Twin Serpents"],
+	[6401] = BZ["Shelf of Mazu"],
+	[6402] = BZ["Wreck of the Mist-Hopper"],
+	[6403] = BZ["Muckscale Grotto"],
+	[6404] = BZ["Muckscale Shallows"],
+	[6405] = BZ["Zouchin Province"],
+	[6406] = BZ["Isle of Reckoning"],
+	[6407] = BZ["Thunder's Call"],
+	[6408] = BZ["Forward Assault Camp"],
+	[6409] = BZ["Rear Staging Area"],
+	[6410] = BZ["Hollowed Out Tree"],
+	[6411] = BZ["Forward Assault Camp"],
+	[6412] = BZ["Rear Staging Area"],
+	[6413] = BZ["Hollowed Out Tree"],
+	[6414] = BZ["Grove of Falling Blossoms"],
+	[6415] = BZ["The Yaungol Advance"],
+	[6417] = BZ["Yan-Zhe River"],
+	[6418] = BZ["Venomous Ledge"],
+	[6419] = BZ["Kun-Lai Summit"],
+	[6420] = BZ["The Feeding Pits"],
+	[6421] = BZ["Kzzok Warcamp"],
+	[6422] = BZ["Sra'thik Swarmdock"],
+	[6423] = BZ["Ikz'ka Ridge"],
+	[6424] = BZ["Sra'vess Rootchamber"],
+	[6425] = BZ["Forgotten Mire"],
+	[6426] = BZ["Brewmoon Festival"],
+	[6427] = BZ["Inkgill Mere"],
+	[6428] = BZ["The Ancient Passage"],
+	[6429] = BZ["Chittering Coast"],
+	[6430] = BZ["Anglers Expedition"],
+	[6431] = BZ["Seaspittle Cove"],
+	[6432] = BZ["Amberglow Hollow"],
+	[6433] = BZ["Lonesome Cove"],
+	[6434] = BZ["The Thundering Run"],
+	[6435] = BZ["Heart of Fear"],
+	[6436] = BZ["Dread Clutch"],
+	[6437] = BZ["Fear Clutch"],
+	[6438] = BZ["Horror Clutch"],
+	[6439] = BZ["Panic Clutch"],
+	[6440] = BZ["Kypari Ik"],
+	[6441] = BZ["Duskroot Fen"],
+	[6442] = BZ["The Clutches of Shek'zeer"],
 	[6443] = BZ["Writhingwood"],
-	[6444] = BZ["Zanvess"],
-	[6445] = BZ["WhisperingStones"],
-	[6446] = BZ["AmberQuarry"],
-	[6447] = BZ["TheStingingTrail"],
-	[6448] = BZ["MazusOverlook"],
-	[6449] = BZ["TempleofKotmoguSCENARIO"],
-	[6450] = BZ["ShadowglenStart"],
-	[6451] = BZ["ValleyofTrialsStart"],
-	[6452] = BZ["CampNaracheStart"],
-	[6453] = BZ["EchoIslesStart"],
-	[6454] = BZ["DeathknellStart"],
-	[6455] = BZ["SunstriderIsleStart"],
-	[6456] = BZ["AmmenValeStart"],
-	[6457] = BZ["NewTinkertownStart"],
-	[6458] = BZ["KypariteQuarryScenario"],
-	[6459] = BZ["VenomtailPitsScenario"],
-	[6460] = BZ["TheBrinyMuckScenario"],
-	[6461] = BZ["WhisperingStonesScenario"],
-	[6462] = BZ["PathofConquerors"],
-	[6463] = BZ["DustwallowMarshScenario"],
-	[6466] = BZ["CavernOfEndlessEchoes"],
-	[6467] = BZ["MogushanTerrace"],
-	[6468] = BZ["TheEmperorsReach"],
-	[6469] = BZ["HowlingwindTrail"],
-	[6470] = BZ["TheGildedFoyer"],
-	[6471] = BZ["TheCrimsonAssemblyHall"],
-	[6472] = BZ["ForgottenPassageway"],
-	[6473] = BZ["VaultofKingsPast"],
-	[6474] = BZ["ThroneOfAncientConquerors"],
-	[6475] = BZ["BladeLordsRetreat"],
-	[6476] = BZ["ShrineOfNalashi"],
-	[6477] = BZ["SouthSeas"],
-	[6478] = BZ["SouthSeas"],
-	[6479] = BZ["SouthSeas"],
-	[6480] = BZ["SouthSeas"],
-	[6481] = BZ["SouthSeas"],
-	[6482] = BZ["TheSummerTerrace"],
-	[6483] = BZ["TheEmperorsStep"],
-	[6484] = BZ["TheGoldenLantern"],
-	[6485] = BZ["ChamberOfEnlightenment"],
-	[6486] = BZ["TheCelestialVault"],
-	[6487] = BZ["EtherealCorridor"],
-	[6488] = BZ["TheStarsBazaar"],
-	[6489] = BZ["TheImperialExchange"],
-	[6490] = BZ["NightingaleLounge"],
-	[6492] = BZ["ChamberOfReflection"],
-	[6494] = BZ["ShrineofFellowship"],
-	[6495] = BZ["GuoLaiHalls"],
-	[6496] = BZ["GuoLaiHalls"],
-	[6497] = BZ["GuoLaiHalls"],
-	[6498] = BZ["GateoftheAugustCelestials"],
-	[6499] = BZ["GuoLaiHalls"],
-	[6500] = BZ["DustwallowMarshScenarioAlliance"],
-	[6501] = BZ["TheLadyMehley"],
-	[6502] = BZ["TheramoreIsle"],
-	[6503] = BZ["GuoLaiHalls"],
-	[6504] = BZ["TheEmperorsApproach"],
-	[6505] = BZ["TheRiverbladeDen"],
-	[6506] = BZ["MotherseedPit"],
-	[6507] = BZ["IsleoftheThunderKing"],
-	[6508] = BZ["SpringtailCrag"],
-	[6509] = BZ["StormstoutBreweryInterior"],
-	[6510] = BZ["DeadminesWestfall"],
-	[6511] = BZ["WailingCavernsBarrens"],
-	[6512] = BZ["TheWidowsWail"],
-	[6513] = BZ["OonaKagu"],
-	[6514] = BZ["MaraudonOutside"],
-	[6515] = BZ["TerraceofEndlessSpring"],
-	[6516] = BZ["PawdonVillage"],
-	[6517] = BZ["TwinspireKeep"],
-	[6518] = BZ["PathOfSerenity"],
-	[6519] = BZ["SummersRest"],
-	[6520] = BZ["GokkloksGrotto"],
-	[6521] = BZ["HoneydewVillage"],
-	[6522] = BZ["HoneydewGlade"],
-	[6523] = BZ["HoneydewFarm"],
-	[6524] = BZ["ThunderHold"],
-	[6525] = BZ["HellscreamsFist"],
-	[6526] = BZ["PeakofSerenity"],
-	[6527] = BZ["PeakofSerenity"],
-	[6528] = BZ["SerpentsSpineFarWestSide"],
-	[6529] = BZ["HellscreamsFist"],
-	[6530] = BZ["SerpentsSpineSouthernSpan"],
-	[6533] = BZ["JFTheSkyfire"],
-	[6534] = BZ["TwinspireKeepInterior"],
-	[6535] = BZ["DenOfDefiance"],
-	[6538] = BZ["AutumnshadeRidge"],
-	[6539] = BZ["SunblossomHill"],
-	[6540] = BZ["SpiritsongsRest"],
-	[6541] = BZ["ApplebloomTavern"],
-	[6542] = BZ["TerraceofGurthanCave"],
-	[6543] = BZ["MistbladeDen"],
-	[6544] = BZ["ColdbiteBurrow"],
-	[6545] = BZ["GreymaneManor2"],
-	[6546] = BZ["EmberstoneMine2"],
-	[6547] = BZ["KrasarangWildsPond"],
-	[6548] = BZ["VenomousLedgePonds"],
-	[6549] = BZ["SravessIslandPond"],
-	[6550] = BZ["FieldsofNiuzaoPond"],
-	[6551] = BZ["GaiChoPond"],
-	[6552] = BZ["OverrunPandaLandingPond"],
-	[6553] = BZ["ShrineofSevenStars"],
-	[6554] = BZ["ShrineofTwoMoons2"],
-	[6555] = BZ["NorthernElwynnMountains"],
-	[6556] = BZ["ValiantRest"],
-	[6557] = BZ["OverrunPandaLandingPonds"],
-	[6558] = BZ["TheZandalariVanguardLake"],
-	[6560] = BZ["TheGoldenTerrace"],
-	[6561] = BZ["KrilmandarPoint"],
-	[6562] = BZ["tempKrasarangHordeBase"],
-	[6563] = BZ["tempKrasarangHordeBase"],
-	[6565] = BZ["DaggerInTheDark"],
-	[6566] = BZ["DominationPoint"],
-	[6567] = BZ["tempKrasarangHordeBase"],
-	[6572] = BZ["SnicklefritzMine"],
-	[6573] = BZ["DefenseoftheAlehouse"],
-	[6574] = BZ["KrasarangPatience"],
-	[6575] = BZ["KrasarangAlliance"],
+	[6444] = BZ["Zan'vess"],
+	[6445] = BZ["Whispering Stones"],
+	[6446] = BZ["Amber Quarry"],
+	[6447] = BZ["The Stinging Trail"],
+	[6448] = BZ["Mazu's Overlook"],
+	[6449] = BZ["Temple of Kotmogu"],
+	[6450] = BZ["Shadowglen"],
+	[6451] = BZ["Valley of Trials"],
+	[6452] = BZ["Camp Narache"],
+	[6453] = BZ["Echo Isles"],
+	[6454] = BZ["Deathknell"],
+	[6455] = BZ["Sunstrider Isle"],
+	[6456] = BZ["Ammen Vale"],
+	[6457] = BZ["New Tinkertown"],
+	[6458] = BZ["Kyparite Quarry"],
+	[6459] = BZ["Venomsting Pits"],
+	[6460] = BZ["The Briny Muck"],
+	[6461] = BZ["Whispering Stones"],
+	[6462] = BZ["Path of Conquerors"],
+	[6463] = BZ["Dustwallow Marsh"],
+	[6466] = BZ["Cavern of Endless Echoes"],
+	[6467] = BZ["Mogu'shan Terrace"],
+	[6468] = BZ["The Emperor's Reach"],
+	[6469] = BZ["Howlingwind Trail"],
+	[6470] = BZ["The Gilded Foyer"],
+	[6471] = BZ["The Crimson Assembly Hall"],
+	[6472] = BZ["Forgotten Passageway"],
+	[6473] = BZ["Vault of Kings Past"],
+	[6474] = BZ["Throne of Ancient Conquerors"],
+	[6475] = BZ["Bladelord's Retreat"],
+	[6476] = BZ["Shrine of Nala'shi"],
+	[6477] = BZ["South Seas"],
+	[6478] = BZ["South Seas"],
+	[6479] = BZ["South Seas"],
+	[6480] = BZ["South Seas"],
+	[6481] = BZ["South Seas"],
+	[6482] = BZ["The Summer Terrace"],
+	[6483] = BZ["The Emperor's Step"],
+	[6484] = BZ["The Golden Lantern"],
+	[6485] = BZ["Chamber of Enlightenment"],
+	[6486] = BZ["The Celestial Vault"],
+	[6487] = BZ["Ethereal Corridor"],
+	[6488] = BZ["The Star's Bazaar"],
+	[6489] = BZ["The Imperial Exchange"],
+	[6490] = BZ["Nightingale Lounge"],
+	[6492] = BZ["Chamber of Reflection"],
+	[6494] = BZ["Shrine of Fellowship"],
+	[6495] = BZ["The Hall of Tiles"],
+	[6496] = BZ["Guo-Lai Ritual Chamber"],
+	[6497] = BZ["The Hall of Statues"],
+	[6498] = BZ["Gate of the August Celestials"],
+	[6499] = BZ["The Hall of the Serpent"],
+	[6500] = BZ["Dustwallow Marsh"],
+	[6501] = BZ["The Lady Mehley"],
+	[6502] = BZ["Theramore Isle"],
+	[6503] = BZ["Guo-Lai Vault"],
+	[6504] = BZ["The Emperor's Approach"],
+	[6505] = BZ["The Riverblade Den"],
+	[6506] = BZ["Motherseed Pit"],
+	[6507] = BZ["Isle of Thunder"],
+	[6508] = BZ["Springtail Crag"],
+	[6509] = BZ["Stormstout Brewery Interior"],
+	[6510] = BZ["The Deadmines"],
+	[6511] = BZ["Wailing Caverns"],
+	[6512] = BZ["The Widow's Wail"],
+	[6513] = BZ["Oona Kagu"],
+	[6514] = BZ["Maraudon"],
+	[6515] = BZ["Terrace of Endless Spring"],
+	[6516] = BZ["Paw'don Village"],
+	[6517] = BZ["Twinspire Keep"],
+	[6518] = BZ["Path of Serenity"],
+	[6519] = BZ["Summer's Rest"],
+	[6520] = BZ["Gokk'lok's Grotto"],
+	[6521] = BZ["Honeydew Village"],
+	[6522] = BZ["Honeydew Glade"],
+	[6523] = BZ["Honeydew Farm"],
+	[6524] = BZ["Thunder Hold"],
+	[6525] = BZ["Hellscream's Fist"],
+	[6526] = BZ["Training Grounds"],
+	[6527] = BZ["Terrace of the Tiger"],
+	[6528] = BZ["Serpent's Spine"],
+	[6529] = BZ["Hellscream's Fist"],
+	[6530] = BZ["Serpent's Spine"],
+	[6533] = BZ["The Skyfire"],
+	[6534] = BZ["Twinspire Keep Interior"],
+	[6535] = BZ["Den of Defiance"],
+	[6538] = BZ["Autumnshade Ridge"],
+	[6539] = BZ["Sunblossom Hill"],
+	[6540] = BZ["Spiritsong's Rest"],
+	[6541] = BZ["Applebloom Tavern"],
+	[6542] = BZ["Terrace of Gurthan"],
+	[6543] = BZ["Mistblade Den"],
+	[6544] = BZ["Coldbite Burrow"],
+	[6545] = BZ["Greymane Manor"],
+	[6546] = BZ["Emberstone Mine"],
+	[6547] = BZ["The Deepwild"],
+	[6548] = BZ["Venomous Ledge"],
+	[6549] = BZ["Sra'vess"],
+	[6550] = BZ["Fields of Niuzao"],
+	[6551] = BZ["Townlong Steppes"],
+	[6552] = BZ["Kun-Lai Summit"],
+	[6553] = BZ["Shrine of Seven Stars"],
+	[6554] = BZ["Shrine of Two Moons"],
+	[6555] = BZ["Northern Elwynn Mountains"],
+	[6556] = BZ["Valiant Rest"],
+	[6557] = BZ["Zouchin Province"],
+	[6558] = BZ["The Zandalari Vanguard"],
+	[6560] = BZ["The Golden Terrace"],
+	[6561] = BZ["Kril'Mandar Point"],
+	[6562] = BZ["The Southern Isles"],
+	[6563] = BZ["Krasarang Cove"],
+	[6565] = BZ["Dagger in the Dark"],
+	[6566] = BZ["Domination Point"],
+	[6567] = BZ["Battle on the High Seas"],
+	[6572] = BZ["Snicklefritz Mine"],
+	[6573] = BZ["Defense of the Alehouse"],
+	[6574] = BZ["Krasarang Wilds"],
+	[6575] = BZ["Krasarang Wilds"],
 	[6576] = BZ["Diremoor"],
-	[6577] = BZ["TheThunderingSpire"],
-	[6578] = BZ["CourtOfBones"],
-	[6579] = BZ["ZaTual"],
-	[6580] = BZ["IotTKSaurokCaves"],
-	[6581] = BZ["Zebtula"],
-	[6582] = BZ["Shaolmara"],
-	[6583] = BZ["VioletRise"],
-	[6584] = BZ["DawnseekerPromontory"],
-	[6585] = BZ["IotTKFrontGate"],
-	[6586] = BZ["TheBeastPens"],
-	[6587] = BZ["IotTKTrollWarCamp"],
-	[6588] = BZ["BloodiedCrossing"],
-	[6589] = BZ["GhostlyVeins"],
-	[6590] = BZ["TheThunderForges"],
-	[6591] = BZ["BatteredLanding"],
-	[6592] = BZ["TheSwollenVault"],
-	[6593] = BZ["LeiShensDoorstep"],
-	[6594] = BZ["HalloftheDefamed"],
-	[6595] = BZ["TheSkyfire"],
-	[6596] = BZ["LionsLanding"],
-	[6597] = BZ["SparkrocketOutpost"],
-	[6600] = BZ["BlacksandSpillway"],
-	[6601] = BZ["BilgewaterBeach"],
-	[6602] = BZ["TheBoilingCrustacean"],
-	[6603] = BZ["OregrindsClaim"],
-	[6604] = BZ["QuickchopsLumberDepot"],
-	[6605] = BZ["HeartofZanvessScenario"],
-	[6606] = BZ["ClassQuests"],
-	[6608] = BZ["HeymansHubris"],
-	[6609] = BZ["RuinsofOgudei"],
-	[6610] = BZ["TheAncientPassage"],
+	[6577] = BZ["The Thunderspire"],
+	[6578] = BZ["Court of Bones"],
+	[6579] = BZ["Za'Tual"],
+	[6580] = BZ["Ihgaluk Crag"],
+	[6581] = BZ["Zeb'tula"],
+	[6582] = BZ["Shaol'mara"],
+	[6583] = BZ["Violet Rise"],
+	[6584] = BZ["Dawnseeker Promontory"],
+	[6585] = BZ["The Emperor's Gate"],
+	[6586] = BZ["The Beast Pens"],
+	[6587] = BZ["Conqueror's Terrace"],
+	[6588] = BZ["Bloodied Crossing"],
+	[6589] = BZ["Lightning Vein Mine"],
+	[6590] = BZ["The Thunder Forges"],
+	[6591] = BZ["Stormsea Landing"],
+	[6592] = BZ["The Swollen Vault"],
+	[6593] = BZ["The Foot of Lei Shen"],
+	[6594] = BZ["Hall of the Defamed"],
+	[6595] = BZ["The Skyfire"],
+	[6596] = BZ["Lion's Landing"],
+	[6597] = BZ["Sparkrocket Outpost"],
+	[6600] = BZ["Blacksand Spillway"],
+	[6601] = BZ["Bilgewater Beach"],
+	[6602] = BZ["The Boiling Crustacean"],
+	[6603] = BZ["Oregrind's Dig"],
+	[6604] = BZ["Quickchop's Lumber Farm"],
+	[6605] = BZ["Heart of Zan'vess"],
+	[6606] = BZ["Class Quest"],
+	[6608] = BZ["Heyman's Hubris"],
+	[6609] = BZ["Ruins of Ogudei"],
+	[6610] = BZ["The Ancient Passage"],
 	[6611] = BZ["Dalaran"],
-	[6612] = BZ["HordeLandingSite"],
-	[6613] = BZ["BlackTempleScenario"],
-	[6614] = BZ["KaraboriTrainingGrounds"],
-	[6615] = BZ["KrasarangHorde"],
-	[6616] = BZ["ALittlePatienceScenario"],
-	[6617] = BZ["GarrosharAdvance"],
-	[6618] = BZ["BizmosBrawlpub"],
-	[6619] = BZ["RuinsofKorune"],
-	[6620] = BZ["LairofSkiggit"],
-	[6621] = BZ["RedCraneTemplePatience"],
-	[6622] = BZ["ThunderKingRaid"],
-	[6623] = BZ["AntonidasMemorial"],
-	[6624] = BZ["DalaranSewerDueling"],
-	[6625] = BZ["Karasus'Landing"],
-	[6626] = BZ["Krasus'LandingInterior"],
-	[6627] = BZ["TheSilverEnclave"],
-	[6628] = BZ["DalaranCity"],
-	[6629] = BZ["TheVioletCitadel"],
-	[6630] = BZ["TheVioletCitadelSpire"],
-	[6631] = BZ["SewerExitPipe"],
-	[6632] = BZ["SewerExitPipeInterior"],
-	[6633] = BZ["DalaranFloatingRocks"],
-	[6634] = BZ["Sunreaver'sSanctuary"],
-	[6635] = BZ["DalaranIsland"],
-	[6636] = BZ["TheVioletHold"],
-	[6637] = BZ["TheUnderbelly"],
-	[6638] = BZ["TheEventide"],
-	[6639] = BZ["MagusCommerceExchange"],
-	[6640] = BZ["Vargoth'sRetreat"],
-	[6641] = BZ["VioletCitadelBalconys"],
-	[6642] = BZ["RuneweaverSquare"],
-	[6643] = BZ["LionsLanding"],
-	[6644] = BZ["KrasarangHorde"],
-	[6645] = BZ["RedCraneTemplePatience"],
-	[6646] = BZ["RedCraneTemplePatience"],
-	[6647] = BZ["TheJadeForest"],
-	[6648] = BZ["TheSpringRoad"],
-	[6649] = BZ["ValleyoftheFourWinds"],
-	[6650] = BZ["KunLaiSummit"],
-	[6651] = BZ["ValeofEternalBlossoms"],
-	[6652] = BZ["TheVeiledStair"],
-	[6653] = BZ["TheSkyfireScenario"],
-	[6654] = BZ["PredatorsPerchPatience"],
-	[6661] = BZ["IsleOfGiants"],
+	[6612] = BZ["Horde Landing Site"],
+	[6613] = BZ["Black Temple"],
+	[6614] = BZ["Illidari Training Grounds"],
+	[6615] = BZ["Krasarang Wilds"],
+	[6616] = BZ["A Little Patience"],
+	[6617] = BZ["Garrosh'ar Advance"],
+	[6618] = BZ["Bizmo's Brawlpub"],
+	[6619] = BZ["Ruins of Korune"],
+	[6620] = BZ["Lair of Skiggit"],
+	[6621] = BZ["Temple of the Red Crane"],
+	[6622] = BZ["Throne of Thunder"],
+	[6623] = BZ["Antonidas Memorial"],
+	[6624] = BZ["Circle of Wills"],
+	[6625] = BZ["Krasus' Landing"],
+	[6626] = BZ["Krasus' Landing"],
+	[6627] = BZ["The Silver Enclave"],
+	[6628] = BZ["Dalaran City"],
+	[6629] = BZ["The Violet Citadel"],
+	[6630] = BZ["The Violet Citadel Spire"],
+	[6631] = BZ["Sewer Exit Pipe"],
+	[6632] = BZ["Sewer Exit Pipe"],
+	[6633] = BZ["Dalaran Floating Rocks"],
+	[6634] = BZ["Sunreaver's Sanctuary"],
+	[6635] = BZ["Dalaran Island"],
+	[6636] = BZ["The Violet Hold"],
+	[6637] = BZ["The Underbelly"],
+	[6638] = BZ["The Eventide"],
+	[6639] = BZ["Magus Commerce Exchange"],
+	[6640] = BZ["Vargoth's Retreat"],
+	[6641] = BZ["Violet Citadel Balcony"],
+	[6642] = BZ["Runeweaver Square"],
+	[6643] = BZ["Lion's Landing"],
+	[6644] = BZ["Domination Point"],
+	[6645] = BZ["Crane Wing Refuge"],
+	[6646] = BZ["Fallsong Village"],
+	[6647] = BZ["The Jade Forest"],
+	[6648] = BZ["The Spring Road"],
+	[6649] = BZ["Valley of the Four Winds"],
+	[6650] = BZ["Kun-Lai Summit"],
+	[6651] = BZ["Vale of Eternal Blossoms"],
+	[6652] = BZ["The Veiled Stair"],
+	[6653] = BZ["The Skyfire"],
+	[6654] = BZ["Predator's Perch"],
+	[6661] = BZ["Isle of Giants"],
 	[6662] = BZ["Talador"],
-	[6665] = BZ["DeepwindGorge"],
-	[6666] = BZ["InfiltratingtheShipyard"],
-	[6667] = BZ["ShipyardScenarioStartingArea"],
-	[6668] = BZ["ShipyardScenarioCourtyard"],
-	[6669] = BZ["ShipyardScenarioWarship"],
-	[6670] = BZ["ShipyardScenarioOcean"],
-	[6671] = BZ["HalloftheExalted"],
-	[6672] = BZ["BleakHollow"],
-	[6673] = BZ["IsleoftheThunderKing"],
-	[6674] = BZ["DawnseekerPromontory"],
-	[6675] = BZ["IsleoftheThunderKingCitySiege"],
-	[6676] = BZ["BayofEchoes"],
-	[6677] = BZ["IsleoftheThunderKingFirstAssaultHorde"],
-	[6678] = BZ["DunMoroghScenario"],
-	[6679] = BZ["ShimmerRidge"],
-	[6680] = BZ["BattlefrontProvisions"],
-	[6681] = BZ["GhostlyVeins"],
-	[6682] = BZ["TEMP"],
-	[6683] = BZ["IsleOfGiants"],
+	[6665] = BZ["Deepwind Gorge"],
+	[6666] = BZ["Infiltrating the Shipyard"],
+	[6667] = BZ["Troll War Camp Outskirts"],
+	[6668] = BZ["Shipyard"],
+	[6669] = BZ["Warship"],
+	[6670] = BZ["Sea"],
+	[6671] = BZ["Hall of the Exalted"],
+	[6672] = BZ["Bleak Hollow"],
+	[6673] = BZ["To The Skies!"],
+	[6674] = BZ["Dawnseeker Promontory"],
+	[6675] = BZ["Isle of Thunder"],
+	[6676] = BZ["Bay of Echoes"],
+	[6677] = BZ["Isle of Thunder"],
+	[6678] = BZ["Dun Morogh"],
+	[6679] = BZ["Shimmer Ridge"],
+	[6680] = BZ["Battlefront Provisions"],
+	[6681] = BZ["Lightning Vein Mine"],
+	[6682] = BZ["[TEMP] JT"],
+	[6683] = BZ["Misty Shores"],
 	[6686] = BZ["Diremoor"],
-	[6687] = BZ["CourtOfBones"],
-	[6688] = BZ["ZaTual"],
-	[6689] = BZ["IotTKSaurokCaves"],
-	[6690] = BZ["VioletRise"],
-	[6691] = BZ["DawnseekerPromontory"],
-	[6692] = BZ["IotTKFrontGate"],
-	[6693] = BZ["TheBeastPens"],
-	[6694] = BZ["ConquerorsTerrace"],
-	[6695] = BZ["BloodiedCrossing"],
-	[6696] = BZ["TheThunderForges"],
-	[6697] = BZ["BatteredLanding"],
-	[6698] = BZ["LeiShensDoorstep"],
-	[6699] = BZ["HeymansHubris"],
-	[6700] = BZ["BayofEchoes"],
-	[6701] = BZ["BeeblesWreck"],
-	[6702] = BZ["BozzlesWreck"],
-	[6703] = BZ["WhisperingInlet"],
-	[6704] = BZ["WhisperingInlet"],
-	[6705] = BZ["OutdoorRuins"],
-	[6706] = BZ["ForgottenDepths"],
-	[6707] = BZ["ThunderKingCitadel"],
-	[6708] = BZ["TheCrimsonTreader"],
+	[6687] = BZ["Court of Bones"],
+	[6688] = BZ["Za'Tual"],
+	[6689] = BZ["Ihgaluk Crag"],
+	[6690] = BZ["Violet Rise"],
+	[6691] = BZ["Dawnseeker Promontory"],
+	[6692] = BZ["The Emperor's Gate"],
+	[6693] = BZ["The Beast Pens"],
+	[6694] = BZ["Conqueror's Terrace"],
+	[6695] = BZ["Bloodied Crossing"],
+	[6696] = BZ["The Thunder Forges"],
+	[6697] = BZ["Stormsea Landing"],
+	[6698] = BZ["The Foot of Lei Shen"],
+	[6699] = BZ["Heyman's Hubris"],
+	[6700] = BZ["Bay of Echoes"],
+	[6701] = BZ["Beeble's Wreck"],
+	[6702] = BZ["Bozzle's Wreck"],
+	[6703] = BZ["Whispering Inlet"],
+	[6704] = BZ["Whispering Inlet"],
+	[6705] = BZ["Outdoor Ruins"],
+	[6706] = BZ["Forgotten Depths"],
+	[6707] = BZ["Thunder King's Citadel"],
+	[6708] = BZ["The Crimson Treader"],
 	[6709] = BZ["Salabria"],
-	[6710] = BZ["TheStarchaser"],
+	[6710] = BZ["The Starchaser"],
 	[6711] = BZ["Spellsails"],
-	[6712] = BZ["TheSeabolt"],
-	[6713] = BZ["RhoninsBeard"],
-	[6714] = BZ["HalloftheGrandImperion"],
-	[6716] = BZ["ThunderKingLootRoom"],
-	[6717] = BZ["Zebtula"],
-	[6718] = BZ["Shaolmara"],
-	[6719] = BZ["ShadowmoonValleyDR"],
-	[6720] = BZ["FrostfireRidge"],
+	[6712] = BZ["The Seabolt"],
+	[6713] = BZ["Rhonin's Beard"],
+	[6714] = BZ["Hall of the Grand Imperion"],
+	[6716] = BZ["Thunder King's Citadel"],
+	[6717] = BZ["Zeb'tula"],
+	[6718] = BZ["Shaol'mara"],
+	[6719] = BZ["Shadowmoon Valley"],
+	[6720] = BZ["Frostfire Ridge"],
 	[6721] = BZ["Gorgrond"],
-	[6722] = BZ["SpiresOfArak"],
-	[6723] = BZ["TanaanJungleInterior"],
-	[6724] = BZ["BackbreakerBay"],
-	[6725] = BZ["GreymistFirth"],
-	[6726] = BZ["WildvineMarsh"],
-	[6727] = BZ["ShadewoodThicket"],
-	[6728] = BZ["IsleOfGiantsInlandFishing"],
-	[6729] = BZ["IsleoftheThunderKingInlandInlandFishing"],
-	[6730] = BZ["HiddenCell"],
-	[6731] = BZ["TheSecretsofEmberdeep"],
-	[6732] = BZ["ShadoPanArena"],
-	[6733] = BZ["ValeOfEternalBlossomsScenario"],
-	[6734] = BZ["BigBlossomMine"],
-	[6735] = BZ["BigBlossomMineWMOScenario"],
-	[6736] = BZ["DeepwindGorgeNorth"],
-	[6737] = BZ["DeepwindGorgeSouth"],
-	[6738] = BZ["OrgrimmarRaid"],
-	[6739] = BZ["TheSwollenVault"],
-	[6742] = BZ["FrostwindDunes"],
-	[6743] = BZ["Thromvar"],
-	[6744] = BZ["DaggermawRavine"],
-	[6745] = BZ["TheSavageCrag"],
-	[6746] = BZ["OrgrimmarRaidVale"],
-	[6747] = BZ["RazorHillOutskirts"],
-	[6748] = BZ["SenjinVillageOutskirts"],
-	[6749] = BZ["VaultOfYShaarjScenario"],
-	[6750] = BZ["RazorHillWatchtower"],
-	[6751] = BZ["BigBlossomExcavationOutdoor"],
-	[6752] = BZ["BigBlossomMineOutdoor"],
-	[6753] = BZ["DeepwindGorgeHordeBase"],
-	[6754] = BZ["DeepwindGorgeAllianceBase"],
-	[6755] = BZ["NagrandDraenor"],
+	[6722] = BZ["Spires of Arak"],
+	[6723] = BZ["Tanaan Jungle"],
+	[6724] = BZ["Backbreaker Bay"],
+	[6725] = BZ["Greymist Firth"],
+	[6726] = BZ["Wildvine Marsh"],
+	[6727] = BZ["Shadewood Thicket"],
+	[6728] = BZ["Isle of Giants"],
+	[6729] = BZ["Isle of Thunder"],
+	[6730] = BZ["Hidden Cell"],
+	[6731] = BZ["The Secrets of Ragefire"],
+	[6732] = BZ["The Tiger's Peak"],
+	[6733] = BZ["Vale of Eternal Blossoms"],
+	[6734] = BZ["Big Blossom Excavation"],
+	[6735] = BZ["Big Blossom Mine"],
+	[6736] = BZ["Deepwind Gorge"],
+	[6737] = BZ["Deepwind Gorge"],
+	[6738] = BZ["Siege of Orgrimmar"],
+	[6739] = BZ["The Swollen Vault"],
+	[6742] = BZ["Frostwind Crag"],
+	[6743] = BZ["Throm'var"],
+	[6744] = BZ["Daggermaw Ravine"],
+	[6745] = BZ["Grulloc's Grotto"],
+	[6746] = BZ["Siege of Orgrimmar (OLD DO NOT USE)"],
+	[6747] = BZ["Razor Hill Outskirts"],
+	[6748] = BZ["Sen'jin Village Outskirts"],
+	[6749] = BZ["Vault of Y'Shaarj"],
+	[6750] = BZ["Razor Hill Watchtower"],
+	[6751] = BZ["Big Blossom Excavation"],
+	[6752] = BZ["Big Blossom Mine"],
+	[6753] = BZ["Deepwind Gorge"],
+	[6754] = BZ["Deepwind Gorge"],
+	[6755] = BZ["Nagrand"],
 	[6756] = BZ["Faralohn"],
-	[6757] = BZ["TimelessIsle"],
-	[6758] = BZ["IcescarBoneyard"],
-	[6759] = BZ["LashwindCleft"],
-	[6760] = BZ["tempKrasarangHordeBase"],
-	[6761] = BZ["Gulrok"],
-	[6762] = BZ["TaladorShattrathCityCenter"],
-	[6763] = BZ["TheramoresFallChatPlaceholderA"],
-	[6764] = BZ["BrawnbellyBarracks"],
-	[6765] = BZ["DiggerFlats"],
-	[6766] = BZ["ThePits"],
-	[6767] = BZ["BlightstoneQuarry"],
-	[6768] = BZ["TheIronTower"],
-	[6770] = BZ["PirateCove"],
-	[6771] = BZ["CelestialChallenge"],
-	[6772] = BZ["TheCursedWoods"],
-	[6773] = BZ["OldPijiu"],
-	[6774] = BZ["TheCrackingPlains"],
-	[6775] = BZ["ColossalsFall"],
-	[6776] = BZ["SouthernHotspring"],
-	[6777] = BZ["FrostwolfOutpost"],
-	[6778] = BZ["IcewindDunes"],
-	[6779] = BZ["ThunderlordCityInterior"],
-	[6780] = BZ["CavernofLostSpirits"],
-	[6781] = BZ["AltarofKron"],
-	[6782] = BZ["AscentofFrostfire"],
-	[6783] = BZ["RefusePit"],
+	[6757] = BZ["Timeless Isle"],
+	[6758] = BZ["Icescar Boneyard"],
+	[6759] = BZ["Lashwind Cleft"],
+	[6760] = BZ["Stromgarde Keep"],
+	[6761] = BZ["Gul'rok"],
+	[6762] = BZ["Shattrath City Center"],
+	[6763] = BZ["Theramore's Fall"],
+	[6764] = BZ["Brawnbelly Barracks"],
+	[6765] = BZ["Digger Flats"],
+	[6766] = BZ["The Pits"],
+	[6767] = BZ["Blightstone Quarry"],
+	[6768] = BZ["The Iron Tower"],
+	[6770] = BZ["Blackguard's Forgotten Cove"],
+	[6771] = BZ["Celestial Tournament"],
+	[6772] = BZ["The Cursed Woods"],
+	[6773] = BZ["Old Pi'jiu"],
+	[6774] = BZ["The Cracking Plains"],
+	[6775] = BZ["Colossal's Fall"],
+	[6776] = BZ["The Boneslag"],
+	[6777] = BZ["Stonefang Outpost"],
+	[6778] = BZ["Icewind Drifts"],
+	[6779] = BZ["Grom'gar"],
+	[6780] = BZ["Cavern of Lost Spirits"],
+	[6781] = BZ["Altar of Kron"],
+	[6782] = BZ["Ascent of Frostfire"],
+	[6783] = BZ["Refuse Pit"],
 	[6784] = BZ["Magnarok"],
-	[6785] = BZ["KaraniTerrace"],
+	[6785] = BZ["K'arani Terrace"],
 	[6787] = BZ["Grommar"],
-	[6790] = BZ["garrisonsmvalliance"],
-	[6791] = BZ["TheBurialFields"],
-	[6792] = BZ["Shazgul"],
-	[6793] = BZ["LightsFall"],
-	[6794] = BZ["TeluunaObservatory"],
-	[6796] = BZ["StarfallOutpost"],
-	[6797] = BZ["Gulvar"],
-	[6798] = BZ["OrgrimmarRaidVale"],
-	[6799] = BZ["OrgrimmarRaid"],
-	[6800] = BZ["OrgrimmarRaid"],
-	[6801] = BZ["OrgrimmarRaid"],
-	[6802] = BZ["OrgrimmarRaid"],
-	[6803] = BZ["OrgrimmarRaid"],
-	[6804] = BZ["OrgrimmarRaid"],
-	[6805] = BZ["GateoftheBreakers"],
-	[6807] = BZ["DarkHeartofPandariaChatPlaceholder"],
-	[6809] = BZ["WatchersDen"],
-	[6810] = BZ["ThunderlordVolcano"],
-	[6811] = BZ["SecludedGlade"],
-	[6812] = BZ["GreenstoneVillageScenarioChatPlaceholder"],
-	[6813] = BZ["LionsLandingChatPlaceholder"],
-	[6814] = BZ["DunMoroghScenarioChatPlaceholder"],
-	[6815] = BZ["DominationPointScenarioChatPlaceholder"],
-	[6816] = BZ["OrgrimmarRaid"],
-	[6817] = BZ["GrimfrostHill"],
-	[6820] = BZ["PHSMVAllianceGarrison"],
-	[6821] = BZ["SouthSeas"],
-	[6822] = BZ["RubyLake"],
-	[6823] = BZ["OrdonSanctuary"],
-	[6824] = BZ["CroakingHollow"],
-	[6825] = BZ["FirewalkerRuins"],
-	[6830] = BZ["TheCelestialCourt"],
-	[6831] = BZ["MossgreenLake"],
-	[6832] = BZ["TheTimelessShore"],
-	[6833] = BZ["TushuiLanding"],
-	[6834] = BZ["HuojinLanding"],
-	[6835] = BZ["TheMistyReach"],
-	[6836] = BZ["ThreeBreezeTerrace"],
-	[6837] = BZ["KukurusGrotto"],
-	[6838] = BZ["TsavokasDen"],
-	[6839] = BZ["MysteriousDen"],
-	[6840] = BZ["WhispershadeHollow"],
-	[6841] = BZ["RedStoneRun"],
-	[6842] = BZ["FirewalkersPath"],
-	[6843] = BZ["ShrineoftheBlackFlame"],
-	[6844] = BZ["TheBlazingWay"],
-	[6846] = BZ["ShimmeringShores"],
-	[6848] = BZ["BladespireFortress"],
-	[6849] = BZ["BladespireFortress"],
-	[6850] = BZ["FavelaMineCamp"],
+	[6790] = BZ["Lunarfall"],
+	[6791] = BZ["The Burial Fields"],
+	[6792] = BZ["Shaz'gul"],
+	[6793] = BZ["Light's Fall"],
+	[6794] = BZ["Teluuna Observatory"],
+	[6796] = BZ["Starfall Outpost"],
+	[6797] = BZ["Gul'var"],
+	[6798] = BZ["Scarred Vale"],
+	[6799] = BZ["Bladefist Bay"],
+	[6800] = BZ["Dranosh'ar Landing"],
+	[6801] = BZ["The Darkspear Offensive"],
+	[6802] = BZ["Before the Gates"],
+	[6803] = BZ["Valley of Strength"],
+	[6804] = BZ["The Drag"],
+	[6805] = BZ["Gate of the Breakers"],
+	[6807] = BZ["Dark Heart of Pandaria"],
+	[6809] = BZ["Watcher's Den"],
+	[6810] = BZ["Giant's Fall"],
+	[6811] = BZ["Secluded Glade"],
+	[6812] = BZ["Greenstone Village"],
+	[6813] = BZ["Lion's Landing"],
+	[6814] = BZ["Blood in the Snow"],
+	[6815] = BZ["Domination Point"],
+	[6816] = BZ["Stormwind"],
+	[6817] = BZ["Grimfrost Hill"],
+	[6820] = BZ["[PH] - SMV - Alliance Garrison"],
+	[6821] = BZ["South Seas"],
+	[6822] = BZ["Ruby Lake"],
+	[6823] = BZ["Ordon Sanctuary"],
+	[6824] = BZ["Croaking Hollow"],
+	[6825] = BZ["Firewalker Ruins"],
+	[6830] = BZ["The Celestial Court"],
+	[6831] = BZ["Mossgreen Lake"],
+	[6832] = BZ["The Timeless Shore"],
+	[6833] = BZ["Tushui Landing"],
+	[6834] = BZ["Huojin Landing"],
+	[6835] = BZ["The Misty Strand"],
+	[6836] = BZ["Three-Breeze Terrace"],
+	[6837] = BZ["Kukuru's Grotto"],
+	[6838] = BZ["Tsavo'ka's Den"],
+	[6839] = BZ["Mysterious Den"],
+	[6840] = BZ["Whispershade Hollow"],
+	[6841] = BZ["Red Stone Run"],
+	[6842] = BZ["Firewalkers' Path"],
+	[6843] = BZ["Shrine of the Black Flame"],
+	[6844] = BZ["The Blazing Way"],
+	[6846] = BZ["Time-Lost Waters"],
+	[6848] = BZ["Turgall's Den"],
+	[6849] = BZ["Sootstained Mines"],
+	[6850] = BZ["Sootstained Mining Camp"],
 	[6851] = BZ["Grommar"],
-	[6852] = BZ["ProvingGrounds"],
-	[6854] = BZ["HideyHole"],
-	[6855] = BZ["GloomshadeGrove"],
-	[6857] = BZ["TheShadowRise"],
-	[6861] = BZ["TheSavageCrag"],
-	[6862] = BZ["TheHalfhillMarketScenario"],
-	[6863] = BZ["TheSecretIngredientScenario"],
-	[6864] = BZ["BladespireFortress"],
-	[6865] = BZ["zzOldExplosionTownNOTTEMPNAME"],
-	[6866] = BZ["TwilightGlade"],
-	[6867] = BZ["TheCrimsonCrossing"],
-	[6868] = BZ["ThunderlordCityInterior"],
-	[6869] = BZ["Worgol"],
-	[6870] = BZ["GloomshadeGrotto"],
-	[6871] = BZ["FarseersRock"],
-	[6872] = BZ["TerraceOfTheStars"],
-	[6873] = BZ["AnguishFortress"],
-	[6874] = BZ["OgreMines"],
-	[6875] = BZ["BladespireFortress"],
-	[6876] = BZ["BastionRise"],
+	[6852] = BZ["Proving Grounds"],
+	[6854] = BZ["[UNUSED]Hidey-Hole"],
+	[6855] = BZ["Gloomshade Grove"],
+	[6857] = BZ["The Shadow Rise"],
+	[6861] = BZ["Grulloc's Lair"],
+	[6862] = BZ["The Halfhill Market"],
+	[6863] = BZ["The Secret Ingredient"],
+	[6864] = BZ["Bladespire Citadel"],
+	[6865] = BZ["zzOld - Explosion Town [NOT TEMP NAME]"],
+	[6866] = BZ["Twilight Glade"],
+	[6867] = BZ["Circle of Blood"],
+	[6868] = BZ["Hall of the Great Hunt"],
+	[6869] = BZ["Wor'gol"],
+	[6870] = BZ["Gloomshade Grotto"],
+	[6871] = BZ["Farseer's Rock"],
+	[6872] = BZ["Terrace of the Stars"],
+	[6873] = BZ["Anguish Fortress"],
+	[6874] = BZ["Bloodmaul Slag Mines"],
+	[6875] = BZ["Bladespire Throne"],
+	[6876] = BZ["Bastion Rise"],
 	[6877] = BZ["Deadgrin"],
-	[6878] = BZ["TailthrasherBasin"],
-	[6879] = BZ["TheBrokenSpine"],
-	[6880] = BZ["EvermornSprings"],
+	[6878] = BZ["Tailthrasher Basin"],
+	[6879] = BZ["The Broken Spine"],
+	[6880] = BZ["Evermorn Springs"],
 	[6881] = BZ["Beastwatch"],
-	[6882] = BZ["TheForgottenCaves"],
-	[6883] = BZ["BlackrockPipeworks"],
-	[6884] = BZ["MistcreepMire"],
-	[6885] = BZ["CragplumeCauldron"],
-	[6886] = BZ["DraenataurCavern"],
-	[6887] = BZ["StonemaulArena"],
-	[6888] = BZ["KorgallsHovel"],
-	[6889] = BZ["BrimstoneSprings"],
-	[6890] = BZ["zzOldGorgrondGarrisonArea"],
-	[6891] = BZ["GronnCanyon"],
-	[6892] = BZ["BlackrockFoundry"],
-	[6893] = BZ["IyunWeald"],
-	[6894] = BZ["GronnCave"],
-	[6895] = BZ["WindwardAscent"],
-	[6896] = BZ["ElementalHollow"],
-	[6897] = BZ["BlackrockShipyard"],
-	[6898] = BZ["zzOldTankworks"],
-	[6899] = BZ["AfflictionRidge"],
-	[6900] = BZ["SulfurBasin"],
-	[6901] = BZ["BlackrockFoundryBase"],
-	[6902] = BZ["ReegaksNest"],
-	[6903] = BZ["MeltedBurrow"],
-	[6905] = BZ["GormaulTower"],
-	[6906] = BZ["FrostwallApproach"],
-	[6907] = BZ["MordulTower"],
-	[6908] = BZ["HeroesThroughTime"],
-	[6909] = BZ["SocretharsRise"],
-	[6910] = BZ["DarktideRoost"],
-	[6911] = BZ["SacrificePit"],
-	[6912] = BZ["DraenorAuchindoun"],
-	[6913] = BZ["GorgrondPass"],
+	[6882] = BZ["The Forgotten Caves"],
+	[6883] = BZ["Blackrock Pipeworks"],
+	[6884] = BZ["Mistcreep Mire"],
+	[6885] = BZ["Cragplume Cauldron"],
+	[6886] = BZ["Draenataur Cavern"],
+	[6887] = BZ["Stonemaul Arena"],
+	[6888] = BZ["Kor'gall's Hovel"],
+	[6889] = BZ["Brimstone Springs"],
+	[6890] = BZ["zzOld - Gorgrond Garrison Area"],
+	[6891] = BZ["Gronn Canyon"],
+	[6892] = BZ["The Pit"],
+	[6893] = BZ["Iyun Weald"],
+	[6894] = BZ["Gronn Cave"],
+	[6895] = BZ["Windward Ascent"],
+	[6896] = BZ["Elemental Hollow"],
+	[6897] = BZ["Blackrock Shipyard"],
+	[6898] = BZ["zzOld - Tankworks"],
+	[6899] = BZ["Affliction Ridge"],
+	[6900] = BZ["Sulfur Basin"],
+	[6901] = BZ["Grimrail Depot"],
+	[6902] = BZ["Reeg'ak's Nest"],
+	[6903] = BZ["Melted Burrow"],
+	[6905] = BZ["Gormaul Tower"],
+	[6906] = BZ["Frostwall Approach"],
+	[6907] = BZ["Mor'dul Tower"],
+	[6908] = BZ["[PH] Heroes Through Time"],
+	[6909] = BZ["Socrethar's Rise"],
+	[6910] = BZ["Darktide Roost"],
+	[6911] = BZ["Pit of the Devourer"],
+	[6912] = BZ["Auchindoun"],
+	[6913] = BZ["Gorgrond Pass"],
 	[6914] = BZ["Deeproot"],
-	[6915] = BZ["TheFertileGround"],
-	[6916] = BZ["CourtofSouls"],
-	[6917] = BZ["LiadrinsWatch"],
-	[6918] = BZ["DeathwebHollow"],
+	[6915] = BZ["The Fertile Ground"],
+	[6916] = BZ["Court of Souls"],
+	[6917] = BZ["Liadrin's Watch"],
+	[6918] = BZ["Deathweb Hollow"],
 	[6920] = BZ["Telmor"],
-	[6921] = BZ["PlainsOfSerenity"],
-	[6922] = BZ["MoonflowerValley"],
-	[6923] = BZ["EmbaariVillage"],
-	[6924] = BZ["CrystalMineTown"],
-	[6925] = BZ["PilgrimRest"],
-	[6926] = BZ["VeilShadar"],
-	[6927] = BZ["IsleofDusk"],
-	[6928] = BZ["PilgrimRoad"],
-	[6929] = BZ["FrostboarDrifts"],
+	[6921] = BZ["Plains of Serenity"],
+	[6922] = BZ["Moonflower Valley"],
+	[6923] = BZ["Embaari Village"],
+	[6924] = BZ["Aruuna"],
+	[6925] = BZ["Anchorite's Sojourn"],
+	[6926] = BZ["Veil Shadar"],
+	[6927] = BZ["Duskfall Island"],
+	[6928] = BZ["The Pilgrim's Road"],
+	[6929] = BZ["Frostboar Drifts"],
 	[6930] = BZ["Karabor"],
-	[6931] = BZ["PathoftheLight"],
-	[6932] = BZ["ShadowmoonDungeon"],
-	[6933] = BZ["Iskarsrefuge"],
-	[6934] = BZ["RootersPass"],
+	[6931] = BZ["Path of the Light"],
+	[6932] = BZ["Shadowmoon Burial Grounds"],
+	[6933] = BZ["Terokkar Refuge"],
+	[6934] = BZ["Rooter's Pass"],
 	[6935] = BZ["Razorbloom"],
-	[6936] = BZ["BlastedLandsZ"],
-	[6937] = BZ["SharptuskLake"],
-	[6938] = BZ["KuurosClaim"],
-	[6939] = BZ["BladespireFortress"],
-	[6940] = BZ["TheBindingTrench"],
+	[6936] = BZ["Blasted Lands (DO NOT USE)"],
+	[6937] = BZ["Sharptusk Lake"],
+	[6938] = BZ["Kuuro's Claim"],
+	[6939] = BZ["Butcher's Rise"],
+	[6940] = BZ["The Binding Trench"],
 	[6941] = BZ["Ashran"],
-	[6942] = BZ["SpinelingCrevice"],
-	[6943] = BZ["GardensOfEternityd"],
-	[6944] = BZ["TranquilCourt"],
-	[6945] = BZ["TheColiseumofLight"],
-	[6946] = BZ["KaraborHarbor"],
-	[6947] = BZ["TaladorBeach"],
-	[6948] = BZ["TaladorBluffBase"],
-	[6949] = BZ["TaladorTuurem"],
-	[6950] = BZ["MorgranLogworks"],
-	[6951] = BZ["IronDocks"],
-	[6952] = BZ["TheSulficRefuge"],
-	[6953] = BZ["ShatteredBeachhead"],
-	[6954] = BZ["ShatteredLanding"],
-	[6955] = BZ["BonetownScenario"],
-	[6956] = BZ["GronnstalkersCache"],
-	[6957] = BZ["ExilesRise"],
-	[6958] = BZ["PoolofVisions"],
-	[6959] = BZ["AruunaCrystalMine"],
-	[6960] = BZ["FrostfireRidge"],
-	[6961] = BZ["CanyonPass"],
-	[6962] = BZ["BladespireRavine"],
-	[6963] = BZ["TheShatteredFront"],
-	[6964] = BZ["StonefangRidge"],
-	[6965] = BZ["ThunderPassScenario"],
-	[6966] = BZ["ShiveringTrench"],
-	[6967] = BZ["FoundryRaid"],
-	[6968] = BZ["StonefuryCliffs"],
-	[6969] = BZ["BloodmaulSlagMines"],
-	[6970] = BZ["TheShadowTower"],
-	[6971] = BZ["ShadowmoonGrotto"],
-	[6972] = BZ["GrommarHold"],
-	[6973] = BZ["GrommarDocks"],
-	[6975] = BZ["AshranTRANSITIONZONE"],
-	[6976] = BZ["BloodthornCave"],
-	[6977] = BZ["TheVerdantMire"],
-	[6978] = BZ["LightsRest"],
-	[6979] = BZ["TombofSouls"],
-	[6980] = BZ["TaladorScenario"],
-	[6982] = BZ["ThroneofStonemaul"],
-	[6983] = BZ["IronSiegeworks"],
-	[6984] = BZ["BlackrockTrainDepotDungeon"],
-	[6985] = BZ["ChillwaterGrotto"],
-	[6986] = BZ["JoruneMine"],
-	[6987] = BZ["WaningCrescent"],
-	[6988] = BZ["SpiresofArakDungeon"],
-	[6989] = BZ["Skyreach"],
-	[6990] = BZ["Skyreach"],
-	[6991] = BZ["Skyreach"],
-	[6993] = BZ["MoonwillowPeak"],
-	[6994] = BZ["BonesofAgurak"],
-	[6995] = BZ["AguraksFall"],
-	[6996] = BZ["HighmaulRaid"],
-	[6997] = BZ["AngoroshRuins"],
-	[6998] = BZ["SpiresCoast"],
-	[6999] = BZ["AdmiralTaylorsGarrison"],
-	[7000] = BZ["SeatofDepravity"],
-	[7001] = BZ["SunswornCamp"],
-	[7003] = BZ["TheBrokenCrater"],
+	[6942] = BZ["Spineling Crevice"],
+	[6943] = BZ["Gardens of Eternity"],
+	[6944] = BZ["Tranquil Court"],
+	[6945] = BZ["The Coliseum of Light"],
+	[6946] = BZ["Karabor Harbor"],
+	[6947] = BZ["Orunai Coast"],
+	[6948] = BZ["Archenon Siegeyard"],
+	[6949] = BZ["Tuurem"],
+	[6950] = BZ["Mor'gran Logworks"],
+	[6951] = BZ["Iron Docks"],
+	[6952] = BZ["The Sulfic Refuge"],
+	[6953] = BZ["Shattered Beachhead"],
+	[6954] = BZ["Shattered Landing"],
+	[6955] = BZ["Bonetown Scenario"],
+	[6956] = BZ["Gronnstalkers' Cache"],
+	[6957] = BZ["Exile's Rise"],
+	[6958] = BZ["Pool of Visions"],
+	[6959] = BZ["Aruuna Crystal Mine"],
+	[6960] = BZ["Frostfire Ridge"],
+	[6961] = BZ["Canyon Pass"],
+	[6962] = BZ["Bladespire Ravine"],
+	[6963] = BZ["The Shattered Front"],
+	[6964] = BZ["Stonefang Ridge"],
+	[6965] = BZ["Thunder Pass"],
+	[6966] = BZ["Shivering Trench"],
+	[6967] = BZ["Blackrock Foundry"],
+	[6968] = BZ["Stonefury Cliffs"],
+	[6969] = BZ["Bloodmaul Slag Mines"],
+	[6970] = BZ["The Shadow Tower"],
+	[6971] = BZ["Shadowmoon Grotto"],
+	[6972] = BZ["Grommar Hold"],
+	[6973] = BZ["Grommar Docks"],
+	[6975] = BZ["[PH] Ashran [TRANSITION ZONE]"],
+	[6976] = BZ["Bloodthorn Cave"],
+	[6977] = BZ["The Verdant Mire"],
+	[6978] = BZ["Light's Rest"],
+	[6979] = BZ["Tomb of Souls"],
+	[6980] = BZ["Shattrath City"],
+	[6982] = BZ["Throne of Stonemaul"],
+	[6983] = BZ["Iron Siegeworks"],
+	[6984] = BZ["Grimrail Depot"],
+	[6985] = BZ["Chillwater Grotto"],
+	[6986] = BZ["Jorune Mine"],
+	[6987] = BZ["Waning Crescent"],
+	[6988] = BZ["Skyreach"],
+	[6989] = BZ["Lower Quarter"],
+	[6990] = BZ["Grand Spire"],
+	[6991] = BZ["The Overlook"],
+	[6993] = BZ["Moonwillow Peak"],
+	[6994] = BZ["Bones of Agurak"],
+	[6995] = BZ["Agurak's Fall"],
+	[6996] = BZ["Highmaul"],
+	[6997] = BZ["Ango'rosh Ruins"],
+	[6998] = BZ["Spires of Arak"],
+	[6999] = BZ["Admiral Taylor's Garrison"],
+	[7000] = BZ["Seat of Depravity"],
+	[7001] = BZ["Sunsworn Camp"],
+	[7003] = BZ["The Broken Crater"],
 	[7004] = BZ["Frostwall"],
-	[7005] = BZ["FrostbiteHollowInterrior"],
-	[7006] = BZ["ColdsnapBluffs"],
-	[7009] = BZ["FrostDen"],
-	[7010] = BZ["RangariHollow"],
-	[7011] = BZ["FrostbiteHollowInterrior"],
-	[7012] = BZ["SleepersLair"],
-	[7013] = BZ["Bloodmaulstronghold"],
-	[7014] = BZ["FrostfireRidgeFinaleCanyon"],
-	[7015] = BZ["SpiresDryRegion"],
-	[7016] = BZ["SpiresThornyRegion"],
-	[7017] = BZ["BlooksOverlook"],
-	[7018] = BZ["RuinsofAtagar"],
-	[7019] = BZ["TheGloomspire"],
-	[7020] = BZ["RetributionPoint"],
-	[7021] = BZ["TheBurningFront"],
-	[7022] = BZ["TestZone"],
-	[7023] = BZ["PHTestZone2"],
-	[7024] = BZ["IceblisterDen"],
-	[7025] = BZ["TanaanJungleIntro"],
-	[7026] = BZ["OkrillonHold"],
-	[7028] = BZ["TheForgeGrounds"],
-	[7029] = BZ["ExarchsRefuge"],
-	[7030] = BZ["DreadmaulRise"],
+	[7005] = BZ["Snowfall Alcove"],
+	[7006] = BZ["Coldsnap Bluffs"],
+	[7009] = BZ["Frost Den"],
+	[7010] = BZ["Rangari Hollow"],
+	[7011] = BZ["Frostbite Hollow"],
+	[7012] = BZ["Sleeper's Lair"],
+	[7013] = BZ["Bloodmaul Stronghold"],
+	[7014] = BZ["Thunder Pass"],
+	[7015] = BZ["Spires of Arak"],
+	[7016] = BZ["Spires of Arak"],
+	[7017] = BZ["Blook's Overlook"],
+	[7018] = BZ["Ruins of Ata'gar"],
+	[7019] = BZ["The Gloomspire"],
+	[7020] = BZ["Retribution Point"],
+	[7021] = BZ["The Burning Front"],
+	[7022] = BZ["[PH] Test Zone"],
+	[7023] = BZ["[PH] Test Zone 2"],
+	[7024] = BZ["Iceblister Den"],
+	[7025] = BZ["Tanaan Jungle"],
+	[7026] = BZ["Okril'lon Hold"],
+	[7028] = BZ["The Forge Grounds"],
+	[7029] = BZ["Exarch's Refuge"],
+	[7030] = BZ["Dreadmaul Rise"],
 	[7031] = BZ["Skettis"],
-	[7032] = BZ["AltarofAdal"],
-	[7033] = BZ["DarkspearsEdge"],
-	[7034] = BZ["DreadtalonPeak"],
+	[7032] = BZ["Garden of K'ure"],
+	[7033] = BZ["Darkspear's Edge"],
+	[7034] = BZ["Dreadtalon Peak"],
 	[7035] = BZ["Ravenskar"],
-	[7036] = BZ["VeilTerokk"],
-	[7037] = BZ["TheDarkPortal"],
-	[7038] = BZ["HeartbloodTangle"],
-	[7039] = BZ["TheBleedingAltar"],
-	[7040] = BZ["KargathonTrainingGrounds"],
+	[7036] = BZ["Veil Terokk"],
+	[7037] = BZ["The Dark Portal"],
+	[7038] = BZ["Heartblood Tangle"],
+	[7039] = BZ["The Bleeding Altar"],
+	[7040] = BZ["Kargathar Proving Grounds"],
 	[7041] = BZ["Heartblood"],
-	[7042] = BZ["UmbralMines"],
-	[7043] = BZ["BlackhollowQuarry"],
-	[7044] = BZ["LoktarMarch"],
-	[7045] = BZ["IronBastion"],
-	[7046] = BZ["PHFungalSkettisRuins"],
-	[7047] = BZ["ForbiddenGlacier"],
-	[7048] = BZ["BloodthornHill"],
-	[7049] = BZ["TheNightmarsh"],
-	[7051] = BZ["DyvariOvergrowth"],
+	[7042] = BZ["Umbral Halls"],
+	[7043] = BZ["Blackrock Quarry"],
+	[7044] = BZ["The Path of Glory"],
+	[7045] = BZ["Iron Bastion"],
+	[7046] = BZ["Lost Veil Anzu"],
+	[7047] = BZ["Forbidden Glacier"],
+	[7048] = BZ["Bloodthorn Hill"],
+	[7049] = BZ["The Nightmarsh"],
+	[7051] = BZ["Dyvari Overgrowth"],
 	[7052] = BZ["Sabermaw"],
-	[7053] = BZ["RemainsofXandros"],
-	[7054] = BZ["BladesEdgeMountain"],
-	[7055] = BZ["SouthwindCliffs"],
-	[7056] = BZ["WarsongLookout"],
-	[7057] = BZ["Golgor"],
-	[7058] = BZ["TheBleedingMountain"],
-	[7059] = BZ["Worvar"],
-	[7060] = BZ["HemetsHappyHuntingGrounds"],
-	[7061] = BZ["YrelsWatch"],
-	[7062] = BZ["TheBurningGlacier"],
-	[7063] = BZ["RiversidePost"],
-	[7064] = BZ["TheStonesofProphecy"],
-	[7065] = BZ["Lokrath"],
-	[7066] = BZ["NagrandCorral"],
-	[7067] = BZ["MargoksOverwatch"],
+	[7053] = BZ["Remains of Xandros"],
+	[7054] = BZ["Blade's Edge Mountain"],
+	[7055] = BZ["Southwind Cliffs"],
+	[7056] = BZ["Warsong Lookout"],
+	[7057] = BZ["Gol'gor"],
+	[7058] = BZ["The Bleeding Mountain"],
+	[7059] = BZ["Wor'var"],
+	[7060] = BZ["Hemet's Happy Hunting Grounds"],
+	[7061] = BZ["Yrel's Watch"],
+	[7062] = BZ["The Burning Glacier"],
+	[7063] = BZ["Riverside Post"],
+	[7064] = BZ["The Stones of Prophecy"],
+	[7065] = BZ["Lok-rath"],
+	[7066] = BZ["Nagrand Corral"],
+	[7067] = BZ["Mar'gok's Overwatch"],
 	[7068] = BZ["Grommashar"],
-	[7069] = BZ["GatesofGrommashar"],
-	[7070] = BZ["IronfistHarbor"],
-	[7071] = BZ["SnarlpawLedge"],
-	[7072] = BZ["AncestralGroundsDraenor"],
-	[7073] = BZ["TheRingofTrialsDraenor"],
-	[7074] = BZ["TelaarDraenor"],
-	[7075] = BZ["ThunderPassOutpost"],
-	[7076] = BZ["IronHordeWagonStop"],
-	[7078] = BZ["LunarfallRuins"],
-	[7079] = BZ["LowlandCave"],
-	[7080] = BZ["AshranCenterLane"],
-	[7081] = BZ["TelaariStation"],
-	[7082] = BZ["ShadowmoonMine"],
-	[7083] = BZ["DefenseofKarabor"],
-	[7084] = BZ["AruunasDesolation"],
-	[7085] = BZ["garrisonsmvalliance1"],
-	[7086] = BZ["garrisonsmvalliance3"],
-	[7087] = BZ["garrisonsmvalliance4"],
-	[7088] = BZ["Ashran"],
-	[7089] = BZ["TombofLights"],
-	[7090] = BZ["ZorkrasFall"],
-	[7091] = BZ["ShimmerMoor"],
-	[7092] = BZ["ArenaFloorDraenor"],
-	[7093] = BZ["TheHighRoad"],
-	[7094] = BZ["StonecragGorge"],
-	[7095] = BZ["WreckedCaravan"],
-	[7096] = BZ["garrisonffrhorde1"],
-	[7097] = BZ["PHAllianceGarrisonOutpost"],
-	[7098] = BZ["VoljinsPride"],
-	[7099] = BZ["Ashran"],
-	[7100] = BZ["AshranAlliancePVPBase"],
-	[7103] = BZ["garrisonffrhorde3"],
-	[7104] = BZ["garrisonffrhorde4"],
-	[7105] = BZ["RangariOverlook"],
-	[7107] = BZ["HillsbradFoothills"],
-	[7109] = BZ["OvergrownOutpost"],
-	[7110] = BZ["TheUndergrowth"],
-	[7111] = BZ["CrowsCrossing"],
-	[7112] = BZ["FrostwolfOverlook"],
-	[7113] = BZ["WolfsStandScenario"],
-	[7114] = BZ["AuchenaiPrecipice"],
+	[7069] = BZ["Gates of Grommashar"],
+	[7070] = BZ["Ironfist Harbor"],
+	[7071] = BZ["Snarlpaw Ledge"],
+	[7072] = BZ["Ancestral Grounds"],
+	[7073] = BZ["The Ring of Trials"],
+	[7074] = BZ["Telaar"],
+	[7075] = BZ["Wolf's Stand"],
+	[7076] = BZ["Iron Waystation"],
+	[7078] = BZ["Lunarfall"],
+	[7079] = BZ["Frostcave"],
+	[7080] = BZ["Emberfall Tower"],
+	[7081] = BZ["Telaari Station"],
+	[7082] = BZ["Shadowmoon Mine"],
+	[7083] = BZ["Defense of Karabor"],
+	[7084] = BZ["Aruuna's Desolation"],
+	[7085] = BZ["$n's Outpost"],
+	[7086] = BZ["$n's Garrison"],
+	[7087] = BZ["$n's Level 4 Alliance Garrison"],
+	[7088] = BZ["Ring of Conquest"],
+	[7089] = BZ["Tomb of Lights"],
+	[7090] = BZ["Zorkra's Fall"],
+	[7091] = BZ["The Shimmer Moor"],
+	[7092] = BZ["Arena Floor"],
+	[7093] = BZ["Terokkar Pass"],
+	[7094] = BZ["Stonecrag Gorge"],
+	[7095] = BZ["Wrecked Caravan"],
+	[7096] = BZ["$n's Outpost"],
+	[7097] = BZ["Fort Wrynn"],
+	[7098] = BZ["Vol'jin's Pride"],
+	[7099] = BZ["Warspear Outpost"],
+	[7100] = BZ["Stormshield Stronghold"],
+	[7103] = BZ["$n's Garrison"],
+	[7104] = BZ["$n's Level 4 Horde Garrison"],
+	[7105] = BZ["Rangari Overlook"],
+	[7107] = BZ["Hillsbrad Foothills"],
+	[7109] = BZ["The Everbloom"],
+	[7110] = BZ["The Undergrowth"],
+	[7111] = BZ["Crow's Crook"],
+	[7112] = BZ["Frostwolf Overlook"],
+	[7113] = BZ["Wolf's Stand"],
+	[7114] = BZ["Auchenai Precipice"],
 	[7115] = BZ["Zangarra"],
 	[7116] = BZ["Elodor"],
-	[7117] = BZ["ElodorFields"],
-	[7118] = BZ["FeyLanding"],
-	[7119] = BZ["RangaariEnclave"],
-	[7120] = BZ["AltarofShatar"],
-	[7121] = BZ["ExarchsRise"],
-	[7122] = BZ["ArborGlen"],
+	[7117] = BZ["Elodor Fields"],
+	[7118] = BZ["Fey Landing"],
+	[7119] = BZ["Rangari Enclave"],
+	[7120] = BZ["Altar of Sha'tar"],
+	[7121] = BZ["Exarch's Rise"],
+	[7122] = BZ["Arbor Glen"],
 	[7123] = BZ["Hallvalor"],
-	[7124] = BZ["TheMastersCavern"],
+	[7124] = BZ["The Masters' Cavern"],
 	[7125] = BZ["Shadowglade"],
-	[7126] = BZ["ShatteredHandCamp"],
-	[7127] = BZ["VeilAkraz"],
-	[7128] = BZ["RaidersHideout"],
-	[7129] = BZ["TarThogBridge"],
-	[7130] = BZ["BladefistRise"],
-	[7131] = BZ["GordalFortress"],
-	[7132] = BZ["TaladorMaraadsBivouac"],
-	[7133] = BZ["DurotansGrasp"],
-	[7134] = BZ["TaladorDrakasDen"],
-	[7135] = BZ["TaladorMountVolwrath"],
-	[7136] = BZ["TaladorDraxensWorkshop"],
-	[7138] = BZ["TaladorTraksRise"],
-	[7139] = BZ["ElementalPlateauDraenor"],
-	[7140] = BZ["BloodmaneValley"],
-	[7141] = BZ["ArchofShatar"],
-	[7142] = BZ["Ravenspeakercamp"],
-	[7143] = BZ["GnarlwoodPass"],
-	[7144] = BZ["BlademoonBloom"],
-	[7145] = BZ["SethekkHollow"],
-	[7146] = BZ["BonesofSethe"],
-	[7147] = BZ["TheBrokenSpire"],
-	[7148] = BZ["DaggerjawIntrusion"],
-	[7149] = BZ["RedZangar"],
-	[7150] = BZ["ShadowfallCanyon"],
-	[7151] = BZ["ShadowfallCanyon"],
-	[7152] = BZ["NaiellasWatch"],
-	[7153] = BZ["WildwoodWash"],
-	[7154] = BZ["DrywindGorge"],
-	[7155] = BZ["ValleyOfDestruction"],
-	[7156] = BZ["AnguishPoint"],
-	[7157] = BZ["KhadgarsTower"],
+	[7126] = BZ["Camp Thornscar"],
+	[7127] = BZ["Veil Akraz"],
+	[7128] = BZ["Raider's Hideout"],
+	[7129] = BZ["Tar'thog Bridge"],
+	[7130] = BZ["Bladefist Rise"],
+	[7131] = BZ["Gordal Fortress"],
+	[7132] = BZ["Redemption Rise"],
+	[7133] = BZ["Durotan's Grasp"],
+	[7134] = BZ["Draka's Den"],
+	[7135] = BZ["Mount Volwrath"],
+	[7136] = BZ["Draxen's Workshop"],
+	[7138] = BZ["Trak's Rise"],
+	[7139] = BZ["Elemental Plateau"],
+	[7140] = BZ["Bloodmane Valley"],
+	[7141] = BZ["Arch of Sha'tar"],
+	[7142] = BZ["Nest of the Ravenspeakers"],
+	[7143] = BZ["Gnarlwood Pass"],
+	[7144] = BZ["Blademoon Bloom"],
+	[7145] = BZ["Sethekk Hollow"],
+	[7146] = BZ["Bones of Sethe"],
+	[7147] = BZ["The Broken Spire"],
+	[7148] = BZ["Daggerjaw Intrusion"],
+	[7149] = BZ["Crimson Fen"],
+	[7150] = BZ["Oshu'gun"],
+	[7151] = BZ["Spirit Woods"],
+	[7152] = BZ["Naielle's Watch"],
+	[7153] = BZ["Wildwood Wash"],
+	[7154] = BZ["Drywind Gorge"],
+	[7155] = BZ["Valley of Destruction"],
+	[7156] = BZ["Anguish Point"],
+	[7157] = BZ["Khadgar's Tower"],
 	[7158] = BZ["Highpass"],
 	[7159] = BZ["Frondfall"],
-	[7160] = BZ["FissureOfFury"],
-	[7161] = BZ["TheDraakorium"],
-	[7162] = BZ["PinchwhistleGearworks"],
-	[7163] = BZ["PinchwhistlePoint"],
-	[7164] = BZ["WreckoftheMotherLode"],
-	[7165] = BZ["FionasCaravan"],
-	[7166] = BZ["HighpassLoggingCamp"],
-	[7167] = BZ["ElodorDig"],
-	[7168] = BZ["TerrorsCave"],
-	[7169] = BZ["TheSoulEngine"],
-	[7170] = BZ["zzOldSunderedPass"],
-	[7171] = BZ["HeartofFen"],
-	[7172] = BZ["ShadowfallCanyon"],
-	[7173] = BZ["EventideLanding"],
-	[7175] = BZ["TaladorKetyasHideaway"],
-	[7176] = BZ["GordalFoothills"],
-	[7177] = BZ["GorgersBurrow"],
-	[7178] = BZ["RexxarsRefuge"],
-	[7179] = BZ["ThroneoftheWitchLord"],
-	[7180] = BZ["TalonWatch"],
-	[7181] = BZ["LithicsRest"],
-	[7182] = BZ["TalonAltar"],
-	[7183] = BZ["BreakersCrown"],
-	[7184] = BZ["zzOldImperialRoad"],
-	[7185] = BZ["MoirasReach"],
-	[7186] = BZ["Mokgor"],
-	[7187] = BZ["Kagah"],
-	[7188] = BZ["Graah"],
-	[7189] = BZ["ShrineofOthaar"],
-	[7190] = BZ["DionorsDemise"],
+	[7160] = BZ["Fissure of Fury"],
+	[7161] = BZ["The Draakorium"],
+	[7162] = BZ["Pinchwhistle Gearworks"],
+	[7163] = BZ["Pinchwhistle Point"],
+	[7164] = BZ["Wreck of the Mother Lode"],
+	[7165] = BZ["Fiona's Caravan"],
+	[7166] = BZ["Highpass Logging Camp"],
+	[7167] = BZ["Elodor Dig"],
+	[7168] = BZ["Terror's Cave"],
+	[7169] = BZ["The Soul Engine"],
+	[7170] = BZ["zzOld - Sundered Pass"],
+	[7171] = BZ["Heart of the Fen"],
+	[7172] = BZ["Shadowfall Canyon"],
+	[7173] = BZ["Eventide Landing"],
+	[7175] = BZ["Ketya's Hideaway"],
+	[7176] = BZ["Gordal Foothills"],
+	[7177] = BZ["Glut's Burrow"],
+	[7178] = BZ["Rexxar's Refuge"],
+	[7179] = BZ["Throne of the Witch Lord"],
+	[7180] = BZ["Talon Watch"],
+	[7181] = BZ["Lithic's Rest"],
+	[7182] = BZ["Talon Altar"],
+	[7183] = BZ["Breaker's Crown"],
+	[7184] = BZ["zzOld - Imperial Road"],
+	[7185] = BZ["Moira's Reach"],
+	[7186] = BZ["Mok'gor"],
+	[7187] = BZ["Kag'ah"],
+	[7188] = BZ["Gra'ah"],
+	[7189] = BZ["Shrine of Othaar"],
+	[7190] = BZ["Dionor's Demise"],
 	[7191] = BZ["Talador"],
-	[7192] = BZ["TheUnderbelly"],
-	[7193] = BZ["MarketDistrict"],
-	[7194] = BZ["TheImperatorsFavor"],
-	[7195] = BZ["StrandsoftheEmpire"],
-	[7196] = BZ["HighmaulPathofVictors"],
-	[7197] = BZ["SpiresHordeOutpost"],
+	[7192] = BZ["The Underbelly"],
+	[7193] = BZ["Market District"],
+	[7194] = BZ["The Imperator's Favor"],
+	[7195] = BZ["Gorian Strand"],
+	[7196] = BZ["Path of Victors"],
+	[7197] = BZ["Axefall"],
 	[7198] = BZ["Southport"],
-	[7199] = BZ["ApexisExcavation"],
+	[7199] = BZ["Apexis Excavation"],
 	[7200] = BZ["Auchindoun"],
-	[7201] = BZ["AshranOgreTower"],
-	[7202] = BZ["TheWrithingMire"],
-	[7203] = BZ["ShadowfallCanyon"],
-	[7204] = BZ["ShadowfallCanyon"],
-	[7205] = BZ["GromkarGulch"],
-	[7206] = BZ["LonelyFalls"],
-	[7207] = BZ["ApexisChamber"],
-	[7208] = BZ["TheBrinyBarnacle"],
-	[7209] = BZ["BladespireFortress"],
-	[7210] = BZ["garrisonffrhorde2"],
-	[7211] = BZ["garrisonsmvalliance2"],
-	[7212] = BZ["PattyMackTestArea"],
-	[7213] = BZ["DefenseofKarabor"],
-	[7214] = BZ["DefenseofKarabor"],
-	[7215] = BZ["MoonlitShore"],
-	[7216] = BZ["GreatTreeValuundira"],
-	[7217] = BZ["GatesofGrommasharScenario"],
-	[7218] = BZ["GrommasharScenario"],
-	[7219] = BZ["SporemistShallows"],
-	[7220] = BZ["ForgottenShore"],
-	[7221] = BZ["IsleofShadows"],
-	[7222] = BZ["AdmiralTaylorsFarm"],
-	[7223] = BZ["BlackAltarofXantish"],
+	[7201] = BZ["Brute's Rise"],
+	[7202] = BZ["The Writhing Mire"],
+	[7203] = BZ["The Underpale"],
+	[7204] = BZ["Sanctum of the Naaru"],
+	[7205] = BZ["Grom'kar Gulch"],
+	[7206] = BZ["Lonely Falls"],
+	[7207] = BZ["Apexis Chamber"],
+	[7208] = BZ["The Briny Barnacle"],
+	[7209] = BZ["Bladespire Span"],
+	[7210] = BZ["$n's Fort"],
+	[7211] = BZ["$n's Fort"],
+	[7212] = BZ["PattyMack Test Area"],
+	[7213] = BZ["Garden Plaza"],
+	[7214] = BZ["Fountain Plaza"],
+	[7215] = BZ["Moonlit Shore"],
+	[7216] = BZ["Great Tree Valuundira"],
+	[7217] = BZ["Gates of Grommashar"],
+	[7218] = BZ["Grommashar"],
+	[7219] = BZ["Sporemist Shallows"],
+	[7220] = BZ["Forgotten Shore"],
+	[7221] = BZ["Isle of Shadows"],
+	[7222] = BZ["Admiral Taylor's Farm"],
+	[7223] = BZ["Black Altar of Xan'tish"],
 	[7224] = BZ["Tangleheart"],
 	[7225] = BZ["Umbrafen"],
-	[7226] = BZ["EastwindGulch"],
-	[7227] = BZ["SkysongLakeDraenor"],
-	[7228] = BZ["VileCavern"],
-	[7229] = BZ["DoNotModifyAllianceTownHallPlaceHolder"],
-	[7230] = BZ["DoNotModifyHordeTownHallPlaceHolder"],
-	[7231] = BZ["SwamplightTrail"],
-	[7232] = BZ["DryboneHollow"],
-	[7233] = BZ["FrostanglerBay"],
-	[7234] = BZ["ColdSnapCoast"],
-	[7235] = BZ["ColossalDepths"],
-	[7236] = BZ["TorgorothsTooth"],
-	[7237] = BZ["BloodmaulLanding"],
-	[7238] = BZ["IronSea"],
-	[7239] = BZ["ZangarSea"],
-	[7241] = BZ["SouthwindInlet"],
-	[7242] = BZ["ThePaleCove"],
-	[7243] = BZ["FrostboarPoint"],
-	[7244] = BZ["FrostbiteDeep"],
-	[7245] = BZ["AtagarPromontory"],
-	[7246] = BZ["GloomshadeCove"],
-	[7247] = BZ["OzgorsLaunch"],
-	[7248] = BZ["ThromvarLanding"],
+	[7226] = BZ["Eastwind Gulch"],
+	[7227] = BZ["Skysong Lake"],
+	[7228] = BZ["Vile Cavern"],
+	[7229] = BZ["Town Hall"],
+	[7230] = BZ["Great Hall"],
+	[7231] = BZ["Swamplight Trail"],
+	[7232] = BZ["Drybone Hollow"],
+	[7233] = BZ["Frostangler Bay"],
+	[7234] = BZ["Cold Snap Coast"],
+	[7235] = BZ["Colossal Depths"],
+	[7236] = BZ["Tor'goroth's Tooth"],
+	[7237] = BZ["Bloodmaul Landing"],
+	[7238] = BZ["Iron Sea"],
+	[7239] = BZ["Zangar Sea"],
+	[7241] = BZ["Southwind Inlet"],
+	[7242] = BZ["The Pale Cove"],
+	[7243] = BZ["Frostboar Point"],
+	[7244] = BZ["Frostbite Deep"],
+	[7245] = BZ["Ata'gar Promontory"],
+	[7246] = BZ["Gloomshade Cove"],
+	[7247] = BZ["Ozgor's Launch"],
+	[7248] = BZ["Throm'var Landing"],
 	[7249] = BZ["ShadowmoonCape"],
-	[7250] = BZ["UmbrafenPoint"],
-	[7251] = BZ["OrunaiBay"],
-	[7252] = BZ["OrunaiDelta"],
-	[7253] = BZ["ShadowmoonRise"],
-	[7255] = BZ["ZangarSeaNagrand"],
-	[7256] = BZ["DarktideStrait"],
-	[7257] = BZ["GlacierBay"],
-	[7258] = BZ["TheEvanescentSea"],
-	[7259] = BZ["IronSeaGorgrond"],
-	[7260] = BZ["FrostchillLagoon"],
-	[7261] = BZ["FrostbiteWall"],
-	[7262] = BZ["TanaanChannel"],
-	[7263] = BZ["BloodmaulScar"],
-	[7264] = BZ["ShadowmoonCoast"],
-	[7265] = BZ["TanaanChannel"],
-	[7266] = BZ["TheRustyCylinder"],
-	[7267] = BZ["StonecragGorge"],
-	[7268] = BZ["TerokkarWayshrine"],
-	[7269] = BZ["SpireofLight"],
-	[7270] = BZ["TheHowlingCrag"],
-	[7271] = BZ["WorgskinsCamp"],
+	[7250] = BZ["Umbrafen Point"],
+	[7251] = BZ["Orunai Bay"],
+	[7252] = BZ["Orunai Delta"],
+	[7253] = BZ["Shadowmoon Rise"],
+	[7255] = BZ["Zangar Sea"],
+	[7256] = BZ["Darktide Strait"],
+	[7257] = BZ["Glacier Bay"],
+	[7258] = BZ["The Evanescent Sea"],
+	[7259] = BZ["Iron Sea"],
+	[7260] = BZ["Frostchill Lagoon"],
+	[7261] = BZ["Frostbite Wall"],
+	[7262] = BZ["Tanaan Channel"],
+	[7263] = BZ["Bloodmaul Scar"],
+	[7264] = BZ["Shadowmoon Coast"],
+	[7265] = BZ["Tanaan Channel"],
+	[7266] = BZ["The Rusty Cylinder"],
+	[7267] = BZ["Vault of the Titan"],
+	[7268] = BZ["Terokkar Wayshrine"],
+	[7269] = BZ["Spire of Light"],
+	[7270] = BZ["The Howling Crag"],
+	[7271] = BZ["Worgskin's Camp"],
 	[7272] = BZ["Murkbog"],
-	[7273] = BZ["SilencePond"],
-	[7274] = BZ["VeilZekk"],
-	[7275] = BZ["AshranTheQuarry"],
-	[7276] = BZ["ForlornDelta"],
-	[7277] = BZ["BloodmanePridelands"],
-	[7278] = BZ["SmartSaberonDen"],
-	[7279] = BZ["AshranTheStadium"],
-	[7280] = BZ["ThroneoftheElementsDraenor"],
-	[7281] = BZ["SavageFightClub"],
-	[7282] = BZ["LowlandsLumberYard"],
-	[7283] = BZ["HighpassSparringRing"],
-	[7284] = BZ["ArcaneSanctumHorde"],
-	[7285] = BZ["ArcaneSanctumAlliance"],
-	[7286] = BZ["VoljinsArsenal"],
-	[7287] = BZ["WrynnArtilleryTower"],
-	[7288] = BZ["SmugglersDenHorde"],
-	[7289] = BZ["SmugglersDenAlliance"],
-	[7290] = BZ["HearthfireTavern"],
-	[7291] = BZ["StoktronBrewery"],
-	[7292] = BZ["WorvarCorral"],
-	[7293] = BZ["RangariCorral"],
-	[7294] = BZ["WorvarTankworks"],
-	[7295] = BZ["TelaariTankworks"],
-	[7296] = BZ["MokgolWatchpost"],
-	[7297] = BZ["RuinsOfNagwa"],
-	[7298] = BZ["OverlookRuins"],
-	[7299] = BZ["BastionRuins"],
-	[7300] = BZ["BarrierSea"],
-	[7301] = BZ["MokgolHold"],
-	[7302] = BZ["ShadowsVigil"],
-	[7303] = BZ["BrokenPrecipice"],
-	[7304] = BZ["SteamscarRise"],
-	[7305] = BZ["TerraceofDawn"],
-	[7306] = BZ["WindsweptTerrace"],
-	[7307] = BZ["UpperBlackrockSpire"],
-	[7308] = BZ["HarvestingPits"],
-	[7309] = BZ["IronDocks"],
-	[7310] = BZ["IronDocks"],
-	[7311] = BZ["AshranTheAltar"],
-	[7312] = BZ["CastawayCave"],
-	[7313] = BZ["DestroyedExpedition"],
-	[7314] = BZ["SoundDesignLand"],
-	[7315] = BZ["ShatteredRise"],
-	[7316] = BZ["MaxLevelSkettisRuins"],
-	[7317] = BZ["BladefistHold"],
-	[7318] = BZ["TheShelteredDen"],
-	[7319] = BZ["GorgoreksFall"],
-	[7320] = BZ["EverbloomWilds"],
-	[7321] = BZ["AbandonedHighmaulMine"],
-	[7322] = BZ["CrushfangsEnd"],
-	[7323] = BZ["AshenCrater"],
-	[7324] = BZ["LunarfallMine1"],
-	[7325] = BZ["LunarfallMine2"],
-	[7326] = BZ["LunarfallMine3"],
-	[7327] = BZ["FrostwallMine1"],
-	[7328] = BZ["FrostwallMine2"],
-	[7329] = BZ["FrostwallMine3"],
-	[7330] = BZ["ShaperStormwind"],
-	[7331] = BZ["CeruleanLagoon"],
-	[7332] = BZ["AshranAllianceFactionHub"],
-	[7333] = BZ["AshranHordeFactionHub"],
-	[7367] = BZ["HighmaulDraenor"],
-	[7368] = BZ["GurgthocksStash"],
-	[7369] = BZ["TheShatteredTower"],
-	[7370] = BZ["AzulaeOutpost"],
-	[7375] = BZ["GorianProvingGrounds"],
-	[7376] = BZ["TheRingofBlood"],
-	[7377] = BZ["TimeLostGlade"],
-	[7378] = BZ["AshranTheAltar"],
-	[7379] = BZ["AshranTheAltar"],
-	[7381] = BZ["TheTrialOfFaith"],
-	[7382] = BZ["ShaperPoolsOfLife"],
-	[7383] = BZ["ShaperVerdantGrove"],
-	[7384] = BZ["ShaperVioletBluff"],
-	[7385] = BZ["ZangarShore"],
-	[7386] = BZ["SpiteleafThicket"],
-	[7387] = BZ["SupplyCave"],
-	[7389] = BZ["BladefurysCommand"],
-	[7390] = BZ["TheGatesOfTanaan"],
-	[7391] = BZ["ThePathOfGloryTalador"],
-	[7392] = BZ["PillarsOfFate"],
-	[7393] = BZ["VerdantPass"],
-	[7394] = BZ["SteamburstCauldron"],
-	[7395] = BZ["HighmaulColisseum"],
-	[7396] = BZ["DarkstingCave"],
-	[7397] = BZ["MoonlitShoreSouth"],
-	[7399] = BZ["IshaalsHut"],
-	[7400] = BZ["ZelleksHut"],
-	[7401] = BZ["TheGreatSea"],
-	[7402] = BZ["EvermornRise"],
-	[7403] = BZ["TheCompostHeap"],
-	[7404] = BZ["LernaenShore"],
-	[7405] = BZ["HighmaulHarbor"],
-	[7406] = BZ["TheCliffsofHighmaul"],
-	[7407] = BZ["TheSouthSea"],
-	[7408] = BZ["WindrocBay"],
-	[7409] = BZ["TheSunsetShore"],
-	[7410] = BZ["TheSouthSea"],
-	[7411] = BZ["GorgrondFinaleDraenor"],
-	[7412] = BZ["AssassinsCove"],
-	[7413] = BZ["SpiritWhisperHollow"],
-	[7414] = BZ["SkyseaRidge"],
-	[7415] = BZ["GorgrondFinaleScenario"],
-	[7416] = BZ["AbandonedCave"],
-	[7417] = BZ["TaladorShattrathCityDock"],
-	[7418] = BZ["TaladorShattrathCityDockWest"],
-	[7419] = BZ["TaladorShattrathCityDockLighthouse"],
-	[7420] = BZ["TaladorShattrathCitySiegeArea"],
-	[7421] = BZ["TaladorShattrathCitySiegeUpper"],
-	[7422] = BZ["TaladorShattrathCityMarket"],
-	[7423] = BZ["BlackrockTrainDepotFinale"],
-	[7424] = BZ["RiverbeastDen"],
-	[7425] = BZ["LamplighterInn"],
-	[7426] = BZ["TheCrescentHearth"],
-	[7427] = BZ["TheSilkenPillow"],
-	[7428] = BZ["BarrierSeaTanaan"],
-	[7429] = BZ["IronPass"],
-	[7431] = BZ["TheColossalsFist"],
-	[7432] = BZ["ElementalPlateauDraenorCoast"],
-	[7433] = BZ["TelaariWorksite"],
-	[7434] = BZ["WorvarWorksite"],
-	[7435] = BZ["AarkosEstate"],
-	[7436] = BZ["TheSouthSeaSpires"],
-	[7437] = BZ["WitherwindPass"],
-	[7438] = BZ["AshranKingsThrone"],
-	[7439] = BZ["AshranCaptureGY"],
-	[7440] = BZ["EchidneanShelf"],
-	[7441] = BZ["AshranHordeFactionHubBase"],
-	[7442] = BZ["AshranAllianceFactionHubBase"],
-	[7444] = BZ["AshranWilderness"],
-	[7445] = BZ["TheEvanescentSeaSpires"],
-	[7446] = BZ["BarrierSeaAshran"],
-	[7447] = BZ["ColossalDepthsGorgrond"],
-	[7448] = BZ["BarrierSeaShadowmoon"],
-	[7449] = BZ["TheThornPits"],
-	[7450] = BZ["TheSavageCragExterior"],
-	[7451] = BZ["BrokenHornVillage"],
-	[7452] = BZ["DoomtideCove"],
-	[7453] = BZ["TaladorShattrathCitySouthernQuad"],
-	[7454] = BZ["TaladorShattrathCitySouthernRise"],
-	[7455] = BZ["TaladorShattrathCityNeighborhood"],
-	[7456] = BZ["OvergrownDen"],
-	[7457] = BZ["SherkhaansDen"],
-	[7459] = BZ["BrokenHornVillageInn"],
-	[7460] = BZ["DenofSecrets"],
-	[7461] = BZ["EarthshakerGorge"],
-	[7462] = BZ["TheColiseum"],
-	[7463] = BZ["TheColiseum"],
-	[7464] = BZ["ThePathofVictors"],
-	[7465] = BZ["GorianStrand"],
-	[7466] = BZ["TheImperatorsFavor"],
-	[7467] = BZ["MarketDistrict"],
-	[7468] = BZ["TheUnderbelly"],
-	[7469] = BZ["HiddenCamp"],
-	[7470] = BZ["MountKragor"],
-	[7471] = BZ["DolmaksHideout"],
-	[7472] = BZ["DeadwalkerPass"],
-	[7473] = BZ["HillsOfValuun"],
-	[7474] = BZ["ThaelinsWorkshop"],
-	[7475] = BZ["GarrisonAllianceInn"],
-	[7476] = BZ["AshranCenterLane"],
-	[7477] = BZ["AshranCenterLane"],
-	[7478] = BZ["AshranCenterLane"],
-	[7479] = BZ["AshranCenterLane"],
-	[7480] = BZ["TaladorShattrathCityFelRise"],
-	[7481] = BZ["AkeetasHovel"],
-	[7482] = BZ["FortWrynnWorksite"],
-	[7483] = BZ["VoljinsPrideWorksite"],
-	[7484] = BZ["SouthportWorksite"],
-	[7485] = BZ["AxefallWorksite"],
-	[7486] = BZ["Goldshire"],
-	[7489] = BZ["CragplumeCauldronExterior"],
+	[7273] = BZ["Silence Pond"],
+	[7274] = BZ["Veil Zekk"],
+	[7275] = BZ["Molten Quarry"],
+	[7276] = BZ["Forlorn Delta"],
+	[7277] = BZ["Bloodmane Pridelands"],
+	[7278] = BZ["Leorajh's Den"],
+	[7279] = BZ["Amphitheater of Annihilation"],
+	[7280] = BZ["Throne of the Elements"],
+	[7281] = BZ["Savage Fight Club"],
+	[7282] = BZ["Lowlands Lumber Yard"],
+	[7283] = BZ["Highpass Sparring Ring"],
+	[7284] = BZ["Arcane Sanctum"],
+	[7285] = BZ["Arcane Sanctum"],
+	[7286] = BZ["Vol'jin's Arsenal"],
+	[7287] = BZ["Wrynn Artillery Tower"],
+	[7288] = BZ["Smuggler's Den"],
+	[7289] = BZ["Smuggler's Den"],
+	[7290] = BZ["Hearthfire Tavern"],
+	[7291] = BZ["Stoktron Brewery"],
+	[7292] = BZ["Wor'var Corral"],
+	[7293] = BZ["Rangari Corral"],
+	[7294] = BZ["Wor'var Tankworks"],
+	[7295] = BZ["Telaari Tankworks"],
+	[7296] = BZ["Mok'gol Watchpost"],
+	[7297] = BZ["Ruins of Na'gwa"],
+	[7298] = BZ["Overlook Ruins"],
+	[7299] = BZ["Ruins of the First Bastion"],
+	[7300] = BZ["Barrier Sea"],
+	[7301] = BZ["Mok'gol Hold"],
+	[7302] = BZ["Shadow's Vigil"],
+	[7303] = BZ["Broken Precipice"],
+	[7304] = BZ["Steamscar Rise"],
+	[7305] = BZ["Terrace of Dawn"],
+	[7306] = BZ["Windswept Terrace"],
+	[7307] = BZ["Upper Blackrock Spire"],
+	[7308] = BZ["Harvesting Pits"],
+	[7309] = BZ["The Iron Wharf"],
+	[7310] = BZ["Blackhand's Might"],
+	[7311] = BZ["Ashmaul Burial Grounds"],
+	[7312] = BZ["Castaway Cave"],
+	[7313] = BZ["The Destroyed Expedition"],
+	[7314] = BZ["[Test] Sound Design"],
+	[7315] = BZ["Shattered Rise"],
+	[7316] = BZ["Skettis"],
+	[7317] = BZ["Bladefist Hold"],
+	[7318] = BZ["The Sheltered Den"],
+	[7319] = BZ["Gorgorek's Fall"],
+	[7320] = BZ["Everbloom Wilds"],
+	[7321] = BZ["Abandoned Highmaul Mine"],
+	[7322] = BZ["Crushfang's End"],
+	[7323] = BZ["Ashen Crater"],
+	[7324] = BZ["Lunarfall Excavation"],
+	[7325] = BZ["Lunarfall Excavation"],
+	[7326] = BZ["Lunarfall Excavation"],
+	[7327] = BZ["Frostwall Mine"],
+	[7328] = BZ["Frostwall Mine"],
+	[7329] = BZ["Frostwall Mine"],
+	[7330] = BZ["Stormwind"],
+	[7331] = BZ["Cerulean Lagoon"],
+	[7332] = BZ["Stormshield"],
+	[7333] = BZ["Warspear"],
+	[7367] = BZ["Highmaul"],
+	[7368] = BZ["Gurgthock's Stash"],
+	[7369] = BZ["The Shattered Tower"],
+	[7370] = BZ["Azulae Outpost"],
+	[7375] = BZ["Gorian Proving Grounds"],
+	[7376] = BZ["The Ring of Blood"],
+	[7377] = BZ["Time-Lost Glade"],
+	[7378] = BZ["The Dark Woods"],
+	[7379] = BZ["Gorian Falls"],
+	[7381] = BZ["The Trial of Faith"],
+	[7382] = BZ["Pools of Life"],
+	[7383] = BZ["Verdant Grove"],
+	[7384] = BZ["The Violet Bluff"],
+	[7385] = BZ["Zangar Shore"],
+	[7386] = BZ["Spiteleaf Thicket"],
+	[7387] = BZ["Brak's Excavation"],
+	[7389] = BZ["Bladefury's Command"],
+	[7390] = BZ["The Gates of Tanaan"],
+	[7391] = BZ["The Path of Glory"],
+	[7392] = BZ["Pillars of Fate"],
+	[7393] = BZ["Verdantis Pass"],
+	[7394] = BZ["Steamburst Cauldron"],
+	[7395] = BZ["The Coliseum"],
+	[7396] = BZ["Darksting Cave"],
+	[7397] = BZ["Moonlit Shore"],
+	[7399] = BZ["Ishaal's Hut"],
+	[7400] = BZ["Zellek's Hut"],
+	[7401] = BZ["Cavern of Lament"],
+	[7402] = BZ["Evermorn Rise"],
+	[7403] = BZ["The Compost Heap"],
+	[7404] = BZ["Lernaen Shore"],
+	[7405] = BZ["Highmaul Harbor"],
+	[7406] = BZ["The Cliffs of Highmaul"],
+	[7407] = BZ["The South Sea"],
+	[7408] = BZ["Windroc Bay"],
+	[7409] = BZ["The Sunset Shore"],
+	[7410] = BZ["The South Sea"],
+	[7411] = BZ["The Iron Approach"],
+	[7412] = BZ["Assassin's Cove"],
+	[7413] = BZ["Spirit Whisper Hollow"],
+	[7414] = BZ["Skysea Ridge"],
+	[7415] = BZ["The Iron Approach"],
+	[7416] = BZ["Sulfurscale Cave"],
+	[7417] = BZ["Sha'tari Anchorage"],
+	[7418] = BZ["Shattrath Port Authority"],
+	[7419] = BZ["Beacon of Sha'tar"],
+	[7420] = BZ["Shattrath City"],
+	[7421] = BZ["Shattrath Commons"],
+	[7422] = BZ["Sha'tari Market District"],
+	[7423] = BZ["Grimrail Crash Site"],
+	[7424] = BZ["Riverbeast Den"],
+	[7425] = BZ["Lamplighter Inn"],
+	[7426] = BZ["The Crescent Hearth"],
+	[7427] = BZ["The Silken Pillow"],
+	[7428] = BZ["Barrier Sea"],
+	[7429] = BZ["Iron Pass"],
+	[7431] = BZ["The Colossal's Fist"],
+	[7432] = BZ["Elemental Plateau"],
+	[7433] = BZ["Telaari Worksite"],
+	[7434] = BZ["Wor'var Worksite"],
+	[7435] = BZ["Aarko's Estate"],
+	[7436] = BZ["The South Sea"],
+	[7437] = BZ["Witherwind Pass"],
+	[7438] = BZ["Seat of Kor'lok"],
+	[7439] = BZ["Kings' Rest"],
+	[7440] = BZ["Echidnean Shelf"],
+	[7441] = BZ["Warspear Base"],
+	[7442] = BZ["Stormshield Base"],
+	[7444] = BZ["Ashran"],
+	[7445] = BZ["The Evanescent Sea"],
+	[7446] = BZ["Barrier Sea"],
+	[7447] = BZ["Colossal Depths"],
+	[7448] = BZ["Barrier Sea"],
+	[7449] = BZ["The Thorn Pits"],
+	[7450] = BZ["The Savage Crag"],
+	[7451] = BZ["Broken Horn Village"],
+	[7452] = BZ["Doomtide Cove"],
+	[7453] = BZ["Sha'tar Way Station"],
+	[7454] = BZ["Sha'tari Skymesa"],
+	[7455] = BZ["Shattrath Residential District"],
+	[7456] = BZ["Overgrown Den"],
+	[7457] = BZ["Sher'khaan's Den"],
+	[7459] = BZ["Deadmeat's House of Meat"],
+	[7460] = BZ["Den of Secrets"],
+	[7461] = BZ["Earthshaker Gorge"],
+	[7462] = BZ["The Coliseum"],
+	[7463] = BZ["The Coliseum"],
+	[7464] = BZ["The Path of Victors"],
+	[7465] = BZ["Gorian Strand"],
+	[7466] = BZ["The Imperator's Favor"],
+	[7467] = BZ["Market District"],
+	[7468] = BZ["The Underbelly"],
+	[7469] = BZ["Hidden Camp"],
+	[7470] = BZ["Mount Kra'gor"],
+	[7471] = BZ["Dol'mak's Hideout"],
+	[7472] = BZ["Deadwalker Pass"],
+	[7473] = BZ["Hills of Valuun"],
+	[7474] = BZ["Thaelin's Workshop"],
+	[7475] = BZ["Garrison - Alliance - Inn"],
+	[7476] = BZ["Volrath's Advance"],
+	[7477] = BZ["The Crossroads"],
+	[7478] = BZ["Tremblade's Vanguard"],
+	[7479] = BZ["Archmage Overwatch"],
+	[7480] = BZ["Shattrath Overlook"],
+	[7481] = BZ["Akeeta's Hovel"],
+	[7482] = BZ["Fort Wrynn Worksite"],
+	[7483] = BZ["Vol'jin's Pride Worksite"],
+	[7484] = BZ["Southport Worksite"],
+	[7485] = BZ["Axefall Worksite"],
+	[7486] = BZ["Stormwind Gate"],
+	[7489] = BZ["Cragplume Cauldron"],
 	[7490] = BZ["Garrison"],
-	[7492] = BZ["SaraahsVale"],
-	[7493] = BZ["FrostfireFinaleIronSiegeworks"],
-	[7494] = BZ["FrostfireFinaleBonesofAgurak"],
-	[7495] = BZ["TanaanJungleExterior"],
-	[7496] = BZ["TanaanValley"],
-	[7498] = BZ["ShadowmoonValleyOutlandChat"],
-	[7499] = BZ["NagrandOutlandChat"],
-	[7500] = BZ["OrunaiDeltaGorgrond"],
-	[7501] = BZ["TaladorBeachGorgrond"],
+	[7492] = BZ["Saraah's Vale"],
+	[7493] = BZ["Iron Siegeworks"],
+	[7494] = BZ["Bones of Agurak"],
+	[7495] = BZ["Tanaan Coast"],
+	[7496] = BZ["Tanaan Valley"],
+	[7498] = BZ["Shadowmoon Valley (Outland)"],
+	[7499] = BZ["Nagrand (Outland)"],
+	[7500] = BZ["Orunai Delta"],
+	[7501] = BZ["Orunai Coast"],
 }
 
--- ID mapped to AreaTable.dbc;
+-- Map ID from Map.dbc
+-- Area ID mapped to AreaTable.dbc;
 -- Coordination from WorldMapArea.dbc
 Yatlas_mapareas = {
 -- Feb. 28, 2013: updated to 16634
+	-- Map ID: 0
 	["Azeroth"] = {
 		[0] = {18171.9707, -22569.21094, 11176.34375, -15973.34375}, -- Azeroth
 		[1] = {2137.5, -2760.416504, -3941.666504, -7206.249512}, -- DunMorogh
@@ -10998,6 +11000,7 @@ Yatlas_mapareas = {
 		[6457] = {1206.25, -643.75, -4727.083984, -5960.416016}, -- NewTinkertownStart
 	},
 -- Feb. 28, 2013: updated to 16634
+	-- Map ID: 1
 	["Kalimdor"] = {
 		[0] = {17066.59961, -19733.21094, 12799.90039, -11733.2998}, -- Kalimdor
 		[14] = {-1962.499878, -7249.999512, 1808.333252, -1716.666626}, -- Durotar
@@ -11033,48 +11036,6 @@ Yatlas_mapareas = {
 		[6452] = {233.3339844, -1533.333984, -2577.083984, -3754.166016}, -- CampNaracheStart
 		[6453] = {-4491.666016, -6297.916016, -525, -1729.166016}, -- EchoIslesStart
 	},
--- Feb. 28, 2013: updated to 16634
-	["HawaiiMainLand"] = {
-		[0] = {8752.860352, -6762.439941, 6679.160156, -3664.379883}, -- Pandaria
-		[5785] = {1452.083008, -5531.25, 3652.083008, -1002.083984}, -- TheJadeForest
-		[5805] = {2679.166992, -1245.833984, 1095.833008, -1520.833984}, -- ValleyoftheFourWinds
-		[5840] = {2481.25, -52.08398438, 1947.916992, 260.4160156}, -- ValeofEternalBlossoms
-		[5841] = {4839.583008, -1418.75, 5618.75, 1445.833008}, -- KunLaiSummit
-		[5842] = {7079.166016, 1335.416992, 4558.333008, 729.1669922}, -- TownlongWastes
-		[6006] = {812.5, -981.25, 1689.583008, 493.75}, -- TheHiddenPass
-		[6134] = {2947.916992, -1739.583984, -110.4160233, -3235.416016}, -- Krasarang
-		[6134] = {2947.916992, -1739.583984, -110.4160233, -3235.416016}, -- Krasarang_terrain1
-		[6138] = {6139.583008, 787.5, 1416.666992, -2152.083984}, -- DreadWastes
---		[6141] = {0, 0, 0, 0}, -- ShrineofTwoMoons
---		[6142] = {0, 0, 0, 0}, -- ShrineofSevenStars
-		[6661] = {2004.166992, 216.6660156, 6697.916016, 5506.25}, -- IsleOfGiants
-
-	},
--- Oct. 21, 2014: updated to 19207
-	["Draenor"] = {
-		[941] = {7506.25, 1391.670044, 8275, 4197.919922}, -- FrostfireRidge
-		[945] = {1506.25, -3481.25, 5760.419922, 2435.419922}, -- TanaanJungle
-		[946] = {5833.330078, -129.1660004, 4429.169922, 454.1659851}, -- Talador
-		[947] = {2268.75, -4431.25, 2660.419922, -1806.25}, -- ShadowmoonValleyDR
-		[948] = {4681.25, -1379.170044, 1383.329956, -2656.25}, -- SpiresOfArak
-		[949] = {5066.669922, -3110.419922, 9589.580078, 4139.580078}, -- Gorgrond
-		[950] = {9308.330078, 3633.330078, 4922.919922, 1139.579956}, -- NagrandDraenor
-		[962] = {12242.34375, -10493.43848, 11193, -3964.1875}, -- Draenor
-		[971] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance
-		[973] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance_tier1
-		[974] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance_tier3
-		[975] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance_tier4
-		[976] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde
-		[978] = {-2672.919922, -5795.830078, 5577.080078, 3495.830078}, -- Ashran
-		[980] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde_tier1
-		[981] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde_tier3
-		[982] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde_tier4
-		[990] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde_tier2
-		[991] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance_tier2
-		[1009] = {-3625, -4312.5, 3908.333008, 3450}, -- AshranAllianceFactionHub
-		[1011] = {-3589.583984, -4389.583984, 5541.666016, 5008.333008}, -- AshranHordeFactionHub
-
-	},
 	["PVPZone01"] = {
 		[2597] = {1781.249878, -2456.250000, 1085.416626, -1739.583252},	-- Alterac Valley
 	},
@@ -11085,6 +11046,8 @@ Yatlas_mapareas = {
 		[3358] = {1858.333252, 102.083328, 1508.333252, 337.500000},		-- Arathi Basin
 	},
 -- Feb. 28, 2013: updated to 16634
+	-- Outland / Burning of Crusade
+	-- Map ID: 530
 	["Expansion01"] = {
 		[0] = {12996.03906, -4468.039063, 5821.359375, -5821.359375}, -- Expansion01
 		[3430] = {-4487.5, -9412.5, 11041.66602, 7758.333008}, -- EversongWoods
@@ -11112,6 +11075,8 @@ Yatlas_mapareas = {
 		[3820] = {2660.416504, 389.583313, 2918.750000, 1404.166626},
 	},
 -- Feb. 28, 2013: updated to 16634
+	-- Northrend / Wrath of the LichKing
+	-- Map ID: 571
 	["Northrend"] = {
 		[0] = {9217.152344, -8534.246094, 10593.375, -1240.890015}, -- Northrend
 		[65] = {3627.083252, -1981.249878, 5575, 1835.416626}, -- Dragonblight
@@ -11187,1152 +11152,1405 @@ Yatlas_mapareas = {
 	["DarkmoonFaireIsland"] = {
 		[5861] = {7268.7495, 5410.4165, -3322.9165, -4562.5000},
 	},
+-- Feb. 28, 2013: updated to 16634
+	-- Pandaria / Mists of Pandaria
+	-- Map ID: 870
+	["HawaiiMainLand"] = {
+		[0] = {8752.860352, -6762.439941, 6679.160156, -3664.379883}, -- Pandaria
+		[5785] = {1452.083008, -5531.25, 3652.083008, -1002.083984}, -- TheJadeForest
+		[5805] = {2679.166992, -1245.833984, 1095.833008, -1520.833984}, -- ValleyoftheFourWinds
+		[5840] = {2481.25, -52.08398438, 1947.916992, 260.4160156}, -- ValeofEternalBlossoms
+		[5841] = {4839.583008, -1418.75, 5618.75, 1445.833008}, -- KunLaiSummit
+		[5842] = {7079.166016, 1335.416992, 4558.333008, 729.1669922}, -- TownlongWastes
+		[6006] = {812.5, -981.25, 1689.583008, 493.75}, -- TheHiddenPass
+		[6134] = {2947.916992, -1739.583984, -110.4160233, -3235.416016}, -- Krasarang
+		[6134] = {2947.916992, -1739.583984, -110.4160233, -3235.416016}, -- Krasarang_terrain1
+		[6138] = {6139.583008, 787.5, 1416.666992, -2152.083984}, -- DreadWastes
+--		[6141] = {0, 0, 0, 0}, -- ShrineofTwoMoons
+--		[6142] = {0, 0, 0, 0}, -- ShrineofSevenStars
+		[6661] = {2004.166992, 216.6660156, 6697.916016, 5506.25}, -- IsleOfGiants
+
+	},
+--[[	["Deepholm"] = {
+		[640] = {3052.083252, -2047.916626, 2795.833252, -604.166626}, -- Deepholm
+	},
+]]
+-- Oct. 21, 2014: updated to 19207
+	-- Draenor / World of Draenor
+	-- Map ID: 1116
+	["Draenor"] = {
+		[941] = {7506.25, 1391.670044, 8275, 4197.919922}, -- FrostfireRidge
+		[945] = {1506.25, -3481.25, 5760.419922, 2435.419922}, -- TanaanJungle
+		[946] = {5833.330078, -129.1660004, 4429.169922, 454.1659851}, -- Talador
+		[947] = {2268.75, -4431.25, 2660.419922, -1806.25}, -- ShadowmoonValleyDR
+		[948] = {4681.25, -1379.170044, 1383.329956, -2656.25}, -- SpiresOfArak
+		[949] = {5066.669922, -3110.419922, 9589.580078, 4139.580078}, -- Gorgrond
+		[950] = {9308.330078, 3633.330078, 4922.919922, 1139.579956}, -- NagrandDraenor
+		[962] = {12242.34375, -10493.43848, 11193, -3964.1875}, -- Draenor
+		[971] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance
+		[973] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance_tier1
+		[974] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance_tier3
+		[975] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance_tier4
+		[976] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde
+		[978] = {-2672.919922, -5795.830078, 5577.080078, 3495.830078}, -- Ashran
+		[980] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde_tier1
+		[981] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde_tier3
+		[982] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde_tier4
+		[990] = {4885.416016, 4183.333008, 5814.583008, 5345.833008}, -- garrisonffhorde_tier2
+		[991] = {545.8339844, -137.5, 2091.666992, 1635.416992}, -- garrisonsmvalliance_tier2
+		[1009] = {-3625, -4312.5, 3908.333008, 3450}, -- AshranAllianceFactionHub
+		[1011] = {-3589.583984, -4389.583984, 5541.666016, 5008.333008}, -- AshranHordeFactionHub
+
+	},
 }
 
 -- WorldSafeLocs.dbc
 -- Locations of where you spawn as a ghost when you die (aka.. the graveyard spawn points). 
--- Feb. 28, 2013: updated to 16634
+-- Oct. 21, 2014: updated to 19041
 Yatlas_graveyards = {
-	["Azeroth"] = {
-		{-9115, 423}, 	--Stormwind
-		{-9193.910156, -2312.77002}, 	--Redridge Mountains
-		{-10774.2627, -1189.671875}, 	--Duskwood, Darkshire
-		{-10527.49805, 1165.734375}, 	--Westfall, Sentinel Hill GY
-		{-5687, -515}, 	--Dun Morogh
-		{-5351.229004, -2881.582275}, 	--Loch Modan, Thelsamar
-		{-3289.123779, -2435.991211}, 	--Wetlands, Crossroads GY
-		{-6289.852539, -3493.059082}, 	--Badlands, Graveyard NE 
-		{-11110.37695, -1833.240723}, 	--Deadwind Pass, Morgan's Plot
-		{1882.939941, 1629.109985}, 	--Tirisfal Glades, Deathknell
-		{1822.609985, 214.673996}, 	--Tirisfal Glades, Undercity
-		{516.1943359, 1589.806641}, 	--Silverpine Forest, The Sepulcher
-		{-18.67768097, -981.1714478}, 	--Hillsbrad Foothills, Tarren Mill
-		{-1307.655151, -3192.148926}, 	--Arathi Highlands, Eastern Road
-		{-6164.226074, 336.3211365}, 	--Dun Morogh, Anvilmar
-		{-5680.044434, -518.9204712}, 	--Dun Morogh, Kharanos
-		{-5049.450195, -809.6970215}, 	--Dun Morogh, Ironforge
-		{-6980.509766, -2332.540039}, 	--Badlands, Kargath
-		{-9396.769531, -2026}, 	--Redridge Mountains, Lakeshire
-		{-8941.30957, -185.1779938}, 	--Elwynn Forest, Northshire
-		{-9339.719727, 170.1999969}, 	--Elwynn Forest, Goldshire
-		{-9151.980469, 410.9440002}, 	--Elwynn Forest, Stormwind
-		{-10567.7998, -3377.199951}, 	--Swamp of Sorrows, Stonard GY
-		{-14283.44434, 293.40625}, 	--Stranglethorn Vale, Booty Bay GY
-		{-732.7993774, -592.5019531}, 	--Hillsbrad Foothills, Southshore
-		{2348.669922, 492.0270081}, 	--Tirisfal Glades, Brill
-		{323.5126343, -2227.195801}, 	--The Hinterlands, Aerie Peak
-		{-10846.59961, -2949.340088}, 	--Blasted Lands, Dreadmaul Hold GY
-		{-11542.50684, -228.4635468}, 	--Stranglethorn Vale, Northern Stranglethorn GY
-		{2604.52002, -543.3900146}, 	--Tirisfal Glades, Faol's Rest
-		{-3347.719971, -856.7130127}, 	--Wetlands, Baradin Bay GY
-		{908.3233032, -1520.286133}, 	--Western Plaguelands, Chillwind Camp
-		{2054.919922, -5021.540039}, 	--Eastern Plaguelands, Pestilent Scar
-		{1750.343506, -669.789856}, 	--Western Plaguelands, Bulwark
-		{908.3233032, -1520.286133}, 	--TEST for GM Client Only - Do Not Bug
-		{1390.180054, -3699.5}, 	--Eastern Plaguelands, Darrowshire
-		{-6450.609863, -1113.51001}, 	--Searing Gorge, Thorium Point
-		{-191.9660034, -4340.859863}, 	--The Hinterlands, The Overlook Cliffs
-		{101.1439972, -184.9340057}, 	--Alterac Valley, Alliance Exit
-		{536.4949951, -1085.719971}, 	--Alterac Valley, Horde Exit
-		{-5165.52002, -874.6640015}, 	--Dun Morogh, Gates of Ironforge
-		{1780.109985, 221.7610016}, 	--Tirisfal Glades, Ruins of Lordaeron
-		{-9552.459961, -1374.050049}, 	--Elwynn Forest, Eastvale Logging Camp
-		{1236.890015, -2411.98999}, 	--Western Plaguelands, Caer Darrow
-		{-831.8809814, -3518.52002}, 	--Arathi Basin - Horde Exit
-		{-1215.589966, -2531.75}, 	--Arathi Basin - Alliance Exit
-		{2647.550049, -4014.389893}, 	--Eastern Plaguelands, Blackwood Lake
-		{-10606.7998, 294.0480042}, 	--Duskwood, Ravenhill
-		{1980.119995, -3654.600098}, 	--Eastern Plaguelands, Graveyard CG Tower
-		{101.1439972, -184.9340057}, 	--Alterac Valley, Alliance Exit
-		{101.1439972, -184.9340057}, 	--Alterac Valley, Alliance Exit
-		{-382.9114685, 1117.41626}, 	--Silverpine Forest, South GY
-		{1839.768433, -2149.68457}, 	--Western Plaguelands, Central GY
-		{-6867.313477, -1539.837891}, 	--Searing Gorge, SE GY
-		{-7101.034668, -3488.314209}, 	--Badlands, South GY
-		{791.432373, -419.448822}, 	--Alterac Valley - DO NOT EDIT
-		{2366.632813, -5774.416504}, 	--Eastern Plaguelands, Ebon Hold GY
-		{-8290.62207, 1403.522217}, 	--Stormwind City, Stormwind Safe
-		{977.8510132, 1283.699951}, 	--The Great Sea - Safe Point Tirisfal
-		{2359.219971, -5661.060059}, 	--Eastern Plaguelands: Acherus
-		{1773.330322, 768.8083496}, 	--Undercity - Alliance - Wrath Gate
-		{791.432373, -419.448822}, 	--AAAAA Test Port Loc
-		{801.3300171, -429.9500122}, 	--Alterac Mountains - Central GY
-		{-1343.262329, -2046.725708}, 	--Arathi Highlands, Stromgarde
-		{-898.7259521, -1473.56311}, 	--Hillsbrad Foothills, Thoradin's Wall
-		{3120.060059, -4811.370117}, 	--Eastern Plaguelands, Northdale
-		{3339.80249, -3229.784668}, 	--Eastern Plaguelands, Stratholme
-		{2208.664795, -2923.056641}, 	--Eastern Plaguelands, West GY
-		{2663.411865, -1725.172974}, 	--Western Plaguelands, Hearthglen
-		{-567.5830078, 124.7259979}, 	--Hillsbrad Foothills, Hillsbrad Fields GY
-		{581.7966309, -3827.56958}, 	--The Hinterlands, Seradane
-		{-192.3868256, -3043.90332}, 	--The Hinterlands, Shadra'Alor
-		{-2953.304932, -1758.102905}, 	--Wetlands, Sundown Marsh GY
-		{-3949.807373, -2876.526123}, 	--Wetlands, South Road GY
-		{-3343.097656, -3424.859619}, 	--Wetlands, Raptor Ridge GY
-		{-13205.57324, 272.703125}, 	--AAA - Arena (Dev Test)
-		{-12549.04883, -587.828125}, 	--Stranglethorn Vale, Central GY
-		{-12000.86621, 429.637146}, 	--Stranglethorn Vale, Savage Coast GY
-		{-10839.2334, -480.7642212}, 	--Duskwood, Central GY
-		{-11218.65527, 1711.245728}, 	--Westfall, Dagger Hills GY
-		{-9979.970703, 1757.777832}, 	--Westfall, Longshore
-		{-11806.7002, -2962.669922}, 	--Blasted Lands, Dark Portal GY
-		{-9955.629883, -3918.540039}, 	--Swamp of Sorrows, Alliance Hub GY
-		{-10347.2002, -2585.030029}, 	--Swamp of Sorrows, Splinterspear GY
-		{-9473.003906, -3009.032227}, 	--Redridge Mountains, Stonewatch
-		{-9564.740234, -605.881958}, 	--Elwynn Forest, Tower of Azora
-		{-7923.563477, -1353.225098}, 	--Burning Steppes, Blackrock Mountain
-		{-7596.939941, -1103.780029}, 	--Burning Steppes, East GY
-		{-5280.52002, 317.756012}, 	--Dun Morogh, Iceflow Lake
-		{-5475.179688, -1845.843994}, 	--Dun Morogh, East Road
-		{-5329.975586, -3779.334717}, 	--Loch Modan, The Loch
-		{-13323.20801, 154.6892395}, 	--Stranglethorn Vale, Gurubashi Arena GY
-		{-6800.419922, 4561.220215}, 	--Vashj'ir, Central Ruins GY
-		{-6118.899902, 4113.700195}, 	--Vashj'ir, Silver Tide Trench GY
-		{-5001.810059, 3444.669922}, 	--Vashj'ir, Mid Kelp Shelf GY
-		{-4630.959961, 3796.370117}, 	--Vashj'ir, Early Kelp Shelf GY
-		{-7227.220215, 4284.52002}, 	--Vashj'ir, Vrykul Shelf GY
-		{-2838.017334, -2569.807373}, 	--Wetlands, Near Dun Modr GY
-		{-6296.77002, 6046.689941}, 	--Vashj'ir, Marianas Face GY
-		{-6820.060059, 6121.640137}, 	--Vashj'ir, Korthun's End GY
-		{-5845.600098, 6797.459961}, 	--Vashj'ir, Deepfin Ridge GY
-		{-4911.240234, -1686.97998}, 	--Dun Morogh, Ironforge Airfield
-		{-7588.819824, -1114.680054}, 	--Burning Steppes, Forgewright's Tomb
-		{-8466.129883, 902.3460083}, 	--Stormwind Cemetery, GY
-		{-10635.2998, -4006.969971}, 	--Swamp of Sorrows, Pool of Tears GY
-		{-12186.7998, -3280.540039}, 	--Blasted Lands, Red Reaches GY
-		{-12186, -2566.580078}, 	--Blasted Lands, Tainted Forest GY
-		{-5587.100098, 5456.669922}, 	--Vashj'ir, The Abyssal Maw
-		{-12920.59961, -345.0759888}, 	--Stranglethorn Vale - Corpse Catcher 000
-		{-12834.2998, -337.0450134}, 	--Stranglethorn Vale - Corpse Catcher 001
-		{-12731.09961, -125.6930008}, 	--Stranglethorn Vale - Corpse Catcher 002
-		{-12766.59961, -22.4375}, 	--Stranglethorn Vale - Corpse Catcher 003
-		{-3064.449951, -4090.780029}, 	--Twilight Highlands, Vermillion Redoubt GY
-		{-2721.929932, -5637.990234}, 	--Twilight Highlands, Kirthaven GY
-		{-2733.639893, -5936.390137}, 	--Twilight Highlands, Krazzworks GY
-		{-3897.870117, -6230.069824}, 	--Twilight Highlands, Dragonmaw Port GY
-		{-4204.080078, -5461.910156}, 	--Twilight Highlands, Smoot's Patrol GY
-		{-4674.140137, -6372.620117}, 	--Twilight Highlands, Twilight Shore GY
-		{1880.22998, -1680.630005}, 	--Western Plaguelands, Argent Areal GY
-		{-908.7139893, 1625.819946}, 	--Ruins of Gilneas, Forward Command GY
-		{-1189.589966, 1153.469971}, 	--Ruins of Gilneas, Emberstone Village GY
-		{-4153.02002, -3690.399902}, 	--Twilight Highlands, Grim Batol GY
-		{-4146.430176, -4775.140137}, 	--Twilight Highlands, Victory Point GY
-		{-4796.930176, -4870.529785}, 	--Twilight Highlands, Crushblow GY
-		{-3720.149902, -5189.950195}, 	--Twilight Highlands, Bloodgulch GY
-		{-7987.379883, -2369.320068}, 	--Burning Steppes, Center East GY
-		{-4637.220215, -4040.620117}, 	--Twilight Highlands, The Twilight Citadel GY
-		{-6556.950195, -1957.02002}, 	--Searing Gorge, Dustfire GY
-		{-7316.970215, -1648.839966}, 	--Searing Gorge, Sea of Cinders GY
-		{-7292.379883, -976.3590088}, 	--Searing Gorge, Near Blackrock GY
-		{-6865.22998, -1081.079956}, 	--Searing Gorge, Micro Entrance GY
-		{-1227.869995, 412.5}, 	--Hillsbrad Foothills, Purgation Isle GY
-		{-8786.879883, 829.0830078}, 	--Stormwind Stockade, GY
-		{-10976.40039, 1619.810059}, 	--Westfall, Moonbrook GY
-		{-11217.09961, 1618.949951}, 	--Westfall, Deadmines (Micro) GY
-		{-225.2169952, 1519.329956}, 	--Silverpine Forest, Shadowfang Keep GY
-		{2837.590088, -679.151001}, 	--Tirisfal Glades, Scarlet Monastery GY
-		{-6081.310059, -2972.030029}, 	--Badlands, Uldaman GY
-		{-10289.5, -3978.399902}, 	--Swamp of Sorrows, Sunken Temple GY
-		{-7195.669922, -911.4550171}, 	--Burning Steppes, Blackrock Depths GY
-		{1187.339966, -2613.550049}, 	--Western Plaguelands, Scholo GY
-		{-7533.830078, -1214.670044}, 	--Burning Steppes, Blackrock Spire GY
-		{-5117.830078, 896.242981}, 	--Dun Morogh, Gnomeregan (Micro) GY
-		{-5092.169922, -5852.629883}, 	--Twilight Highlands, Forbidding Sea (Obsidian Forest) GY
-		{-6550.589844, -4681.540039}, 	--Badlands, Forbidding Sea GY
-		{-11947.59961, -982.7340088}, 	--Stranglethorn Vale, Zul'Gurub GY
-		{3158.429932, -4049.219971}, 	--Eastern Plaguelands, Stratholme (Back Entrance)
-		{-8831.810547, 629.43927}, 	--Stormwind City - Scroll of Resurrection Alliance Start
-		{-8661.570313, 616.5739746}, 	--Stormwind High Prison Exit Target
-		{-11208, 1676.410034}, 	--Deadmines Exit Front Target
-		{-232.5939941, 1567.670044}, 	--Shadowfang Bridge Exit Target
-		{-6066.359863, -2954.850098}, 	--Uldaman Exit Target
-		{-5145.149902, 897.0540161}, 	--Gnomeregon Exit Target
-		{-10291.09961, -3984.649902}, 	--Sunken Temple Exit Target
-		{-8766.110352, 845.4990234}, 	--Stormwind Low Prison Exit Target
-		{-4915.379883, 811.7730103}, 	--Gnomeregon Exit 02 Target
-		{2915.340088, -801.5800171}, 	--Scarlet Monastery Exit Target 01
-		{2915.129883, -823.6370239}, 	--Scarlet Monastery Exit Target 02
-		{2885.959961, -835.802002}, 	--Scarlet Monastery Exit Target 03
-		{2869.320068, -820.8179932}, 	--Scarlet Monastery Exit Target 04
-		{-9014.94043, 873.3259888}, 	--Stormwind - Mage Exit Target
-		{-9016.969727, 885.4359741}, 	--Stormwind - Mage Entrance Target
-		{-6619.970215, -3765.73999}, 	--Uldaman Exit Target Rear
-		{-12412.5, 232.7310028}, 	--Grom'gol - Teleport Target from Gnomeregan
-		{-11104.7998, -2901.169922}, 	--Teleport to the bottom of Rise of the Defiler
-		{-7524.649902, -1229.130005}, 	--Blackrock Spire Exit Target
-		{-7178.410156, -922.1519775}, 	--Blackrock Depths exit Target
-		{-7558.390137, -1309.430054}, 	--Blackrock Spire - Target - Shaft
-		{-4839.509766, -1317.73999}, 	--Ironforge - Tram Exit Target 001
-		{-8359.269531, 517.585022}, 	--Stormwind - Tram Exit Target 001
-		{3233.060059, -4048.300049}, 	--Stratholme - Back Exit Target 001
-		{-276.2409973, 1652.680054}, 	--Shadowfang - South Fall Target
-		{-276.2409973, 1652.680054}, 	--Shadowfang - South Fall Target
-		{-225.3399963, 1556.530029}, 	--Shadowfang Front Fall Exit Target
-		{-225.3399963, 1556.530029}, 	--Shadowfang Front Fall Exit Target
-		{-181.2599945, 1580.650024}, 	--Shadowfang - North Fall Target
-		{-181.2599945, 1580.650024}, 	--Shadowfang - North Fall Target
-		{-8762.820313, 402.4339905}, 	--Stormwind - Barracks Exit Target 001
-		{1399.420044, -2574.590088}, 	--Scholomance - Exit Porch Target 001
-		{1399.420044, -2574.590088}, 	--Scholomance - Exit Porch Target 001
-		{1399.420044, -2574.590088}, 	--Scholomance - Exit Porch Target 001
-		{1273.910034, -2553.090088}, 	--Scholomance - Stairs Exit Target 001
-		{536.4949951, -1085.719971}, 	--Alterac Valley - Horde Exit Target
-		{101.1439972, -184.9340057}, 	--Alterac Valley - Alliance Exit Target
-		{-7508.319824, -1039.73999}, 	--Molten Core Exit Target
-		{-7524.649902, -1229.130005}, 	--Blackrock Spire Exit Target
-		{-1215.589966, -2531.75}, 	--Arathi Highlands - Arathi Basin Exit Target - Alliance
-		{-831.8809814, -3518.52002}, 	--Arathi Highlands - Arathi Basin Exit Target - Horde
-		{3362.149902, -3379.350098}, 	--Stratholme - ToWoW Teleport Target
-		{-11896.7998, -3206.77002}, 	--Dark Portal - E. Kingdoms Target
-		{3468.419922, -4479.600098}, 	--Eastern Plaguelands - From Ghostlands Target
-		{-11113.5, -2006.630005}, 	--Karazhan - Front Exit Target
-		{-11036.7002, -2001.599976}, 	--Karazhan - Upper Exit Target
-		{2462.76001, -5598.189941}, 	--Ebon Hold (E.K.) Top Return Target
-		{2472.669922, -5530.100098}, 	--Ebon Hold (E.K.) Top West Target
-		{2462.76001, -5598.189941}, 	--Ebon Hold (E.K.) Top Return Target
-		{2397.370117, -5581.060059}, 	--Ebon Hold (E.K.) Top South Target
-		{2462.76001, -5598.189941}, 	--Ebon Hold (E.K.) Top Return Target
-		{2522.449951, -5605.700195}, 	--Ebon Hold (E.K.) Top North Target
-		{2462.76001, -5598.189941}, 	--Ebon Hold (E.K.) Top Return Target
-		{2448.02002, -5655.819824}, 	--Ebon Hold (E.K.) Top East Target
-		{2435.77002, -5610.339844}, 	--Ebon Hold (E.K.) Middle -> Bottom Target
-		{2435.77002, -5610.339844}, 	--Ebon Hold (E.K.) Middle -> Bottom Target
-		{2472.899902, -5530.640137}, 	--Ebon Hold (E.K.) Bottom -> Middle Target
-		{2415.159912, -5733.040039}, 	--Ebon Hold (E.K.) Bottom -> Ground Target
-		{-7571.140137, -1324.959961}, 	--Blackrock Caverns - Exit Target (in Eastern Kingdoms)
-		{-5592.830078, 5408.359863}, 	--Vashj'ir - Throne of Tides Exit Target
-		{-4058.399902, -3450.030029}, 	--Grim Batol Dungeon - Exit Target
-		{-5592.830078, 5408.359863}, 	--Vashj'ir - Throne of Tides Exit Target
-		{3392.409912, -3406.850098}, 	--Stratholme - Front Right Exit Target
-		{3393.169922, -3352.149902}, 	--Stratholme - Front Left Exit Target
-		{-6547.879883, -4443.240234}, 	--Badlands 4.x - Cliff Teleport Target
-		{-6519.819824, -4608.52002}, 	--Badlands 4.x - Dock Teleport Target
-		{-4892.189941, -4235.680176}, 	--Twilight Bastion - Exit Target
-		{-7538.799805, -1196.290039}, 	--Blackwing Descent - Exit Target (in Eastern Kingdoms)
-		{-12412.5, 232.7310028}, 	--Grom'gol - Teleport Target from Gnomeregan
-		{-12412.5, 232.7310028}, 	--Grom'gol - Teleport Target from Gnomeregan
-		{-11916.2002, -1209.469971}, 	--Zul'Gurub 4.1 - Exit Target
-		{1273.910034, -2553.090088}, 	--Scholomance - Stairs Exit Target 001
-		{-9100.003906, 409.038208}, 	--TEST - Eastern Kingdoms Pet Battle Arena Loc
-		{-230.9889984, 1571.569946}, 	--Corpse Location: 33 - Shadowfang Keep
-		{-8762.378906, 848.0103149}, 	--Corpse Location: 34 - Stormwind Stockade
-		{-11207.7998, 1681.150024}, 	--Corpse Location: 36 - Deadmines
-		{-6060.181641, -2954.997314}, 	--Corpse Location: 70 - Uldaman
-		{-5162.661621, 931.5987549}, 	--Corpse Location: 90 - Gnomeregan
-		{-10291.7002, -3987.629883}, 	--Corpse Location: 109 - Sunken Temple
-		{2892.235352, -811.2636719}, 	--Corpse Location: 189 - Scarlet Monastery - OLD
-		{-7522.526855, -1233.041504}, 	--Corpse Location: 229 - Blackrock Spire
-		{-7178.094727, -928.6394653}, 	--Corpse Location: 230 - Blackrock Depths
-		{1274.78125, -2552.563965}, 	--Corpse Location: 289 - Scholomance OLD
-		{-11916.05957, -1224.577148}, 	--Corpse Location: 309 - Ancient Zul'Gurub
-		{3392.316895, -3378.483154}, 	--Corpse Location: 329 - Stratholme
-		{-8349.223633, 517.3479614}, 	--Corpse Location: 369 - Deeprun Tram
-		{-7510.564941, -1036.69812}, 	--Corpse Location: 409 - Molten Core
-		{-7663.412598, -1218.666504}, 	--Corpse Location: 469 - Blackwing Lair
-		{-11110.40723, -2004.065308}, 	--Corpse Location: 532 - Karazhan
-		{-5585.871582, 5401.649414}, 	--Corpse Location: 643 - Throne of the Tides
-		{-7570.244629, -1330.684082}, 	--Corpse Location: 645 - Blackrock Caverns
-		{-7541.767578, -1188.831665}, 	--Corpse Location: 669 - Blackwing Descent
-		{-4047.73999, -3446.350098}, 	--Corpse Location: 670 - Grim Batol
-		{-4903.010254, -4221.209961}, 	--Corpse Location: 671 - The Bastion of Twilight
-		{-11916.22852, -1219.838501}, 	--Corpse Location: 859 - Zul'Gurub
-		{2869, -820}, 	--Corpse Location: 1001 - Scarlet Halls
-		{1274.780029, -2552.560059}, 	--Corpse Location: 1007 - Scholomance
-		{3237.344727, -4058.776123}, 	--Corpse Location: 329 - Stratholme - Service Entrance
-		{-11341.01758, 1576.548584}, 	--Deadmines Rear Exit Target
-		{-8876.509766, 582.8099976}, 	--Stormwind (Pet Battle Arena)
-		{1722.829956, 122.2259979}, 	--Undercity
-		{-12479.09961, -785.6190186}, 	--Stranglethorn Vale
-		{-10558, -1210.939941}, 	--Duskwood
-		{-4993.509766, -959.40802}, 	--Ironforge
-		{2917.734375, -800.140625}, 	--Corpse Location: 1004 - Scarlet Monastery
-		{-8288.799805, 628.8389893}, 	--Stormwind - North GY
-		{-11143.7998, -2097.159912}, 	--Karazhan
+	["Azeroth"] = 
+	{
+--[[
+		{-9115, 423}, 	-- Stormwind
+		{-9193.910156, -2312.77002}, 	-- Redridge Mountains
+		{-10774.2627, -1189.671875}, 	-- Duskwood, Darkshire
+		{-10527.49805, 1165.734375}, 	-- Westfall, Sentinel Hill GY
+		{-5687, -515}, 	-- Dun Morogh
+		{-5351.229004, -2881.582275}, 	-- Loch Modan, Thelsamar
+		{-3289.123779, -2435.991211}, 	-- Wetlands, Crossroads GY
+		{-6289.852539, -3493.059082}, 	-- Badlands, Graveyard NE 
+		{-11110.37695, -1833.240723}, 	-- Deadwind Pass, Morgan's Plot
+		{1882.939941, 1629.109985}, 	-- Tirisfal Glades, Deathknell
+		{1822.609985, 214.673996}, 	-- Tirisfal Glades, Undercity
+		{516.1943359, 1589.806641}, 	-- Silverpine Forest, The Sepulcher
+		{-18.67768097, -981.1714478}, 	-- Hillsbrad Foothills, Tarren Mill
+		{-1307.655151, -3192.148926}, 	-- Arathi Highlands, Eastern Road
+		{-6164.226074, 336.3211365}, 	-- Dun Morogh, Anvilmar
+		{-5680.044434, -518.9204712}, 	-- Dun Morogh, Kharanos
+		{-5049.450195, -809.6970215}, 	-- Dun Morogh, Ironforge
+		{-6980.509766, -2332.540039}, 	-- Badlands, Kargath
+		{-9396.769531, -2026}, 	-- Redridge Mountains, Lakeshire
+		{-8941.30957, -185.1779938}, 	-- Elwynn Forest, Northshire
+		{-9339.719727, 170.1999969}, 	-- Elwynn Forest, Goldshire
+		{-9151.980469, 410.9440002}, 	-- Elwynn Forest, Stormwind
+		{-10567.7998, -3377.199951}, 	-- Swamp of Sorrows, Stonard GY
+		{-14283.44434, 293.40625}, 	-- Stranglethorn Vale, Booty Bay GY
+		{-732.7993774, -592.5019531}, 	-- Hillsbrad Foothills, Southshore
+		{2348.669922, 492.0270081}, 	-- Tirisfal Glades, Brill
+		{323.5126343, -2227.195801}, 	-- The Hinterlands, Aerie Peak
+		{-10846.59961, -2949.340088}, 	-- Blasted Lands, Dreadmaul Hold GY
+		{-11542.50684, -228.4635468}, 	-- Stranglethorn Vale, Northern Stranglethorn GY
+		{2604.52002, -543.3900146}, 	-- Tirisfal Glades, Faol's Rest
+		{-3347.719971, -856.7130127}, 	-- Wetlands, Baradin Bay GY
+		{908.3233032, -1520.286133}, 	-- Western Plaguelands, Chillwind Camp
+		{2054.919922, -5021.540039}, 	-- Eastern Plaguelands, Pestilent Scar
+		{1750.343506, -669.789856}, 	-- Western Plaguelands, Bulwark
+		{908.3233032, -1520.286133}, 	-- TEST for GM Client Only - Do Not Bug
+		{1390.180054, -3699.5}, 	-- Eastern Plaguelands, Darrowshire
+		{-6450.609863, -1113.51001}, 	-- Searing Gorge, Thorium Point
+		{-191.9660034, -4340.859863}, 	-- The Hinterlands, The Overlook Cliffs
+		{101.1439972, -184.9340057}, 	-- Alterac Valley, Alliance Exit
+		{536.4949951, -1085.719971}, 	-- Alterac Valley, Horde Exit
+		{-5165.52002, -874.6640015}, 	-- Dun Morogh, Gates of Ironforge
+		{1780.109985, 221.7610016}, 	-- Tirisfal Glades, Ruins of Lordaeron
+		{-9552.459961, -1374.050049}, 	-- Elwynn Forest, Eastvale Logging Camp
+		{1236.890015, -2411.98999}, 	-- Western Plaguelands, Caer Darrow
+		{-831.8809814, -3518.52002}, 	-- Arathi Basin - Horde Exit
+		{-1215.589966, -2531.75}, 	-- Arathi Basin - Alliance Exit
+		{2647.550049, -4014.389893}, 	-- Eastern Plaguelands, Blackwood Lake
+		{-10606.7998, 294.0480042}, 	-- Duskwood, Ravenhill
+		{1980.119995, -3654.600098}, 	-- Eastern Plaguelands, Graveyard CG Tower
+		{101.1439972, -184.9340057}, 	-- Alterac Valley, Alliance Exit
+		{101.1439972, -184.9340057}, 	-- Alterac Valley, Alliance Exit
+		{-382.9114685, 1117.41626}, 	-- Silverpine Forest, South GY
+		{1839.768433, -2149.68457}, 	-- Western Plaguelands, Central GY
+		{-6867.313477, -1539.837891}, 	-- Searing Gorge, SE GY
+		{-7101.034668, -3488.314209}, 	-- Badlands, South GY
+		{791.432373, -419.448822}, 	-- Alterac Valley - DO NOT EDIT
+		{2366.632813, -5774.416504}, 	-- Eastern Plaguelands, Ebon Hold GY
+		{-8290.62207, 1403.522217}, 	-- Stormwind City, Stormwind Safe
+		{977.8510132, 1283.699951}, 	-- The Great Sea - Safe Point Tirisfal
+		{2359.219971, -5661.060059}, 	-- Eastern Plaguelands: Acherus
+		{1773.330322, 768.8083496}, 	-- Undercity - Alliance - Wrath Gate
+		{791.432373, -419.448822}, 	-- AAAAA Test Port Loc
+		{801.3300171, -429.9500122}, 	-- Alterac Mountains - Central GY
+		{-1343.262329, -2046.725708}, 	-- Arathi Highlands, Stromgarde
+		{-898.7259521, -1473.56311}, 	-- Hillsbrad Foothills, Thoradin's Wall
+		{3120.060059, -4811.370117}, 	-- Eastern Plaguelands, Northdale
+		{3339.80249, -3229.784668}, 	-- Eastern Plaguelands, Stratholme
+		{2208.664795, -2923.056641}, 	-- Eastern Plaguelands, West GY
+		{2663.411865, -1725.172974}, 	-- Western Plaguelands, Hearthglen
+		{-567.5830078, 124.7259979}, 	-- Hillsbrad Foothills, Hillsbrad Fields GY
+		{581.7966309, -3827.56958}, 	-- The Hinterlands, Seradane
+		{-192.3868256, -3043.90332}, 	-- The Hinterlands, Shadra'Alor
+		{-2953.304932, -1758.102905}, 	-- Wetlands, Sundown Marsh GY
+		{-3949.807373, -2876.526123}, 	-- Wetlands, South Road GY
+		{-3343.097656, -3424.859619}, 	-- Wetlands, Raptor Ridge GY
+		{-13205.57324, 272.703125}, 	-- AAA - Arena (Dev Test)
+		{-12549.04883, -587.828125}, 	-- Stranglethorn Vale, Central GY
+		{-12000.86621, 429.637146}, 	-- Stranglethorn Vale, Savage Coast GY
+		{-10839.2334, -480.7642212}, 	-- Duskwood, Central GY
+		{-11218.65527, 1711.245728}, 	-- Westfall, Dagger Hills GY
+		{-9979.970703, 1757.777832}, 	-- Westfall, Longshore
+		{-11806.7002, -2962.669922}, 	-- Blasted Lands, Dark Portal GY
+		{-9955.629883, -3918.540039}, 	-- Swamp of Sorrows, Alliance Hub GY
+		{-10347.2002, -2585.030029}, 	-- Swamp of Sorrows, Splinterspear GY
+		{-9473.003906, -3009.032227}, 	-- Redridge Mountains, Stonewatch
+		{-9564.740234, -605.881958}, 	-- Elwynn Forest, Tower of Azora
+		{-7923.563477, -1353.225098}, 	-- Burning Steppes, Blackrock Mountain
+		{-7596.939941, -1103.780029}, 	-- Burning Steppes, East GY
+		{-5280.52002, 317.756012}, 	-- Dun Morogh, Iceflow Lake
+		{-5475.179688, -1845.843994}, 	-- Dun Morogh, East Road
+		{-5329.975586, -3779.334717}, 	-- Loch Modan, The Loch
+		{-13323.20801, 154.6892395}, 	-- Stranglethorn Vale, Gurubashi Arena GY
+		{-6800.419922, 4561.220215}, 	-- Vashj'ir, Central Ruins GY
+		{-6118.899902, 4113.700195}, 	-- Vashj'ir, Silver Tide Trench GY
+		{-5001.810059, 3444.669922}, 	-- Vashj'ir, Mid Kelp Shelf GY
+		{-4630.959961, 3796.370117}, 	-- Vashj'ir, Early Kelp Shelf GY
+		{-7227.220215, 4284.52002}, 	-- Vashj'ir, Vrykul Shelf GY
+		{-2838.017334, -2569.807373}, 	-- Wetlands, Near Dun Modr GY
+		{-6296.77002, 6046.689941}, 	-- Vashj'ir, Marianas Face GY
+		{-6820.060059, 6121.640137}, 	-- Vashj'ir, Korthun's End GY
+		{-5845.600098, 6797.459961}, 	-- Vashj'ir, Deepfin Ridge GY
+		{-4911.240234, -1686.97998}, 	-- Dun Morogh, Ironforge Airfield
+		{-7588.819824, -1114.680054}, 	-- Burning Steppes, Forgewright's Tomb
+		{-8466.129883, 902.3460083}, 	-- Stormwind Cemetery, GY
+		{-10635.2998, -4006.969971}, 	-- Swamp of Sorrows, Pool of Tears GY
+		{-12186.7998, -3280.540039}, 	-- Blasted Lands, Red Reaches GY
+		{-12186, -2566.580078}, 	-- Blasted Lands, Tainted Forest GY
+		{-5587.100098, 5456.669922}, 	-- Vashj'ir, The Abyssal Maw
+		{-12920.59961, -345.0759888}, 	-- Stranglethorn Vale - Corpse Catcher 000
+		{-12834.2998, -337.0450134}, 	-- Stranglethorn Vale - Corpse Catcher 001
+		{-12731.09961, -125.6930008}, 	-- Stranglethorn Vale - Corpse Catcher 002
+		{-12766.59961, -22.4375}, 	-- Stranglethorn Vale - Corpse Catcher 003
+		{-3064.449951, -4090.780029}, 	-- Twilight Highlands, Vermillion Redoubt GY
+		{-2721.929932, -5637.990234}, 	-- Twilight Highlands, Kirthaven GY
+		{-2733.639893, -5936.390137}, 	-- Twilight Highlands, Krazzworks GY
+		{-3897.870117, -6230.069824}, 	-- Twilight Highlands, Dragonmaw Port GY
+		{-4204.080078, -5461.910156}, 	-- Twilight Highlands, Smoot's Patrol GY
+		{-4674.140137, -6372.620117}, 	-- Twilight Highlands, Twilight Shore GY
+		{1880.22998, -1680.630005}, 	-- Western Plaguelands, Argent Areal GY
+		{-908.7139893, 1625.819946}, 	-- Ruins of Gilneas, Forward Command GY
+		{-1189.589966, 1153.469971}, 	-- Ruins of Gilneas, Emberstone Village GY
+		{-4153.02002, -3690.399902}, 	-- Twilight Highlands, Grim Batol GY
+		{-4146.430176, -4775.140137}, 	-- Twilight Highlands, Victory Point GY
+		{-4796.930176, -4870.529785}, 	-- Twilight Highlands, Crushblow GY
+		{-3720.149902, -5189.950195}, 	-- Twilight Highlands, Bloodgulch GY
+		{-7987.379883, -2369.320068}, 	-- Burning Steppes, Center East GY
+		{-4637.220215, -4040.620117}, 	-- Twilight Highlands, The Twilight Citadel GY
+		{-6556.950195, -1957.02002}, 	-- Searing Gorge, Dustfire GY
+		{-7316.970215, -1648.839966}, 	-- Searing Gorge, Sea of Cinders GY
+		{-7292.379883, -976.3590088}, 	-- Searing Gorge, Near Blackrock GY
+		{-6865.22998, -1081.079956}, 	-- Searing Gorge, Micro Entrance GY
+		{-1227.869995, 412.5}, 	-- Hillsbrad Foothills, Purgation Isle GY
+		{-8786.879883, 829.0830078}, 	-- Stormwind Stockade, GY
+		{-10976.40039, 1619.810059}, 	-- Westfall, Moonbrook GY
+		{-11217.09961, 1618.949951}, 	-- Westfall, Deadmines (Micro) GY
+		{-225.2169952, 1519.329956}, 	-- Silverpine Forest, Shadowfang Keep GY
+		{2837.590088, -679.151001}, 	-- Tirisfal Glades, Scarlet Monastery GY
+		{-6081.310059, -2972.030029}, 	-- Badlands, Uldaman GY
+		{-10289.5, -3978.399902}, 	-- Swamp of Sorrows, Sunken Temple GY
+		{-7195.669922, -911.4550171}, 	-- Burning Steppes, Blackrock Depths GY
+		{1187.339966, -2613.550049}, 	-- Western Plaguelands, Scholo GY
+		{-7533.830078, -1214.670044}, 	-- Burning Steppes, Blackrock Spire GY
+		{-5117.830078, 896.242981}, 	-- Dun Morogh, Gnomeregan (Micro) GY
+		{-5092.169922, -5852.629883}, 	-- Twilight Highlands, Forbidding Sea (Obsidian Forest) GY
+		{-6550.589844, -4681.540039}, 	-- Badlands, Forbidding Sea GY
+		{-11947.59961, -982.7340088}, 	-- Stranglethorn Vale, Zul'Gurub GY
+		{3158.429932, -4049.219971}, 	-- Eastern Plaguelands, Stratholme (Back Entrance)
+		{-8831.810547, 629.43927}, 	-- Stormwind City - Scroll of Resurrection Alliance Start
+		{-8661.570313, 616.5739746}, 	-- Stormwind High Prison Exit Target
+		{-11208, 1676.410034}, 	-- Deadmines Exit Front Target
+		{-232.5939941, 1567.670044}, 	-- Shadowfang Bridge Exit Target
+		{-6066.359863, -2954.850098}, 	-- Uldaman Exit Target
+		{-5145.149902, 897.0540161}, 	-- Gnomeregon Exit Target
+		{-10291.09961, -3984.649902}, 	-- Sunken Temple Exit Target
+		{-8766.110352, 845.4990234}, 	-- Stormwind Low Prison Exit Target
+		{-4915.379883, 811.7730103}, 	-- Gnomeregon Exit 02 Target
+		{2915.340088, -801.5800171}, 	-- Scarlet Monastery Exit Target 01
+		{2915.129883, -823.6370239}, 	-- Scarlet Monastery Exit Target 02
+		{2885.959961, -835.802002}, 	-- Scarlet Monastery Exit Target 03
+		{2869.320068, -820.8179932}, 	-- Scarlet Monastery Exit Target 04
+		{-9014.94043, 873.3259888}, 	-- Stormwind - Mage Exit Target
+		{-9016.969727, 885.4359741}, 	-- Stormwind - Mage Entrance Target
+		{-6619.970215, -3765.73999}, 	-- Uldaman Exit Target Rear
+		{-12412.5, 232.7310028}, 	-- Grom'gol - Teleport Target from Gnomeregan
+		{-11104.7998, -2901.169922}, 	-- Teleport to the bottom of Rise of the Defiler
+		{-7490.040039, -1324.319946}, 	-- Blackrock Spire Exit Target (New)
+		{-7178.410156, -922.1519775}, 	-- Blackrock Depths exit Target
+		{-7558.390137, -1309.430054}, 	-- Blackrock Spire - Target - Shaft
+		{-4839.509766, -1317.73999}, 	-- Ironforge - Tram Exit Target 001
+		{-8359.269531, 517.585022}, 	-- Stormwind - Tram Exit Target 001
+		{3233.060059, -4048.300049}, 	-- Stratholme - Back Exit Target 001
+		{-276.2409973, 1652.680054}, 	-- Shadowfang - South Fall Target
+		{-276.2409973, 1652.680054}, 	-- Shadowfang - South Fall Target
+		{-225.3399963, 1556.530029}, 	-- Shadowfang Front Fall Exit Target
+		{-225.3399963, 1556.530029}, 	-- Shadowfang Front Fall Exit Target
+		{-181.2599945, 1580.650024}, 	-- Shadowfang - North Fall Target
+		{-181.2599945, 1580.650024}, 	-- Shadowfang - North Fall Target
+		{-8762.820313, 402.4339905}, 	-- Stormwind - Barracks Exit Target 001
+		{1399.420044, -2574.590088}, 	-- Scholomance - Exit Porch Target 001
+		{1399.420044, -2574.590088}, 	-- Scholomance - Exit Porch Target 001
+		{1399.420044, -2574.590088}, 	-- Scholomance - Exit Porch Target 001
+		{1273.910034, -2553.090088}, 	-- Scholomance - Stairs Exit Target 001
+		{536.4949951, -1085.719971}, 	-- Alterac Valley - Horde Exit Target
+		{101.1439972, -184.9340057}, 	-- Alterac Valley - Alliance Exit Target
+		{-7508.319824, -1039.73999}, 	-- Molten Core Exit Target
+		{-7524.649902, -1229.130005}, 	-- Blackrock Spire Exit Target
+		{-1215.589966, -2531.75}, 	-- Arathi Highlands - Arathi Basin Exit Target - Alliance
+		{-831.8809814, -3518.52002}, 	-- Arathi Highlands - Arathi Basin Exit Target - Horde
+		{3362.149902, -3379.350098}, 	-- Stratholme - ToWoW Teleport Target
+		{-11896.7998, -3206.77002}, 	-- Dark Portal - E. Kingdoms Target
+		{3468.419922, -4479.600098}, 	-- Eastern Plaguelands - From Ghostlands Target
+		{-11113.5, -2006.630005}, 	-- Karazhan - Front Exit Target
+		{-11036.7002, -2001.599976}, 	-- Karazhan - Upper Exit Target
+		{2462.76001, -5598.189941}, 	-- Ebon Hold (E.K.) Top Return Target
+		{2472.669922, -5530.100098}, 	-- Ebon Hold (E.K.) Top West Target
+		{2462.76001, -5598.189941}, 	-- Ebon Hold (E.K.) Top Return Target
+		{2397.370117, -5581.060059}, 	-- Ebon Hold (E.K.) Top South Target
+		{2462.76001, -5598.189941}, 	-- Ebon Hold (E.K.) Top Return Target
+		{2522.449951, -5605.700195}, 	-- Ebon Hold (E.K.) Top North Target
+		{2462.76001, -5598.189941}, 	-- Ebon Hold (E.K.) Top Return Target
+		{2448.02002, -5655.819824}, 	-- Ebon Hold (E.K.) Top East Target
+		{2435.77002, -5610.339844}, 	-- Ebon Hold (E.K.) Middle -> Bottom Target
+		{2435.77002, -5610.339844}, 	-- Ebon Hold (E.K.) Middle -> Bottom Target
+		{2472.899902, -5530.640137}, 	-- Ebon Hold (E.K.) Bottom -> Middle Target
+		{2415.159912, -5733.040039}, 	-- Ebon Hold (E.K.) Bottom -> Ground Target
+		{-7571.140137, -1324.959961}, 	-- Blackrock Caverns - Exit Target (in Eastern Kingdoms)
+		{-5592.830078, 5408.359863}, 	-- Vashj'ir - Throne of Tides Exit Target
+		{-4058.399902, -3450.030029}, 	-- Grim Batol Dungeon - Exit Target
+		{-5592.830078, 5408.359863}, 	-- Vashj'ir - Throne of Tides Exit Target
+		{3392.409912, -3406.850098}, 	-- Stratholme - Front Right Exit Target
+		{3393.169922, -3352.149902}, 	-- Stratholme - Front Left Exit Target
+		{-6547.879883, -4443.240234}, 	-- Badlands 4.x - Cliff Teleport Target
+		{-6519.819824, -4608.52002}, 	-- Badlands 4.x - Dock Teleport Target
+		{-4892.189941, -4235.680176}, 	-- Twilight Bastion - Exit Target
+		{-7538.799805, -1196.290039}, 	-- Blackwing Descent - Exit Target (in Eastern Kingdoms)
+		{-12412.5, 232.7310028}, 	-- Grom'gol - Teleport Target from Gnomeregan
+		{-12412.5, 232.7310028}, 	-- Grom'gol - Teleport Target from Gnomeregan
+		{-11916.2002, -1209.469971}, 	-- Zul'Gurub 4.1 - Exit Target
+		{1273.910034, -2553.090088}, 	-- Scholomance - Stairs Exit Target 001
+		{-9100.003906, 409.038208}, 	-- TEST - Eastern Kingdoms Pet Battle Arena Loc
+		{-230.9889984, 1571.569946}, 	-- Corpse Location: 33 - Shadowfang Keep
+		{-8762.378906, 848.0103149}, 	-- Corpse Location: 34 - Stormwind Stockade
+		{-11207.7998, 1681.150024}, 	-- Corpse Location: 36 - Deadmines
+		{-6060.181641, -2954.997314}, 	-- Corpse Location: 70 - Uldaman
+		{-5162.661621, 931.5987549}, 	-- Corpse Location: 90 - Gnomeregan
+		{-10291.7002, -3987.629883}, 	-- Corpse Location: 109 - Sunken Temple
+		{2892.235352, -811.2636719}, 	-- Corpse Location: 189 - Scarlet Monastery - OLD
+		{-7522.526855, -1233.041504}, 	-- Corpse Location: 229 - Blackrock Spire
+		{-7178.094727, -928.6394653}, 	-- Corpse Location: 230 - Blackrock Depths
+		{1274.78125, -2552.563965}, 	-- Corpse Location: 289 - Scholomance OLD
+		{-11916.05957, -1224.577148}, 	-- Corpse Location: 309 - Ancient Zul'Gurub
+		{3392.316895, -3378.483154}, 	-- Corpse Location: 329 - Stratholme
+		{-8349.223633, 517.3479614}, 	-- Corpse Location: 369 - Deeprun Tram
+		{-7510.564941, -1036.69812}, 	-- Corpse Location: 409 - Molten Core
+		{-7663.412598, -1218.666504}, 	-- Corpse Location: 469 - Blackwing Lair
+		{-11110.40723, -2004.065308}, 	-- Corpse Location: 532 - Karazhan
+		{-5585.871582, 5401.649414}, 	-- Corpse Location: 643 - Throne of the Tides
+		{-7570.244629, -1330.684082}, 	-- Corpse Location: 645 - Blackrock Caverns
+		{-7541.767578, -1188.831665}, 	-- Corpse Location: 669 - Blackwing Descent
+		{-4047.73999, -3446.350098}, 	-- Corpse Location: 670 - Grim Batol
+		{-4903.010254, -4221.209961}, 	-- Corpse Location: 671 - The Bastion of Twilight
+		{-11916.22852, -1219.838501}, 	-- Corpse Location: 859 - Zul'Gurub
+		{2869, -820}, 	-- Corpse Location: 1001 - Scarlet Halls
+		{1274.780029, -2552.560059}, 	-- Corpse Location: 1007 - Scholomance
+		{3237.344727, -4058.776123}, 	-- Corpse Location: 329 - Stratholme - Service Entrance
+		{-11341.01758, 1576.548584}, 	-- Deadmines Rear Exit Target
+		{-8876.509766, 582.8099976}, 	-- Stormwind (Pet Battle Arena)
+		{1722.829956, 122.2259979}, 	-- Undercity
+		{-12479.09961, -785.6190186}, 	-- Stranglethorn Vale
+		{-10558, -1210.939941}, 	-- Duskwood
+		{-4993.509766, -959.40802}, 	-- Ironforge
+		{2917.734375, -800.140625}, 	-- Corpse Location: 1004 - Scarlet Monastery
+		{-8288.799805, 628.8389893}, 	-- Stormwind - North GY
+		{-11143.7998, -2097.159912}, 	-- Karazhan
+		{-11756.2002, -3829.73999}, 	-- Horde - Character Upgrade - Blasted Lands Hearth Loc
+		{-11277.7998, -3639.73999}, 	-- Alliance - Character Upgrade - Blasted Lands Hearth Loc
+		{-11756.2002, -3829.73999}, 	-- Horde - Character Upgrade - Blasted Lands Start Loc
+		{-11277.7998, -3639.73999}, 	-- Alliance - Character Upgrade - Blasted Lands Start Loc
+		{-11279.36816, -3674.831543}, 	-- 6.0 Invasion - Blasted Lands, Camp (A) GY
+		{-11754.82129, -3834.894043}, 	-- 6.0 Invasion - Blasted Lands, Camp (H) GY
+		{-7516.25, -1333.5}, 	-- Lower Blackrock Spire - Exit Teleport
+]]
 	},
-	["Kalimdor"] = {
-		{-592.6014404, -2523.492432}, 	--The Barrens, The Crossroads
-		{-448.3108826, 2512.645752}, 	--Desolace, Ethel Rethor GY
-		{233.2638855, -4793.625}, 	--Durotar, Razor Hill GY
-		{1358.550049, -4436.529785}, 	--Durotar, Orgrimmar GY
-		{-2942.232666, -152.503479}, 	--Mulgore, Red Cloud Mesa GY
-		{7158.04541, -486.7354736}, 	--Darkshore, New Auberdine GY
-		{-4612.339844, -1890.459961}, 	--Thousand Needles, The Great Lift GY (OLD)
-		{-6432.256348, -278.2921143}, 	--Silithus, Valor's Rest
-		{-2175.65625, -341.5295105}, 	--Mulgore, Bloodhoof Village GY
-		{10054.2998, 2117.120117}, 	--Teldrassil, Darnassus GY
-		{9701.254883, 945.6204224}, 	--Teldrassil, Dolanaar GY
-		{2633.411133, -629.7351685}, 	--Ashenvale, Astranaar GY
-		{10384.80957, 811.531189}, 	--Teldrassil, Aldrassil GY
-		{8289.981445, 962.803833}, 	--Teldrassil, Rut'theran Village GY
-		{-3525.743164, -4315.373535}, 	--Dustwallow Marsh, Theramore Isle GY
-		{-7142.869629, -3885.302002}, 	--Tanaris, Gadgetzan GY
-		{-2517.647705, -1970.996582}, 	--The Barrens, Camp Taurajo GY
-		{-1081.400024, -3478.679932}, 	--The Barrens, Ratchet
-		{-4484.339844, 2142.22998}, 	--Feralas, New Feathermoon Stronghold GY (A)
-		{-4445.189941, 370.8370056}, 	--Feralas, Camp Mojache GY (H)
-		{-5353.120117, -3939.300049}, 	--Thousand Needles, Splithoof Heights GY (MOVED)
-		{4719.670898, -5954.722168}, 	--Azshara, Northern Azshara GY
-		{773.663208, 383.8767395}, 	--Stonetalon Mountains, Webwinder Path GY
-		{3809.428955, -1597.651001}, 	--Felwood, Morlos'Aran
-		{-7078.069824, -2404.27002}, 	--Un'Goro Crater, The Marshlands
-		{5243.961426, 180.9320221}, 	--Darkshore, Twilight Vale GY
-		{6876.944336, -4660.725586}, 	--Winterspring, Everlook GY
-		{2421.723633, -2953.618896}, 	--Ashenvale, Kargathia GY
-		{4028.299561, -5441.565918}, 	--Azshara, (Overlooks) The Shattered Strand GY
-		{4793.111816, -6845.921875}, 	--Azshara, Bitter Reaches GY
-		{-3127.586914, -3046.746582}, 	--Dustwallow Marsh, Brackenwall Village GY
-		{7425.867188, -2808.890625}, 	--Moonglade GY
-		{5953.008789, -1208.602417}, 	--Felwood, Irontree Woods
-		{-777.982666, -4984.777832}, 	--Durotar, Sen'jin Village GY
-		{-636.5020142, -4292.549805}, 	--Durotar, Valley of Trials GY
-		{1035.27002, -2104.280029}, 	--Warsong Gulch - Horde Exit Loc
-		{1459.170044, -1858.670044}, 	--Warsong Gulch - Alliance Exit Loc
-		{-4586.25, 1633.189941}, 	--Feralas, Dire Maul Stonemaul Hold GY
-		{1177.6875, -4464.067871}, 	--Durotar, Northern Durotar GY
-		{-981.78302, -74.63715363}, 	--Mulgore, Thunder Bluff GY
-		{-6831.317383, 891.4373169}, 	--Silithus, Cenarion Hold
-		{-7991.57373, 1557.803955}, 	--Silithus, Scarab Wall (AQ Only)
-		{-8557.234375, -4470.852539}, 	--Tanaris, CoT GY
-		{-4032.190918, -3413.807373}, 	--Dustwallow Marsh, Tabetha's GY
-		{-4632.75, -3129.428955}, 	--Dustwallow Marsh, Mudsprocket GY
-		{-7353.196289, -1315.427124}, 	--Un'Goro Crater, Central GY
-		{-6160.104004, -1142.501709}, 	--Un'Goro Crater, Marshal's GY
-		{476.1875, 1469.838501}, 	--Stonetalon Mountains, Charred Vale GY
-		{2730.087646, 1286.925415}, 	--Stonetalon Mountains, Peak GY
-		{-7754.589844, -4972.009766}, 	--Tanaris, Pirate GY
-		{-8642.400391, -4036.929932}, 	--Tanaris, Central GY
-		{5633.320313, -4758.878418}, 	--Winterspring, South GY
-		{6499.684082, -2383.901123}, 	--Winterspring, West GY
-		{-3971.572998, -2014.045166}, 	--The Barrens, South GY
-		{-6115.442871, -1339.496582}, 	--Un'Goro Crater, Shaper's Terrace GY
-		{-3769.467529, -4883.15625}, 	--Dustwallow Marsh, Theramore Safe
-		{1339.98999, -4477.609863}, 	--Durotar, Orgrimmar Safe 2
-		{7766.875, -4100.873535}, 	--Winterspring, Wintersaber GY
-		{6620.385254, -3541.751709}, 	--Winterspring, Crossroad GY
-		{4451.993164, -4289.873535}, 	--Winterspring, Darkwhisper GY
-		{2706.120605, -6097.32666}, 	--Azshara, Southern Azshara GY
-		{3529.19873, -6580.022461}, 	--Azshara, Bilgewater Harbor GY
-		{-1436.579956, 1972.800049}, 	--Desolace, Ghost Walker Post GY
-		{-1783.512329, 2857.267578}, 	--Desolace, Sar'theris Strand GY
-		{-1967.22229, 1723.910889}, 	--Desolace, Mannoroc Coven GY
-		{-1554.800049, 982.2199707}, 	--Desolace, Magram Village GY
-		{-479.875, 1223.390015}, 	--Desolace, Roadside GY
-		{2928.991943, 380.2510986}, 	--Ashenvale, Shrine of Aessina GY
-		{2291.299072, -1731.707642}, 	--Ashenvale, Nightsong GY
-		{1284.357666, -298.8888855}, 	--Stonetalon Mountains, Windshear Crag GY
-		{1697.927124, 1043.953125}, 	--Stonetalon Mountains, Mirkfallon GY
-		{161.3862915, -1693.857544}, 	--The Barrens, Forgotten Pools
-		{790.0621948, -2541.625977}, 	--The Barrens, North GY
-		{-1887.986572, -3055.971924}, 	--The Barrens, Raptor Grounds
-		{-1480.13208, -2143.872803}, 	--The Barrens, Central GY
-		{271.8382874, -3313.755371}, 	--The Barrens, East GY
-		{-2725.265625, -1115.392334}, 	--Mulgore, Southeast GY
-		{-1171.670166, -1129.756958}, 	--Mulgore, Red Rocks GY
-		{-5433.419922, -2290.76001}, 	--Thousand Needles, Freewind Post GY (MOVED)
-		{-6182.589844, -3990.899902}, 	--Thousand Needles, Speed Barge GY (MOVED)
-		{-9044.899414, -2721.878174}, 	--Tanaris, Southwest GY
-		{-7751.654785, -3010.435791}, 	--Tanaris, Abyssal Sands GY
-		{-5526.97998, 1450.469971}, 	--Feralas, Ruins of Isildien GY
-		{-4336.790039, -383.4859924}, 	--Feralas, Lower Wilds GY
-		{-3332.570068, 2276.820068}, 	--Feralas, Twin Colossals GY
-		{-7967.791504, 784.5016479}, 	--Silithus, Hive'Regal
-		{-7051.924805, 1290.272827}, 	--Silithus, Twilight Base Camp
-		{6252.282227, 240.4221497}, 	--Darkshore, Central GY
-		{-103.0850677, -694.211792}, 	--Stonetalon Mountains, Southeast GY
-		{-647.2069702, -1118.609985}, 	--The Barrens, Honor's Stand (disabled)
-		{-4556.135254, -3599.677002}, 	--Dustwallow Marsh, The Wyrmbog GY
-		{-1044.97998, -5417.069824}, 	--Durotar, Echo Isles GY
-		{-1483.199951, -2143.699951}, 	--South Barrens 4.x - Overgrowth GY
-		{-1886.519165, -3054.274414}, 	--South Barrens 4.x - East Overgrowth
-		{-3970.923584, -2013.12854}, 	--South Barrens 4.x - Firestone Point Graveyard
-		{-2514.784668, -1965.885376}, 	--South Barrens 4.x - Camp Taurajo Graveyard
-		{5419.361816, -588.069458}, 	--Felwood, Shatter Scar GY
-		{6469.762207, -1899.293457}, 	--Felwood, Felpaw Village GY
-		{2589.584229, -4770.522461}, 	--Azshara, Orgrimmar Rear Gate GY
-		{3049.973877, -4123.633789}, 	--Azshara, Valormok GY
-		{4954.344727, -1872.78125}, 	--Mount Hyjal 4.x - Aessina GY
-		{5417.885254, -3190.723877}, 	--Mount Hyjal 4.x - Crater GY
-		{4640.699707, -4548.928711}, 	--Mount Hyjal 4.x - Darkwhisper Gorge GY
-		{3741.398438, -3323.987793}, 	--Mount Hyjal 4.x - Ascendant's Circle GY
-		{-3138.790039, 2537.580078}, 	--Feralas, Camp Ataya GY (H)
-		{-3324.73999, 1849.300049}, 	--Feralas, Dreamer's Rest GY (A)
-		{-4596.890137, 3227.939941}, 	--Feralas, Ruins of Feathermoon GY
-		{4943.25, -2647.889893}, 	--Mount Hyjal 4.x - Aviana GY
-		{4931.200195, -6446.419922}, 	--Azshara, Arcane Pinnacle GY
-		{3814.530029, 761.2189941}, 	--Ashenvale, Zoram Strand GY
-		{-1473.300049, 2969.48999}, 	--Desolace, Maraudon GY
-		{-4985.759766, -1012.169983}, 	--Thousand Needles, High Perch GY (NEW)
-		{-5532.180176, -1550.050049}, 	--Thousand Needles, Twilight Hammer Base GY (NEW)
-		{-4877.27002, -2158.199951}, 	--Thousand Needles, Razorfen Downs GY (NEW)
-		{-6210.22998, -4577.740234}, 	--Thousand Needles, Southsea Holdfast GY (NEW)
-		{-1169.130005, -1715.430054}, 	--South Barrens 4.x - Western Overgrowth GY
-		{-3335.26001, -2229.459961}, 	--South Barrens 4.x - Fort Triumph GY
-		{1020.02002, 1615.780029}, 	--Stonetalon Mountains, Charred Vale Overlook GY
-		{1458.699951, 1277.420044}, 	--Stonetalon Mountains, Cave GY
-		{7746.259766, -406.3819885}, 	--Darkshore, Gary's Rock
-		{-4920.649902, -1833.170044}, 	--Thousand Needles, Darkcloud Pinnacle GY (NEW)
-		{5164.819824, -4667.189941}, 	--Winterspring, Gorge Upper Ledge
-		{-10000.09961, 417.072998}, 	--Uldum Graveyard 000
-		{-8800.290039, -1615.959961}, 	--Uldum Graveyard 001
-		{-10720, -1550.27002}, 	--Uldum Graveyard 002
-		{-9338.980469, -1066.890015}, 	--Uldum Graveyard 003
-		{-8814.299805, 90.32119751}, 	--Uldum Graveyard 004
-		{-10249, -2112.889893}, 	--Uldum Graveyard 005
-		{-11195.90039, -592.6019897}, 	--Uldum Graveyard 006
-		{3366.669922, -4419.430176}, 	--Azshara, Gallywix Pleasure Palace GY
-		{-9167.94043, 1602.219971}, 	--Ahn'Qiraj:TFK - Terrace GY
-		{-844.1680298, -1978.030029}, 	--Northern Barrens 4.x - Wailing Caverns GY
-		{-11481.5, -2145.889893}, 	--Uldum - Vortex Pinnacle GY
-		{1922.140015, -4345.560059}, 	--Durotar, Orgrimmar - Ragefire GY
-		{-6854.870117, -2846.97998}, 	--Tanaris, Zul'Farrak GY
-		{-3789.75, 1251.75}, 	--Feralas, Dire Maul Dungeon GY
-		{-9605.839844, -3637.110107}, 	--Tanaris, Southern End GY
-		{-733.723999, -2228.72998}, 	--Northern Barrens 4.x - Wailing Caverns (Micro) GY
-		{4268.560059, 733.0939941}, 	--Ashenvale, Blackfathom (Micro) GY
-		{-4497.700195, -1711.040039}, 	--South Barrens 4.x - Razorfen Kraul GY
-		{-4672.299805, -2509.52002}, 	--South Barrens 4.x - Razorfen Downs (Micro) GY
-		{-5752.310059, 736.815979}, 	--The Steam Pools
-		{8695.280273, 946.4619751}, 	--Teldrassil, Rut'theran Village (Horde) GY
-		{-3522.814209, 1124.654541}, 	--Feralas, Dire Maul Dungeon GY (North)
-		{-3788.929932, 934.8140259}, 	--Feralas, Dire Maul Dungeon GY (East)
-		{-3789.75, 1251.75}, 	--Feralas, Dire Maul Dungeon GY (West)
-		{1590.263916, -4370.756836}, 	--Orgrimmar - Scroll of Resurrection Horde Start
-		{-738.4619751, -2217.800049}, 	--Wailing Caverns Exit Target
-		{-4462, -1663.060059}, 	--Razorfen Exit Target
-		{4248.140137, 745.0469971}, 	--Blackfathom Exit Target
-		{-4659.439941, -2527.939941}, 	--Razorfen Downs Exit Target
-		{8380.55957, 998.5360107}, 	--Darnassus Exit Target
-		{9946.25, 2612.969971}, 	--Darnassus Entrance Target
-		{-6795.560059, -2890.719971}, 	--Zul'Farrakk Exit Target
-		{-5191.271973, -2802.587158}, 	--Thousand Needles - Test of Faith (Target)
-		{-5191.271973, -2802.587158}, 	--Thousand Needles - Test of Faith (Target)
-		{-5191.271973, -2802.587158}, 	--Thousand Needles - Test of Faith (Target)
-		{-4750.379883, -3754.439941}, 	--Onyxia's Lair Exit Target
-		{1813.150024, -4415.75}, 	--OrgrimmarInstance Exit Target 001
-		{1637.910034, -4240.25}, 	--Orgrimmar - Barracks Exit Target 001
-		{-1183.869995, 2876.530029}, 	--Maraudon - Purple Exit Target
-		{-1471.77002, 2616.090088}, 	--Maraudon - Orange Exit Target
-		{-3812.76001, 1250.329956}, 	--Dire Maul - West Exit Target 01
-		{-3766.570068, 1249.47998}, 	--Dire Maul - West Exit Target 02
-		{-3520.070068, 1100.099976}, 	--Dire Maul - North Exit Target 02
-		{-3768.780029, 935.1790161}, 	--Dire Maul - East Exit Target 01
-		{-3980.810059, 801.197998}, 	--Dire Maul - East Exit Target 02
-		{-4031.25, 129.3450012}, 	--Dire Maul - East Exit Target 03
-		{-3585.840088, 847.3670044}, 	--Dire Maul - East Exit Target 04
-		{-8415.700195, 1502.439941}, 	--Ahn'Qiraj Ruins - Outbound Teleport Target
-		{-8239.009766, 1993.25}, 	--Ahn'Qiraj Temple - Outbound Target
-		{-8759.509766, -4192.27002}, 	--CoT - Black Morass - Exit - Teleport Target
-		{-8176.990234, -4176.919922}, 	--CoT - Hyjal - Exit - Teleport Target
-		{-8359.110352, -4058.830078}, 	--CoT - Hillsbrad - Exit - Teleport Target
-		{-8176.990234, -4176.919922}, 	--CoT - Hyjal - Exit - Teleport Target
-		{-6161.970215, -1331.439941}, 	--Un'goro Crate - Teleport from Sholazar
-		{-8756.599609, -4457.02002}, 	--CoT Stratholme - Exit Target
-		{-8756.599609, -4457.02002}, 	--CoT Stratholme - Exit Target
-		{-6161.970215, -1331.439941}, 	--Un'goro Crate - Teleport from Sholazar
-		{-6161.970215, -1331.439941}, 	--Un'goro Crate - Teleport from Sholazar
-		{3948.620117, -2818.219971}, 	--Hyjal - Teleport from Seat of the Prophets
-		{4316.049805, -3282.51001}, 	--Hyjal - Teleport From Sulfuron Spire
-		{-10210.5, -1837.609985}, 	--Halls of Origination - Exit Target
-		{-10679.7002, -1307.099976}, 	--Lost City of the Tol'vir - Exit Target
-		{-11513.2998, -2309.879883}, 	--The Vortex Pinnacle - Exit Target (in Kalimdor)
-		{-11351.5, 48.45489883}, 	--Uldum - Skywall Raid Exit Target
-		{3994.610107, -2959.75}, 	--Firelands - Exit Teleport Target
-		{-8599.410156, -4015.610107}, 	--CoT 4.3 - Well of Eternity - Exit Target (In Kalimdor)
-		{-8304.370117, -4461.430176}, 	--CoT 4.3 - End Time - Exit Target (In Kalimdor)
-		{-8291.519531, -4561.339844}, 	--CoT 4.3 - Hour of Twilight - Exit Target (In Kalimdor)
-		{-8280.75, -4521.049805}, 	--CoT 4.3 - Dragon Soul - Exit Target (In Kalimdor)
-		{2124.454834, -4731.652832}, 	--Ring of Valor - Exit Target
-		{1271.041626, -4228.474121}, 	--TEST - Kalimdor Pet Battle Arena Loc
-		{-751.1312256, -2209.240479}, 	--Corpse Location: 43 - Wailing Caverns
-		{-4459.449219, -1660.211792}, 	--Corpse Location: 47 - Razorfen Kraul
-		{4249.120605, 748.387085}, 	--Corpse Location: 48 - Blackfathom Deeps
-		{-4662.882813, -2535.871582}, 	--Corpse Location: 129 - Razorfen Downs
-		{-6790.57666, -2891.278076}, 	--Corpse Location: 209 - Zul'Farrak
-		{-4753.3125, -3752.421143}, 	--Corpse Location: 249 - Onyxia's Lair
-		{-8750.827148, -4193.513184}, 	--Corpse Location: 269 - Opening of the Dark Portal
-		{-1432.697144, 2924.977539}, 	--Corpse Location: 349 - Maraudon
-		{1816.755859, -4423.371582}, 	--Corpse Location: 389 - Ragefire Chasm
-		{-3908.030029, 1130}, 	--Corpse Location: 429 - Dire Maul
-		{-8114.464355, 1526.365723}, 	--Corpse Location: 509 - Ruins of Ahn'Qiraj
-		{-8111.724121, 1526.785767}, 	--Corpse Location: 531 - Ahn'Qiraj Temple
-		{-8178.507813, -4182.050293}, 	--Corpse Location: 534 - The Battle for Mount Hyjal
-		{-8309.80957, -4061.508789}, 	--Corpse Location: 560 - The Escape From Durnholde
-		{-8756.086914, -4457.417969}, 	--Corpse Location: 595 - The Culling of Stratholme
-		{-10225.99512, -1837.479126}, 	--Corpse Location: 644 - Halls of Origination
-		{-11522.49316, -2317.934082}, 	--Corpse Location: 657 - The Vortex Pinnacle
-		{3987.199707, -2943.31958}, 	--Corpse Location: 720 - Firelands
-		{-11360.60254, 72.08333588}, 	--Corpse Location: 754 - Throne of the Four Winds
-		{-10686.14941, -1308.623291}, 	--Corpse Location: 755 - Lost City of the Tol'vir
-		{-8288.604492, -4454.092285}, 	--Corpse Location: 938 - End Time
-		{-8595.836914, -3994.935791}, 	--Corpse Location: 939 - Well of Eternity
-		{-8291.131836, -4590.4375}, 	--Corpse Location: 940 - Hour of Twilight
-		{-8263.276367, -4512.6875}, 	--Corpse Location: 967 - Dragon Soul
-		{-3790.267334, 1271.053833}, 	--Dire Maul Dungeon - Corpse Location - West
-		{-3496.196289, 1124.477417}, 	--Dire Maul Dungeon - Corpse Location - North
-		{-3794.348877, 911.864563}, 	--Dire Maul Dungeon - Corpse Location - East
-		{1526.810059, -4387.060059}, 	--Orgrimmar
-		{6960.100098, -4155.959961}, 	--Winterspring
-		{-10521.90039, -2517.25}, 	--Uldum
-		{2782.689941, -57.47629929}, 	--Ashenvale
-		{-623.0599976, -2945.419922}, 	--The Barrens - Crossroads
-		{2133.050293, -4736.770996}, 	--Corpse Location: 1043 - Brawl'gar Arena
-		{2211.600098, -4652.75}, 	--Orgrimmar - Valley of Honor GY
+	["Kalimdor"] = 
+	{
+--[[
+		{-592.6014404, -2523.492432}, 	-- The Barrens, The Crossroads
+		{-448.3108826, 2512.645752}, 	-- Desolace, Ethel Rethor GY
+		{233.2638855, -4793.625}, 	-- Durotar, Razor Hill GY
+		{1358.550049, -4436.529785}, 	-- Durotar, Orgrimmar GY
+		{-2942.232666, -152.503479}, 	-- Mulgore, Red Cloud Mesa GY
+		{7158.04541, -486.7354736}, 	-- Darkshore, New Auberdine GY
+		{-4612.339844, -1890.459961}, 	-- Thousand Needles, The Great Lift GY (OLD)
+		{-6432.256348, -278.2921143}, 	-- Silithus, Valor's Rest
+		{-2175.65625, -341.5295105}, 	-- Mulgore, Bloodhoof Village GY
+		{10054.2998, 2117.120117}, 	-- Teldrassil, Darnassus GY
+		{9701.254883, 945.6204224}, 	-- Teldrassil, Dolanaar GY
+		{2633.411133, -629.7351685}, 	-- Ashenvale, Astranaar GY
+		{10384.80957, 811.531189}, 	-- Teldrassil, Aldrassil GY
+		{8289.981445, 962.803833}, 	-- Teldrassil, Rut'theran Village GY
+		{-3525.743164, -4315.373535}, 	-- Dustwallow Marsh, Theramore Isle GY
+		{-7142.869629, -3885.302002}, 	-- Tanaris, Gadgetzan GY
+		{-2517.647705, -1970.996582}, 	-- The Barrens, Camp Taurajo GY
+		{-1081.400024, -3478.679932}, 	-- The Barrens, Ratchet
+		{-4484.339844, 2142.22998}, 	-- Feralas, New Feathermoon Stronghold GY (A)
+		{-4445.189941, 370.8370056}, 	-- Feralas, Camp Mojache GY (H)
+		{-5353.120117, -3939.300049}, 	-- Thousand Needles, Splithoof Heights GY (MOVED)
+		{4719.670898, -5954.722168}, 	-- Azshara, Northern Azshara GY
+		{773.663208, 383.8767395}, 	-- Stonetalon Mountains, Webwinder Path GY
+		{3809.428955, -1597.651001}, 	-- Felwood, Morlos'Aran
+		{-7078.069824, -2404.27002}, 	-- Un'Goro Crater, The Marshlands
+		{5243.961426, 180.9320221}, 	-- Darkshore, Twilight Vale GY
+		{6876.944336, -4660.725586}, 	-- Winterspring, Everlook GY
+		{2421.723633, -2953.618896}, 	-- Ashenvale, Kargathia GY
+		{4028.299561, -5441.565918}, 	-- Azshara, (Overlooks) The Shattered Strand GY
+		{4793.111816, -6845.921875}, 	-- Azshara, Bitter Reaches GY
+		{-3127.586914, -3046.746582}, 	-- Dustwallow Marsh, Brackenwall Village GY
+		{7425.867188, -2808.890625}, 	-- Moonglade GY
+		{5953.008789, -1208.602417}, 	-- Felwood, Irontree Woods
+		{-777.982666, -4984.777832}, 	-- Durotar, Sen'jin Village GY
+		{-636.5020142, -4292.549805}, 	-- Durotar, Valley of Trials GY
+		{1035.27002, -2104.280029}, 	-- Warsong Gulch - Horde Exit Loc
+		{1459.170044, -1858.670044}, 	-- Warsong Gulch - Alliance Exit Loc
+		{-4586.25, 1633.189941}, 	-- Feralas, Dire Maul Stonemaul Hold GY
+		{1177.6875, -4464.067871}, 	-- Durotar, Northern Durotar GY
+		{-981.78302, -74.63715363}, 	-- Mulgore, Thunder Bluff GY
+		{-6831.317383, 891.4373169}, 	-- Silithus, Cenarion Hold
+		{-7991.57373, 1557.803955}, 	-- Silithus, Scarab Wall (AQ Only)
+		{-8557.234375, -4470.852539}, 	-- Tanaris, CoT GY
+		{-4032.190918, -3413.807373}, 	-- Dustwallow Marsh, Tabetha's GY
+		{-4632.75, -3129.428955}, 	-- Dustwallow Marsh, Mudsprocket GY
+		{-7353.196289, -1315.427124}, 	-- Un'Goro Crater, Central GY
+		{-6160.104004, -1142.501709}, 	-- Un'Goro Crater, Marshal's GY
+		{476.1875, 1469.838501}, 	-- Stonetalon Mountains, Charred Vale GY
+		{2730.087646, 1286.925415}, 	-- Stonetalon Mountains, Peak GY
+		{-7754.589844, -4972.009766}, 	-- Tanaris, Pirate GY
+		{-8642.400391, -4036.929932}, 	-- Tanaris, Central GY
+		{5633.320313, -4758.878418}, 	-- Winterspring, South GY
+		{6499.684082, -2383.901123}, 	-- Winterspring, West GY
+		{-3971.572998, -2014.045166}, 	-- The Barrens, South GY
+		{-6115.442871, -1339.496582}, 	-- Un'Goro Crater, Shaper's Terrace GY
+		{-3769.467529, -4883.15625}, 	-- Dustwallow Marsh, Theramore Safe
+		{1339.98999, -4477.609863}, 	-- Durotar, Orgrimmar Safe 2
+		{7766.875, -4100.873535}, 	-- Winterspring, Wintersaber GY
+		{6620.385254, -3541.751709}, 	-- Winterspring, Crossroad GY
+		{4451.993164, -4289.873535}, 	-- Winterspring, Darkwhisper GY
+		{2706.120605, -6097.32666}, 	-- Azshara, Southern Azshara GY
+		{3529.19873, -6580.022461}, 	-- Azshara, Bilgewater Harbor GY
+		{-1436.579956, 1972.800049}, 	-- Desolace, Ghost Walker Post GY
+		{-1783.512329, 2857.267578}, 	-- Desolace, Sar'theris Strand GY
+		{-1967.22229, 1723.910889}, 	-- Desolace, Mannoroc Coven GY
+		{-1554.800049, 982.2199707}, 	-- Desolace, Magram Village GY
+		{-479.875, 1223.390015}, 	-- Desolace, Roadside GY
+		{2928.991943, 380.2510986}, 	-- Ashenvale, Shrine of Aessina GY
+		{2291.299072, -1731.707642}, 	-- Ashenvale, Nightsong GY
+		{1284.357666, -298.8888855}, 	-- Stonetalon Mountains, Windshear Crag GY
+		{1697.927124, 1043.953125}, 	-- Stonetalon Mountains, Mirkfallon GY
+		{161.3862915, -1693.857544}, 	-- The Barrens, Forgotten Pools
+		{790.0621948, -2541.625977}, 	-- The Barrens, North GY
+		{-1887.986572, -3055.971924}, 	-- The Barrens, Raptor Grounds
+		{-1480.13208, -2143.872803}, 	-- The Barrens, Central GY
+		{271.8382874, -3313.755371}, 	-- The Barrens, East GY
+		{-2725.265625, -1115.392334}, 	-- Mulgore, Southeast GY
+		{-1171.670166, -1129.756958}, 	-- Mulgore, Red Rocks GY
+		{-5433.419922, -2290.76001}, 	-- Thousand Needles, Freewind Post GY (MOVED)
+		{-6182.589844, -3990.899902}, 	-- Thousand Needles, Speed Barge GY (MOVED)
+		{-9044.899414, -2721.878174}, 	-- Tanaris, Southwest GY
+		{-7751.654785, -3010.435791}, 	-- Tanaris, Abyssal Sands GY
+		{-5526.97998, 1450.469971}, 	-- Feralas, Ruins of Isildien GY
+		{-4336.790039, -383.4859924}, 	-- Feralas, Lower Wilds GY
+		{-3332.570068, 2276.820068}, 	-- Feralas, Twin Colossals GY
+		{-7967.791504, 784.5016479}, 	-- Silithus, Hive'Regal
+		{-7051.924805, 1290.272827}, 	-- Silithus, Twilight Base Camp
+		{6252.282227, 240.4221497}, 	-- Darkshore, Central GY
+		{-103.0850677, -694.211792}, 	-- Stonetalon Mountains, Southeast GY
+		{-647.2069702, -1118.609985}, 	-- The Barrens, Honor's Stand (disabled)
+		{-4556.135254, -3599.677002}, 	-- Dustwallow Marsh, The Wyrmbog GY
+		{-1044.97998, -5417.069824}, 	-- Durotar, Echo Isles GY
+		{-1483.199951, -2143.699951}, 	-- South Barrens 4.x - Overgrowth GY
+		{-1886.519165, -3054.274414}, 	-- South Barrens 4.x - East Overgrowth
+		{-3970.923584, -2013.12854}, 	-- South Barrens 4.x - Firestone Point Graveyard
+		{-2514.784668, -1965.885376}, 	-- South Barrens 4.x - Camp Taurajo Graveyard
+		{5419.361816, -588.069458}, 	-- Felwood, Shatter Scar GY
+		{6469.762207, -1899.293457}, 	-- Felwood, Felpaw Village GY
+		{2589.584229, -4770.522461}, 	-- Azshara, Orgrimmar Rear Gate GY
+		{3049.973877, -4123.633789}, 	-- Azshara, Valormok GY
+		{4954.344727, -1872.78125}, 	-- Mount Hyjal 4.x - Aessina GY
+		{5417.885254, -3190.723877}, 	-- Mount Hyjal 4.x - Crater GY
+		{4640.699707, -4548.928711}, 	-- Mount Hyjal 4.x - Darkwhisper Gorge GY
+		{3741.398438, -3323.987793}, 	-- Mount Hyjal 4.x - Ascendant's Circle GY
+		{-3138.790039, 2537.580078}, 	-- Feralas, Camp Ataya GY (H)
+		{-3324.73999, 1849.300049}, 	-- Feralas, Dreamer's Rest GY (A)
+		{-4596.890137, 3227.939941}, 	-- Feralas, Ruins of Feathermoon GY
+		{4943.25, -2647.889893}, 	-- Mount Hyjal 4.x - Aviana GY
+		{4931.200195, -6446.419922}, 	-- Azshara, Arcane Pinnacle GY
+		{3814.530029, 761.2189941}, 	-- Ashenvale, Zoram Strand GY
+		{-1473.300049, 2969.48999}, 	-- Desolace, Maraudon GY
+		{-4985.759766, -1012.169983}, 	-- Thousand Needles, High Perch GY (NEW)
+		{-5532.180176, -1550.050049}, 	-- Thousand Needles, Twilight Hammer Base GY (NEW)
+		{-4877.27002, -2158.199951}, 	-- Thousand Needles, Razorfen Downs GY (NEW)
+		{-6210.22998, -4577.740234}, 	-- Thousand Needles, Southsea Holdfast GY (NEW)
+		{-1169.130005, -1715.430054}, 	-- South Barrens 4.x - Western Overgrowth GY
+		{-3335.26001, -2229.459961}, 	-- South Barrens 4.x - Fort Triumph GY
+		{1020.02002, 1615.780029}, 	-- Stonetalon Mountains, Charred Vale Overlook GY
+		{1458.699951, 1277.420044}, 	-- Stonetalon Mountains, Cave GY
+		{7746.259766, -406.3819885}, 	-- Darkshore, Gary's Rock
+		{-4920.649902, -1833.170044}, 	-- Thousand Needles, Darkcloud Pinnacle GY (NEW)
+		{5164.819824, -4667.189941}, 	-- Winterspring, Gorge Upper Ledge
+		{-10000.09961, 417.072998}, 	-- Uldum Graveyard 000
+		{-8800.290039, -1615.959961}, 	-- Uldum Graveyard 001
+		{-10720, -1550.27002}, 	-- Uldum Graveyard 002
+		{-9338.980469, -1066.890015}, 	-- Uldum Graveyard 003
+		{-8814.299805, 90.32119751}, 	-- Uldum Graveyard 004
+		{-10249, -2112.889893}, 	-- Uldum Graveyard 005
+		{-11195.90039, -592.6019897}, 	-- Uldum Graveyard 006
+		{3366.669922, -4419.430176}, 	-- Azshara, Gallywix Pleasure Palace GY
+		{-9167.94043, 1602.219971}, 	-- Ahn'Qiraj:TFK - Terrace GY
+		{-844.1680298, -1978.030029}, 	-- Northern Barrens 4.x - Wailing Caverns GY
+		{-11481.5, -2145.889893}, 	-- Uldum - Vortex Pinnacle GY
+		{1922.140015, -4345.560059}, 	-- Durotar, Orgrimmar - Ragefire GY
+		{-6854.870117, -2846.97998}, 	-- Tanaris, Zul'Farrak GY
+		{-3789.75, 1251.75}, 	-- Feralas, Dire Maul Dungeon GY
+		{-9605.839844, -3637.110107}, 	-- Tanaris, Southern End GY
+		{-733.723999, -2228.72998}, 	-- Northern Barrens 4.x - Wailing Caverns (Micro) GY
+		{4268.560059, 733.0939941}, 	-- Ashenvale, Blackfathom (Micro) GY
+		{-4497.700195, -1711.040039}, 	-- South Barrens 4.x - Razorfen Kraul GY
+		{-4672.299805, -2509.52002}, 	-- South Barrens 4.x - Razorfen Downs (Micro) GY
+		{-5752.310059, 736.815979}, 	-- The Steam Pools
+		{8695.280273, 946.4619751}, 	-- Teldrassil, Rut'theran Village (Horde) GY
+		{-3522.814209, 1124.654541}, 	-- Feralas, Dire Maul Dungeon GY (North)
+		{-3788.929932, 934.8140259}, 	-- Feralas, Dire Maul Dungeon GY (East)
+		{-3789.75, 1251.75}, 	-- Feralas, Dire Maul Dungeon GY (West)
+		{1590.263916, -4370.756836}, 	-- Orgrimmar - Scroll of Resurrection Horde Start
+		{-738.4619751, -2217.800049}, 	-- Wailing Caverns Exit Target
+		{-4462, -1663.060059}, 	-- Razorfen Exit Target
+		{4248.140137, 745.0469971}, 	-- Blackfathom Exit Target
+		{-4659.439941, -2527.939941}, 	-- Razorfen Downs Exit Target
+		{8380.55957, 998.5360107}, 	-- Darnassus Exit Target
+		{9946.25, 2612.969971}, 	-- Darnassus Entrance Target
+		{-6795.560059, -2890.719971}, 	-- Zul'Farrakk Exit Target
+		{-5191.271973, -2802.587158}, 	-- Thousand Needles - Test of Faith (Target)
+		{-5191.271973, -2802.587158}, 	-- Thousand Needles - Test of Faith (Target)
+		{-5191.271973, -2802.587158}, 	-- Thousand Needles - Test of Faith (Target)
+		{-4750.379883, -3754.439941}, 	-- Onyxia's Lair Exit Target
+		{1813.150024, -4415.75}, 	-- OrgrimmarInstance Exit Target 001
+		{1637.910034, -4240.25}, 	-- Orgrimmar - Barracks Exit Target 001
+		{-1183.869995, 2876.530029}, 	-- Maraudon - Purple Exit Target
+		{-1471.77002, 2616.090088}, 	-- Maraudon - Orange Exit Target
+		{-3812.76001, 1250.329956}, 	-- Dire Maul - West Exit Target 01
+		{-3766.570068, 1249.47998}, 	-- Dire Maul - West Exit Target 02
+		{-3520.070068, 1100.099976}, 	-- Dire Maul - North Exit Target 02
+		{-3768.780029, 935.1790161}, 	-- Dire Maul - East Exit Target 01
+		{-3980.810059, 801.197998}, 	-- Dire Maul - East Exit Target 02
+		{-4031.25, 129.3450012}, 	-- Dire Maul - East Exit Target 03
+		{-3585.840088, 847.3670044}, 	-- Dire Maul - East Exit Target 04
+		{-8415.700195, 1502.439941}, 	-- Ahn'Qiraj Ruins - Outbound Teleport Target
+		{-8239.009766, 1993.25}, 	-- Ahn'Qiraj Temple - Outbound Target
+		{-8759.509766, -4192.27002}, 	-- CoT - Black Morass - Exit - Teleport Target
+		{-8176.990234, -4176.919922}, 	-- CoT - Hyjal - Exit - Teleport Target
+		{-8359.110352, -4058.830078}, 	-- CoT - Hillsbrad - Exit - Teleport Target
+		{-8176.990234, -4176.919922}, 	-- CoT - Hyjal - Exit - Teleport Target
+		{-6161.970215, -1331.439941}, 	-- Un'goro Crate - Teleport from Sholazar
+		{-8756.599609, -4457.02002}, 	-- CoT Stratholme - Exit Target
+		{-8756.599609, -4457.02002}, 	-- CoT Stratholme - Exit Target
+		{-6161.970215, -1331.439941}, 	-- Un'goro Crate - Teleport from Sholazar
+		{-6161.970215, -1331.439941}, 	-- Un'goro Crate - Teleport from Sholazar
+		{3948.620117, -2818.219971}, 	-- Hyjal - Teleport from Seat of the Prophets
+		{4316.049805, -3282.51001}, 	-- Hyjal - Teleport From Sulfuron Spire
+		{-10210.5, -1837.609985}, 	-- Halls of Origination - Exit Target
+		{-10679.7002, -1307.099976}, 	-- Lost City of the Tol'vir - Exit Target
+		{-11513.2998, -2309.879883}, 	-- The Vortex Pinnacle - Exit Target (in Kalimdor)
+		{-11351.5, 48.45489883}, 	-- Uldum - Skywall Raid Exit Target
+		{3994.610107, -2959.75}, 	-- Firelands - Exit Teleport Target
+		{-8599.410156, -4015.610107}, 	-- CoT 4.3 - Well of Eternity - Exit Target (In Kalimdor)
+		{-8304.370117, -4461.430176}, 	-- CoT 4.3 - End Time - Exit Target (In Kalimdor)
+		{-8291.519531, -4561.339844}, 	-- CoT 4.3 - Hour of Twilight - Exit Target (In Kalimdor)
+		{-8280.75, -4521.049805}, 	-- CoT 4.3 - Dragon Soul - Exit Target (In Kalimdor)
+		{2124.454834, -4731.652832}, 	-- Ring of Valor - Exit Target
+		{1271.041626, -4228.474121}, 	-- TEST - Kalimdor Pet Battle Arena Loc
+		{-751.1312256, -2209.240479}, 	-- Corpse Location: 43 - Wailing Caverns
+		{-4459.449219, -1660.211792}, 	-- Corpse Location: 47 - Razorfen Kraul
+		{4249.120605, 748.387085}, 	-- Corpse Location: 48 - Blackfathom Deeps
+		{-4662.882813, -2535.871582}, 	-- Corpse Location: 129 - Razorfen Downs
+		{-6790.57666, -2891.278076}, 	-- Corpse Location: 209 - Zul'Farrak
+		{-4753.3125, -3752.421143}, 	-- Corpse Location: 249 - Onyxia's Lair
+		{-8750.827148, -4193.513184}, 	-- Corpse Location: 269 - Opening of the Dark Portal
+		{-1432.697144, 2924.977539}, 	-- Corpse Location: 349 - Maraudon
+		{1816.755859, -4423.371582}, 	-- Corpse Location: 389 - Ragefire Chasm
+		{-3908.030029, 1130}, 	-- Corpse Location: 429 - Dire Maul
+		{-8114.464355, 1526.365723}, 	-- Corpse Location: 509 - Ruins of Ahn'Qiraj
+		{-8111.724121, 1526.785767}, 	-- Corpse Location: 531 - Ahn'Qiraj Temple
+		{-8178.507813, -4182.050293}, 	-- Corpse Location: 534 - The Battle for Mount Hyjal
+		{-8309.80957, -4061.508789}, 	-- Corpse Location: 560 - The Escape From Durnholde
+		{-8756.086914, -4457.417969}, 	-- Corpse Location: 595 - The Culling of Stratholme
+		{-10225.99512, -1837.479126}, 	-- Corpse Location: 644 - Halls of Origination
+		{-11522.49316, -2317.934082}, 	-- Corpse Location: 657 - The Vortex Pinnacle
+		{3987.199707, -2943.31958}, 	-- Corpse Location: 720 - Firelands
+		{-11360.60254, 72.08333588}, 	-- Corpse Location: 754 - Throne of the Four Winds
+		{-10686.14941, -1308.623291}, 	-- Corpse Location: 755 - Lost City of the Tol'vir
+		{-8288.604492, -4454.092285}, 	-- Corpse Location: 938 - End Time
+		{-8595.836914, -3994.935791}, 	-- Corpse Location: 939 - Well of Eternity
+		{-8291.131836, -4590.4375}, 	-- Corpse Location: 940 - Hour of Twilight
+		{-8263.276367, -4512.6875}, 	-- Corpse Location: 967 - Dragon Soul
+		{-3790.267334, 1271.053833}, 	-- Dire Maul Dungeon - Corpse Location - West
+		{-3496.196289, 1124.477417}, 	-- Dire Maul Dungeon - Corpse Location - North
+		{-3794.348877, 911.864563}, 	-- Dire Maul Dungeon - Corpse Location - East
+		{1526.810059, -4387.060059}, 	-- Orgrimmar
+		{6960.100098, -4155.959961}, 	-- Winterspring
+		{-10521.90039, -2517.25}, 	-- Uldum
+		{2782.689941, -57.47629929}, 	-- Ashenvale
+		{-623.0599976, -2945.419922}, 	-- The Barrens - Crossroads
+		{2133.050293, -4736.770996}, 	-- Corpse Location: 1043 - Brawl'gar Arena
+		{2211.600098, -4652.75}, 	-- Orgrimmar - Valley of Honor GY
+		{1211.328125, -1674.866333}, 	-- The Barrens, Lumber Camp
+]]
 	},
-	["Expansion01"] = {
-		{10458.54785, -6364.614258}, 	--Eversong Woods, Sunstrider Isle
-		{8936.564453, -7439.902832}, 	--Eversong Woods, Farstrider Lodge GY
-		{7694.177246, -6730.109863}, 	--Ghostlands, Tranquillien
-		{7015.225586, -7299.999023}, 	--Ghostlands, Sanctum
-		{6730.494141, -7936.892578}, 	--Ghostlands, Amani Pass
-		{-4123.13916, -13660.07227}, 	--Azuremyst Isle, Ammen Vale
-		{158.0601654, 2562.729736}, 	--Hellfire Peninsula, Thrallmar
-		{-803.0117188, 2702.592041}, 	--Hellfire Peninsula, Honor Hold
-		{9407, -6847.669922}, 	--Eversong Woods, Silvermoon City
-		{8709.458984, -6671.760742}, 	--Eversong Woods, Fairbreeze GY
-		{-4312.775391, -12441.04395}, 	--Azuremyst, Azure Watch GY
-		{-3324.305908, -12089.91113}, 	--Azuremyst, Stillpine GY
-		{-2020.590088, -11983.50488}, 	--Bloodmyst, Blood Watch GY
-		{-1754.207031, -11067.31543}, 	--Bloodmyst, Wilderness GY
-		{335.8858643, 7625.117188}, 	--Zangarmarsh, Zabra'jin GY
-		{-2495.866455, 6802.258301}, 	--Nagrand, SE Graveyard
-		{181.4750519, 4361.576172}, 	--Hellfire Peninsula, Temple
-		{-695.8752441, 4118.209473}, 	--Hellfire Peninsula, Falcon Watch
-		{742.6282959, 2887.70874}, 	--Hellfire Peninsula, Corpse Location 004
-		{540.3098755, 3932.879883}, 	--Hellfire Peninsula, Test Corpse Location
-		{540.9799194, 3144.225586}, 	--Hellfire Peninsula, Corpse Location 001
-		{582.8639526, 2954.063965}, 	--Hellfire Peninsula, Corpse Location 002
-		{742.6282959, 2887.70874}, 	--Hellfire Peninsula, Corpse Location 003
-		{1148.442261, 1798.137573}, 	--Hellfire Peninsula, Corpse Location 005
-		{851.6936035, 1688.061646}, 	--Hellfire Peninsula, Corpse Location 006
-		{608.0968018, 1778.634399}, 	--Hellfire Peninsula, Corpse Location 007
-		{354.6179504, 1952.75}, 	--Hellfire Peninsula, Corpse Location 008
-		{107.7115936, 1841.231079}, 	--Hellfire Peninsula, Corpse Location 009
-		{274.5988464, 1674.625854}, 	--Hellfire Peninsula, Corpse Location 010
-		{60.88097, 1542.6875}, 	--Hellfire Peninsula, Corpse Location 011
-		{-92.83170319, 1350.90979}, 	--Hellfire Peninsula, Corpse Location 012
-		{134.5279999, 1230.394165}, 	--Hellfire Peninsula, Corpse Location 013
-		{298.6661377, 1225.227051}, 	--Hellfire Peninsula, Corpse Location 014
-		{386.6820679, 1044.776489}, 	--Hellfire Peninsula, Corpse Location 015
-		{337.8400574, 853.2183228}, 	--Hellfire Peninsula, Corpse Location 016
-		{60.38444138, 725.1549683}, 	--Hellfire Peninsula, Corpse Location 017
-		{-213.5115051, 730.6844482}, 	--Hellfire Peninsula, Corpse Location 018
-		{-570.3268433, 675.784729}, 	--Hellfire Peninsula, Corpse Location 019
-		{-958.5842285, 803.9071045}, 	--Hellfire Peninsula, Corpse Location 020
-		{-827.5690308, 1194.339478}, 	--Hellfire Peninsula, Corpse Location 021
-		{-465.0748291, 1272.104614}, 	--Hellfire Peninsula, Corpse Location 022
-		{-668.9750366, 1516.191895}, 	--Hellfire Peninsula, Corpse Location 023
-		{-1278.367188, 1381.711792}, 	--Hellfire Peninsula, Corpse Location 024
-		{-1306.278442, 2478.398438}, 	--Hellfire Peninsula, Corpse Location 025
-		{-1497.398438, 2657.169189}, 	--Hellfire Peninsula, Corpse Location 026
-		{-1445.697754, 3050.234863}, 	--Hellfire Peninsula, Corpse Location 027
-		{-1510.359375, 3281.806885}, 	--Hellfire Peninsula, Corpse Location 028
-		{248.3389282, 7084.928223}, 	--Zangarmarsh, PvP GY
-		{211.3148956, 6200.033203}, 	--Zangarmarsh, Telredor GY
-		{1286.725464, 7883.122559}, 	--Zangarmarsh, Corpse Location 006
-		{-212.4522552, 5579.671875}, 	--Zangarmarsh, Cenarion GY
-		{1011.160584, 5039.572754}, 	--Zangarmarsh, Corpse Location 001
-		{781.7127686, 4987.824707}, 	--Zangarmarsh, Corpse Location 002
-		{1001.895081, 5714.570313}, 	--Zangarmarsh, Corpse Location 003
-		{1394.982178, 7756.503418}, 	--Zangarmarsh, Corpse Location 004
-		{1412.408813, 8430.121094}, 	--Zangarmarsh, Corpse Location 008
-		{1398.577515, 7763.028809}, 	--Zangarmarsh, Corpse Location 005
-		{1317.495239, 8135.391602}, 	--Zangarmarsh, Corpse Location 007
-		{1706.280151, 8407.8125}, 	--Zangarmarsh, Corpse Location 009
-		{1348.119995, 8677.566406}, 	--Zangarmarsh, Corpse Location 011
-		{1838.928345, 8496.513672}, 	--Zangarmarsh, Corpse Location 010
-		{1347.021118, 8679.226563}, 	--Zangarmarsh, Corpse Location 012
-		{1104.395386, 8781.982422}, 	--Zangarmarsh, Corpse Location 013
-		{747.4471436, 8702.898438}, 	--Zangarmarsh, Corpse Location 014
-		{381.3095703, 9113.738281}, 	--Zangarmarsh, Corpse Location 016
-		{702.7578125, 8927.527344}, 	--Zangarmarsh, Corpse Location 015
-		{223.5499115, 9132.744141}, 	--Zangarmarsh, Corpse Location 017
-		{32.15700912, 9120.396484}, 	--Zangarmarsh, Corpse Location 018
-		{-160.4252472, 9053.543945}, 	--Zangarmarsh, Corpse Location 019
-		{-1066.973022, 8066.544434}, 	--Nagrand, Northwind Cleft
-		{-1654.373047, 7938.994141}, 	--Nagrand, Halaa GY
-		{-1793.415649, 4931.607422}, 	--Terokkar Forest, Shattrath GY
-		{-2540.151611, 3866.647949}, 	--Terokkar Forest, Wilderness GY
-		{-697.5725708, 8881.731445}, 	--Nagrand, Corpse Location 001
-		{-999.5062866, 9045.616211}, 	--Nagrand, Corpse Location 002
-		{-1933.719604, 9343.668945}, 	--Nagrand, Corpse Location 003
-		{-2153.297363, 9323.707031}, 	--Nagrand, Corpse Location 004
-		{-2619.463379, 8953.700195}, 	--Nagrand, Corpse Location 005
-		{-2799.85376, 8785.746094}, 	--Nagrand, Corpse Location 006
-		{-2984.119385, 8700.107422}, 	--Nagrand, Corpse Location 007
-		{-2989.351318, 8445.128906}, 	--Nagrand, Corpse Location 008
-		{-3122.555908, 8079.489746}, 	--Nagrand, Corpse Location 009
-		{-3155.750244, 7316.314941}, 	--Nagrand, Corpse Location 010
-		{-3244.695557, 7079.021973}, 	--Nagrand, Corpse Location 011
-		{-2987.350586, 7045.46875}, 	--Nagrand, Corpse Location 012
-		{-2962.328125, 6796.881836}, 	--Nagrand, Corpse Location 013
-		{-3045.369873, 6508.568359}, 	--Nagrand, Corpse Location 014
-		{-3379.583984, 6206.48291}, 	--Terokkar Forest, Corpse Location 001
-		{-3621.983154, 6225.183105}, 	--Terokkar Forest, Corpse Location 002
-		{-3898.565674, 6147.648438}, 	--Terokkar Forest, Corpse Location 003
-		{-3844.335938, 5931.411133}, 	--Terokkar Forest, Corpse Location 004
-		{-3801.340332, 5618.750977}, 	--Terokkar Forest, Corpse Location 005
-		{-3910.985352, 5404.071289}, 	--Terokkar Forest, Corpse Location 006
-		{-3886.285645, 5149.574219}, 	--Terokkar Forest, Corpse Location 007
-		{-3990.144043, 4869.476074}, 	--Terokkar Forest, Corpse Location 008
-		{-3904.296143, 4591.395508}, 	--Terokkar Forest, Corpse Location 009
-		{-4024.304688, 4421.721191}, 	--Terokkar Forest, Corpse Location 010
-		{-3965.061279, 4128.619141}, 	--Terokkar Forest, Corpse Location 011
-		{-2415.76416, 1811.62439}, 	--Shadowmoon, Corpse Location 001
-		{-2319.128418, 1749.94458}, 	--Shadowmoon, Corpse Location 002
-		{-2447.420654, 1612.805176}, 	--Shadowmoon, Corpse Location 003
-		{-2650.239258, 1666.659424}, 	--Shadowmoon, Corpse Location 004
-		{-4151.091309, 3425.816406}, 	--Terokkar Forest, Corpse Location 016
-		{-2648.266846, 3020.654785}, 	--Terokkar Forest, Corpse Location 017
-		{-2375.42041, 2848.075439}, 	--Terokkar Forest, Corpse Location 018
-		{-2205.608887, 2968.304443}, 	--Terokkar Forest, Corpse Location 019
-		{-2098.932373, 3116.508789}, 	--Terokkar Forest, Corpse Location 020
-		{-2047.739136, 3278.562256}, 	--Terokkar Forest, Corpse Location 021
-		{-2058.995361, 3560.385254}, 	--Terokkar Forest, Corpse Location 022
-		{-1876.504395, 3700.501709}, 	--Terokkar Forest, Corpse Location 023
-		{0, 0}, 	--Reuse
-		{-1289.793823, 9166.72168}, 	--Nagrand, Portal Plateau
-		{-856.2137451, 6600.060547}, 	--Nagrand, Elemental Plateau
-		{-2033.528198, 8479.527344}, 	--Nagrand, SW Graveyard
-		{700.0906372, 2207.990723}, 	--Hellfire Peninsula, Throne of Kil'Jaedan
-		{-249.7649231, 1023.318726}, 	--Hellfire Peninsula, Dark Portal
-		{-3562.40625, 4666.441895}, 	--Terokkar Forest, Bone Wastes GY
-		{874.9109497, 7284.719727}, 	--Zangarmarsh, Harborage GY
-		{337.124939, 8616.865234}, 	--Zangarmarsh, Sporeggar GY
-		{4363.881348, 3093.743408}, 	--Netherstorm, Stormspire GY
-		{3032.436768, 3594.280029}, 	--Netherstorm, Area 52 GY
-		{-2999.226563, 2439.059814}, 	--Shadowmoon Valley, Shadowmoon Village GY
-		{-4022.987793, 2048.57959}, 	--Shadowmoon Valley, Wildhammer GY
-		{1955.904053, 6768.811035}, 	--Blade's Edge, Sylvanaar GY
-		{2218.900879, 6017.354004}, 	--Blade's Edge, Thunderlord GY
-		{-3942.589111, 3686.286865}, 	--Terokkar Forest, Skettis GY
-		{-2652.661865, 1484.208618}, 	--Shadowmoon, Corpse Location 005
-		{-2477.685791, 1386.237915}, 	--Shadowmoon, Corpse Location 006
-		{-2459.081543, 1277.568359}, 	--Shadowmoon, Corpse Location 007
-		{-2464.277588, 1074.654785}, 	--Shadowmoon, Corpse Location 008
-		{-2597.449219, 1040.723755}, 	--Shadowmoon, Corpse Location 009
-		{-2753.666748, 966.1463013}, 	--Shadowmoon, Corpse Location 010
-		{-2721.157959, 711.0336304}, 	--Shadowmoon, Corpse Location 011
-		{-2752.542969, 509.309021}, 	--Shadowmoon, Corpse Location 012
-		{-3004.487549, 482.0505676}, 	--Shadowmoon, Corpse Location 013
-		{-2997.384033, 207.579422}, 	--Shadowmoon, Corpse Location 014
-		{-4084.617188, 120.513237}, 	--Shadowmoon, Corpse Location 015
-		{-4231.621582, 58.62673569}, 	--Shadowmoon, Corpse Location 016
-		{-4445.808105, 224.8441925}, 	--Shadowmoon, Corpse Location 017
-		{-4507.595215, 553.5529785}, 	--Shadowmoon, Corpse Location 018
-		{-4445.42627, 863.5579224}, 	--Shadowmoon, Corpse Location 019
-		{-4791.515625, 1082.184204}, 	--Shadowmoon, Corpse Location 020
-		{-4618.168457, 1850.606323}, 	--Shadowmoon, Corpse Location 021
-		{-4568.142578, 2023.798218}, 	--Shadowmoon, Corpse Location 022
-		{-4541.319336, 2281.759033}, 	--Shadowmoon, Corpse Location 023
-		{-4408.891602, 2328.780273}, 	--Shadowmoon, Corpse Location 024
-		{1932.998291, 7389.17627}, 	--Blade's Edge, Corpse Location 000
-		{2356.309814, 7345.092773}, 	--Blade's Edge, Corpse Location 001
-		{2818.310791, 7269.720215}, 	--Blade's Edge, Corpse Location 002
-		{3199.991211, 7264.963867}, 	--Blade's Edge, Corpse Location 003
-		{3432.886719, 7312.378418}, 	--Blade's Edge, Corpse Location 004
-		{3753.244873, 7118.026367}, 	--Blade's Edge, Corpse Location 005
-		{3797.192627, 6900.236328}, 	--Blade's Edge, Corpse Location 006
-		{3839.147705, 6586.807129}, 	--Blade's Edge, Corpse Location 007
-		{3482.778809, 6487.127441}, 	--Blade's Edge, Corpse Location 008
-		{3656.61377, 6208.107422}, 	--Blade's Edge, Corpse Location 009
-		{3995.325439, 6092.064453}, 	--Blade's Edge, Corpse Location 010
-		{4095.108154, 5811.88623}, 	--Blade's Edge, Corpse Location 011
-		{4153.549316, 5508.916992}, 	--Blade's Edge, Corpse Location 012
-		{4120.706055, 5214.145996}, 	--Blade's Edge, Corpse Location 013
-		{4086.354248, 4849.897949}, 	--Blade's Edge, Corpse Location 014
-		{3926.204346, 4825.27832}, 	--Blade's Edge, Corpse Location 015
-		{3731.115479, 4738.445313}, 	--Blade's Edge, Corpse Location 016
-		{3455.314209, 4468.350098}, 	--Blade's Edge, Corpse Location 017
-		{3323.599365, 4503.876953}, 	--Blade's Edge, Corpse Location 018
-		{2877.524658, 4738.905273}, 	--Blade's Edge, Corpse Location 019
-		{2653.003174, 5100.26123}, 	--Blade's Edge, Corpse Location 020
-		{2344.619385, 5072.5}, 	--Blade's Edge, Corpse Location 021
-		{2251.084717, 4907.940918}, 	--Blade's Edge, Corpse Location 022
-		{2274.352783, 4725.42627}, 	--Blade's Edge, Corpse Location 023
-		{2102.655762, 4685.081055}, 	--Blade's Edge, Corpse Location 024
-		{1914.582275, 4677.852539}, 	--Blade's Edge, Corpse Location 025
-		{1771.942993, 4585.164551}, 	--Blade's Edge, Corpse Location 026
-		{1621.035645, 4563.13916}, 	--Blade's Edge, Corpse Location 027
-		{1606.357056, 4792.579102}, 	--Blade's Edge, Corpse Location 028
-		{1596.313843, 4948.647949}, 	--Blade's Edge, Corpse Location 029
-		{1616.902954, 5077.052246}, 	--Blade's Edge, Corpse Location 030
-		{3491.414551, 4127.388184}, 	--Netherstorm - Corpse Catcher 000
-		{3578.555176, 3957.098145}, 	--Netherstorm - Corpse Catcher 001
-		{3586.963623, 3717.307373}, 	--Netherstorm - Corpse Catcher 002
-		{3640.770508, 3522.842041}, 	--Netherstorm - Corpse Catcher 003
-		{3520.195801, 3511.703125}, 	--Netherstorm - Corpse Catcher 004
-		{3399.305176, 3400.40918}, 	--Netherstorm - Corpse Catcher 005
-		{3271.489746, 3366.920654}, 	--Netherstorm - Corpse Catcher 006
-		{3188.366455, 3257.080811}, 	--Netherstorm - Corpse Catcher 007
-		{3022.791016, 3163.704834}, 	--Netherstorm - Corpse Catcher 008
-		{2943.656006, 3056.637695}, 	--Netherstorm - Corpse Catcher 009
-		{2846.521484, 2955.540283}, 	--Netherstorm - Corpse Catcher 010
-		{2815.296631, 2830.886475}, 	--Netherstorm - Corpse Catcher 011
-		{2695.05127, 2940.240723}, 	--Netherstorm - Corpse Catcher 012
-		{2570.499756, 3135.964111}, 	--Netherstorm - Corpse Catcher 013
-		{2511.976318, 3275.154541}, 	--Netherstorm - Corpse Catcher 014
-		{2449.933838, 3377.493652}, 	--Netherstorm - Corpse Catcher 015
-		{2519.661377, 3538.699951}, 	--Netherstorm - Corpse Catcher 016
-		{2479.837158, 3695.678955}, 	--Netherstorm - Corpse Catcher 017
-		{2433.440674, 3835.276855}, 	--Netherstorm - Corpse Catcher 018
-		{2403.429688, 3995.290771}, 	--Netherstorm - Corpse Catcher 019
-		{2477.409668, 4151.272461}, 	--Netherstorm - Corpse Catcher 020
-		{2535.25708, 4396.421387}, 	--Netherstorm - Corpse Catcher 021
-		{2710.518555, 4440.322754}, 	--Netherstorm - Corpse Catcher 022
-		{2916.154785, 4444.487793}, 	--Netherstorm - Corpse Catcher 023
-		{3069.10083, 4357.139648}, 	--Netherstorm - Corpse Catcher 024
-		{3091.803955, 4146.838867}, 	--Netherstorm - Corpse Catcher 025
-		{3221.167969, 4069.098145}, 	--Netherstorm - Corpse Catcher 026
-		{3355.788574, 4149.284668}, 	--Netherstorm - Corpse Catcher 027
-		{3980.611572, 4262.212891}, 	--Netherstorm - Corpse Catcher 028
-		{3802.701416, 4204.433105}, 	--Netherstorm - Corpse Catcher 029
-		{3766.714355, 4008.22876}, 	--Netherstorm - Corpse Catcher 030
-		{3796.266602, 3772.185303}, 	--Netherstorm - Corpse Catcher 031
-		{4049.614502, 3692.780518}, 	--Netherstorm - Corpse Catcher 032
-		{4152.526855, 3886.205322}, 	--Netherstorm - Corpse Catcher 033
-		{4235.156738, 4080.62207}, 	--Netherstorm - Corpse Catcher 034
-		{4169.833008, 4209.064453}, 	--Netherstorm - Corpse Catcher 035
-		{3836.078125, 3477.260498}, 	--Netherstorm - Corpse Catcher 036
-		{3994.947021, 3538.267822}, 	--Netherstorm - Corpse Catcher 037
-		{4211.398438, 3632.001221}, 	--Netherstorm - Corpse Catcher 038
-		{4395.242676, 3708.615479}, 	--Netherstorm - Corpse Catcher 039
-		{4580.691406, 3584}, 	--Netherstorm - Corpse Catcher 040
-		{4793.191895, 3527.374268}, 	--Netherstorm - Corpse Catcher 041
-		{4903.713867, 3323.859375}, 	--Netherstorm - Corpse Catcher 042
-		{4945.868652, 3110.829102}, 	--Netherstorm - Corpse Catcher 043
-		{5156.753418, 2974.213867}, 	--Netherstorm - Corpse Catcher 044
-		{5204.699219, 2868.108154}, 	--Netherstorm - Corpse Catcher 045
-		{5019.972168, 2798.727051}, 	--Netherstorm - Corpse Catcher 046
-		{4885.182129, 2663.129639}, 	--Netherstorm - Corpse Catcher 047
-		{4853.174316, 2354.016846}, 	--Netherstorm - Corpse Catcher 048
-		{4680.811523, 2287.479248}, 	--Netherstorm - Corpse Catcher 049
-		{4522.444824, 2280.276611}, 	--Netherstorm - Corpse Catcher 050
-		{4436.572754, 2485.476563}, 	--Netherstorm - Corpse Catcher 051
-		{4448.29541, 2658.147217}, 	--Netherstorm - Corpse Catcher 052
-		{4285.063477, 2837.040039}, 	--Netherstorm - Corpse Catcher 053
-		{4136.619141, 2699.332031}, 	--Netherstorm - Corpse Catcher 054
-		{3975.243164, 2807.435547}, 	--Netherstorm - Corpse Catcher 055
-		{3931.786377, 3020.666748}, 	--Netherstorm - Corpse Catcher 056
-		{3895.876221, 3257.639648}, 	--Netherstorm - Corpse Catcher 057
-		{3629.358643, 3095.108887}, 	--Netherstorm - Corpse Catcher 058
-		{3476.445557, 3293.55957}, 	--Netherstorm - Corpse Catcher 059
-		{3348.410156, 3172.063477}, 	--Netherstorm - Corpse Catcher 060
-		{3216.284424, 2992.534912}, 	--Netherstorm - Corpse Catcher 061
-		{3022.812744, 2892.906982}, 	--Netherstorm - Corpse Catcher 062
-		{2860.46875, 2735.280518}, 	--Netherstorm - Corpse Catcher 063
-		{2863.802979, 2537.409912}, 	--Netherstorm - Corpse Catcher 064
-		{2856.083984, 2297.040283}, 	--Netherstorm - Corpse Catcher 065
-		{2834.860107, 2040.240723}, 	--Netherstorm - Corpse Catcher 066
-		{2868.810547, 1848.693848}, 	--Netherstorm - Corpse Catcher 067
-		{2895.752441, 1708.090698}, 	--Netherstorm - Corpse Catcher 068
-		{3110.674805, 1624.431641}, 	--Netherstorm - Corpse Catcher 069
-		{3276.015381, 1726.586182}, 	--Netherstorm - Corpse Catcher 070
-		{3332.259521, 1986.970337}, 	--Netherstorm - Corpse Catcher 071
-		{3315.851318, 2185.521729}, 	--Netherstorm - Corpse Catcher 072
-		{3384.581787, 2376.219482}, 	--Netherstorm - Corpse Catcher 073
-		{3492.838379, 2570.839355}, 	--Netherstorm - Corpse Catcher 074
-		{3590.412842, 2677.079102}, 	--Netherstorm - Corpse Catcher 075
-		{3740.939209, 2696.992676}, 	--Netherstorm - Corpse Catcher 076
-		{3737.849854, 2894.691406}, 	--Netherstorm - Corpse Catcher 077
-		{3862.946289, 2554.456299}, 	--Netherstorm - Corpse Catcher 078
-		{3648.264893, 2414.608643}, 	--Netherstorm - Corpse Catcher 079
-		{3546.970703, 2219.757568}, 	--Netherstorm - Corpse Catcher 080
-		{3550.010498, 2002.348755}, 	--Netherstorm - Corpse Catcher 081
-		{3509.691895, 1762.48999}, 	--Netherstorm - Corpse Catcher 082
-		{3645.262695, 1712.664673}, 	--Netherstorm - Corpse Catcher 083
-		{3681.177002, 1558.560303}, 	--Netherstorm - Corpse Catcher 084
-		{3775.548096, 1437.535645}, 	--Netherstorm - Corpse Catcher 085
-		{3969.014404, 1336.413818}, 	--Netherstorm - Corpse Catcher 086
-		{4166.447754, 1329.147339}, 	--Netherstorm - Corpse Catcher 087
-		{4199.538086, 1484.236328}, 	--Netherstorm - Corpse Catcher 088
-		{4258.282715, 1672.844604}, 	--Netherstorm - Corpse Catcher 089
-		{4362.23291, 1927.158447}, 	--Netherstorm - Corpse Catcher 090
-		{4347.150391, 2143.360596}, 	--Netherstorm - Corpse Catcher 091
-		{4246.958496, 2450.753906}, 	--Netherstorm - Corpse Catcher 092
-		{4117.149414, 2332.294678}, 	--Netherstorm - Corpse Catcher 093
-		{3975.804688, 2437.473145}, 	--Netherstorm - Corpse Catcher 094
-		{2501.339111, 1983.390869}, 	--Netherstorm - Corpse Catcher 095
-		{2573.345947, 2127.095459}, 	--Netherstorm - Corpse Catcher 096
-		{2648.16333, 2353.62915}, 	--Netherstorm - Corpse Catcher 097
-		{2659.245361, 2547.139404}, 	--Netherstorm - Corpse Catcher 098
-		{2587.892578, 2711.604248}, 	--Netherstorm - Corpse Catcher 099
-		{2473.626953, 2964.97583}, 	--Netherstorm - Corpse Catcher 100
-		{2209.182617, 2901.677002}, 	--Netherstorm - Corpse Catcher 101
-		{2164.319824, 2667.394531}, 	--Netherstorm - Corpse Catcher 102
-		{2078.211914, 2405.502197}, 	--Netherstorm - Corpse Catcher 103
-		{2079.815918, 2227.038818}, 	--Netherstorm - Corpse Catcher 104
-		{2240.179199, 2067.795898}, 	--Netherstorm - Corpse Catcher 105
-		{552.1880493, 1995.149048}, 	--Hellfire Peninsula, Force Camps (Alliance)
-		{3065.004395, 5426.416016}, 	--Blade's Edge, Evergrove GY
-		{3872.658936, 5514.40625}, 	--Blade's Edge, North Ridge GY
-		{2296.352295, 7023.231445}, 	--Blade's Edge, West Ridge GY
-		{2312.272217, 5083.930176}, 	--Blade's Edge, East Ridge GY
-		{2980.191895, 1869.824707}, 	--Netherstorm, Cosmowrench GY
-		{-1272.424927, 2436.845947}, 	--Hellfire Peninsula, Spinebreaker GY
-		{-3134.535645, 719.4840698}, 	--Shadowmoon Valley, Altar GY
-		{-4117.032227, 1058.257568}, 	--Shadowmoon Valley, Sanctum GY
-		{2362.672363, 2327.414063}, 	--Netherstorm, Kirin'Var GY
-		{2011.386475, 5575.785645}, 	--Blade's Edge, Toshley GY
-		{3522.843262, 6821.624023}, 	--Blade's Edge, Raven Wood GY
-		{3447.3125, 4803.822266}, 	--Blade's Edge, NE Ridge GY
-		{-1148.084595, 5897.619629}, 	--Terokkar Forest, Ogre GY
-		{-3524.266602, 619.5283203}, 	--Black Temple, Alliance GY
-		{-3624.932861, 600.006958}, 	--Black Temple, Horde GY
-		{3621.86792, 6519.528809}, 	--Blade's Edge, Corpse Location 031
-		{-1424.370483, 4359.581055}, 	--Terokkar Forest, Razorthorn Rise GY
-		{12851.75488, -6854.800781}, 	--Isle of Quel'Danas, Staging Area GY
-		{12851.75488, -6854.800781}, 	--Isle of Quel'Danas, Staging Area GY
-		{12851.75488, -6854.800781}, 	--Isle of Quel'Danas, Staging Area GY
-		{-2433.643066, 4660.96875}, 	--Terokkar Forest, Lake Jorune GY
-		{-310.5150146, 3084.060059}, 	--Hellfire Military - Exit Target
-		{-302.4079895, 3162.919922}, 	--Hellfire Demon - Exit Target
-		{-312.269989, 3086.530029}, 	--Hellfire Raid - Exit Target
-		{9331.490234, -7812.27002}, 	--Eversong Woods - Duskwither UP Target
-		{9334.030273, -7880.02002}, 	--Eversong Woods - Duskwither DOWN Target
-		{-363.4360046, 3078.429932}, 	--Hellfire Ramparts - Exit Target
-		{-233.3300018, 3199.709961}, 	--Hellfire Ramparts - Omor Exit Target
-		{-248.1130066, 922.9000244}, 	--Dark Portal - Outland Target
-		{817.9240112, 6937.560059}, 	--Coilfang Pumping - Exit Target
-		{781.3770142, 6754.609863}, 	--Coilfang Marsh - Exit Target
-		{731.0209961, 7013.75}, 	--Coilfang Draenei - Exit Target
-		{-3635.389893, 4942.939941}, 	--Auchindoun Shadow - Exit Target
-		{-3362.100098, 4668.899902}, 	--Auchindoun Arakkoa - Exit Target
-		{-3086.51001, 4942.430176}, 	--Auchindoun Etherial - Exit Target
-		{-3361.800049, 5209.200195}, 	--Auchindoun Draenei - Exit Target
-		{6123.22998, -7006.569824}, 	--Ghostlands - EPL Return Target
-		{828.2349854, 6865.799805}, 	--Coilfang Raid - Exit Target
-		{-590.5939941, 4079.02002}, 	--Hellfire Peninsula - Falcon Watch Up Target
-		{-593.2919922, 4077.850098}, 	--Hellfire Peninsula - Falcon Watch Down Target
-		{-2262.540039, 3112.459961}, 	--Terokkar Forest - Spire Up Target
-		{-2262.540039, 3112.459961}, 	--Terokkar Forest - Spire Up Target
-		{3310.320068, 1336.589966}, 	--Tempest Keep - Arcane Exit Target
-		{3088.149902, 1382.219971}, 	--Tempest Keep - Raid Exit Target
-		{3409.850098, 1486.26001}, 	--Tempest Keep - Atrium Exit Target
-		{2867.929932, 1550.949951}, 	--Tempest Keep - Factory Exit Target
-		{-1810.829956, 5323.950195}, 	--Shattrath City - Haramad's Teleporter Target
-		{3540.169922, 5092.140137}, 	--Gruul's Lair - Exit Target
-		{-2739.459961, 2721.959961}, 	--Shadowmoon - Quest - Test Teleporter (h) Target
-		{-2836.659912, 1945.550049}, 	--Shadowmoon - Quest - Test Teleporter (a) Target
-		{-2739.459961, 2721.959961}, 	--Shadowmoon - Quest - Test Teleporter (h) Target
-		{-2836.659912, 1945.550049}, 	--Shadowmoon - Quest - Test Teleporter (a) Target
-		{3409.850098, 1486.26001}, 	--Tempest Keep - Atrium Exit Target
-		{2867.929932, 1550.949951}, 	--Tempest Keep - Factory Exit Target
-		{-3650.899902, 316.8970032}, 	--Black Temple - Exit Target
-		{6851.109863, -7985.049805}, 	--Zul'Aman - Exit Target
-		{12885.2998, -7336.419922}, 	--Magisters' Terrace - Exit Target
-		{12556.5, -6774.950195}, 	--Sunwell Raid - Exit Target
-		{12556.5, -6774.950195}, 	--Sunwell Raid - Exit Target
-		{12556.5, -6774.950195}, 	--Sunwell Raid - Exit Target
-		{-306.7581787, 3064.435547}, 	--Corpse Location: 540 - Hellfire Citadel: The Shattered Halls
-		{-295.419342, 3151.992676}, 	--Corpse Location: 542 - Hellfire Citadel: The Blood Furnace
-		{-360.0498657, 3067.895508}, 	--Corpse Location: 543 - Hellfire Citadel: Ramparts
-		{-330.2338562, 3106.635986}, 	--Corpse Location: 544 - Magtheridon's Lair
-		{764.2190552, 6915.07959}, 	--Corpse Location: 545 - Coilfang: The Steamvault
-		{764.6282349, 6768.072754}, 	--Corpse Location: 546 - Coilfang: The Underbog
-		{742.1582031, 7011.32666}, 	--Corpse Location: 547 - Coilfang: The Slave Pens
-		{775.786377, 6865.242676}, 	--Corpse Location: 548 - Coilfang: Serpentshrine Cavern
-		{-3640.687744, 4943.162598}, 	--Corpse Location: 555 - Auchindoun: Shadow Labyrinth
-		{-3361.862549, 4665.592285}, 	--Corpse Location: 556 - Auchindoun: Sethekk Halls
-		{-3089.516357, 4942.756348}, 	--Corpse Location: 557 - Auchindoun: Mana-Tombs
-		{-3363.439941, 5156.455078}, 	--Corpse Location: 558 - Auchindoun: Auchenai Crypts
-		{-3644.527344, 317.2936707}, 	--Corpse Location: 564 - Black Temple
-		{3525.452881, 5144.150879}, 	--Corpse Location: 565 - Gruul's Lair
-		{6851.020996, -7989.713379}, 	--Corpse Location: 568 - Zul'Aman
-		{12551.7627, -6774.56543}, 	--Corpse Location: 580 - The Sunwell
-		{12881.90234, -7343.094727}, 	--Corpse Location: 585 - Magister's Terrace
-		{-315.3259888, 1149.23999}, 	--The Dark Portal
-		{-1649.550049, 7556.970215}, 	--Nagrand
-		{2946.929932, 2649.090088}, 	--Netherstorm
-		{-3525.330078, 4894.290039}, 	--Auchindoun
-		{-3327.050049, 374.1919861}, 	--Black Temple
+	["Expansion01"] = 
+	{
+--[[
+		{10458.54785, -6364.614258}, 	-- Eversong Woods, Sunstrider Isle
+		{8936.564453, -7439.902832}, 	-- Eversong Woods, Farstrider Lodge GY
+		{7694.177246, -6730.109863}, 	-- Ghostlands, Tranquillien
+		{7015.225586, -7299.999023}, 	-- Ghostlands, Sanctum
+		{6730.494141, -7936.892578}, 	-- Ghostlands, Amani Pass
+		{-4123.13916, -13660.07227}, 	-- Azuremyst Isle, Ammen Vale
+		{158.0601654, 2562.729736}, 	-- Hellfire Peninsula, Thrallmar
+		{-803.0117188, 2702.592041}, 	-- Hellfire Peninsula, Honor Hold
+		{9407, -6847.669922}, 	-- Eversong Woods, Silvermoon City
+		{8709.458984, -6671.760742}, 	-- Eversong Woods, Fairbreeze GY
+		{-4312.775391, -12441.04395}, 	-- Azuremyst, Azure Watch GY
+		{-3324.305908, -12089.91113}, 	-- Azuremyst, Stillpine GY
+		{-2020.590088, -11983.50488}, 	-- Bloodmyst, Blood Watch GY
+		{-1754.207031, -11067.31543}, 	-- Bloodmyst, Wilderness GY
+		{335.8858643, 7625.117188}, 	-- Zangarmarsh, Zabra'jin GY
+		{-2495.866455, 6802.258301}, 	-- Nagrand, SE Graveyard
+		{181.4750519, 4361.576172}, 	-- Hellfire Peninsula, Temple
+		{-695.8752441, 4118.209473}, 	-- Hellfire Peninsula, Falcon Watch
+		{742.6282959, 2887.70874}, 	-- Hellfire Peninsula, Corpse Location 004
+		{540.3098755, 3932.879883}, 	-- Hellfire Peninsula, Test Corpse Location
+		{540.9799194, 3144.225586}, 	-- Hellfire Peninsula, Corpse Location 001
+		{582.8639526, 2954.063965}, 	-- Hellfire Peninsula, Corpse Location 002
+		{742.6282959, 2887.70874}, 	-- Hellfire Peninsula, Corpse Location 003
+		{1148.442261, 1798.137573}, 	-- Hellfire Peninsula, Corpse Location 005
+		{851.6936035, 1688.061646}, 	-- Hellfire Peninsula, Corpse Location 006
+		{608.0968018, 1778.634399}, 	-- Hellfire Peninsula, Corpse Location 007
+		{354.6179504, 1952.75}, 	-- Hellfire Peninsula, Corpse Location 008
+		{107.7115936, 1841.231079}, 	-- Hellfire Peninsula, Corpse Location 009
+		{274.5988464, 1674.625854}, 	-- Hellfire Peninsula, Corpse Location 010
+		{60.88097, 1542.6875}, 	-- Hellfire Peninsula, Corpse Location 011
+		{-92.83170319, 1350.90979}, 	-- Hellfire Peninsula, Corpse Location 012
+		{134.5279999, 1230.394165}, 	-- Hellfire Peninsula, Corpse Location 013
+		{298.6661377, 1225.227051}, 	-- Hellfire Peninsula, Corpse Location 014
+		{386.6820679, 1044.776489}, 	-- Hellfire Peninsula, Corpse Location 015
+		{337.8400574, 853.2183228}, 	-- Hellfire Peninsula, Corpse Location 016
+		{60.38444138, 725.1549683}, 	-- Hellfire Peninsula, Corpse Location 017
+		{-213.5115051, 730.6844482}, 	-- Hellfire Peninsula, Corpse Location 018
+		{-570.3268433, 675.784729}, 	-- Hellfire Peninsula, Corpse Location 019
+		{-958.5842285, 803.9071045}, 	-- Hellfire Peninsula, Corpse Location 020
+		{-827.5690308, 1194.339478}, 	-- Hellfire Peninsula, Corpse Location 021
+		{-465.0748291, 1272.104614}, 	-- Hellfire Peninsula, Corpse Location 022
+		{-668.9750366, 1516.191895}, 	-- Hellfire Peninsula, Corpse Location 023
+		{-1278.367188, 1381.711792}, 	-- Hellfire Peninsula, Corpse Location 024
+		{-1306.278442, 2478.398438}, 	-- Hellfire Peninsula, Corpse Location 025
+		{-1497.398438, 2657.169189}, 	-- Hellfire Peninsula, Corpse Location 026
+		{-1445.697754, 3050.234863}, 	-- Hellfire Peninsula, Corpse Location 027
+		{-1510.359375, 3281.806885}, 	-- Hellfire Peninsula, Corpse Location 028
+		{248.3389282, 7084.928223}, 	-- Zangarmarsh, PvP GY
+		{211.3148956, 6200.033203}, 	-- Zangarmarsh, Telredor GY
+		{1286.725464, 7883.122559}, 	-- Zangarmarsh, Corpse Location 006
+		{-212.4522552, 5579.671875}, 	-- Zangarmarsh, Cenarion GY
+		{1011.160584, 5039.572754}, 	-- Zangarmarsh, Corpse Location 001
+		{781.7127686, 4987.824707}, 	-- Zangarmarsh, Corpse Location 002
+		{1001.895081, 5714.570313}, 	-- Zangarmarsh, Corpse Location 003
+		{1394.982178, 7756.503418}, 	-- Zangarmarsh, Corpse Location 004
+		{1412.408813, 8430.121094}, 	-- Zangarmarsh, Corpse Location 008
+		{1398.577515, 7763.028809}, 	-- Zangarmarsh, Corpse Location 005
+		{1317.495239, 8135.391602}, 	-- Zangarmarsh, Corpse Location 007
+		{1706.280151, 8407.8125}, 	-- Zangarmarsh, Corpse Location 009
+		{1348.119995, 8677.566406}, 	-- Zangarmarsh, Corpse Location 011
+		{1838.928345, 8496.513672}, 	-- Zangarmarsh, Corpse Location 010
+		{1347.021118, 8679.226563}, 	-- Zangarmarsh, Corpse Location 012
+		{1104.395386, 8781.982422}, 	-- Zangarmarsh, Corpse Location 013
+		{747.4471436, 8702.898438}, 	-- Zangarmarsh, Corpse Location 014
+		{381.3095703, 9113.738281}, 	-- Zangarmarsh, Corpse Location 016
+		{702.7578125, 8927.527344}, 	-- Zangarmarsh, Corpse Location 015
+		{223.5499115, 9132.744141}, 	-- Zangarmarsh, Corpse Location 017
+		{32.15700912, 9120.396484}, 	-- Zangarmarsh, Corpse Location 018
+		{-160.4252472, 9053.543945}, 	-- Zangarmarsh, Corpse Location 019
+		{-1066.973022, 8066.544434}, 	-- Nagrand, Northwind Cleft
+		{-1654.373047, 7938.994141}, 	-- Nagrand, Halaa GY
+		{-1793.415649, 4931.607422}, 	-- Terokkar Forest, Shattrath GY
+		{-2540.151611, 3866.647949}, 	-- Terokkar Forest, Wilderness GY
+		{-697.5725708, 8881.731445}, 	-- Nagrand, Corpse Location 001
+		{-999.5062866, 9045.616211}, 	-- Nagrand, Corpse Location 002
+		{-1933.719604, 9343.668945}, 	-- Nagrand, Corpse Location 003
+		{-2153.297363, 9323.707031}, 	-- Nagrand, Corpse Location 004
+		{-2619.463379, 8953.700195}, 	-- Nagrand, Corpse Location 005
+		{-2799.85376, 8785.746094}, 	-- Nagrand, Corpse Location 006
+		{-2984.119385, 8700.107422}, 	-- Nagrand, Corpse Location 007
+		{-2989.351318, 8445.128906}, 	-- Nagrand, Corpse Location 008
+		{-3122.555908, 8079.489746}, 	-- Nagrand, Corpse Location 009
+		{-3155.750244, 7316.314941}, 	-- Nagrand, Corpse Location 010
+		{-3244.695557, 7079.021973}, 	-- Nagrand, Corpse Location 011
+		{-2987.350586, 7045.46875}, 	-- Nagrand, Corpse Location 012
+		{-2962.328125, 6796.881836}, 	-- Nagrand, Corpse Location 013
+		{-3045.369873, 6508.568359}, 	-- Nagrand, Corpse Location 014
+		{-3379.583984, 6206.48291}, 	-- Terokkar Forest, Corpse Location 001
+		{-3621.983154, 6225.183105}, 	-- Terokkar Forest, Corpse Location 002
+		{-3898.565674, 6147.648438}, 	-- Terokkar Forest, Corpse Location 003
+		{-3844.335938, 5931.411133}, 	-- Terokkar Forest, Corpse Location 004
+		{-3801.340332, 5618.750977}, 	-- Terokkar Forest, Corpse Location 005
+		{-3910.985352, 5404.071289}, 	-- Terokkar Forest, Corpse Location 006
+		{-3886.285645, 5149.574219}, 	-- Terokkar Forest, Corpse Location 007
+		{-3990.144043, 4869.476074}, 	-- Terokkar Forest, Corpse Location 008
+		{-3904.296143, 4591.395508}, 	-- Terokkar Forest, Corpse Location 009
+		{-4024.304688, 4421.721191}, 	-- Terokkar Forest, Corpse Location 010
+		{-3965.061279, 4128.619141}, 	-- Terokkar Forest, Corpse Location 011
+		{-2415.76416, 1811.62439}, 	-- Shadowmoon, Corpse Location 001
+		{-2319.128418, 1749.94458}, 	-- Shadowmoon, Corpse Location 002
+		{-2447.420654, 1612.805176}, 	-- Shadowmoon, Corpse Location 003
+		{-2650.239258, 1666.659424}, 	-- Shadowmoon, Corpse Location 004
+		{-4151.091309, 3425.816406}, 	-- Terokkar Forest, Corpse Location 016
+		{-2648.266846, 3020.654785}, 	-- Terokkar Forest, Corpse Location 017
+		{-2375.42041, 2848.075439}, 	-- Terokkar Forest, Corpse Location 018
+		{-2205.608887, 2968.304443}, 	-- Terokkar Forest, Corpse Location 019
+		{-2098.932373, 3116.508789}, 	-- Terokkar Forest, Corpse Location 020
+		{-2047.739136, 3278.562256}, 	-- Terokkar Forest, Corpse Location 021
+		{-2058.995361, 3560.385254}, 	-- Terokkar Forest, Corpse Location 022
+		{-1876.504395, 3700.501709}, 	-- Terokkar Forest, Corpse Location 023
+		{0, 0}, 	-- Reuse
+		{-1289.793823, 9166.72168}, 	-- Nagrand, Portal Plateau
+		{-856.2137451, 6600.060547}, 	-- Nagrand, Elemental Plateau
+		{-2033.528198, 8479.527344}, 	-- Nagrand, SW Graveyard
+		{700.0906372, 2207.990723}, 	-- Hellfire Peninsula, Throne of Kil'Jaedan
+		{-249.7649231, 1023.318726}, 	-- Hellfire Peninsula, Dark Portal
+		{-3562.40625, 4666.441895}, 	-- Terokkar Forest, Bone Wastes GY
+		{874.9109497, 7284.719727}, 	-- Zangarmarsh, Harborage GY
+		{337.124939, 8616.865234}, 	-- Zangarmarsh, Sporeggar GY
+		{4363.881348, 3093.743408}, 	-- Netherstorm, Stormspire GY
+		{3032.436768, 3594.280029}, 	-- Netherstorm, Area 52 GY
+		{-2999.226563, 2439.059814}, 	-- Shadowmoon Valley, Shadowmoon Village GY
+		{-4022.987793, 2048.57959}, 	-- Shadowmoon Valley, Wildhammer GY
+		{1955.904053, 6768.811035}, 	-- Blade's Edge, Sylvanaar GY
+		{2218.900879, 6017.354004}, 	-- Blade's Edge, Thunderlord GY
+		{-3942.589111, 3686.286865}, 	-- Terokkar Forest, Skettis GY
+		{-2652.661865, 1484.208618}, 	-- Shadowmoon, Corpse Location 005
+		{-2477.685791, 1386.237915}, 	-- Shadowmoon, Corpse Location 006
+		{-2459.081543, 1277.568359}, 	-- Shadowmoon, Corpse Location 007
+		{-2464.277588, 1074.654785}, 	-- Shadowmoon, Corpse Location 008
+		{-2597.449219, 1040.723755}, 	-- Shadowmoon, Corpse Location 009
+		{-2753.666748, 966.1463013}, 	-- Shadowmoon, Corpse Location 010
+		{-2721.157959, 711.0336304}, 	-- Shadowmoon, Corpse Location 011
+		{-2752.542969, 509.309021}, 	-- Shadowmoon, Corpse Location 012
+		{-3004.487549, 482.0505676}, 	-- Shadowmoon, Corpse Location 013
+		{-2997.384033, 207.579422}, 	-- Shadowmoon, Corpse Location 014
+		{-4084.617188, 120.513237}, 	-- Shadowmoon, Corpse Location 015
+		{-4231.621582, 58.62673569}, 	-- Shadowmoon, Corpse Location 016
+		{-4445.808105, 224.8441925}, 	-- Shadowmoon, Corpse Location 017
+		{-4507.595215, 553.5529785}, 	-- Shadowmoon, Corpse Location 018
+		{-4445.42627, 863.5579224}, 	-- Shadowmoon, Corpse Location 019
+		{-4791.515625, 1082.184204}, 	-- Shadowmoon, Corpse Location 020
+		{-4618.168457, 1850.606323}, 	-- Shadowmoon, Corpse Location 021
+		{-4568.142578, 2023.798218}, 	-- Shadowmoon, Corpse Location 022
+		{-4541.319336, 2281.759033}, 	-- Shadowmoon, Corpse Location 023
+		{-4408.891602, 2328.780273}, 	-- Shadowmoon, Corpse Location 024
+		{1932.998291, 7389.17627}, 	-- Blade's Edge, Corpse Location 000
+		{2356.309814, 7345.092773}, 	-- Blade's Edge, Corpse Location 001
+		{2818.310791, 7269.720215}, 	-- Blade's Edge, Corpse Location 002
+		{3199.991211, 7264.963867}, 	-- Blade's Edge, Corpse Location 003
+		{3432.886719, 7312.378418}, 	-- Blade's Edge, Corpse Location 004
+		{3753.244873, 7118.026367}, 	-- Blade's Edge, Corpse Location 005
+		{3797.192627, 6900.236328}, 	-- Blade's Edge, Corpse Location 006
+		{3839.147705, 6586.807129}, 	-- Blade's Edge, Corpse Location 007
+		{3482.778809, 6487.127441}, 	-- Blade's Edge, Corpse Location 008
+		{3656.61377, 6208.107422}, 	-- Blade's Edge, Corpse Location 009
+		{3995.325439, 6092.064453}, 	-- Blade's Edge, Corpse Location 010
+		{4095.108154, 5811.88623}, 	-- Blade's Edge, Corpse Location 011
+		{4153.549316, 5508.916992}, 	-- Blade's Edge, Corpse Location 012
+		{4120.706055, 5214.145996}, 	-- Blade's Edge, Corpse Location 013
+		{4086.354248, 4849.897949}, 	-- Blade's Edge, Corpse Location 014
+		{3926.204346, 4825.27832}, 	-- Blade's Edge, Corpse Location 015
+		{3731.115479, 4738.445313}, 	-- Blade's Edge, Corpse Location 016
+		{3455.314209, 4468.350098}, 	-- Blade's Edge, Corpse Location 017
+		{3323.599365, 4503.876953}, 	-- Blade's Edge, Corpse Location 018
+		{2877.524658, 4738.905273}, 	-- Blade's Edge, Corpse Location 019
+		{2653.003174, 5100.26123}, 	-- Blade's Edge, Corpse Location 020
+		{2344.619385, 5072.5}, 	-- Blade's Edge, Corpse Location 021
+		{2251.084717, 4907.940918}, 	-- Blade's Edge, Corpse Location 022
+		{2274.352783, 4725.42627}, 	-- Blade's Edge, Corpse Location 023
+		{2102.655762, 4685.081055}, 	-- Blade's Edge, Corpse Location 024
+		{1914.582275, 4677.852539}, 	-- Blade's Edge, Corpse Location 025
+		{1771.942993, 4585.164551}, 	-- Blade's Edge, Corpse Location 026
+		{1621.035645, 4563.13916}, 	-- Blade's Edge, Corpse Location 027
+		{1606.357056, 4792.579102}, 	-- Blade's Edge, Corpse Location 028
+		{1596.313843, 4948.647949}, 	-- Blade's Edge, Corpse Location 029
+		{1616.902954, 5077.052246}, 	-- Blade's Edge, Corpse Location 030
+		{3491.414551, 4127.388184}, 	-- Netherstorm - Corpse Catcher 000
+		{3578.555176, 3957.098145}, 	-- Netherstorm - Corpse Catcher 001
+		{3586.963623, 3717.307373}, 	-- Netherstorm - Corpse Catcher 002
+		{3640.770508, 3522.842041}, 	-- Netherstorm - Corpse Catcher 003
+		{3520.195801, 3511.703125}, 	-- Netherstorm - Corpse Catcher 004
+		{3399.305176, 3400.40918}, 	-- Netherstorm - Corpse Catcher 005
+		{3271.489746, 3366.920654}, 	-- Netherstorm - Corpse Catcher 006
+		{3188.366455, 3257.080811}, 	-- Netherstorm - Corpse Catcher 007
+		{3022.791016, 3163.704834}, 	-- Netherstorm - Corpse Catcher 008
+		{2943.656006, 3056.637695}, 	-- Netherstorm - Corpse Catcher 009
+		{2846.521484, 2955.540283}, 	-- Netherstorm - Corpse Catcher 010
+		{2815.296631, 2830.886475}, 	-- Netherstorm - Corpse Catcher 011
+		{2695.05127, 2940.240723}, 	-- Netherstorm - Corpse Catcher 012
+		{2570.499756, 3135.964111}, 	-- Netherstorm - Corpse Catcher 013
+		{2511.976318, 3275.154541}, 	-- Netherstorm - Corpse Catcher 014
+		{2449.933838, 3377.493652}, 	-- Netherstorm - Corpse Catcher 015
+		{2519.661377, 3538.699951}, 	-- Netherstorm - Corpse Catcher 016
+		{2479.837158, 3695.678955}, 	-- Netherstorm - Corpse Catcher 017
+		{2433.440674, 3835.276855}, 	-- Netherstorm - Corpse Catcher 018
+		{2403.429688, 3995.290771}, 	-- Netherstorm - Corpse Catcher 019
+		{2477.409668, 4151.272461}, 	-- Netherstorm - Corpse Catcher 020
+		{2535.25708, 4396.421387}, 	-- Netherstorm - Corpse Catcher 021
+		{2710.518555, 4440.322754}, 	-- Netherstorm - Corpse Catcher 022
+		{2916.154785, 4444.487793}, 	-- Netherstorm - Corpse Catcher 023
+		{3069.10083, 4357.139648}, 	-- Netherstorm - Corpse Catcher 024
+		{3091.803955, 4146.838867}, 	-- Netherstorm - Corpse Catcher 025
+		{3221.167969, 4069.098145}, 	-- Netherstorm - Corpse Catcher 026
+		{3355.788574, 4149.284668}, 	-- Netherstorm - Corpse Catcher 027
+		{3980.611572, 4262.212891}, 	-- Netherstorm - Corpse Catcher 028
+		{3802.701416, 4204.433105}, 	-- Netherstorm - Corpse Catcher 029
+		{3766.714355, 4008.22876}, 	-- Netherstorm - Corpse Catcher 030
+		{3796.266602, 3772.185303}, 	-- Netherstorm - Corpse Catcher 031
+		{4049.614502, 3692.780518}, 	-- Netherstorm - Corpse Catcher 032
+		{4152.526855, 3886.205322}, 	-- Netherstorm - Corpse Catcher 033
+		{4235.156738, 4080.62207}, 	-- Netherstorm - Corpse Catcher 034
+		{4169.833008, 4209.064453}, 	-- Netherstorm - Corpse Catcher 035
+		{3836.078125, 3477.260498}, 	-- Netherstorm - Corpse Catcher 036
+		{3994.947021, 3538.267822}, 	-- Netherstorm - Corpse Catcher 037
+		{4211.398438, 3632.001221}, 	-- Netherstorm - Corpse Catcher 038
+		{4395.242676, 3708.615479}, 	-- Netherstorm - Corpse Catcher 039
+		{4580.691406, 3584}, 	-- Netherstorm - Corpse Catcher 040
+		{4793.191895, 3527.374268}, 	-- Netherstorm - Corpse Catcher 041
+		{4903.713867, 3323.859375}, 	-- Netherstorm - Corpse Catcher 042
+		{4945.868652, 3110.829102}, 	-- Netherstorm - Corpse Catcher 043
+		{5156.753418, 2974.213867}, 	-- Netherstorm - Corpse Catcher 044
+		{5204.699219, 2868.108154}, 	-- Netherstorm - Corpse Catcher 045
+		{5019.972168, 2798.727051}, 	-- Netherstorm - Corpse Catcher 046
+		{4885.182129, 2663.129639}, 	-- Netherstorm - Corpse Catcher 047
+		{4853.174316, 2354.016846}, 	-- Netherstorm - Corpse Catcher 048
+		{4680.811523, 2287.479248}, 	-- Netherstorm - Corpse Catcher 049
+		{4522.444824, 2280.276611}, 	-- Netherstorm - Corpse Catcher 050
+		{4436.572754, 2485.476563}, 	-- Netherstorm - Corpse Catcher 051
+		{4448.29541, 2658.147217}, 	-- Netherstorm - Corpse Catcher 052
+		{4285.063477, 2837.040039}, 	-- Netherstorm - Corpse Catcher 053
+		{4136.619141, 2699.332031}, 	-- Netherstorm - Corpse Catcher 054
+		{3975.243164, 2807.435547}, 	-- Netherstorm - Corpse Catcher 055
+		{3931.786377, 3020.666748}, 	-- Netherstorm - Corpse Catcher 056
+		{3895.876221, 3257.639648}, 	-- Netherstorm - Corpse Catcher 057
+		{3629.358643, 3095.108887}, 	-- Netherstorm - Corpse Catcher 058
+		{3476.445557, 3293.55957}, 	-- Netherstorm - Corpse Catcher 059
+		{3348.410156, 3172.063477}, 	-- Netherstorm - Corpse Catcher 060
+		{3216.284424, 2992.534912}, 	-- Netherstorm - Corpse Catcher 061
+		{3022.812744, 2892.906982}, 	-- Netherstorm - Corpse Catcher 062
+		{2860.46875, 2735.280518}, 	-- Netherstorm - Corpse Catcher 063
+		{2863.802979, 2537.409912}, 	-- Netherstorm - Corpse Catcher 064
+		{2856.083984, 2297.040283}, 	-- Netherstorm - Corpse Catcher 065
+		{2834.860107, 2040.240723}, 	-- Netherstorm - Corpse Catcher 066
+		{2868.810547, 1848.693848}, 	-- Netherstorm - Corpse Catcher 067
+		{2895.752441, 1708.090698}, 	-- Netherstorm - Corpse Catcher 068
+		{3110.674805, 1624.431641}, 	-- Netherstorm - Corpse Catcher 069
+		{3276.015381, 1726.586182}, 	-- Netherstorm - Corpse Catcher 070
+		{3332.259521, 1986.970337}, 	-- Netherstorm - Corpse Catcher 071
+		{3315.851318, 2185.521729}, 	-- Netherstorm - Corpse Catcher 072
+		{3384.581787, 2376.219482}, 	-- Netherstorm - Corpse Catcher 073
+		{3492.838379, 2570.839355}, 	-- Netherstorm - Corpse Catcher 074
+		{3590.412842, 2677.079102}, 	-- Netherstorm - Corpse Catcher 075
+		{3740.939209, 2696.992676}, 	-- Netherstorm - Corpse Catcher 076
+		{3737.849854, 2894.691406}, 	-- Netherstorm - Corpse Catcher 077
+		{3862.946289, 2554.456299}, 	-- Netherstorm - Corpse Catcher 078
+		{3648.264893, 2414.608643}, 	-- Netherstorm - Corpse Catcher 079
+		{3546.970703, 2219.757568}, 	-- Netherstorm - Corpse Catcher 080
+		{3550.010498, 2002.348755}, 	-- Netherstorm - Corpse Catcher 081
+		{3509.691895, 1762.48999}, 	-- Netherstorm - Corpse Catcher 082
+		{3645.262695, 1712.664673}, 	-- Netherstorm - Corpse Catcher 083
+		{3681.177002, 1558.560303}, 	-- Netherstorm - Corpse Catcher 084
+		{3775.548096, 1437.535645}, 	-- Netherstorm - Corpse Catcher 085
+		{3969.014404, 1336.413818}, 	-- Netherstorm - Corpse Catcher 086
+		{4166.447754, 1329.147339}, 	-- Netherstorm - Corpse Catcher 087
+		{4199.538086, 1484.236328}, 	-- Netherstorm - Corpse Catcher 088
+		{4258.282715, 1672.844604}, 	-- Netherstorm - Corpse Catcher 089
+		{4362.23291, 1927.158447}, 	-- Netherstorm - Corpse Catcher 090
+		{4347.150391, 2143.360596}, 	-- Netherstorm - Corpse Catcher 091
+		{4246.958496, 2450.753906}, 	-- Netherstorm - Corpse Catcher 092
+		{4117.149414, 2332.294678}, 	-- Netherstorm - Corpse Catcher 093
+		{3975.804688, 2437.473145}, 	-- Netherstorm - Corpse Catcher 094
+		{2501.339111, 1983.390869}, 	-- Netherstorm - Corpse Catcher 095
+		{2573.345947, 2127.095459}, 	-- Netherstorm - Corpse Catcher 096
+		{2648.16333, 2353.62915}, 	-- Netherstorm - Corpse Catcher 097
+		{2659.245361, 2547.139404}, 	-- Netherstorm - Corpse Catcher 098
+		{2587.892578, 2711.604248}, 	-- Netherstorm - Corpse Catcher 099
+		{2473.626953, 2964.97583}, 	-- Netherstorm - Corpse Catcher 100
+		{2209.182617, 2901.677002}, 	-- Netherstorm - Corpse Catcher 101
+		{2164.319824, 2667.394531}, 	-- Netherstorm - Corpse Catcher 102
+		{2078.211914, 2405.502197}, 	-- Netherstorm - Corpse Catcher 103
+		{2079.815918, 2227.038818}, 	-- Netherstorm - Corpse Catcher 104
+		{2240.179199, 2067.795898}, 	-- Netherstorm - Corpse Catcher 105
+		{552.1880493, 1995.149048}, 	-- Hellfire Peninsula, Force Camps (Alliance)
+		{3065.004395, 5426.416016}, 	-- Blade's Edge, Evergrove GY
+		{3872.658936, 5514.40625}, 	-- Blade's Edge, North Ridge GY
+		{2296.352295, 7023.231445}, 	-- Blade's Edge, West Ridge GY
+		{2312.272217, 5083.930176}, 	-- Blade's Edge, East Ridge GY
+		{2980.191895, 1869.824707}, 	-- Netherstorm, Cosmowrench GY
+		{-1272.424927, 2436.845947}, 	-- Hellfire Peninsula, Spinebreaker GY
+		{-3134.535645, 719.4840698}, 	-- Shadowmoon Valley, Altar GY
+		{-4117.032227, 1058.257568}, 	-- Shadowmoon Valley, Sanctum GY
+		{2362.672363, 2327.414063}, 	-- Netherstorm, Kirin'Var GY
+		{2011.386475, 5575.785645}, 	-- Blade's Edge, Toshley GY
+		{3522.843262, 6821.624023}, 	-- Blade's Edge, Raven Wood GY
+		{3447.3125, 4803.822266}, 	-- Blade's Edge, NE Ridge GY
+		{-1148.084595, 5897.619629}, 	-- Terokkar Forest, Ogre GY
+		{-3524.266602, 619.5283203}, 	-- Black Temple, Alliance GY
+		{-3624.932861, 600.006958}, 	-- Black Temple, Horde GY
+		{3621.86792, 6519.528809}, 	-- Blade's Edge, Corpse Location 031
+		{-1424.370483, 4359.581055}, 	-- Terokkar Forest, Razorthorn Rise GY
+		{12851.75488, -6854.800781}, 	-- Isle of Quel'Danas, Staging Area GY
+		{12851.75488, -6854.800781}, 	-- Isle of Quel'Danas, Staging Area GY
+		{12851.75488, -6854.800781}, 	-- Isle of Quel'Danas, Staging Area GY
+		{-2433.643066, 4660.96875}, 	-- Terokkar Forest, Lake Jorune GY
+		{-310.5150146, 3084.060059}, 	-- Hellfire Military - Exit Target
+		{-302.4079895, 3162.919922}, 	-- Hellfire Demon - Exit Target
+		{-312.269989, 3086.530029}, 	-- Hellfire Raid - Exit Target
+		{9331.490234, -7812.27002}, 	-- Eversong Woods - Duskwither UP Target
+		{9334.030273, -7880.02002}, 	-- Eversong Woods - Duskwither DOWN Target
+		{-363.4360046, 3078.429932}, 	-- Hellfire Ramparts - Exit Target
+		{-233.3300018, 3199.709961}, 	-- Hellfire Ramparts - Omor Exit Target
+		{-248.1130066, 922.9000244}, 	-- Dark Portal - Outland Target
+		{817.9240112, 6937.560059}, 	-- Coilfang Pumping - Exit Target
+		{781.3770142, 6754.609863}, 	-- Coilfang Marsh - Exit Target
+		{731.0209961, 7013.75}, 	-- Coilfang Draenei - Exit Target
+		{-3635.389893, 4942.939941}, 	-- Auchindoun Shadow - Exit Target
+		{-3362.100098, 4668.899902}, 	-- Auchindoun Arakkoa - Exit Target
+		{-3086.51001, 4942.430176}, 	-- Auchindoun Etherial - Exit Target
+		{-3361.800049, 5209.200195}, 	-- Auchindoun Draenei - Exit Target
+		{6123.22998, -7006.569824}, 	-- Ghostlands - EPL Return Target
+		{828.2349854, 6865.799805}, 	-- Coilfang Raid - Exit Target
+		{-590.5939941, 4079.02002}, 	-- Hellfire Peninsula - Falcon Watch Up Target
+		{-593.2919922, 4077.850098}, 	-- Hellfire Peninsula - Falcon Watch Down Target
+		{-2262.540039, 3112.459961}, 	-- Terokkar Forest - Spire Up Target
+		{-2262.540039, 3112.459961}, 	-- Terokkar Forest - Spire Up Target
+		{3310.320068, 1336.589966}, 	-- Tempest Keep - Arcane Exit Target
+		{3088.149902, 1382.219971}, 	-- Tempest Keep - Raid Exit Target
+		{3409.850098, 1486.26001}, 	-- Tempest Keep - Atrium Exit Target
+		{2867.929932, 1550.949951}, 	-- Tempest Keep - Factory Exit Target
+		{-1810.829956, 5323.950195}, 	-- Shattrath City - Haramad's Teleporter Target
+		{3540.169922, 5092.140137}, 	-- Gruul's Lair - Exit Target
+		{-2739.459961, 2721.959961}, 	-- Shadowmoon - Quest - Test Teleporter (h) Target
+		{-2836.659912, 1945.550049}, 	-- Shadowmoon - Quest - Test Teleporter (a) Target
+		{-2739.459961, 2721.959961}, 	-- Shadowmoon - Quest - Test Teleporter (h) Target
+		{-2836.659912, 1945.550049}, 	-- Shadowmoon - Quest - Test Teleporter (a) Target
+		{3409.850098, 1486.26001}, 	-- Tempest Keep - Atrium Exit Target
+		{2867.929932, 1550.949951}, 	-- Tempest Keep - Factory Exit Target
+		{-3650.899902, 316.8970032}, 	-- Black Temple - Exit Target
+		{6851.109863, -7985.049805}, 	-- Zul'Aman - Exit Target
+		{12885.2998, -7336.419922}, 	-- Magisters' Terrace - Exit Target
+		{12556.5, -6774.950195}, 	-- Sunwell Raid - Exit Target
+		{12556.5, -6774.950195}, 	-- Sunwell Raid - Exit Target
+		{12556.5, -6774.950195}, 	-- Sunwell Raid - Exit Target
+		{-306.7581787, 3064.435547}, 	-- Corpse Location: 540 - Hellfire Citadel: The Shattered Halls
+		{-295.419342, 3151.992676}, 	-- Corpse Location: 542 - Hellfire Citadel: The Blood Furnace
+		{-360.0498657, 3067.895508}, 	-- Corpse Location: 543 - Hellfire Citadel: Ramparts
+		{-330.2338562, 3106.635986}, 	-- Corpse Location: 544 - Magtheridon's Lair
+		{764.2190552, 6915.07959}, 	-- Corpse Location: 545 - Coilfang: The Steamvault
+		{764.6282349, 6768.072754}, 	-- Corpse Location: 546 - Coilfang: The Underbog
+		{742.1582031, 7011.32666}, 	-- Corpse Location: 547 - Coilfang: The Slave Pens
+		{775.786377, 6865.242676}, 	-- Corpse Location: 548 - Coilfang: Serpentshrine Cavern
+		{-3640.687744, 4943.162598}, 	-- Corpse Location: 555 - Auchindoun: Shadow Labyrinth
+		{-3361.862549, 4665.592285}, 	-- Corpse Location: 556 - Auchindoun: Sethekk Halls
+		{-3089.516357, 4942.756348}, 	-- Corpse Location: 557 - Auchindoun: Mana-Tombs
+		{-3363.439941, 5156.455078}, 	-- Corpse Location: 558 - Auchindoun: Auchenai Crypts
+		{-3644.527344, 317.2936707}, 	-- Corpse Location: 564 - Black Temple
+		{3525.452881, 5144.150879}, 	-- Corpse Location: 565 - Gruul's Lair
+		{6851.020996, -7989.713379}, 	-- Corpse Location: 568 - Zul'Aman
+		{12551.7627, -6774.56543}, 	-- Corpse Location: 580 - The Sunwell
+		{12881.90234, -7343.094727}, 	-- Corpse Location: 585 - Magister's Terrace
+		{-315.3259888, 1149.23999}, 	-- The Dark Portal
+		{-1649.550049, 7556.970215}, 	-- Nagrand
+		{2946.929932, 2649.090088}, 	-- Netherstorm
+		{-3525.330078, 4894.290039}, 	-- Auchindoun
+		{-3327.050049, 374.1919861}, 	-- Black Temple
+]]
 	},
-	["Northrend"] = {
-		{1958.129761, -3682.21875}, 	--Howling Fjord, Northwest GY
-		{728.265625, -2992.265137}, 	--Howling Fjord, Tuskarr GY
-		{117.0234375, -3698.800781}, 	--Howling Fjord, Island GY
-		{1191.766602, -4115.084473}, 	--Howling Fjord, Central GY
-		{2243.119141, -4650.642578}, 	--Howling Fjord, North GY
-		{1923.724243, -5986.354492}, 	--Howling Fjord, Vengance GY
-		{717.7784424, -5878.413574}, 	--Howling Fjord, Southeast GY
-		{205.003479, -5944.014648}, 	--Howling Fjord, South Beach GY
-		{57.91775131, -4649.07666}, 	--Howling Fjord, South GY
-		{668.0244751, -4931.679199}, 	--Howling Fjord, Valgarde GY
-		{1808.77002, -5608.609863}, 	--Howling Fjord, Northeast GY
-		{5537.461914, 2904.909668}, 	--Wintergrasp, Fortress (East)
-		{3041.212402, 4314.904297}, 	--Borean Tundra, Tuskar GY
-		{3100.182861, -1983.395874}, 	--Grizzly Hills, Vileprey GY
-		{3534.130127, -2882.061279}, 	--Grizzly Hills, Amberpine GY
-		{4352.775391, -4247.986328}, 	--Grizzly Hills, Westfall GY
-		{4117.908691, -4816.408691}, 	--Grizzly Hills, Eastern GY
-		{3967.282959, -2316.643555}, 	--Grizzly Hills, Northwestern GY
-		{2933.637207, -2836.776611}, 	--Grizzly Hills, Southwestern GY
-		{4323.392578, -3606.845459}, 	--Grizzly Hills, Central GY
-		{4604.763184, -976.6495361}, 	--Dragonblight, Northeastern GY
-		{3667.905518, -1044.361938}, 	--Dragonblight, Wintergarde GY
-		{3218.739502, -700.3674927}, 	--Dragonblight, Forsaken East GY
-		{3843.014893, 1425.518188}, 	--Dragonblight, Agmar's Hammer GY
-		{3498.378418, 2100.415771}, 	--Dragonblight, Star's Rest GY
-		{2772.183838, 1042.39917}, 	--Dragonblight, Moa'ki Harbor GY
-		{3599.17041, 2846.069092}, 	--Dragonblight, Borean Border GY
-		{3538.169678, 275.5101013}, 	--Dragonblight, Wyrmrest GY
-		{4812.894531, 1022.494019}, 	--Dragonblight, Wrathgate Horde GY
-		{4466.173828, 1257.022095}, 	--Dragonblight, Wrathgate Alliance GY
-		{2842.000488, 5973.158203}, 	--Borean Tundra, Warsong Hold GY
-		{2007.96228, 5936.552246}, 	--Borean Tundra, Riplash GY
-		{3621.884521, 6805.535156}, 	--Borean Tundra, Coldarra GY
-		{3559.929443, 5818.793945}, 	--Borean Tundra, Amber Ledge GY
-		{4223.4375, 5335.883789}, 	--Borean Tundra, Fizzcrank GY
-		{4514.808105, 5661.557129}, 	--Borean Tundra, Bor'Gorok GY
-		{3041.141357, 3843.492676}, 	--Borean Tundra, Death's Stand GY
-		{3576.159424, 4087.609863}, 	--Borean Tundra, Taunka'le GY
-		{2842.964111, 6655.171875}, 	--Borean Tundra, Coast of Echoes GY
-		{2478.592773, 5289.40918}, 	--Borean Tundra, Valiance Keep GY
-		{5537.569336, 2905.035156}, 	--Wintergrasp, Fortress (West)
-		{5104.354004, 2302.234375}, 	--Wintergrasp, Siege Factory (Defense NE)
-		{5101.043457, 3461.448242}, 	--Wintergrasp, Siege Factory (Defense NW)
-		{5031.505371, 3710.427002}, 	--Wintergrasp, Horde Starting Area
-		{5140.354004, 2182.007813}, 	--Wintergrasp, Alliance Starting Area
-		{4317.970703, 2407.424805}, 	--Wintergrasp, Siege Factory (SE)
-		{4335.810059, 3234.558838}, 	--Wintergrasp, Siege Factory (SW)
-		{4826.361328, 5467.171387}, 	--Sholazar Basin, South GY
-		{1335.471558, -4785.180176}, 	--Howling Fjord, Utgarde GY
-		{5620.522461, 5840.974121}, 	--Sholazar Basin, Nesingwary GY
-		{5538.257324, 4851.613281}, 	--Sholazar Basin, Central GY
-		{6246.948242, 5164.337402}, 	--Sholazar Basin, Northwest GY
-		{6274.768066, 4409.439453}, 	--Sholazar Basin, Northeast GY
-		{5519.070801, 3593.2771}, 	--Sholazar Basin, East GY
-		{5703.967285, -2467.939453}, 	--Zul'Drak, Western GY
-		{5557.910645, -1615.608032}, 	--Zul'Drak, Northwestern GY
-		{5244.652344, -2133.331299}, 	--Zul'Drak, Southwestern GY
-		{4939.806641, -2958.486572}, 	--Zul'Drak, Southern GY
-		{5798.515137, -3286.552979}, 	--Zul'Drak, Central GY
-		{5522.764648, -4101.729004}, 	--Zul'Drak, Southeastern GY
-		{6618.708984, -4795.516113}, 	--Zul'Drak, Gun'Drak GY
-		{5849.213867, 763.31073}, 	--Crystalsong Forest, Dalaran GY
-		{1103.07666, -4977.50293}, 	--Howling Fjord, Utgarde 2 GY
-		{6351.793457, 5643.560547}, 	--Sholazar Basin, Stormwright GY
-		{5041.85498, -642.7241821}, 	--Crystalsong Forest, Alliance GY
-		{6070.447266, 85.97040558}, 	--Icecrown, Argent Vanguard
-		{7080.4375, -141.2238464}, 	--Storm Peaks, Valkyrion GY
-		{9021.610352, -1166.618774}, 	--Storm Peaks, Ulduar GY
-		{7915.028809, -2453.761719}, 	--Storm Peaks, Temple East GY
-		{8105.495605, -996.5811768}, 	--Storm Peaks, Temple West GY
-		{7463.799805, -3320.100098}, 	--Storm Peaks, Frostfield GY
-		{5882.891602, 666.8056641}, 	--Crystalsong Forest, West GY
-		{5597.146973, -595.5305786}, 	--Crystalsong Forest, Horde GY
-		{3421.198975, -1280.933838}, 	--Dragonblight, Naxxramas GY
-		{3793.732178, 2064.344971}, 	--Dragonblight, Icemist GY
-		{8188.079102, 2859.480957}, 	--Icecrown Glacier, Quarry GY
-		{7233.663574, 2159.703613}, 	--Icecrown Glacier, Vrykul Central GY
-		{7886.05127, 718.7763062}, 	--Icecrown Glacier, Northeast Ice GY
-		{4421.29541, -1981.247803}, 	--Grizzly Hills, Drak'tharon GY
-		{7825.225098, -2023.124146}, 	--Storm Peaks, Temple of the Makers GY
-		{8387.583984, -214.2780457}, 	--Storm Peaks, Snowdrift GY
-		{6947.002441, -545.4080811}, 	--Storm Peaks, Temple of Storms GY
-		{6422.349121, -1184.34729}, 	--Storm Peaks, K3 GY
-		{5036.333008, 4494.316895}, 	--Sholazar Basin, Frenzyheart GY
-		{7149.745117, 3691.576416}, 	--Icecrown Glacier, Jotunheim GY
-		{7092.461914, -1440.909912}, 	--Storm Peaks, Foot Steppes GY
-		{5463.84375, 2840.679688}, 	--Wintergrasp, Fortress Graveyard (Indoors)
-		{4680.722168, 51.01665497}, 	--Dragonblight, Crystal Vice GY
-		{8466.048828, 450.3702393}, 	--Icecrown, Argent Tournament GY
-		{6447.486816, 2060.855957}, 	--Icecrown Glacier, Citadel GY
-		{2585.825439, -5808.930664}, 	--Howling Fjord, Frostblade GY
-		{1221.630005, -4864.75}, 	--Utgarde Keep - Exit Target
-		{1242.550049, -4857.470215}, 	--Utgarde Pinnacle - Exit Target
-		{3896.73999, 6985.399902}, 	--The Nexus - Exit Target
-		{4774.439941, -2030.030029}, 	--Drak'Tharon - Exit Target
-		{8921.169922, -979.0960083}, 	--Halls of Stone - Exit Target
-		{4884.939941, 5175.640137}, 	--Sholazar Basin - Teleport from Un'Goro
-		{9175.679688, -1378.800049}, 	--Ulduar 80 - Exit Target
-		{3817.399902, 2032.819946}, 	--Azjol-Nerub Back Exit Target
-		{3674.129883, 2168.610107}, 	--Azjol-Nerub Front Exit Target
-		{6150.450195, -1073.459961}, 	--Storm Peaks - Goblin Teleporter: from Garm's Rise
-		{6315.290039, -1754.140015}, 	--Storm Peaks - Goblin Teleporter: from K3
-		{3672.850098, -1272.369995}, 	--Naxxramas - Exit Teleport Target
-		{3672.850098, -1272.369995}, 	--Naxxramas - Exit Teleport Target
-		{3672.850098, -1272.369995}, 	--Naxxramas - Exit Teleport Target
-		{3672.850098, -1272.369995}, 	--Naxxramas - Exit Teleport Target
-		{5682.509766, 489.276001}, 	--Violet Hold - Exit Target
-		{3641.169922, 2031.150024}, 	--Lower City - Exit Target
-		{6717.319824, -4645.549805}, 	--Gundrak - Exit Target A (Mammoth)
-		{6955.240234, -4416.919922}, 	--Gundrak - Exit Target B (Snake)
-		{3817.399902, 2032.819946}, 	--Azjol-Nerub Back Exit Target
-		{3457.610107, 262.7139893}, 	--CoA Black - Exit Target
-		{5171.580078, -1666.560059}, 	--Teleport to Reliquary of Agony (Target)
-		{5485.52002, 2840.139893}, 	--Wintergrasp Raid - Teleport Target - Exit
-		{6717.319824, -4645.549805}, 	--Gundrak - Exit Target A (Mammoth)
-		{6955.240234, -4416.919922}, 	--Gundrak - Exit Target B (Snake)
-		{5147.209961, 2187.129883}, 	--Wintergrasp - Alliance Camp Teleport Target
-		{5096.629883, 2290.429932}, 	--Wintergrasp - Teleport - Sunken Ring Teleport Target
-		{5111.600098, 3472.370117}, 	--Wintergrasp - Teleport - Broken Temple Teleport Target
-		{5034.759766, 3703.360107}, 	--Wintergrasp - Teleport - Horde Landing Target
-		{4333.140137, 3224.620117}, 	--Wintergrasp - Teleport - SW Factory
-		{4329.830078, 2408.27002}, 	--Wintergrasp - Teleport - SE Factory Teleport
-		{3733.679932, 3563.25}, 	--Borean Tundra - Naxxanar Up Dest
-		{3802.379883, 3585.949951}, 	--Borean Tundra - Naxxanar Down Dest
-		{3733.679932, 3563.25}, 	--Borean Tundra - Naxxanar Up Dest
-		{3733.679932, 3563.25}, 	--Borean Tundra - Naxxanar Up Dest
-		{3687.909912, 3577.280029}, 	--Borean Tundra - Naxxanar Up Alliance Dest
-		{3734.139893, 3571.120117}, 	--Borean Tundra - Naxxanar Up Horde Dest
-		{9338.30957, -1114.160034}, 	--Ulduar Raid - Exit Target
-		{4237.399902, 5260.819824}, 	--Borean Tundra - Fizzcrank Airstrip - Teleporter Trigger - 02
-		{4884.939941, 5175.640137}, 	--Sholazar Basin - Teleport from Un'Goro
-		{4884.939941, 5175.640137}, 	--Sholazar Basin - Teleport from Un'Goro
-		{4884.939941, 5175.640137}, 	--Sholazar Basin - Teleport from Un'Goro
-		{8515.349609, 730.1699829}, 	--Argent Raid - Exit Target
-		{8577.849609, 792.0419922}, 	--Argent Dungeon - Exit Target
-		{5667.649902, 2007.449951}, 	--Icecrown Dungeon - Forge of Souls - Exit Target
-		{5595.779785, 2013.27002}, 	--Icecrown Dungeon - Pit of Saron - Exit Target
-		{5629.140137, 1976.459961}, 	--Icecrown Dungeon - Halls of Reflection - Exit Target
-		{5788.359863, 2070.689941}, 	--Icecrown Raid - Exit Target
-		{3603.889893, 192.447998}, 	--Ruby Sanctum - Exit Target
-		{3896.73999, 6985.399902}, 	--The Nexus - Exit Target
-		{1211.759399, -4868.421875}, 	--Corpse Location: 574 - Utgarde Keep
-		{1232.40979, -4860.953613}, 	--Corpse Location: 575 - Utgarde Pinnacle
-		{3899.925781, 6985.435547}, 	--Corpse Location: 576 - The Nexus
-		{3865.923096, 6983.939941}, 	--Corpse Location: 578 - The Oculus
-		{8921.792969, -966.8064575}, 	--Corpse Location: 599 - Halls of Stone
-		{4774.583008, -2023.049072}, 	--Corpse Location: 600 - Drak'Tharon Keep
-		{3672.215332, 2171.275146}, 	--Corpse Location: 601 - Azjol-Nerub
-		{9185.087891, -1386.790649}, 	--Corpse Location: 602 - Halls of Lightning
-		{9359.371094, -1115.175415}, 	--Corpse Location: 603 - Ulduar
-		{6708.730957, -4654.903809}, 	--Corpse Location: 604 - Gundrak
-		{5689.489746, 498.046936}, 	--Corpse Location: 608 - Violet Hold
-		{3438.15332, 260.4013062}, 	--Corpse Location: 615 - The Obsidian Sanctum
-		{3869.981445, 6984.330078}, 	--Corpse Location: 616 - The Eye of Eternity
-		{3641.458008, 2032.063843}, 	--Corpse Location: 619 - Ahn'kahet: The Old Kingdom
-		{5488.124512, 2840.33374}, 	--Corpse Location: 624 - Vault of Archavon
-		{5776.921875, 2065.932373}, 	--Corpse Location: 631 - Icecrown Citadel
-		{5670.791504, 2003.62854}, 	--Corpse Location: 632 - The Forge of Souls
-		{8515.286133, 736.137146}, 	--Corpse Location: 649 - Trial of the Crusader
-		{8571.43457, 792.22052}, 	--Corpse Location: 650 - Trial of the Champion
-		{5592.057129, 2010.270874}, 	--Corpse Location: 658 - Pit of Saron
-		{5628.875, 1973.286499}, 	--Corpse Location: 668 - Halls of Reflection
-		{3608.129395, 186.8020782}, 	--Corpse Location: 724 - The Ruby Sanctum
-		{3899.929932, 6985.439941}, 	--Corpse Location: 951 - Nexus Legendary
-		{1980.290039, -4112.509766}, 	--Howling Fjord
-		{6405.390137, 2326.149902}, 	--Icecrown Citadel
-		{8726.330078, -1271.130005}, 	--Ulduar
-		{5784.430176, 709.6950073}, 	--Dalaran
-		{4054.01001, 6673.870117}, 	--The Nexus
+	["Northrend"] = 
+	{
+--[[
+		{1958.129761, -3682.21875}, 	-- Howling Fjord, Northwest GY
+		{728.265625, -2992.265137}, 	-- Howling Fjord, Tuskarr GY
+		{117.0234375, -3698.800781}, 	-- Howling Fjord, Island GY
+		{1191.766602, -4115.084473}, 	-- Howling Fjord, Central GY
+		{2243.119141, -4650.642578}, 	-- Howling Fjord, North GY
+		{1923.724243, -5986.354492}, 	-- Howling Fjord, Vengance GY
+		{717.7784424, -5878.413574}, 	-- Howling Fjord, Southeast GY
+		{205.003479, -5944.014648}, 	-- Howling Fjord, South Beach GY
+		{57.91775131, -4649.07666}, 	-- Howling Fjord, South GY
+		{668.0244751, -4931.679199}, 	-- Howling Fjord, Valgarde GY
+		{1808.77002, -5608.609863}, 	-- Howling Fjord, Northeast GY
+		{5537.461914, 2904.909668}, 	-- Wintergrasp, Fortress (East)
+		{3041.212402, 4314.904297}, 	-- Borean Tundra, Tuskar GY
+		{3100.182861, -1983.395874}, 	-- Grizzly Hills, Vileprey GY
+		{3534.130127, -2882.061279}, 	-- Grizzly Hills, Amberpine GY
+		{4352.775391, -4247.986328}, 	-- Grizzly Hills, Westfall GY
+		{4117.908691, -4816.408691}, 	-- Grizzly Hills, Eastern GY
+		{3967.282959, -2316.643555}, 	-- Grizzly Hills, Northwestern GY
+		{2933.637207, -2836.776611}, 	-- Grizzly Hills, Southwestern GY
+		{4323.392578, -3606.845459}, 	-- Grizzly Hills, Central GY
+		{4604.763184, -976.6495361}, 	-- Dragonblight, Northeastern GY
+		{3667.905518, -1044.361938}, 	-- Dragonblight, Wintergarde GY
+		{3218.739502, -700.3674927}, 	-- Dragonblight, Forsaken East GY
+		{3843.014893, 1425.518188}, 	-- Dragonblight, Agmar's Hammer GY
+		{3498.378418, 2100.415771}, 	-- Dragonblight, Star's Rest GY
+		{2772.183838, 1042.39917}, 	-- Dragonblight, Moa'ki Harbor GY
+		{3599.17041, 2846.069092}, 	-- Dragonblight, Borean Border GY
+		{3538.169678, 275.5101013}, 	-- Dragonblight, Wyrmrest GY
+		{4812.894531, 1022.494019}, 	-- Dragonblight, Wrathgate Horde GY
+		{4466.173828, 1257.022095}, 	-- Dragonblight, Wrathgate Alliance GY
+		{2842.000488, 5973.158203}, 	-- Borean Tundra, Warsong Hold GY
+		{2007.96228, 5936.552246}, 	-- Borean Tundra, Riplash GY
+		{3621.884521, 6805.535156}, 	-- Borean Tundra, Coldarra GY
+		{3559.929443, 5818.793945}, 	-- Borean Tundra, Amber Ledge GY
+		{4223.4375, 5335.883789}, 	-- Borean Tundra, Fizzcrank GY
+		{4514.808105, 5661.557129}, 	-- Borean Tundra, Bor'Gorok GY
+		{3041.141357, 3843.492676}, 	-- Borean Tundra, Death's Stand GY
+		{3576.159424, 4087.609863}, 	-- Borean Tundra, Taunka'le GY
+		{2842.964111, 6655.171875}, 	-- Borean Tundra, Coast of Echoes GY
+		{2478.592773, 5289.40918}, 	-- Borean Tundra, Valiance Keep GY
+		{5537.569336, 2905.035156}, 	-- Wintergrasp, Fortress (West)
+		{5104.354004, 2302.234375}, 	-- Wintergrasp, Siege Factory (Defense NE)
+		{5101.043457, 3461.448242}, 	-- Wintergrasp, Siege Factory (Defense NW)
+		{5031.505371, 3710.427002}, 	-- Wintergrasp, Horde Starting Area
+		{5140.354004, 2182.007813}, 	-- Wintergrasp, Alliance Starting Area
+		{4317.970703, 2407.424805}, 	-- Wintergrasp, Siege Factory (SE)
+		{4335.810059, 3234.558838}, 	-- Wintergrasp, Siege Factory (SW)
+		{4826.361328, 5467.171387}, 	-- Sholazar Basin, South GY
+		{1335.471558, -4785.180176}, 	-- Howling Fjord, Utgarde GY
+		{5620.522461, 5840.974121}, 	-- Sholazar Basin, Nesingwary GY
+		{5538.257324, 4851.613281}, 	-- Sholazar Basin, Central GY
+		{6246.948242, 5164.337402}, 	-- Sholazar Basin, Northwest GY
+		{6274.768066, 4409.439453}, 	-- Sholazar Basin, Northeast GY
+		{5519.070801, 3593.2771}, 	-- Sholazar Basin, East GY
+		{5703.967285, -2467.939453}, 	-- Zul'Drak, Western GY
+		{5557.910645, -1615.608032}, 	-- Zul'Drak, Northwestern GY
+		{5244.652344, -2133.331299}, 	-- Zul'Drak, Southwestern GY
+		{4939.806641, -2958.486572}, 	-- Zul'Drak, Southern GY
+		{5798.515137, -3286.552979}, 	-- Zul'Drak, Central GY
+		{5522.764648, -4101.729004}, 	-- Zul'Drak, Southeastern GY
+		{6618.708984, -4795.516113}, 	-- Zul'Drak, Gun'Drak GY
+		{5849.213867, 763.31073}, 	-- Crystalsong Forest, Dalaran GY
+		{1103.07666, -4977.50293}, 	-- Howling Fjord, Utgarde 2 GY
+		{6351.793457, 5643.560547}, 	-- Sholazar Basin, Stormwright GY
+		{5041.85498, -642.7241821}, 	-- Crystalsong Forest, Alliance GY
+		{6070.447266, 85.97040558}, 	-- Icecrown, Argent Vanguard
+		{7080.4375, -141.2238464}, 	-- Storm Peaks, Valkyrion GY
+		{9021.610352, -1166.618774}, 	-- Storm Peaks, Ulduar GY
+		{7915.028809, -2453.761719}, 	-- Storm Peaks, Temple East GY
+		{8105.495605, -996.5811768}, 	-- Storm Peaks, Temple West GY
+		{7463.799805, -3320.100098}, 	-- Storm Peaks, Frostfield GY
+		{5882.891602, 666.8056641}, 	-- Crystalsong Forest, West GY
+		{5597.146973, -595.5305786}, 	-- Crystalsong Forest, Horde GY
+		{3421.198975, -1280.933838}, 	-- Dragonblight, Naxxramas GY
+		{3793.732178, 2064.344971}, 	-- Dragonblight, Icemist GY
+		{8188.079102, 2859.480957}, 	-- Icecrown Glacier, Quarry GY
+		{7233.663574, 2159.703613}, 	-- Icecrown Glacier, Vrykul Central GY
+		{7886.05127, 718.7763062}, 	-- Icecrown Glacier, Northeast Ice GY
+		{4421.29541, -1981.247803}, 	-- Grizzly Hills, Drak'tharon GY
+		{7825.225098, -2023.124146}, 	-- Storm Peaks, Temple of the Makers GY
+		{8387.583984, -214.2780457}, 	-- Storm Peaks, Snowdrift GY
+		{6947.002441, -545.4080811}, 	-- Storm Peaks, Temple of Storms GY
+		{6422.349121, -1184.34729}, 	-- Storm Peaks, K3 GY
+		{5036.333008, 4494.316895}, 	-- Sholazar Basin, Frenzyheart GY
+		{7149.745117, 3691.576416}, 	-- Icecrown Glacier, Jotunheim GY
+		{7092.461914, -1440.909912}, 	-- Storm Peaks, Foot Steppes GY
+		{5463.84375, 2840.679688}, 	-- Wintergrasp, Fortress Graveyard (Indoors)
+		{4680.722168, 51.01665497}, 	-- Dragonblight, Crystal Vice GY
+		{8466.048828, 450.3702393}, 	-- Icecrown, Argent Tournament GY
+		{6447.486816, 2060.855957}, 	-- Icecrown Glacier, Citadel GY
+		{2585.825439, -5808.930664}, 	-- Howling Fjord, Frostblade GY
+		{1221.630005, -4864.75}, 	-- Utgarde Keep - Exit Target
+		{1242.550049, -4857.470215}, 	-- Utgarde Pinnacle - Exit Target
+		{3896.73999, 6985.399902}, 	-- The Nexus - Exit Target
+		{4774.439941, -2030.030029}, 	-- Drak'Tharon - Exit Target
+		{8921.169922, -979.0960083}, 	-- Halls of Stone - Exit Target
+		{4884.939941, 5175.640137}, 	-- Sholazar Basin - Teleport from Un'Goro
+		{9175.679688, -1378.800049}, 	-- Ulduar 80 - Exit Target
+		{3817.399902, 2032.819946}, 	-- Azjol-Nerub Back Exit Target
+		{3674.129883, 2168.610107}, 	-- Azjol-Nerub Front Exit Target
+		{6150.450195, -1073.459961}, 	-- Storm Peaks - Goblin Teleporter: from Garm's Rise
+		{6315.290039, -1754.140015}, 	-- Storm Peaks - Goblin Teleporter: from K3
+		{3672.850098, -1272.369995}, 	-- Naxxramas - Exit Teleport Target
+		{3672.850098, -1272.369995}, 	-- Naxxramas - Exit Teleport Target
+		{3672.850098, -1272.369995}, 	-- Naxxramas - Exit Teleport Target
+		{3672.850098, -1272.369995}, 	-- Naxxramas - Exit Teleport Target
+		{5682.509766, 489.276001}, 	-- Violet Hold - Exit Target
+		{3641.169922, 2031.150024}, 	-- Lower City - Exit Target
+		{6717.319824, -4645.549805}, 	-- Gundrak - Exit Target A (Mammoth)
+		{6955.240234, -4416.919922}, 	-- Gundrak - Exit Target B (Snake)
+		{3817.399902, 2032.819946}, 	-- Azjol-Nerub Back Exit Target
+		{3457.610107, 262.7139893}, 	-- CoA Black - Exit Target
+		{5171.580078, -1666.560059}, 	-- Teleport to Reliquary of Agony (Target)
+		{5485.52002, 2840.139893}, 	-- Wintergrasp Raid - Teleport Target - Exit
+		{6717.319824, -4645.549805}, 	-- Gundrak - Exit Target A (Mammoth)
+		{6955.240234, -4416.919922}, 	-- Gundrak - Exit Target B (Snake)
+		{5147.209961, 2187.129883}, 	-- Wintergrasp - Alliance Camp Teleport Target
+		{5096.629883, 2290.429932}, 	-- Wintergrasp - Teleport - Sunken Ring Teleport Target
+		{5111.600098, 3472.370117}, 	-- Wintergrasp - Teleport - Broken Temple Teleport Target
+		{5034.759766, 3703.360107}, 	-- Wintergrasp - Teleport - Horde Landing Target
+		{4333.140137, 3224.620117}, 	-- Wintergrasp - Teleport - SW Factory
+		{4329.830078, 2408.27002}, 	-- Wintergrasp - Teleport - SE Factory Teleport
+		{3733.679932, 3563.25}, 	-- Borean Tundra - Naxxanar Up Dest
+		{3802.379883, 3585.949951}, 	-- Borean Tundra - Naxxanar Down Dest
+		{3733.679932, 3563.25}, 	-- Borean Tundra - Naxxanar Up Dest
+		{3733.679932, 3563.25}, 	-- Borean Tundra - Naxxanar Up Dest
+		{3687.909912, 3577.280029}, 	-- Borean Tundra - Naxxanar Up Alliance Dest
+		{3734.139893, 3571.120117}, 	-- Borean Tundra - Naxxanar Up Horde Dest
+		{9338.30957, -1114.160034}, 	-- Ulduar Raid - Exit Target
+		{4237.399902, 5260.819824}, 	-- Borean Tundra - Fizzcrank Airstrip - Teleporter Trigger - 02
+		{4884.939941, 5175.640137}, 	-- Sholazar Basin - Teleport from Un'Goro
+		{4884.939941, 5175.640137}, 	-- Sholazar Basin - Teleport from Un'Goro
+		{4884.939941, 5175.640137}, 	-- Sholazar Basin - Teleport from Un'Goro
+		{8515.349609, 730.1699829}, 	-- Argent Raid - Exit Target
+		{8577.849609, 792.0419922}, 	-- Argent Dungeon - Exit Target
+		{5667.649902, 2007.449951}, 	-- Icecrown Dungeon - Forge of Souls - Exit Target
+		{5595.779785, 2013.27002}, 	-- Icecrown Dungeon - Pit of Saron - Exit Target
+		{5629.140137, 1976.459961}, 	-- Icecrown Dungeon - Halls of Reflection - Exit Target
+		{5788.359863, 2070.689941}, 	-- Icecrown Raid - Exit Target
+		{3603.889893, 192.447998}, 	-- Ruby Sanctum - Exit Target
+		{3896.73999, 6985.399902}, 	-- The Nexus - Exit Target
+		{1211.759399, -4868.421875}, 	-- Corpse Location: 574 - Utgarde Keep
+		{1232.40979, -4860.953613}, 	-- Corpse Location: 575 - Utgarde Pinnacle
+		{3899.925781, 6985.435547}, 	-- Corpse Location: 576 - The Nexus
+		{3865.923096, 6983.939941}, 	-- Corpse Location: 578 - The Oculus
+		{8921.792969, -966.8064575}, 	-- Corpse Location: 599 - Halls of Stone
+		{4774.583008, -2023.049072}, 	-- Corpse Location: 600 - Drak'Tharon Keep
+		{3672.215332, 2171.275146}, 	-- Corpse Location: 601 - Azjol-Nerub
+		{9185.087891, -1386.790649}, 	-- Corpse Location: 602 - Halls of Lightning
+		{9359.371094, -1115.175415}, 	-- Corpse Location: 603 - Ulduar
+		{6708.730957, -4654.903809}, 	-- Corpse Location: 604 - Gundrak
+		{5689.489746, 498.046936}, 	-- Corpse Location: 608 - Violet Hold
+		{3438.15332, 260.4013062}, 	-- Corpse Location: 615 - The Obsidian Sanctum
+		{3869.981445, 6984.330078}, 	-- Corpse Location: 616 - The Eye of Eternity
+		{3641.458008, 2032.063843}, 	-- Corpse Location: 619 - Ahn'kahet: The Old Kingdom
+		{5488.124512, 2840.33374}, 	-- Corpse Location: 624 - Vault of Archavon
+		{5776.921875, 2065.932373}, 	-- Corpse Location: 631 - Icecrown Citadel
+		{5670.791504, 2003.62854}, 	-- Corpse Location: 632 - The Forge of Souls
+		{8515.286133, 736.137146}, 	-- Corpse Location: 649 - Trial of the Crusader
+		{8571.43457, 792.22052}, 	-- Corpse Location: 650 - Trial of the Champion
+		{5592.057129, 2010.270874}, 	-- Corpse Location: 658 - Pit of Saron
+		{5628.875, 1973.286499}, 	-- Corpse Location: 668 - Halls of Reflection
+		{3608.129395, 186.8020782}, 	-- Corpse Location: 724 - The Ruby Sanctum
+		{3899.929932, 6985.439941}, 	-- Corpse Location: 951 - Nexus Legendary
+		{1980.290039, -4112.509766}, 	-- Howling Fjord
+		{6405.390137, 2326.149902}, 	-- Icecrown Citadel
+		{8726.330078, -1271.130005}, 	-- Ulduar
+		{5784.430176, 709.6950073}, 	-- Dalaran
+		{4054.01001, 6673.870117}, 	-- The Nexus
+]]
 	},
-	["HawaiiMainLand"] = {
-		{-435.4461975, -1720.3125}, 	--The Jade Forest, Alliance Start
-		{2643.247314, -509.5451355}, 	--The Jade Forest, Strongarm Airstrip GY
-		{528, -620}, 	--Valley of the Four Winds, Temp GY
-		{-297.4791565, -2878.826416}, 	--The Jade Forest, Swamp GY East
-		{74.44791412, -2086.657959}, 	--The Jade Forest, Fox Grove GY
-		{1020.296875, -2354.85083}, 	--The Jade Forest, East Temple GY
-		{553.685791, -1363.831665}, 	--The Jade Forest, Orchard GY
-		{1775.329834, -1865.809082}, 	--The Jade Forest, Dawnblossom GY
-		{1739.732666, -2779.763916}, 	--The Jade Forest, Arboretum GY 90+
-		{1728.697876, -489.8993225}, 	--The Jade Forest, Spire of Solitude GY
-		{2521.421143, -1165.380249}, 	--The Jade Forest, Training Temple GY
-		{2787.814209, -1797.96875}, 	--The Jade Forest, Mogu Ruins GY
-		{2749.095459, -2343.918457}, 	--The Jade Forest, Fishing Village GY
-		{1847.027832, 367.762146}, 	--KLS - Binan Village GY
-		{3132.33252, 549.934021}, 	--KLS - Northern Temple GY
-		{4221.858398, 643.223938}, 	--KLS - Northern Balloon Village GY
-		{4604.840332, 145.5555573}, 	--KLS - Troll Village GY
-		{3022.507813, 1303.567749}, 	--KLS - Mountain Valley GY
-		{4011.185791, 1776.637207}, 	--KLS - Monkaris GY
-		{3485.42627, 2101.230957}, 	--KLS - Top of the World GY
-		{3529.825439, 2699.591064}, 	--KLS - Shadowpan Hideout GY
-		{2653.557373, 2175.616455}, 	--KLS - West Mountain Valley GY
-		{3242.01123, 2821.605957}, 	--KLS - Shadowpan Battleground GY
-		{2100.505127, 1087.480957}, 	--KLS - Alliance/Horde GY
-		{1884.59375, 2006.5625}, 	--KLS - West Fishing Village GY
-		{3551.512939, 1647.121582}, 	--KLS - Valley of the Kings GY
-		{957.883667, -2474.010498}, 	--Jade Temple - Exit Target
-		{3631.290039, 2538.409912}, 	--Shadowpan Hideout - Exit Target
-		{2236.118164, 3131.97583}, 	--Townlong Steppes, Temp GY
-		{692.364563, 2080.170166}, 	--Gate of the Setting Sun - Exit Target
-		{-713.355896, 1263.416626}, 	--Stormstout Brewery - Exit Target
-		{3982.101563, 1111.206665}, 	--Mogu'shan Vaults - Exit Target
-		{1648.876709, 2510.159668}, 	--Townlong Steppes, Hatred's Vice
-		{182.831604, 1174.463501}, 	--Valley of the Four Winds, Fruited Fields GY
-		{-192.6944427, 1921.635376}, 	--Valley of the Four Winds, Stoneplow Fields GY
-		{-583.541687, 1316.342041}, 	--Valley of the Four Winds, Thirsty Alley GY
-		{-2344.241455, 842.739563}, 	--Krasarang Wilds - Kea Krak GY
-		{-1256.168457, 785.215271}, 	--Krasarang Wilds - The Deepwild GY
-		{-1205.47229, 94.21180725}, 	--Krasarang Wilds - Dojani River GY
-		{-1348.954834, 1970.418457}, 	--Krasarang Wilds - Field of Korja GY
-		{-391.5138855, -759.305542}, 	--Krasarang Wilds, Zhu Province GY
-		{2411.25708, 3356.78125}, 	--Townlong Steppes, Osul Mesa GY
-		{-1286.84729, 4509.366211}, 	--Dread Wastes, Dread Wastes, GY
-		{954.354187, -57.02951431}, 	--Terrace of Endless Spring - Exit Target
-		{198.0642395, -329.7743225}, 	--Valley of the Four Winds, Shang's Stead GY
-		{-82.34201813, 585.663208}, 	--Valley of the Four Winds, Halfhill GY
-		{1058.342041, -159.2517395}, 	--The Veiled Stair, Tavern in the Mists GY
-		{447.840271, -1576.109375}, 	--The Jade Forest, The Overlook GY
-		{957.7059937, -2473.409912}, 	--Corpse Location: 960 - Temple of the Jade Serpent
-		{-688.7050781, 1267.453735}, 	--Corpse Location: 961 - Stormstout Brewery
-		{695.684021, 2080.125}, 	--Corpse Location: 962 - Gate of the Setting Sun
-		{3982.997314, 1121.290649}, 	--Corpse Location: 1008 - Mogu'shan Vaults
-		{1408.633667, 419.543396}, 	--Corpse Location - Mogu'shan Palace
-		{1343.875, 490.375}, 	--Mogu'shan Palace - GY
-		{1391.831665, 437.694458}, 	--Mogu'shan Palace - Exit Teleport Target
-		{3571.783936, 1352.668457}, 	--KLS - Valley of the Kings GY - 02
-		{3019.049561, 3005.416748}, 	--Kun-Lai Summit - Wall Quest Graveyard
-		{930.385437, 710.322937}, 	--Vale of Eternal Blossoms - Alliance GY
-		{1366.493042, 984.078125}, 	--Vale of Eternal Blossoms - Horde GY
-		{1417.380249, 1491.352417}, 	--Vale of Eternal Blossoms - Guo-Lai GY
-		{1188.989624, 1595.6875}, 	--Vale of Eternal Blossoms - Guo-Lai 02 GY
-		{1044.668457, 2143.581543}, 	--Vale of Eternal Blossoms - Great Wall GY
-		{697.456604, 1702.508667}, 	--Vale of Eternal Blossoms - Mistfall Village GY
-		{1536.880005, -1793.369995}, 	--Mogu'shan Palace - Exit Teleport Target BETA
-		{1536.930054, -1793.329956}, 	--Mogu'shan Palace - GY - BETA
-		{927.59552, -2503.578125}, 	--The Jade Forest, East Temple Interior Quests GY
-		{-1250.885376, 4139.337891}, 	--Dread Wastes, Dread Wastes, GY 02
-		{-1564.97229, 4796.333496}, 	--Dread Wastes, Dread Wastes, GY 03
-		{-470.9861145, 3883.768311}, 	--Dread Wastes, Dread Wastes, GY 04
-		{-543.852417, 2931.160645}, 	--Dread Wastes, Dread Wastes, GY 05
-		{483.7482605, 2919.703125}, 	--Dread Wastes, Dread Wastes, GY 06
-		{622.894104, 3662.10498}, 	--Dread Wastes, Dread Wastes, GY 07
-		{588.192688, 4281.796875}, 	--Dread Wastes, Dread Wastes, GY 08
-		{1030.089966, -2259.320068}, 	--The Jade Temple
-		{2914.060059, 579.927002}, 	--Kun-Lai Summit
-		{-1515.02002, 1152.420044}, 	--Krasarang Wilds - The Crane Temple
-		{1130.560059, 1561.339966}, 	--Vale of Eternal Blossoms
-		{1624.03125, 3018.764893}, 	--Townlong Steppes, Upper Sumprushes GY
-		{1707.94104, 3590.852539}, 	--Townlong Steppes, Dusklight Bridge GY
-		{1279.875, 4261.920898}, 	--Townlong Steppes, Farwatch Overlook GY
-		{2378.592041, 4105.514648}, 	--Townlong Steppes, Underbough GY
-		{576.423645, 1319.934082}, 	--Valley of the Four Winds, Kunzen Village GY
-		{637.416687, 2129.755127}, 	--Gate of the Setting Sun - Graveyard [DON'T USE]
-		{691.96875, 2080.329834}, 	--Gate of the Setting Sun - Exit Target 2
-		{167.8385468, 4054.735352}, 	--Heart of Fear - Exit Target
-		{1433.27002, 5085.390137}, 	--Mantid Siege - Exit Target
-		{1448.086792, 5093.251953}, 	--Corpse Location: 1011 - Siege of Niuzao Temple
-		{3650.27002, 2547.429932}, 	--Corpse Location: 959 - Shado-Pan Monastery
-		{638.612854, 2123.204834}, 	--Vale of Eternal Blossoms - Gate of the Setting Sun GY
-		{2628.802979, 5927.962891}, 	--Townlong Steppes, Sra'vess GY
-		{103.0364609, 1473.149292}, 	--Valley of the Four Winds, Skyrange GY 2
-		{338.3368225, 1550.118042}, 	--Valley of the Four Winds, Skyrange GY 1
-		{-83.40451813, -3214.953125}, 	--The Jade Forest, SE Spire GY - 90+
-		{2437.895752, 4825.227539}, 	--Townlong Steppes, Ox Temple
-		{1668.296875, 5314.186035}, 	--Townlong Steppes, Forward Assault Camp
-		{3946.416748, 5529.014648}, 	--Townlong Steppes, Shan'ze Dao GY
-		{1410.748291, 4923.807129}, 	--Townlong Steppes, Siege Niuzao Temple GY
-		{1614.024292, -217.5416718}, 	--The Veiled Stair, The Secret Aerie GY
-		{109.2690964, 4019.002686}, 	--Dread Wastes, Dread Wastes, GY 09
-		{2966.555664, -662.78302}, 	--The Jade Forest, Honeydew Village GY
-		{-777.34375, 2407.472168}, 	--VFW - Great Wall - Southern Graveyard
-		{73.53125, 2253.083252}, 	--VFW - Great Wall - Northern Graveyard
-		{3031.024414, 3020.129395}, 	--KLS - Great Wall GY - Western Span
-		{5883.257813, 1134}, 	--KLS - Great Wall GY - Middle Span
-		{2109.748291, 2480.079834}, 	--KLS - Great Wall GY - Eastern Span
-		{1474.522583, 2206.597168}, 	--Gate of the Setting Sun - Northern Graveyard
-		{4023.28125, 1118.947876}, 	--KLS - Mogu'shan Terrace GY
-		{2643.243896, -509.9947815}, 	--The Jade Forest, Alliance Airstrip GY
-		{313.3770142, 4563.370117}, 	--Dread Wastes, Dread Wastes, Amber Hibernal Teleport Pad
-		{1587.947876, 1988.491333}, 	--Vale of Eternal Blossoms - Ancestral Rise GY
-		{-1638.078125, -1.279513955}, 	--Krasarang Wilds - Narsong Spire - Beach GY
-		{392.428833, 1581.34729}, 	--Vale of Eternal Blossoms - Mistfall Village - Mountain GY
-		{4230.748535, 1432.581665}, 	--Kun-Lai Summit 5.1 - Emperor's Reach - GY
-		{4503.220215, 2842.550049}, 	--Kun-Lai Summit 5.1 - Ruins of Korune - GY
-		{5880.649902, 1132.199951}, 	--Isle of Giants - GY
+	["HawaiiMainLand"] = 
+	{
+--[[
+		{-435.4461975, -1720.3125}, 	-- The Jade Forest, Alliance Start
+		{2643.247314, -509.5451355}, 	-- The Jade Forest, Strongarm Airstrip GY
+		{528, -620}, 	-- Valley of the Four Winds, Temp GY
+		{-297.4791565, -2878.826416}, 	-- The Jade Forest, Swamp GY East
+		{74.44791412, -2086.657959}, 	-- The Jade Forest, Fox Grove GY
+		{1020.296875, -2354.85083}, 	-- The Jade Forest, East Temple GY
+		{553.685791, -1363.831665}, 	-- The Jade Forest, Orchard GY
+		{1775.329834, -1865.809082}, 	-- The Jade Forest, Dawnblossom GY
+		{1739.732666, -2779.763916}, 	-- The Jade Forest, Arboretum GY 90+
+		{1728.697876, -489.8993225}, 	-- The Jade Forest, Spire of Solitude GY
+		{2521.421143, -1165.380249}, 	-- The Jade Forest, Training Temple GY
+		{2787.814209, -1797.96875}, 	-- The Jade Forest, Mogu Ruins GY
+		{2749.095459, -2343.918457}, 	-- The Jade Forest, Fishing Village GY
+		{1847.027832, 367.762146}, 	-- KLS - Binan Village GY
+		{3132.33252, 549.934021}, 	-- KLS - Northern Temple GY
+		{4221.858398, 643.223938}, 	-- KLS - Northern Balloon Village GY
+		{4604.840332, 145.5555573}, 	-- KLS - Troll Village GY
+		{3022.507813, 1303.567749}, 	-- KLS - Mountain Valley GY
+		{4011.185791, 1776.637207}, 	-- KLS - Monkaris GY
+		{3485.42627, 2101.230957}, 	-- KLS - Top of the World GY
+		{3529.825439, 2699.591064}, 	-- KLS - Shadowpan Hideout GY
+		{2653.557373, 2175.616455}, 	-- KLS - West Mountain Valley GY
+		{3242.01123, 2821.605957}, 	-- KLS - Shadowpan Battleground GY
+		{2100.505127, 1087.480957}, 	-- KLS - Alliance/Horde GY
+		{1884.59375, 2006.5625}, 	-- KLS - West Fishing Village GY
+		{3551.512939, 1647.121582}, 	-- KLS - Valley of the Kings GY
+		{957.883667, -2474.010498}, 	-- Jade Temple - Exit Target
+		{3631.290039, 2538.409912}, 	-- Shadowpan Hideout - Exit Target
+		{2236.118164, 3131.97583}, 	-- Townlong Steppes, Temp GY
+		{692.364563, 2080.170166}, 	-- Gate of the Setting Sun - Exit Target
+		{-713.355896, 1263.416626}, 	-- Stormstout Brewery - Exit Target
+		{3982.101563, 1111.206665}, 	-- Mogu'shan Vaults - Exit Target
+		{1648.876709, 2510.159668}, 	-- Townlong Steppes, Hatred's Vice
+		{182.831604, 1174.463501}, 	-- Valley of the Four Winds, Fruited Fields GY
+		{-192.6944427, 1921.635376}, 	-- Valley of the Four Winds, Stoneplow Fields GY
+		{-583.541687, 1316.342041}, 	-- Valley of the Four Winds, Thirsty Alley GY
+		{-2344.241455, 842.739563}, 	-- Krasarang Wilds - Kea Krak GY
+		{-1256.168457, 785.215271}, 	-- Krasarang Wilds - The Deepwild GY
+		{-1205.47229, 94.21180725}, 	-- Krasarang Wilds - Dojani River GY
+		{-1348.954834, 1970.418457}, 	-- Krasarang Wilds - Field of Korja GY
+		{-391.5138855, -759.305542}, 	-- Krasarang Wilds, Zhu Province GY
+		{2411.25708, 3356.78125}, 	-- Townlong Steppes, Osul Mesa GY
+		{-1286.84729, 4509.366211}, 	-- Dread Wastes, Dread Wastes, GY
+		{954.354187, -57.02951431}, 	-- Terrace of Endless Spring - Exit Target
+		{198.0642395, -329.7743225}, 	-- Valley of the Four Winds, Shang's Stead GY
+		{-82.34201813, 585.663208}, 	-- Valley of the Four Winds, Halfhill GY
+		{1058.342041, -159.2517395}, 	-- The Veiled Stair, Tavern in the Mists GY
+		{447.840271, -1576.109375}, 	-- The Jade Forest, The Overlook GY
+		{957.7059937, -2473.409912}, 	-- Corpse Location: 960 - Temple of the Jade Serpent
+		{-688.7050781, 1267.453735}, 	-- Corpse Location: 961 - Stormstout Brewery
+		{695.684021, 2080.125}, 	-- Corpse Location: 962 - Gate of the Setting Sun
+		{3982.997314, 1121.290649}, 	-- Corpse Location: 1008 - Mogu'shan Vaults
+		{1408.633667, 419.543396}, 	-- Corpse Location - Mogu'shan Palace
+		{1343.875, 490.375}, 	-- Mogu'shan Palace - GY
+		{1391.831665, 437.694458}, 	-- Mogu'shan Palace - Exit Teleport Target
+		{3571.783936, 1352.668457}, 	-- KLS - Valley of the Kings GY - 02
+		{3019.049561, 3005.416748}, 	-- Kun-Lai Summit - Wall Quest Graveyard
+		{930.385437, 710.322937}, 	-- Vale of Eternal Blossoms - Alliance GY
+		{1366.493042, 984.078125}, 	-- Vale of Eternal Blossoms - Horde GY
+		{1417.380249, 1491.352417}, 	-- Vale of Eternal Blossoms - Guo-Lai GY
+		{1188.989624, 1595.6875}, 	-- Vale of Eternal Blossoms - Guo-Lai 02 GY
+		{1044.668457, 2143.581543}, 	-- Vale of Eternal Blossoms - Great Wall GY
+		{697.456604, 1702.508667}, 	-- Vale of Eternal Blossoms - Mistfall Village GY
+		{1536.880005, -1793.369995}, 	-- Mogu'shan Palace - Exit Teleport Target BETA
+		{1536.930054, -1793.329956}, 	-- Mogu'shan Palace - GY - BETA
+		{927.59552, -2503.578125}, 	-- The Jade Forest, East Temple Interior Quests GY
+		{-1250.885376, 4139.337891}, 	-- Dread Wastes, Dread Wastes, GY 02
+		{-1564.97229, 4796.333496}, 	-- Dread Wastes, Dread Wastes, GY 03
+		{-470.9861145, 3883.768311}, 	-- Dread Wastes, Dread Wastes, GY 04
+		{-543.852417, 2931.160645}, 	-- Dread Wastes, Dread Wastes, GY 05
+		{483.7482605, 2919.703125}, 	-- Dread Wastes, Dread Wastes, GY 06
+		{622.894104, 3662.10498}, 	-- Dread Wastes, Dread Wastes, GY 07
+		{588.192688, 4281.796875}, 	-- Dread Wastes, Dread Wastes, GY 08
+		{1030.089966, -2259.320068}, 	-- The Jade Temple
+		{2914.060059, 579.927002}, 	-- Kun-Lai Summit
+		{-1515.02002, 1152.420044}, 	-- Krasarang Wilds - The Crane Temple
+		{1130.560059, 1561.339966}, 	-- Vale of Eternal Blossoms
+		{1624.03125, 3018.764893}, 	-- Townlong Steppes, Upper Sumprushes GY
+		{1707.94104, 3590.852539}, 	-- Townlong Steppes, Dusklight Bridge GY
+		{1279.875, 4261.920898}, 	-- Townlong Steppes, Farwatch Overlook GY
+		{2378.592041, 4105.514648}, 	-- Townlong Steppes, Underbough GY
+		{576.423645, 1319.934082}, 	-- Valley of the Four Winds, Kunzen Village GY
+		{637.416687, 2129.755127}, 	-- Gate of the Setting Sun - Graveyard [DON'T USE]
+		{691.96875, 2080.329834}, 	-- Gate of the Setting Sun - Exit Target 2
+		{167.8385468, 4054.735352}, 	-- Heart of Fear - Exit Target
+		{1433.27002, 5085.390137}, 	-- Mantid Siege - Exit Target
+		{1448.086792, 5093.251953}, 	-- Corpse Location: 1011 - Siege of Niuzao Temple
+		{3650.27002, 2547.429932}, 	-- Corpse Location: 959 - Shado-Pan Monastery
+		{638.612854, 2123.204834}, 	-- Vale of Eternal Blossoms - Gate of the Setting Sun GY
+		{2628.802979, 5927.962891}, 	-- Townlong Steppes, Sra'vess GY
+		{103.0364609, 1473.149292}, 	-- Valley of the Four Winds, Skyrange GY 2
+		{338.3368225, 1550.118042}, 	-- Valley of the Four Winds, Skyrange GY 1
+		{-83.40451813, -3214.953125}, 	-- The Jade Forest, SE Spire GY - 90+
+		{2437.895752, 4825.227539}, 	-- Townlong Steppes, Ox Temple
+		{1668.296875, 5314.186035}, 	-- Townlong Steppes, Forward Assault Camp
+		{3946.416748, 5529.014648}, 	-- Townlong Steppes, Shan'ze Dao GY
+		{1410.748291, 4923.807129}, 	-- Townlong Steppes, Siege Niuzao Temple GY
+		{1614.024292, -217.5416718}, 	-- The Veiled Stair, The Secret Aerie GY
+		{109.2690964, 4019.002686}, 	-- Dread Wastes, Dread Wastes, GY 09
+		{2966.555664, -662.78302}, 	-- The Jade Forest, Honeydew Village GY
+		{-777.34375, 2407.472168}, 	-- VFW - Great Wall - Southern Graveyard
+		{73.53125, 2253.083252}, 	-- VFW - Great Wall - Northern Graveyard
+		{3031.024414, 3020.129395}, 	-- KLS - Great Wall GY - Western Span
+		{5883.257813, 1134}, 	-- KLS - Great Wall GY - Middle Span
+		{2109.748291, 2480.079834}, 	-- KLS - Great Wall GY - Eastern Span
+		{1474.522583, 2206.597168}, 	-- Gate of the Setting Sun - Northern Graveyard
+		{4023.28125, 1118.947876}, 	-- KLS - Mogu'shan Terrace GY
+		{2643.243896, -509.9947815}, 	-- The Jade Forest, Alliance Airstrip GY
+		{313.3770142, 4563.370117}, 	-- Dread Wastes, Dread Wastes, Amber Hibernal Teleport Pad
+		{1587.947876, 1988.491333}, 	-- Vale of Eternal Blossoms - Ancestral Rise GY
+		{-1638.078125, -1.279513955}, 	-- Krasarang Wilds - Narsong Spire - Beach GY
+		{392.428833, 1581.34729}, 	-- Vale of Eternal Blossoms - Mistfall Village - Mountain GY
+		{4230.748535, 1432.581665}, 	-- Kun-Lai Summit 5.1 - Emperor's Reach - GY
+		{4503.220215, 2842.550049}, 	-- Kun-Lai Summit 5.1 - Ruins of Korune - GY
+		{5947.131348, 1146.984375}, 	-- Isle of Giants - GY
+		{-922.678833, -4692.836914}, 	-- Timeless Isle - Alliance Landing gy
+		{-370.074646, -4621.65625}, 	-- Timeless Isle - Horde Landing gy
+		{1230.899292, 613.852417}, 	-- Garrosh Raid - Exit Target
+		{1167.387207, 685.607666}, 	-- Vale of Eternal Blossoms - Vale Raid GY
+		{-558.163208, -5648.449707}, 	-- Timeless Isle - Grotto gy
+		{-265.996521, -5509.548828}, 	-- Timeless Isle - Ordon Sanc GY
+		{-313.484375, -5011.217285}, 	-- Timeless Isle - Three-Breeze/Misty Strand
+		{-921.28125, -5045.571289}, 	-- Timeless Isle - Pi'jiu GY
+		{-650.269104, -4866.658203}, 	-- Timeless Isle - Celestial Court GY
+		{-649.921875, -5122.192871}, 	-- Timeless Isle - Celestial Court GY 2
+		{-1094.345459, -5228.369629}, 	-- Timeless Isle - Firewalker Ruins GY
+		{-743.732666, -5729.619629}, 	-- Timeless Isle - Firewalker's Path Lower
+		{-448.034729, -5550.972168}, 	-- Timeless Isle - Firewalker's Path Upper
+]]
+	},
+--[[
+	["Deepholm"] = 
+	{
+		{1005.200012, -862.3770142}, 	-- Deepholm, Crimson Expanse GY
+		{848.0280151, 643.5540161}, 	-- Deepholm, Temple of Earth GY
+		{1979.26001, 516.9860229}, 	-- Deepholm, Shuddering Spires GY
+		{9.576330185, -174.9100037}, 	-- Deepholm, Twilight Overlook GY
+		{917.3510132, -375.3340149}, 	-- Deepholm, Central East GY
+		{653.8989868, 1828.709961}, 	-- Deepholm, Fractured Battlefront GY
+		{1259.199951, 1645.560059}, 	-- Deepholm, Needlerock Chasm GY
+		{126.685997, 1502.540039}, 	-- Deepholm, Shattered Field GY
+		{185.621994, 828.2819824}, 	-- Deepholm, Twilight Terrace GY
+		{446.428009, 1637.640015}, 	-- Deepholm, Stone Hearth GY
+		{1023.719971, 644.7470093}, 	-- Deepholm - Stonecore Exit Target
+		{1031.907959, 610.296875}, 	-- Corpse Location: 725 - The Stonecore
+		{1152.380005, 1183.560059}, 	-- Deepholm
+	},
+]]
+	["Draenor"] = 
+	{
+--[[
+		{6271.839844, 6458.830078}, 	-- Frostwind Desert - TEMP GRAVEYARD
+		{7909.922852, 5663.436035}, 	-- Frostfire Ridge - Arena GY
+		{7924.262207, 5665.544434}, 	-- Frostfire Ridge - Throm'var GY
+		{7267.626953, 5215.439453}, 	-- Frostfire Ridge - Bladespire Oasis GY
+		{5846.938477, 6085.943848}, 	-- Frostfire Ridge - Frostwolf Camp GY
+		{6343.649902, 6576.839844}, 	-- Frostfire Ridge - Broken Ogre Tower GY
+		{6483.30127, 5825}, 	-- Frostfire Ridge - Favela GY
+		{6002.200195, 5199.299805}, 	-- Frostfire Ridge - Stonefang Outpost GY
+		{5716.841309, 4222.419434}, 	-- Frostfire Ridge - Shivering Trench
+		{5854.204102, 3366.59375}, 	-- Frostfire Ridge - Bone Town GY
+		{6549.936523, 4387.043457}, 	-- Frostfire Ridge - Icewind Dunes GY
+		{665, -2489.897705}, 	-- Shadowmoon 6.x, (F) Karabor Courtyard
+		{7421.009766, 4150.439941}, 	-- Frostfire Ridge - Thunderland GY
+		{6440.640137, 6350.660156}, 	-- Frostfire Ridge - Bladespire Fortress - Brazen Taxi - GJC
+		{6815.160156, 5743.160156}, 	-- Frostfire Ridge - Bladespire Fortress - Ride Ghostfur
+		{-782.590271, -659.375}, 	-- Shadowmoon 6.x, (A) Anchorite's Rise
+		{-285.5607605, -752.364563}, 	-- Shadowmoon 6.x, (B) Whispering Fields
+		{156.3298645, -355.6701355}, 	-- Shadowmoon 6.x, (C) Shaz'gul
+		{534.789917, -1222.336792}, 	-- Shadowmoon 6.x, (D) Light's Fall
+		{579.397583, -2998.920166}, 	-- Shadowmoon 6.x, (G) Karabor Harbor
+		{1223.557251, -1876.866333}, 	-- Shadowmoon 6.x, (H) Elodor
+		{1464.553833, -891.024292}, 	-- Shadowmoon 6.x, (I) Rulkan
+		{1564.654541, -188.4149323}, 	-- Shadowmoon 6.x, (J) Gloomshade Grove
+		{1747.111084, 643.701416}, 	-- Shadowmoon 6.x, (K) The Cursed Woods
+		{1179.840332, 411.2743225}, 	-- Shadowmoon 6.x, (L) The Pale Cave
+		{919.553833, -201.7256927}, 	-- Shadowmoon 6.x, (M) Anguish Fortress
+		{-1378.989624, -2027.607666}, 	-- Shadowmoon 6.x, (N) Chimaera Island
+		{7266.77002, 4459.72998}, 	-- Bloodmaul Slave Mines - Exit
+		{7263.709961, 4453.390137}, 	-- 6.0 Ogre Mines - Exit Target
+		{6450.45752, 6345.729004}, 	-- Frostfire Ridge - Bladespire Fortress - Intro Level 1 GY
+		{6595.67627, 5680.86377}, 	-- Frostfire Ridge - Bladespire Fortress - Intro Level 2 GY
+		{6814.288086, 5737.361816}, 	-- Frostfire Ridge - Bladespire Fortress - Intro Level 3 GY
+		{7183.410156, 4399.930176}, 	-- Frostfire Ridge - Ogre Mines GY
+		{231.375, -1478.118042}, 	-- SMV Alliance Garrison, Safe
+		{6530.725586, 624.510437}, 	-- Gorgrond - Belcher Cauldron (HMC)
+		{2522.223877, 2717.927979}, 	-- Altar of A'dal (Quest Conditioned)
+		{1489.180054, 3075.600098}, 	-- Auchindoun Dungeon 6.0 - Exit
+		{2817.925293, 1514.46875}, 	-- Talador, Aruuna GY
+		{2885.919922, 2056.699951}, 	-- Talador, Tuurem East, GY
+		{3749.51001, 1862.589966}, 	-- Talador, Zone Entrance (North), GY
+		{2420.397705, 5516.327148}, 	-- Quest - Nagrand 6.0 (Shields Down!: Teleport Area Trigger Destination) - ELM
+		{2313.649902, 2194.449951}, 	-- Talador, Central River Area, GY
+		{1668.376709, 2333.501709}, 	-- Talador, Auchindoun East, GY
+		{1162.630005, 3088.590088}, 	-- Talador, Auchindoun South, GY
+		{1575.196167, 3242.415039}, 	-- Talador, Auchindoun West, GY
+		{2321.071289, 3240.098145}, 	-- Talador, Shattrath South (Outside City Gates), GY
+		{2533.840088, 2916.909912}, 	-- Talador, Shattrath Rise (South East), GY
+		{2603.712646, 3132.559082}, 	-- Talador, Shattrath East, GY
+		{3007.26001, 2431.060059}, 	-- Talador, Tuurem West, GY
+		{762.09198, 130.0330048}, 	-- Shadowmoon Dungeon - Exit Target (Outside)
+		{3471.629883, 7429.069824}, 	-- Highmaul Raid - Instance Exit Target
+		{33.5237999, 2528.280029}, 	-- Skyreach - Exit Teleport Target
+		{2399.548584, 3713.002686}, 	-- Talador, Shattrath Rise (South West), GY
+		{3438.26001, 4129.540039}, 	-- Nagrand, Above Shattrath Walls, GY
+		{3254.01001, 1290.060059}, 	-- Talador, Kadgar Canyon, GY
+		{3436.070068, 4128.589844}, 	-- Talador, Shattrath/Nagrand Walls, GY
+		{1046.861084, -723.887146}, 	-- Shadowmoon 6.x, (E) Embaari Village
+		{-114.9878464, -1109.388916}, 	-- Shadowmoon 6.x, (O) Botani Village
+		{94.55902863, -1421.22229}, 	-- Shadowmoon 6.x, (P) The Draakorium
+		{2228.442627, 1360.086792}, 	-- Talador, Anchorite's Sojourn GY
+		{3067.778564, 4491.056641}, 	-- Nagrand 6.0 - (01) Hemet's Happy Hunting Grounds
+		{2350.612793, 4615.293457}, 	-- Nagrand 6.0 - (02) Mar'gok's Overwatch
+		{3141.98999, 4942.959961}, 	-- Nagrand 6.0 - (03) Ring of Trials
+		{2769.912354, 5802.65625}, 	-- Nagrand 6.0 - (04) Stonecrag Gorge
+		{2481.369873, 5335.197754}, 	-- Nagrand 6.0 - (05) Telaar
+		{2308.857666, 5145.172852}, 	-- Nagrand 6.0 - (06) Grommashar
+		{3370.28125, 5829.864746}, 	-- Nagrand 6.0 - (07) Yrel's Watch
+		{3104.329102, 6447.578125}, 	-- Nagrand 6.0 - (08) Riverside Post
+		{2812.065918, 6960.431641}, 	-- Nagrand 6.0 - (09) Ancestral Grounds
+		{2695.489502, 6184.427246}, 	-- Nagrand 6.0 - (10) Eastern Spirit Woods
+		{2188.263916, 6267.189453}, 	-- Nagrand 6.0 - (11) Southern Spirit Woods
+		{1987.630249, 6804.911621}, 	-- Nagrand 6.0 - (12) Ironfist Harbor
+		{4206.592285, 5367.780273}, 	-- Nagrand 6.0 - (13) Throne of the Elements
+		{4620.598145, 5425.32666}, 	-- Nagrand 6.0 - (14) Northern Elemental Plateau
+		{4438.10791, 4721}, 	-- Nagrand 6.0 - (15) Eastern Elemental Plateau
+		{3773.216064, 4543.112793}, 	-- Nagrand 6.0 - (16) Clowder Rise
+		{3706.928955, 5204.293457}, 	-- Nagrand 6.0 - (17) North-Central Plains
+		{8850.580078, 1370.089966}, 	-- Iron Docks - Exit Target (Outside)
+		{8852.889648, 1361.456665}, 	-- Gorgrond - Iron Docks Corpse Marker
+		{764.5839844, 127.5979996}, 	-- Shadowmoon Dungeon - Corpse Marker
+		{7878.716309, 563.90802}, 	-- Blackrock Train Depot - Exit Target - KJD
+		{6004.241211, 4518.694336}, 	-- Frostwall - Garrison - Outside Spinup Range
+		{1429.949707, 78.71527863}, 	-- Lunarfall - Garrison - Outside Spinup Range
+		{-1546.02002, 937.8880005}, 	-- Spires of Arak - Pinchwhistle Gearworks
+		{7350.790039, 4836.330078}, 	-- Frostfire Ridge - Stonefury Cliffs GY
+		{7868.038086, 870.989563}, 	-- Gorgrond - Outside Foundry
+		{7011.959961, 3183.699951}, 	-- Frostfire Ridge - Magnarok GY
+		{5727.720215, 1471.199951}, 	-- Gorgrond (Temp)
+		{-503.7864685, 1858.944458}, 	-- Spires of Arak: (DLA) - Veil Terokk
+		{7117.569824, 197.1000061}, 	-- Overgrown Outpost - Exit Target
+		{3575.374268, 7300.577148}, 	-- Nagrand 6.0 - (18) Highmaul
+		{3433.055664, 6817.855957}, 	-- Nagrand 6.0 - (19) Sunspring Watchpost
+		{3880.527832, 7064.610352}, 	-- Nagrand 6.0 - (20) Warmaul Hill
+		{4143.875977, 6048.033203}, 	-- Nagrand 6.0 - (21) North / Ring of Blood / Zangar
+		{2320.732666, 5053.039063}, 	-- Quest - Nagrand 6.0 (And Justice for Thrall: Inside the Gates Teleport Area Trigger Destination) - ELM
+		{3779.888916, -3888.140625}, 	-- Ashran, Alliance Staging Area, GY
+		{5200.189941, -3910.110107}, 	-- Ashran, Horde Staging Area, GY
+		{4893.678223, 1488.118042}, 	-- Gorgrond - Deeproot - OgreLastStandGY
+		{4636.161621, 1228.340332}, 	-- Bastion Rise - Dark Iron GY
+		{5283.186523, 1855.328125}, 	-- Gorgrond - Evermorn Rise - GY
+		{5517.611816, 1921.65979}, 	-- Gorgrond - Laughing Skull Village - GY
+		{5695.696289, 1494.532959}, 	-- Gorgrond - Broken Spine - GY
+		{6108.192871, 1666.5}, 	-- Gorgrond - Stonemaul - GY
+		{6956.819336, 1693.586792}, 	-- Gorgrond - Mineral Pools - GY
+		{6871.697754, 1191.845459}, 	-- Gorgrond - Gronn Canyon - GY
+		{7569.554688, 407.4513855}, 	-- Gorgrond - Everbloom Wilds - GY
+		{7703.153809, -549.03125}, 	-- Gorgrond - Everbloom Wilds- GY2
+		{7282.848145, -683.112854}, 	-- Gorgrond - Everbloom Wilds- GY3
+		{7564.661621, 1699.498291}, 	-- Gorgrond - Rooter's Pass - GY (HMC)
+		{6733.541504, 204.2743073}, 	-- Gorgrond - WIldwood Wash - GY
+		{6226.060059, 836.885437}, 	-- Gorgrond - Highpass - GY
+		{5456.599121, 1009.661377}, 	-- Gorgrond - Ruins of the first Bastion - GY
+		{7636.708496, 1539.359375}, 	-- Gorgrond - Black Rock FOundry Wall - GY
+		{8093.336914, 853.409729}, 	-- Foundry Raid - Exit Target
+		{1399.826416, 1522.819458}, 	-- m
+		{853.9609985, 2063.300049}, 	-- Spires of Arak - Graveyard - Skettis
+		{142.1730042, 1606.930054}, 	-- Spires of Arak - Graveyard - Crow's Crook
+		{-567.9119873, 1635.869995}, 	-- Spires of Arak - Graveyard - Gnarlwood Pass
+		{61.85179901, 2043.530029}, 	-- Spires of Arak - Graveyard - Shadowglade
+		{-8.954520226, 2669.780029}, 	-- Spires of Arak - Graveyard - Bladefist Hold
+		{-1053.449951, 2138.860107}, 	-- Spires of Arak - Graveyard - Southport
+		{-479.8469849, 850.3560181}, 	-- Spires of Arak - Graveyard - Sethekk Hollow
+		{-1367.290039, 981.2910156}, 	-- Spires of Arak - Graveyard - Pinchwhistle Gearworks
+		{1399.31604, 1499.975708}, 	-- Talador, Gordal Fortress, GY
+		{5732.866211, 2340.071289}, 	-- Frostfire Ridge Iron Siege - GY
+		{3226.224854, 2837.548584}, 	-- Talador, Shattrath (North East Beach) GY
+		{3620.981689, 3696.395752}, 	-- Talador, Shattrath (Lighthouse Docks GY)
+		{3029.0625, 3859.873291}, 	-- Talador, Shattrath (Neighborhood Elevator), GY
+		{2766.522705, 3573.016602}, 	-- Talador, Shattrath Central Park, GY
+		{5989.370117, 6186.470215}, 	-- Frostfire Ridge - Wor'gol - Safe Landing (ZTO)
+		{8498.192383, 1540.508667}, 	-- Gorgrond Finale - Graveyard (Draenor)
+		{801.598999, 1488.390015}, 	-- Spires of Arak - Skettis Ruins - For Players on Thwart the Arakkoa Quest
+		{773.133667, 754.715271}, 	-- Shadowmoon-Spires Max Level Graveyard
+		{-2332.269043, 1021.229187}, 	-- Spires of Arak - Graveyard - Pinchwhistle Point
+		{800.75, 1488.376709}, 	-- Spires of Arak - Graveyard - Upper Skettis
+		{400.1875, 231.2326355}, 	-- Shadowmoon - Graveyard - Pillars of Fate
+		{400.1875, 231.2326355}, 	-- Shadowmoon - Pillars of Fate Graveyard
+		{1595.145874, -1881.710083}, 	-- Shadowmoon 6.x, (Q) Altar of Sha'tar
+		{3635.98999, 4348.5}, 	-- Nagrand 6.0 - (22) Legendary / Time-Lost Glade
+		{2646.697021, 6094.833496}, 	-- Nagrand 6.0 - (23) Pale Caves
+		{5141.172852, 201.7274323}, 	-- Tanaan - Tanaan Coast - North - GY
+		{3052.482666, -657.791687}, 	-- Tanaan - Tanaan Coast - South - GY
+		{1959.770874, 342.3020935}, 	-- Shadowmoon 6.x, (R) Lunarfall (No Garrison)
+		{5610.859375, 4508.552246}, 	-- Frostfire Ridge - Frostwall GY (No Garrison)
+]]
 	},
 };
 

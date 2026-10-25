@@ -100,134 +100,135 @@ Yatlas_mapareas_adjust = {
 -- Primary source: the client AreaTrigger.db2 row that teleports into the instance
 --   (trigger -> instance mapping from MoP server data: MistCore 5.0.5 / SkyFire 5.4.8 areatrigger_teleport)
 -- Fallback: Map.db2 Corpse_0/Corpse_1 (entrance) of build 7.3.5, the last client that shipped them
--- {name, worldY, worldX, instanceMapID}; name is localized at load time via GetRealZoneText(mapID)
+-- {name, worldY, worldX, instanceMapID, instanceType}; name is localized at load time via GetRealZoneText(mapID)
+-- instanceType from Map.db2 InstanceType: 1 = dungeon (party), 2 = raid
 Yatlas_instances = {
 	["Azeroth"] = {
-		{"Shadowfang Keep", 1576.699951, -227.998001, 33}, -- AreaTrigger 145
-		{"Stormwind Stockade", 848.557007, -8761.849609, 34}, -- AreaTrigger 101
-		{"Deadmines", 1684.23999, -11207.299805, 36}, -- AreaTrigger 78
-		{"Uldaman", -2955, -6055.5, 70}, -- AreaTrigger 286
-		{"Uldaman", -3762.189941, -6606.47998, 70}, -- AreaTrigger 902
-		{"Gnomeregan", 916.549011, -5154.97998, 90}, -- AreaTrigger 324
-		{"Gnomeregan", 827.914978, -4914.930176, 90}, -- AreaTrigger 523
-		{"Sunken Temple", -3990.02002, -10292.299805, 109}, -- AreaTrigger 446
-		{"Blackrock Spire", -1239.060059, -7519.680176, 229}, -- AreaTrigger 1468
-		{"Blackrock Depths", -937.666992, -7176.629883, 230}, -- AreaTrigger 1466
-		{"Stratholme", -4060.600098, 3237.459961, 329}, -- AreaTrigger 2214
-		{"Stratholme", -3389.199951, 3392.459961, 329}, -- AreaTrigger 2216
-		{"Molten Core", -1035.869995, -7510.870117, 409}, -- AreaTrigger 3528
-		{"Blackwing Lair", -1218.666504, -7663.412598, 469}, -- Map.db2 7.3.5 Corpse
-		{"Karazhan", -1998.119995, -11101.900391, 532}, -- AreaTrigger 4131
-		{"Throne of the Tides", 5401.649414, -5585.871582, 643}, -- Map.db2 7.3.5 Corpse
-		{"Blackrock Caverns", -1330.684082, -7570.244629, 645}, -- Map.db2 7.3.5 Corpse
-		{"Blackwing Descent", -1188.831665, -7541.767578, 669}, -- Map.db2 7.3.5 Corpse
-		{"Grim Batol", -3446.350098, -4047.73999, 670}, -- Map.db2 7.3.5 Corpse
-		{"The Bastion of Twilight", -4221.209961, -4903.010254, 671}, -- Map.db2 7.3.5 Corpse
-		{"Zul'Gurub", -1219.838501, -11916.228516, 859}, -- Map.db2 7.3.5 Corpse
-		{"Scarlet Halls", -820, 2869, 1001}, -- Map.db2 7.3.5 Corpse
-		{"Scarlet Monastery", 2924.379883, -798.429016, 1004}, -- approx.: old Scarlet Monastery courtyard (AreaTrigger 45)
-		{"Scholomance", -2552.560059, 1274.780029, 1007}, -- Map.db2 7.3.5 Corpse
+		{"Shadowfang Keep", 1576.699951, -227.998001, 33, 1}, -- AreaTrigger 145
+		{"Stormwind Stockade", 848.557007, -8761.849609, 34, 1}, -- AreaTrigger 101
+		{"Deadmines", 1684.23999, -11207.299805, 36, 1}, -- AreaTrigger 78
+		{"Uldaman", -2955, -6055.5, 70, 1}, -- AreaTrigger 286
+		{"Uldaman", -3762.189941, -6606.47998, 70, 1}, -- AreaTrigger 902
+		{"Gnomeregan", 916.549011, -5154.97998, 90, 1}, -- AreaTrigger 324
+		{"Gnomeregan", 827.914978, -4914.930176, 90, 1}, -- AreaTrigger 523
+		{"Sunken Temple", -3990.02002, -10292.299805, 109, 1}, -- AreaTrigger 446
+		{"Blackrock Spire", -1239.060059, -7519.680176, 229, 1}, -- AreaTrigger 1468
+		{"Blackrock Depths", -937.666992, -7176.629883, 230, 1}, -- AreaTrigger 1466
+		{"Stratholme", -4060.600098, 3237.459961, 329, 1}, -- AreaTrigger 2214
+		{"Stratholme", -3389.199951, 3392.459961, 329, 1}, -- AreaTrigger 2216
+		{"Molten Core", -1035.869995, -7510.870117, 409, 2}, -- AreaTrigger 3528
+		{"Blackwing Lair", -1218.666504, -7663.412598, 469, 2}, -- Map.db2 7.3.5 Corpse
+		{"Karazhan", -1998.119995, -11101.900391, 532, 2}, -- AreaTrigger 4131
+		{"Throne of the Tides", 5401.649414, -5585.871582, 643, 1}, -- Map.db2 7.3.5 Corpse
+		{"Blackrock Caverns", -1330.684082, -7570.244629, 645, 1}, -- Map.db2 7.3.5 Corpse
+		{"Blackwing Descent", -1188.831665, -7541.767578, 669, 2}, -- Map.db2 7.3.5 Corpse
+		{"Grim Batol", -3446.350098, -4047.73999, 670, 1}, -- Map.db2 7.3.5 Corpse
+		{"The Bastion of Twilight", -4221.209961, -4903.010254, 671, 2}, -- Map.db2 7.3.5 Corpse
+		{"Zul'Gurub", -1219.838501, -11916.228516, 859, 1}, -- Map.db2 7.3.5 Corpse
+		{"Scarlet Halls", -820, 2869, 1001, 1}, -- Map.db2 7.3.5 Corpse
+		{"Scarlet Monastery", 2924.379883, -798.429016, 1004, 1}, -- approx.: old Scarlet Monastery courtyard (AreaTrigger 45)
+		{"Scholomance", -2552.560059, 1274.780029, 1007, 1}, -- Map.db2 7.3.5 Corpse
 	},
 	["Kalimdor"] = {
-		{"Wailing Caverns", -2212.780029, -753.596008, 43}, -- AreaTrigger 228
-		{"Razorfen Kraul", -1655.01001, -4455.109863, 47}, -- AreaTrigger 244
-		{"Blackfathom Deeps", 756.96698, 4253.109863, 48}, -- AreaTrigger 257
-		{"Razorfen Downs", -2536.929932, -4664.600098, 129}, -- AreaTrigger 442
-		{"Zul'Farrak", -2891.949951, -6790.879883, 209}, -- AreaTrigger 924
-		{"Onyxia's Lair", -3752.110107, -4768.609863, 249}, -- AreaTrigger 2848
-		{"Opening of the Dark Portal", -4156.919922, -8777.389648, 269}, -- AreaTrigger 4320
-		{"Maraudon", 2617.570068, -1484.069946, 349}, -- AreaTrigger 3133
-		{"Maraudon", 2861.949951, -1181.97998, 349}, -- AreaTrigger 3134
-		{"Ragefire Chasm", -4427.259766, 1818.400024, 389}, -- AreaTrigger 2230
-		{"Dire Maul", 934.929016, -3759.689941, 429}, -- AreaTrigger 3183
-		{"Dire Maul", 793.726013, -3981.199951, 429}, -- AreaTrigger 3184
-		{"Dire Maul", 123.966003, -4028.209961, 429}, -- AreaTrigger 3185
-		{"Dire Maul", 1249.920044, -3822.629883, 429}, -- AreaTrigger 3186
-		{"Dire Maul", 1089.930054, -3519.949951, 429}, -- AreaTrigger 3189
-		{"Ruins of Ahn'Qiraj", 1508.650024, -8424.94043, 509}, -- AreaTrigger 4008
-		{"Ahn'Qiraj Temple", 2005.329956, -8230.400391, 531}, -- AreaTrigger 4010
-		{"The Battle for Mount Hyjal", -4155.649902, -8158.899902, 534}, -- AreaTrigger 4319
-		{"The Escape From Durnholde", -4047.439941, -8326.269531, 560}, -- AreaTrigger 4321
-		{"The Culling of Stratholme", -4469.580078, -8758.780273, 595}, -- AreaTrigger 5150
-		{"Halls of Origination", -1837.479126, -10225.995117, 644}, -- Map.db2 7.3.5 Corpse
-		{"The Vortex Pinnacle", -2317.934082, -11522.493164, 657}, -- Map.db2 7.3.5 Corpse
-		{"Firelands", -2943.31958, 3987.199707, 720}, -- Map.db2 7.3.5 Corpse
-		{"Throne of the Four Winds", 72.083336, -11360.602539, 754}, -- Map.db2 7.3.5 Corpse
-		{"Lost City of the Tol'vir", -1308.623291, -10686.149414, 755}, -- Map.db2 7.3.5 Corpse
-		{"End Time", -4454.092285, -8288.604492, 938}, -- Map.db2 7.3.5 Corpse
-		{"Well of Eternity", -3994.935791, -8595.836914, 939}, -- Map.db2 7.3.5 Corpse
-		{"Hour of Twilight", -4590.4375, -8291.131836, 940}, -- Map.db2 7.3.5 Corpse
-		{"Dragon Soul", -4512.6875, -8263.276367, 967}, -- Map.db2 7.3.5 Corpse
+		{"Wailing Caverns", -2212.780029, -753.596008, 43, 1}, -- AreaTrigger 228
+		{"Razorfen Kraul", -1655.01001, -4455.109863, 47, 1}, -- AreaTrigger 244
+		{"Blackfathom Deeps", 756.96698, 4253.109863, 48, 1}, -- AreaTrigger 257
+		{"Razorfen Downs", -2536.929932, -4664.600098, 129, 1}, -- AreaTrigger 442
+		{"Zul'Farrak", -2891.949951, -6790.879883, 209, 1}, -- AreaTrigger 924
+		{"Onyxia's Lair", -3752.110107, -4768.609863, 249, 2}, -- AreaTrigger 2848
+		{"Opening of the Dark Portal", -4156.919922, -8777.389648, 269, 1}, -- AreaTrigger 4320
+		{"Maraudon", 2617.570068, -1484.069946, 349, 1}, -- AreaTrigger 3133
+		{"Maraudon", 2861.949951, -1181.97998, 349, 1}, -- AreaTrigger 3134
+		{"Ragefire Chasm", -4427.259766, 1818.400024, 389, 1}, -- AreaTrigger 2230
+		{"Dire Maul", 934.929016, -3759.689941, 429, 1}, -- AreaTrigger 3183
+		{"Dire Maul", 793.726013, -3981.199951, 429, 1}, -- AreaTrigger 3184
+		{"Dire Maul", 123.966003, -4028.209961, 429, 1}, -- AreaTrigger 3185
+		{"Dire Maul", 1249.920044, -3822.629883, 429, 1}, -- AreaTrigger 3186
+		{"Dire Maul", 1089.930054, -3519.949951, 429, 1}, -- AreaTrigger 3189
+		{"Ruins of Ahn'Qiraj", 1508.650024, -8424.94043, 509, 2}, -- AreaTrigger 4008
+		{"Ahn'Qiraj Temple", 2005.329956, -8230.400391, 531, 2}, -- AreaTrigger 4010
+		{"The Battle for Mount Hyjal", -4155.649902, -8158.899902, 534, 2}, -- AreaTrigger 4319
+		{"The Escape From Durnholde", -4047.439941, -8326.269531, 560, 1}, -- AreaTrigger 4321
+		{"The Culling of Stratholme", -4469.580078, -8758.780273, 595, 1}, -- AreaTrigger 5150
+		{"Halls of Origination", -1837.479126, -10225.995117, 644, 1}, -- Map.db2 7.3.5 Corpse
+		{"The Vortex Pinnacle", -2317.934082, -11522.493164, 657, 1}, -- Map.db2 7.3.5 Corpse
+		{"Firelands", -2943.31958, 3987.199707, 720, 2}, -- Map.db2 7.3.5 Corpse
+		{"Throne of the Four Winds", 72.083336, -11360.602539, 754, 2}, -- Map.db2 7.3.5 Corpse
+		{"Lost City of the Tol'vir", -1308.623291, -10686.149414, 755, 1}, -- Map.db2 7.3.5 Corpse
+		{"End Time", -4454.092285, -8288.604492, 938, 1}, -- Map.db2 7.3.5 Corpse
+		{"Well of Eternity", -3994.935791, -8595.836914, 939, 1}, -- Map.db2 7.3.5 Corpse
+		{"Hour of Twilight", -4590.4375, -8291.131836, 940, 1}, -- Map.db2 7.3.5 Corpse
+		{"Dragon Soul", -4512.6875, -8263.276367, 967, 2}, -- Map.db2 7.3.5 Corpse
 	},
 	["Expansion01"] = {
-		{"Hellfire Citadel: The Shattered Halls", 3091.590088, -310.210999, 540}, -- AreaTrigger 4151
-		{"Hellfire Citadel: The Blood Furnace", 3170.51001, -307.251007, 542}, -- AreaTrigger 4152
-		{"Hellfire Citadel: Ramparts", 3087.620117, -365.610992, 543}, -- AreaTrigger 4150
-		{"Magtheridon's Lair", 3079.120117, -309.678009, 544}, -- AreaTrigger 4153
-		{"Coilfang: The Steamvault", 6951.299805, 818.487, 545}, -- AreaTrigger 4364
-		{"Coilfang: The Underbog", 6741.939941, 782.879028, 546}, -- AreaTrigger 4363
-		{"Coilfang: The Slave Pens", 7015.27002, 745.838989, 547}, -- AreaTrigger 4365
-		{"Coilfang: Serpentshrine Cavern", 6865.240234, 843.88501, 548}, -- AreaTrigger 4416
-		{"Tempest Keep", 1364.530029, 3087.179932, 550}, -- AreaTrigger 4470
-		{"Tempest Keep: The Arcatraz", 1325.920044, 3314.780029, 552}, -- AreaTrigger 4468
-		{"Tempest Keep: The Botanica", 1479.01001, 3418.919922, 553}, -- AreaTrigger 4467
-		{"Tempest Keep: The Mechanar", 1545.390015, 2861.370117, 554}, -- AreaTrigger 4469
-		{"Auchindoun: Shadow Labyrinth", 4943.109863, -3656.050049, 555}, -- AreaTrigger 4407
-		{"Auchindoun: Sethekk Halls", 4650.310059, -3362.350098, 556}, -- AreaTrigger 4406
-		{"Auchindoun: Mana-Tombs", 4942.799805, -3068.129883, 557}, -- AreaTrigger 4405
-		{"Auchindoun: Auchenai Crypts", 5236.870117, -3361.550049, 558}, -- AreaTrigger 4404
-		{"Black Temple", 318.533997, -3671.959961, 564}, -- AreaTrigger 4598
-		{"Gruul's Lair", 5083.410156, 3556.790039, 565}, -- AreaTrigger 4535
-		{"Zul'Aman", -8008.72998, 6851.879883, 568}, -- AreaTrigger 4738
-		{"The Sunwell", -6775.149902, 12551, 580}, -- AreaTrigger 4889
-		{"Magister's Terrace", -7348.740234, 12878.799805, 585}, -- AreaTrigger 4887
+		{"Hellfire Citadel: The Shattered Halls", 3091.590088, -310.210999, 540, 1}, -- AreaTrigger 4151
+		{"Hellfire Citadel: The Blood Furnace", 3170.51001, -307.251007, 542, 1}, -- AreaTrigger 4152
+		{"Hellfire Citadel: Ramparts", 3087.620117, -365.610992, 543, 1}, -- AreaTrigger 4150
+		{"Magtheridon's Lair", 3079.120117, -309.678009, 544, 2}, -- AreaTrigger 4153
+		{"Coilfang: The Steamvault", 6951.299805, 818.487, 545, 1}, -- AreaTrigger 4364
+		{"Coilfang: The Underbog", 6741.939941, 782.879028, 546, 1}, -- AreaTrigger 4363
+		{"Coilfang: The Slave Pens", 7015.27002, 745.838989, 547, 1}, -- AreaTrigger 4365
+		{"Coilfang: Serpentshrine Cavern", 6865.240234, 843.88501, 548, 2}, -- AreaTrigger 4416
+		{"Tempest Keep", 1364.530029, 3087.179932, 550, 2}, -- AreaTrigger 4470
+		{"Tempest Keep: The Arcatraz", 1325.920044, 3314.780029, 552, 1}, -- AreaTrigger 4468
+		{"Tempest Keep: The Botanica", 1479.01001, 3418.919922, 553, 1}, -- AreaTrigger 4467
+		{"Tempest Keep: The Mechanar", 1545.390015, 2861.370117, 554, 1}, -- AreaTrigger 4469
+		{"Auchindoun: Shadow Labyrinth", 4943.109863, -3656.050049, 555, 1}, -- AreaTrigger 4407
+		{"Auchindoun: Sethekk Halls", 4650.310059, -3362.350098, 556, 1}, -- AreaTrigger 4406
+		{"Auchindoun: Mana-Tombs", 4942.799805, -3068.129883, 557, 1}, -- AreaTrigger 4405
+		{"Auchindoun: Auchenai Crypts", 5236.870117, -3361.550049, 558, 1}, -- AreaTrigger 4404
+		{"Black Temple", 318.533997, -3671.959961, 564, 2}, -- AreaTrigger 4598
+		{"Gruul's Lair", 5083.410156, 3556.790039, 565, 2}, -- AreaTrigger 4535
+		{"Zul'Aman", -8008.72998, 6851.879883, 568, 1}, -- AreaTrigger 4738
+		{"The Sunwell", -6775.149902, 12551, 580, 2}, -- AreaTrigger 4889
+		{"Magister's Terrace", -7348.740234, 12878.799805, 585, 1}, -- AreaTrigger 4887
 	},
 	["Northrend"] = {
-		{"Naxxramas", -1280.189941, 3681.290039, 533}, -- AreaTrigger 5191
-		{"Utgarde Keep", -4854.47998, 1257.109985, 574}, -- AreaTrigger 4745
-		{"Utgarde Pinnacle", -4861.700195, 1226.22998, 575}, -- AreaTrigger 4747
-		{"The Nexus", 6985.689941, 3902.790039, 576}, -- AreaTrigger 4983
-		{"The Oculus", 6984.160156, 3869.840088, 578}, -- AreaTrigger 5246
-		{"Halls of Stone", -963.434021, 8922.030273, 599}, -- AreaTrigger 5010
-		{"Drak'Tharon Keep", -2017.160034, 4775.319824, 600}, -- AreaTrigger 4998
-		{"Azjol-Nerub", 2174.629883, 3668.290039, 601}, -- AreaTrigger 5117
-		{"Halls of Lightning", -1390.01001, 9188.820312, 602}, -- AreaTrigger 5093
-		{"Ulduar", -1113.439941, 9364.360352, 603}, -- AreaTrigger 5379
-		{"Gundrak", -4666.02002, 6700.47998, 604}, -- AreaTrigger 5205
-		{"Gundrak", -4396.330078, 6976.540039, 604}, -- AreaTrigger 5206
-		{"Violet Hold", 480.919006, 5675.430176, 608}, -- AreaTrigger 5209
-		{"The Obsidian Sanctum", 260.950989, 3442.629883, 615}, -- AreaTrigger 5243
-		{"The Eye of Eternity", 6984.200195, 3870.290039, 616}, -- AreaTrigger 5290
-		{"Ahn'kahet: The Old Kingdom", 2027.199951, 3639.399902, 619}, -- AreaTrigger 5215
-		{"Vault of Archavon", 2839.810059, 5494.879883, 624}, -- AreaTrigger 5258
-		{"Icecrown Citadel", 2063.27002, 5772.109863, 631}, -- AreaTrigger 5670
-		{"The Forge of Souls", 1995.280029, 5678.560059, 632}, -- AreaTrigger 5635
-		{"Trial of the Crusader", 744.413025, 8515.209961, 649}, -- AreaTrigger 5503
-		{"Trial of the Champion", 791.784973, 8562.599609, 650}, -- AreaTrigger 5505
-		{"Pit of Saron", 2003.160034, 5584.109863, 658}, -- AreaTrigger 5637
-		{"Halls of Reflection", 1957.319946, 5627.410156, 668}, -- AreaTrigger 5636
-		{"The Ruby Sanctum", 186.169998, 3608.189941, 724}, -- AreaTrigger 5869
+		{"Naxxramas", -1280.189941, 3681.290039, 533, 2}, -- AreaTrigger 5191
+		{"Utgarde Keep", -4854.47998, 1257.109985, 574, 1}, -- AreaTrigger 4745
+		{"Utgarde Pinnacle", -4861.700195, 1226.22998, 575, 1}, -- AreaTrigger 4747
+		{"The Nexus", 6985.689941, 3902.790039, 576, 1}, -- AreaTrigger 4983
+		{"The Oculus", 6984.160156, 3869.840088, 578, 1}, -- AreaTrigger 5246
+		{"Halls of Stone", -963.434021, 8922.030273, 599, 1}, -- AreaTrigger 5010
+		{"Drak'Tharon Keep", -2017.160034, 4775.319824, 600, 1}, -- AreaTrigger 4998
+		{"Azjol-Nerub", 2174.629883, 3668.290039, 601, 1}, -- AreaTrigger 5117
+		{"Halls of Lightning", -1390.01001, 9188.820312, 602, 1}, -- AreaTrigger 5093
+		{"Ulduar", -1113.439941, 9364.360352, 603, 2}, -- AreaTrigger 5379
+		{"Gundrak", -4666.02002, 6700.47998, 604, 1}, -- AreaTrigger 5205
+		{"Gundrak", -4396.330078, 6976.540039, 604, 1}, -- AreaTrigger 5206
+		{"Violet Hold", 480.919006, 5675.430176, 608, 1}, -- AreaTrigger 5209
+		{"The Obsidian Sanctum", 260.950989, 3442.629883, 615, 2}, -- AreaTrigger 5243
+		{"The Eye of Eternity", 6984.200195, 3870.290039, 616, 2}, -- AreaTrigger 5290
+		{"Ahn'kahet: The Old Kingdom", 2027.199951, 3639.399902, 619, 1}, -- AreaTrigger 5215
+		{"Vault of Archavon", 2839.810059, 5494.879883, 624, 2}, -- AreaTrigger 5258
+		{"Icecrown Citadel", 2063.27002, 5772.109863, 631, 2}, -- AreaTrigger 5670
+		{"The Forge of Souls", 1995.280029, 5678.560059, 632, 1}, -- AreaTrigger 5635
+		{"Trial of the Crusader", 744.413025, 8515.209961, 649, 2}, -- AreaTrigger 5503
+		{"Trial of the Champion", 791.784973, 8562.599609, 650, 1}, -- AreaTrigger 5505
+		{"Pit of Saron", 2003.160034, 5584.109863, 658, 1}, -- AreaTrigger 5637
+		{"Halls of Reflection", 1957.319946, 5627.410156, 668, 1}, -- AreaTrigger 5636
+		{"The Ruby Sanctum", 186.169998, 3608.189941, 724, 2}, -- AreaTrigger 5869
 	},
 	["HawaiiMainLand"] = {
-		{"Shado-Pan Monastery", 2545.899902, 3646, 959}, -- AreaTrigger 7694
-		{"Temple of the Jade Serpent", -2475.709961, 957.348999, 960}, -- AreaTrigger 7854
-		{"Stormstout Brewery", 1261.498291, -720.003479, 961}, -- AreaTrigger 7705
-		{"Gate of the Setting Sun", 2080.378418, 699.680542, 962}, -- AreaTrigger 7726
-		{"Mogu'shan Palace", 426.84375, 1401.840332, 994}, -- AreaTrigger 8134
-		{"Terrace of Endless Spring", -49.5, 959.958313, 996}, -- AreaTrigger 8027
-		{"Mogu'shan Vaults", 1115.736084, 3977.240479, 1008}, -- AreaTrigger 7838
-		{"Heart of Fear", 4068.059814, 165.236115, 1009}, -- AreaTrigger 8314
-		{"Siege of Niuzao Temple", 5088.919922, 1443.130005, 1011}, -- AreaTrigger 8315
-		{"Siege of Orgrimmar", 613.852417, 1230.899292, 1136}, -- WorldSafeLocs "Garrosh Raid - Exit Target"
+		{"Shado-Pan Monastery", 2545.899902, 3646, 959, 1}, -- AreaTrigger 7694
+		{"Temple of the Jade Serpent", -2475.709961, 957.348999, 960, 1}, -- AreaTrigger 7854
+		{"Stormstout Brewery", 1261.498291, -720.003479, 961, 1}, -- AreaTrigger 7705
+		{"Gate of the Setting Sun", 2080.378418, 699.680542, 962, 1}, -- AreaTrigger 7726
+		{"Mogu'shan Palace", 426.84375, 1401.840332, 994, 1}, -- AreaTrigger 8134
+		{"Terrace of Endless Spring", -49.5, 959.958313, 996, 2}, -- AreaTrigger 8027
+		{"Mogu'shan Vaults", 1115.736084, 3977.240479, 1008, 2}, -- AreaTrigger 7838
+		{"Heart of Fear", 4068.059814, 165.236115, 1009, 2}, -- AreaTrigger 8314
+		{"Siege of Niuzao Temple", 5088.919922, 1443.130005, 1011, 1}, -- AreaTrigger 8315
+		{"Siege of Orgrimmar", 613.852417, 1230.899292, 1136, 2}, -- WorldSafeLocs "Garrosh Raid - Exit Target"
 	},
 	["Deephome"] = {
-		{"The Stonecore", 610.296875, 1031.907959, 725}, -- Map.db2 7.3.5 Corpse
+		{"The Stonecore", 610.296875, 1031.907959, 725, 1}, -- Map.db2 7.3.5 Corpse
 	},
 	["TolBarad"] = {
-		{"Baradin Hold", 1050.089966, -1274, 757}, -- AreaTrigger 6664
+		{"Baradin Hold", 1050.089966, -1274, 757, 2}, -- AreaTrigger 6664
 	},
 	["MoguIslandDailyArea"] = {
-		{"Throne of Thunder", 5014.869141, 7264.408203, 1098}, -- AreaTrigger 8882
+		{"Throne of Thunder", 5014.869141, 7264.408203, 1098, 2}, -- AreaTrigger 8882
 	},
 };
 

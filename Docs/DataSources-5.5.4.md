@@ -46,7 +46,7 @@
    - 血色修道院（1004）：沿用舊修道院中庭 trigger 45 的座標（近似值）。
    - 圍攻奧格瑪（1136）：使用 WorldSafeLocs 的「Garrosh Raid - Exit Target」座標。
 4. 排除已停用的舊地圖：189（Scarlet Monastery of Old）、289（Scholomance OLD）、309（Ancient Zul'Gurub）等。
-5. 格式為 `{name, worldY, worldX, instanceMapID}`，第 4 欄是新增的，載入時會用 `GetRealZoneText(mapID)` 換成在地化名稱。
+5. 格式為 `{name, worldY, worldX, instanceMapID, instanceType}`，第 4、5 欄是新增的。名稱在載入時用 `GetRealZoneText(mapID)` 換成在地化名稱；`instanceType` 取自 `Map.db2` 的 `InstanceType`（1 = 地城、2 = 團隊副本），用來選擇圖示：地城用 atlas `Dungeon`（藍色圓圈），團隊副本用 `Raid`（綠色圓圈），兩者都在 5.5.4 的 `UiTextureAtlasMember` 中。城鎮（`Yatlas_towns2`）改用 atlas `poi-town`。
 
 ### Yatlas_graveyards（0.9.4 起停用）
 - `WorldSafeLocs` 在現代用戶端只存在伺服器端，5.5.4 的 DB2 與 wago.tools 都沒有這個表，因此**目前沒有任何來自遊戲資料檔的墓地座標**。

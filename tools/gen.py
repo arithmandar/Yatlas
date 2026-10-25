@@ -209,7 +209,8 @@ with open(f'{OUT}/instances.lua', 'w') as f:
     f.write('-- Primary source: the client AreaTrigger.db2 row that teleports into the instance\n')
     f.write('--   (trigger -> instance mapping from MoP server data: MistCore 5.0.5 / SkyFire 5.4.8 areatrigger_teleport)\n')
     f.write('-- Fallback: Map.db2 Corpse_0/Corpse_1 (entrance) of build 7.3.5, the last client that shipped them\n')
-    f.write('-- {name, worldY, worldX, instanceMapID}; name is localized at load time via GetRealZoneText(mapID)\n')
+    f.write('-- {name, worldY, worldX, instanceMapID, instanceType}; name is localized at load time via GetRealZoneText(mapID)\n')
+    f.write('-- instanceType from Map.db2 InstanceType: 1 = dungeon (party), 2 = raid\n')
     f.write('Yatlas_instances = {\n')
     for mid in WORLD_IDS:
         rows = sorted(entries[mid], key=lambda r: (r[0], r[3]))
@@ -220,7 +221,7 @@ with open(f'{OUT}/instances.lua', 'w') as f:
         if not kept: continue
         f.write(f'\t[{luastr(Dir[mid])}] = {{\n')
         for tmap, y, x, src in kept:
-            f.write(f'\t\t{{{luastr(Map[tmap]["MapName_lang"])}, {num(y)}, {num(x)}, {tmap}}}, -- {src}\n')
+            f.write(f'\t\t{{{luastr(Map[tmap]["MapName_lang"])}, {num(y)}, {num(x)}, {tmap}, {int(Map[tmap]["InstanceType"])}}}, -- {src}\n')
         f.write('\t},\n')
     f.write('};\n')
 

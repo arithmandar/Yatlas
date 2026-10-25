@@ -46,6 +46,7 @@ Version 0.9.4 is the first release in more than ten years. The map data was rebu
   - Towns and landmarks, read live from the game
   - Dungeon and raid entrances, including Mists of Pandaria instances
   - Smaller settlements and flight-path towns
+  - Flight paths for your faction, with undiscovered ones dimmed
 - **Tooltips** when you hover over a point.
 - **Options:** transparency, icon size, which point types to show, and the minimap button and its position.
 

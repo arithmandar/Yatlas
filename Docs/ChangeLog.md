@@ -1,6 +1,15 @@
 # Yatlas ChangeLog
 
 
+### v0.9.5 (Oct. xx, 2026)
+
+- Town names (Yatlas_towns2) are now localized from the client AreaTable
+- Map icons use the game's own atlases: Dungeon (blue) / Raid (green) for instance entrances, poi-town for towns (old Yatlas icons kept as fallback)
+  entrances, poi-town for towns (old Yatlas icons kept as fallback)
+- New point set: Flight Paths, from the client TaxiNodes.db2 (5.5.4.70579);
+  names / discovered state from C_TaxiMap.GetTaxiNodesForMap when available,
+  icons TaxiNode_Neutral / Horde / Alliance, only neutral and own-faction nodes shown
+
 ### v0.9.4 (Oct. 26, 2026)
 
 - Map data regenerated for WoW MoP Classic 5.5.4.70579 (see Docs/DataSources-5.5.4.md)
@@ -19,8 +28,6 @@
   - BackdropTemplate, SOUNDKIT, C_AddOns.GetAddOnMetadata, C_Minimap.GetPOITextureCoords
   - OnKeyDown / OnEvent no longer use the global arg1
   - fixed undefined YF_GetZoneIDs and a leaked global
-- Town names (Yatlas_towns2) are now localized from the client AreaTable
-- Map icons use the game's own atlases: Dungeon (blue) / Raid (green) for instance entrances, poi-town for towns (old Yatlas icons kept as fallback)
 - TOC Interface 50504; LibBabble-SubZone-3.0 / AceLocale-3.0 / LibStub removed
 
 ### v0.9.1 (Feb. XX, 2013)

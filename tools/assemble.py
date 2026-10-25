@@ -93,6 +93,6 @@ rest = rest[:rest.index("-- 'blacklist' some of our 'graveyards'")].rstrip() + '
 # town names: add AreaTable IDs so they can be localized in game (see towns.py)
 import towns
 rest = towns.process(rest)
-mapdb2 = head + G('zoneids') + '\n' + mid1 + G('instances') + loc_inst + rest
+mapdb2 = head + G('zoneids') + '\n' + mid1 + G('instances') + loc_inst + G('taxinodes') + rest
 open(f'{ROOT}/mapdb2.lua','w',encoding='utf-8').write(mapdb2)
 print('ok', len(mapdb), len(mapdb2))

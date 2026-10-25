@@ -4,7 +4,7 @@ Regenerates `mapdb.lua` / `mapdb2.lua` data tables. Run from this `tools/` folde
 
 ```sh
 B=5.5.4.70579
-cd /tmp && for t in Map AreaTable UiMap UiMapAssignment AreaTrigger AreaPOI; do
+cd /tmp && for t in Map AreaTable UiMap UiMapAssignment AreaTrigger AreaPOI TaxiNodes; do
   curl -s -o $t.csv "https://wago.tools/db2/$t/csv?build=$B"; done
 curl -s -o Map_7.3.5.26972.csv "https://wago.tools/db2/Map/csv?build=7.3.5.26972"
 curl -sL -o at_mc.sql https://raw.githubusercontent.com/MistCore/MC-Database/master/main_db/world/areatrigger_teleport.sql

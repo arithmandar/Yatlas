@@ -141,6 +141,35 @@
 				<PushedTexture name="$parentPush"/>
 				<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
 			</Button>
+			<Button name="YatlasFrameSwitchButton">
+				<Size>
+					<AbsDimension x="32" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="RIGHT" relativeTo="YatlasFrameLockButton" relativePoint="LEFT">
+						<Offset>
+							<AbsDimension x="11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
+					</OnLoad>
+					<OnClick>
+						Yatlas_SwitchFrame(self:GetParent());
+					</OnClick>
+					<OnEnter>
+						YatlasFrameSwitchButton_OnEnter(self);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+				<NormalTexture file="Interface\Buttons\UI-Panel-BiggerButton-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-Panel-BiggerButton-Down"/>
+				<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
+			</Button>
 			<Frame name="$parentViewFrame" enableMouse="true" inherits="YatlasFrameViewTemplate">
 				<Size>
 					<AbsDimension x="512" y="512"/>
@@ -512,6 +541,35 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
+			</Button>
+			<Button name="BigYatlasFrameSwitchButton">
+				<Size>
+					<AbsDimension x="32" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="RIGHT" relativeTo="BigYatlasFrameCloseButton" relativePoint="LEFT">
+						<Offset>
+							<AbsDimension x="11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						self:SetFrameLevel(self:GetFrameLevel() + 4);
+					</OnLoad>
+					<OnClick>
+						Yatlas_SwitchFrame(self:GetParent());
+					</OnClick>
+					<OnEnter>
+						YatlasFrameSwitchButton_OnEnter(self);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+				<NormalTexture file="Interface\Buttons\UI-Panel-SmallerButton-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-Panel-SmallerButton-Down"/>
+				<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
 			</Button>
 			<Button name="$parentDropDown" inherits="UIDropDownMenuTemplate">
 				<Anchors>

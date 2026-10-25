@@ -1,7 +1,17 @@
 ## Interface: 50504
 ## Title: Yatlas
-## Version: 0.9.4
-## Notes: Yet another atlas
+## Version: @project-version@
+## Notes: Yet another atlas - browse the whole world on minimap terrain, with instance entrances, towns, flight paths and group members.
+## Notes-deDE: Yet another atlas - die ganze Welt im Minikarten-Gelände erkunden, mit Instanzeingängen, Orten, Flugpunkten und Gruppenmitgliedern.
+## Notes-esES: Yet another atlas - recorre todo el mundo sobre el terreno del minimapa, con entradas de instancias, ciudades, puntos de vuelo y miembros del grupo.
+## Notes-esMX: Yet another atlas - recorre todo el mundo sobre el terreno del minimapa, con entradas de instancias, ciudades, puntos de vuelo y miembros del grupo.
+## Notes-frFR: Yet another atlas - parcourez le monde entier sur le terrain de la minicarte, avec les entrées d’instances, les villes, les points de vol et les membres du groupe.
+## Notes-itIT: Yet another atlas - esplora il mondo intero sul terreno della minimappa, con ingressi delle istanze, città, punti di volo e membri del gruppo.
+## Notes-koKR: Yet another atlas - 미니맵 지형으로 전 세계를 둘러보고 인스턴스 입구, 마을, 비행 지점, 파티원 위치를 확인합니다.
+## Notes-ptBR: Yet another atlas - explore o mundo inteiro no terreno do minimapa, com entradas de instâncias, cidades, pontos de voo e membros do grupo.
+## Notes-ruRU: Yet another atlas - просмотр всего мира на рельефе миникарты со входами в подземелья, городами, точками полёта и участниками группы.
+## Notes-zhCN: Yet another atlas - 以小地图地形浏览整个世界，并标示副本入口、城镇、飞行点与队友位置。
+## Notes-zhTW: Yet another atlas - 以小地圖地形瀏覽整個世界，並標示副本入口、城鎮、飛行點與隊友位置。
 ## OptionalDeps: myAddOns
 ## DefaultState: Enabled
 ## LoadOnDemand: 0

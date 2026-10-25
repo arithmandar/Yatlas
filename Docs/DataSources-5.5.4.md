@@ -46,7 +46,15 @@
    - 血色修道院（1004）：沿用舊修道院中庭 trigger 45 的座標（近似值）。
    - 圍攻奧格瑪（1136）：使用 WorldSafeLocs 的「Garrosh Raid - Exit Target」座標。
 4. 排除已停用的舊地圖：189（Scarlet Monastery of Old）、289（Scholomance OLD）、309（Ancient Zul'Gurub）等。
-5. 格式為 `{name, worldY, worldX, instanceMapID}`，第 4 欄是新增的，載入時會用 `GetRealZoneText(mapID)` 換成在地化名稱。
+5. 格式為 `{name, worldY, worldX, instanceMapID, instanceType}`，第 4、5 欄是新增的。名稱在載入時用 `GetRealZoneText(mapID)` 換成在地化名稱；`instanceType` 取自 `Map.db2` 的 `InstanceType`（1 = 地城、2 = 團隊副本），用來選擇圖示：地城用 atlas `Dungeon`（藍色圓圈），團隊副本用 `Raid`（綠色圓圈），兩者都在 5.5.4 的 `UiTextureAtlasMember` 中。城鎮（`Yatlas_towns2`）改用 atlas `poi-town`。
+
+### Yatlas_taxinodes（飛行點，0.9.4 新增）
+1. 來源：用戶端 [`TaxiNodes`（5.5.4.70579）](https://wago.tools/db2/TaxiNodes?build=5.5.4.70579) 的 `Pos_0/Pos_1/ContinentID/Flags/ConditionID`，由 `tools/gen.py` 產生到 `mapdb2.lua`。
+2. 篩選：只保留 Yatlas 支援的大陸、`Flags & 3`（聯盟/部落可用）有設定，且排除 `Flags & 0x80` 的節點。共 337 筆：東部王國 108、卡林多 89、北裂境 52、潘達利亞 51、外域 37。
+3. 格式為 `{name, worldY, worldX, nodeID, faction, conditional}`：`faction` 採用 `Enum.FlightPathFaction`（0 = 中立、1 = 部落、2 = 聯盟）；`ConditionID ≠ 0` 的節點標記為 `conditional`。
+4. 執行期：`Compat.lua` 的 `Yatlas_GetTaxiInfo()` 呼叫 `C_TaxiMap.GetTaxiNodesForMap(uiMapID)`，取得在地化名稱、是否已探索及 atlas。API 沒有回傳資料時，使用靜態的英文名稱。條件式節點只在 API 有列出時才顯示。
+5. 只顯示中立與玩家所屬陣營的節點，做法與 Blizzard 的 FlightPointDataProvider 相同。未探索的節點以半透明灰色顯示。
+6. 注意：MoP Classic 的世界地圖中，FlightPointDataProvider 被註解掉了，所以 `C_TaxiMap` 在 Classic 中的實際回傳內容尚待遊戲內確認。
 
 ### Yatlas_graveyards（0.9.4 起停用）
 - `WorldSafeLocs` 在現代用戶端只存在伺服器端，5.5.4 的 DB2 與 wago.tools 都沒有這個表，因此**目前沒有任何來自遊戲資料檔的墓地座標**。

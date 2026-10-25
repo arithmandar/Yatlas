@@ -3,6 +3,7 @@
 -- metadata magic
 YATLAS_TITLE = Yatlas_GetAddOnMetadata("Yatlas", "Title") or "Y";
 YATLAS_VERSION = Yatlas_GetAddOnMetadata("Yatlas","Version") or "???";
+if(string.find(YATLAS_VERSION, "@", 1, true)) then YATLAS_VERSION = "dev"; end -- unpackaged checkout
 _,_,YATLAS_RELEASE_DATE = string.find(Yatlas_GetAddOnMetadata("Yatlas","X-LastChangedDate") or "", "[(](.+)[)]");
 
 YATLAS_WEBSITE = ""
@@ -11,15 +12,10 @@ YATLAS_AUTHOR_EMAIL = "";
 
 -- localize from this point on as needed
 YATLAS_HELP_TEXT = {
-    "Yatlas provides a minimap-based map of the world (reasonably high "..
-        "detail).\n\n"..
-    "To move your view around click and drag on the map itself. You can "..
-        "choose which map (currently only Kalimdor and the Eastern "..
-        "Kingdoms) at the top. You can jump around by zone and zoom to "..
-        "player as well.\n\n"..
-    "Mousing over a point of interest will bring up a tooltip.\n\n"..
-    "If you have Gatherer or MapNotes installed, it will shows points from "..
-        "these two addons as well.\n"
+    "Yatlas shows a map of the whole world, drawn from the minimap terrain.\n\n"..
+    "Click and drag the map to move around, and use the mouse wheel to zoom. "..
+    "Use the menus at the top to pick a map or zone, or jump to your own position.\n\n"..
+    "Hover over a point to see a tooltip. Use the Show Points menu to choose which points are shown."
     };
 
 YATLAS_TAB_DATA = "Show Data";
@@ -43,6 +39,7 @@ YATLAS_OPTIONS_ENABLECOORD = "Enable Cursor Coordinates";
 YATLAS_POINTS_SHOWPOINTS_TITLE = "Show Points";
 YATLAS_POINTS_LANDMARKS = "Landmarks";
 YATLAS_POINTS_GRAVEYARDS = "Graveyards";
+YATLAS_POINTS_TAXINODES = "Flight Paths";
 YATLAS_POINTS_MAPNOTES = "MapNotes";
 YATLAS_POINTS_GATHERER = "Gatherer";
 YATLAS_POINTS_GATHERER_TREASURE = "Treasure";
@@ -53,6 +50,9 @@ YATLAS_POINTS_CTMAPMOD = "CTMapMod";
 YATLAS_UNKNOWN_ZONE = "Unknown";
 
 YATLAS_BIGDRAGMESSAGE = "Click on map and drag to move view."
+YATLAS_SWITCH_TO_BIG = "Switch to fullscreen view";
+YATLAS_SWITCH_TO_NORMAL = "Switch to normal view";
+
 YATLAS_ZOOMIN =     "+";
 YATLAS_ZOOMOUT =     "-";
 

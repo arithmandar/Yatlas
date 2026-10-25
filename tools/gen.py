@@ -209,7 +209,8 @@ with open(f'{OUT}/instances.lua', 'w') as f:
     f.write('-- Primary source: the client AreaTrigger.db2 row that teleports into the instance\n')
     f.write('--   (trigger -> instance mapping from MoP server data: MistCore 5.0.5 / SkyFire 5.4.8 areatrigger_teleport)\n')
     f.write('-- Fallback: Map.db2 Corpse_0/Corpse_1 (entrance) of build 7.3.5, the last client that shipped them\n')
-    f.write('-- {name, worldY, worldX, instanceMapID}; name is localized at load time via GetRealZoneText(mapID)\n')
+    f.write('-- {name, worldY, worldX, instanceMapID, instanceType}; name is localized at load time via GetRealZoneText(mapID)\n')
+    f.write('-- instanceType from Map.db2 InstanceType: 1 = dungeon (party), 2 = raid\n')
     f.write('Yatlas_instances = {\n')
     for mid in WORLD_IDS:
         rows = sorted(entries[mid], key=lambda r: (r[0], r[3]))
@@ -220,9 +221,36 @@ with open(f'{OUT}/instances.lua', 'w') as f:
         if not kept: continue
         f.write(f'\t[{luastr(Dir[mid])}] = {{\n')
         for tmap, y, x, src in kept:
-            f.write(f'\t\t{{{luastr(Map[tmap]["MapName_lang"])}, {num(y)}, {num(x)}, {tmap}}}, -- {src}\n')
+            f.write(f'\t\t{{{luastr(Map[tmap]["MapName_lang"])}, {num(y)}, {num(x)}, {tmap}, {int(Map[tmap]["InstanceType"])}}}, -- {src}\n')
         f.write('\t},\n')
     f.write('};\n')
+
+# ---------------------------------------------------------------- taxi nodes (flight paths)
+# TaxiNodes.db2 Flags: 0x1 = shown on the Alliance map, 0x2 = shown on the Horde map,
+# 0x80 = hidden from the world map UI. Pos_0 = world X, Pos_1 = world Y.
+# faction uses the Enum.FlightPathFaction values: 0 = Neutral, 1 = Horde, 2 = Alliance.
+# conditional = 1 when the node has a PlayerCondition (quest / phase); those are shown
+# only when C_TaxiMap confirms them at runtime.
+taxi = {mid: [] for mid in WORLD_IDS}
+for r in rd('TaxiNodes'):
+    cont, fl = int(r['ContinentID']), int(r['Flags'])
+    if cont not in taxi or not (fl & 3) or (fl & 0x80): continue
+    faction = 0 if (fl & 3) == 3 else (2 if fl & 1 else 1)
+    cond = 1 if int(r['ConditionID']) else 0
+    taxi[cont].append((int(r['ID']), r['Name_lang'], float(r['Pos_1']), float(r['Pos_0']), faction, cond))
+with open(f'{OUT}/taxinodes.lua', 'w') as f:
+    f.write(f'-- Flight paths, from TaxiNodes.db2 ({BUILD})\n')
+    f.write('-- {name, worldY, worldX, taxiNodeID, faction (0 neutral, 1 horde, 2 alliance), conditional}\n')
+    f.write('-- name is localized at runtime from C_TaxiMap.GetTaxiNodesForMap (see sets/taxinodes.lua)\n')
+    f.write('Yatlas_taxinodes = {\n')
+    for mid in WORLD_IDS:
+        if not taxi[mid]: continue
+        f.write(f'\t[{luastr(Dir[mid])}] = {{\n')
+        for nid, name, y, x, fac, cond in sorted(taxi[mid]):
+            f.write(f'\t\t{{{luastr(name)}, {num(y)}, {num(x)}, {nid}, {fac}, {cond}}},\n')
+        f.write('\t},\n')
+    f.write('};\n\n')
+print('taxi nodes', {Dir[m]: len(v) for m, v in taxi.items() if v})
 
 pickle.dump({'zone_ids': zone_ids, 'inst': inst, 'mapareas': mapareas}, open(f'{OUT}/meta.pkl', 'wb'))
 print('mapareas maps', len(mapareas), 'instances', sum(len(v) for v in inst.values()))

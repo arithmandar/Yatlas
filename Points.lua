@@ -612,8 +612,14 @@ function YFOO_OnClick(self)
     ToggleDropDownMenu(1, nil, _G[self:GetName().."DropDown"], self:GetName(), 0, 0);
 end
 
-function YFOODropDown_do_toggle_normal(self)
-    YatlasOptions.Frames[current_frame:GetName()].PointCfg[self.value] = UIDropDownMenuButton_GetChecked(self)
+-- The modern UIDropDownMenu toggles the check mark before calling func and
+-- passes the new state as the 4th argument. Checked means "shown", while
+-- PointCfg[name] = true means "hidden", so store the inverse.
+function YFOODropDown_do_toggle_normal(self, arg1, arg2, checked)
+    if(checked == nil) then
+        checked = UIDropDownMenuButton_GetChecked(self);
+    end
+    YatlasOptions.Frames[current_frame:GetName()].PointCfg[self.value] = not checked;
     YAPoints_ForceUpdate(current_frame)
 end
 

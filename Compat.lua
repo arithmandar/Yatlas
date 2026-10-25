@@ -169,3 +169,53 @@ function Yatlas_ResetLandmarks()
         Yatlas_Landmarks[h] = nil;
     end
 end
+
+-- ---------------------------------------------------------------------------
+-- Flight paths as the client sees them (localized name, discovered state)
+-- ---------------------------------------------------------------------------
+
+local ya_taxiinfo = {};
+
+-- returns [taxiNodeID] = MapTaxiNodeInfo for every flight path on a Yatlas map
+function Yatlas_GetTaxiInfo(map)
+    if(map == nil) then
+        return {};
+    end
+    if(ya_taxiinfo[map]) then
+        return ya_taxiinfo[map];
+    end
+
+    local list = {};
+    ya_taxiinfo[map] = list;
+
+    if(not (C_TaxiMap and C_TaxiMap.GetTaxiNodesForMap)) then
+        return list;
+    end
+
+    local uimaps = {};
+    if(Yatlas_WorldMapIds[map]) then
+        tinsert(uimaps, Yatlas_WorldMapIds[map]);
+    end
+    if(type(Yatlas_UiMapIds[map]) == "table") then
+        for _, uimap in pairs(Yatlas_UiMapIds[map]) do
+            tinsert(uimaps, uimap);
+        end
+    end
+
+    for _, uimap in ipairs(uimaps) do
+        local nodes = C_TaxiMap.GetTaxiNodesForMap(uimap) or {};
+        for _, info in ipairs(nodes) do
+            if(info.nodeID and list[info.nodeID] == nil) then
+                list[info.nodeID] = info;
+            end
+        end
+    end
+
+    return list;
+end
+
+function Yatlas_ResetTaxiInfo()
+    for h in pairs(ya_taxiinfo) do
+        ya_taxiinfo[h] = nil;
+    end
+end

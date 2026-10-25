@@ -1,10 +1,13 @@
 package-as: Yatlas
 
 manual-changelog:
-    filename: Docs/ChangeLog.txt
-    markup-type: plain
+    filename: Docs/ChangeLog.md
+    markup-type: markdown
     
 enable-nolib-creation: no
 
 ignore:
     - tools
+    - Docs\CurseForge-Description.md
+    - Docs\DataSources-5.5.4.md
+

@@ -8,6 +8,7 @@
 	     runtime API C_DeathInfo.GetGraveyardsForMap(uiMapID).
 	<Script file="graveyards.lua"/>
 	-->
+	<Script file="taxinodes.lua"/>
 	<Script file="players.lua"/>
     <!--<Script file="gathermate.lua"/>-->
 </Ui>

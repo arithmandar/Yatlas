@@ -1,6 +1,15 @@
 
-local landmarkaltinstance = {nil,nil,nil,nil,-1};
-local landmarkalttown = {nil,nil,nil,nil,-4};
+-- userdat for our own points: {nil,nil,nil,nil, fallback icon code, atlas}
+-- the atlases are the ones the game's own maps use; the fallback codes select
+-- the old Yatlas icons when an atlas is not available (see setuppoint)
+local landmarkaltdungeon = {nil,nil,nil,nil,-1,"Dungeon"};     -- blue circle
+local landmarkaltraid = {nil,nil,nil,nil,-1,"Raid"};           -- green circle
+local landmarkalttown = {nil,nil,nil,nil,-4,"poi-town"};
+
+local function atlasexists(atlas)
+    return atlas and C_Texture and C_Texture.GetAtlasInfo
+            and C_Texture.GetAtlasInfo(atlas) ~= nil;
+end
 
 local set = {name="landmarks"};
 
@@ -19,7 +28,9 @@ function set.getpoints(name, map)
         for h,v in ipairs(Yatlas_instances[map]) do
             local x,y = Yatlas_Big2Mini_Coord(v[2],v[3]);
 
-            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, nil, landmarkaltinstance);
+            -- v[5] = Map.db2 InstanceType (1 = dungeon, 2 = raid)
+            local alt = (v[5] == 2) and landmarkaltraid or landmarkaltdungeon;
+            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, nil, alt);
         end
     end
 
@@ -40,15 +51,18 @@ function set.setuppoint(point, env, dat)
     local bgtextname;
     local iconsize = env.iconsize;
 
-    local atlas;
     local tindex = dat.userdat[5];
+    local atlas = dat.userdat[6];
 
-    if(tindex == nil) then
-        -- 5.5.4+: area POIs without a texture index come with an atlas instead
-        atlas = dat.userdat[6];
-        if(atlas == nil) then
-            tindex = 4;
-        end
+    -- prefer the game's atlas (C_AreaPoiInfo atlasName, or our dungeon / raid / town icons)
+    if(not atlasexists(atlas)) then
+        atlas = nil;
+    end
+
+    if(atlas) then
+        tindex = nil;
+    elseif(tindex == nil) then
+        tindex = 4;
     elseif(tindex >= 0 and tindex ~= 4 and tindex ~= 5 and Yatlas_GetPOITextureCoords == nil) then
         tindex = 4;
     end

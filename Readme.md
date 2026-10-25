@@ -33,6 +33,7 @@ Both views use the same controls:
 - Choose a map or jump to a zone from the drop-down menus at the top.
 - Hover over a point to see a tooltip.
 - **Goto Player** centres the map on your character. Shift-click it to keep following you as you move.
+- The button next to the close button switches between the normal and the fullscreen view, keeping the current map and position.
 
 You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggle Yatlas, Toggle fullscreen Yatlas).
 

@@ -37,4 +37,6 @@ YATLAS_BIGDRAGMESSAGE = "지도를 클릭한 채 끌어서 화면을 이동하�
 BINDING_NAME_YATLAS_TOGGLE = "Yatlas 창 열기/닫기";
 BINDING_NAME_YATLAS_BIG_TOGGLE = "전체 화면 Yatlas 열기/닫기";
 
+YATLAS_SWITCH_TO_BIG = "전체 화면 보기로 전환";
+YATLAS_SWITCH_TO_NORMAL = "일반 보기로 전환";
 end

@@ -37,4 +37,6 @@ YATLAS_BIGDRAGMESSAGE = "按住滑鼠拖曳地圖以移動視角。";
 BINDING_NAME_YATLAS_TOGGLE = "切換 Yatlas 視窗";
 BINDING_NAME_YATLAS_BIG_TOGGLE = "切換全螢幕 Yatlas 視窗";
 
+YATLAS_SWITCH_TO_BIG = "切換到全螢幕檢視";
+YATLAS_SWITCH_TO_NORMAL = "切換到一般檢視";
 end

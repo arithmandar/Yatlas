@@ -37,4 +37,6 @@ YATLAS_BIGDRAGMESSAGE = "Fai clic sulla mappa e trascinala per spostare la visua
 BINDING_NAME_YATLAS_TOGGLE = "Mostra/nascondi Yatlas";
 BINDING_NAME_YATLAS_BIG_TOGGLE = "Mostra/nascondi Yatlas a schermo intero";
 
+YATLAS_SWITCH_TO_BIG = "Passa alla vista a schermo intero";
+YATLAS_SWITCH_TO_NORMAL = "Passa alla vista normale";
 end

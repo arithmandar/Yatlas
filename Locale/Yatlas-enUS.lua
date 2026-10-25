@@ -50,6 +50,9 @@ YATLAS_POINTS_CTMAPMOD = "CTMapMod";
 YATLAS_UNKNOWN_ZONE = "Unknown";
 
 YATLAS_BIGDRAGMESSAGE = "Click on map and drag to move view."
+YATLAS_SWITCH_TO_BIG = "Switch to fullscreen view";
+YATLAS_SWITCH_TO_NORMAL = "Switch to normal view";
+
 YATLAS_ZOOMIN =     "+";
 YATLAS_ZOOMOUT =     "-";
 

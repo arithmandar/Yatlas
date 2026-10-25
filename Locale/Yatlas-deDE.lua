@@ -37,4 +37,6 @@ YATLAS_BIGDRAGMESSAGE = "Klickt auf die Karte und zieht sie, um den Ausschnitt z
 BINDING_NAME_YATLAS_TOGGLE = "Yatlas-Fenster ein-/ausblenden";
 BINDING_NAME_YATLAS_BIG_TOGGLE = "Großes Yatlas-Fenster ein-/ausblenden";
 
+YATLAS_SWITCH_TO_BIG = "Zur Vollbildansicht wechseln";
+YATLAS_SWITCH_TO_NORMAL = "Zur normalen Ansicht wechseln";
 end

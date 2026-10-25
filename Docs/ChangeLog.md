@@ -14,6 +14,10 @@
   zhCN, zhTW (new: esES, frFR, itIT, koKR, ptBR, ruRU, zhTW); deDE keys renamed from the
   obsolete YATLAS_OVERLAY_* to YATLAS_POINTS_*; TOC Notes in every language
 - TOC Version is now @project-version@ (filled in by the packager; shows "dev" when unpackaged)
+- New button to switch between the normal and the fullscreen view (keeps the map and
+  the centre of the view); Blizzard UI-Panel-Bigger/SmallerButton textures
+- Fixed: the map and zone menus of the fullscreen view (/bigyatlas) changed the hidden
+  normal frame instead, because both menus were hard-wired to YatlasFrame
 - Readme.md rewritten (usage, installation, repository layout, data and release notes); old Docs/README.txt removed
 
 ### v0.9.4 (Oct. 26, 2026)

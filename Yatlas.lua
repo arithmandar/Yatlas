@@ -242,6 +242,45 @@ function YatlasFrameTemplate:Toggle()
     end
 end
 
+-- Switch between the normal and the fullscreen frame, keeping the map and
+-- the point at the centre of the view (each frame keeps its own zoom).
+function Yatlas_SwitchFrame(from)
+    local to = (from == BigYatlasFrame) and YatlasFrame or BigYatlasFrame;
+    if(not from or not to or not from.opt or not to.opt) then
+        return;
+    end
+
+    local fvf = _G[from:GetName().."ViewFrame"];
+    local fz = from:GetZoom();
+    local cx = from.opt.Location[1] + fvf:GetWidth() / fz / 2;
+    local cy = from.opt.Location[2] + fvf:GetHeight() / fz / 2;
+    local map = from.opt.Map;
+
+    if(from:IsShown()) then
+        from:Toggle();
+    end
+    if(not to:IsShown()) then
+        to:Toggle();
+    end
+
+    if(to.opt.Map ~= map) then
+        to:SetMap(map);
+    end
+    local tvf = _G[to:GetName().."ViewFrame"];
+    local tz = to:GetZoom();
+    to:SetLocation(cx - tvf:GetWidth() / tz / 2, cy - tvf:GetHeight() / tz / 2, true);
+end
+
+function YatlasFrameSwitchButton_OnEnter(self)
+    GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT");
+    if(self:GetParent() == BigYatlasFrame) then
+        GameTooltip:SetText(YATLAS_SWITCH_TO_NORMAL);
+    else
+        GameTooltip:SetText(YATLAS_SWITCH_TO_BIG);
+    end
+    GameTooltip:Show();
+end
+
 function YatlasFrameDropDown_OnLoad(self)
     self:RegisterEvent("VARIABLES_LOADED");
 end
@@ -254,30 +293,38 @@ function YatlasFrameDropDown_OnEvent(self, event)
     end
 end
 
-function YatlasFrameDropDown_Initialize()
-    local i = 1;
+-- Find the Yatlas frame (YatlasFrame or BigYatlasFrame) that owns a
+-- drop-down. The menus used to be hard-wired to YatlasFrame, so the map and
+-- zone menus of the fullscreen frame changed the (hidden) normal frame.
+local function Yatlas_DropDownOwner(dropdown)
+    if(type(dropdown) == "string") then
+        dropdown = _G[dropdown];
+    end
+    while(dropdown and not dropdown.SetMap) do
+        dropdown = dropdown:GetParent();
+    end
+    return dropdown or YatlasFrame;
+end
+
+function YatlasFrameDropDown_Initialize(dropdown)
+    local owner = Yatlas_DropDownOwner(dropdown or UIDROPDOWNMENU_INIT_MENU);
     local info;
     for h,v in pairs(YA_MAPS) do
             info = {
                     text = h;
+                    arg1 = owner;
+                    arg2 = v[1];
+                    checked = (owner.opt and owner.opt.Map == v[1]) or nil;
                     func = YatlasFrameDropDownButton_OnClick;
-                    --value = _G[UIDROPDOWNMENU_INIT_MENU]:GetParent();
             };
             UIDropDownMenu_AddButton(info);
-            i = i + 1;
     end
 end
 
-function YatlasFrameDropDownButton_OnClick(self)
-        local d = 1;
-        local i = self:GetID();
-        for h,v in pairs(YA_MAPS) do
-            if(d == i) then
-                --print(tostring(self.value).." "..tostring(v[1]))
-                return _G["YatlasFrame"]:SetMap(v[1]);
-            end
-            d = d + 1;
-        end
+function YatlasFrameDropDownButton_OnClick(self, owner, map)
+    if(owner and map) then
+        return owner:SetMap(map);
+    end
 end
 
 function YatlasFrameTemplate:ToggleLock()
@@ -344,11 +391,11 @@ function YatlasFrameDropDown2_OnEvent(self, event)
     end
 end
 
-function YatlasFrameDropDown2_Initialize()
-    --local lm = string.gsub(UIDROPDOWNMENU_INIT_MENU,"DropDown2","");
-    local lm = "YatlasFrame";
-
-    local frame = _G[lm];
+function YatlasFrameDropDown2_Initialize(dropdown)
+    local frame = Yatlas_DropDownOwner(dropdown or UIDROPDOWNMENU_INIT_MENU);
+    if(not frame.opt) then
+        return;
+    end
     frame.zonepulldowns = {};
     local info;
 
@@ -366,6 +413,8 @@ function YatlasFrameDropDown2_Initialize()
         info = {
             text = Yatlas_areadb[v];
             value = frame;
+            arg1 = frame;
+            arg2 = v;
             func = YatlasFrameDropDownButton2_OnClick;
         };
         UIDropDownMenu_AddButton(info);
@@ -373,10 +422,10 @@ function YatlasFrameDropDown2_Initialize()
 
 end
 
-function YatlasFrameDropDownButton2_OnClick(self)
-    local frame = self.value;
-    local lm = frame:GetName();
-    local z = frame.zonepulldowns[self:GetID()];
+function YatlasFrameDropDownButton2_OnClick(self, frame, z)
+    frame = frame or self.value;
+    z = z or frame.zonepulldowns[self:GetID()];
+    local vf = _G[frame:GetName().."ViewFrame"];
     local map = frame.opt.Map;
     local zoom = frame:GetZoom();
 
@@ -397,7 +446,7 @@ function YatlasFrameDropDownButton2_OnClick(self)
             my = Yatlas_mapareas_adjust[z][2] + my;
         end
 
-        frame:SetLocation(mx-(512/2)/zoom, my-(512/2)/zoom);
+        frame:SetLocation(mx-(vf:GetWidth()/2)/zoom, my-(vf:GetHeight()/2)/zoom);
     end
 end
 
@@ -923,9 +972,11 @@ end
 
 function YatlasFrameViewFrame_UpdateCursorCoord(self)
     local x, y = GetCursorPosition();
-    local rx, ry = unpack(YatlasFrame.opt.Location);
+    local owner = self:GetParent();
+    if(not owner or not owner.opt) then return; end
+    local rx, ry = unpack(owner.opt.Location);
     local top = self:GetTop();
-    local zoom = YatlasFrame.opt.Zoom;
+    local zoom = owner.opt.Zoom;
     
     if(self.lastoux == x and self.lastouy == y) then
         return;
@@ -937,7 +988,7 @@ function YatlasFrameViewFrame_UpdateCursorCoord(self)
     y = y / self:GetEffectiveScale();
 
     rx = rx + math.floor(x - self:GetLeft())/zoom;
-    ry = ry + 512/zoom-math.floor(y - self:GetBottom())/zoom;
+    ry = ry + self:GetHeight()/zoom-math.floor(y - self:GetBottom())/zoom;
     local bigx, bigy = Yatlas_Mini2Big_Coord(rx,ry);
 end
 

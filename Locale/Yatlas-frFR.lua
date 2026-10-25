@@ -37,4 +37,6 @@ YATLAS_BIGDRAGMESSAGE = "Cliquez sur la carte et faites-la glisser pour déplace
 BINDING_NAME_YATLAS_TOGGLE = "Afficher/masquer Yatlas";
 BINDING_NAME_YATLAS_BIG_TOGGLE = "Afficher/masquer Yatlas en plein écran";
 
+YATLAS_SWITCH_TO_BIG = "Passer en vue plein écran";
+YATLAS_SWITCH_TO_NORMAL = "Passer en vue normale";
 end

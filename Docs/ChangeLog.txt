@@ -19,6 +19,7 @@ Yatlas ChangeLog
   - BackdropTemplate, SOUNDKIT, C_AddOns.GetAddOnMetadata, C_Minimap.GetPOITextureCoords
   - OnKeyDown / OnEvent no longer use the global arg1
   - fixed undefined YF_GetZoneIDs and a leaked global
+- Town names (Yatlas_towns2) are now localized from the client AreaTable
 - TOC Interface 50504; LibBabble-SubZone-3.0 / AceLocale-3.0 / LibStub removed
 
 0.9.1 (Feb. XX, 2013)

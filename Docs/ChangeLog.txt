@@ -1,6 +1,17 @@
 
 Yatlas ChangeLog
 ================
+0.9.4 (Oct. XX, 2026) - work in progress
+----------------------------
+- Map data regenerated for WoW MoP Classic 5.5.4.70579 (see Docs/DataSources-5.5.4.md)
+- Yatlas_mapdb1 now stores minimap tile FileDataIDs read from the 5.5.4 WDT files
+- Yatlas_mapareas rebuilt from UiMapAssignment (WorldMapArea no longer exists)
+- Instance entrances rebuilt from AreaTrigger; MoP dungeons/raids added
+- Graveyards re-enabled for MoP (Draenor / WoD-only entries removed)
+- Area / map / instance names localized from the client instead of LibBabble-SubZone-3.0
+- Draenor removed; Deepholm, Tol Barad, Isle of Thunder and Darkmoon Island added
+- NOTE: API migration (C_Map etc.) still required before the addon runs on 5.5.4
+
 0.9.1 (Feb. XX, 2013)
 - TOC update to support WoW 5.2
 

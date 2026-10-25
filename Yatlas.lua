@@ -567,7 +567,12 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
 
                 -- set textures
                 if(v[hx][hy]) then
-		    tex:SetTexture(pre..mymap.."\\"..v[hx][hy][1]);
+		    if(type(v[hx][hy]) == "number") then
+		        -- 5.5.4+: Yatlas_mapdb1 stores minimap tile FileDataIDs
+		        tex:SetTexture(v[hx][hy]);
+		    else
+		        tex:SetTexture(pre..mymap.."\\"..v[hx][hy][1]);
+		    end
                     tex:SetVertexColor(1,1,1,1);
                 else
                     tex:SetTexture("Interface\\Buttons\\WHITE8X8");

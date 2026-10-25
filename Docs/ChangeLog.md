@@ -5,10 +5,10 @@
 
 - Town names (Yatlas_towns2) are now localized from the client AreaTable
 - Map icons use the game's own atlases: Dungeon (blue) / Raid (green) for instance entrances, poi-town for towns (old Yatlas icons kept as fallback)
-  entrances, poi-town for towns (old Yatlas icons kept as fallback)
 - New point set: Flight Paths, from the client TaxiNodes.db2 (5.5.4.70579);
   names / discovered state from C_TaxiMap.GetTaxiNodesForMap when available,
   icons TaxiNode_Neutral / Horde / Alliance, only neutral and own-faction nodes shown
+- Readme.md rewritten (usage, installation, repository layout, data and release notes); old Docs/README.txt removed
 
 ### v0.9.4 (Oct. 26, 2026)
 

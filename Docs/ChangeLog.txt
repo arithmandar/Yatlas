@@ -20,7 +20,6 @@ Yatlas ChangeLog
   - OnKeyDown / OnEvent no longer use the global arg1
   - fixed undefined YF_GetZoneIDs and a leaked global
 - TOC Interface 50504; LibBabble-SubZone-3.0 / AceLocale-3.0 / LibStub removed
-- NOTE: not yet tested in game
 
 0.9.1 (Feb. XX, 2013)
 - TOC update to support WoW 5.2

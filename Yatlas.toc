@@ -1,7 +1,10 @@
 ## Interface: 50504
 ## Title: Yatlas
 ## Version: 0.9.4
-## Notes: Yet another atlas
+## Notes: Yet another atlas - browse the whole world on minimap terrain, with instance entrances, towns and group members.
+## Notes-zhTW: Yet another atlas - 以小地圖地形瀏覽整個世界，並標示副本入口、城鎮與隊友位置。
+## Notes-zhCN: Yet another atlas - 以小地图地形浏览整个世界，并标示副本入口、城镇与队友位置。
+## Notes-deDE: Yet another atlas - die ganze Welt im Minikarten-Gelände erkunden, mit Instanzeingängen, Orten und Gruppenmitgliedern.
 ## OptionalDeps: myAddOns
 ## DefaultState: Enabled
 ## LoadOnDemand: 0

@@ -1,7 +1,7 @@
 <!--
 CurseForge project page text for Yatlas (project ID 2172).
 Summary field (short description):
-  A minimap-terrain world map browser for Mists of Pandaria Classic: pan, zoom and explore every continent at minimap detail.
+  Yet another atlas: browse the whole world on minimap terrain in Mists of Pandaria Classic, with dungeon and raid entrances, towns and group members.
 Paste everything below the line into the CurseForge description editor (Markdown mode).
 -->
 

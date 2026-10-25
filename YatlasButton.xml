@@ -65,7 +65,7 @@
 				self:RegisterEvent("VARIABLES_LOADED");
 			</OnLoad>
 			<OnEvent>
-				YatlasButton_OnEvent(event);
+				YatlasButton_OnEvent(event, ...);
 			</OnEvent>
 		</Scripts>
 	</Frame>

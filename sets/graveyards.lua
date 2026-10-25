@@ -1,3 +1,6 @@
+-- NOTE: not loaded in 5.5.4 (see sets/index.xml). WorldSafeLocs is server-side only, so there is
+-- no client data for graveyards; Yatlas_graveyards is empty. Kept for a future re-implementation
+-- (possible lead: C_DeathInfo.GetGraveyardsForMap(uiMapID)).
 
 local set = {name="graveyards"};
 

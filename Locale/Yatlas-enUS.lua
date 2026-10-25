@@ -1,9 +1,9 @@
 ﻿local _;
 
 -- metadata magic
-YATLAS_TITLE = GetAddOnMetadata("Yatlas", "Title") or "Y";
-YATLAS_VERSION = GetAddOnMetadata("Yatlas","Version") or "???";
-_,_,YATLAS_RELEASE_DATE = string.find(GetAddOnMetadata("Yatlas","X-LastChangedDate") or "", "[(](.+)[)]");
+YATLAS_TITLE = Yatlas_GetAddOnMetadata("Yatlas", "Title") or "Y";
+YATLAS_VERSION = Yatlas_GetAddOnMetadata("Yatlas","Version") or "???";
+_,_,YATLAS_RELEASE_DATE = string.find(Yatlas_GetAddOnMetadata("Yatlas","X-LastChangedDate") or "", "[(](.+)[)]");
 
 YATLAS_WEBSITE = ""
 YATLAS_AUTHOR = "Boo Diddly";

@@ -187,7 +187,7 @@
 					</OnEvent>
 				</Scripts>
 			</Button>
-			<Button name="YatlasFramePlayerJumpButton" text="YATLAS_PLAYERJUMP" inherits="UIPanelButtonTemplate2">
+			<Button name="YatlasFramePlayerJumpButton" text="YATLAS_PLAYERJUMP" inherits="UIPanelButtonTemplate">
 				<Size>
 					<AbsDimension x="108" y="24"/>
 				</Size>
@@ -573,7 +573,7 @@
 					</OnEvent>
 				</Scripts>
 			</Button>
-			<Button name="BigYatlasFramePlayerJumpButton" text="YATLAS_PLAYERJUMP" inherits="UIPanelButtonTemplate2">
+			<Button name="BigYatlasFramePlayerJumpButton" text="YATLAS_PLAYERJUMP" inherits="UIPanelButtonTemplate">
 				<Size>
 					<AbsDimension x="108" y="24"/>
 				</Size>
@@ -628,7 +628,7 @@
 			<OnKeyDown>
 				local toggleKey1, toggleKey2 = GetBindingKey("YATLAS_BIG_TOGGLE");
 				local screenshotKey = GetBindingKey("SCREENSHOT");
-				local keyPressed = arg1;
+				local keyPressed = key;
 				if ( IsShiftKeyDown() ) then
 					keyPressed = "SHIFT-"..keyPressed;
 				end
@@ -638,10 +638,17 @@
 				if ( IsAltKeyDown() ) then
 					keyPressed = "ALT-"..keyPressed;
 				end
-				if ( (toggleKey1 and (keyPressed == toggleKey1)) or (toggleKey2 and (keyPressed == toggleKey2)) or (arg1 == "ESCAPE") ) then
+				local handled = true;
+				if ( (toggleKey1 and (keyPressed == toggleKey1)) or (toggleKey2 and (keyPressed == toggleKey2)) or (key == "ESCAPE") ) then
 					RunBinding("YATLAS_BIG_TOGGLE");
-				elseif ( screenshotKey and (arg1 == screenshotKey) ) then
+				elseif ( screenshotKey and (key == screenshotKey) ) then
 					RunBinding("SCREENSHOT");
+				else
+					handled = false;
+				end
+				-- let unhandled keys (movement, chat, ...) through to the game
+				if ( self.SetPropagateKeyboardInput and not InCombatLockdown() ) then
+					self:SetPropagateKeyboardInput(not handled);
 				end
 			</OnKeyDown>
 		</Scripts>

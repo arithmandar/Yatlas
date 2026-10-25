@@ -1,5 +1,21 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/../../FrameXML/UI.xsd">
-	<Frame name="YatlasOptionsFrame" hidden="true" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" parent="UIParent">
+	<!-- replaces OptionFrameBoxTemplate, which no longer exists in the client -->
+	<Frame name="YatlasOptionBoxTemplate" virtual="true" inherits="BackdropTemplate">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentTitle" inherits="GameFontHighlightSmall">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+							<Offset>
+								<AbsDimension x="9" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+	<Frame name="YatlasOptionsFrame" hidden="true" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" parent="UIParent" inherits="BackdropTemplate">
 		<Size>
 			<AbsDimension x="420" y="410"/>
 		</Size>
@@ -7,17 +23,6 @@
  			<Anchor point="CENTER" />
  		</Anchors>
 
-		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-			<BackgroundInsets>
-				<AbsInset left="11" right="12" top="12" bottom="11"/>
-			</BackgroundInsets>
-			<TileSize>
-				<AbsValue val="32"/>
-			</TileSize>
-			<EdgeSize>
-				<AbsValue val="32"/>
-			</EdgeSize>
-		</Backdrop>
 
 		<Layers>
 			<Layer level="ARTWORK">
@@ -180,7 +185,7 @@
 				</Scripts>
 			</CheckButton>
 
-			<Frame name="YatlasOptionsFrameFrame" inherits="OptionFrameBoxTemplate">
+			<Frame name="YatlasOptionsFrameFrame" inherits="YatlasOptionBoxTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT">
 						<Offset>
@@ -198,7 +203,9 @@
 				</Size>
 				<Scripts>
 					<OnLoad>
-						self:SetBackdropColor(0,0,0)	
+						Yatlas_ApplyBackdrop(self, YATLAS_BACKDROP_TOOLTIP);
+						self:SetBackdropBorderColor(0.4, 0.4, 0.4);
+						self:SetBackdropColor(0, 0, 0);
 					</OnLoad>
 				</Scripts>
 				<Frames>
@@ -294,7 +301,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						PlaySound("gsTitleOptionOK");
+						Yatlas_PlaySound("GS_TITLE_OPTION_OK");
 						YatlasOptionsFrame:Hide()
 					</OnClick>
 				</Scripts>
@@ -303,6 +310,7 @@
 
 		<Scripts>
 			<OnLoad>
+				Yatlas_ApplyBackdrop(self, YATLAS_BACKDROP_DIALOG);
 				UIPanelWindows[self:GetName()] = { area = "center", pushable = 0, whileDead = 1 };
 				self:RegisterEvent("VARIABLES_LOADED");
 			</OnLoad>

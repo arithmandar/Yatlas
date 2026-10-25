@@ -3,7 +3,11 @@
     xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\..\..\FrameXML\UI.xsd">
 	<Script file="landmarks.lua"/>
+	<!-- graveyards: disabled for 5.5.4. WorldSafeLocs is server-side only in the modern client,
+	     so there is no client data for graveyard positions. A possible future source is the
+	     runtime API C_DeathInfo.GetGraveyardsForMap(uiMapID).
 	<Script file="graveyards.lua"/>
+	-->
 	<Script file="players.lua"/>
     <!--<Script file="gathermate.lua"/>-->
 </Ui>

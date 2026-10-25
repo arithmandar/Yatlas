@@ -7,32 +7,14 @@ src=open(OLD,encoding='utf-8-sig').read()
 src2=open(OLD2,encoding='utf-8-sig').read()
 G=lambda n: open(f'/tmp/gen/{n}.lua').read()
 
-# ---------- graveyards (from the build 19005 WorldSafeLocs extract, filtered for MoP Classic)
-i=src.index('\nYatlas_graveyards'); j=src.index('\n}',i); b=src[i:j]
-DROP=re.compile(r'Character Upgrade|6\.0 Invasion|\(New\)|Lower Blackrock Spire - Exit Teleport')
-KEYMAP={'Deepholm':'Deephome'}
-out=['-- Graveyards: {worldX, worldY} from WorldSafeLocs.dbc.',
-     '-- WorldSafeLocs is server-side only in the modern client (not in 5.5.4 DB2s, no wago.tools export);',
-     '-- this list is the build 19005 extract with Draenor and WoD-only entries removed, which covers',
-     '-- MoP 5.4 (Timeless Isle, Isle of Giants, Vale raid). Runtime alternative: C_DeathInfo.GetGraveyardsForMap(uiMapID).',
-     '-- Oct. 25, 2026: reviewed for 5.5.4.70579 (MoP Classic)',
-     'Yatlas_graveyards = {']
-cur=None; dropped=[]; cnt={}
-for line in b.split('\n')[1:]:
-    m=re.match(r'\t\["(\w+)"\]',line)
-    if m:
-        if cur: out.append('\t},')
-        cur=m.group(1); 
-        if cur=='Draenor': cur='SKIP'; continue
-        out.append(f'\t["{KEYMAP.get(cur,cur)}"] = {{'); continue
-    m=re.match(r'\s*\{(-?[\d.]+), (-?[\d.]+)\},\s*--\s*(.*)',line)
-    if m and cur and cur!='SKIP':
-        if DROP.search(m.group(3)): dropped.append(m.group(3)); continue
-        out.append(f'\t\t{{{m.group(1)}, {m.group(2)}}}, \t-- {m.group(3).strip()}'); cnt[cur]=cnt.get(cur,0)+1
-if cur and cur!='SKIP': out.append('\t},')
-out.append('};')
-gy='\n'.join(out)+'\n'
-print('graveyards',cnt,'dropped',dropped)
+# ---------- graveyards: DISABLED for 5.5.4
+# WorldSafeLocs is server-side only in the modern client (not in any 5.5.4 DB2, no wago.tools
+# export), so there is no client data source for graveyard positions. The feature is switched off
+# (sets/graveyards.lua is no longer loaded) until a reliable source is found.
+gy = ('-- Graveyards: disabled for 5.5.4.70579 (MoP Classic).\n'
+      '-- WorldSafeLocs is server-side only in the modern client; no client data source is available.\n'
+      '-- Kept as an empty table so sets/graveyards.lua can be re-enabled later.\n'
+      'Yatlas_graveyards = {};\n')
 
 loc_area='''
 -- Localize area names with the client's own AreaTable (replaces LibBabble-SubZone-3.0).
@@ -106,8 +88,8 @@ if GetRealZoneText then
 end
 
 '''
-rest = rest.replace('function YA_BL_gy(cont, c) \n\tfor h,v in ipairs(Yatlas_graveyards[cont]) do',
-                    'function YA_BL_gy(cont, c) \n\tif(type(Yatlas_graveyards[cont]) ~= "table") then return; end\n\tfor h,v in ipairs(Yatlas_graveyards[cont]) do')
+# drop the old graveyard blacklist (graveyards are disabled, see above)
+rest = rest[:rest.index("-- 'blacklist' some of our 'graveyards'")].rstrip() + '\n'
 mapdb2 = head + G('zoneids') + '\n' + mid1 + G('instances') + loc_inst + rest
 open(f'{ROOT}/mapdb2.lua','w',encoding='utf-8').write(mapdb2)
 print('ok', len(mapdb), len(mapdb2))

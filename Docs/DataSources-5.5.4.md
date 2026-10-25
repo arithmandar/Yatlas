@@ -48,80 +48,74 @@
 4. 排除已停用的舊地圖：189（Scarlet Monastery of Old）、289（Scholomance OLD）、309（Ancient Zul'Gurub）等。
 5. 格式為 `{name, worldY, worldX, instanceMapID}`，第 4 欄是新增的，載入時會用 `GetRealZoneText(mapID)` 換成在地化名稱。
 
-### Yatlas_graveyards
-- git 歷史中 `bfe6a9f`（MoP 5.2 / 16634）與 `adaeff5`（6.0 / 19005）兩個版本都有完整資料。後者是前者的超集，另含永恆之島、巨獸島、恆春谷團隊副本與地深之源的墓地，因此採用後者。
-- 移除項目：整個德拉諾、角色直升 Hearth/Start Loc、6.0 入侵事件營地、6.0 黑石塔重製的出口。
-- `Deepholm` 鍵值修正為實際的目錄名稱 `Deephome`。`YA_BL_gy()` 也加上 nil 防護。
-- 執行期替代方案：`C_DeathInfo.GetGraveyardsForMap(uiMapID)`（5.5.4 有此 API，回傳 `position` 為 UiMap 正規化座標）。
+### Yatlas_graveyards（0.9.4 起停用）
+- `WorldSafeLocs` 在現代用戶端只存在伺服器端，5.5.4 的 DB2 與 wago.tools 都沒有這個表，因此**目前沒有任何來自遊戲資料檔的墓地座標**。
+- 先前的版本曾沿用 git 歷史中 6.0（19005）的舊資料，但那不是 5.5.4 用戶端的資料，無法確認是否正確，因此改為停用：
+  - `sets/index.xml` 不再載入 `sets/graveyards.lua`（檔案保留，方便日後恢復）。
+  - `mapdb.lua` 的 `Yatlas_graveyards` 改為空表；`mapdb2.lua` 的 `YA_BL_gy()` 黑名單一併移除；`tools/assemble.py` 也不再產生墓地資料。
+- 日後可能的線索：5.5.4 的 API 文件中有 `C_DeathInfo.GetGraveyardsForMap(uiMapID)`（執行期 API，回傳 UiMap 正規化座標）。目前**尚未實作**，待確認在 MoP Classic 中的實際行為後再處理。
 
 ## 三、驗證
 - 兩個檔案都能在 Lua 5.1 正確載入（以 lupa 搭配 WoW API stub 測試）。
 - 每個 `YA_MAPS` 項目都有圖塊、`mapareas` 與 `WorldMapIds`；`Yatlas_ZoneIds` 的每個區域都能在 `mapareas` 與 `areadb` 中查到。
-- 111 個副本入口與 1149 個墓地，換算成小地圖座標後都落在存在的圖塊上。
+- 111 個副本入口換算成小地圖座標後都落在存在的圖塊上（墓地已停用，見上）。
 - 產生器放在 `tools/`（README 內有步驟）。重跑後輸出與提交的檔案逐位元組相同。
 
-## 四、API 檢視（5.5.4 = 現代用戶端，以 Gethe/wow-ui-source `classic` 分支 5.5.4 (70579) 的 Blizzard_APIDocumentationGenerated 為準）
+## 四、API 遷移（0.9.4 已實作，以 Gethe/wow-ui-source `classic` 分支 5.5.4 (70579) 的 Blizzard_APIDocumentationGenerated 為準）
 
-### 已移除，必須改寫
+新增 `Compat.lua`（在 TOC 中最先載入），把所有新 API 包成 Yatlas 自己的函式，其餘程式只處理 Yatlas 的座標系統（Directory + bigx/bigy）：
 
-| 位置 | 舊 API | 5.5.4 替代方案 |
+| 函式 | 說明 |
+|---|---|
+| `Yatlas_GetUnitLocation(unit)` → `map, bigx, bigy` | 先用 `UnitPosition(unit)`；取不到時改用 `C_Map.GetBestMapForUnit` → `C_Map.GetPlayerMapPosition` → `C_Map.GetWorldPosFromMapPos`。instanceID 以 `Yatlas_WorldMapIds2` 反查 Directory，只接受有圖塊的地圖 |
+| `Yatlas_MapIDToDirectory(mapID)` | Map.db2 ID → Directory（延遲建立反查表） |
+| `Yatlas_LoadLandmarks(map)` / `Yatlas_ResetLandmarks()` | 依 `Yatlas_UiMapIds[map]` 逐一呼叫 `C_AreaPoiInfo.GetAreaPOIForMap` / `GetAreaPOIInfo`，轉成世界座標後依 areaPoiID 去重，存成舊格式 `{bigx, bigy, name, description, textureIndex, atlasName}` |
+| `Yatlas_GetAddOnMetadata`、`Yatlas_GetPOITextureCoords` | 優先使用 `C_AddOns.GetAddOnMetadata`、`C_Minimap.GetPOITextureCoords`，舊全域函式作為退路 |
+| `YATLAS_BACKDROP_*`、`Yatlas_ApplyBackdrop()`、`Yatlas_PlaySound()` | 取代 XML `<Backdrop>` 與字串音效 |
+
+| 位置 | 舊 API | 0.9.4 的改法 |
 |---|---|---|
-| Yatlas.lua 444/447/872/990、players.lua | `GetMapInfo()`、`SetMapZoom(n)`、`SetMapToCurrentZone()` | 不再需要操作世界地圖狀態：`C_Map.GetBestMapForUnit("player")` 取得 uiMapID，用 `Yatlas_WorldMapIds` / `Yatlas_UiMapIds` 對應 Directory |
-| Yatlas.lua 879、players.lua 56 | `GetPlayerMapPosition(unit)` | 最簡單的是 `local wx, wy, _, instanceID = UnitPosition(unit)`：wx = 世界 X（bigy），wy = 世界 Y（bigx），instanceID 用 `Yatlas_WorldMapIds2` 反查 Directory，接著直接呼叫 `Yatlas_Big2Mini_Coord(wy, wx)`，**完全不需要 mapareas**。在副本內受限時，改用 `C_Map.GetPlayerMapPosition(uiMapID, unit)` 搭配 `C_Map.GetWorldPosFromMapPos(uiMapID, pos)` |
-| Yatlas.lua 847–854 | `GetNumMapLandmarks()` / `GetMapLandmarkInfo(i)` | `C_AreaPoiInfo.GetAreaPOIForMap(uiMapID)` + `C_AreaPoiInfo.GetAreaPOIInfo(uiMapID, poiID)`，再用 `C_Map.GetWorldPosFromMapPos` 轉成世界座標；副本入口可用 `C_EncounterJournal.GetDungeonEntrancesForMap(uiMapID)` |
-| Yatlas.lua 57/164、players.lua 107/124 | 事件 `WORLD_MAP_UPDATE` | 改用 `ZONE_CHANGED_NEW_AREA`、`ZONE_CHANGED`、`PLAYER_ENTERING_WORLD`，並在 OnUpdate 節流輪詢 `UnitPosition` |
-| players.lua 109/125/126 | `RAID_ROSTER_UPDATE`、`PARTY_MEMBERS_CHANGED` | `GROUP_ROSTER_UPDATE` |
-| players.lua 46/49 | `GetNumSubgroupMembers()` | 仍可用，但團隊時建議改成 `GetNumGroupMembers()` + `IsInRaid()` |
-| Yatlas.lua 1011 | `Yatlas_GetMapZones()`（依賴 `GetMapZones` 的順序） | 已改由 `Yatlas_ZoneIds`（新產生）提供，邏輯可不變 |
-| OptionsFrame.xml 10、Templates.xml 850/914/964 | XML `<Backdrop>`、`SetBackdropColor` | 9.0 起需要 `inherits="BackdropTemplate"`，並以 `KeyValue backdropInfo` 或 `self:SetBackdrop()` 設定 |
-| OptionsFrame.xml 297 | `PlaySound("gsTitleOptionOK")` | `PlaySound(SOUNDKIT.GS_TITLE_OPTION_OK)` |
-| Yatlas.xml 631–644 | OnKeyDown 使用全域 `arg1` | 改成 handler 參數 `key`（`function(self, key)`） |
-| Yatlas.lua 176 | `ADDON_LOADED` 判斷用全域 `arg1` | 改用 `OnEvent(self, event, ...)` 的第一個參數 |
+| Yatlas.lua | `GetMapInfo()`、`SetMapZoom()`、`SetMapToCurrentZone()`、逐一切換大陸找玩家 | 全部移除。`YatlasFramePlayerJumpButton_Seek` 直接用 `Yatlas_GetUnitLocation` 定位並置中；追蹤模式在 OnUpdate（0.5 秒節流）中更新 |
+| Yatlas.lua、players.lua | `GetPlayerMapPosition(unit)` + `Yatlas_mapareas` 換算 | `Yatlas_GetUnitLocation(unit)` + `Yatlas_Big2Mini_Coord` |
+| Yatlas.lua | `GetNumMapLandmarks()` / `GetMapLandmarkInfo()` | `Yatlas_LoadLandmarks()`（C_AreaPoiInfo）；`AREA_POIS_UPDATED` 時清除重建 |
+| Yatlas.lua、players.lua | 事件 `WORLD_MAP_UPDATE` | `PLAYER_ENTERING_WORLD`、`ZONE_CHANGED_NEW_AREA`、`AREA_POIS_UPDATED`，加上 OnUpdate 輪詢 |
+| players.lua | `RAID_ROSTER_UPDATE`、`PARTY_MEMBERS_CHANGED`；團隊迴圈誤用 `GetNumSubgroupMembers()` | `GROUP_ROSTER_UPDATE`；團隊時 `IsInRaid()` + `GetNumGroupMembers()`，隊伍時 `GetNumSubgroupMembers()`；OnEvent 改用參數 `event` |
+| sets/landmarks.lua | `GetPOITextureCoords()` | `Yatlas_GetPOITextureCoords()`；沒有 textureIndex 但有 atlasName 時用 `SetAtlas()` |
+| Locale/Yatlas-enUS.lua | `GetAddOnMetadata()` | `Yatlas_GetAddOnMetadata()` |
+| OptionsFrame.xml、Templates.xml | XML `<Backdrop>` | `inherits="BackdropTemplate"`，在 OnLoad 呼叫 `Yatlas_ApplyBackdrop()` |
+| OptionsFrame.xml | `OptionFrameBoxTemplate`（已不存在） | 自訂 `YatlasOptionBoxTemplate` |
+| OptionsFrame.xml | `PlaySound("gsTitleOptionOK")` | `Yatlas_PlaySound("GS_TITLE_OPTION_OK")`（`SOUNDKIT`） |
+| Yatlas.xml | `UIPanelButtonTemplate2`（已不存在） | `UIPanelButtonTemplate` |
+| Yatlas.xml | OnKeyDown 使用全域 `arg1`，且會吞掉所有按鍵 | 改用參數 `key`；未處理的按鍵用 `SetPropagateKeyboardInput` 交還給遊戲（戰鬥中不呼叫） |
+| Yatlas.lua、Templates.xml、YatlasButton.xml | `ADDON_LOADED` 用全域 `arg1`；`self:OnEvent(event)` 沒有傳遞參數 | `OnEvent(event, ...)` 一路傳遞參數 |
+| Yatlas.lua | `SetupFullscreenScale()`（已移除） | 先檢查函式是否存在 |
+| Yatlas.lua | 既有錯誤：`YF_GetZoneIDs` 未定義、全域變數 `i` | 改為 `self:GetZoneIDs()`、`local i` |
 
-### 仍可使用
-- `UIDropDownMenu_*`、`ToggleDropDownMenu`、`UIDROPDOWNMENU_MENU_LEVEL`（5.5.4 仍有 `UIDropDownMenu.lua`）。
-- `getn`、`tinsert`（`Compat.lua` 仍保留 `getn = table.getn`）。
-- `GetPOITextureCoords`、`GetZoneText`、`GetRealZoneText(mapID)`、`UnitName`、`UnitExists`、`UnitInParty`、`GetCursorPosition`、`ShowUIPanel`、`UIPanelWindows`、`UISpecialFrames`、`GetBindingKey`、`RunBinding`。
-- Texture、Frame、Slider、FontString 的各種方法（SetTexture 也接受 FileDataID）。
+### 仍可使用（未變更）
+- `UIDropDownMenu_*`、`ToggleDropDownMenu`、`UIDROPDOWNMENU_MENU_LEVEL`、`OptionsSliderTemplate`、`UICheckButtonTemplate`、`GameMenuButtonTemplate`、`UIPanelCloseButton`。
+- `getn`、`tinsert`、`GetZoneText`、`GetRealZoneText(mapID)`、`UnitName`、`UnitExists`、`UnitInParty`、`GetCursorPosition`、`ShowUIPanel`、`UIPanelWindows`、`GetBindingKey`、`RunBinding`、`TOOLTIP_DEFAULT_COLOR`。
 
 ### 外掛整合（`sets/`）
-- `gatherer.lua`、`mapnotes.lua`、`ctmapmod.lua`、`gathermate.lua` 依賴的 Gatherer、MapNotes、CT_MapMod 舊版及 GatherMate（非 GatherMate2）都已停止維護，建議停用或改接 GatherMate2 / HandyNotes。
-- `myAddOns` 已不存在，可以移除。
+- `sets/index.xml` 只載入 `landmarks.lua`、`players.lua`。`gatherer.lua`、`mapnotes.lua`、`ctmapmod.lua`、`gathermate.lua` 依賴的外掛都已停止維護，維持不載入。
 
-### TOC
-- `## Interface: 60200` → `50504`（或在 API 遷移完成後，新增 `Yatlas_Mists.toc`）。
-- `OptionalDeps` 中的 `LibBabble-SubZone-3.0` 已不再被資料表使用，可以移除（`.pkgmeta` 的 externals 也一併移除）。
-- 目前**刻意保持 TOC 不變**：API 尚未遷移前，在 5.5.4 載入會因 `SetMapZoom` 等函式不存在而出錯。
+### TOC 與打包
+- `## Interface: 50504`，版本 0.9.4。
+- 移除 `LibBabble-SubZone-3.0`、`AceLocale-3.0`、`LibStub`：`Libs/`、`Locale/LibBabble.lua`、`.pkgmeta` 的 externals 都已刪除，`OptionalDeps` 只留 `myAddOns`。
 
-## 五、DandyMap 參考（1.6.3 原始碼）
-來源：[CurseForge DandyMap 1.6.3](https://www.curseforge.com/api/v1/mods/1713483/files/9317439/download)。目標用戶端為 WoW Forever（`## Interface: 16001`），和 MoP Classic 5.5.4 同樣是現代 Classic 引擎，因此它用的 API 在 5.5.4 也大多可用。
+### 尚未在遊戲內測試
+以上修改只通過語法檢查（lupa）、XML 格式檢查與 API stub 測試，**尚未在 5.5.4 用戶端實際載入**。
 
-### 地形圖塊：與 Yatlas_mapdb1 完全相同的來源
-- `data/ClientTerrainData.lua` 的開頭寫著「Generated directly from local Forever client WDT MAID records」，格式為 `["7/<x>/<y>"] = FileDataID`（zoom 7 = ADT 格），和 `tools/wdt.py` 讀的是同一個 MAID 欄位。
-- 用 `tools/compare_dandymap.py` 交叉比對：
+## 五、DandyMap 參考（1.6.3，僅作為線索）
+來源：[CurseForge DandyMap 1.6.3](https://www.curseforge.com/api/v1/mods/1713483/files/9317439/download)，目標用戶端為 WoW Forever（`## Interface: 16001`）。DandyMap 只用來**確認方向與交叉比對資料**，Yatlas 的程式碼都是依 Yatlas 原本的架構與 Blizzard API 文件自行撰寫，沒有沿用 DandyMap 的程式結構或寫法。
+
+### 資料交叉比對
+- DandyMap 的 `data/ClientTerrainData.lua` 同樣來自 WDT MAID 的 FileDataID。用 `tools/compare_dandymap.py`（只讀取資料、不複製程式）比對：
   - 東部王國：重疊 703 格，**703 格完全相同**。
   - 卡林多：重疊 979 格，**979 格完全相同**。
-  - Yatlas 多出的格子（東部王國 136、卡林多 23）是大災變之後新增的地形（例如吉爾尼斯），WoW Forever 沒有這些區域。
-  - DandyMap 多出的格子：東部王國 31 格是 WoW Forever 專屬的新 FileDataID（5313xxx，5.5.4 中不存在）；卡林多 `0..2 × 0..2` 共 9 格（207562–207570）在 5.5.4 的 CASC 中存在，但 5.5.4 的 WDT 沒有列出，位於地圖最西北角的海上，不影響 Yatlas。
-- 繪製方式（`modules/map/NativeTerrain.lua`）：`tex:SetTexture(fileID, "CLAMP", "CLAMP")`，並呼叫 `SetSnapToPixelGrid(false)`、`SetTexelSnappingBias(0)` 避免圖塊之間出現接縫。**已套用到 Yatlas.lua**（有函式存在檢查，舊用戶端不受影響）。
+  - Yatlas 多出的格子（東部王國 136、卡林多 23）是大災變之後的地形，WoW Forever 沒有這些區域。
 
-### 座標換算（`modules/map/PlayerTracking.lua`）
-- `local north, west, _, instance = UnitPosition("player")`：第 1 個回傳值是世界 X（north），第 2 個是世界 Y（west），第 4 個是 instanceID（Map.db2 ID）。這也與 [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) 的 `local y, x, _z, instanceID = UnitPosition(unit)` 一致。
-- 圖塊座標：`tileX = 32 - west / (1600/3)`、`tileY = 32 - north / (1600/3)`。這正是 Yatlas 的 `Yatlas_Big2Mini_Coord(wy, wx)` 所做的換算，所以第四節建議的「UnitPosition → Big2Mini」路線可以直接沿用。
-- 退路：`UnitPosition` 在副本內會回傳 nil，此時改用 `C_Map.GetBestMapForUnit` → `C_Map.GetPlayerMapPosition` → `C_Map.GetWorldPosFromMapPos(uiMapID, pos)` 取得世界座標。
-- 隊友位置（`PartyTracking.lua`）也使用 `UnitPosition(unit)`，可直接取代 Yatlas `players.lua` 的 `GetPlayerMapPosition`。
-
-### 區域邊界：可以在執行時算出，不一定要查表
-- `ns.NativeTerrainBounds(uiMapID)` 和 `QuestOverlayMath.Bounds` 用 `C_Map.GetWorldPosFromMapPos(uiMapID, CreateVector2D(0,0))` 及 `(1,1)`、`(1,0)`、`(0,1)` 四個角點取得世界座標，算出區域在地形圖上的矩形範圍，也會拒絕旋轉或變形的地圖。
-- 這和 `Yatlas_mapareas` 來自同一份 `UiMapAssignment` 資料，但改在執行時計算。Yatlas 可以保留靜態表，再用這個 API 作為新區域或驗證時的備援。
-
-### 副本入口、屍體、墓地
-- 副本入口（`modules/pins/InstanceMarkers.lua`）：`C_EncounterJournal.GetDungeonEntrancesForMap(uiMapID)` 回傳 `{name, position, journalInstanceID}`，再用 `GetWorldPosFromMapPos` 轉成世界座標。5.5.4 的 DB2 中**沒有** `JournalInstanceEntrance` 資料表（`AreaPOI` 也沒有入口資料），所以精確的入口座標只能在遊戲內取得。建議：Yatlas 載入時用這個 API 覆寫或補上 `Yatlas_instances`，特別是目前是近似值的血色修道院（1004）。
-- 屍體位置（`modules/map/MapExtras.lua`）：`C_DeathInfo.GetCorpseMapPosition(uiMapID)`，搭配事件 `PLAYER_DEAD`、`PLAYER_ALIVE`、`PLAYER_UNGHOST`、`CORPSE_IN_RANGE`、`CORPSE_OUT_OF_RANGE`。
-- 探索區域（`modules/map/TerrainFog.lua`）：`C_Map.GetMapArtID` + `C_MapExplorationInfo.GetExploredMapTextures`。Yatlas 目前沒有戰爭迷霧功能，日後若要做可以參考。
-
-### 其他寫法
-- 事件只用 `PLAYER_ENTERING_WORLD`、`ZONE_CHANGED_NEW_AREA`、`ZONE_CHANGED`，位置更新靠 OnUpdate 節流輪詢，符合第四節對 `WORLD_MAP_UPDATE` 的替代建議。
-- 框架使用 `BackdropTemplate` + `SetBackdrop`，並用 `C_AddOns.IsAddOnLoaded` / `C_AddOns.GetAddOnMetadata`（舊的全域 `IsAddOnLoaded` 僅作退路）。
-- 所有 API 呼叫都用 `pcall` 包住，並以 `issecretvalue` 過濾受限值（retail 12.0 的 secret values）。MoP Classic 目前不需要，但這種防禦式寫法值得參考。
-- DandyMap 主程式不需要額外的資料包；選用的資料包 [nutiler/dandymapdata](https://github.com/nutiler/dandymapdata) 只提供額外材質。
+### 從中得到的線索（皆可在 Blizzard API 文件中查到）
+- `UnitPosition(unit)` 的回傳順序為世界 X、世界 Y、Z、instanceID，與 [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) 一致。
+- 圖塊接縫：Texture 的 `SetTexture(fileID, "CLAMP", "CLAMP")`、`SetSnapToPixelGrid(false)`、`SetTexelSnappingBias(0)` 屬於一般的材質設定方式。
+- 5.5.4 的 DB2 中沒有 `JournalInstanceEntrance`，精確的副本入口只能在遊戲內用 `C_EncounterJournal.GetDungeonEntrancesForMap(uiMapID)` 取得（日後可用來修正 `Yatlas_instances` 中的近似值）。
+- 區域邊界也可以在執行時以 `C_Map.GetWorldPosFromMapPos` 計算地圖四個角點取得，可作為 `Yatlas_mapareas` 的驗證方式。

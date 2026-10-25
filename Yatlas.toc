@@ -1,13 +1,13 @@
-## Interface: 60200
+## Interface: 50504
 ## Title: Yatlas
-## Version: 0.9.3
+## Version: 0.9.4
 ## Notes: Yet another atlas
-## OptionalDeps: myAddOns, Ace3, LibBabble-SubZone-3.0
+## OptionalDeps: myAddOns
 ## DefaultState: Enabled
 ## LoadOnDemand: 0
 ## SavedVariables: YatlasOptions
 
-Libs\Libs.xml
+Compat.lua
 Locale\Locales.xml
 
 mapdb.lua

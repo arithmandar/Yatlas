@@ -40,7 +40,22 @@ function set.setuppoint(point, env, dat)
     local bgtextname;
     local iconsize = env.iconsize;
 
-    if(dat.userdat[5] == 4 or dat.userdat[5] == 5 or dat.userdat[5] < 0) then
+    local atlas;
+    local tindex = dat.userdat[5];
+
+    if(tindex == nil) then
+        -- 5.5.4+: area POIs without a texture index come with an atlas instead
+        atlas = dat.userdat[6];
+        if(atlas == nil) then
+            tindex = 4;
+        end
+    elseif(tindex >= 0 and tindex ~= 4 and tindex ~= 5 and Yatlas_GetPOITextureCoords == nil) then
+        tindex = 4;
+    end
+
+    if(atlas) then
+        r,g,b = 1,1,1;
+    elseif(tindex == 4 or tindex == 5 or tindex < 0) then
         x1 = 0; y1 = 0;
         x2 = 1; y2 = 1;
 
@@ -48,22 +63,22 @@ function set.setuppoint(point, env, dat)
         g = 0.6;
         b = 1;
         bgtextname = "Interface\\AddOns\\Yatlas\\images\\Icons\\Icon-Circle";
-        if(dat.userdat[5] == 5) then
+        if(tindex == 5) then
             bgtextname = "Interface\\AddOns\\Yatlas\\images\\Icons\\Icon-Star";
             iconsize = iconsize+2;
-        elseif(dat.userdat[5] == -1) then
+        elseif(tindex == -1) then
             r = 0.9;
             g = 0.1;
             b = 0.9;
             bgtextname = "Interface\\AddOns\\Yatlas\\images\\Icons\\Icon-Cave";
-        elseif(dat.userdat[5] == -4) then
+        elseif(tindex == -4) then
             r = 0.3;
             g = 0.8;
             b = 1;
             bgtextname = "Interface\\AddOns\\Yatlas\\images\\Icons\\Icon-Exclaim";
         end
     else
-       x1, x2, y1, y2 = GetPOITextureCoords(dat.userdat[5]);
+       x1, x2, y1, y2 = Yatlas_GetPOITextureCoords(tindex);
        r,g,b = 1,1,1;
        bgtextname  = "Interface\\Minimap\\POIIcons"
     end
@@ -75,8 +90,12 @@ function set.setuppoint(point, env, dat)
     bg:Show();
     bg:SetHeight(iconsize);
     bg:SetWidth(iconsize);
-    bg:SetTexture(bgtextname);
-    bg:SetTexCoord(x1, x2, y1, y2);
+    if(atlas) then
+        bg:SetAtlas(atlas);
+    else
+        bg:SetTexture(bgtextname);
+        bg:SetTexCoord(x1, x2, y1, y2);
+    end
     bg:SetVertexColor(r, g, b, 1);
 end
 

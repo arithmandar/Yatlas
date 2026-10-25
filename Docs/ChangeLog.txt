@@ -7,12 +7,20 @@ Yatlas ChangeLog
 - Yatlas_mapdb1 now stores minimap tile FileDataIDs read from the 5.5.4 WDT files
 - Yatlas_mapareas rebuilt from UiMapAssignment (WorldMapArea no longer exists)
 - Instance entrances rebuilt from AreaTrigger; MoP dungeons/raids added
-- Graveyards re-enabled for MoP (Draenor / WoD-only entries removed)
+- Graveyards disabled: WorldSafeLocs is server-side only, no client data source in 5.5.4
 - Area / map / instance names localized from the client instead of LibBabble-SubZone-3.0
 - Draenor removed; Deepholm, Tol Barad, Isle of Thunder and Darkmoon Island added
 - Minimap tiles drawn with CLAMP wrap and pixel snapping disabled to avoid seams
-- Tile data cross-checked against DandyMap 1.6.3 (tools/compare_dandymap.py)
-- NOTE: API migration (C_Map etc.) still required before the addon runs on 5.5.4
+- Tile data cross-checked against DandyMap 1.6.3 data (tools/compare_dandymap.py)
+- API migration for the modern Classic client (new Compat.lua):
+  - player / party / raid positions from UnitPosition (C_Map fallback)
+  - landmarks from C_AreaPoiInfo instead of GetMapLandmarkInfo
+  - GetMapInfo / SetMapZoom / WORLD_MAP_UPDATE removed; GROUP_ROSTER_UPDATE
+  - BackdropTemplate, SOUNDKIT, C_AddOns.GetAddOnMetadata, C_Minimap.GetPOITextureCoords
+  - OnKeyDown / OnEvent no longer use the global arg1
+  - fixed undefined YF_GetZoneIDs and a leaked global
+- TOC Interface 50504; LibBabble-SubZone-3.0 / AceLocale-3.0 / LibStub removed
+- NOTE: not yet tested in game
 
 0.9.1 (Feb. XX, 2013)
 - TOC update to support WoW 5.2

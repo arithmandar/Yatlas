@@ -1,7 +1,7 @@
 # Yatlas ChangeLog
 
 
-### v0.9.5 (Oct. xx, 2026)
+### v0.9.5 (Oct. 26, 2026)
 
 - Town names (Yatlas_towns2) are now localized from the client AreaTable
 - Map icons use the game's own atlases: Dungeon (blue) / Raid (green) for instance entrances, poi-town for towns (old Yatlas icons kept as fallback)

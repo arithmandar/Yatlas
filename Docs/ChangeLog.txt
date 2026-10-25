@@ -1,7 +1,7 @@
 
 Yatlas ChangeLog
 ================
-0.9.4 (Oct. XX, 2026) - work in progress
+0.9.4 (Oct. 26, 2026)
 ----------------------------
 - Map data regenerated for WoW MoP Classic 5.5.4.70579 (see Docs/DataSources-5.5.4.md)
 - Yatlas_mapdb1 now stores minimap tile FileDataIDs read from the 5.5.4 WDT files

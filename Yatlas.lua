@@ -54,7 +54,10 @@ function YatlasFrameTemplate:OnLoad()
     self:RegisterForDrag("LeftButton");
     self:RegisterEvent("VARIABLES_LOADED");
     self:RegisterEvent("ADDON_LOADED");
-    self:RegisterEvent("WORLD_MAP_UPDATE");
+    -- WORLD_MAP_UPDATE no longer exists; positions are polled in OnUpdate
+    self:RegisterEvent("PLAYER_ENTERING_WORLD");
+    self:RegisterEvent("ZONE_CHANGED_NEW_AREA");
+    self:RegisterEvent("AREA_POIS_UPDATED");
     viewframe:RegisterForDrag("RightButton","LeftButton");
     viewframe:EnableMouseWheel(true);
 
@@ -127,14 +130,16 @@ function BigYatlasFrame_OnLoadExtra()
 
     BigYatlasFrame.RawBigShow = BigYatlasFrame.Show;
     BigYatlasFrame.Show = function(self)
-        SetupFullscreenScale(self);
+        if(SetupFullscreenScale) then
+            SetupFullscreenScale(self);
+        end
         return self:RawBigShow();
     end
 
     BigYatlasFrame.hoverTooltip = "BigYatlasTooltip";
 end
 
-function YatlasFrameTemplate:OnEvent(event)
+function YatlasFrameTemplate:OnEvent(event, ...)
     local framename = self:GetName();
 
     if(event == "VARIABLES_LOADED") then
@@ -161,19 +166,27 @@ function YatlasFrameTemplate:OnEvent(event)
         if(self.opt.track) then
             YatlasFramePlayerJumpButton_Seek(self, self.opt.track);
         end
-    elseif(event == "WORLD_MAP_UPDATE") then
-        self:OnWorldMapUpdate();
+    elseif(event == "AREA_POIS_UPDATED") then
+        Yatlas_ResetLandmarks();
+        if(self.opt) then
+            self:OnWorldMapUpdate();
+        end
+    elseif(event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA") then
+        if(self.opt) then
+            self:OnWorldMapUpdate();
+        end
     end
 
     if(self.OnEventExtra) then
-        self:OnEventExtra(event);
+        self:OnEventExtra(event, ...);
     end
 end
 
-function YatlasFrame_OnEventExtra(self, event)
+function YatlasFrame_OnEventExtra(self, event, ...)
     local framename = self:GetName();
+    local addon = ...;
 
-    if(event == "ADDON_LOADED" and arg1 == "Yatlas") then
+    if(event == "ADDON_LOADED" and addon == "Yatlas") then
         if(myAddOnsFrame_Register) then
             myAddOnsFrame_Register(YatlasDetails, YatlasMAHelp);
         end
@@ -257,7 +270,7 @@ end
 
 function YatlasFrameDropDownButton_OnClick(self)
         local d = 1;
-	i = self:GetID();
+        local i = self:GetID();
         for h,v in pairs(YA_MAPS) do
             if(d == i) then
                 --print(tostring(self.value).." "..tostring(v[1]))
@@ -435,16 +448,12 @@ function YatlasFramePlayerJumpButton_Jump(btn)
 end
 
 function YatlasFramePlayerJumpButton_Seek(frame, unit) 
-
-    local i,v = next(Yatlas_WorldMapIds);
-
+    -- the unit position is now available directly, no need to cycle
+    -- through the continents of the world map any more
     frame.trackseek = unit;
-    frame.trackseek_state = i; 
 
-    if(GetMapInfo() == i) then
-        frame:OnWorldMapUpdate();
-    else
-        SetMapZoom(v);
+    if(frame.opt) then
+        frame:OnWorldMapUpdateU(unit);
     end
 end
 
@@ -567,7 +576,19 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
 
                 -- set textures
                 if(v[hx][hy]) then
-		    tex:SetTexture(pre..mymap.."\\"..v[hx][hy][1]);
+		    if(type(v[hx][hy]) == "number") then
+		        -- 5.5.4+: Yatlas_mapdb1 stores minimap tile FileDataIDs
+		        -- clamp the tile edges and turn off pixel snapping so that
+		        -- neighbouring tiles line up without visible gaps
+		        if(tex.SetSnapToPixelGrid and not tex.yatlasNoSnap) then
+		            tex:SetSnapToPixelGrid(false);
+		            tex:SetTexelSnappingBias(0);
+		            tex.yatlasNoSnap = true;
+		        end
+		        tex:SetTexture(v[hx][hy], "CLAMP", "CLAMP");
+		    else
+		        tex:SetTexture(pre..mymap.."\\"..v[hx][hy][1]);
+		    end
                     tex:SetVertexColor(1,1,1,1);
                 else
                     tex:SetTexture("Interface\\Buttons\\WHITE8X8");
@@ -787,7 +808,7 @@ end
 
 function YatlasFrameTemplate:GetZoneText(offx, offy)
     -- untested?
-    local f = {YF_GetZoneIDs(offx, offy)};
+    local f = {self:GetZoneIDs(offx, offy)};
 
     if(getn(f) < 1) then
         return YATLAS_UNKNOWN_ZONE;
@@ -822,79 +843,28 @@ function YatlasFrameTemplate:GetZoneIDs(offx, offy)
 end
 
 function YatlasFrameTemplate:OnWorldMapUpdate()
-    -- update landmarks
-    local mapname, mapszx, mapszy = GetMapInfo();
-    if(mapname and Yatlas_Landmarks[mapname] == nil and Yatlas_mapareas[mapname]) then
-        local x1,x2,y1,y2;
-        if(Yatlas_mapareas[mapname][0] ~= nil) then
-            x1 = Yatlas_mapareas[mapname][0][1];
-            x2 = Yatlas_mapareas[mapname][0][2];
-            y1 = Yatlas_mapareas[mapname][0][3];
-            y2 = Yatlas_mapareas[mapname][0][4];
-        else
-            local _,va = next(Yatlas_mapareas[mapname]);  
-            x1 = va[1];
-            x2 = va[2];
-            y1 = va[3];
-            y2 = va[4];
-        end
-
-        local n = GetNumMapLandmarks();
-        Yatlas_Landmarks[mapname] = {};
-        for h = 1,n do
-            local name, description, text, x, y =
-                    GetMapLandmarkInfo(h);
-            x = (-x*(x1-x2) + x1);
-            y = (-y*(y1-y2) + y1);
-            tinsert(Yatlas_Landmarks[mapname],
-                    {x,y, name, description, text});
-        end
-
+    -- update landmarks of the map we are showing
+    if(self.opt and Yatlas_LoadLandmarks(self.opt.Map)) then
         YAPoints_ForceUpdate();
     end
 
     if(self.trackseek or (self.opt and self.opt.track)) then
         self:OnWorldMapUpdateU(self.trackseek or self.opt.track)
     end
-
-    -- zooming to a unit?
-    if(self.trackseek_state ~= nil) then
-        local i,v = next(Yatlas_WorldMapIds, self.trackseek_state);
-        if(v == nil) then
-            self.trackseek_state = nil;
-        else
-            self.trackseek_state = i;
-            SetMapZoom(v);
-        end
-    end
 end
 
 function YatlasFrameTemplate:OnWorldMapUpdateU(u)
-    local map = GetMapInfo();
-    local x,y = GetPlayerMapPosition(u);
+    local map, unitx, unity = Yatlas_GetUnitLocation(u);
     local lm = self:GetName();
     local viewframe = _G[lm.."ViewFrame"];
     local zoom = self.opt.Zoom
 
-    if(Yatlas_mapareas[map] == nil or (x == 0 and y == 0)) then  
+    if(map == nil or Yatlas_mapdb1[map] == nil) then  
+        if(u == self.trackseek) then
+            self.trackseek = nil;
+        end
         return;
     end
-
-    local x1,x2,y1,y2;
-    if(Yatlas_mapareas[map][0] ~= nil) then
-        x1 = Yatlas_mapareas[map][0][1];
-        x2 = Yatlas_mapareas[map][0][2];
-        y1 = Yatlas_mapareas[map][0][3];
-        y2 = Yatlas_mapareas[map][0][4];
-    else
-        local _,va = next(Yatlas_mapareas[map]);  
-        x1 = va[1];
-        x2 = va[2];
-        y1 = va[3];
-        y2 = va[4];
-    end
-
-    local unitx, unity = (-x*(x1-x2) + x1), (-y*(y1-y2) + y1);
 
     if(u == self.trackseek) then
         local zx,zy = Yatlas_Big2Mini_Coord(unitx, unity);
@@ -904,8 +874,6 @@ function YatlasFrameTemplate:OnWorldMapUpdateU(u)
                     zy-(viewframe:GetHeight()/2)/zoom);
 
         self.trackseek = nil;
-        self.trackseek_state = nil; 
-        self.resetmapzoom = true;
     elseif(u == self.opt.track) then
         local rx,ry = self:GetLocation();
         local zx,zy = Yatlas_Big2Mini_Coord(unitx, unity);
@@ -918,12 +886,11 @@ function YatlasFrameTemplate:OnWorldMapUpdateU(u)
         zx = zx-whaffzoom;
         zy = zy-hhaffzoom;
 
-        if(zx > rx or zx + whaffzoom*2 < rx  or
+        if(map ~= self.opt.Map or zx > rx or zx + whaffzoom*2 < rx  or
                 zy > ry or zy + hhaffzoom*2 < ry) then
             self:SetMap(map);
             self:SetLocation(zx, zy);
         end
-        self.resetmapzoom = true;
     end
 end
 
@@ -980,18 +947,10 @@ function YatlasFrameTemplate:OnUpdate(elapsed)
     if(self.update_time > 0.5) then
        YAPoints_OnUpdate(self, self.update_time);
 
-        if(GetMapInfo() ~= self.opt.Map) then
-            self.resetmapzoom = 1;
-            SetMapZoom(Yatlas_WorldMapIds[self.opt.Map]);
-        else
-            self:OnWorldMapUpdate()
+        if(self.opt) then
+            self:OnWorldMapUpdate();
         end
         self.update_time = 0;
-
-        if(self.resetmapzoom) then
-            self.resetmapzoom = nil;
-            SetMapToCurrentZone()
-        end
    end
 end
 

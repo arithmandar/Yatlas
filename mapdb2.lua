@@ -1,64 +1,80 @@
-local BZ = Yatlas_GetLocaleLibBabble("LibBabble-SubZone-3.0");
-
 -- Yatlas map mapping
--- Display_Name - Actual Map Folder Name
+-- Display_Name - Actual Map Folder Name (Map.db2 Directory)
+-- Oct. 25, 2026: updated for MoP Classic 5.5.4.70579. Display names come from the client
+-- (C_Map.GetMapInfo) so they are localized without LibBabble-SubZone-3.0.
+local function YA_UiMapName(uiMapID, fallback)
+	local info = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(uiMapID);
+	return (info and info.name and info.name ~= "" and info.name) or fallback;
+end
+
 YA_MAPS = {
-	[BZ["Eastern Kingdoms"]] = {"Azeroth"},
-	[BZ["Kalimdor"]] = {"Kalimdor"},
-	[BZ["Outland"]] = {"Expansion01"},
-	[BZ["Northrend"]] = {"Northrend"},
-	[BZ["Pandaria"]] = {"HawaiiMainLand"},
-	[BZ["Draenor"]] = {"Draenor"},
+	[YA_UiMapName(13, "Eastern Kingdoms")] = {"Azeroth"},
+	[YA_UiMapName(12, "Kalimdor")] = {"Kalimdor"},
+	[YA_UiMapName(101, "Outland")] = {"Expansion01"},
+	[YA_UiMapName(113, "Northrend")] = {"Northrend"},
+	[YA_UiMapName(424, "Pandaria")] = {"HawaiiMainLand"},
+	[YA_UiMapName(207, "Deepholm")] = {"Deephome"},
+	[YA_UiMapName(244, "Tol Barad")] = {"TolBarad"},
+	[YA_UiMapName(504, "Isle of Thunder")] = {"MoguIslandDailyArea"},
+	[YA_UiMapName(407, "Darkmoon Island")] = {"DarkmoonFaire"},
 };
 
+-- [Directory] = uiMapID of the map shown for it (continent, or the zone for single-zone maps).
+-- Previously these were the SetMapZoom() continent indexes (1..6); SetMapZoom() no longer exists,
+-- the C_Map API works with uiMapIDs.
 Yatlas_WorldMapIds = {
-	["Kalimdor"] = 1,
-	["Azeroth"] = 2,
-	["Expansion01"] = 3,
-	["Northrend"] = 4,
-	["HawaiiMainLand"] = 5,
-	["Draenor"] = 6,
+	["Azeroth"] = 13,
+	["Kalimdor"] = 12,
+	["Expansion01"] = 101,
+	["Northrend"] = 113,
+	["HawaiiMainLand"] = 424,
+	["Deephome"] = 207,
+	["TolBarad"] = 244,
+	["MoguIslandDailyArea"] = 504,
+	["DarkmoonFaire"] = 407,
 };
 
 
--- These MUST MATCH the values returned by GetMapZones()
--- (These are the id versions)
+-- Zones per tile map, from UiMap.db2 + UiMapAssignment.db2 (5.5.4.70579); [1] = 0 is the continent itself
+-- (GetMapZones() no longer exists; order is alphabetical by enUS name)
 Yatlas_ZoneIds = {
 	-- Map ID = 0
-	["Azeroth"] =   {
-		0, 1, 3, 4, 8, 10, 11, 12, 21, 25, 28, 30, 38, 40, 
-		41, 44, 45, 46, 47, 51, 85, 130, 139, 170, 214, 267, 
-		269, 276, 293, 296, 308, 330, 408, 409, 1497, 1519, 
-		1537, 1579, 2037, 2280, 3459, 4706, 4922, 5146, 5152, 
-		5339, 5351, 6606, 6936
+	["Azeroth"] = {
+		0, 5145, 45, 3, 4, 46, 6176, 41, 6454, 1, 10, 139, 12, 267, 1537, 4815, 38, 6457, 33, 6170, 44, 4706, 5351, 51, 5144, 130, 1519, 5339, 8, 5287, 47, 85, 4922, 1497, 5146, 28, 40, 11,
 	},
 	-- Map ID = 1
-	["Kalimdor"] =  {
-		0, 14, 15, 16, 17, 141, 148, 215, 331, 332, 357, 361, 
-		377, 400, 405, 406, 440, 457, 490, 493, 616, 618, 
-		876, 1377, 1637, 1638, 1657, 1941, 2159, 2917, 3478, 
-		4707, 4709, 4795, 4826, 4887, 5034, 5060, 5695, 6463
+	["Kalimdor"] = {
+		0, 5695, 331, 16, 6452, 148, 1657, 405, 14, 15, 6453, 361, 357, 493, 616, 215, 17, 1637, 6450, 1377, 4709, 406, 440, 141, 400, 1638, 5034, 490, 6451, 618,
 	},
 	-- Map ID = 530
 	["Expansion01"] = {
-		0, 3430, 3433, 3455, 3479, 3483, 3487, 3518, 3519, 
-		3520, 3521, 3522, 3523, 3524, 3525, 3540, 3557, 3703, 
-		3917, 4080, 7498, 7499, 
+		0, 6456, 3524, 3522, 3525, 3430, 3433, 3483, 4080, 3518, 3523, 3520, 3703, 3487, 6455, 3519, 3557, 3521,
 	},
 	-- Map ID = 571
 	["Northrend"] = {
-		0, 65, 66, 67, 210, 394, 495, 2817, 3477, 3537, 
-		3711, 3979, 4197, 4201, 4258, 4395, 4602, 4630, 4742, 
+		0, 3537, 2817, 65, 394, 495, 4742, 210, 3711, 67, 4197, 66,
 	},
 	-- Map ID = 870
 	["HawaiiMainLand"] = {
-		0, 5785, 5805, 5840, 5841, 5842, 6006, 6134, 6138, 6661, 6757, 
+		0, 6138, 6661, 6134, 5841, 5785, 6006, 6757, 5842, 5840, 5805,
 	},
-	-- Map ID = 1116
-	["Draenor"] = {
-		0, 6662, 6719, 6720, 6721, 6722, 6723, 6755, 6756, 6908, 6975, 7229, 7230, 7490, 8443
+	-- Map ID = 646
+	["Deephome"] = {
+		5042,
 	},
-}
+	-- Map ID = 732
+	["TolBarad"] = {
+		5095, 5389,
+	},
+	-- Map ID = 1064
+	["MoguIslandDailyArea"] = {
+		6507,
+	},
+	-- Map ID = 974
+	["DarkmoonFaire"] = {
+		5861,
+	},
+};
 
 Yatlas_PaperZoneNames = {};	 -- we don't fill this in by hand 
 Yatlas_Landmarks = {};		  -- this is filled in automatically too
@@ -80,112 +96,150 @@ Yatlas_mapareas_adjust = {
 };
 
 -- Instances (entrances)
--- data from Map.dbc, filter the map type to find instance
+-- Oct. 25, 2026: updated to 5.5.4.70579 (MoP Classic)
+-- Primary source: the client AreaTrigger.db2 row that teleports into the instance
+--   (trigger -> instance mapping from MoP server data: MistCore 5.0.5 / SkyFire 5.4.8 areatrigger_teleport)
+-- Fallback: Map.db2 Corpse_0/Corpse_1 (entrance) of build 7.3.5, the last client that shipped them
+-- {name, worldY, worldX, instanceMapID}; name is localized at load time via GetRealZoneText(mapID)
 Yatlas_instances = {
 	["Azeroth"] = {
-		{BZ["Shadowfang Keep"], 1571.569946, -230.9889984},
-		{BZ["Stormwind Stockade"], 848.0103149, -8762.378906},
-		{BZ["Deadmines"], 1681.150024, -11207.7998},
-		{BZ["Uldaman"], -2954.997314, -6060.181641},
-		{BZ["Gnomeregan"], 931.5987549, -5162.661621},
-		{BZ["Sunken Temple"], -3987.629883, -10291.7002},
-		{BZ["Scarlet Monastery of Old"], -811.2636719, 2892.235352},
-		{BZ["Lower Blackrock Spire"], -1233.041504, -7522.526855},
-		{BZ["Blackrock Depths"], -928.6394653, -7178.094727},
-		{BZ["Scholomance OLD"], -2552.563965, 1274.78125},
-		{BZ["Ancient Zul'Gurub"], -1224.577148, -11916.05957},
-		{BZ["Stratholme"], -3378.483154, 3392.316895},
-		{BZ["Deeprun Tram"], 517.3479614, -8349.223633},
-		{BZ["Molten Core"], -1036.69812, -7510.564941},
-		{BZ["Blackwing Lair"], -1218.666504, -7663.412598},
-		{BZ["Karazhan"], -2004.065308, -11110.40723},
-		{BZ["Throne of the Tides"], 5401.649414, -5585.871582},
-		{BZ["Blackrock Caverns"], -1330.684082, -7570.244629},
-		{BZ["Blackwing Descent"], -1188.831665, -7541.767578},
-		{BZ["Grim Batol"], -3446.350098, -4047.73999},
-		{BZ["The Bastion of Twilight"], -4221.209961, -4903.010254},
-		{BZ["Zul'Gurub"], -1219.838501, -11916.22852},
-		{BZ["Scarlet Halls"], -820, 2869},
-		{BZ["Scholomance"], -2552.560059, 1274.780029},
-		{BZ["Upper Blackrock Spire"], -1233.041504, -7522.526855},
+		{"Shadowfang Keep", 1576.699951, -227.998001, 33}, -- AreaTrigger 145
+		{"Stormwind Stockade", 848.557007, -8761.849609, 34}, -- AreaTrigger 101
+		{"Deadmines", 1684.23999, -11207.299805, 36}, -- AreaTrigger 78
+		{"Uldaman", -2955, -6055.5, 70}, -- AreaTrigger 286
+		{"Uldaman", -3762.189941, -6606.47998, 70}, -- AreaTrigger 902
+		{"Gnomeregan", 916.549011, -5154.97998, 90}, -- AreaTrigger 324
+		{"Gnomeregan", 827.914978, -4914.930176, 90}, -- AreaTrigger 523
+		{"Sunken Temple", -3990.02002, -10292.299805, 109}, -- AreaTrigger 446
+		{"Blackrock Spire", -1239.060059, -7519.680176, 229}, -- AreaTrigger 1468
+		{"Blackrock Depths", -937.666992, -7176.629883, 230}, -- AreaTrigger 1466
+		{"Stratholme", -4060.600098, 3237.459961, 329}, -- AreaTrigger 2214
+		{"Stratholme", -3389.199951, 3392.459961, 329}, -- AreaTrigger 2216
+		{"Molten Core", -1035.869995, -7510.870117, 409}, -- AreaTrigger 3528
+		{"Blackwing Lair", -1218.666504, -7663.412598, 469}, -- Map.db2 7.3.5 Corpse
+		{"Karazhan", -1998.119995, -11101.900391, 532}, -- AreaTrigger 4131
+		{"Throne of the Tides", 5401.649414, -5585.871582, 643}, -- Map.db2 7.3.5 Corpse
+		{"Blackrock Caverns", -1330.684082, -7570.244629, 645}, -- Map.db2 7.3.5 Corpse
+		{"Blackwing Descent", -1188.831665, -7541.767578, 669}, -- Map.db2 7.3.5 Corpse
+		{"Grim Batol", -3446.350098, -4047.73999, 670}, -- Map.db2 7.3.5 Corpse
+		{"The Bastion of Twilight", -4221.209961, -4903.010254, 671}, -- Map.db2 7.3.5 Corpse
+		{"Zul'Gurub", -1219.838501, -11916.228516, 859}, -- Map.db2 7.3.5 Corpse
+		{"Scarlet Halls", -820, 2869, 1001}, -- Map.db2 7.3.5 Corpse
+		{"Scarlet Monastery", 2924.379883, -798.429016, 1004}, -- approx.: old Scarlet Monastery courtyard (AreaTrigger 45)
+		{"Scholomance", -2552.560059, 1274.780029, 1007}, -- Map.db2 7.3.5 Corpse
 	},
 	["Kalimdor"] = {
-		{BZ["Wailing Caverns"], -2209.240479, -751.1312256},
-		{BZ["Razorfen Kraul"], -1660.211792, -4459.449219},
-		{BZ["Blackfathom Deeps"], 748.387085, 4249.120605},
-		{BZ["Razorfen Downs"], -2535.871582, -4662.882813},
-		{BZ["Zul'Farrak"], -2891.278076, -6790.57666},
-		{BZ["Onyxia's Lair"], -3752.421143, -4753.3125},
-		{BZ["Opening of the Dark Portal"], -4193.513184, -8750.827148},
-		{BZ["Maraudon"], 2924.977539, -1432.697144},
-		{BZ["Ragefire Chasm"], -4423.371582, 1816.755859},
-		{BZ["Dire Maul"], 1130, -3908.030029},
-		{BZ["Ruins of Ahn'Qiraj"], 1526.365723, -8114.464355},
-		{BZ["Ahn'Qiraj Temple"], 1526.785767, -8111.724121},
-		{BZ["The Battle for Mount Hyjal"], -4182.050293, -8178.507813},
-		{BZ["The Escape from Durnholde"], -4061.508789, -8309.80957},
-		{BZ["The Culling of Stratholme"], -4457.417969, -8756.086914},
-		{BZ["Halls of Origination"], -1837.479126, -10225.99512},
-		{BZ["The Vortex Pinnacle"], -2317.934082, -11522.49316},
-		{BZ["Firelands"], -2943.31958, 3987.199707},
-		{BZ["Throne of the Four Winds"], 72.08333588, -11360.60254},
-		{BZ["Lost City of the Tol'vir"], -1308.623291, -10686.14941},
-		{BZ["End Time"], -4454.092285, -8288.604492},
-		{BZ["Well of Eternity"], -3994.935791, -8595.836914},
-		{BZ["Hour of Twilight"], -4590.4375, -8291.131836},
-		{BZ["Dragon Soul"], -4512.6875, -8263.276367},
+		{"Wailing Caverns", -2212.780029, -753.596008, 43}, -- AreaTrigger 228
+		{"Razorfen Kraul", -1655.01001, -4455.109863, 47}, -- AreaTrigger 244
+		{"Blackfathom Deeps", 756.96698, 4253.109863, 48}, -- AreaTrigger 257
+		{"Razorfen Downs", -2536.929932, -4664.600098, 129}, -- AreaTrigger 442
+		{"Zul'Farrak", -2891.949951, -6790.879883, 209}, -- AreaTrigger 924
+		{"Onyxia's Lair", -3752.110107, -4768.609863, 249}, -- AreaTrigger 2848
+		{"Opening of the Dark Portal", -4156.919922, -8777.389648, 269}, -- AreaTrigger 4320
+		{"Maraudon", 2617.570068, -1484.069946, 349}, -- AreaTrigger 3133
+		{"Maraudon", 2861.949951, -1181.97998, 349}, -- AreaTrigger 3134
+		{"Ragefire Chasm", -4427.259766, 1818.400024, 389}, -- AreaTrigger 2230
+		{"Dire Maul", 934.929016, -3759.689941, 429}, -- AreaTrigger 3183
+		{"Dire Maul", 793.726013, -3981.199951, 429}, -- AreaTrigger 3184
+		{"Dire Maul", 123.966003, -4028.209961, 429}, -- AreaTrigger 3185
+		{"Dire Maul", 1249.920044, -3822.629883, 429}, -- AreaTrigger 3186
+		{"Dire Maul", 1089.930054, -3519.949951, 429}, -- AreaTrigger 3189
+		{"Ruins of Ahn'Qiraj", 1508.650024, -8424.94043, 509}, -- AreaTrigger 4008
+		{"Ahn'Qiraj Temple", 2005.329956, -8230.400391, 531}, -- AreaTrigger 4010
+		{"The Battle for Mount Hyjal", -4155.649902, -8158.899902, 534}, -- AreaTrigger 4319
+		{"The Escape From Durnholde", -4047.439941, -8326.269531, 560}, -- AreaTrigger 4321
+		{"The Culling of Stratholme", -4469.580078, -8758.780273, 595}, -- AreaTrigger 5150
+		{"Halls of Origination", -1837.479126, -10225.995117, 644}, -- Map.db2 7.3.5 Corpse
+		{"The Vortex Pinnacle", -2317.934082, -11522.493164, 657}, -- Map.db2 7.3.5 Corpse
+		{"Firelands", -2943.31958, 3987.199707, 720}, -- Map.db2 7.3.5 Corpse
+		{"Throne of the Four Winds", 72.083336, -11360.602539, 754}, -- Map.db2 7.3.5 Corpse
+		{"Lost City of the Tol'vir", -1308.623291, -10686.149414, 755}, -- Map.db2 7.3.5 Corpse
+		{"End Time", -4454.092285, -8288.604492, 938}, -- Map.db2 7.3.5 Corpse
+		{"Well of Eternity", -3994.935791, -8595.836914, 939}, -- Map.db2 7.3.5 Corpse
+		{"Hour of Twilight", -4590.4375, -8291.131836, 940}, -- Map.db2 7.3.5 Corpse
+		{"Dragon Soul", -4512.6875, -8263.276367, 967}, -- Map.db2 7.3.5 Corpse
 	},
 	["Expansion01"] = {
-		{BZ["Hellfire Citadel: The Shattered Halls"], 3064.435547, -306.7581787},
-		{BZ["Hellfire Citadel: The Blood Furnace"], 3151.992676, -295.419342},
-		{BZ["Hellfire Citadel: Ramparts"], 3067.895508, -360.0498657},
-		{BZ["Magtheridon's Lair"], 3106.635986, -330.2338562},
-		{BZ["Coilfang: The Steamvault"], 6915.07959, 764.2190552},
-		{BZ["Coilfang: The Underbog"], 6768.072754, 764.6282349},
-		{BZ["Coilfang: The Slave Pens"], 7011.32666, 742.1582031},
-		{BZ["Coilfang: Serpentshrine Cavern"], 6865.242676, 775.786377},
-		{BZ["Auchindoun: Shadow Labyrinth"], 4943.162598, -3640.687744},
-		{BZ["Auchindoun: Sethekk Halls"], 4665.592285, -3361.862549},
-		{BZ["Auchindoun: Mana-Tombs"], 4942.756348, -3089.516357},
-		{BZ["Auchindoun: Auchenai Crypts"], 5156.455078, -3363.439941},
-		{BZ["Black Temple"], 317.2936707, -3644.527344},
-		{BZ["Gruul's Lair"], 5144.150879, 3525.452881},
-		{BZ["Zul'Aman"], -7989.713379, 6851.020996},
-		{BZ["The Sunwell"], -6774.56543, 12551.7627},
-		{BZ["Magister's Terrace"], -7343.094727, 12881.90234},
+		{"Hellfire Citadel: The Shattered Halls", 3091.590088, -310.210999, 540}, -- AreaTrigger 4151
+		{"Hellfire Citadel: The Blood Furnace", 3170.51001, -307.251007, 542}, -- AreaTrigger 4152
+		{"Hellfire Citadel: Ramparts", 3087.620117, -365.610992, 543}, -- AreaTrigger 4150
+		{"Magtheridon's Lair", 3079.120117, -309.678009, 544}, -- AreaTrigger 4153
+		{"Coilfang: The Steamvault", 6951.299805, 818.487, 545}, -- AreaTrigger 4364
+		{"Coilfang: The Underbog", 6741.939941, 782.879028, 546}, -- AreaTrigger 4363
+		{"Coilfang: The Slave Pens", 7015.27002, 745.838989, 547}, -- AreaTrigger 4365
+		{"Coilfang: Serpentshrine Cavern", 6865.240234, 843.88501, 548}, -- AreaTrigger 4416
+		{"Tempest Keep", 1364.530029, 3087.179932, 550}, -- AreaTrigger 4470
+		{"Tempest Keep: The Arcatraz", 1325.920044, 3314.780029, 552}, -- AreaTrigger 4468
+		{"Tempest Keep: The Botanica", 1479.01001, 3418.919922, 553}, -- AreaTrigger 4467
+		{"Tempest Keep: The Mechanar", 1545.390015, 2861.370117, 554}, -- AreaTrigger 4469
+		{"Auchindoun: Shadow Labyrinth", 4943.109863, -3656.050049, 555}, -- AreaTrigger 4407
+		{"Auchindoun: Sethekk Halls", 4650.310059, -3362.350098, 556}, -- AreaTrigger 4406
+		{"Auchindoun: Mana-Tombs", 4942.799805, -3068.129883, 557}, -- AreaTrigger 4405
+		{"Auchindoun: Auchenai Crypts", 5236.870117, -3361.550049, 558}, -- AreaTrigger 4404
+		{"Black Temple", 318.533997, -3671.959961, 564}, -- AreaTrigger 4598
+		{"Gruul's Lair", 5083.410156, 3556.790039, 565}, -- AreaTrigger 4535
+		{"Zul'Aman", -8008.72998, 6851.879883, 568}, -- AreaTrigger 4738
+		{"The Sunwell", -6775.149902, 12551, 580}, -- AreaTrigger 4889
+		{"Magister's Terrace", -7348.740234, 12878.799805, 585}, -- AreaTrigger 4887
 	},
 	["Northrend"] = {
-		{BZ["Utgarde Keep"], -4868.421875, 1211.759399},
-		{BZ["Utgarde Pinnacle"], -4860.953613, 1232.40979},
-		{BZ["The Nexus"], 6985.435547, 3899.925781},
-		{BZ["The Oculus"], 6983.939941, 3865.923096},
-		{BZ["Halls of Stone"], -966.8064575, 8921.792969},
-		{BZ["Drak'Tharon Keep"], -2023.049072, 4774.583008},
-		{BZ["Azjol-Nerub"], 2171.275146, 3672.215332},
-		{BZ["Halls of Lightning"], -1386.790649, 9185.087891},
-		{BZ["Ulduar"], -1115.175415, 9359.371094},
-		{BZ["Gundrak"], -4654.903809, 6708.730957},
-		{BZ["Violet Hold"], 498.046936, 5689.489746},
-		{BZ["The Obsidian Sanctum"], 260.4013062, 3438.15332},
-		{BZ["The Eye of Eternity"], 6984.330078, 3869.981445},
-		{BZ["Ahn'kahet: The Old Kingdom"], 2032.063843, 3641.458008},
-		{BZ["Vault of Archavon"], 2840.33374, 5488.124512},
-		{BZ["Icecrown Citadel"], 2065.932373, 5776.921875},
-		{BZ["The Forge of Souls"], 2003.62854, 5670.791504},
-		{BZ["Trial of the Crusader"], 736.137146, 8515.286133},
-		{BZ["Trial of the Champion"], 792.22052, 8571.43457},
-		{BZ["Pit of Saron"], 2010.270874, 5592.057129},
-		{BZ["Halls of Reflection"], 1973.286499, 5628.875},
-		{BZ["The Ruby Sanctum"], 186.8020782, 3608.129395},
-		{BZ["Nexus Legendary"], 6985.439941, 3899.929932},
+		{"Naxxramas", -1280.189941, 3681.290039, 533}, -- AreaTrigger 5191
+		{"Utgarde Keep", -4854.47998, 1257.109985, 574}, -- AreaTrigger 4745
+		{"Utgarde Pinnacle", -4861.700195, 1226.22998, 575}, -- AreaTrigger 4747
+		{"The Nexus", 6985.689941, 3902.790039, 576}, -- AreaTrigger 4983
+		{"The Oculus", 6984.160156, 3869.840088, 578}, -- AreaTrigger 5246
+		{"Halls of Stone", -963.434021, 8922.030273, 599}, -- AreaTrigger 5010
+		{"Drak'Tharon Keep", -2017.160034, 4775.319824, 600}, -- AreaTrigger 4998
+		{"Azjol-Nerub", 2174.629883, 3668.290039, 601}, -- AreaTrigger 5117
+		{"Halls of Lightning", -1390.01001, 9188.820312, 602}, -- AreaTrigger 5093
+		{"Ulduar", -1113.439941, 9364.360352, 603}, -- AreaTrigger 5379
+		{"Gundrak", -4666.02002, 6700.47998, 604}, -- AreaTrigger 5205
+		{"Gundrak", -4396.330078, 6976.540039, 604}, -- AreaTrigger 5206
+		{"Violet Hold", 480.919006, 5675.430176, 608}, -- AreaTrigger 5209
+		{"The Obsidian Sanctum", 260.950989, 3442.629883, 615}, -- AreaTrigger 5243
+		{"The Eye of Eternity", 6984.200195, 3870.290039, 616}, -- AreaTrigger 5290
+		{"Ahn'kahet: The Old Kingdom", 2027.199951, 3639.399902, 619}, -- AreaTrigger 5215
+		{"Vault of Archavon", 2839.810059, 5494.879883, 624}, -- AreaTrigger 5258
+		{"Icecrown Citadel", 2063.27002, 5772.109863, 631}, -- AreaTrigger 5670
+		{"The Forge of Souls", 1995.280029, 5678.560059, 632}, -- AreaTrigger 5635
+		{"Trial of the Crusader", 744.413025, 8515.209961, 649}, -- AreaTrigger 5503
+		{"Trial of the Champion", 791.784973, 8562.599609, 650}, -- AreaTrigger 5505
+		{"Pit of Saron", 2003.160034, 5584.109863, 658}, -- AreaTrigger 5637
+		{"Halls of Reflection", 1957.319946, 5627.410156, 668}, -- AreaTrigger 5636
+		{"The Ruby Sanctum", 186.169998, 3608.189941, 724}, -- AreaTrigger 5869
 	},
 	["HawaiiMainLand"] = {
-		{BZ["Temple of the Jade Serpent"], -2473.409912, 957.7059937},
-		{BZ["Stormstout Brewery"], 1267.453735, -688.7050781},
-		{BZ["Gate of the Setting Sun"], 2253.664063, 970.8108521},
-		{BZ["Mogu'shan Vaults"], 1121.290649, 3982.997314},
+		{"Shado-Pan Monastery", 2545.899902, 3646, 959}, -- AreaTrigger 7694
+		{"Temple of the Jade Serpent", -2475.709961, 957.348999, 960}, -- AreaTrigger 7854
+		{"Stormstout Brewery", 1261.498291, -720.003479, 961}, -- AreaTrigger 7705
+		{"Gate of the Setting Sun", 2080.378418, 699.680542, 962}, -- AreaTrigger 7726
+		{"Mogu'shan Palace", 426.84375, 1401.840332, 994}, -- AreaTrigger 8134
+		{"Terrace of Endless Spring", -49.5, 959.958313, 996}, -- AreaTrigger 8027
+		{"Mogu'shan Vaults", 1115.736084, 3977.240479, 1008}, -- AreaTrigger 7838
+		{"Heart of Fear", 4068.059814, 165.236115, 1009}, -- AreaTrigger 8314
+		{"Siege of Niuzao Temple", 5088.919922, 1443.130005, 1011}, -- AreaTrigger 8315
+		{"Siege of Orgrimmar", 613.852417, 1230.899292, 1136}, -- WorldSafeLocs "Garrosh Raid - Exit Target"
+	},
+	["Deephome"] = {
+		{"The Stonecore", 610.296875, 1031.907959, 725}, -- Map.db2 7.3.5 Corpse
+	},
+	["TolBarad"] = {
+		{"Baradin Hold", 1050.089966, -1274, 757}, -- AreaTrigger 6664
+	},
+	["MoguIslandDailyArea"] = {
+		{"Throne of Thunder", 5014.869141, 7264.408203, 1098}, -- AreaTrigger 8882
 	},
 };
+
+-- Localize instance names with the client's Map table.
+if GetRealZoneText then
+	for _, list in pairs(Yatlas_instances) do
+		for _, v in ipairs(list) do
+			local name = GetRealZoneText(v[4]);
+			if name and name ~= "" then v[1] = name; end
+		end
+	end
+end
 
 Yatlas_towns2 = {
 	["Kalimdor"] = {
@@ -381,27 +435,3 @@ Yatlas_Mobs = {
 	{"Dragons of Nightmare", "Azeroth", -421, -10441},
 	{"Dragons of Nightmare", "Kalimdor", 1874, -2796},
 };
-
--- 'blacklist' some of our 'graveyards'
-function YA_BL_gy(cont, c) 
-	for h,v in ipairs(Yatlas_graveyards[cont]) do
-		if(v[1] == c[1] and v[2] == c[2]) then
-			tremove(Yatlas_graveyards[cont], h);
-			return;
-		end
-	end
-end
-YA_BL_gy("Azeroth", {-831.880981, -3518.520020});   -- AB
-YA_BL_gy("Azeroth", {-1215.589966, -2531.750000});  -- AB
-YA_BL_gy("Azeroth", {536.494995, -1085.719971});	-- AV
-YA_BL_gy("Azeroth", {101.143997, -184.934006});	 -- AV
-YA_BL_gy("Azeroth", {-5687.000000, -515.000000});   -- Dun Morogh Extra
-YA_BL_gy("Azeroth", {-9115.000000, 423.000000});	-- Stormwind Bogus
-YA_BL_gy("Azeroth", {-9151.980469, 410.944000});	-- Stormwind Bogus
-YA_BL_gy("Azeroth", {1822.609985, 214.673996});	 -- Undercity Bogus
-YA_BL_gy("Azeroth", {-5049.450195, -809.697021});   -- Ironforge extra
-YA_BL_gy("Azeroth", {-13290.000000, 108.000000});   -- Gurubashi Arena Bogus
-YA_BL_gy("Kalimdor", {1357.099976, -4412.009766});  -- Orgrimmar Bogus
-YA_BL_gy("Kalimdor", {1459.170044, -1858.670044});  -- WSG
-YA_BL_gy("Kalimdor", {1035.270020, -2104.280029});  -- WSG
-

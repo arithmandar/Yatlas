@@ -8,6 +8,12 @@
 - New point set: Flight Paths, from the client TaxiNodes.db2 (5.5.4.70579);
   names / discovered state from C_TaxiMap.GetTaxiNodesForMap when available,
   icons TaxiNode_Neutral / Horde / Alliance, only neutral and own-faction nodes shown
+- Fixed: the Show Points menu toggles had no effect. The modern UIDropDownMenu
+  switches the check mark before calling the handler, so the stored state was inverted
+- Translations for all client languages: deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU,
+  zhCN, zhTW (new: esES, frFR, itIT, koKR, ptBR, ruRU, zhTW); deDE keys renamed from the
+  obsolete YATLAS_OVERLAY_* to YATLAS_POINTS_*; TOC Notes in every language
+- TOC Version is now @project-version@ (filled in by the packager; shows "dev" when unpackaged)
 - Readme.md rewritten (usage, installation, repository layout, data and release notes); old Docs/README.txt removed
 
 ### v0.9.4 (Oct. 26, 2026)

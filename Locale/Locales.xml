@@ -1,5 +1,12 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
 	<Script file="Yatlas-enUS.lua"/>
 	<Script file="Yatlas-deDE.lua"/>
+	<Script file="Yatlas-esES.lua"/>
+	<Script file="Yatlas-frFR.lua"/>
+	<Script file="Yatlas-itIT.lua"/>
+	<Script file="Yatlas-koKR.lua"/>
+	<Script file="Yatlas-ptBR.lua"/>
+	<Script file="Yatlas-ruRU.lua"/>
 	<Script file="Yatlas-zhCN.lua"/>
+	<Script file="Yatlas-zhTW.lua"/>
 </Ui>

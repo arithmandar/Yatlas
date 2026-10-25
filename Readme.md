@@ -68,7 +68,7 @@ You can turn each type of point on or off from the options menu.
 | `YatlasButton.lua`, `YatlasButton.xml` | Minimap button |
 | `Points.lua`, `sets/` | Point framework and the point sets (landmarks, flight paths, players, ...) |
 | `mapdb.lua`, `mapdb2.lua` | Generated map data: minimap tiles, map areas, instances, towns, flight paths |
-| `Locale/` | UI strings (enUS, zhCN, deDE) |
+| `Locale/` | UI strings: enUS (default), deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW |
 | `images/` | Addon textures and icons |
 | `tools/` | Python scripts that regenerate the map data (not included in releases) |
 | `Docs/` | Changelog, data sources and the CurseForge description |

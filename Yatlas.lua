@@ -569,7 +569,14 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
                 if(v[hx][hy]) then
 		    if(type(v[hx][hy]) == "number") then
 		        -- 5.5.4+: Yatlas_mapdb1 stores minimap tile FileDataIDs
-		        tex:SetTexture(v[hx][hy]);
+		        -- CLAMP + no pixel snapping avoids seams between tiles
+		        -- (same technique as DandyMap NativeTerrain.lua)
+		        if(tex.SetSnapToPixelGrid and not tex.yatlasNoSnap) then
+		            tex:SetSnapToPixelGrid(false);
+		            tex:SetTexelSnappingBias(0);
+		            tex.yatlasNoSnap = true;
+		        end
+		        tex:SetTexture(v[hx][hy], "CLAMP", "CLAMP");
 		    else
 		        tex:SetTexture(pre..mymap.."\\"..v[hx][hy][1]);
 		    end

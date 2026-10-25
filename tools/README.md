@@ -15,4 +15,6 @@ mkdir -p /tmp/wdt && cp oldparse.py /tmp/
 python3 wdt.py        # downloads WDTs from wago.tools, parses MAID -> /tmp/wdt/tiles.pkl
 python3 gen.py        # writes /tmp/gen/*.lua
 python3 assemble.py   # splices into ../mapdb.lua and ../mapdb2.lua
+# optional: cross-check tiles with DandyMap 1.6.3 (WoW Forever client WDTs)
+python3 compare_dandymap.py <DandyMap>/data/ClientTerrainData.lua ../mapdb.lua
 ```

@@ -93,6 +93,35 @@
 - `OptionalDeps` 中的 `LibBabble-SubZone-3.0` 已不再被資料表使用，可以移除（`.pkgmeta` 的 externals 也一併移除）。
 - 目前**刻意保持 TOC 不變**：API 尚未遷移前，在 5.5.4 載入會因 `SetMapZoom` 等函式不存在而出錯。
 
-## 五、DandyMap 參考
-- 主程式只在 CurseForge 發佈（有 Cloudflare 驗證，無法自動下載），沒有公開的原始碼庫。
-- 公開的資料包 [nutiler/dandymapdata](https://github.com/nutiler/dandymapdata) 目標是 WoW Forever（Interface 16001）。其中 `tools/` 的流程（以 CASC/listfile 取得小地圖與 WMO 圖塊、`DANDEMap`）與本次採用的 FileDataID 方式一致。作者也說明主程式不需資料包，直接使用用戶端內建的小地圖地形。
+## 五、DandyMap 參考（1.6.3 原始碼）
+來源：[CurseForge DandyMap 1.6.3](https://www.curseforge.com/api/v1/mods/1713483/files/9317439/download)。目標用戶端為 WoW Forever（`## Interface: 16001`），和 MoP Classic 5.5.4 同樣是現代 Classic 引擎，因此它用的 API 在 5.5.4 也大多可用。
+
+### 地形圖塊：與 Yatlas_mapdb1 完全相同的來源
+- `data/ClientTerrainData.lua` 的開頭寫著「Generated directly from local Forever client WDT MAID records」，格式為 `["7/<x>/<y>"] = FileDataID`（zoom 7 = ADT 格），和 `tools/wdt.py` 讀的是同一個 MAID 欄位。
+- 用 `tools/compare_dandymap.py` 交叉比對：
+  - 東部王國：重疊 703 格，**703 格完全相同**。
+  - 卡林多：重疊 979 格，**979 格完全相同**。
+  - Yatlas 多出的格子（東部王國 136、卡林多 23）是大災變之後新增的地形（例如吉爾尼斯），WoW Forever 沒有這些區域。
+  - DandyMap 多出的格子：東部王國 31 格是 WoW Forever 專屬的新 FileDataID（5313xxx，5.5.4 中不存在）；卡林多 `0..2 × 0..2` 共 9 格（207562–207570）在 5.5.4 的 CASC 中存在，但 5.5.4 的 WDT 沒有列出，位於地圖最西北角的海上，不影響 Yatlas。
+- 繪製方式（`modules/map/NativeTerrain.lua`）：`tex:SetTexture(fileID, "CLAMP", "CLAMP")`，並呼叫 `SetSnapToPixelGrid(false)`、`SetTexelSnappingBias(0)` 避免圖塊之間出現接縫。**已套用到 Yatlas.lua**（有函式存在檢查，舊用戶端不受影響）。
+
+### 座標換算（`modules/map/PlayerTracking.lua`）
+- `local north, west, _, instance = UnitPosition("player")`：第 1 個回傳值是世界 X（north），第 2 個是世界 Y（west），第 4 個是 instanceID（Map.db2 ID）。這也與 [HereBeDragons](https://github.com/Nevcairiel/HereBeDragons) 的 `local y, x, _z, instanceID = UnitPosition(unit)` 一致。
+- 圖塊座標：`tileX = 32 - west / (1600/3)`、`tileY = 32 - north / (1600/3)`。這正是 Yatlas 的 `Yatlas_Big2Mini_Coord(wy, wx)` 所做的換算，所以第四節建議的「UnitPosition → Big2Mini」路線可以直接沿用。
+- 退路：`UnitPosition` 在副本內會回傳 nil，此時改用 `C_Map.GetBestMapForUnit` → `C_Map.GetPlayerMapPosition` → `C_Map.GetWorldPosFromMapPos(uiMapID, pos)` 取得世界座標。
+- 隊友位置（`PartyTracking.lua`）也使用 `UnitPosition(unit)`，可直接取代 Yatlas `players.lua` 的 `GetPlayerMapPosition`。
+
+### 區域邊界：可以在執行時算出，不一定要查表
+- `ns.NativeTerrainBounds(uiMapID)` 和 `QuestOverlayMath.Bounds` 用 `C_Map.GetWorldPosFromMapPos(uiMapID, CreateVector2D(0,0))` 及 `(1,1)`、`(1,0)`、`(0,1)` 四個角點取得世界座標，算出區域在地形圖上的矩形範圍，也會拒絕旋轉或變形的地圖。
+- 這和 `Yatlas_mapareas` 來自同一份 `UiMapAssignment` 資料，但改在執行時計算。Yatlas 可以保留靜態表，再用這個 API 作為新區域或驗證時的備援。
+
+### 副本入口、屍體、墓地
+- 副本入口（`modules/pins/InstanceMarkers.lua`）：`C_EncounterJournal.GetDungeonEntrancesForMap(uiMapID)` 回傳 `{name, position, journalInstanceID}`，再用 `GetWorldPosFromMapPos` 轉成世界座標。5.5.4 的 DB2 中**沒有** `JournalInstanceEntrance` 資料表（`AreaPOI` 也沒有入口資料），所以精確的入口座標只能在遊戲內取得。建議：Yatlas 載入時用這個 API 覆寫或補上 `Yatlas_instances`，特別是目前是近似值的血色修道院（1004）。
+- 屍體位置（`modules/map/MapExtras.lua`）：`C_DeathInfo.GetCorpseMapPosition(uiMapID)`，搭配事件 `PLAYER_DEAD`、`PLAYER_ALIVE`、`PLAYER_UNGHOST`、`CORPSE_IN_RANGE`、`CORPSE_OUT_OF_RANGE`。
+- 探索區域（`modules/map/TerrainFog.lua`）：`C_Map.GetMapArtID` + `C_MapExplorationInfo.GetExploredMapTextures`。Yatlas 目前沒有戰爭迷霧功能，日後若要做可以參考。
+
+### 其他寫法
+- 事件只用 `PLAYER_ENTERING_WORLD`、`ZONE_CHANGED_NEW_AREA`、`ZONE_CHANGED`，位置更新靠 OnUpdate 節流輪詢，符合第四節對 `WORLD_MAP_UPDATE` 的替代建議。
+- 框架使用 `BackdropTemplate` + `SetBackdrop`，並用 `C_AddOns.IsAddOnLoaded` / `C_AddOns.GetAddOnMetadata`（舊的全域 `IsAddOnLoaded` 僅作退路）。
+- 所有 API 呼叫都用 `pcall` 包住，並以 `issecretvalue` 過濾受限值（retail 12.0 的 secret values）。MoP Classic 目前不需要，但這種防禦式寫法值得參考。
+- DandyMap 主程式不需要額外的資料包；選用的資料包 [nutiler/dandymapdata](https://github.com/nutiler/dandymapdata) 只提供額外材質。

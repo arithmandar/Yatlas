@@ -10,6 +10,8 @@ Yatlas ChangeLog
 - Graveyards re-enabled for MoP (Draenor / WoD-only entries removed)
 - Area / map / instance names localized from the client instead of LibBabble-SubZone-3.0
 - Draenor removed; Deepholm, Tol Barad, Isle of Thunder and Darkmoon Island added
+- Minimap tiles drawn with CLAMP wrap and pixel snapping disabled to avoid seams
+- Tile data cross-checked against DandyMap 1.6.3 (tools/compare_dandymap.py)
 - NOTE: API migration (C_Map etc.) still required before the addon runs on 5.5.4
 
 0.9.1 (Feb. XX, 2013)

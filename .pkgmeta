@@ -1,8 +1,8 @@
 package-as: Yatlas
 
 manual-changelog:
-    filename: Docs/ChangeLog.txt
-    markup-type: plain
+    filename: Docs/ChangeLog.md
+    markup-type: markdown
     
 enable-nolib-creation: no
 

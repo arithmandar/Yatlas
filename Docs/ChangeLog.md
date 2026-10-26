@@ -3,6 +3,7 @@
 
 ### v1.0.0 (in development)
 
+- Yatlas is now licensed under the GNU General Public License, version 2 (LICENSE, ## X-License)
 - Multi-client support with one download and one TOC (## Interface: 11509, 20506, 50504, 120105):
   Retail 12.1.5, Mists of Pandaria Classic 5.5.4, Anniversary 2.5.6 and Classic Era 1.15.9
 - Client detection in Core/Constants.lua (YATLAS_CLIENT, from WOW_PROJECT_ID, the same approach as Atlas)

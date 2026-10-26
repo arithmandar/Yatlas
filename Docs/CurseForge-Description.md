@@ -76,3 +76,7 @@ Under **Key Bindings → AddOns → Yatlas**:
 
 - Original author: Boo Diddly
 - Maintained by arithmandar
+
+## License
+
+Yatlas is released under the [GNU General Public License, version 2](https://github.com/arithmandar/Yatlas/blob/main/LICENSE).

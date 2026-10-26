@@ -89,3 +89,17 @@ You can turn each type of point on or off from the options menu. Landmarks have 
 ## Map data
 
 The map data is generated from the client DB2 tables and WDT files of each supported build, which can be browsed on wago.tools: [1.15.9.70003](https://wago.tools/db2?build=1.15.9.70003), [2.5.6.70006](https://wago.tools/db2?build=2.5.6.70006), [5.5.4.70579](https://wago.tools/db2?build=5.5.4.70579) and [12.1.5.70575](https://wago.tools/db2?build=12.1.5.70575). [`Docs/DataSources.md`](Docs/DataSources.md) describes where each table comes from and the API changes. [`tools/README.md`](tools/README.md) explains how to regenerate the files in `Data/`.
+
+## License
+
+Yatlas is free software: you can redistribute it and/or modify it under the terms of the
+GNU General Public License, version 2, as published by the Free Software Foundation.
+It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+[`LICENSE`](LICENSE) for the full text.
+
+Yatlas was originally written by Boo Diddly and is maintained by arithmandar.
+
+World of Warcraft and its textures, icons and map data are the property of Blizzard
+Entertainment; they are read from the game client at run time and are not covered by this
+license.

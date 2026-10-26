@@ -46,4 +46,7 @@ YATLAS_TOOLTIP_UNLOCKED = "Окно можно перетаскивать. Ще�
 YATLAS_TOOLTIP_SHOWPOINTS = "Выберите, какие точки показывать на карте.";
 YATLAS_TOOLTIP_ZOOM_TITLE = "Масштаб";
 YATLAS_TOOLTIP_ZOOM = "Показать управление масштабом. Масштаб также меняется колесом мыши.";
+YATLAS_TOOLTIP_PLAYERJUMP = "Щелкните, чтобы показать на карте вашего персонажа.\nShift-щелчок — следовать за вами при движении.";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "Карта следует за персонажем. Щелкните, чтобы остановить.";
+YATLAS_TOOLTIP_OPTIONS = "Прозрачность, размер значков, показываемые точки и кнопка у миникарты.";
 end

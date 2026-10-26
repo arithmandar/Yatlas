@@ -506,6 +506,19 @@ function YatlasFramePlayerJumpButton_Jump(btn)
     YatlasFramePlayerJumpButton_Update(btn)
 end
 
+-- Goto Player tooltip; also shows whether the map is following the player.
+function YatlasFramePlayerJumpButton_OnEnter(btn)
+    if(not btn:IsMouseOver()) then
+        return;
+    end
+    Yatlas_ShowButtonTooltip(btn, YATLAS_PLAYERJUMP, YATLAS_TOOLTIP_PLAYERJUMP);
+    local f = btn:GetParent();
+    if(f and f.opt and f.opt.track) then
+        GameTooltip:AddLine(YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b, true);
+        GameTooltip:Show();
+    end
+end
+
 function YatlasFramePlayerJumpButton_Seek(frame, unit) 
     -- the unit position is now available directly, no need to cycle
     -- through the continents of the world map any more
@@ -528,6 +541,9 @@ function YatlasFramePlayerJumpButton_Update(btn)
 --        _G[btn:GetName().."Left"]:SetTexture(tex);
 --        _G[btn:GetName().."Middle"]:SetTexture(tex);
 --        _G[btn:GetName().."Right"]:SetTexture(tex);
+        if(GameTooltip:IsOwned(btn)) then
+            YatlasFramePlayerJumpButton_OnEnter(btn);
+        end
     end
 end
 

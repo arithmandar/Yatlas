@@ -46,4 +46,7 @@ YATLAS_TOOLTIP_UNLOCKED = "창을 끌어서 옮길 수 있습니다. 클릭하�
 YATLAS_TOOLTIP_SHOWPOINTS = "지도에 표시할 지점을 고릅니다.";
 YATLAS_TOOLTIP_ZOOM_TITLE = "확대/축소";
 YATLAS_TOOLTIP_ZOOM = "확대/축소 조절을 표시합니다. 마우스 휠로도 확대/축소할 수 있습니다.";
+YATLAS_TOOLTIP_PLAYERJUMP = "클릭하면 지도를 캐릭터 위치로 옮깁니다.\nShift-클릭하면 이동하는 동안 계속 따라갑니다.";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "캐릭터를 따라가는 중입니다. 클릭하면 멈춥니다.";
+YATLAS_TOOLTIP_OPTIONS = "투명도, 아이콘 크기, 표시할 지점, 미니맵 버튼을 설정합니다.";
 end

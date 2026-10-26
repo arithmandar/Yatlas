@@ -258,6 +258,12 @@
 					<OnMouseUp>
 						YatlasFramePlayerJumpButton_Update(self);
 					</OnMouseUp>
+					<OnEnter>
+						YatlasFramePlayerJumpButton_OnEnter(self);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
 					<OnShow>
 						YatlasFramePlayerJumpButton_Update(self);
 					</OnShow>
@@ -281,6 +287,12 @@
 					<OnClick>
 						YatlasOptions_Toggle();
 					</OnClick>
+					<OnEnter>
+						Yatlas_ShowButtonTooltip(self, YATLAS_OPTIONSBUTTON, YATLAS_TOOLTIP_OPTIONS, "ANCHOR_TOPRIGHT");
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
 				</Scripts>
 			</Button>
 		</Frames>
@@ -693,6 +705,12 @@
 					<OnMouseUp>
 						YatlasFramePlayerJumpButton_Update(self);
 					</OnMouseUp>
+					<OnEnter>
+						YatlasFramePlayerJumpButton_OnEnter(self);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
 					<OnShow>
 						YatlasFramePlayerJumpButton_Update(self);
 					</OnShow>

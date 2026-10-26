@@ -46,4 +46,7 @@ YATLAS_TOOLTIP_UNLOCKED = "Puedes arrastrar la ventana. Haz clic para bloquearla
 YATLAS_TOOLTIP_SHOWPOINTS = "Elige qué puntos se muestran en el mapa.";
 YATLAS_TOOLTIP_ZOOM_TITLE = "Zoom";
 YATLAS_TOOLTIP_ZOOM = "Muestra los controles de zoom. También puedes usar la rueda del ratón.";
+YATLAS_TOOLTIP_PLAYERJUMP = "Haz clic para centrar el mapa en tu personaje.\nMayús-clic para seguirte mientras te mueves.";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "Siguiendo a tu personaje. Haz clic para detener.";
+YATLAS_TOOLTIP_OPTIONS = "Transparencia, tamaño de iconos, puntos mostrados y botón del minimapa.";
 end

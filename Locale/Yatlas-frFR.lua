@@ -46,4 +46,7 @@ YATLAS_TOOLTIP_UNLOCKED = "Vous pouvez déplacer la fenêtre. Cliquez pour la ve
 YATLAS_TOOLTIP_SHOWPOINTS = "Choisissez les points affichés sur la carte.";
 YATLAS_TOOLTIP_ZOOM_TITLE = "Zoom";
 YATLAS_TOOLTIP_ZOOM = "Affiche les commandes de zoom. Vous pouvez aussi zoomer avec la molette de la souris.";
+YATLAS_TOOLTIP_PLAYERJUMP = "Cliquez pour centrer la carte sur votre personnage.\nMaj-clic pour continuer à le suivre pendant vos déplacements.";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "Suit votre personnage. Cliquez pour arrêter.";
+YATLAS_TOOLTIP_OPTIONS = "Transparence, taille des icônes, points affichés et bouton de la minicarte.";
 end

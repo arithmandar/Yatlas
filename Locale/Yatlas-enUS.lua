@@ -49,6 +49,9 @@ YATLAS_TOOLTIP_UNLOCKED = "Drag the frame to move it. Click to lock it.";
 YATLAS_TOOLTIP_SHOWPOINTS = "Choose which points are shown on the map.";
 YATLAS_TOOLTIP_ZOOM_TITLE = "Zoom";
 YATLAS_TOOLTIP_ZOOM = "Show the zoom controls. You can also zoom with the mouse wheel.";
+YATLAS_TOOLTIP_PLAYERJUMP = "Click to centre the map on your character.\nShift-click to keep following you as you move.";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "Following your character. Click to stop.";
+YATLAS_TOOLTIP_OPTIONS = "Transparency, icon size, points to show and the minimap button.";
 
 YATLAS_ZOOMIN =     "+";
 YATLAS_ZOOMOUT =     "-";

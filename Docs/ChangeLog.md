@@ -18,6 +18,8 @@
   in all 10 languages
 - New tooltips for the lock/unlock button (shows the current state), the close buttons,
   the Show Points button (bottom right) and the zoom button (bottom left)
+- New tooltips for Goto Player (in both frames; also shows when the map is following you)
+  and the Options button
 - Version text moved left so it no longer overlaps the switch, lock and close buttons
 - Fixed: pressing Esc in the large frame caused ADDON_ACTION_FORBIDDEN (RunBinding() is protected).
   The large frame no longer captures the keyboard; Esc closes it through the game's own panel handling,

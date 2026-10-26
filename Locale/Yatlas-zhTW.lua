@@ -46,4 +46,7 @@ YATLAS_TOOLTIP_UNLOCKED = "可拖曳移動視窗。點擊即可鎖定。";
 YATLAS_TOOLTIP_SHOWPOINTS = "選擇要在地圖上顯示哪些標記。";
 YATLAS_TOOLTIP_ZOOM_TITLE = "縮放";
 YATLAS_TOOLTIP_ZOOM = "顯示縮放控制。也可以用滑鼠滾輪縮放。";
+YATLAS_TOOLTIP_PLAYERJUMP = "點擊將地圖移到你的角色位置。\nShift-點擊可在移動時持續跟隨角色。";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "正在跟隨你的角色。點擊即可停止。";
+YATLAS_TOOLTIP_OPTIONS = "透明度、圖示大小、要顯示的標記，以及小地圖按鈕。";
 end

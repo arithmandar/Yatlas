@@ -1,4 +1,4 @@
-## Interface: 50504
+## Interface: 11509, 20506, 50504, 120105, 120107
 ## Title: Yatlas
 ## Version: @project-version@
 ## Notes: Yet another atlas - browse the whole world on minimap terrain, with instance entrances, towns, flight paths and group members.
@@ -14,8 +14,8 @@
 ## Notes-zhTW: Yet another atlas - 以小地圖地形瀏覽整個世界，並標示副本入口、城鎮、飛行點與隊友位置。
 ## Author: arithmandar
 ## X-Credits: Boo Diddly (original author)
+## X-License: GPLv2
 ## X-Date: @project-date-iso@
-## OptionalDeps: myAddOns
 ## DefaultState: Enabled
 ## LoadOnDemand: 0
 ## SavedVariables: YatlasOptions
@@ -38,8 +38,7 @@ Core\Compat.lua
 Core\Constants.lua
 Locale\Locales.xml
 
-Data\mapdb.lua
-Data\mapdb2.lua
+Data\Data.xml
 Core\Points.lua
 Core\Core.lua
 UI\Templates.xml

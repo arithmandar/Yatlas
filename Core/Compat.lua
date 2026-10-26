@@ -14,7 +14,42 @@
 -- ---------------------------------------------------------------------------
 
 Yatlas_GetAddOnMetadata = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata;
+
+-- Mainline (12.x) can return "secret values" (e.g. UnitName/UnitClass/UnitIsUnit in
+-- restricted content). They must not be compared, tested or used as table keys.
+-- Returns nil for a secret value, the value itself otherwise.
+function Yatlas_NotSecret(v)
+    if(issecretvalue and issecretvalue(v)) then
+        return nil;
+    end
+    return v;
+end
 Yatlas_GetPOITextureCoords = (C_Minimap and C_Minimap.GetPOITextureCoords) or GetPOITextureCoords;
+
+-- Icon scale for an atlas, relative to its Classic size. Retail replaced some map atlases with
+-- larger, padded high resolution versions (Dungeon / Raid: 22 -> 32, TaxiNode_*: 18 -> 21 in
+-- UiTextureAtlasMember), so the same icon size draws them visibly smaller.
+local YATLAS_ATLAS_BASE = {dungeon = 22, raid = 22,
+    ["delves-regular"] = 20, ["delves-bountiful"] = 17,   -- Retail only (30 / 25)
+    racing = 22,                                          -- Retail only (32, drawn at 22)
+    taxinode_neutral = 18, taxinode_alliance = 18, taxinode_horde = 18,
+    taxinode_undiscovered = 18};                          -- Retail only (same size as the others)
+local yatlas_atlas_scale = {};
+function Yatlas_AtlasScale(atlas)
+    if(not atlas) then return 1; end
+    local key = string.lower(atlas);
+    local scale = yatlas_atlas_scale[key];
+    if(scale == nil) then
+        scale = 1;
+        local base = YATLAS_ATLAS_BASE[key];
+        local info = base and C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(atlas);
+        if(info and info.width and info.width > base) then
+            scale = math.min(info.width / base, YATLAS_ATLAS_MAX_SCALE);
+        end
+        yatlas_atlas_scale[key] = scale;
+    end
+    return scale;
+end
 
 -- backdrop tables (YATLAS_BACKDROP_*) are defined in Core\Constants.lua
 function Yatlas_ApplyBackdrop(frame, backdrop)
@@ -100,43 +135,56 @@ end
 -- Landmarks (towns, points of interest) from C_AreaPoiInfo
 -- ---------------------------------------------------------------------------
 
--- fills Yatlas_Landmarks[map] with {bigx, bigy, name, description, textureIndex, atlasName}
-function Yatlas_LoadLandmarks(map)
-    if(map == nil or Yatlas_Landmarks[map] ~= nil) then
-        return false;
-    end
-
+-- Collects the area POIs that getter(uiMapID) returns for the zones of a Yatlas map.
+-- Returns a list of {bigx, bigy, name, description, textureIndex, atlasName, areaPoiID};
+-- skip(poiID, info) can filter POIs out.
+function Yatlas_CollectAreaPOIs(map, getter, skip)
     local list = {};
-    Yatlas_Landmarks[map] = list;
 
-    if(not (C_AreaPoiInfo and C_Map and C_Map.GetWorldPosFromMapPos)
+    if(map == nil or getter == nil or not (C_AreaPoiInfo and C_Map and C_Map.GetWorldPosFromMapPos)
             or type(Yatlas_UiMapIds[map]) ~= "table") then
-        return false;
+        return list;
     end
 
     local mapid = Yatlas_WorldMapIds2[map];
     local seen = {};
 
     for _, uimap in pairs(Yatlas_UiMapIds[map]) do
-        local pois = C_AreaPoiInfo.GetAreaPOIForMap(uimap) or {};
-
-        for _, poi in ipairs(pois) do
+        for _, poi in ipairs(getter(uimap) or {}) do
             if(not seen[poi]) then
                 local info = C_AreaPoiInfo.GetAreaPOIInfo(uimap, poi);
 
-                if(info and info.position) then
+                if(info and info.position and not (skip and skip(poi, info))) then
                     local cont, world = C_Map.GetWorldPosFromMapPos(uimap, info.position);
 
                     if(world and (mapid == nil or cont == mapid)) then
                         local worldx, worldy = world:GetXY();
                         seen[poi] = true;
                         tinsert(list, {worldy, worldx, info.name, info.description,
-                                       info.textureIndex, info.atlasName});
+                                       info.textureIndex, info.atlasName, poi});
                     end
                 end
             end
         end
     end
+
+    return list;
+end
+
+-- fills Yatlas_Landmarks[map] with {bigx, bigy, name, description, textureIndex, atlasName}
+function Yatlas_LoadLandmarks(map)
+    if(map == nil or Yatlas_Landmarks[map] ~= nil) then
+        return false;
+    end
+
+    Yatlas_Landmarks[map] = Yatlas_CollectAreaPOIs(map,
+        C_AreaPoiInfo and C_AreaPoiInfo.GetAreaPOIForMap,
+        function(poi, info)
+            -- towns and capitals come from Yatlas_cities (Data); delves and races have their own sets
+            return (Yatlas_CityPOIs and Yatlas_CityPOIs[poi])
+                or (info.atlasName and (string.find(info.atlasName, "^delves%-")
+                                        or info.atlasName == "racing"));
+        end);
 
     return true;
 end

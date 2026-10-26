@@ -213,6 +213,12 @@ end
 function YatlasFrameTemplate:Toggle()
     local lm = self:GetName();
 
+    if(YATLAS_NO_DATA) then
+        DEFAULT_CHAT_FRAME:AddMessage("Yatlas: this game client (WOW_PROJECT_ID "
+            ..tostring(YATLAS_CLIENT and YATLAS_CLIENT.projectID).. ") is not supported.");
+        return;
+    end
+
     if(UIPanelWindows[lm] == nil) then
         if(self:IsShown()) then
             self:Hide();
@@ -319,12 +325,12 @@ end
 function YatlasFrameDropDown_Initialize(dropdown)
     local owner = Yatlas_DropDownOwner(dropdown or UIDROPDOWNMENU_INIT_MENU);
     local info;
-    for h,v in pairs(YA_MAPS) do
+    for _,v in ipairs(Yatlas_GetMapList()) do
             info = {
-                    text = h;
+                    text = v[1];
                     arg1 = owner;
-                    arg2 = v[1];
-                    checked = (owner.opt and owner.opt.Map == v[1]) or nil;
+                    arg2 = v[2];
+                    checked = (owner.opt and owner.opt.Map == v[2]) or nil;
                     func = YatlasFrameDropDownButton_OnClick;
             };
             UIDropDownMenu_AddButton(info);
@@ -369,13 +375,11 @@ function YatlasFrameTemplate:SetMap(mapname)
     
     local mapdropdown = _G[lm.."DropDown"];
     if(mapdropdown) then
-        local i = 1;
-        for h,v in pairs(YA_MAPS) do
-            if(v[1] == mapname) then
+        for i,v in ipairs(Yatlas_GetMapList()) do
+            if(v[2] == mapname) then
                 UIDropDownMenu_SetSelectedID(mapdropdown, i);
-                UIDropDownMenu_SetText(mapdropdown,h);
+                UIDropDownMenu_SetText(mapdropdown, v[1]);
             end
-            i = i + 1;
         end
     end
 
@@ -551,21 +555,46 @@ function YatlasFrameTemplate:GetMap()
     return self.opt.Map;
 end
 
+-- Zoom = screen pixels per map tile. The XML pre-builds 256 tile textures; more are created
+-- on demand, up to YATLAS_MAX_TILES (Core\Constants.lua), down to YATLAS_MIN_ZOOM.
+
+local function ya_tilecount(vf, z)
+    return (math.ceil(vf:GetWidth()/z)+1) * (math.ceil(vf:GetHeight()/z)+1);
+end
+
+-- zoom in (dir > 0) or out (dir < 0) by YATLAS_ZOOM_STEP, at least one pixel per step
+function YatlasFrameTemplate:StepZoom(dir)
+    local z = self:GetZoom();
+    local nz = (dir > 0) and math.floor(z*YATLAS_ZOOM_STEP + 0.5) or math.floor(z/YATLAS_ZOOM_STEP + 0.5);
+
+    if(nz == z) then
+        nz = z + ((dir > 0) and 1 or -1);
+    end
+    self:SetZoom(nz);
+end
+
 function YatlasFrameTemplate:SetZoom(z, nocenter)
     local textureno = 1;
     local lm = self:GetName();
     local vf = _G[lm.."ViewFrame"];
+
+    z = math.floor(math.max(z, YATLAS_MIN_ZOOM));
+    z = math.min(z, math.floor(math.min(vf:GetWidth(), vf:GetHeight())));
+    while(ya_tilecount(vf, z) > YATLAS_MAX_TILES) do
+        z = z + 1;
+    end
 
     self.wzoom = math.floor(vf:GetWidth()/z)+1;
     self.hzoom = math.floor(vf:GetHeight()/z)+1;
     self.wzoom_real = math.ceil(vf:GetWidth()/z)+1;
     self.hzoom_real = math.ceil(vf:GetHeight()/z)+1;
 
-    if(_G[lm.."MapTexture"..(self.wzoom_real*self.hzoom_real)] == nil) then
-        return self:SetZoom(z+4);
-    elseif(z > vf:GetHeight() or z > vf:GetWidth()) then
-        return self:SetZoom(z-4);
+    for n = 1, self.wzoom_real*self.hzoom_real do
+        if(_G[lm.."MapTexture"..n] == nil) then
+            self:CreateTexture(lm.."MapTexture"..n, "BACKGROUND", "YatlasMapTextureTemplate");
+        end
     end
+
     local lastzoom = self.opt.Zoom;
     self.opt.Zoom = z;
 
@@ -1142,6 +1171,11 @@ function YatlasTooltipTemplate:GetNext()
     f.Text = f:CreateFontString(nil, "ARTWORK");
     f.Text:SetFontObject(GameFontHighlight);
     f.Text:SetPoint("TOPLEFT", f.Icon, 24, 0);
+
+    -- optional second line (set by setuplegend), like the description of the world map pins
+    f.Desc = f:CreateFontString(nil, "ARTWORK");
+    f.Desc:SetFontObject(GameFontNormalSmall);
+    f.Desc:SetPoint("TOPLEFT", f.Text, "BOTTOMLEFT", 0, -1);
   
     if(self.nextnew == 1) then
         f:SetPoint("TOPLEFT", self, "TOPLEFT", 8, -8);
@@ -1163,6 +1197,9 @@ function YatlasTooltipTemplate:FixSize()
         hei = hei + self.lines[h]:GetHeight() + 2;
         if(self.lines[h].Text:GetWidth() > wid) then
             wid = self.lines[h].Text:GetWidth();
+        end
+        if(self.lines[h].Desc:GetText() and self.lines[h].Desc:GetWidth() > wid) then
+            wid = self.lines[h].Desc:GetWidth();
         end
     end
     self:SetHeight(hei);

@@ -1,6 +1,49 @@
 # Yatlas ChangeLog
 
 
+### v1.0.0 (Oct. 26, 2026)
+
+**One download for every client**
+
+- Yatlas now runs on Retail (12.1.5), Mists of Pandaria Classic (5.5.4), Anniversary (2.5.6) and
+  Classic Era (1.15.9). Each client uses map data built from its own game files
+- On a client that is not supported, Yatlas shows a short message instead of Lua errors
+
+**Maps**
+
+- Retail: new maps for Draenor, Broken Isles, Argus, Zandalar, Kul Tiras, Nazjatar, The Shadowlands,
+  Zereth Mortis, Dragon Isles, The Forbidden Reach, Zaralek Cavern, Emerald Dream, Khaz Algar
+  (surface and underground), Undermine, Siren Isle, K'aresh, Harandar, Voidstorm, and Quel'Thalas
+  on the Eastern Kingdoms map
+- The map menu lists the maps in expansion order
+- The map zooms out about four times further, and the mouse wheel and +/- buttons zoom in
+  smoother steps
+- The empty ocean filler tiles around the maps are gone
+
+**Points on the map**
+
+- Towns and capitals now show on every client, with the same icons as the world map; on Retail,
+  capitals use the Alliance and Horde icons
+- Retail: delve entrances, including bountiful delves
+- Retail: skyriding race start points
+- Landmarks can be filtered: instances, capitals, towns, travel (Retail: boats, zeppelins and
+  portals) and other landmarks each have their own switch
+- Tooltips show an extra line like the world map, for example "Undiscovered Flightpoint"
+- Retail: dungeon, raid and flight path icons are sized to match the world map, and undiscovered
+  flight paths are easier to see
+- Retail: flight paths that depend on your character's progress (for example in Quel'Thalas or
+  Teldrassil) only show when the world map shows them too
+- The point menu always lists the point types in the same order
+
+**Minimap button**
+
+- New look: the world map icon in a round frame, like other minimap buttons
+- Retail: the button circles the minimap correctly again
+
+**Other**
+
+- Yatlas is now licensed under the GNU General Public License, version 2
+
 ### v0.9.6 (Oct. 26, 2026)
 
 - Reorganized the addon folders: Core/, Data/, UI/, Modules/ (was sets/), Images/ (was images/)

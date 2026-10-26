@@ -9,7 +9,6 @@ local unitlocations = {};
 local PLAYER_ARROW = "Interface\\WorldMap\\WorldMapArrow";
 local MEMBER_ATLAS = "WhiteCircle-RaidBlips";
 local MEMBER_FALLBACK = YATLAS_ICON_PATH.."Icon-PartyUnit";
-local PLAYER_SCALE, MEMBER_SCALE = 1.5, 0.8;
 local FAST_UPDATE = 0.05;   -- player arrow position / facing, seconds
 
 local function atlasexists(name)
@@ -34,6 +33,7 @@ end
 
 local function classcolor(unit)
     local _, class = UnitClass(unit);
+    class = Yatlas_NotSecret(class);
     local c = class and ((C_ClassColor and C_ClassColor.GetClassColor and C_ClassColor.GetClassColor(class))
             or (RAID_CLASS_COLORS and RAID_CLASS_COLORS[class]));
     if(c) then
@@ -49,7 +49,7 @@ local function styleunit(point, frame, unit)
         icon:SetTexCoord(0, 1, 0, 1);
         icon:SetVertexColor(1, 1, 1, 1);
         icon:SetRotation(GetPlayerFacing and GetPlayerFacing() or 0);
-        placeicon(point, frame, PLAYER_SCALE);
+        placeicon(point, frame, YATLAS_PLAYER_SCALE);
         -- keep the arrow above the group members
         point:SetFrameLevel(point:GetParent():GetFrameLevel() + 6);
     else
@@ -61,7 +61,7 @@ local function styleunit(point, frame, unit)
         end
         icon:SetRotation(0);
         icon:SetVertexColor(classcolor(unit));
-        placeicon(point, frame, MEMBER_SCALE);
+        placeicon(point, frame, YATLAS_MEMBER_SCALE);
         point:SetFrameLevel(point:GetParent():GetFrameLevel() + 5);
     end
     icon:Show();
@@ -110,7 +110,7 @@ function set.internal.HideUnit(u)
 end
 
 function set.internal.OnWorldMapUpdateUnit(u)
-    if(UnitIsUnit(u, "player") and u ~= "player") then
+    if(u ~= "player" and Yatlas_NotSecret(UnitIsUnit(u, "player"))) then
         -- hide other representations of the player (raidN == player)
         set.internal.HideUnit(u);
         return;

@@ -28,8 +28,15 @@ YATLAS_OPTIONS_ENABLECOORD = "Enable Cursor Coordinates";
 
 YATLAS_POINTS_SHOWPOINTS_TITLE = "Show Points";
 YATLAS_POINTS_LANDMARKS = "Landmarks";
+YATLAS_POINTS_LM_INSTANCES = "Instances";
+YATLAS_POINTS_LM_CAPITALS = "Capitals";
+YATLAS_POINTS_LM_TOWNS = "Towns";
+YATLAS_POINTS_LM_TRAVEL = "Travel";	-- boats, zeppelins, portals (mainline map API)
+YATLAS_POINTS_LM_OTHER = "Other";
 YATLAS_POINTS_GRAVEYARDS = "Graveyards";
 YATLAS_POINTS_TAXINODES = "Flight Paths";
+YATLAS_POINTS_DELVES = DELVES_LABEL or "Delves";	-- mainline only (the game's own string when it exists)
+YATLAS_POINTS_RACES = DRAGONRIDING_RACES_MAP_TOGGLE or "Skyriding Races";	-- mainline only (the game's own string when it exists)
 YATLAS_POINTS_MAPNOTES = "MapNotes";
 YATLAS_POINTS_GATHERER = "Gatherer";
 YATLAS_POINTS_GATHERER_TREASURE = "Treasure";

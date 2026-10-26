@@ -9,6 +9,7 @@
 	<Script file="graveyards.lua"/>
 	-->
 	<Script file="taxinodes.lua"/>
+	<Script file="areapois.lua"/>
 	<Script file="players.lua"/>
     <!--<Script file="gathermate.lua"/>-->
 </Ui>

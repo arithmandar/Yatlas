@@ -24,11 +24,34 @@ YATLAS_CREDITS      = meta("X-Credits") or "";
 YATLAS_WEBSITE      = meta("X-Website") or "";
 
 -- ---------------------------------------------------------------------------
+-- Client flavour (one TOC for every client; Data\Data.xml loads the matching data set)
+-- ---------------------------------------------------------------------------
+local projectID = WOW_PROJECT_ID;
+local function IsProject(id)
+    return id ~= nil and projectID == id;
+end
+
+YATLAS_CLIENT = {
+    projectID    = projectID,
+    isRetail     = IsProject(WOW_PROJECT_MAINLINE),
+    isClassicEra = IsProject(WOW_PROJECT_CLASSIC),
+    isTBC        = IsProject(WOW_PROJECT_BURNING_CRUSADE_CLASSIC),
+    isMists      = IsProject(WOW_PROJECT_MISTS_CLASSIC),
+};
+YATLAS_CLIENT.isAnyClassic = YATLAS_CLIENT.isClassicEra or YATLAS_CLIENT.isTBC or YATLAS_CLIENT.isMists;
+-- the Data\<flavour> folder in use, nil when Yatlas has no data for this client
+YATLAS_CLIENT.flavor = (YATLAS_CLIENT.isRetail and "Mainline")
+    or (YATLAS_CLIENT.isClassicEra and "ClassicEra")
+    or (YATLAS_CLIENT.isTBC and "TBC")
+    or (YATLAS_CLIENT.isMists and "Mists")
+    or nil;
+
+-- ---------------------------------------------------------------------------
 -- Texture paths
 -- ---------------------------------------------------------------------------
 YATLAS_IMAGE_PATH   = "Interface\\AddOns\\Yatlas\\Images\\";
 YATLAS_ICON_PATH    = YATLAS_IMAGE_PATH.."Icons\\";
-YATLAS_MINIMAP_PATH = "World\\Minimaps\\";    -- only for pre-5.5.4 tile names; tiles are FileDataIDs now
+YATLAS_MINIMAP_PATH = "World\\Minimaps\\";    -- only for the old tile names; tiles are FileDataIDs now
 
 -- ---------------------------------------------------------------------------
 -- Coordinates: one minimap tile is 533 1/3 yards
@@ -48,6 +71,17 @@ YA_FRAME_OPTION_DEFAULTS = {
     ["PointCfg"] = {},
     ["Zoom"] = 256,
 };
+
+-- Map zoom (screen pixels per map tile). The smallest zoom is also limited by the number of
+-- tile textures a frame may create (UI\Templates.xml pre-builds 256, the rest on demand).
+YATLAS_MIN_ZOOM = 8;
+YATLAS_MAX_TILES = 4096;
+YATLAS_ZOOM_STEP = 1.2;         -- mouse wheel and +/- buttons: about 20% per step
+
+-- Icon sizes, relative to the "IconSize" frame option
+YATLAS_PLAYER_SCALE = 1.5;      -- your own arrow
+YATLAS_MEMBER_SCALE = 0.8;      -- party and raid members
+YATLAS_ATLAS_MAX_SCALE = 1.6;   -- cap for Yatlas_AtlasScale (larger mainline atlases)
 
 -- ---------------------------------------------------------------------------
 -- Backdrops (the <Backdrop> XML tag was removed; frames inherit

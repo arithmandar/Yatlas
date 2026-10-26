@@ -38,7 +38,8 @@ local function createeventframe()
         return;
     end
 
-    -- new flight paths are learned at the flight master
+    -- new flight paths are learned at the flight master; phase dependent nodes (conditional)
+    -- can appear or disappear after a loading screen or a zone change
     eventframe = CreateFrame("Frame");
     eventframe:SetScript("OnEvent", function(self, event)
         Yatlas_ResetTaxiInfo();
@@ -46,6 +47,8 @@ local function createeventframe()
     end);
     eventframe:RegisterEvent("TAXIMAP_OPENED");
     eventframe:RegisterEvent("TAXI_NODE_STATUS_CHANGED");
+    eventframe:RegisterEvent("PLAYER_ENTERING_WORLD");
+    eventframe:RegisterEvent("ZONE_CHANGED_NEW_AREA");
 end
 
 function set.getpoints(name, map)
@@ -101,7 +104,11 @@ function set.setuppoint(point, env, dat)
     local atlas = (atlasexists(liveatlas) and liveatlas) or FACTION_ATLAS[faction];
     if(atlasexists(atlas)) then
         bg:SetAtlas(atlas);
-        if(undiscovered) then
+        bg:SetHeight(iconsize * Yatlas_AtlasScale(atlas));
+        bg:SetWidth(iconsize * Yatlas_AtlasScale(atlas));
+        if(undiscovered and string.lower(atlas) ~= "taxinode_undiscovered") then
+            -- Classic has no undiscovered atlas: dim the faction icon instead. Mainline sends
+            -- TaxiNode_Undiscovered, which is grey already; dimming it again made it hard to see.
             bg:SetVertexColor(0.6, 0.6, 0.6, 0.7);
         else
             bg:SetVertexColor(1, 1, 1, 1);
@@ -114,11 +121,24 @@ function set.setuppoint(point, env, dat)
     end
 end
 
+-- the description the world map shows for undiscovered flight paths (FlightPointDataProvider)
+local function undiscoveredtext(faction)
+    if(faction == 1 and UNDISCOVERED_FACTION_FLIGHTPOINT and FACTION_HORDE) then
+        return UNDISCOVERED_FACTION_FLIGHTPOINT:format(FACTION_HORDE);
+    elseif(faction == 2 and UNDISCOVERED_FACTION_FLIGHTPOINT and FACTION_ALLIANCE) then
+        return UNDISCOVERED_FACTION_FLIGHTPOINT:format(FACTION_ALLIANCE);
+    end
+    return UNDISCOVERED_NEUTRAL_FLIGHTPOINT;     -- nil on clients without the string
+end
+
 function set.setuplegend(point, env, dat)
     env.iconsize = 16;
     set.setuppoint(point, env, dat);
 
     point.Text:SetText(dat.name);
+    if(dat.userdat.undiscovered) then
+        point.Desc:SetText(undiscoveredtext(dat.userdat.faction));
+    end
 end
 
 function set.configmenu(name, lm)

@@ -90,7 +90,7 @@
 				end
 			</OnUpdate>
 			<OnMouseWheel>
-				self:GetParent():SetZoom(self:GetParent():GetZoom()+delta*24);
+				self:GetParent():StepZoom(delta);
 			</OnMouseWheel>
 		</Scripts>
 	</Frame>
@@ -862,7 +862,7 @@
 				<Scripts>
 					<OnClick>
 						local p = self:GetParent():GetParent():GetParent():GetParent();
-						p:SetZoom(p:GetZoom()+24);
+						p:StepZoom(1);
 					</OnClick>
 				</Scripts>
 			</Button>
@@ -880,7 +880,7 @@
 				<Scripts>
 					<OnClick>
 						local p = self:GetParent():GetParent():GetParent():GetParent();
-						p:SetZoom(p:GetZoom()-24);
+						p:StepZoom(-1);
 					</OnClick>
 				</Scripts>
 			</Button>

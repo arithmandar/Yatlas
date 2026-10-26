@@ -10,7 +10,12 @@ local binsert;
 local nilfunc = function () end
 local emptylist = {};
 
+local setorder = {};     -- registration order (Modules/index.xml), used for the menu
+
 function YAPoints_RegisterSet(set)
+    if(sets[set.name] == nil) then
+        tinsert(setorder, set.name);
+    end
     sets[set.name] = set;
 end
 
@@ -339,7 +344,15 @@ function YAPoints_UpdateTooltip(frame, tooltip, point, op)
             local legendfunc = sets[point.dat.setname].setuplegend;
             if(legendfunc) then
                 local legend = tooltip:GetNext();
+                legend.Desc:SetText(nil);
                 legendfunc(legend, env, point.dat);
+                local desc = legend.Desc:GetText();
+                if(desc and desc ~= "") then
+                    legend:SetHeight(16 + legend.Desc:GetStringHeight() + 1);
+                else
+                    legend.Desc:SetText(nil);
+                    legend:SetHeight(16);
+                end
             end
             -- tooltip:AddDataPoint(point.dat.name);
         end
@@ -403,20 +416,20 @@ function YatlasFrameViewFrame_UpdatePointTooltip(self)
     local tp = _G[f.hoverTooltip];
 
     for h,v in pairs(f.pointframes) do
-        if(v.intooltip and not MouseIsOver(v)) then
+        if(v.intooltip and not v:IsMouseOver()) then
             YAPoints_UpdateTooltip(f, tp, v, "remove");
             tp.knownshownlines = tp.knownshownlines - 1;
-        elseif(not v.intooltip and MouseIsOver(v)) then
+        elseif(not v.intooltip and v:IsMouseOver()) then
             YAPoints_UpdateTooltip(f, tp, v, "add");
             tp.knownshownlines = tp.knownshownlines + 1;
         end
     end
 
     for h,v in pairs(f.mobilepointframes) do
-        if(v.intooltip and not MouseIsOver(v)) then
+        if(v.intooltip and not v:IsMouseOver()) then
             YAPoints_UpdateTooltip(f, tp, v, "remove");
             tp.knownshownlines = tp.knownshownlines - 1;
-        elseif(not v.intooltip and MouseIsOver(v) and v:IsShown()) then
+        elseif(not v.intooltip and v:IsMouseOver() and v:IsShown()) then
             YAPoints_UpdateTooltip(f, tp, v, "add");
             tp.knownshownlines = tp.knownshownlines + 1;
         end
@@ -607,8 +620,8 @@ function YFOODropDown_Initialize()
     end
 
     if(YatlasOptions.Frames and YatlasOptions.Frames[lm]) then
-        for h,v in pairs(sets) do
-            func = v.configmenu;
+        for _,h in ipairs(setorder) do
+            func = sets[h].configmenu;
             if(func) then
                 func(h, lm);
             end

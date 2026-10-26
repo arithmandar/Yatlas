@@ -38,7 +38,8 @@ local function createeventframe()
         return;
     end
 
-    -- new flight paths are learned at the flight master
+    -- new flight paths are learned at the flight master; phase dependent nodes (conditional)
+    -- can appear or disappear after a loading screen or a zone change
     eventframe = CreateFrame("Frame");
     eventframe:SetScript("OnEvent", function(self, event)
         Yatlas_ResetTaxiInfo();
@@ -46,6 +47,8 @@ local function createeventframe()
     end);
     eventframe:RegisterEvent("TAXIMAP_OPENED");
     eventframe:RegisterEvent("TAXI_NODE_STATUS_CHANGED");
+    eventframe:RegisterEvent("PLAYER_ENTERING_WORLD");
+    eventframe:RegisterEvent("ZONE_CHANGED_NEW_AREA");
 end
 
 function set.getpoints(name, map)

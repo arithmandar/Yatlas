@@ -24,6 +24,10 @@
 - Other area POIs without an atlas use the game's own POI icons, the same as the world map
 - Mainline: new point set "Delves" with the delve entrances from C_AreaPoiInfo.GetDelvesForMap
   (regular and bountiful icons, like the world map); it can be switched off in the point menu
+- Mainline: flight paths with a VisibilityConditionID (e.g. the 12.0 Quel'Thalas nodes, burned
+  Teldrassil, BfA war campaign outposts; 39 nodes) are only drawn when the client lists them, like
+  the world map, instead of for every character. The flight path list is refreshed after a
+  loading screen or a zone change
 - Point tooltips show a second line like the world map: "Undiscovered Flightpoint" /
   "Undiscovered Alliance Flightpoint" for undiscovered flight paths (the game's
   UNDISCOVERED_*_FLIGHTPOINT strings), and the description of landmarks and delves from the map API

@@ -446,7 +446,11 @@ def generate(name, cfg, log=sys.stdout):
         cont, fl = int(r['ContinentID']), int(r['Flags'])
         if cont not in taxi or not (fl & 3) or (fl & 0x80): continue
         faction = 0 if (fl & 3) == 3 else (2 if fl & 1 else 1)
-        cond = 1 if int(r['ConditionID']) else 0
+        # conditional: the node depends on a PlayerCondition (quest, phase, expansion unlock), so it is
+        # only drawn when the client lists it. ConditionID gates using the node, VisibilityConditionID
+        # showing it (e.g. 12.0 Quel'Thalas: 145598, before the Midnight intro: 145597)
+        vis = int(r.get('VisibilityConditionID') or 0)
+        cond = 1 if (int(r['ConditionID']) or vis) else 0
         taxi[cont].append((int(r['ID']), r['Name_lang'], float(r['Pos_1']), float(r['Pos_0']), faction, cond))
     w2('-- Flight paths, from TaxiNodes.db2\n')
     w2('-- {name, worldY, worldX, taxiNodeID, faction (0 neutral, 1 horde, 2 alliance), conditional}\n')

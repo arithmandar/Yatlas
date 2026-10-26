@@ -65,7 +65,7 @@ You can turn each type of point on or off from the options menu.
 |---|---|
 | `Yatlas.toc` | Addon metadata and load order |
 | `Bindings.xml` | Key bindings (must stay in the addon root folder) |
-| `Core/` | `Compat.lua` (wrappers for the modern Classic API), `Constants.lua` (addon metadata from the TOC, texture paths, option defaults, backdrops), `Core.lua` (map drawing and frame logic), `Points.lua` (point framework) |
+| `Core/` | `Compat.lua` (wrappers for the modern Classic API), `Constants.lua` (addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (map drawing and frame logic), `Points.lua` (point framework) |
 | `UI/` | Frames and templates: `Yatlas.xml` (normal and fullscreen frames), `Templates.xml`, `OptionsFrame.xml`, `Button.xml`/`Button.lua` (minimap button) |
 | `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, players, ...) |
 | `Data/` | Generated map data `mapdb.lua` and `mapdb2.lua`: minimap tiles, map areas, instances, towns, flight paths |

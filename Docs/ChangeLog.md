@@ -9,7 +9,7 @@
 - New Core/Constants.lua collects the constants: addon metadata, texture paths, coordinate scale,
   frame option defaults and backdrops
 - Title, version, author, website and release date now all come from the TOC
-  (new ## Author and ## X-Date: @project-date-iso@); the author e-mail field was removed
+  (new ## Author, ## X-Credits for the original author Boo Diddly, and ## X-Date: @project-date-iso@); the author e-mail field was removed
 - Player position uses the game's world map arrow (Interface\WorldMap\WorldMapArrow) and turns
   with the facing (GetPlayerFacing); position and facing update every 0.05 s while Yatlas is open
 - Party and raid members use the game's WhiteCircle-RaidBlips dot in class colour

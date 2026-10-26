@@ -20,6 +20,7 @@ YATLAS_TITLE        = meta("Title") or ADDON;
 YATLAS_VERSION      = meta("Version") or "dev";
 YATLAS_RELEASE_DATE = meta("X-Date");          -- @project-date-iso@, filled in by the packager
 YATLAS_AUTHOR       = meta("Author") or "";
+YATLAS_CREDITS      = meta("X-Credits") or "";
 YATLAS_WEBSITE      = meta("X-Website") or "";
 
 -- ---------------------------------------------------------------------------

@@ -37,6 +37,13 @@ YATLAS_BIGDRAGMESSAGE = "Klickt auf die Karte und zieht sie, um den Ausschnitt z
 BINDING_NAME_YATLAS_TOGGLE = "Yatlas-Fenster ein-/ausblenden";
 BINDING_NAME_YATLAS_BIG_TOGGLE = "Großes Yatlas-Fenster ein-/ausblenden";
 
-YATLAS_SWITCH_TO_BIG = "Zur Vollbildansicht wechseln";
+YATLAS_SWITCH_TO_BIG = "Zur großen Ansicht wechseln";
 YATLAS_SWITCH_TO_NORMAL = "Zur normalen Ansicht wechseln";
+YATLAS_TOOLTIP_LOCKED_TITLE = "Fenster gesperrt";
+YATLAS_TOOLTIP_LOCKED = "Klicken, um das Fenster zu entsperren und verschieben zu können.";
+YATLAS_TOOLTIP_UNLOCKED_TITLE = "Fenster entsperrt";
+YATLAS_TOOLTIP_UNLOCKED = "Das Fenster kann jetzt verschoben werden. Klicken, um es zu sperren.";
+YATLAS_TOOLTIP_SHOWPOINTS = "Wählt, welche Punkte auf der Karte angezeigt werden.";
+YATLAS_TOOLTIP_ZOOM_TITLE = "Zoom";
+YATLAS_TOOLTIP_ZOOM = "Zeigt die Zoomsteuerung. Gezoomt werden kann auch mit dem Mausrad.";
 end

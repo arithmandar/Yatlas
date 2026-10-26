@@ -14,6 +14,14 @@
   with the facing (GetPlayerFacing); position and facing update every 0.05 s while Yatlas is open
 - Party and raid members use the game's WhiteCircle-RaidBlips dot in class colour
   (Icon-PartyUnit is kept only as a fallback)
+- The big frame is now called the "large" frame in the key binding and tooltips (it is not fullscreen),
+  in all 10 languages
+- New tooltips for the lock/unlock button (shows the current state), the close buttons,
+  the Show Points button (bottom right) and the zoom button (bottom left)
+- Version text moved left so it no longer overlaps the switch, lock and close buttons
+- Fixed: pressing Esc in the large frame caused ADDON_ACTION_FORBIDDEN (RunBinding() is protected).
+  The large frame no longer captures the keyboard; Esc closes it through the game's own panel handling,
+  and the toggle and screenshot keys go straight to their normal bindings
 
 ### v0.9.5 (Oct. 26, 2026)
 

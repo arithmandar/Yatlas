@@ -35,8 +35,15 @@ YATLAS_POINTS_CTMAPMOD = "CTMapMod";
 YATLAS_UNKNOWN_ZONE = "Inconnu";
 YATLAS_BIGDRAGMESSAGE = "Cliquez sur la carte et faites-la glisser pour déplacer la vue.";
 BINDING_NAME_YATLAS_TOGGLE = "Afficher/masquer Yatlas";
-BINDING_NAME_YATLAS_BIG_TOGGLE = "Afficher/masquer Yatlas en plein écran";
+BINDING_NAME_YATLAS_BIG_TOGGLE = "Afficher/masquer la grande fenêtre Yatlas";
 
-YATLAS_SWITCH_TO_BIG = "Passer en vue plein écran";
+YATLAS_SWITCH_TO_BIG = "Passer en grande vue";
 YATLAS_SWITCH_TO_NORMAL = "Passer en vue normale";
+YATLAS_TOOLTIP_LOCKED_TITLE = "Fenêtre verrouillée";
+YATLAS_TOOLTIP_LOCKED = "Cliquez pour la déverrouiller et pouvoir la déplacer.";
+YATLAS_TOOLTIP_UNLOCKED_TITLE = "Fenêtre déverrouillée";
+YATLAS_TOOLTIP_UNLOCKED = "Vous pouvez déplacer la fenêtre. Cliquez pour la verrouiller.";
+YATLAS_TOOLTIP_SHOWPOINTS = "Choisissez les points affichés sur la carte.";
+YATLAS_TOOLTIP_ZOOM_TITLE = "Zoom";
+YATLAS_TOOLTIP_ZOOM = "Affiche les commandes de zoom. Vous pouvez aussi zoomer avec la molette de la souris.";
 end

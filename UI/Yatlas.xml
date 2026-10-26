@@ -95,7 +95,7 @@
 					<Anchors>
 						<Anchor point="TOPRIGHT">
 							<Offset>
-								<AbsDimension x="-45" y="-18"/>
+								<AbsDimension x="-68" y="-18"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -116,6 +116,12 @@
 					<OnLoad>
 						self:SetFrameLevel(self:GetFrameLevel() + 4);
 					</OnLoad>
+					<OnEnter>
+						Yatlas_ShowButtonTooltip(self, CLOSE);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
 				</Scripts>
 			</Button>
 			<Button name="YatlasFrameLockButton">
@@ -135,7 +141,14 @@
 					</OnLoad>
 					<OnClick>
 						YatlasFrame:ToggleLock();
+						YatlasFrameLockButton_OnEnter(self);
 					</OnClick>
+					<OnEnter>
+						YatlasFrameLockButton_OnEnter(self);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
 				</Scripts>
 				<NormalTexture name="$parentNorm"/>
 				<PushedTexture name="$parentPush"/>
@@ -324,6 +337,12 @@
 			<OnClick>
 				YFOO_OnClick(self);
 			</OnClick>
+			<OnEnter>
+				Yatlas_ShowButtonTooltip(self, YATLAS_POINTS_SHOWPOINTS_TITLE, YATLAS_TOOLTIP_SHOWPOINTS, "ANCHOR_LEFT");
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
 		</Scripts>
 		<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
 		<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
@@ -361,6 +380,12 @@
 					YatlasFrameZoomFrame:Hide();
 				end
 			</OnClick>
+			<OnEnter>
+				Yatlas_ShowButtonTooltip(self, YATLAS_TOOLTIP_ZOOM_TITLE, YATLAS_TOOLTIP_ZOOM, "ANCHOR_RIGHT");
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Yatlas\Images\MagButton-Up"/>
 		<PushedTexture file="Interface\AddOns\Yatlas\Images\MagButton-Down"/>
@@ -368,7 +393,7 @@
 		<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
 	</Button>
 
-	<Frame name="BigYatlasFrame"  setAllPoints="true" frameStrata="FULLSCREEN" hidden="true" enableKeyboard="true" inherits="YatlasFrameTemplatePreBuilt">
+	<Frame name="BigYatlasFrame"  setAllPoints="true" frameStrata="FULLSCREEN" hidden="true" inherits="YatlasFrameTemplatePreBuilt">
 		<Layers>
 			<Layer level="ARTWORK">
 				<Texture file="Interface\AddOns\Yatlas\Images\bframe-top1">
@@ -524,7 +549,7 @@
 							<Anchors>
 								<Anchor point="TOPRIGHT">
 									<Offset>
-										<AbsDimension x="-29" y="-6"/>
+										<AbsDimension x="-54" y="-6"/>
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -541,6 +566,14 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
+				<Scripts>
+					<OnEnter>
+						Yatlas_ShowButtonTooltip(self, CLOSE);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
 			</Button>
 			<Button name="BigYatlasFrameSwitchButton">
 				<Size>
@@ -683,32 +716,6 @@
 				YatlasFrame_Bootstrap(self);
 				BigYatlasFrame_OnLoadExtra();
 			</OnLoad>
-			<OnKeyDown>
-				local toggleKey1, toggleKey2 = GetBindingKey("YATLAS_BIG_TOGGLE");
-				local screenshotKey = GetBindingKey("SCREENSHOT");
-				local keyPressed = key;
-				if ( IsShiftKeyDown() ) then
-					keyPressed = "SHIFT-"..keyPressed;
-				end
-				if ( IsControlKeyDown() ) then
-					keyPressed = "CTRL-"..keyPressed;
-				end
-				if ( IsAltKeyDown() ) then
-					keyPressed = "ALT-"..keyPressed;
-				end
-				local handled = true;
-				if ( (toggleKey1 and (keyPressed == toggleKey1)) or (toggleKey2 and (keyPressed == toggleKey2)) or (key == "ESCAPE") ) then
-					RunBinding("YATLAS_BIG_TOGGLE");
-				elseif ( screenshotKey and (key == screenshotKey) ) then
-					RunBinding("SCREENSHOT");
-				else
-					handled = false;
-				end
-				-- let unhandled keys (movement, chat, ...) through to the game
-				if ( self.SetPropagateKeyboardInput and not InCombatLockdown() ) then
-					self:SetPropagateKeyboardInput(not handled);
-				end
-			</OnKeyDown>
 		</Scripts>
 	</Frame>
 	<Frame name="BigYatlasTooltip" frameStrata="TOOLTIP" hidden="true" parent="BigYatlasFrame" inherits="YatlasTooltipTemplate">
@@ -755,6 +762,12 @@
 			<OnClick>
 				YFOO_OnClick(self);
 			</OnClick>
+			<OnEnter>
+				Yatlas_ShowButtonTooltip(self, YATLAS_POINTS_SHOWPOINTS_TITLE, YATLAS_TOOLTIP_SHOWPOINTS, "ANCHOR_LEFT");
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
 		</Scripts>
 		<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
 		<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
@@ -792,6 +805,12 @@
 					BigYatlasFrameZoomFrame:Hide();
 				end
 			</OnClick>
+			<OnEnter>
+				Yatlas_ShowButtonTooltip(self, YATLAS_TOOLTIP_ZOOM_TITLE, YATLAS_TOOLTIP_ZOOM, "ANCHOR_RIGHT");
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Yatlas\Images\MagButton-Up"/>
 		<PushedTexture file="Interface\AddOns\Yatlas\Images\MagButton-Down"/>

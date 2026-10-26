@@ -38,7 +38,7 @@ Version 0.9.4 is the first release in more than ten years. The map data was rebu
 
 - **Two views**
   - **Normal view:** a movable window, similar to Atlas. Open it with the minimap button, `/yatlas`, or a key binding.
-  - **Fullscreen view:** covers the screen like the world map. Open it with `/bigyatlas` or a key binding. Press Esc or the binding again to close it.
+  - **Large view:** a bigger map window, shown like the world map. Open it with `/bigyatlas` or a key binding. Press Esc or the binding again to close it.
 - **Navigation:** click and drag to pan, use the mouse wheel to zoom, and pick a map or jump to a zone from the drop-down menus.
 - **Goto Player:** click to centre the map on your character. Shift-click to keep following you as you move. The option "Zoom to Player on Show" centres on you every time the map opens.
 - **Party and raid members** are shown on the map in real time.
@@ -54,8 +54,8 @@ Version 0.9.4 is the first release in more than ten years. The map data was rebu
 
 Under **Key Bindings → AddOns → Yatlas**:
 
-- Toggle Yatlas
-- Toggle fullscreen Yatlas
+- Toggle Yatlas Frame
+- Toggle Large Yatlas Frame
 
 ## Known limitations
 

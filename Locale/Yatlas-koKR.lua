@@ -35,8 +35,15 @@ YATLAS_POINTS_CTMAPMOD = "CTMapMod";
 YATLAS_UNKNOWN_ZONE = "알 수 없음";
 YATLAS_BIGDRAGMESSAGE = "지도를 클릭한 채 끌어서 화면을 이동하세요.";
 BINDING_NAME_YATLAS_TOGGLE = "Yatlas 창 열기/닫기";
-BINDING_NAME_YATLAS_BIG_TOGGLE = "전체 화면 Yatlas 열기/닫기";
+BINDING_NAME_YATLAS_BIG_TOGGLE = "큰 Yatlas 창 열기/닫기";
 
-YATLAS_SWITCH_TO_BIG = "전체 화면 보기로 전환";
+YATLAS_SWITCH_TO_BIG = "큰 보기로 전환";
 YATLAS_SWITCH_TO_NORMAL = "일반 보기로 전환";
+YATLAS_TOOLTIP_LOCKED_TITLE = "창 잠김";
+YATLAS_TOOLTIP_LOCKED = "클릭하면 잠금이 풀려 창을 옮길 수 있습니다.";
+YATLAS_TOOLTIP_UNLOCKED_TITLE = "창 잠금 해제됨";
+YATLAS_TOOLTIP_UNLOCKED = "창을 끌어서 옮길 수 있습니다. 클릭하면 잠급니다.";
+YATLAS_TOOLTIP_SHOWPOINTS = "지도에 표시할 지점을 고릅니다.";
+YATLAS_TOOLTIP_ZOOM_TITLE = "확대/축소";
+YATLAS_TOOLTIP_ZOOM = "확대/축소 조절을 표시합니다. 마우스 휠로도 확대/축소할 수 있습니다.";
 end

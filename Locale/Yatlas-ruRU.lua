@@ -35,8 +35,15 @@ YATLAS_POINTS_CTMAPMOD = "CTMapMod";
 YATLAS_UNKNOWN_ZONE = "Неизвестно";
 YATLAS_BIGDRAGMESSAGE = "Нажмите на карту и перетащите её, чтобы сдвинуть обзор.";
 BINDING_NAME_YATLAS_TOGGLE = "Показать/скрыть Yatlas";
-BINDING_NAME_YATLAS_BIG_TOGGLE = "Показать/скрыть Yatlas на весь экран";
+BINDING_NAME_YATLAS_BIG_TOGGLE = "Показать/скрыть большое окно Yatlas";
 
-YATLAS_SWITCH_TO_BIG = "Перейти в полноэкранный режим";
+YATLAS_SWITCH_TO_BIG = "Перейти в большой режим";
 YATLAS_SWITCH_TO_NORMAL = "Перейти в обычный режим";
+YATLAS_TOOLTIP_LOCKED_TITLE = "Окно закреплено";
+YATLAS_TOOLTIP_LOCKED = "Щелкните, чтобы открепить окно и перемещать его.";
+YATLAS_TOOLTIP_UNLOCKED_TITLE = "Окно откреплено";
+YATLAS_TOOLTIP_UNLOCKED = "Окно можно перетаскивать. Щелкните, чтобы закрепить.";
+YATLAS_TOOLTIP_SHOWPOINTS = "Выберите, какие точки показывать на карте.";
+YATLAS_TOOLTIP_ZOOM_TITLE = "Масштаб";
+YATLAS_TOOLTIP_ZOOM = "Показать управление масштабом. Масштаб также меняется колесом мыши.";
 end

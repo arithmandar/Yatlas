@@ -25,7 +25,7 @@ Yatlas has two views:
   - Click the minimap button.
   - Type `/yatlas`.
   - Press the key binding.
-- **Fullscreen view** covers the whole screen, like the world map. Open it with `/bigyatlas` or its key binding. Press Esc or the binding again to close it.
+- **Large view** is a bigger, centred map window, shown like the world map. Open it with `/bigyatlas` or its key binding. Press Esc or the binding again to close it.
 
 Both views use the same controls:
 
@@ -33,9 +33,9 @@ Both views use the same controls:
 - Choose a map or jump to a zone from the drop-down menus at the top.
 - Hover over a point to see a tooltip.
 - **Goto Player** centres the map on your character. Shift-click it to keep following you as you move.
-- The button next to the close button switches between the normal and the fullscreen view, keeping the current map and position.
+- The button next to the close button switches between the normal and the large view, keeping the current map and position.
 
-You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggle Yatlas, Toggle fullscreen Yatlas).
+You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggle Yatlas Frame, Toggle Large Yatlas Frame).
 
 ### Points on the map
 
@@ -66,7 +66,7 @@ You can turn each type of point on or off from the options menu.
 | `Yatlas.toc` | Addon metadata and load order |
 | `Bindings.xml` | Key bindings (must stay in the addon root folder) |
 | `Core/` | `Compat.lua` (wrappers for the modern Classic API), `Constants.lua` (addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (map drawing and frame logic), `Points.lua` (point framework) |
-| `UI/` | Frames and templates: `Yatlas.xml` (normal and fullscreen frames), `Templates.xml`, `OptionsFrame.xml`, `Button.xml`/`Button.lua` (minimap button) |
+| `UI/` | Frames and templates: `Yatlas.xml` (normal and large frames), `Templates.xml`, `OptionsFrame.xml`, `Button.xml`/`Button.lua` (minimap button) |
 | `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, players, ...) |
 | `Data/` | Generated map data `mapdb.lua` and `mapdb2.lua`: minimap tiles, map areas, instances, towns, flight paths |
 | `Locale/` | UI strings: enUS (default), deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW |

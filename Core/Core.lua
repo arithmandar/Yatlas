@@ -229,7 +229,7 @@ function YatlasFrameTemplate:Toggle()
     end
 end
 
--- Switch between the normal and the fullscreen frame, keeping the map and
+-- Switch between the normal and the large frame, keeping the map and
 -- the point at the centre of the view (each frame keeps its own zoom).
 function Yatlas_SwitchFrame(from)
     local to = (from == BigYatlasFrame) and YatlasFrame or BigYatlasFrame;
@@ -258,14 +258,37 @@ function Yatlas_SwitchFrame(from)
     to:SetLocation(cx - tvf:GetWidth() / tz / 2, cy - tvf:GetHeight() / tz / 2, true);
 end
 
-function YatlasFrameSwitchButton_OnEnter(self)
-    GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT");
-    if(self:GetParent() == BigYatlasFrame) then
-        GameTooltip:SetText(YATLAS_SWITCH_TO_NORMAL);
-    else
-        GameTooltip:SetText(YATLAS_SWITCH_TO_BIG);
+-- Shared button tooltip: a title line and an optional wrapped description.
+function Yatlas_ShowButtonTooltip(self, title, text, anchor)
+    if(not title) then
+        return;
+    end
+    GameTooltip:SetOwner(self, anchor or "ANCHOR_BOTTOMLEFT");
+    GameTooltip:SetText(title, HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b);
+    if(text) then
+        GameTooltip:AddLine(text, NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, true);
     end
     GameTooltip:Show();
+end
+
+function YatlasFrameSwitchButton_OnEnter(self)
+    if(self:GetParent() == BigYatlasFrame) then
+        Yatlas_ShowButtonTooltip(self, YATLAS_SWITCH_TO_NORMAL);
+    else
+        Yatlas_ShowButtonTooltip(self, YATLAS_SWITCH_TO_BIG);
+    end
+end
+
+-- Also called from OnClick so the tooltip follows the new lock state.
+function YatlasFrameLockButton_OnEnter(self)
+    if(not self:IsMouseOver()) then
+        return;
+    end
+    if(YatlasFrame.opt and YatlasFrame.opt.Locked) then
+        Yatlas_ShowButtonTooltip(self, YATLAS_TOOLTIP_LOCKED_TITLE, YATLAS_TOOLTIP_LOCKED);
+    else
+        Yatlas_ShowButtonTooltip(self, YATLAS_TOOLTIP_UNLOCKED_TITLE, YATLAS_TOOLTIP_UNLOCKED);
+    end
 end
 
 function YatlasFrameDropDown_OnLoad(self)
@@ -282,7 +305,7 @@ end
 
 -- Find the Yatlas frame (YatlasFrame or BigYatlasFrame) that owns a
 -- drop-down. The menus used to be hard-wired to YatlasFrame, so the map and
--- zone menus of the fullscreen frame changed the (hidden) normal frame.
+-- zone menus of the large frame changed the (hidden) normal frame.
 local function Yatlas_DropDownOwner(dropdown)
     if(type(dropdown) == "string") then
         dropdown = _G[dropdown];

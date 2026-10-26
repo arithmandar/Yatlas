@@ -76,20 +76,20 @@ function set.setuppoint(point, env, dat)
         r = 0.2;
         g = 0.6;
         b = 1;
-        bgtextname = "Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Circle";
+        bgtextname = YATLAS_ICON_PATH.."Icon-Circle";
         if(tindex == 5) then
-            bgtextname = "Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Star";
+            bgtextname = YATLAS_ICON_PATH.."Icon-Star";
             iconsize = iconsize+2;
         elseif(tindex == -1) then
             r = 0.9;
             g = 0.1;
             b = 0.9;
-            bgtextname = "Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Cave";
+            bgtextname = YATLAS_ICON_PATH.."Icon-Cave";
         elseif(tindex == -4) then
             r = 0.3;
             g = 0.8;
             b = 1;
-            bgtextname = "Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Exclaim";
+            bgtextname = YATLAS_ICON_PATH.."Icon-Exclaim";
         end
     else
        x1, x2, y1, y2 = Yatlas_GetPOITextureCoords(tindex);

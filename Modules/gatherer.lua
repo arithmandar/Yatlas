@@ -37,7 +37,7 @@ end
 function set.setuppoint(point, env, dat) 
     local text, bg = point.Foreground, point.Icon;
 
-    local iconname = "Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Square";
+    local iconname = YATLAS_ICON_PATH.."Icon-Square";
     if(Gather_IconSet) then
         local gtype = dat.userdat.gtype;
         local gtype_str = gtype;

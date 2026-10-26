@@ -8,7 +8,7 @@ local unitlocations = {};
 -- WhiteCircle-RaidBlips atlas in class colour.
 local PLAYER_ARROW = "Interface\\WorldMap\\WorldMapArrow";
 local MEMBER_ATLAS = "WhiteCircle-RaidBlips";
-local MEMBER_FALLBACK = "Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-PartyUnit";
+local MEMBER_FALLBACK = YATLAS_ICON_PATH.."Icon-PartyUnit";
 local PLAYER_SCALE, MEMBER_SCALE = 1.5, 0.8;
 local FAST_UPDATE = 0.05;   -- player arrow position / facing, seconds
 

@@ -1,14 +1,4 @@
-﻿local _;
-
--- metadata magic
-YATLAS_TITLE = Yatlas_GetAddOnMetadata("Yatlas", "Title") or "Y";
-YATLAS_VERSION = Yatlas_GetAddOnMetadata("Yatlas","Version") or "???";
-if(string.find(YATLAS_VERSION, "@", 1, true)) then YATLAS_VERSION = "dev"; end -- unpackaged checkout
-_,_,YATLAS_RELEASE_DATE = string.find(Yatlas_GetAddOnMetadata("Yatlas","X-LastChangedDate") or "", "[(](.+)[)]");
-
-YATLAS_WEBSITE = ""
-YATLAS_AUTHOR = "Boo Diddly";
-YATLAS_AUTHOR_EMAIL = "";
+﻿-- Addon metadata (YATLAS_TITLE, YATLAS_VERSION, ...) lives in Core\Constants.lua.
 
 -- localize from this point on as needed
 YATLAS_HELP_TEXT = {

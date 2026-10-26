@@ -16,29 +16,7 @@
 Yatlas_GetAddOnMetadata = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata;
 Yatlas_GetPOITextureCoords = (C_Minimap and C_Minimap.GetPOITextureCoords) or GetPOITextureCoords;
 
--- backdrops (the <Backdrop> XML tag was removed; frames inherit BackdropTemplate
--- and call SetBackdrop with one of these in their OnLoad)
-YATLAS_BACKDROP_TOOLTIP = {
-    bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-    edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-    tile = true, tileSize = 16, edgeSize = 16,
-    insets = { left = 5, right = 5, top = 5, bottom = 5 },
-};
-
-YATLAS_BACKDROP_DIALOG = {
-    bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
-    edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
-    tile = true, tileSize = 32, edgeSize = 32,
-    insets = { left = 11, right = 12, top = 12, bottom = 11 },
-};
-
-YATLAS_BACKDROP_SLIDER = {
-    bgFile = "Interface\\Buttons\\UI-SliderBar-Background",
-    edgeFile = "Interface\\Buttons\\UI-SliderBar-Border",
-    tile = true, tileSize = 8, edgeSize = 8,
-    insets = { left = 6, right = 6, top = 3, bottom = 3 },
-};
-
+-- backdrop tables (YATLAS_BACKDROP_*) are defined in Core\Constants.lua
 function Yatlas_ApplyBackdrop(frame, backdrop)
     if(frame and frame.SetBackdrop) then
         frame:SetBackdrop(backdrop);

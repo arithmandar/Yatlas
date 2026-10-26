@@ -1,22 +1,10 @@
---local GatherMate = LibStub("AceAddon-3.0"):GetAddon("GatherMate")
---local pre = "textures\\Minimap\\";
-local pre = "World\\Minimaps\\";
-
-local MINI2BIGX = 533.3333;
-local MINI2BIGY = 533.3333;
+-- constants (metadata, paths, option defaults, ...) are in Core\Constants.lua
+local pre = YATLAS_MINIMAP_PATH;
+local MINI2BIGX = YATLAS_MINI2BIG_X;
+local MINI2BIGY = YATLAS_MINI2BIG_Y;
 local _G=_G;
 
 YatlasOptions = {}
-
-YA_FRAME_OPTION_DEFAULTS = {
-    ["Locked"] = true,
-    ["Map"] = "Kalimdor",
-    ["Location"] = {31.0625, 33.250},
-    ["Alpha"] = 1,
-    ["IconSize"] = 14,
-    ["PointCfg"] = {},
-    ["Zoom"] = 256,
-};
 
 local dummyv = nil;
 local nilfunc = function() end
@@ -116,7 +104,6 @@ function YatlasFrame_OnLoadExtra()
 	releaseDate = YATLAS_RELEASE_DATE,
 	author = YATLAS_AUTHOR,
         website = YATLAS_WEBSITE,
-	email = YATLAS_AUTHOR_EMAIL,
 	category = MYADDONS_CATEGORY_MAP,
     };
     YatlasMAHelp = YATLAS_HELP_TEXT;
@@ -343,11 +330,11 @@ function YatlasFrameTemplate:UpdateLock()
 
     if(norm and push) then
         if(self.opt.Locked) then
-            norm:SetTexture("Interface\\AddOns\\Yatlas\\Images\\LockButton-Locked-Up");
-            push:SetTexture("Interface\\AddOns\\Yatlas\\Images\\LockButton-Locked-Down");
+            norm:SetTexture(YATLAS_IMAGE_PATH.."LockButton-Locked-Up");
+            push:SetTexture(YATLAS_IMAGE_PATH.."LockButton-Locked-Down");
         else
-            norm:SetTexture("Interface\\AddOns\\Yatlas\\Images\\LockButton-Unlocked-Up");
-            push:SetTexture("Interface\\AddOns\\Yatlas\\Images\\LockButton-Unlocked-Down");
+            norm:SetTexture(YATLAS_IMAGE_PATH.."LockButton-Unlocked-Up");
+            push:SetTexture(YATLAS_IMAGE_PATH.."LockButton-Unlocked-Down");
         end
     end
 end

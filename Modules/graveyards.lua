@@ -27,7 +27,7 @@ function set.setuppoint(point, env, dat)
     bg:Show();
     bg:SetHeight(env.iconsize);
     bg:SetWidth(env.iconsize);
-    bg:SetTexture("Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Graveyard");
+    bg:SetTexture(YATLAS_ICON_PATH.."Icon-Graveyard");
     bg:SetVertexColor(1, 1, 1, 1);
 end
 

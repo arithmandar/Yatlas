@@ -62,7 +62,7 @@ function set.setuppoint(point, env, dat)
     bg:Show();
     bg:SetHeight(env.iconsize);
     bg:SetWidth(env.iconsize);
-    bg:SetTexture("Interface\\AddOns\\Yatlas\\Images\\Icons\\"..iconname);
+    bg:SetTexture(YATLAS_ICON_PATH..iconname);
     bg:SetVertexColor(unpack(color));
 
     if(dat.id > 32) then

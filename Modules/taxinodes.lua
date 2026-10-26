@@ -108,7 +108,7 @@ function set.setuppoint(point, env, dat)
         end
     else
         local c = FACTION_COLOR[faction] or FACTION_COLOR[0];
-        bg:SetTexture("Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Diamond");
+        bg:SetTexture(YATLAS_ICON_PATH.."Icon-Diamond");
         bg:SetTexCoord(0, 1, 0, 1);
         bg:SetVertexColor(c[1], c[2], c[3], undiscovered and 0.6 or 1);
     end

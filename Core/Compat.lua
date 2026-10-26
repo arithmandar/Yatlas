@@ -32,7 +32,8 @@ Yatlas_GetPOITextureCoords = (C_Minimap and C_Minimap.GetPOITextureCoords) or Ge
 local YATLAS_ATLAS_BASE = {dungeon = 22, raid = 22,
     ["delves-regular"] = 20, ["delves-bountiful"] = 17,   -- Retail only (30 / 25)
     racing = 22,                                          -- Retail only (32, drawn at 22)
-    taxinode_neutral = 18, taxinode_alliance = 18, taxinode_horde = 18};
+    taxinode_neutral = 18, taxinode_alliance = 18, taxinode_horde = 18,
+    taxinode_undiscovered = 18};                          -- Retail only (same size as the others)
 local yatlas_atlas_scale = {};
 function Yatlas_AtlasScale(atlas)
     if(not atlas) then return 1; end

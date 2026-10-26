@@ -24,6 +24,8 @@
 - Other area POIs without an atlas use the game's own POI icons, the same as the world map
 - Mainline: new point set "Delves" with the delve entrances from C_AreaPoiInfo.GetDelvesForMap
   (regular and bountiful icons, like the world map); it can be switched off in the point menu
+- Mainline: undiscovered flight paths (TaxiNode_Undiscovered from the map API) are drawn at the
+  size of the other flight paths and no longer dimmed a second time
 - New minimap button look: the game's world map icon (Interface\WorldMap\WorldMap-Icon, also the
   TOC icon) in the round minimap button frame of the game (UI-Minimap-Background and
   MiniMap-TrackingBorder), sized per client. Images/Button.blp and Button-Down.blp were removed

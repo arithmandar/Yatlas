@@ -103,7 +103,9 @@ function set.setuppoint(point, env, dat)
         bg:SetAtlas(atlas);
         bg:SetHeight(iconsize * Yatlas_AtlasScale(atlas));
         bg:SetWidth(iconsize * Yatlas_AtlasScale(atlas));
-        if(undiscovered) then
+        if(undiscovered and string.lower(atlas) ~= "taxinode_undiscovered") then
+            -- Classic has no undiscovered atlas: dim the faction icon instead. Mainline sends
+            -- TaxiNode_Undiscovered, which is grey already; dimming it again made it hard to see.
             bg:SetVertexColor(0.6, 0.6, 0.6, 0.7);
         else
             bg:SetVertexColor(1, 1, 1, 1);

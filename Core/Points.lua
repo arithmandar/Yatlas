@@ -10,7 +10,12 @@ local binsert;
 local nilfunc = function () end
 local emptylist = {};
 
+local setorder = {};     -- registration order (Modules/index.xml), used for the menu
+
 function YAPoints_RegisterSet(set)
+    if(sets[set.name] == nil) then
+        tinsert(setorder, set.name);
+    end
     sets[set.name] = set;
 end
 
@@ -607,8 +612,8 @@ function YFOODropDown_Initialize()
     end
 
     if(YatlasOptions.Frames and YatlasOptions.Frames[lm]) then
-        for h,v in pairs(sets) do
-            func = v.configmenu;
+        for _,h in ipairs(setorder) do
+            func = sets[h].configmenu;
             if(func) then
                 func(h, lm);
             end

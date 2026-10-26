@@ -52,7 +52,7 @@ Version 1.0.0 adds Retail, Anniversary and Classic Era. The map data of every cl
   - Delve entrances (mainline), including today's bountiful delves
   - Skyriding race start points (mainline)
 - **Tooltips** when you hover over a point.
-- **Options:** transparency, icon size, which point types to show, and the minimap button and its position.
+- **Options:** transparency, icon size, which point types to show (landmarks split into instances, capitals, towns, travel and other), and the minimap button and its position.
 
 ## Key bindings
 

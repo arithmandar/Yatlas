@@ -92,7 +92,7 @@ function set.configmenu(name, lm)
             info.keepShownOnClick = 1;
             info.hasArrow = 1;
             UIDropDownMenu_AddButton(info);
-        elseif(UIDROPDOWNMENU_MENU_LEVEL == 2) then
+        elseif(UIDROPDOWNMENU_MENU_LEVEL == 2 and UIDROPDOWNMENU_MENU_VALUE == name) then
             info.text = YATLAS_POINTS_GATHERER_TREASURE;
             info.func = YFOODropDown_do_toggle_normal;
             info.value = name.."_Treasure";

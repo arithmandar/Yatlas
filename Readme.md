@@ -57,7 +57,7 @@ You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggl
 - Skyriding race start points (mainline).
 - Party and raid members
 
-You can turn each type of point on or off from the options menu.
+You can turn each type of point on or off from the options menu. Landmarks have a submenu with separate switches for instances, capitals, towns, travel (boats, zeppelins and portals, mainline) and other landmarks.
 
 ### Known limitations
 

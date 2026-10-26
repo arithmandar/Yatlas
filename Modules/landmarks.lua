@@ -27,13 +27,42 @@ end
 
 local set = {name="landmarks"};
 
+-- Categories, each with its own entry in the landmarks submenu. PointCfg["landmarks"] hides all
+-- of them, PointCfg["landmarks_<kind>"] one category (true = hidden, like the other sets).
+local KINDS = {
+    {key = "instances", label = function() return YATLAS_POINTS_LM_INSTANCES; end},
+    {key = "capitals",  label = function() return YATLAS_POINTS_LM_CAPITALS; end},
+    {key = "towns",     label = function() return YATLAS_POINTS_LM_TOWNS; end},
+    {key = "travel",    label = function() return YATLAS_POINTS_LM_TRAVEL; end,
+                        mainline = true},   -- only the mainline map API has these POIs
+    {key = "other",     label = function() return YATLAS_POINTS_LM_OTHER; end},
+};
+local kindopt = {};
+for _, k in ipairs(KINDS) do
+    kindopt[k.key] = {setsubname = "landmarks_"..k.key};
+end
+
+-- area POIs from the map API: boats, zeppelins, portals and the teleport networks are "travel"
+local TRAVEL_ATLASES = {"^taxinode_continent", "^teleportationnetwork", "^flightmaster"};
+local function apikind(v)
+    local atlas = v[6] and string.lower(v[6]);
+    if(atlas) then
+        for _, pat in ipairs(TRAVEL_ATLASES) do
+            if(string.find(atlas, pat)) then
+                return "travel";
+            end
+        end
+    end
+    return "other";
+end
+
 function set.getpoints(name, map) 
     -- we got these from map api.  don't use if we see Megellan
     if(type(Yatlas_Landmarks[map]) == "table" and Magellan_Init == nil) then
         for h,v in ipairs(Yatlas_Landmarks[map]) do
             local x,y = Yatlas_Big2Mini_Coord(v[1],v[2]);
 
-            YAPoints_AddPoint(nil, "landmarks", v[3], x, y, nil, Yatlas_Landmarks[map][h]);
+            YAPoints_AddPoint(nil, "landmarks", v[3], x, y, kindopt[apikind(v)], Yatlas_Landmarks[map][h]);
         end
     end
 
@@ -44,7 +73,7 @@ function set.getpoints(name, map)
 
             -- v[5] = Map.db2 InstanceType (1 = dungeon, 2 = raid)
             local alt = (v[5] == 2) and landmarkaltraid or landmarkaltdungeon;
-            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, nil, alt);
+            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, kindopt.instances, alt);
         end
     end
 
@@ -53,7 +82,8 @@ function set.getpoints(name, map)
         for h,v in ipairs(Yatlas_cities[map]) do
             local x,y = Yatlas_Big2Mini_Coord(v[2],v[3]);
 
-            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, nil, cityalt(v));
+            YAPoints_AddPoint(nil, "landmarks", v[1], x, y,
+                              (v[5] == 2) and kindopt.capitals or kindopt.towns, cityalt(v));
         end
     end
 
@@ -62,7 +92,7 @@ function set.getpoints(name, map)
         for h,v in ipairs(Yatlas_towns2[map]) do
             local x,y = Yatlas_Big2Mini_Coord(v[2],v[3]);
 
-            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, nil, landmarkalttown);
+            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, kindopt.towns, landmarkalttown);
         end
     end
 end
@@ -151,15 +181,37 @@ function set.setuplegend(point, env, dat)
 end
 
 function set.configmenu(name, lm)
+    local cfg = YatlasOptions.Frames[lm].PointCfg;
+
     if(UIDROPDOWNMENU_MENU_LEVEL == 1) then
         local info = {};
         info.text = YATLAS_POINTS_LANDMARKS;
         info.func = YFOODropDown_do_toggle_normal;
-        info.checked = YatlasOptions.Frames[lm].PointCfg and not YatlasOptions.Frames[lm].PointCfg[name];
+        info.checked = cfg and not cfg[name];
         info.value = name;
         info.keepShownOnClick = 1;
+        info.hasArrow = 1;
         UIDropDownMenu_AddButton(info);
+    elseif(UIDROPDOWNMENU_MENU_LEVEL == 2 and UIDROPDOWNMENU_MENU_VALUE == name) then
+        for _, k in ipairs(KINDS) do
+            if(not k.mainline or (YATLAS_CLIENT and YATLAS_CLIENT.isRetail)) then
+                local info = {};
+                info.text = k.label();
+                info.func = YFOODropDown_do_toggle_normal;
+                info.value = name.."_"..k.key;
+                info.checked = cfg and not cfg[info.value];
+                info.keepShownOnClick = 1;
+                UIDropDownMenu_AddButton(info, 2);
+            end
+        end
     end
+end
+
+-- hidden when the whole set or the point's category is switched off
+function set.showme(v, lm)
+    local cfg = YatlasOptions.Frames[lm].PointCfg;
+
+    return not (cfg[v.setname] or cfg[v.setsubname]);
 end
 
 YAPoints_RegisterSet(set);

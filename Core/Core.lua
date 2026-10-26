@@ -562,10 +562,10 @@ local function ya_tilecount(vf, z)
     return (math.ceil(vf:GetWidth()/z)+1) * (math.ceil(vf:GetHeight()/z)+1);
 end
 
--- zoom in (dir > 0) or out (dir < 0) by about 20%, at least one pixel per step
+-- zoom in (dir > 0) or out (dir < 0) by YATLAS_ZOOM_STEP, at least one pixel per step
 function YatlasFrameTemplate:StepZoom(dir)
     local z = self:GetZoom();
-    local nz = (dir > 0) and math.floor(z*1.2 + 0.5) or math.floor(z/1.2 + 0.5);
+    local nz = (dir > 0) and math.floor(z*YATLAS_ZOOM_STEP + 0.5) or math.floor(z/YATLAS_ZOOM_STEP + 0.5);
 
     if(nz == z) then
         nz = z + ((dir > 0) and 1 or -1);

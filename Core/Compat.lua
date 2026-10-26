@@ -43,7 +43,7 @@ function Yatlas_AtlasScale(atlas)
         local base = YATLAS_ATLAS_BASE[key];
         local info = base and C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(atlas);
         if(info and info.width and info.width > base) then
-            scale = math.min(info.width / base, 1.6);
+            scale = math.min(info.width / base, YATLAS_ATLAS_MAX_SCALE);
         end
         yatlas_atlas_scale[key] = scale;
     end

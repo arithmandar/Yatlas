@@ -9,7 +9,6 @@ local unitlocations = {};
 local PLAYER_ARROW = "Interface\\WorldMap\\WorldMapArrow";
 local MEMBER_ATLAS = "WhiteCircle-RaidBlips";
 local MEMBER_FALLBACK = YATLAS_ICON_PATH.."Icon-PartyUnit";
-local PLAYER_SCALE, MEMBER_SCALE = 1.5, 0.8;
 local FAST_UPDATE = 0.05;   -- player arrow position / facing, seconds
 
 local function atlasexists(name)
@@ -50,7 +49,7 @@ local function styleunit(point, frame, unit)
         icon:SetTexCoord(0, 1, 0, 1);
         icon:SetVertexColor(1, 1, 1, 1);
         icon:SetRotation(GetPlayerFacing and GetPlayerFacing() or 0);
-        placeicon(point, frame, PLAYER_SCALE);
+        placeicon(point, frame, YATLAS_PLAYER_SCALE);
         -- keep the arrow above the group members
         point:SetFrameLevel(point:GetParent():GetFrameLevel() + 6);
     else
@@ -62,7 +61,7 @@ local function styleunit(point, frame, unit)
         end
         icon:SetRotation(0);
         icon:SetVertexColor(classcolor(unit));
-        placeicon(point, frame, MEMBER_SCALE);
+        placeicon(point, frame, YATLAS_MEMBER_SCALE);
         point:SetFrameLevel(point:GetParent():GetFrameLevel() + 5);
     end
     icon:Show();

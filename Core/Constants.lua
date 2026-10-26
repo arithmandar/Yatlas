@@ -76,6 +76,12 @@ YA_FRAME_OPTION_DEFAULTS = {
 -- tile textures a frame may create (UI\Templates.xml pre-builds 256, the rest on demand).
 YATLAS_MIN_ZOOM = 8;
 YATLAS_MAX_TILES = 4096;
+YATLAS_ZOOM_STEP = 1.2;         -- mouse wheel and +/- buttons: about 20% per step
+
+-- Icon sizes, relative to the "IconSize" frame option
+YATLAS_PLAYER_SCALE = 1.5;      -- your own arrow
+YATLAS_MEMBER_SCALE = 0.8;      -- party and raid members
+YATLAS_ATLAS_MAX_SCALE = 1.6;   -- cap for Yatlas_AtlasScale (larger mainline atlases)
 
 -- ---------------------------------------------------------------------------
 -- Backdrops (the <Backdrop> XML tag was removed; frames inherit

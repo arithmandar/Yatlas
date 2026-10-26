@@ -31,6 +31,7 @@ YATLAS_POINTS_LANDMARKS = "Landmarks";
 YATLAS_POINTS_GRAVEYARDS = "Graveyards";
 YATLAS_POINTS_TAXINODES = "Flight Paths";
 YATLAS_POINTS_DELVES = DELVES_LABEL or "Delves";	-- mainline only (the game's own string when it exists)
+YATLAS_POINTS_RACES = DRAGONRIDING_RACES_MAP_TOGGLE or "Skyriding Races";	-- mainline only (the game's own string when it exists)
 YATLAS_POINTS_MAPNOTES = "MapNotes";
 YATLAS_POINTS_GATHERER = "Gatherer";
 YATLAS_POINTS_GATHERER_TREASURE = "Treasure";

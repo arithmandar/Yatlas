@@ -50,6 +50,7 @@ Version 1.0.0 adds Retail, Anniversary and Classic Era. The map data of every cl
   - Smaller settlements and flight-path towns
   - Flight paths for your faction, with undiscovered ones dimmed
   - Delve entrances (mainline), including today's bountiful delves
+  - Skyriding race start points (mainline)
 - **Tooltips** when you hover over a point.
 - **Options:** transparency, icon size, which point types to show, and the minimap button and its position.
 

@@ -31,6 +31,7 @@ Yatlas_GetPOITextureCoords = (C_Minimap and C_Minimap.GetPOITextureCoords) or Ge
 -- UiTextureAtlasMember), so the same icon size draws them visibly smaller.
 local YATLAS_ATLAS_BASE = {dungeon = 22, raid = 22,
     ["delves-regular"] = 20, ["delves-bountiful"] = 17,   -- Retail only (30 / 25)
+    racing = 22,                                          -- Retail only (32, drawn at 22)
     taxinode_neutral = 18, taxinode_alliance = 18, taxinode_horde = 18};
 local yatlas_atlas_scale = {};
 function Yatlas_AtlasScale(atlas)
@@ -178,9 +179,10 @@ function Yatlas_LoadLandmarks(map)
     Yatlas_Landmarks[map] = Yatlas_CollectAreaPOIs(map,
         C_AreaPoiInfo and C_AreaPoiInfo.GetAreaPOIForMap,
         function(poi, info)
-            -- towns and capitals come from Yatlas_cities (Data); delves have their own set
+            -- towns and capitals come from Yatlas_cities (Data); delves and races have their own sets
             return (Yatlas_CityPOIs and Yatlas_CityPOIs[poi])
-                or (info.atlasName and string.find(info.atlasName, "^delves%-"));
+                or (info.atlasName and (string.find(info.atlasName, "^delves%-")
+                                        or info.atlasName == "racing"));
         end);
 
     return true;

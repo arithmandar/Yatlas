@@ -1,6 +1,28 @@
 # Yatlas ChangeLog
 
 
+### v1.0.0 (in development)
+
+- Multi-client support with one download and one TOC (## Interface: 11509, 20506, 50504, 120105):
+  Retail 12.1.5, Mists of Pandaria Classic 5.5.4, Anniversary 2.5.6 and Classic Era 1.15.9
+- Client detection in Core/Constants.lua (YATLAS_CLIENT, from WOW_PROJECT_ID, the same approach as Atlas)
+- Map data split per client: Data/ClassicEra, Data/TBC, Data/Mists, Data/Mainline. Data/Data.xml loads
+  them all, and each file returns at once unless it matches the running client
+- Shared data and helpers moved to Data/Common.lua; the localization of names moved to Data/Localize.lua
+- New maps for Retail: Draenor, Broken Isles, Argus, Zandalar, Kul Tiras, Nazjatar, The Shadowlands,
+  Zereth Mortis, Dragon Isles, The Forbidden Reach, Zaralek Cavern, Emerald Dream, Khaz Algar
+  (surface and underground), Undermine, Siren Isle, K'aresh, Harandar, Voidstorm, and Quel'Thalas
+  on the Eastern Kingdoms map
+- Retail instance entrances come from the client JournalInstanceEntrance table; Classic Era and
+  Anniversary entrances from the client AreaTrigger table and AzerothCore server data
+- The map menu now lists the maps in expansion order (it used to be random)
+- Retail API: MouseIsOver() no longer exists, Region:IsMouseOver() is used instead; secret values from
+  UnitClass / UnitIsUnit are checked with issecretvalue before use
+- On an unsupported client Yatlas prints a message instead of raising Lua errors
+- Mists of Pandaria Classic data is unchanged (identical to v0.9.6)
+- One generator for all clients: tools/yatlas_data.py with tools/flavors.py
+  (replaces gen.py, assemble.py, towns.py, wdt.py); Docs/DataSources-5.5.4.md is now Docs/DataSources.md
+
 ### v0.9.6 (Oct. 26, 2026)
 
 - Reorganized the addon folders: Core/, Data/, UI/, Modules/ (was sets/), Images/ (was images/)

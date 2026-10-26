@@ -9,5 +9,5 @@ enable-nolib-creation: no
 ignore:
     - tools
     - Docs/CurseForge-Description.md
-    - Docs/DataSources-5.5.4.md
+    - Docs/DataSources.md
 

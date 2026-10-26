@@ -4,18 +4,28 @@ Yet another atlas: a World of Warcraft addon that shows the whole world at minim
 
 Yatlas builds its maps from the game's minimap terrain tiles, not from the illustrated world map. The result is a seamless top-down view of each continent that you can zoom, with the same terrain, roads and coastlines you see on your minimap.
 
-## Supported client
+## Supported clients
 
 | Client | Status |
 |---|---|
+| **Retail (Midnight, 12.1.5)** | Supported from v1.0.0 |
 | **Mists of Pandaria Classic (5.5.4)** | Supported from v0.9.4 |
-| Retail, Classic Era, other Classic versions | Not supported |
+| **Anniversary / Burning Crusade (2.5.6)** | Supported from v1.0.0 |
+| **Classic Era (1.15.9)** | Supported from v1.0.0 (Season of Discovery maps are not included) |
+| Other clients (Wrath, Cataclysm Classic) | Not supported |
+
+One download works in all supported clients: Yatlas detects the game version and loads only the map data for that client.
 
 Releases are published on [CurseForge](https://www.curseforge.com/wow/addons/yatlas). Releases older than v0.9.4 (up to 0.9.1 for WoW 5.2) do not work with current clients.
 
 ## Maps
 
-Eastern Kingdoms, Kalimdor, Outland, Northrend, Pandaria, Deepholm, Tol Barad, Isle of Thunder and Darkmoon Island.
+| Client | Maps |
+|---|---|
+| Classic Era | Eastern Kingdoms, Kalimdor |
+| Anniversary (TBC) | Eastern Kingdoms, Kalimdor, Outland |
+| Mists of Pandaria Classic | Eastern Kingdoms, Kalimdor, Outland, Northrend, Pandaria, Deepholm, Tol Barad, Isle of Thunder, Darkmoon Island |
+| Retail | Eastern Kingdoms (with Quel'Thalas), Kalimdor, Outland, Northrend, Deepholm, Tol Barad, Pandaria, Isle of Thunder, Draenor, Broken Isles, Argus, Zandalar, Kul Tiras, Nazjatar, The Shadowlands, Zereth Mortis, Dragon Isles, The Forbidden Reach, Zaralek Cavern, Emerald Dream, Khaz Algar (surface and underground), Undermine, Siren Isle, K'aresh, Harandar, Voidstorm, Darkmoon Island |
 
 ## Usage
 
@@ -56,7 +66,7 @@ You can turn each type of point on or off from the options menu.
 ## Installation
 
 1. Download the latest release from [CurseForge](https://www.curseforge.com/wow/addons/yatlas) or from [GitHub Releases](https://github.com/arithmandar/Yatlas/releases).
-2. Extract it so that the folder path is `World of Warcraft\_classic_\Interface\AddOns\Yatlas\`.
+2. Extract it into the AddOns folder of your client, for example `World of Warcraft\_retail_\Interface\AddOns\Yatlas\`, `_classic_` (Mists), `_anniversary_` or `_classic_era_`.
 3. Restart the game or reload the UI, then enable Yatlas in the AddOns list.
 
 ## Repository layout
@@ -65,10 +75,10 @@ You can turn each type of point on or off from the options menu.
 |---|---|
 | `Yatlas.toc` | Addon metadata and load order |
 | `Bindings.xml` | Key bindings (must stay in the addon root folder) |
-| `Core/` | `Compat.lua` (wrappers for the modern Classic API), `Constants.lua` (addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (map drawing and frame logic), `Points.lua` (point framework) |
+| `Core/` | `Compat.lua` (wrappers for the modern API), `Constants.lua` (client detection `YATLAS_CLIENT`, addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (map drawing and frame logic), `Points.lua` (point framework) |
 | `UI/` | Frames and templates: `Yatlas.xml` (normal and large frames), `Templates.xml`, `OptionsFrame.xml`, `Button.xml`/`Button.lua` (minimap button) |
 | `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, players, ...) |
-| `Data/` | Generated map data `mapdb.lua` and `mapdb2.lua`: minimap tiles, map areas, instances, towns, flight paths |
+| `Data/` | `Data.xml` loads `Common.lua` (shared data), one generated `mapdb.lua` + `mapdb2.lua` per client in `ClassicEra/`, `TBC/`, `Mists/`, `Mainline/` (minimap tiles, map areas, instances, towns, flight paths; each file returns at once on other clients) and `Localize.lua` |
 | `Locale/` | UI strings: enUS (default), deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW |
 | `Images/` | Addon textures and icons (BLP) |
 | `tools/` | Python scripts that regenerate the map data (not included in releases) |
@@ -76,17 +86,4 @@ You can turn each type of point on or off from the options menu.
 
 ## Map data
 
-The map data is generated from the client DB2 tables of build 5.5.4.70579, which can be browsed on [wago.tools](https://wago.tools/db2?build=5.5.4.70579). The tile lists come from the client WDT files. [`Docs/DataSources-5.5.4.md`](Docs/DataSources-5.5.4.md) describes where each table comes from and the API changes. [`tools/README.md`](tools/README.md) explains how to regenerate `Data/mapdb.lua` and `Data/mapdb2.lua`.
-
-## Releases
-
-Pushing a version tag (`v*`) starts the GitHub Actions workflow in `.github/workflows/release.yml`. The workflow uses the [BigWigs packager](https://github.com/BigWigsMods/packager) to build the release and upload it to CurseForge. The release notes come from [`Docs/ChangeLog.md`](Docs/ChangeLog.md).
-
-## Feedback
-
-Please report bugs in the [GitHub issue tracker](https://github.com/arithmandar/Yatlas/issues). Include your client version and the full Lua error text (for example from BugSack).
-
-## Credits
-
-- Original author: Boo Diddly
-- Maintained by arithmandar
+The map data is generated from the client DB2 tables and WDT files of each supported build, which can be browsed on wago.tools: [1.15.9.70003](https://wago.tools/db2?build=1.15.9.70003), [2.5.6.70006](https://wago.tools/db2?build=2.5.6.70006), [5.5.4.70579](https://wago.tools/db2?build=5.5.4.70579) and [12.1.5.70575](https://wago.tools/db2?build=12.1.5.70575). [`Docs/DataSources.md`](Docs/DataSources.md) describes where each table comes from and the API changes. [`tools/README.md`](tools/README.md) explains how to regenerate the files in `Data/`.

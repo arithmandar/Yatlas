@@ -1,14 +1,4 @@
-﻿local _;
-
--- metadata magic
-YATLAS_TITLE = Yatlas_GetAddOnMetadata("Yatlas", "Title") or "Y";
-YATLAS_VERSION = Yatlas_GetAddOnMetadata("Yatlas","Version") or "???";
-if(string.find(YATLAS_VERSION, "@", 1, true)) then YATLAS_VERSION = "dev"; end -- unpackaged checkout
-_,_,YATLAS_RELEASE_DATE = string.find(Yatlas_GetAddOnMetadata("Yatlas","X-LastChangedDate") or "", "[(](.+)[)]");
-
-YATLAS_WEBSITE = ""
-YATLAS_AUTHOR = "Boo Diddly";
-YATLAS_AUTHOR_EMAIL = "";
+﻿-- Addon metadata (YATLAS_TITLE, YATLAS_VERSION, ...) lives in Core\Constants.lua.
 
 -- localize from this point on as needed
 YATLAS_HELP_TEXT = {
@@ -50,13 +40,23 @@ YATLAS_POINTS_CTMAPMOD = "CTMapMod";
 YATLAS_UNKNOWN_ZONE = "Unknown";
 
 YATLAS_BIGDRAGMESSAGE = "Click on map and drag to move view."
-YATLAS_SWITCH_TO_BIG = "Switch to fullscreen view";
+YATLAS_SWITCH_TO_BIG = "Switch to large view";
 YATLAS_SWITCH_TO_NORMAL = "Switch to normal view";
+YATLAS_TOOLTIP_LOCKED_TITLE = "Frame locked";
+YATLAS_TOOLTIP_LOCKED = "Click to unlock the frame so you can drag it.";
+YATLAS_TOOLTIP_UNLOCKED_TITLE = "Frame unlocked";
+YATLAS_TOOLTIP_UNLOCKED = "Drag the frame to move it. Click to lock it.";
+YATLAS_TOOLTIP_SHOWPOINTS = "Choose which points are shown on the map.";
+YATLAS_TOOLTIP_ZOOM_TITLE = "Zoom";
+YATLAS_TOOLTIP_ZOOM = "Show the zoom controls. You can also zoom with the mouse wheel.";
+YATLAS_TOOLTIP_PLAYERJUMP = "Click to centre the map on your character.\nShift-click to keep following you as you move.";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "Following your character. Click to stop.";
+YATLAS_TOOLTIP_OPTIONS = "Transparency, icon size, points to show and the minimap button.";
 
 YATLAS_ZOOMIN =     "+";
 YATLAS_ZOOMOUT =     "-";
 
 BINDING_NAME_YATLAS_TOGGLE = "Toggle Yatlas Frame";
-BINDING_NAME_YATLAS_BIG_TOGGLE = "Toggle Fullscreen Yatlas Frame";
+BINDING_NAME_YATLAS_BIG_TOGGLE = "Toggle Large Yatlas Frame";
 BINDING_HEADER_YATLAS = YATLAS_TITLE;
 

@@ -30,7 +30,7 @@ UiA = rd('UiMapAssignment')
 WORLD = [  # (MapID, continent/zone UiMapID, English display name)
     (0, 13, 'Eastern Kingdoms'),
     (1, 12, 'Kalimdor'),
-    (530, 101, 'Outland'),
+    (530, 1467, 'Outland'),  # 5.5.4: 101 does not exist; 987 is an orphan copy outside the map tree
     (571, 113, 'Northrend'),
     (870, 424, 'Pandaria'),
     (646, 207, 'Deepholm'),
@@ -112,7 +112,11 @@ for uid in sorted(UiMap):
     if typ == 6 and int(a['MapID']) not in WORLD_IDS: continue                    # OrderIndex 0 = the UiMap's own map
     if int(a['WMOGroupID']) or int(a['WMODoodadPlacementID']): continue
     mid = int(a['MapID'])
-    if typ == 2: aid = 0
+    if typ == 2:
+        aid = 0
+        # the continent UiMap must be the one in the world map tree (the WORLD entry)
+        want = next((c for m, c, _ in WORLD if m == mid), None)
+        if want is not None and want != uid and want in UiMap and int(UiMap[want]['Type']) == 2: continue
     else:
         aid = int(a['AreaID'])
         if not aid: continue
@@ -241,7 +245,7 @@ for r in rd('TaxiNodes'):
 with open(f'{OUT}/taxinodes.lua', 'w') as f:
     f.write(f'-- Flight paths, from TaxiNodes.db2 ({BUILD})\n')
     f.write('-- {name, worldY, worldX, taxiNodeID, faction (0 neutral, 1 horde, 2 alliance), conditional}\n')
-    f.write('-- name is localized at runtime from C_TaxiMap.GetTaxiNodesForMap (see sets/taxinodes.lua)\n')
+    f.write('-- name is localized at runtime from C_TaxiMap.GetTaxiNodesForMap (see Modules/taxinodes.lua)\n')
     f.write('Yatlas_taxinodes = {\n')
     for mid in WORLD_IDS:
         if not taxi[mid]: continue

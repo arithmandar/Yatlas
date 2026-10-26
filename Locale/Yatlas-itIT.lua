@@ -35,8 +35,18 @@ YATLAS_POINTS_CTMAPMOD = "CTMapMod";
 YATLAS_UNKNOWN_ZONE = "Sconosciuto";
 YATLAS_BIGDRAGMESSAGE = "Fai clic sulla mappa e trascinala per spostare la visuale.";
 BINDING_NAME_YATLAS_TOGGLE = "Mostra/nascondi Yatlas";
-BINDING_NAME_YATLAS_BIG_TOGGLE = "Mostra/nascondi Yatlas a schermo intero";
+BINDING_NAME_YATLAS_BIG_TOGGLE = "Mostra/nascondi la finestra grande di Yatlas";
 
-YATLAS_SWITCH_TO_BIG = "Passa alla vista a schermo intero";
+YATLAS_SWITCH_TO_BIG = "Passa alla vista grande";
 YATLAS_SWITCH_TO_NORMAL = "Passa alla vista normale";
+YATLAS_TOOLTIP_LOCKED_TITLE = "Finestra bloccata";
+YATLAS_TOOLTIP_LOCKED = "Fai clic per sbloccarla e poterla spostare.";
+YATLAS_TOOLTIP_UNLOCKED_TITLE = "Finestra sbloccata";
+YATLAS_TOOLTIP_UNLOCKED = "Puoi trascinare la finestra. Fai clic per bloccarla.";
+YATLAS_TOOLTIP_SHOWPOINTS = "Scegli quali punti mostrare sulla mappa.";
+YATLAS_TOOLTIP_ZOOM_TITLE = "Zoom";
+YATLAS_TOOLTIP_ZOOM = "Mostra i controlli dello zoom. Puoi anche usare la rotellina del mouse.";
+YATLAS_TOOLTIP_PLAYERJUMP = "Fai clic per centrare la mappa sul tuo personaggio.\nMaiusc-clic per continuare a seguirti mentre ti muovi.";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "Sta seguendo il tuo personaggio. Fai clic per interrompere.";
+YATLAS_TOOLTIP_OPTIONS = "Trasparenza, dimensione delle icone, punti mostrati e pulsante della minimappa.";
 end

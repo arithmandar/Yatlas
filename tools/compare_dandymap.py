@@ -4,12 +4,12 @@ DandyMap (WoW Forever, Interface 16001) stores minimap tile FileDataIDs from
 the client WDT MAID records as  ["7/<x>/<y>"]=fileDataID  (zoom level 7 = ADT
 grid), which is the same source used by tools/wdt.py.
 
-usage: python3 compare_dandymap.py <DandyMap>/data/ClientTerrainData.lua [../mapdb.lua]
+usage: python3 compare_dandymap.py <DandyMap>/data/ClientTerrainData.lua [../Data/mapdb.lua]
 """
 import re, sys
 
 dandy_path = sys.argv[1]
-yatlas_path = sys.argv[2] if len(sys.argv) > 2 else '../mapdb.lua'
+yatlas_path = sys.argv[2] if len(sys.argv) > 2 else '../Data/mapdb.lua'
 
 dm, cur = {}, None
 for line in open(dandy_path, encoding='utf-8'):

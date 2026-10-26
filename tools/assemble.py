@@ -10,10 +10,10 @@ G=lambda n: open(f'/tmp/gen/{n}.lua').read()
 # ---------- graveyards: DISABLED for 5.5.4
 # WorldSafeLocs is server-side only in the modern client (not in any 5.5.4 DB2, no wago.tools
 # export), so there is no client data source for graveyard positions. The feature is switched off
-# (sets/graveyards.lua is no longer loaded) until a reliable source is found.
+# (Modules/graveyards.lua is no longer loaded) until a reliable source is found.
 gy = ('-- Graveyards: disabled for 5.5.4.70579 (MoP Classic).\n'
       '-- WorldSafeLocs is server-side only in the modern client; no client data source is available.\n'
-      '-- Kept as an empty table so sets/graveyards.lua can be re-enabled later.\n'
+      '-- Kept as an empty table so Modules/graveyards.lua can be re-enabled later.\n'
       'Yatlas_graveyards = {};\n')
 
 loc_area='''
@@ -29,7 +29,7 @@ mapdb = ('-- Yatlas map database\n'
  '-- Oct. 25, 2026: regenerated for WoW MoP Classic 5.5.4.70579 from wago.tools DB2 exports and WDT files.\n'
  '-- See Docs/DataSources-5.5.4.md for the source of every table.\n\n'
  + G('worldmapids2') + '\n' + G('mapdb1') + '\n' + G('areadb') + loc_area + '\n' + G('mapareas') + '\n' + gy)
-open(f'{ROOT}/mapdb.lua','w',encoding='utf-8').write(mapdb)
+open(f'{ROOT}/Data/mapdb.lua','w',encoding='utf-8').write(mapdb)
 
 # ---------- mapdb2.lua
 def cut(s, start, end_marker):
@@ -46,7 +46,7 @@ end
 YA_MAPS = {
 \t[YA_UiMapName(13, "Eastern Kingdoms")] = {"Azeroth"},
 \t[YA_UiMapName(12, "Kalimdor")] = {"Kalimdor"},
-\t[YA_UiMapName(101, "Outland")] = {"Expansion01"},
+\t[YA_UiMapName(1467, "Outland")] = {"Expansion01"},
 \t[YA_UiMapName(113, "Northrend")] = {"Northrend"},
 \t[YA_UiMapName(424, "Pandaria")] = {"HawaiiMainLand"},
 \t[YA_UiMapName(207, "Deepholm")] = {"Deephome"},
@@ -61,7 +61,7 @@ YA_MAPS = {
 Yatlas_WorldMapIds = {
 \t["Azeroth"] = 13,
 \t["Kalimdor"] = 12,
-\t["Expansion01"] = 101,
+\t["Expansion01"] = 1467,
 \t["Northrend"] = 113,
 \t["HawaiiMainLand"] = 424,
 \t["Deephome"] = 207,
@@ -94,5 +94,5 @@ rest = rest[:rest.index("-- 'blacklist' some of our 'graveyards'")].rstrip() + '
 import towns
 rest = towns.process(rest)
 mapdb2 = head + G('zoneids') + '\n' + mid1 + G('instances') + loc_inst + G('taxinodes') + rest
-open(f'{ROOT}/mapdb2.lua','w',encoding='utf-8').write(mapdb2)
+open(f'{ROOT}/Data/mapdb2.lua','w',encoding='utf-8').write(mapdb2)
 print('ok', len(mapdb), len(mapdb2))

@@ -1,0 +1,800 @@
+-- Yatlas map mapping
+-- Display_Name - Actual Map Folder Name (Map.db2 Directory)
+-- Oct. 25, 2026: updated for MoP Classic 5.5.4.70579. Display names come from the client
+-- (C_Map.GetMapInfo) so they are localized without LibBabble-SubZone-3.0.
+local function YA_UiMapName(uiMapID, fallback)
+	local info = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(uiMapID);
+	return (info and info.name and info.name ~= "" and info.name) or fallback;
+end
+
+YA_MAPS = {
+	[YA_UiMapName(13, "Eastern Kingdoms")] = {"Azeroth"},
+	[YA_UiMapName(12, "Kalimdor")] = {"Kalimdor"},
+	[YA_UiMapName(1467, "Outland")] = {"Expansion01"},
+	[YA_UiMapName(113, "Northrend")] = {"Northrend"},
+	[YA_UiMapName(424, "Pandaria")] = {"HawaiiMainLand"},
+	[YA_UiMapName(207, "Deepholm")] = {"Deephome"},
+	[YA_UiMapName(244, "Tol Barad")] = {"TolBarad"},
+	[YA_UiMapName(504, "Isle of Thunder")] = {"MoguIslandDailyArea"},
+	[YA_UiMapName(407, "Darkmoon Island")] = {"DarkmoonFaire"},
+};
+
+-- [Directory] = uiMapID of the map shown for it (continent, or the zone for single-zone maps).
+-- Previously these were the SetMapZoom() continent indexes (1..6); SetMapZoom() no longer exists,
+-- the C_Map API works with uiMapIDs.
+Yatlas_WorldMapIds = {
+	["Azeroth"] = 13,
+	["Kalimdor"] = 12,
+	["Expansion01"] = 1467,
+	["Northrend"] = 113,
+	["HawaiiMainLand"] = 424,
+	["Deephome"] = 207,
+	["TolBarad"] = 244,
+	["MoguIslandDailyArea"] = 504,
+	["DarkmoonFaire"] = 407,
+};
+
+
+-- Zones per tile map, from UiMap.db2 + UiMapAssignment.db2 (5.5.4.70579); [1] = 0 is the continent itself
+-- (GetMapZones() no longer exists; order is alphabetical by enUS name)
+Yatlas_ZoneIds = {
+	-- Map ID = 0
+	["Azeroth"] = {
+		0, 5145, 45, 3, 4, 46, 6176, 41, 6454, 1, 10, 139, 12, 267, 1537, 4815, 38, 6457, 33, 6170, 44, 4706, 5351, 51, 5144, 130, 1519, 5339, 8, 5287, 47, 85, 4922, 1497, 5146, 28, 40, 11,
+	},
+	-- Map ID = 1
+	["Kalimdor"] = {
+		0, 5695, 331, 16, 6452, 148, 1657, 405, 14, 15, 6453, 361, 357, 493, 616, 215, 17, 1637, 6450, 1377, 4709, 406, 440, 141, 400, 1638, 5034, 490, 6451, 618,
+	},
+	-- Map ID = 530
+	["Expansion01"] = {
+		0, 6456, 3524, 3522, 3525, 3430, 3433, 3483, 4080, 3518, 3523, 3520, 3703, 3487, 6455, 3519, 3557, 3521,
+	},
+	-- Map ID = 571
+	["Northrend"] = {
+		0, 3537, 2817, 65, 394, 495, 4742, 210, 3711, 67, 4197, 66,
+	},
+	-- Map ID = 870
+	["HawaiiMainLand"] = {
+		0, 6138, 6661, 6134, 5841, 5785, 6006, 6757, 5842, 5840, 5805,
+	},
+	-- Map ID = 646
+	["Deephome"] = {
+		5042,
+	},
+	-- Map ID = 732
+	["TolBarad"] = {
+		5095, 5389,
+	},
+	-- Map ID = 1064
+	["MoguIslandDailyArea"] = {
+		6507,
+	},
+	-- Map ID = 974
+	["DarkmoonFaire"] = {
+		5861,
+	},
+};
+
+Yatlas_PaperZoneNames = {};	 -- we don't fill this in by hand 
+Yatlas_Landmarks = {};		  -- this is filled in automatically too
+
+-- Adjustment for dropdown menu
+Yatlas_mapareas_adjust = {
+	[148] = {-1,0},		 -- Darkshore
+	[361] = {-0.95,0},	  -- Felwood
+	[357] = {1.2, .1},	  -- Feralas
+	[618] = {0.7, -0.5},	-- Winterspring
+	
+	[36] = {-0.3, 0},	   -- Alterac
+	[12] = {0, 0.4},		-- Elwynn Forest
+	[267] = {0.3, -0.3},	-- Hillsbrad
+	[33] = {-1.4, -1},	  -- STV
+	[8] = {0.4, 0},		 -- Swamp of Sorrows
+	[40] = {-0.1, 0},	   -- Westfall
+	[11] = {-0.7, -0.9}	 -- Wetlands
+};
+
+-- Instances (entrances)
+-- Oct. 25, 2026: updated to 5.5.4.70579 (MoP Classic)
+-- Primary source: the client AreaTrigger.db2 row that teleports into the instance
+--   (trigger -> instance mapping from MoP server data: MistCore 5.0.5 / SkyFire 5.4.8 areatrigger_teleport)
+-- Fallback: Map.db2 Corpse_0/Corpse_1 (entrance) of build 7.3.5, the last client that shipped them
+-- {name, worldY, worldX, instanceMapID, instanceType}; name is localized at load time via GetRealZoneText(mapID)
+-- instanceType from Map.db2 InstanceType: 1 = dungeon (party), 2 = raid
+Yatlas_instances = {
+	["Azeroth"] = {
+		{"Shadowfang Keep", 1576.699951, -227.998001, 33, 1}, -- AreaTrigger 145
+		{"Stormwind Stockade", 848.557007, -8761.849609, 34, 1}, -- AreaTrigger 101
+		{"Deadmines", 1684.23999, -11207.299805, 36, 1}, -- AreaTrigger 78
+		{"Uldaman", -2955, -6055.5, 70, 1}, -- AreaTrigger 286
+		{"Uldaman", -3762.189941, -6606.47998, 70, 1}, -- AreaTrigger 902
+		{"Gnomeregan", 916.549011, -5154.97998, 90, 1}, -- AreaTrigger 324
+		{"Gnomeregan", 827.914978, -4914.930176, 90, 1}, -- AreaTrigger 523
+		{"Sunken Temple", -3990.02002, -10292.299805, 109, 1}, -- AreaTrigger 446
+		{"Blackrock Spire", -1239.060059, -7519.680176, 229, 1}, -- AreaTrigger 1468
+		{"Blackrock Depths", -937.666992, -7176.629883, 230, 1}, -- AreaTrigger 1466
+		{"Stratholme", -4060.600098, 3237.459961, 329, 1}, -- AreaTrigger 2214
+		{"Stratholme", -3389.199951, 3392.459961, 329, 1}, -- AreaTrigger 2216
+		{"Molten Core", -1035.869995, -7510.870117, 409, 2}, -- AreaTrigger 3528
+		{"Blackwing Lair", -1218.666504, -7663.412598, 469, 2}, -- Map.db2 7.3.5 Corpse
+		{"Karazhan", -1998.119995, -11101.900391, 532, 2}, -- AreaTrigger 4131
+		{"Throne of the Tides", 5401.649414, -5585.871582, 643, 1}, -- Map.db2 7.3.5 Corpse
+		{"Blackrock Caverns", -1330.684082, -7570.244629, 645, 1}, -- Map.db2 7.3.5 Corpse
+		{"Blackwing Descent", -1188.831665, -7541.767578, 669, 2}, -- Map.db2 7.3.5 Corpse
+		{"Grim Batol", -3446.350098, -4047.73999, 670, 1}, -- Map.db2 7.3.5 Corpse
+		{"The Bastion of Twilight", -4221.209961, -4903.010254, 671, 2}, -- Map.db2 7.3.5 Corpse
+		{"Zul'Gurub", -1219.838501, -11916.228516, 859, 1}, -- Map.db2 7.3.5 Corpse
+		{"Scarlet Halls", -820, 2869, 1001, 1}, -- Map.db2 7.3.5 Corpse
+		{"Scarlet Monastery", 2924.379883, -798.429016, 1004, 1}, -- approx.: old Scarlet Monastery courtyard (AreaTrigger 45)
+		{"Scholomance", -2552.560059, 1274.780029, 1007, 1}, -- Map.db2 7.3.5 Corpse
+	},
+	["Kalimdor"] = {
+		{"Wailing Caverns", -2212.780029, -753.596008, 43, 1}, -- AreaTrigger 228
+		{"Razorfen Kraul", -1655.01001, -4455.109863, 47, 1}, -- AreaTrigger 244
+		{"Blackfathom Deeps", 756.96698, 4253.109863, 48, 1}, -- AreaTrigger 257
+		{"Razorfen Downs", -2536.929932, -4664.600098, 129, 1}, -- AreaTrigger 442
+		{"Zul'Farrak", -2891.949951, -6790.879883, 209, 1}, -- AreaTrigger 924
+		{"Onyxia's Lair", -3752.110107, -4768.609863, 249, 2}, -- AreaTrigger 2848
+		{"Opening of the Dark Portal", -4156.919922, -8777.389648, 269, 1}, -- AreaTrigger 4320
+		{"Maraudon", 2617.570068, -1484.069946, 349, 1}, -- AreaTrigger 3133
+		{"Maraudon", 2861.949951, -1181.97998, 349, 1}, -- AreaTrigger 3134
+		{"Ragefire Chasm", -4427.259766, 1818.400024, 389, 1}, -- AreaTrigger 2230
+		{"Dire Maul", 934.929016, -3759.689941, 429, 1}, -- AreaTrigger 3183
+		{"Dire Maul", 793.726013, -3981.199951, 429, 1}, -- AreaTrigger 3184
+		{"Dire Maul", 123.966003, -4028.209961, 429, 1}, -- AreaTrigger 3185
+		{"Dire Maul", 1249.920044, -3822.629883, 429, 1}, -- AreaTrigger 3186
+		{"Dire Maul", 1089.930054, -3519.949951, 429, 1}, -- AreaTrigger 3189
+		{"Ruins of Ahn'Qiraj", 1508.650024, -8424.94043, 509, 2}, -- AreaTrigger 4008
+		{"Ahn'Qiraj Temple", 2005.329956, -8230.400391, 531, 2}, -- AreaTrigger 4010
+		{"The Battle for Mount Hyjal", -4155.649902, -8158.899902, 534, 2}, -- AreaTrigger 4319
+		{"The Escape From Durnholde", -4047.439941, -8326.269531, 560, 1}, -- AreaTrigger 4321
+		{"The Culling of Stratholme", -4469.580078, -8758.780273, 595, 1}, -- AreaTrigger 5150
+		{"Halls of Origination", -1837.479126, -10225.995117, 644, 1}, -- Map.db2 7.3.5 Corpse
+		{"The Vortex Pinnacle", -2317.934082, -11522.493164, 657, 1}, -- Map.db2 7.3.5 Corpse
+		{"Firelands", -2943.31958, 3987.199707, 720, 2}, -- Map.db2 7.3.5 Corpse
+		{"Throne of the Four Winds", 72.083336, -11360.602539, 754, 2}, -- Map.db2 7.3.5 Corpse
+		{"Lost City of the Tol'vir", -1308.623291, -10686.149414, 755, 1}, -- Map.db2 7.3.5 Corpse
+		{"End Time", -4454.092285, -8288.604492, 938, 1}, -- Map.db2 7.3.5 Corpse
+		{"Well of Eternity", -3994.935791, -8595.836914, 939, 1}, -- Map.db2 7.3.5 Corpse
+		{"Hour of Twilight", -4590.4375, -8291.131836, 940, 1}, -- Map.db2 7.3.5 Corpse
+		{"Dragon Soul", -4512.6875, -8263.276367, 967, 2}, -- Map.db2 7.3.5 Corpse
+	},
+	["Expansion01"] = {
+		{"Hellfire Citadel: The Shattered Halls", 3091.590088, -310.210999, 540, 1}, -- AreaTrigger 4151
+		{"Hellfire Citadel: The Blood Furnace", 3170.51001, -307.251007, 542, 1}, -- AreaTrigger 4152
+		{"Hellfire Citadel: Ramparts", 3087.620117, -365.610992, 543, 1}, -- AreaTrigger 4150
+		{"Magtheridon's Lair", 3079.120117, -309.678009, 544, 2}, -- AreaTrigger 4153
+		{"Coilfang: The Steamvault", 6951.299805, 818.487, 545, 1}, -- AreaTrigger 4364
+		{"Coilfang: The Underbog", 6741.939941, 782.879028, 546, 1}, -- AreaTrigger 4363
+		{"Coilfang: The Slave Pens", 7015.27002, 745.838989, 547, 1}, -- AreaTrigger 4365
+		{"Coilfang: Serpentshrine Cavern", 6865.240234, 843.88501, 548, 2}, -- AreaTrigger 4416
+		{"Tempest Keep", 1364.530029, 3087.179932, 550, 2}, -- AreaTrigger 4470
+		{"Tempest Keep: The Arcatraz", 1325.920044, 3314.780029, 552, 1}, -- AreaTrigger 4468
+		{"Tempest Keep: The Botanica", 1479.01001, 3418.919922, 553, 1}, -- AreaTrigger 4467
+		{"Tempest Keep: The Mechanar", 1545.390015, 2861.370117, 554, 1}, -- AreaTrigger 4469
+		{"Auchindoun: Shadow Labyrinth", 4943.109863, -3656.050049, 555, 1}, -- AreaTrigger 4407
+		{"Auchindoun: Sethekk Halls", 4650.310059, -3362.350098, 556, 1}, -- AreaTrigger 4406
+		{"Auchindoun: Mana-Tombs", 4942.799805, -3068.129883, 557, 1}, -- AreaTrigger 4405
+		{"Auchindoun: Auchenai Crypts", 5236.870117, -3361.550049, 558, 1}, -- AreaTrigger 4404
+		{"Black Temple", 318.533997, -3671.959961, 564, 2}, -- AreaTrigger 4598
+		{"Gruul's Lair", 5083.410156, 3556.790039, 565, 2}, -- AreaTrigger 4535
+		{"Zul'Aman", -8008.72998, 6851.879883, 568, 1}, -- AreaTrigger 4738
+		{"The Sunwell", -6775.149902, 12551, 580, 2}, -- AreaTrigger 4889
+		{"Magister's Terrace", -7348.740234, 12878.799805, 585, 1}, -- AreaTrigger 4887
+	},
+	["Northrend"] = {
+		{"Naxxramas", -1280.189941, 3681.290039, 533, 2}, -- AreaTrigger 5191
+		{"Utgarde Keep", -4854.47998, 1257.109985, 574, 1}, -- AreaTrigger 4745
+		{"Utgarde Pinnacle", -4861.700195, 1226.22998, 575, 1}, -- AreaTrigger 4747
+		{"The Nexus", 6985.689941, 3902.790039, 576, 1}, -- AreaTrigger 4983
+		{"The Oculus", 6984.160156, 3869.840088, 578, 1}, -- AreaTrigger 5246
+		{"Halls of Stone", -963.434021, 8922.030273, 599, 1}, -- AreaTrigger 5010
+		{"Drak'Tharon Keep", -2017.160034, 4775.319824, 600, 1}, -- AreaTrigger 4998
+		{"Azjol-Nerub", 2174.629883, 3668.290039, 601, 1}, -- AreaTrigger 5117
+		{"Halls of Lightning", -1390.01001, 9188.820312, 602, 1}, -- AreaTrigger 5093
+		{"Ulduar", -1113.439941, 9364.360352, 603, 2}, -- AreaTrigger 5379
+		{"Gundrak", -4666.02002, 6700.47998, 604, 1}, -- AreaTrigger 5205
+		{"Gundrak", -4396.330078, 6976.540039, 604, 1}, -- AreaTrigger 5206
+		{"Violet Hold", 480.919006, 5675.430176, 608, 1}, -- AreaTrigger 5209
+		{"The Obsidian Sanctum", 260.950989, 3442.629883, 615, 2}, -- AreaTrigger 5243
+		{"The Eye of Eternity", 6984.200195, 3870.290039, 616, 2}, -- AreaTrigger 5290
+		{"Ahn'kahet: The Old Kingdom", 2027.199951, 3639.399902, 619, 1}, -- AreaTrigger 5215
+		{"Vault of Archavon", 2839.810059, 5494.879883, 624, 2}, -- AreaTrigger 5258
+		{"Icecrown Citadel", 2063.27002, 5772.109863, 631, 2}, -- AreaTrigger 5670
+		{"The Forge of Souls", 1995.280029, 5678.560059, 632, 1}, -- AreaTrigger 5635
+		{"Trial of the Crusader", 744.413025, 8515.209961, 649, 2}, -- AreaTrigger 5503
+		{"Trial of the Champion", 791.784973, 8562.599609, 650, 1}, -- AreaTrigger 5505
+		{"Pit of Saron", 2003.160034, 5584.109863, 658, 1}, -- AreaTrigger 5637
+		{"Halls of Reflection", 1957.319946, 5627.410156, 668, 1}, -- AreaTrigger 5636
+		{"The Ruby Sanctum", 186.169998, 3608.189941, 724, 2}, -- AreaTrigger 5869
+	},
+	["HawaiiMainLand"] = {
+		{"Shado-Pan Monastery", 2545.899902, 3646, 959, 1}, -- AreaTrigger 7694
+		{"Temple of the Jade Serpent", -2475.709961, 957.348999, 960, 1}, -- AreaTrigger 7854
+		{"Stormstout Brewery", 1261.498291, -720.003479, 961, 1}, -- AreaTrigger 7705
+		{"Gate of the Setting Sun", 2080.378418, 699.680542, 962, 1}, -- AreaTrigger 7726
+		{"Mogu'shan Palace", 426.84375, 1401.840332, 994, 1}, -- AreaTrigger 8134
+		{"Terrace of Endless Spring", -49.5, 959.958313, 996, 2}, -- AreaTrigger 8027
+		{"Mogu'shan Vaults", 1115.736084, 3977.240479, 1008, 2}, -- AreaTrigger 7838
+		{"Heart of Fear", 4068.059814, 165.236115, 1009, 2}, -- AreaTrigger 8314
+		{"Siege of Niuzao Temple", 5088.919922, 1443.130005, 1011, 1}, -- AreaTrigger 8315
+		{"Siege of Orgrimmar", 613.852417, 1230.899292, 1136, 2}, -- WorldSafeLocs "Garrosh Raid - Exit Target"
+	},
+	["Deephome"] = {
+		{"The Stonecore", 610.296875, 1031.907959, 725, 1}, -- Map.db2 7.3.5 Corpse
+	},
+	["TolBarad"] = {
+		{"Baradin Hold", 1050.089966, -1274, 757, 2}, -- AreaTrigger 6664
+	},
+	["MoguIslandDailyArea"] = {
+		{"Throne of Thunder", 5014.869141, 7264.408203, 1098, 2}, -- AreaTrigger 8882
+	},
+};
+
+-- Localize instance names with the client's Map table.
+if GetRealZoneText then
+	for _, list in pairs(Yatlas_instances) do
+		for _, v in ipairs(list) do
+			local name = GetRealZoneText(v[4]);
+			if name and name ~= "" then v[1] = name; end
+		end
+	end
+end
+
+-- Flight paths, from TaxiNodes.db2 (5.5.4.70579)
+-- {name, worldY, worldX, taxiNodeID, faction (0 neutral, 1 horde, 2 alliance), conditional}
+-- name is localized at runtime from C_TaxiMap.GetTaxiNodesForMap (see Modules/taxinodes.lua)
+Yatlas_taxinodes = {
+	["Azeroth"] = {
+		{"Stormwind, Elwynn", 489.656006, -8841.05957, 2, 2, 0},
+		{"Sentinel Hill, Westfall", 1034.390015, -10551.900391, 4, 2, 0},
+		{"Lakeshire, Redridge", -2231.399902, -9429.099609, 5, 2, 0},
+		{"Ironforge, Dun Morogh", -1155.439941, -4821.779785, 6, 2, 0},
+		{"Menethil Harbor, Wetlands", -777.695984, -3787.810059, 7, 2, 0},
+		{"Thelsamar, Loch Modan", -2930.01001, -5421.910156, 8, 2, 0},
+		{"The Sepulcher, Silverpine Forest", 1536.589966, 478.859985, 10, 1, 0},
+		{"Undercity, Tirisfal", 267.970001, 1568.619995, 11, 1, 0},
+		{"Darkshire, Duskwood", -1261.650024, -10515.5, 12, 2, 0},
+		{"Tarren Mill, Hillsbrad", -874.203003, -17.7066, 13, 1, 0},
+		{"Refuge Pointe, Arathi", -2515.110107, -1240.530029, 16, 2, 0},
+		{"Hammerfall, Arathi", -3496.889893, -916.289978, 17, 1, 0},
+		{"Booty Bay, Stranglethorn", 509.619995, -14444.290039, 18, 1, 0},
+		{"Booty Bay, Stranglethorn", 464.149994, -14473, 19, 2, 0},
+		{"Grom'gol, Stranglethorn", 146.289993, -12414.200195, 20, 1, 0},
+		{"New Kargath, Badlands", -2433.370117, -6676.870117, 21, 1, 0},
+		{"Aerie Peak, The Hinterlands", -2002.76001, 283.73999, 43, 2, 0},
+		{"Nethergarde Keep, Blasted Lands", -3435.73999, -11112.299805, 45, 2, 0},
+		{"Stonard, Swamp of Sorrows", -3279.25, -10457, 56, 1, 0},
+		{"Chillwind Camp, Western Plaguelands", -1430.109985, 931.320007, 66, 2, 0},
+		{"Light's Hope Chapel, Eastern Plaguelands", -5340.799805, 2271.090088, 67, 2, 1},
+		{"Light's Hope Chapel, Eastern Plaguelands", -5343.109863, 2270.199951, 68, 1, 1},
+		{"Flame Crest, Burning Steppes", -2187.540039, -7504.029785, 70, 1, 0},
+		{"Morgan's Vigil, Burning Steppes", -2738.350098, -8364.610352, 71, 2, 0},
+		{"Thorium Point, Searing Gorge", -1168.27002, -6552.589844, 74, 2, 0},
+		{"Thorium Point, Searing Gorge", -1100.050049, -6554.930176, 75, 1, 0},
+		{"Revantusk Village, The Hinterlands", -4720.5, -635.26001, 76, 1, 0},
+		{"Plaguewood Tower, Eastern Plaguelands", -3033.610107, 2965.550049, 84, 0, 0},
+		{"Northpass Tower, Eastern Plaguelands", -4354.779785, 3134.26001, 85, 0, 0},
+		{"Eastwall Tower, Eastern Plaguelands", -4769.560059, 2524.439941, 86, 0, 0},
+		{"Crown Guard Tower, Eastern Plaguelands", -3693.320068, 1876.400024, 87, 0, 0},
+		{"Rebel Camp, Stranglethorn Vale", -216.830002, -11344, 195, 2, 0},
+		{"Acherus: The Ebon Hold", -5666.910156, 2352.370117, 315, 0, 1},
+		{"Thondroril River, Eastern Plaguelands", -2694.47998, 1935.969971, 383, 0, 0},
+		{"The Bulwark, Tirisfal", -740.981018, 1726.619995, 384, 1, 0},
+		{"Brill, Tirisfal Glades", 372.063995, 2272.679932, 460, 1, 0},
+		{"Smuggler's Scar, Vashj'ir", 3481.120117, -4588.049805, 521, 0, 0},
+		{"Silver Tide Hollow, Vashj'ir", 4285.080078, -6105.609863, 522, 0, 0},
+		{"Tranquil Wash, Vashj'ir", 4308.279785, -6616.399902, 523, 2, 0},
+		{"Darkbreak Cove, Vashj'ir", 5943.819824, -6902.25, 524, 2, 0},
+		{"Legion's Rest, Vashj'ir", 4199.850098, -6805.629883, 525, 1, 0},
+		{"Tenebrous Cavern, Vashj'ir", 6075.25, -6507.990234, 526, 1, 0},
+		{"Whelgar's Retreat, Wetlands", -1989.48999, -3222.929932, 551, 2, 0},
+		{"Greenwarden's Grove, Wetlands", -2718.689941, -3306.649902, 552, 2, 0},
+		{"Dun Modr, Wetlands", -2464.280029, -2656.540039, 553, 2, 0},
+		{"Slabchisel's Survey, Wetlands", -2741.209961, -4113.600098, 554, 2, 0},
+		{"Farstrider Lodge, Loch Modan", -4253.439941, -5668.310059, 555, 2, 1},
+		{"Goldshire, Elwynn", 85.1493, -9433.990234, 582, 2, 0},
+		{"Moonbrook, Westfall", 1542.880005, -10876.900391, 583, 2, 0},
+		{"Furlbrow's Pumpkin Farm, Westfall", 1273.930054, -9838.509766, 584, 2, 0},
+		{"Eastvale Logging Camp, Elwynn", -1306.73999, -9475.709961, 589, 2, 0},
+		{"Fort Livingston, Stranglethorn", -413.709991, -12828.799805, 590, 2, 0},
+		{"Explorers' League Digsite, Stranglethorn", -85.548599, -13600.900391, 591, 2, 0},
+		{"Hardwrench Hideaway, Stranglethorn", 722.028015, -13288.299805, 592, 1, 0},
+		{"Bambala, Stranglethorn", -814.098999, -12092.200195, 593, 1, 0},
+		{"Shalewind Canyon, Redridge", -3479.370117, -9641.669922, 596, 2, 0},
+		{"Marshtide Watch, Swamp of Sorrows", -3836.540039, -10176.599609, 598, 2, 0},
+		{"Bogpaddle, Swamp of Sorrows", -3890.719971, -9737.080078, 599, 0, 0},
+		{"The Harborage, Swamp of Sorrows", -2852.47998, -10118.599609, 600, 2, 0},
+		{"Galen's Fall, Arathi", -1585.73999, -952.377014, 601, 1, 0},
+		{"Surwich, Blasted Lands", -2919.040039, -12761.900391, 602, 2, 0},
+		{"Sunveil Excursion, Blasted Lands", -3058.22998, -12357.599609, 603, 1, 0},
+		{"Dreadmaul Hold, Blasted Lands", -2790.97998, -10933.299805, 604, 1, 0},
+		{"Voldrin's Hold, Vashj'ir", 3925.850098, -7209.709961, 605, 2, 0},
+		{"Sandy Beach, Vashj'ir", 3914.419922, -5310.850098, 606, 2, 0},
+		{"Sandy Beach, Vashj'ir", 3900.27002, -5267.350098, 607, 2, 0},
+		{"Sandy Beach, Vashj'ir", 3720.070068, -5671.02002, 608, 1, 0},
+		{"Sandy Beach, Vashj'ir", 3711.810059, -5669.189941, 609, 1, 0},
+		{"Stygian Bounty, Vashj'ir", 4244.709961, -6878.52002, 610, 1, 0},
+		{"Voldrin's Hold, Vashj'ir", 3912.360107, -7198.970215, 611, 2, 0},
+		{"Stygian Bounty, Vashj'ir", 4278.060059, -6880.169922, 612, 1, 0},
+		{"Camp Everstill, Redridge", -2836.98999, -9446.639648, 615, 2, 0},
+		{"Hiri'watha Research Station, The Hinterlands", -2821.780029, -25.775999, 617, 1, 0},
+		{"Stormfeather Outpost, The Hinterlands", -4105.359863, 312.325989, 618, 2, 0},
+		{"Kharanos, Dun Morogh", -494.851013, -5660.799805, 619, 2, 0},
+		{"Gol'Bolar Quarry, Dun Morogh", -1578.640015, -5714.140137, 620, 2, 0},
+		{"Raven Hill, Duskwood", 267.042999, -10737.599609, 622, 2, 0},
+		{"Light's Shield Tower, Eastern Plaguelands", -4411.52002, 2262.100098, 630, 0, 0},
+		{"Bloodwatcher Point, Badlands", -3513.98999, -6898.25, 632, 1, 0},
+		{"Dustwind Dig, Badlands", -3401.179932, -6594.089844, 633, 2, 0},
+		{"Dragon's Mouth, Badlands", -2570.790039, -7034.529785, 634, 2, 0},
+		{"Fuselight, Badlands", -3875.129883, -6574.939941, 635, 0, 0},
+		{"Forsaken High Command, Silverpine Forest", 1018.22998, 1421.02002, 645, 1, 0},
+		{"Forsaken Forward Command, Gilneas", 1638.599976, -910.221008, 646, 1, 1},
+		{"Andorhal, Western Plaguelands", -1586.949951, 1511.800049, 649, 1, 0},
+		{"Andorhal, Western Plaguelands", -1281.939941, 1374.22998, 650, 2, 1},
+		{"The Menders' Stead, Western Plaguelands", -1755.819946, 1864.319946, 651, 0, 0},
+		{"The Forsaken Front, Silverpine Forest", 1312.319946, -114.141998, 654, 1, 0},
+		{"Crushblow, Twilight Highlands", -4848.930176, -4831.759766, 656, 1, 0},
+		{"The Gullet, Twilight Highlands", -4379.47998, -3494.629883, 657, 1, 0},
+		{"Vermillion Redoubt, Twilight Highlands", -3940.969971, -3032.76001, 658, 0, 1},
+		{"Bloodgulch, Twilight Highlands", -5288.189941, -3637.560059, 659, 1, 0},
+		{"The Krazzworks, Twilight Highlands", -6409.279785, -2780.179932, 660, 1, 0},
+		{"Dragonmaw Port, Twilight Highlands", -6329.25, -4012.449951, 661, 1, 0},
+		{"Highbank, Twilight Highlands", -6740.609863, -4863.100098, 662, 2, 0},
+		{"Victor's Point, Twilight Highlands", -4748.930176, -4170.549805, 663, 2, 0},
+		{"Firebeard's Patrol, Twilight Highlands", -5620.149902, -4183.899902, 664, 2, 0},
+		{"Thundermar, Twilight Highlands", -4994.279785, -3146.919922, 665, 2, 0},
+		{"Kirthaven, Twilight Highlands", -5427.529785, -2689.429932, 666, 2, 0},
+		{"Ruins of Southshore, Hillsbrad", -536.492981, -661.836975, 667, 1, 0},
+		{"Southpoint Gate, Hillsbrad", 435.464996, -605.184021, 668, 1, 0},
+		{"Eastpoint Tower, Hillsbrad", -1051.199951, -566.888977, 669, 1, 0},
+		{"Strahnbrad, Alterac Mountains", -979.578003, 622.851013, 670, 1, 0},
+		{"Hearthglen, Western Plaguelands", -1500.51001, 2839.780029, 672, 0, 0},
+		{"Iron Summit, Searing Gorge", -1236.630005, -7123.060059, 673, 0, 0},
+		{"Flamestar Post, Burning Steppes", -1025.790039, -8092.259766, 675, 0, 0},
+		{"Chiselgrip, Burning Steppes", -1919.530029, -7865.930176, 676, 0, 0},
+		{"Forsaken Rear Guard, Silverpine Forest", 1518.900024, 1056.060059, 681, 1, 0},
+	},
+	["Kalimdor"] = {
+		{"Thunder Bluff, Mulgore", 29.709999, -1197.209961, 22, 1, 0},
+		{"Orgrimmar, Durotar", -4363.27002, 1798.27002, 23, 1, 0},
+		{"The Crossroads, Northern Barrens", -2596.080078, -441.799988, 25, 1, 0},
+		{"Lor'danel, Darkshore", -326.559998, 7459.899902, 26, 2, 0},
+		{"Rut'theran Village, Teldrassil", 980.963989, 8383.75, 27, 2, 0},
+		{"Astranaar, Ashenvale", -289.23999, 2827.340088, 28, 2, 0},
+		{"Sun Rock Retreat, Stonetalon Mountains", 1040.319946, 966.570007, 29, 1, 0},
+		{"Westreach Summit, Thousand Needles", -927.064026, -4310.609863, 30, 1, 0},
+		{"Shadebough, Feralas", 73.942703, -4996.879883, 31, 2, 0},
+		{"Theramore, Dustwallow Marsh", -4516.580078, -3825.370117, 32, 2, 1},
+		{"Thal'darah Overlook, Stonetalon Mountains", 1537.869995, 2147.25, 33, 2, 0},
+		{"Nijel's Point, Desolace", 1325.819946, 139.240005, 37, 2, 0},
+		{"Shadowprey Village, Desolace", 3263.889893, -1767.640015, 38, 1, 0},
+		{"Gadgetzan, Tanaris", -3768.23999, -7185.970215, 39, 2, 0},
+		{"Gadgetzan, Tanaris", -3813.689941, -7094.029785, 40, 1, 0},
+		{"Feathermoon, Feralas", 2188.639893, -4467.040039, 41, 2, 0},
+		{"Camp Mojache, Feralas", 199.309998, -4419.859863, 42, 1, 0},
+		{"Bilgewater Harbor, Azshara", -6294.660156, 3547.199951, 44, 1, 0},
+		{"Moonglade", -2487.209961, 7458.450195, 49, 2, 0},
+		{"Everlook, Winterspring", -4742.390137, 6796.799805, 52, 2, 0},
+		{"Everlook, Winterspring", -4611.120117, 6813.060059, 53, 1, 0},
+		{"Brackenwall Village, Dustwallow Marsh", -2842.179932, -3147.389893, 55, 1, 0},
+		{"Zoram'gar Outpost, Ashenvale", 1052.300049, 3351.820068, 58, 1, 0},
+		{"Splintertree Post, Ashenvale", -2524.550049, 2302.389893, 61, 1, 0},
+		{"Nighthaven, Moonglade", -2403.469971, 7793.609863, 62, 2, 0},
+		{"Nighthaven, Moonglade", -2404.100098, 7787.720215, 63, 1, 0},
+		{"Talonbranch Glade, Felwood", -1874.280029, 6214.319824, 65, 2, 0},
+		{"Moonglade", -2123.379883, 7470.390137, 69, 1, 0},
+		{"Cenarion Hold, Silithus", 836.73999, -6811.390137, 72, 1, 0},
+		{"Cenarion Hold, Silithus", 772.030029, -6761.830078, 73, 2, 0},
+		{"Vendetta Point, Southern Barrens", -1724.339966, -2152.350098, 77, 1, 0},
+		{"Marshal's Stand, Un'Goro Crater", -1541.130005, -7548.049805, 79, 0, 0},
+		{"Ratchet, Northern Barrens", -3773.01001, -894.590027, 80, 0, 0},
+		{"Emerald Sanctuary, Felwood", -1324.51001, 3972.840088, 166, 0, 0},
+		{"Forest Song, Ashenvale", -3202.409912, 3000.25, 167, 2, 0},
+		{"Mudsprocket, Dustwallow Marsh", -3226.050049, -4566.22998, 179, 0, 0},
+		{"Blackfathom Camp, Ashenvale", 654.159973, 3880.51001, 338, 2, 0},
+		{"Grove of the Ancients, Darkshore", 147.649994, 4970.5, 339, 2, 0},
+		{"Hellscream's Watch, Ashenvale", -498.950012, 3049.080078, 350, 1, 0},
+		{"Stardust Spire, Ashenvale", -321.98999, 1905.109985, 351, 2, 0},
+		{"The Mor'Shan Ramparts, Ashenvale", -2209.149902, 1206.050049, 354, 1, 0},
+		{"Silverwind Refuge, Ashenvale", -1144.050049, 2159.620117, 356, 1, 0},
+		{"Cliffwalker Post, Stonetalon Mountains", 1241.890015, 2188, 360, 1, 0},
+		{"Windshear Hold, Stonetalon Mountains", 432.869995, 1268.51001, 361, 2, 0},
+		{"Krom'gar Fortress, Stonetalon Mountains", -21.25, 932.119995, 362, 1, 0},
+		{"Malaka'jin, Stonetalon Mountains", -260.410004, -111.940002, 363, 1, 0},
+		{"Northwatch Expedition Base Camp, Stonetalon Mountains", -281.350006, 237.880005, 364, 2, 0},
+		{"Farwatcher's Glen, Stonetalon Mountains", 2013.130005, 973.940002, 365, 2, 0},
+		{"Furien's Post, Desolace", 2242.620117, -439.149994, 366, 1, 0},
+		{"Thargad's Camp, Desolace", 2577.570068, -1694.530029, 367, 2, 0},
+		{"Karnum's Glade, Desolace", 1637.98999, -1038.430054, 368, 0, 0},
+		{"Thunk's Abode, Desolace", 1056.680054, -534.039978, 369, 0, 0},
+		{"Ethel Rethor, Desolace", 2478.899902, -356.470001, 370, 0, 0},
+		{"Mossy Pile, Un'Goro Crater", -1095.23999, -6958.439941, 386, 0, 0},
+		{"Honor's Stand, Southern Barrens", -1532.439941, -335.200012, 387, 2, 0},
+		{"Northwatch Hold, Southern Barrens", -3561.790039, -2124.209961, 388, 2, 0},
+		{"Fort Triumph, Southern Barrens", -2286.27002, -3150.25, 389, 2, 0},
+		{"Hunter's Hill, Southern Barrens", -1590.869995, -798.719971, 390, 1, 0},
+		{"Desolation Hold, Southern Barrens", -1697.98999, -3288.850098, 391, 1, 0},
+		{"Bloodhoof Village, Mulgore", -379.069, -2299.540039, 402, 1, 0},
+		{"Dolanaar, Teldrassil", 977.697998, 9873.099609, 456, 2, 0},
+		{"Darnassus, Teldrassil", 2622.090088, 9968.799805, 457, 2, 0},
+		{"Nozzlepot's Outpost, Northern Barrens", -3381.73999, 1152.599976, 458, 1, 0},
+		{"Fizzle & Pozzik's Speedbarge, Thousand Needles", -3913.439941, -6075.370117, 513, 0, 0},
+		{"Dawnrise Expedition, Tanaris", -2467.129883, -9487.889648, 531, 1, 0},
+		{"Gunstan's Dig, Tanaris", -2953.98999, -9493.709961, 532, 2, 0},
+		{"Sen'jin Village, Durotar", -4890.279785, -780.267029, 536, 1, 0},
+		{"Razor Hill, Durotar", -4766.759766, 269.916992, 537, 1, 0},
+		{"Bootlegger Outpost, Tanaris", -4088.100098, -8683.089844, 539, 0, 0},
+		{"The Sludgewerks, Stonetalon Mountains", 727.208008, 1825.939941, 540, 1, 0},
+		{"Mirkfallon Post, Stonetalon Mountains", 1034.859985, 1379.420044, 541, 2, 0},
+		{"Shrine of Aviana, Hyjal", -2676.189941, 4987.870117, 557, 0, 0},
+		{"Grove of Aessina, Hyjal", -1760.579956, 5163.509766, 558, 0, 0},
+		{"Nordrassil, Hyjal", -3569.840088, 5584.060059, 559, 0, 0},
+		{"Dreamer's Rest, Feralas", 1951.670044, -3136.620117, 565, 2, 0},
+		{"Tower of Estulan, Feralas", 1478.160034, -4863.640137, 567, 2, 0},
+		{"Camp Ataya, Feralas", 2560.100098, -3081.699951, 568, 1, 0},
+		{"Stonemaul Hold, Feralas", 1898.189941, -4606.52002, 569, 1, 0},
+		{"Whisperwind Grove, Felwood", -844.997986, 6078.509766, 594, 0, 0},
+		{"Wildheart Point, Felwood", -883.80603, 4734.160156, 595, 0, 0},
+		{"Irontree Clearing, Felwood", -1620.410034, 6892.689941, 597, 1, 0},
+		{"Southern Rocketway, Azshara", -6214.399902, 2647.790039, 613, 1, 0},
+		{"Northern Rocketway, Azshara", -7041.799805, 4611.379883, 614, 1, 0},
+		{"Gates of Sothann, Hyjal", -3966.75, 4059.399902, 616, 0, 0},
+		{"Ramkahen, Uldum", -1042.969971, -9415.019531, 652, 0, 0},
+		{"Oasis of Vir'sar, Uldum", 791.258972, -8375.469727, 653, 0, 0},
+		{"Schnottz's Landing, Uldum", 1059.619995, -10711.900391, 674, 0, 0},
+		{"Valormok, Azshara", -4161.359863, 2988.129883, 683, 1, 0},
+		{"Sanctuary of Malorne, Hyjal", -2107.530029, 4397.790039, 781, 0, 0},
+	},
+	["Expansion01"] = {
+		{"Silvermoon City", -7165.890137, 9375.240234, 82, 1, 0},
+		{"Tranquillien, Ghostlands", -6784.290039, 7594.470215, 83, 1, 0},
+		{"Blood Watch, Bloodmyst Isle", -11954.599609, -1933.27002, 93, 2, 0},
+		{"The Exodar", -11641.099609, -3867.560059, 94, 2, 0},
+		{"Thrallmar, Hellfire Peninsula", 2633.570068, 228.5, 99, 1, 0},
+		{"Honor Hold, Hellfire Peninsula", 2717.27002, -673.419983, 100, 2, 0},
+		{"Temple of Telhamat, Hellfire Peninsula", 4241.560059, 199.160004, 101, 2, 0},
+		{"Falcon Watch, Hellfire Peninsula", 4101.009766, -587.409973, 102, 1, 0},
+		{"Telredor, Zangarmarsh", 6063.75, 213.75, 117, 2, 0},
+		{"Zabra'jin, Zangarmarsh", 7816, 219.449997, 118, 1, 0},
+		{"Telaar, Nagrand", 7305.299805, -2729, 119, 2, 0},
+		{"Garadar, Nagrand", 7133.390137, -1261.089966, 120, 1, 0},
+		{"Allerian Stronghold, Terokkar Forest", 3872.780029, -2987.23999, 121, 2, 0},
+		{"Area 52, Netherstorm", 3596.110107, 3082.310059, 122, 0, 0},
+		{"Shadowmoon Village, Shadowmoon Valley", 2557.090088, -3018.620117, 123, 1, 0},
+		{"Wildhammer Stronghold, Shadowmoon Valley", 2156.469971, -3982.070068, 124, 2, 0},
+		{"Sylvanaar, Blade's Edge Mountains", 6794.459961, 2183.649902, 125, 2, 0},
+		{"Thunderlord Stronghold, Blade's Edge Mountains", 6020.930176, 2446.370117, 126, 1, 0},
+		{"Stonebreaker Hold, Terokkar Forest", 4423.830078, -2567.330078, 127, 1, 0},
+		{"Shattrath, Terokkar Forest", 5301.899902, -1837.22998, 128, 0, 0},
+		{"Hellfire Peninsula, The Dark Portal", 1020.48999, -327.350006, 129, 2, 0},
+		{"Hellfire Peninsula, The Dark Portal", 1026.719971, -178.089996, 130, 1, 0},
+		{"The Stormspire, Netherstorm", 2959.689941, 4157.580078, 139, 0, 0},
+		{"Altar of Sha'tar, Shadowmoon Valley", 749.419983, -3065.600098, 140, 0, 1},
+		{"Spinebreaker Ridge, Hellfire Peninsula", 2358.620117, -1316.839966, 141, 1, 0},
+		{"Cosmowrench, Netherstorm", 1848.23999, 2974.949951, 150, 0, 0},
+		{"Swamprat Post, Zangarmarsh", 5214.919922, 91.669998, 151, 1, 0},
+		{"Toshley's Station, Blade's Edge Mountains", 5531.870117, 1857.349976, 156, 2, 0},
+		{"Sanctum of the Stars, Shadowmoon Valley", 1123.609985, -4073.169922, 159, 0, 1},
+		{"Evergrove, Blade's Edge Mountains", 5501.129883, 2976.01001, 160, 0, 0},
+		{"Mok'Nathal Village, Blade's Edge Mountains", 4705.27002, 2028.790039, 163, 1, 0},
+		{"Orebor Harborage, Zangarmarsh", 7399.160156, 966.669983, 164, 2, 0},
+		{"Zul'Aman, Ghostlands", -7747.580078, 6789.790039, 205, 0, 0},
+		{"Shattered Sun Staging Area", -6908.370117, 13012.700195, 213, 0, 1},
+		{"Azure Watch, Azuremyst Isle", -12520.5, -4130.080078, 624, 2, 1},
+		{"Fairbreeze Village, Eversong Woods", -6654.120117, 8745.780273, 625, 1, 0},
+		{"Falconwing Square, Eversong Woods", -6767.089844, 9501.929688, 631, 1, 0},
+	},
+	["Northrend"] = {
+		{"Valgarde Port, Howling Fjord", -5010.970215, 567.409973, 183, 2, 0},
+		{"Fort Wildervar, Howling Fjord", -5029.819824, 2468.77002, 184, 2, 0},
+		{"Westguard Keep, Howling Fjord", -3287.899902, 1342.839966, 185, 2, 0},
+		{"New Agamand, Howling Fjord", -4544.299805, 401.119995, 190, 1, 0},
+		{"Vengeance Landing, Howling Fjord", -6175.890137, 1918.599976, 191, 1, 0},
+		{"Camp Winterhoof, Howling Fjord", -4392.709961, 2652.889893, 192, 1, 0},
+		{"Transitus Shield, Coldarra", 6661.640137, 3575.439941, 226, 0, 0},
+		{"Wintergarde Keep, Dragonblight", -694.859985, 3712.429932, 244, 2, 0},
+		{"Valiance Keep, Borean Tundra", 5173.689941, 2269.540039, 245, 2, 0},
+		{"Fizzcrank Airstrip, Borean Tundra", 5313.069824, 4127.22998, 246, 2, 0},
+		{"Stars' Rest, Dragonblight", 1992.030029, 3504.129883, 247, 2, 0},
+		{"Apothecary Camp, Howling Fjord", -2970.620117, 2108.110107, 248, 1, 0},
+		{"Camp Oneqwah, Grizzly Hills", -4520.080078, 3876.340088, 249, 1, 0},
+		{"Conquest Hold, Grizzly Hills", -2263.090088, 3258.899902, 250, 1, 0},
+		{"Fordragon Hold, Dragonblight", 1406.599976, 4612.209961, 251, 2, 0},
+		{"Wyrmrest Temple, Dragonblight", 247.580002, 3653.209961, 252, 0, 0},
+		{"Amberpine Lodge, Grizzly Hills", -2754.100098, 3446.350098, 253, 2, 0},
+		{"Venomspite, Dragonblight", -666.159973, 3242.959961, 254, 1, 0},
+		{"Westfall Brigade, Grizzly Hills", -4254.689941, 4584.97998, 255, 2, 0},
+		{"Agmar's Hammer, Dragonblight", 1525.630005, 3865.870117, 256, 1, 0},
+		{"Warsong Hold, Borean Tundra", 6242.850098, 2920.290039, 257, 1, 0},
+		{"Taunka'le Village, Borean Tundra", 4089.52002, 3449.51001, 258, 1, 0},
+		{"Bor'gorok Outpost, Borean Tundra", 5712.129883, 4474.790039, 259, 1, 0},
+		{"Kor'kron Vanguard, Dragonblight", 1165.939941, 4946.669922, 260, 1, 0},
+		{"Amber Ledge, Borean Tundra", 5973.299805, 3587.840088, 289, 0, 0},
+		{"Moa'ki, Dragonblight", 908.960022, 2792.449951, 294, 0, 0},
+		{"Kamagua, Howling Fjord", -2887.709961, 785.27002, 295, 0, 0},
+		{"Unu'pe, Borean Tundra", 4046.090088, 2919.189941, 296, 0, 0},
+		{"Valiance Landing Camp, Wintergrasp", 2185.649902, 5100.810059, 303, 2, 0},
+		{"The Argent Stand, Zul'Drak", -2672.25, 5521.629883, 304, 0, 0},
+		{"Ebon Watch, Zul'Drak", -1302.219971, 5218.899902, 305, 0, 0},
+		{"Light's Breach, Zul'Drak", -2206.459961, 5190.109863, 306, 0, 0},
+		{"Zim'Torga, Zul'Drak", -3594.939941, 5777.399902, 307, 0, 0},
+		{"River's Heart, Sholazar Basin", 4748.100098, 5506.22998, 308, 0, 0},
+		{"Nesingwary Base Camp, Sholazar Basin", 5824.370117, 5596.100098, 309, 0, 1},
+		{"Dalaran", 449.130005, 5813.890137, 310, 0, 0},
+		{"K3, The Storm Peaks", -1052.910034, 6186.75, 320, 0, 0},
+		{"Frosthold, The Storm Peaks", -258.700012, 6667.040039, 321, 2, 0},
+		{"Dun Niffelem, The Storm Peaks", -2607.600098, 7308.040039, 322, 0, 0},
+		{"Grom'arsh Crash-Site, The Storm Peaks", -735.02002, 7857.299805, 323, 1, 0},
+		{"Camp Tunka'lo, The Storm Peaks", -2810.090088, 7793.850098, 324, 1, 0},
+		{"Death's Rise, Icecrown", 4224.160156, 7427.319824, 325, 0, 0},
+		{"Ulduar, The Storm Peaks", -1324.329956, 8864.740234, 326, 0, 0},
+		{"Bouldercrag's Refuge, The Storm Peaks", -335.950012, 8472.459961, 327, 0, 0},
+		{"Gundrak, Zul'Drak", -4118.22998, 6897.649902, 331, 0, 0},
+		{"Warsong Camp, Wintergrasp", 3685.550049, 5024.990234, 332, 1, 0},
+		{"The Shadow Vault, Icecrown", 2702.659912, 8408.089844, 333, 0, 0},
+		{"The Argent Vanguard, Icecrown", -61.310001, 6164.490234, 334, 0, 0},
+		{"Crusaders' Pinnacle, Icecrown", 467.859985, 6402.060059, 335, 0, 0},
+		{"Windrunner's Overlook, Crystalsong Forest", -519.960022, 5035.649902, 336, 2, 0},
+		{"Sunreaver's Command, Crystalsong Forest", -693.22998, 5590.490234, 337, 1, 0},
+		{"Argent Tournament Grounds, Icecrown", 891.200012, 8475.790039, 340, 0, 0},
+	},
+	["HawaiiMainLand"] = {
+		{"Grookin Hill, Jade Forest", -487.703003, 1418.569946, 894, 1, 1},
+		{"Dawn's Blossom, Jade Forest", -1832.130005, 1503.709961, 895, 0, 0},
+		{"Paw'Don Village, Jade Forest", -1762.77002, -307.200012, 966, 2, 0},
+		{"The Arboretum, Jade Forest", -2530.27002, 1600.660034, 967, 0, 0},
+		{"Jade Temple Grounds, Jade Forest", -2358.959961, 773.247009, 968, 0, 0},
+		{"Sri-La Village, Jade Forest", -2418.320068, 2550.76001, 969, 0, 0},
+		{"Emperor's Omen, Jade Forest", -2099.429932, 2400.75, 970, 0, 0},
+		{"Tian Monastery, Jade Forest", -1590.890015, 2505.899902, 971, 0, 0},
+		{"Pearlfin Village, Jade Forest", -2594.610107, -186.097, 972, 2, 0},
+		{"Honeydew Village, Jade Forest", -509.18399, 2927.159912, 973, 1, 0},
+		{"Pang's Stead, Valley of the Four Winds", -637.814026, 543.914978, 984, 0, 0},
+		{"Halfhill, Valley of the Four Winds", 464.55899, -221.326004, 985, 0, 0},
+		{"Zhu's Watch, Krasarang Wilds", -647.965027, -375.68399, 986, 0, 0},
+		{"Thunder Cleft, Krasarang Wilds", 171.403, -878.276001, 987, 1, 0},
+		{"The Incursion, Krasarang Wilds", -227.746994, -1125.310059, 988, 2, 0},
+		{"Stoneplow, Valley of the Four Winds", 1886.699951, -436.540009, 989, 0, 0},
+		{"Dawnchaser Retreat, Krasarang Wilds", 1590.339966, -1685.680054, 990, 1, 0},
+		{"Sentinel Basecamp, Krasarang Wilds", 1770.380005, -1156.609985, 991, 2, 0},
+		{"Cradle of Chi-Ji, Krasarang Wilds", 1483.630005, -2082.300049, 992, 0, 0},
+		{"Marista, Krasarang Wilds", 491.583008, -2504.090088, 993, 0, 0},
+		{"Binan Village, Kun-Lai Summit", 303.958008, 1690.109985, 1017, 0, 0},
+		{"Temple of the White Tiger, Kun-Lai Summit", 690.677002, 3504.040039, 1018, 0, 0},
+		{"Eastwind Rest, Kun-Lai Summit", 931.56897, 2250.590088, 1019, 1, 0},
+		{"Westwind Rest, Kun-Lai Summit", 1463.829956, 2103.350098, 1020, 2, 0},
+		{"Zouchin Village, Kun-Lai Summit", 932.117981, 4362.959961, 1021, 0, 0},
+		{"One Keg, Kun-Lai Summit", 1224.280029, 3124.52002, 1022, 0, 0},
+		{"Kota Basecamp, Kun-Lai Summit", 2163.310059, 2716.429932, 1023, 0, 0},
+		{"Shado-Pan Fallback, Kun-Lai Summit", 2088.580078, 1880.589966, 1024, 0, 0},
+		{"Winter's Blossom, Kun-Lai Summit", 2677.76001, 3151.850098, 1025, 0, 0},
+		{"Tavern in the Mists, The Veiled Stair", -203.669998, 784.898987, 1029, 0, 0},
+		{"Grassy Cline, Valley of the Four Winds", -100.467003, 460.540009, 1052, 0, 0},
+		{"Longying Outpost, Townlong Steppes", 2994.389893, 2363.22998, 1053, 0, 0},
+		{"Gao-Ran Battlefront, Townlong Steppes", 2804.48999, 1440.719971, 1054, 0, 0},
+		{"Rensai's Watchpost, Townlong Steppes", 3963.699951, 1531.72998, 1055, 0, 0},
+		{"Shado-Pan Garrison, Townlong Steppes", 4204.22998, 1803.319946, 1056, 0, 0},
+		{"Shrine of Seven Stars, Vale of Eternal Blossoms", 334.351013, 896.453003, 1057, 2, 0},
+		{"Shrine of Two Moons, Vale of Eternal Blossoms", 894.166992, 1580.160034, 1058, 1, 0},
+		{"Klaxxi'vess, Dread Wastes", 3152.25, 172.662994, 1070, 0, 0},
+		{"Soggy's Gamble, Dread Wastes", 3136.189941, -1086.209961, 1071, 0, 0},
+		{"The Sunset Brewgarden, Dread Wastes", 3451.860107, 982.677002, 1072, 0, 0},
+		{"Serpent's Spine, Vale of Eternal Blossoms", 2125.030029, 611.36499, 1073, 0, 0},
+		{"Serpent's Overlook, Jade Forest", -1558.560059, 465.855988, 1080, 0, 0},
+		{"The Briny Muck, Dread Wastes", 3859.790039, -570.405029, 1090, 0, 0},
+		{"The Lion's Redoubt, Dread Wastes", 2198.030029, 234.406006, 1115, 2, 0},
+		{"Serpent's Spine, Kun-Lai Summit", 2584.929932, 2123.149902, 1117, 1, 0},
+		{"Lion's Landing, Krasarang Wilds", -1193.699951, -1193.560059, 1190, 2, 1},
+		{"Domination Point, Krasarang Wilds", 2492.02002, -1752.189941, 1195, 1, 1},
+		{"Beeble's Wreck, Isle Of Giants", 1255.550049, 5753.759766, 1221, 2, 0},
+		{"Bozzle's Wreck, Isle Of Giants", 1080.569946, 5799.640137, 1222, 1, 0},
+		{"Tushui Landing, Timeless Isle", -4639.120117, -901.369995, 1293, 2, 1},
+		{"Huojin Landing, Timeless Isle", -4608.560059, -404.950012, 1294, 1, 1},
+	},
+};
+
+Yatlas_towns2 = {
+	["Kalimdor"] = {
+		-- Ashenvale --
+		{"Maestra's Post",		  154, 3240, 413},
+		{"The Talondeep Path",		  -718, 1913, 1277},
+		{"Raynewood Retreat",	   -1881, 2707, 426},
+		{"Satyrnaar",			   -2981.2, 2694, 430},
+		{"Warsong Lumber Camp",	 -3545.8, 2438, 437},
+		{"Zoram'Gar Outpost",	   1012.5, 3353, 2897},
+		-- Azshara --
+		{"Valormok",				-4400, 3600, 1237},
+		{"Talrendis Point",		 -3975, 2693, 3137},
+		{"Ruins of Eldarath",	   -5150, 3542, 1221},
+		-- Darkshore --
+		{"Ruins of Mathystra",	  -845, 7368, 443},
+		{"Bashal'Aran",			 -22.9, 6695, 446},
+		{"Ameth'Aran",			  200, 5702, 447},
+		{"Grove of the Ancients",   102, 4993, 448},
+		-- Desolace --
+		{"Sargeron",				762, -230, 603},
+		{"Thunder Axe Fortress",	1762, -346, 599},
+		{"Kodo Graveyard",		  1929, -1303, 596},
+		{"Ghostwalker Post",		1752,  -1238, 597},
+		{"Mannoroc Coven",		  1902, -1905, 602}, 
+		{"Valley of Spears",		2793, -1273, 607},
+		{"Gelkis Village",		  2558, -2184, 606},
+		{"Magram Village",		  1045, -1807, 4797},
+		{"Kolkar Village",		  954, -948, 609},
+		-- Durotar --
+		{"Razor Hill",			  -4741.6, 309, 362},
+		{"The Den",				 -4218, -609, 364},
+		{"Sen'jin Village",		 -4912, -823, 367},
+		-- Duskwallow --
+		{"Brackenwall Village",	 -2877, -3122, 496},
+		{"Stonemaul Ruins",		 -3295, -4329, 508},
+		-- Felwood --
+		{"Felpaw Village",		  -1935, 6785, 1762},
+		{"Jaedenar",				-551, 4329, 1763},
+		{"Emerald Sanctuary",	   -1310, 4008, 2479},
+		{"Talonbranch Glade",	   -1935, 6173, 1998},
+		-- Feralas --
+		{"Ruins of Isildien",	   1376, -5686, 2522},
+		{"Gordunni Outpost",		155, -3730, 1103},
+		{"Grimtotem Compound",	  824, -4507, 1100},
+		-- Moonglade --
+		{"Nighthaven",			  -2497, 7890, 2361},
+		{"Stormrage Barrow Dens",   -2947, 7565, 2363},
+		{"Shrine of Remulos",	   -2214, 7846, 2362},
+		-- Mulgore --
+		{"Red Rocks",			   -1137.5, -935, 225},
+		{"Bloodhoof Village",	   -381.2, -2318, 222},
+		{"Brambleblade Ravine",	 -1181, -3000, 358},
+		{"Camp Narache",			-254, -2904, 221},
+		-- Silithus --
+		{"Staghelm Point",		  100, -6548, 3426},
+		{"Valor's Rest",			-304, -6430, 3077},
+		{"Southwind Village",	   364, -7196, 2738},
+		{"Bronzebeard Encampment",  1122, -8036, 3427},
+		-- Stonetalon Mountains --   
+		{"Malaka'jin",			  -327, -196, 2539},
+		{"The Talon Den",		   1814, 2409, 468},
+		{"The Talondeep Path",	  -579, 1544, 1277},
+		-- Tanaris --
+		{"Steamwheedle Port",	   -4864, -6937, 977},
+		{"Uldum",				   -2785, -9656, 5034},
+		{"Dunemaul Compound",	   -3050, -8435, 983},
+		{"Sandsorrow Warch",		-2952, -7162, 979},
+		-- Teldrassil --
+		{"Aldrassil",			   818, 10480, 256},
+		{"The Oracle Glade",		1918, 10684, 264},
+		{"Dolanaar",				968, 9846, 186},
+		{"Starbreeze Village",	  420, 9871, 260},
+		{"Rut'Theran Village",	  991, 8709, 702},
+		-- The Barrens --
+		{"The Sludge Fen",		  -3079, 1044, 382},
+		{"Northwatch Hold",		 -3641, -2098, 4847},
+		-- Thousand Needles --
+		{"The Great Lift",		  -1849, -4662, 485},
+		{"Mirage Raceway",		  -3914, -6220, 2240},
+		{"Roguefeather Den",		-1614, -5487, 487},
+		{"The Weathered Nook",	  -2797, -5208, 488},
+		{"Ironstone Camp",		  -3422, -5825, 3037},
+		{"Whitereach Post",		 -1366, -4918, 2237},
+		{"Darkcloud Pinnacle",	  -1931, -5087, 2097},
+		-- Un'goro Crater --
+		{"Marshal's Refuge",		-1087, -6165, 541},		
+		{"Fungal Rock",			 -1856, -6382, 542},
+		-- Winterspring --
+		{"Owl Wing Thicket",		-4958, 5652, 2250},
+		{"The Hidden Grove",		-4842, 7733, 2242},
+		{"Starfall Village",		-3931, 7147, 2253},
+		{"Winterfall Village",	  -5129, 6764, 2244},
+	},
+	["Azeroth"] = {
+		-- Alterac --
+		{"Strahnbrad",			  -956, 679, 280},
+		{"Ruins of Alterac",		-310, 539, 281},
+		{"Dalaran",				 364, 266, 279},
+		-- Arathi Highlands --
+		{"The Tower of Arathor",	-1500, -1777, 325},
+		{"Stromgarde",			  -1800, -1631, 324},
+		{"Witherbark Village",	  -3398, -1741, 317},
+		{"Faldir's Cove",		   -2112, -2079, 327},
+		{"Refuge Pointe",		   -2416, -1373, 320},
+		-- Badlands --
+		{"Angor Fortress",		  -3137, -6375, 338},
+		{"Dustbelch Grotto",		-2289, -7275, 347},
+		-- Blasted Lands --
+		{"Nethergarde Keep",		-3431, -10991, 1438},
+		{"The Dark Portal",		 -3193, -11829, 72},
+		{"Dreadmaul Hold",		  -2664, -108524, 1437},
+		-- Burning Steppes --   
+		{"Flame Crest",			 -2193, -7480, 251},
+		{"Blackrock Stronghold",	-1439, -7701, 252},
+		-- Deadwind Pass --
+		-- Dun Morogh --
+		{"Anvilmar",				387, -6102, 77},
+		{"Kharanos",				-500, -5583, 131},
+		{"Brewnall Village",		302, -5360, 137},
+		-- Duskwood --
+		{"Ravenhill",			   327, -10735, 94},
+		-- Eastern Plaguelands --
+		{"Terrorweb Tunnel",		-2772, 3034, 2626},
+		{"Terrorweb Tunnel",		-2470, 2751, 2626},
+		{"Light's Hope Chapel",	 -5339, 2298, 2268},
+		{"Tyr's Hand",			  -5558, 1596, 2266},
+		{"Darrowshire",			 -3695, 1438, 2262},
+		{"Corin's Crossing",		-4505, 2032, 2264},	
+		-- Elwynn Forest --
+		{"Northshire Abbey",		-172, -8878, 24}, 
+		{"Eastvale Logging Camp",   -1352, -9460, 88},
+		{"Goldshire",			   68, -9458, 87},
+		{"Westbrook Garrison",	  677, -9624, 120},
+		-- Hillsbrad Foothills
+		{"Azurlode Mine",		   196, -827, 288},
+		{"Durnholde Keep",		  -1457, -456, 275},
+		{"Dun Garok",			   -1218, -1292, 290},
+		{"Purgation Isle",		  590, -1333, 896},
+		-- Loch Modan --
+		{"The Farstrider Lodge",	-4270, -5655, 147},
+		-- Red Ridge Mountains --
+		{"Tower of Ilgalar",		-3297, -9280, 96},
+		{"Stonewatch Keep",		 -3052, -9380, 2099}, 
+		-- Searing Gorge --
+		{"Thorium Point",		   -1153, -6504, 1446},
+		-- Silverpine Forest --
+		{"Ambermill",			   791, -122, 233},
+		{"Pyrewood Village",		1556, -385, 204},
+		-- Strangethorn Vale --
+		{"Mosh'Ogg Ogre Mound",	 -1006, -12368, 105},
+		{"Venture Co. Base Camp",   -523, -11972, 1740},
+		{"Gurubashi Arena",		 278, -13204, 1741},
+		-- Swamp of Sorrows --
+		{"Fallow Sanctuary",		-3641, -9954, 76},
+		{"Misty Valley",			-2526, -10164, 116},
+		{"Stagalbog Cave",		  -3745, -10795, 1817},
+		-- The Hinterlands --
+		{"Skulk Rock",			  -3795, 393, 351},
+		{"Quel'Danil Lodge",		-2764, 239, 350},
+		{"The Altar of Zul",		-3454, -293, 355},
+		{"Jintha'Alor",			 -3955, -468, 354},
+		-- Tirisfal Glades --
+		{"Agamand Mills",		   871, 2839, 157},
+		{"Deathknell",			  1580, 1929, 154},
+		{"Brill",				   286, 2304, 159},
+		-- Western Plaguelands --
+		{"Hearthglen",			  1516, 2877, 190},
+		{"Ruins of Andorhal",	   -1518,1383, 193},
+		{"Caer Darrow",			 -2558, 1156, 2298},
+		{"The Bulwark",			 -762, 1745, 813},
+		{"Chillwind Camp",		  -1441, 925, 3197},
+		-- Westfall --
+		{"Jangolode Mine",		  1453, -9968, 111},
+		{"Gold Coast Quarry",	   1915, -10416, 113},
+		{"Moonbrook",			   1501, -11010, 20},
+		-- Wetlands --
+		{"Dun Modr",				-2327, -2610, 205},
+		{"Dun Algaz",			   -2369, -4198, 836},
+		{"Grim Batol",			  -3429, -4006, 1037},		
+	},
+}
+
+-- Localize town names with the client's own AreaTable (4th field = AreaTable ID).
+if C_Map and C_Map.GetAreaInfo then
+	for _, towns in pairs(Yatlas_towns2) do
+		for _, v in ipairs(towns) do
+			local name = v[4] and C_Map.GetAreaInfo(v[4]);
+			if name and name ~= "" then v[1] = name; end
+		end
+	end
+end
+
+-- XXX USEME
+Yatlas_Mobs = {
+	-- two original outdoor raid bosses
+	{"Lord Kazzak",		 "Kalimdor", -2439, -12211},
+	{"Azuregos",			"Azeroth", -5884, 2764},
+	-- four dragons
+	{"Dragons of Nightmare", "Azeroth", -4081, 624},
+	{"Dragons of Nightmare", "Kalimdor", -3741, 3174},
+	{"Dragons of Nightmare", "Azeroth", -421, -10441},
+	{"Dragons of Nightmare", "Kalimdor", 1874, -2796},
+};

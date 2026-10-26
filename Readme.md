@@ -25,7 +25,7 @@ Yatlas has two views:
   - Click the minimap button.
   - Type `/yatlas`.
   - Press the key binding.
-- **Fullscreen view** covers the whole screen, like the world map. Open it with `/bigyatlas` or its key binding. Press Esc or the binding again to close it.
+- **Large view** is a bigger, centred map window, shown like the world map. Open it with `/bigyatlas` or its key binding. Press Esc or the binding again to close it.
 
 Both views use the same controls:
 
@@ -33,9 +33,9 @@ Both views use the same controls:
 - Choose a map or jump to a zone from the drop-down menus at the top.
 - Hover over a point to see a tooltip.
 - **Goto Player** centres the map on your character. Shift-click it to keep following you as you move.
-- The button next to the close button switches between the normal and the fullscreen view, keeping the current map and position.
+- The button next to the close button switches between the normal and the large view, keeping the current map and position.
 
-You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggle Yatlas, Toggle fullscreen Yatlas).
+You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggle Yatlas Frame, Toggle Large Yatlas Frame).
 
 ### Points on the map
 
@@ -64,19 +64,19 @@ You can turn each type of point on or off from the options menu.
 | Path | Contents |
 |---|---|
 | `Yatlas.toc` | Addon metadata and load order |
-| `Compat.lua` | Wrappers for the modern Classic API (positions, landmarks, flight paths, backdrops, sounds) |
-| `Yatlas.lua`, `Yatlas.xml`, `OptionsFrame.xml`, `Templates.xml` | Main frames, map drawing and options |
-| `YatlasButton.lua`, `YatlasButton.xml` | Minimap button |
-| `Points.lua`, `sets/` | Point framework and the point sets (landmarks, flight paths, players, ...) |
-| `mapdb.lua`, `mapdb2.lua` | Generated map data: minimap tiles, map areas, instances, towns, flight paths |
+| `Bindings.xml` | Key bindings (must stay in the addon root folder) |
+| `Core/` | `Compat.lua` (wrappers for the modern Classic API), `Constants.lua` (addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (map drawing and frame logic), `Points.lua` (point framework) |
+| `UI/` | Frames and templates: `Yatlas.xml` (normal and large frames), `Templates.xml`, `OptionsFrame.xml`, `Button.xml`/`Button.lua` (minimap button) |
+| `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, players, ...) |
+| `Data/` | Generated map data `mapdb.lua` and `mapdb2.lua`: minimap tiles, map areas, instances, towns, flight paths |
 | `Locale/` | UI strings: enUS (default), deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW |
-| `images/` | Addon textures and icons |
+| `Images/` | Addon textures and icons (BLP) |
 | `tools/` | Python scripts that regenerate the map data (not included in releases) |
 | `Docs/` | Changelog, data sources and the CurseForge description |
 
 ## Map data
 
-The map data is generated from the client DB2 tables of build 5.5.4.70579, which can be browsed on [wago.tools](https://wago.tools/db2?build=5.5.4.70579). The tile lists come from the client WDT files. [`Docs/DataSources-5.5.4.md`](Docs/DataSources-5.5.4.md) describes where each table comes from and the API changes. [`tools/README.md`](tools/README.md) explains how to regenerate `mapdb.lua` and `mapdb2.lua`.
+The map data is generated from the client DB2 tables of build 5.5.4.70579, which can be browsed on [wago.tools](https://wago.tools/db2?build=5.5.4.70579). The tile lists come from the client WDT files. [`Docs/DataSources-5.5.4.md`](Docs/DataSources-5.5.4.md) describes where each table comes from and the API changes. [`tools/README.md`](tools/README.md) explains how to regenerate `Data/mapdb.lua` and `Data/mapdb2.lua`.
 
 ## Releases
 

@@ -36,8 +36,18 @@ YATLAS_POINTS_CTMAPMOD = "CTMapMod";
 YATLAS_UNKNOWN_ZONE = "未知";
 YATLAS_BIGDRAGMESSAGE = "按住鼠标拖动地图以移动视角。";
 BINDING_NAME_YATLAS_TOGGLE = "切换 Yatlas 窗口";
-BINDING_NAME_YATLAS_BIG_TOGGLE = "切换全屏 Yatlas 窗口";
+BINDING_NAME_YATLAS_BIG_TOGGLE = "切换大型 Yatlas 窗口";
 
-YATLAS_SWITCH_TO_BIG = "切换到全屏视图";
+YATLAS_SWITCH_TO_BIG = "切换到大型视图";
 YATLAS_SWITCH_TO_NORMAL = "切换到普通视图";
+YATLAS_TOOLTIP_LOCKED_TITLE = "窗口已锁定";
+YATLAS_TOOLTIP_LOCKED = "点击解除锁定，即可拖动窗口。";
+YATLAS_TOOLTIP_UNLOCKED_TITLE = "窗口已解除锁定";
+YATLAS_TOOLTIP_UNLOCKED = "可拖动窗口。点击即可锁定。";
+YATLAS_TOOLTIP_SHOWPOINTS = "选择要在地图上显示哪些标记。";
+YATLAS_TOOLTIP_ZOOM_TITLE = "缩放";
+YATLAS_TOOLTIP_ZOOM = "显示缩放控制。也可以用鼠标滚轮缩放。";
+YATLAS_TOOLTIP_PLAYERJUMP = "点击将地图移到你的角色位置。\nShift-点击可在移动时持续跟随角色。";
+YATLAS_TOOLTIP_PLAYERJUMP_FOLLOWING = "正在跟随你的角色。点击即可停止。";
+YATLAS_TOOLTIP_OPTIONS = "透明度、图标大小、要显示的标记，以及小地图按钮。";
 end

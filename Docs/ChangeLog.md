@@ -1,6 +1,33 @@
 # Yatlas ChangeLog
 
 
+### v0.9.6 (Oct. 26, 2026)
+
+- Reorganized the addon folders: Core/, Data/, UI/, Modules/ (was sets/), Images/ (was images/)
+- Textures converted from TGA to BLP; texture paths now use Images\
+- Bindings.xml stays in the addon root folder (WoW only loads it from there)
+- New Core/Constants.lua collects the constants: addon metadata, texture paths, coordinate scale,
+  frame option defaults and backdrops
+- Title, version, author, website and release date now all come from the TOC
+  (new ## Author, ## X-Credits for the original author Boo Diddly, and ## X-Date: @project-date-iso@); the author e-mail field was removed
+- Player position uses the game's world map arrow (Interface\WorldMap\WorldMapArrow) and turns
+  with the facing (GetPlayerFacing); position and facing update every 0.05 s while Yatlas is open
+- Party and raid members use the game's WhiteCircle-RaidBlips dot in class colour
+  (Icon-PartyUnit is kept only as a fallback)
+- The big frame is now called the "large" frame in the key binding and tooltips (it is not fullscreen),
+  in all 10 languages
+- New tooltips for the lock/unlock button (shows the current state), the close buttons,
+  the Show Points button (bottom right) and the zoom button (bottom left)
+- New tooltips for Goto Player (in both frames; also shows when the map is following you)
+  and the Options button
+- Version text moved left so it no longer overlaps the switch, lock and close buttons
+- Fixed: "Outland" was the only continent not localized in the map menu. It used uiMapID 101,
+  which does not exist in 5.5.4; Outland is uiMapID 1467 there (987 is an orphan copy outside the
+  world map tree). This also fixes the continent-level flight path and landmark lookups for Outland
+- Fixed: pressing Esc in the large frame caused ADDON_ACTION_FORBIDDEN (RunBinding() is protected).
+  The large frame no longer captures the keyboard; Esc closes it through the game's own panel handling,
+  and the toggle and screenshot keys go straight to their normal bindings
+
 ### v0.9.5 (Oct. 26, 2026)
 
 - Town names (Yatlas_towns2) are now localized from the client AreaTable

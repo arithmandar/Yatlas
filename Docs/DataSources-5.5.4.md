@@ -2,6 +2,8 @@
 
 更新日期：2026-10-25　目標用戶端：`wow_classic` 5.5.4.70579（目前正式服最新組建，TOC Interface `50504`）
 
+> 註：自 0.9.6 起檔案已重新整理目錄：`Compat.lua`、`Points.lua`、`Yatlas.lua` 移到 `Core/`（`Yatlas.lua` 改名為 `Core.lua`），`mapdb.lua`、`mapdb2.lua` 移到 `Data/`，`sets/` 改名為 `Modules/`，`images/` 改名為 `Images/`。本文以下仍沿用 0.9.4 當時的檔名。
+
 ## 一、資料表對應總覽
 
 | Yatlas 資料表 | 舊來源 (≤ 6.2) | 5.5.4 來源 | 狀態 |
@@ -12,7 +14,7 @@
 | `Yatlas_mapareas` | **WorldMapArea.dbc（8.0 起已移除）** | **`UiMapAssignment` + `UiMap`** | 重新產生 17 張地圖、123 個區域 |
 | `Yatlas_UiMapIds`（新增） | — | `UiMap` | `[Directory][areaID] = uiMapID`，供 C_Map API 使用 |
 | `Yatlas_ZoneIds` | 手動，需與 `GetMapZones()` 對齊 | `UiMap` 階層＋`UiMapAssignment.MapID` | 重新產生；`GetMapZones()` 已不存在 |
-| `Yatlas_WorldMapIds` | `SetMapZoom()` 的大陸索引 1..6 | uiMapID | 值改為 uiMapID（13/12/101/113/424/207/244/504/407） |
+| `Yatlas_WorldMapIds` | `SetMapZoom()` 的大陸索引 1..6 | uiMapID | 值改為 uiMapID（13/12/1467/113/424/207/244/504/407）；外域在 5.5.4 是 1467（沒有 101，987 是不在地圖樹內的孤立項目） |
 | `YA_MAPS` | LibBabble 顯示名稱 | `C_Map.GetMapInfo(uiMapID).name` | 移除德拉諾，新增地深之源、托巴拉德、雷霆島、暗月島 |
 | `Yatlas_instances` | Map.dbc 的 Corpse 座標 | `AreaTrigger` DB2 ＋ MoP 伺服器端 `areatrigger_teleport`；7.3.5 `Map.Corpse_*` 補缺 | 重新產生，新增 MoP 副本與團隊副本 |
 | `Yatlas_graveyards` | **WorldSafeLocs.dbc（已不在用戶端）** | 19005 組建的萃取資料，移除德拉諾與 WoD 專屬條目 | 重新啟用（原本整段被註解掉） |

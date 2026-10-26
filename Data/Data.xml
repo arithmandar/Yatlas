@@ -1,0 +1,15 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	<!-- shared helpers and tables -->
+	<Script file="Common.lua"/>
+	<!-- one data set per client flavour; every file returns at once unless YATLAS_CLIENT matches -->
+	<Script file="ClassicEra\mapdb.lua"/>
+	<Script file="ClassicEra\mapdb2.lua"/>
+	<Script file="TBC\mapdb.lua"/>
+	<Script file="TBC\mapdb2.lua"/>
+	<Script file="Mists\mapdb.lua"/>
+	<Script file="Mists\mapdb2.lua"/>
+	<Script file="Mainline\mapdb.lua"/>
+	<Script file="Mainline\mapdb2.lua"/>
+	<!-- localize what was loaded -->
+	<Script file="Localize.lua"/>
+</Ui>

@@ -1,4 +1,4 @@
-## Interface: 50504
+## Interface: 11509, 20506, 50504, 120105
 ## Title: Yatlas
 ## Version: @project-version@
 ## Notes: Yet another atlas - browse the whole world on minimap terrain, with instance entrances, towns, flight paths and group members.
@@ -38,8 +38,7 @@ Core\Compat.lua
 Core\Constants.lua
 Locale\Locales.xml
 
-Data\mapdb.lua
-Data\mapdb2.lua
+Data\Data.xml
 Core\Points.lua
 Core\Core.lua
 UI\Templates.xml

@@ -213,6 +213,12 @@ end
 function YatlasFrameTemplate:Toggle()
     local lm = self:GetName();
 
+    if(YATLAS_NO_DATA) then
+        DEFAULT_CHAT_FRAME:AddMessage("Yatlas: this game client (WOW_PROJECT_ID "
+            ..tostring(YATLAS_CLIENT and YATLAS_CLIENT.projectID).. ") is not supported.");
+        return;
+    end
+
     if(UIPanelWindows[lm] == nil) then
         if(self:IsShown()) then
             self:Hide();
@@ -319,12 +325,12 @@ end
 function YatlasFrameDropDown_Initialize(dropdown)
     local owner = Yatlas_DropDownOwner(dropdown or UIDROPDOWNMENU_INIT_MENU);
     local info;
-    for h,v in pairs(YA_MAPS) do
+    for _,v in ipairs(Yatlas_GetMapList()) do
             info = {
-                    text = h;
+                    text = v[1];
                     arg1 = owner;
-                    arg2 = v[1];
-                    checked = (owner.opt and owner.opt.Map == v[1]) or nil;
+                    arg2 = v[2];
+                    checked = (owner.opt and owner.opt.Map == v[2]) or nil;
                     func = YatlasFrameDropDownButton_OnClick;
             };
             UIDropDownMenu_AddButton(info);
@@ -369,13 +375,11 @@ function YatlasFrameTemplate:SetMap(mapname)
     
     local mapdropdown = _G[lm.."DropDown"];
     if(mapdropdown) then
-        local i = 1;
-        for h,v in pairs(YA_MAPS) do
-            if(v[1] == mapname) then
+        for i,v in ipairs(Yatlas_GetMapList()) do
+            if(v[2] == mapname) then
                 UIDropDownMenu_SetSelectedID(mapdropdown, i);
-                UIDropDownMenu_SetText(mapdropdown,h);
+                UIDropDownMenu_SetText(mapdropdown, v[1]);
             end
-            i = i + 1;
         end
     end
 

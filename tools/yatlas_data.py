@@ -222,15 +222,15 @@ def cities_block(POI, Area, Dir, mapids, build, log):
         if c and len(c) > 1 and zone > 0:
             c = [a for a in c if zone in (a, int(Area[a]['ParentAreaID']))] or c
         aid = c[0] if c else 0
-        lists.setdefault(cont, []).append((name, float(r['Pos_1']), float(r['Pos_0']), int(r['ID']), kind, aid))
+        lists.setdefault(cont, []).append((name, float(r['Pos_1']), float(r['Pos_0']), int(r['ID']), kind, aid, icon))
         n[kind - 1] += 1
     out = ['-- Towns (kind 1) and capitals (kind 2) of the world map, from AreaPOI.db2\n',
-           '-- {name, worldY, worldX, AreaPOI ID, kind, AreaTableID (0 = keep the name)}\n',
+           '-- {name, worldY, worldX, AreaPOI ID, kind, AreaTableID (0 = keep the name), POIIcons index}\n',
            'Yatlas_cities = {\n']
     for cont in sorted(lists):
         out.append(f'\t[{luastr(Dir[cont])}] = {{\n')
-        for name, y, x, pid, kind, aid in lists[cont]:
-            out.append(f'\t\t{{{luastr(name)}, {num(y)}, {num(x)}, {pid}, {kind}, {aid}}},\n')
+        for name, y, x, pid, kind, aid, icon in lists[cont]:
+            out.append(f'\t\t{{{luastr(name)}, {num(y)}, {num(x)}, {pid}, {kind}, {aid}, {icon}}},\n')
         out.append('\t},\n')
     out.append('};\n\n')
     print(f'  towns {n[0]}, capitals {n[1]} (AreaPOI)', file=log)

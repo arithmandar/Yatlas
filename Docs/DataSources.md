@@ -52,12 +52,12 @@ Yatlas 從 v1.0.0 起用**單一 TOC** 支援四種用戶端，每種用戶端�
 - **Classic Era／Anniversary**：[`AreaPOI`](https://wago.tools/db2/AreaPOI?build=1.15.9.70003) 的城鎮（Flags 13）與主城（Flags 29）仍會由 `C_AreaPoiInfo.GetAreaPOIForMap` 回傳，因此舊的藍圈與星星只出現在這兩個版本。
 - **MoP Classic／正式版**：同樣的資料列還在，但多了 Flags 512（世界地圖不顯示），API 不回傳，所以主要城鎮原本完全沒有標示。
 
-現在由 `tools/yatlas_data.py` 從各版本的 `AreaPOI.db2` 產生 `Yatlas_cities`，格式是 `{名稱, worldY, worldX, AreaPOI ID, 種類, AreaTable ID}`：
+現在由 `tools/yatlas_data.py` 從各版本的 `AreaPOI.db2` 產生 `Yatlas_cities`，格式是 `{名稱, worldY, worldX, AreaPOI ID, 種類, AreaTable ID, POIIcons 編號}`：
 
 - 種類：Flags（去掉 512 與 128）為 13 時是城鎮；為 29 時，如果 Icon 是主城圖示（Era／TBC 為 5，其他版本為 6 或 46～49）就是主城，否則是城鎮（例如 TBC 的 Thrallmar）。其他圖示（例如暗月馬戲團 181）不收錄。
 - 排除：有 `UiTextureAtlasMemberID`（已由 API 以 atlas 顯示）、有 `PlayerConditionID`，以及所在區域已搬到其他地圖或是舊版副本（例如 Midnight 中的「Silvermoon City (Burning Crusade)」）的資料列。
 - 名稱：`AreaPOI.AreaID` 是所在地區而不是城鎮本身，所以用名稱比對 `AreaTable` 取得 ID，在遊戲中以 `C_Map.GetAreaInfo` 換成在地化名稱。比對不到的保留英文名稱。
-- 圖示：城鎮用 `poi-town`，主城用 `poi-majorcity`，四個用戶端都有這兩個 atlas。
+- 圖示：城鎮用 `poi-town`，主城用 `poi-majorcity`，四個用戶端都有這兩個 atlas。正式版的主城在 `AreaPOI.Icon` 中是陣營圖示（POIIcons 46～49，聯盟 46、部落 48），和遊戲世界地圖一樣以 `C_Minimap.GetPOITextureCoords` 繪製陣營圖示。
 - 去重：`Yatlas_towns2` 中與 `Yatlas_cities` 相距 80 碼以內的項目會在產生時移除。執行時 `Yatlas_LoadLandmarks` 會略過 `Yatlas_cities` 已有的 AreaPOI ID。
 
 | 用戶端 | 城鎮 | 主城 |
@@ -74,6 +74,7 @@ Yatlas 從 v1.0.0 起用**單一 TOC** 支援四種用戶端，每種用戶端�
 以 [Gethe/wow-ui-source](https://github.com/Gethe/wow-ui-source) 對應組建的 `Blizzard_APIDocumentationGenerated` 為準：
 
 - 四個用戶端都有：`C_Map`、`C_TaxiMap`、`C_AreaPoiInfo`、`C_ClassColor`、`UIDropDownMenu`、`BackdropTemplate`、`C_EncounterJournal.GetDungeonEntrancesForMap`，以及 Yatlas 用到的 atlas（`Dungeon`、`Raid`、`TaxiNode_*`、`WhiteCircle-RaidBlips`、`poi-town`）與 `Interface\WorldMap\WorldMapArrow`。
+- 正式版把 `Dungeon`／`Raid` atlas 換成 50×50 的高解析版本（[UiTextureAtlasMember](https://wago.tools/db2/UiTextureAtlasMember?build=12.1.5.70575) 的 OverrideWidth 為 32；Classic 為 22×22），`TaxiNode_*` 從 18 變成 21。用同樣的尺寸繪製時圖案明顯較小，所以 `Yatlas_AtlasScale(atlas)` 依 `C_Texture.GetAtlasInfo` 的寬度和 Classic 尺寸的比例放大（上限 1.6 倍）。
 - 正式版沒有全域函式 `MouseIsOver()`，改用 `Region:IsMouseOver()`（四個用戶端都有）。
 - 正式版的「秘密值（secret values）」：`UnitName`、`UnitClass`、`UnitIsUnit` 在受限內容中可能回傳秘密值，不能拿來比較、做布林判斷或當作表格鍵值。`Core/Compat.lua` 新增 `Yatlas_NotSecret(v)`（以 `issecretvalue` 判斷），隊友的職業顏色與「是否為玩家本人」都先經過這個檢查。`FontString:SetText` 可以直接接受秘密值，所以名稱顯示不必處理。`UnitPosition`、`GetPlayerFacing`、`C_Map.GetPlayerMapPosition` 沒有秘密回傳值。
 - `SetupFullscreenScale` 在四個用戶端都不存在，程式原本就有檢查。

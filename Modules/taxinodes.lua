@@ -101,6 +101,8 @@ function set.setuppoint(point, env, dat)
     local atlas = (atlasexists(liveatlas) and liveatlas) or FACTION_ATLAS[faction];
     if(atlasexists(atlas)) then
         bg:SetAtlas(atlas);
+        bg:SetHeight(iconsize * Yatlas_AtlasScale(atlas));
+        bg:SetWidth(iconsize * Yatlas_AtlasScale(atlas));
         if(undiscovered) then
             bg:SetVertexColor(0.6, 0.6, 0.6, 0.7);
         else

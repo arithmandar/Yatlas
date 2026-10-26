@@ -26,6 +26,28 @@ function Yatlas_NotSecret(v)
 end
 Yatlas_GetPOITextureCoords = (C_Minimap and C_Minimap.GetPOITextureCoords) or GetPOITextureCoords;
 
+-- Icon scale for an atlas, relative to its Classic size. Retail replaced some map atlases with
+-- larger, padded high resolution versions (Dungeon / Raid: 22 -> 32, TaxiNode_*: 18 -> 21 in
+-- UiTextureAtlasMember), so the same icon size draws them visibly smaller.
+local YATLAS_ATLAS_BASE = {dungeon = 22, raid = 22,
+    taxinode_neutral = 18, taxinode_alliance = 18, taxinode_horde = 18};
+local yatlas_atlas_scale = {};
+function Yatlas_AtlasScale(atlas)
+    if(not atlas) then return 1; end
+    local key = string.lower(atlas);
+    local scale = yatlas_atlas_scale[key];
+    if(scale == nil) then
+        scale = 1;
+        local base = YATLAS_ATLAS_BASE[key];
+        local info = base and C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(atlas);
+        if(info and info.width and info.width > base) then
+            scale = math.min(info.width / base, 1.6);
+        end
+        yatlas_atlas_scale[key] = scale;
+    end
+    return scale;
+end
+
 -- backdrop tables (YATLAS_BACKDROP_*) are defined in Core\Constants.lua
 function Yatlas_ApplyBackdrop(frame, backdrop)
     if(frame and frame.SetBackdrop) then

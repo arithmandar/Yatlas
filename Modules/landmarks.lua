@@ -6,6 +6,19 @@ local landmarkaltdungeon = {nil,nil,nil,nil,-1,"Dungeon"};     -- blue circle
 local landmarkaltraid = {nil,nil,nil,nil,-1,"Raid"};           -- green circle
 local landmarkalttown = {nil,nil,nil,nil,-4,"poi-town"};
 local landmarkaltcity = {nil,nil,nil,nil,5,"poi-majorcity"};
+-- capitals with a faction icon of Interface\Minimap\POIIcons (Retail: 46 - 49), drawn like the world map
+local landmarkaltpoi = {};
+local function cityalt(v)
+    if(v[5] ~= 2) then
+        return landmarkalttown;
+    end
+    local icon = v[7];
+    if(icon and icon >= 46 and icon <= 49 and Yatlas_GetPOITextureCoords) then
+        landmarkaltpoi[icon] = landmarkaltpoi[icon] or {nil,nil,nil,nil,icon,nil};
+        return landmarkaltpoi[icon];
+    end
+    return landmarkaltcity;
+end
 
 local function atlasexists(atlas)
     return atlas and C_Texture and C_Texture.GetAtlasInfo
@@ -35,13 +48,12 @@ function set.getpoints(name, map)
         end
     end
 
-    -- world map towns and capitals (AreaPOI.db2); v[5] = 1 town, 2 capital
+    -- world map towns and capitals (AreaPOI.db2); v[5] = 1 town, 2 capital; v[7] = POIIcons index
     if(type(Yatlas_cities) == "table" and type(Yatlas_cities[map]) == "table") then
         for h,v in ipairs(Yatlas_cities[map]) do
             local x,y = Yatlas_Big2Mini_Coord(v[2],v[3]);
 
-            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, nil,
-                    (v[5] == 2) and landmarkaltcity or landmarkalttown);
+            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, nil, cityalt(v));
         end
     end
 
@@ -117,6 +129,9 @@ function set.setuppoint(point, env, dat)
     text:SetText("");
 
     bg:Show();
+    if(atlas) then
+        iconsize = iconsize * Yatlas_AtlasScale(atlas);
+    end
     bg:SetHeight(iconsize);
     bg:SetWidth(iconsize);
     if(atlas) then

@@ -15,7 +15,6 @@
 ## Author: arithmandar
 ## X-Credits: Boo Diddly (original author)
 ## X-Date: @project-date-iso@
-## OptionalDeps: myAddOns
 ## DefaultState: Enabled
 ## LoadOnDemand: 0
 ## SavedVariables: YatlasOptions

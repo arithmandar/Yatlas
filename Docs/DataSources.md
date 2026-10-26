@@ -193,7 +193,7 @@ Yatlas 從 v1.0.0 起用**單一 TOC** 支援四種用戶端，每種用戶端�
 
 ### TOC 與打包
 - `## Interface: 50504`，版本 0.9.4。
-- 移除 `LibBabble-SubZone-3.0`、`AceLocale-3.0`、`LibStub`：`Libs/`、`Locale/LibBabble.lua`、`.pkgmeta` 的 externals 都已刪除，`OptionalDeps` 只留 `myAddOns`。
+- 移除 `LibBabble-SubZone-3.0`、`AceLocale-3.0`、`LibStub`：`Libs/`、`Locale/LibBabble.lua`、`.pkgmeta` 的 externals 都已刪除，`OptionalDeps` 只留 `myAddOns`（v1.0.0 也已移除，見下）。
 
 ### 尚未在遊戲內測試
 以上修改只通過語法檢查（lupa）、XML 格式檢查與 API stub 測試，**尚未在 5.5.4 用戶端實際載入**。

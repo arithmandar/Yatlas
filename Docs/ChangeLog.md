@@ -27,6 +27,8 @@
 - Retail API: MouseIsOver() no longer exists, Region:IsMouseOver() is used instead; secret values from
   UnitClass / UnitIsUnit are checked with issecretvalue before use
 - On an unsupported client Yatlas prints a message instead of raising Lua errors
+- Removed `## OptionalDeps: myAddOns` from the TOC (myAddOns is a 2005 addon manager that no longer exists;
+  Yatlas has no myAddOns code left)
 - Mists of Pandaria Classic data is unchanged (identical to v0.9.6)
 - One generator for all clients: tools/yatlas_data.py with tools/flavors.py
   (replaces gen.py, assemble.py, towns.py, wdt.py); Docs/DataSources-5.5.4.md is now Docs/DataSources.md

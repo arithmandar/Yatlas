@@ -115,7 +115,7 @@ Yatlas 從 v1.0.0 起用**單一 TOC** 支援四種用戶端，每種用戶端�
 ### Yatlas_mapdb1（小地圖圖塊）
 - 從 `https://wago.tools/api/files?search=world/maps/<dir>/<dir>.wdt` 取得 WDT 的 FileDataID，再以 `https://wago.tools/api/casc/<fdid>?version=5.5.4.70579&download` 下載 5.5.4 原始檔。
 - `MAID` chunk 共 64×64 筆，每筆 8 個 uint32：rootADT、obj0、obj1、tex0、lod、mapTexture、mapTextureN、**minimapTexture**。索引 `i` 對應圖塊 `(x = i % 64, y = i // 64)`，也就是 `mapXX_YY`。實測東部王國 `map32_48` = FileDataID 204493，與 listfile 相符。
-- 舊資料中的 110 個 `noLiquid_mapXX_YY` 在新版都成為一般圖塊。舊有的「mocking up」海洋填補圖塊保留，並改成對應的新 FileDataID。
+- 舊資料中的 110 個 `noLiquid_mapXX_YY` 在新版都成為一般圖塊。舊有的「mocking up」海洋填補圖塊原本保留並改成新的 FileDataID，v1.0.0 起已全部移除，沒有圖塊的位置一律顯示為黑色。
 - 圖塊數量：東部王國 839(+108 填補)、卡林多 1002(+124)、外域 826、北裂境 1131、潘達利亞 684（比舊版多 12）、地深之源 100、托巴拉德 42、雷霆島 64、暗月島 49。
 - 為什麼改用 FileDataID：現代用戶端只有在 CASC root 帶有檔名雜湊時，才能用路徑載入檔案；`SetTexture(fileID)` 一律可用。DandyMap 作者在 [Blizzard 論壇](https://us.forums.blizzard.com/en/wow/t/2386382) 說明，它是直接用遊戲內建的小地圖地形來繪製世界地圖，與 Yatlas 的做法相同。
 

@@ -17,8 +17,8 @@ python3 yatlas_data.py Mists Mainline  # only these
 | `data/map_corpse_*.csv` | `Map.db2` Corpse_0/1 (instance entrance) of old clients (7.3.5.26972 and 1.13.0.28211); used where no AreaTrigger is known |
 | `compare_dandymap.py` | Optional cross-check of the tile lists against DandyMap's terrain data (reference only) |
 
-The generator also reads the original Yatlas data with `git show bf9badf:mapdb.lua` / `mapdb2.lua`
-for the hand-made ocean "mocking up" tiles and the hand-picked town list.
+The generator also reads the original Yatlas data with `git show bf9badf:mapdb2.lua`
+for the hand-picked town list.
 Each generated file starts with `if not (YATLAS_CLIENT and YATLAS_CLIENT.<flag>) then return end`,
 so only the data of the running client is kept in memory.
 

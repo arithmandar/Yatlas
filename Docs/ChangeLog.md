@@ -16,6 +16,7 @@
 - Retail instance entrances come from the client JournalInstanceEntrance table; Classic Era and
   Anniversary entrances from the client AreaTrigger table and AzerothCore server data
 - The map menu now lists the maps in expansion order (it used to be random)
+- Removed the hand-made "mocking up" ocean filler tiles (232 per client); only real minimap tiles are drawn
 - Towns and capitals of the world map (AreaPOI.db2) are now part of the data for every client and use the
   game's town / major city icons. Before, only Classic Era showed them (as the old blue circle and star
   icons), because MoP Classic and Retail hide these markers from C_AreaPoiInfo

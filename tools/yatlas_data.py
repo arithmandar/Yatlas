@@ -9,8 +9,7 @@ Writes ../Data/<Flavour>/mapdb.lua and ../Data/<Flavour>/mapdb2.lua.
 Inputs
   * DB2 exports from wago.tools for the flavour's build (downloaded into tools/.cache/<build>/)
   * WDT files of the shown maps (MAID chunk = minimap tile FileDataIDs), also from wago.tools
-  * the original Yatlas data (git show bf9badf:mapdb.lua / mapdb2.lua) for the hand made
-    "mocking up" ocean tiles and the hand picked town list
+  * the original Yatlas data (git show bf9badf:mapdb2.lua) for the hand picked town list
   * tools/data/areatrigger_teleport_*.csv  which AreaTrigger enters which instance (server data)
   * tools/data/map_corpse_*.csv            Map.db2 Corpse_0/1 (instance entrance) of old clients
 """
@@ -45,20 +44,6 @@ def num(v):
 def old_source(name):
     return subprocess.run(['git', '-C', ROOT, 'show', f'{OLD_COMMIT}:{name}'],
                           capture_output=True, check=True).stdout.decode('utf-8-sig')
-
-
-def old_mapdb1():
-    src = old_source('mapdb.lua')
-    i = src.index('\nYatlas_mapdb1'); j = src.index('\n}', i)
-    res, cur = {}, None
-    for line in src[i:j].split('\n'):
-        m = re.match(r'\t\["(\w+)"\] = \{', line)
-        if m:
-            cur = m.group(1); res[cur] = {}; continue
-        m = re.match(r'\t\t\["(\d+)x(\d+)"\] = \{"(\w+)", \{(\d+),(\d+)\}\}(.*)', line)
-        if m and cur:
-            res[cur][(int(m.group(1)), int(m.group(2)))] = (m.group(3), m.group(6).strip())
-    return res
 
 
 def old_towns():
@@ -264,7 +249,6 @@ def generate(name, cfg, log=sys.stdout):
     w1('};\n\n')
 
     # ------------------------------------------------ minimap tiles (WDT MAID)
-    old1 = old_mapdb1()
     w1('-- Minimap tile textures (FileDataIDs) from the MAID chunk of world\\maps\\<Directory>\\<Directory>.wdt\n')
     w1('-- Key "XXxYY" = minimap tile mapXX_YY. Value is a FileDataID usable with Texture:SetTexture(fileID).\n')
     w1('Yatlas_mapdb1 = {\n')
@@ -273,18 +257,10 @@ def generate(name, cfg, log=sys.stdout):
         d = Dir[mid]
         fdid, real = B.wdt_tiles(mid, d, int(Map[mid].get('WdtFileDataID') or 0) or None)
         w1(f'\t[{luastr(d)}] = {{ -- MapID {mid}, WDT FileDataID {fdid}\n')
-        # keep the hand made "mocking up" ocean fillers of the original Yatlas, remapped
-        mock = {}
-        for k, (tex, cmt) in old1.get(d, {}).items():
-            if 'mock' in cmt and k not in real:
-                m = re.match(r'map(\d+)_(\d+)', tex)
-                src = (int(m.group(1)), int(m.group(2)))
-                if src in real: mock[k] = real[src]
-        for k in sorted(set(real) | set(mock)):
-            if k in real: w1(f'\t\t["{k[0]:02d}x{k[1]:02d}"] = {real[k]},\n')
-            else: w1(f'\t\t["{k[0]:02d}x{k[1]:02d}"] = {mock[k]}, -- mocking up\n')
+        for k in sorted(real):
+            w1(f'\t\t["{k[0]:02d}x{k[1]:02d}"] = {real[k]},\n')
         w1('\t},\n')
-        stats[d] = (len(real), len(mock))
+        stats[d] = len(real)
     w1('};\n\n')
     print('  tiles', stats, file=log)
 

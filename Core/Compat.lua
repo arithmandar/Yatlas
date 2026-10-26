@@ -131,7 +131,8 @@ function Yatlas_LoadLandmarks(map)
         local pois = C_AreaPoiInfo.GetAreaPOIForMap(uimap) or {};
 
         for _, poi in ipairs(pois) do
-            if(not seen[poi]) then
+            -- towns and capitals come from Yatlas_cities (Data), skip the same markers here
+            if(not seen[poi] and not (Yatlas_CityPOIs and Yatlas_CityPOIs[poi])) then
                 local info = C_AreaPoiInfo.GetAreaPOIInfo(uimap, poi);
 
                 if(info and info.position) then

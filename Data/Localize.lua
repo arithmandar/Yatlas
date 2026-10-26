@@ -6,7 +6,7 @@ if not Yatlas_mapdb1 then
 	YATLAS_NO_DATA = true;
 	Yatlas_mapdb1, Yatlas_areadb, Yatlas_mapareas = {}, {}, {};
 	Yatlas_UiMapIds, Yatlas_WorldMapIds, Yatlas_WorldMapIds2, Yatlas_ZoneIds = {}, {}, {}, {};
-	Yatlas_instances, Yatlas_taxinodes, Yatlas_towns2 = {}, {}, {};
+	Yatlas_instances, Yatlas_taxinodes, Yatlas_towns2, Yatlas_cities = {}, {}, {}, {};
 	YA_MAPS, YA_MAPS_ORDER = {}, {};
 	return;
 end
@@ -24,6 +24,13 @@ if C_Map and C_Map.GetAreaInfo then
 			if name and name ~= "" then v[1] = name; end
 		end
 	end
+	-- world map towns and capitals (6th field = AreaTable ID, 0 = keep the English name)
+	for _, towns in pairs(Yatlas_cities or {}) do
+		for _, v in ipairs(towns) do
+			local name = v[6] and v[6] > 0 and C_Map.GetAreaInfo(v[6]);
+			if name and name ~= "" then v[1] = name; end
+		end
+	end
 end
 
 -- instance names (Map table)
@@ -33,5 +40,13 @@ if GetRealZoneText then
 			local name = GetRealZoneText(v[4]);
 			if name and name ~= "" then v[1] = name; end
 		end
+	end
+end
+
+-- AreaPOI IDs of Yatlas_cities: the same markers returned by C_AreaPoiInfo are skipped
+Yatlas_CityPOIs = {};
+for _, towns in pairs(Yatlas_cities or {}) do
+	for _, v in ipairs(towns) do
+		Yatlas_CityPOIs[v[4]] = true;
 	end
 end

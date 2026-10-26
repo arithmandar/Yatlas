@@ -16,6 +16,10 @@
 - Retail instance entrances come from the client JournalInstanceEntrance table; Classic Era and
   Anniversary entrances from the client AreaTrigger table and AzerothCore server data
 - The map menu now lists the maps in expansion order (it used to be random)
+- Towns and capitals of the world map (AreaPOI.db2) are now part of the data for every client and use the
+  game's town / major city icons. Before, only Classic Era showed them (as the old blue circle and star
+  icons), because MoP Classic and Retail hide these markers from C_AreaPoiInfo
+- Other area POIs without an atlas use the game's own POI icons, the same as the world map
 - Retail API: MouseIsOver() no longer exists, Region:IsMouseOver() is used instead; secret values from
   UnitClass / UnitIsUnit are checked with issecretvalue before use
 - On an unsupported client Yatlas prints a message instead of raising Lua errors

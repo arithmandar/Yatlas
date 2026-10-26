@@ -45,6 +45,30 @@ Yatlas 從 v1.0.0 起用**單一 TOC** 支援四種用戶端，每種用戶端�
 - 副本入口：主要用 `JournalInstanceEntrance` ＋ `JournalInstance`（只有正式版用戶端有這兩張表），再用正式版 `Map.db2` 本身的 `Corpse_0/Corpse_1` 補缺。
 - 為了控制檔案大小，`Yatlas_areadb` 與 `Yatlas_mapareas` 只保留上述 28 張地圖用得到的區域。
 
+### 城鎮與主城（`Yatlas_cities`，v1.0.0 新增）
+
+原版 Yatlas 的 `Yatlas_towns2` 只收錄「其他城鎮」（小據點）。主要城鎮與主城原本交給遊戲 API（當年的 `GetMapLandmarkInfo`，現在的 `C_AreaPoiInfo`），並以 Yatlas 自己的藍色圓圈與星星圖示繪製。新版用戶端的情況是：
+
+- **Classic Era／Anniversary**：[`AreaPOI`](https://wago.tools/db2/AreaPOI?build=1.15.9.70003) 的城鎮（Flags 13）與主城（Flags 29）仍會由 `C_AreaPoiInfo.GetAreaPOIForMap` 回傳，因此舊的藍圈與星星只出現在這兩個版本。
+- **MoP Classic／正式版**：同樣的資料列還在，但多了 Flags 512（世界地圖不顯示），API 不回傳，所以主要城鎮原本完全沒有標示。
+
+現在由 `tools/yatlas_data.py` 從各版本的 `AreaPOI.db2` 產生 `Yatlas_cities`，格式是 `{名稱, worldY, worldX, AreaPOI ID, 種類, AreaTable ID}`：
+
+- 種類：Flags（去掉 512 與 128）為 13 時是城鎮；為 29 時，如果 Icon 是主城圖示（Era／TBC 為 5，其他版本為 6 或 46～49）就是主城，否則是城鎮（例如 TBC 的 Thrallmar）。其他圖示（例如暗月馬戲團 181）不收錄。
+- 排除：有 `UiTextureAtlasMemberID`（已由 API 以 atlas 顯示）、有 `PlayerConditionID`，以及所在區域已搬到其他地圖或是舊版副本（例如 Midnight 中的「Silvermoon City (Burning Crusade)」）的資料列。
+- 名稱：`AreaPOI.AreaID` 是所在地區而不是城鎮本身，所以用名稱比對 `AreaTable` 取得 ID，在遊戲中以 `C_Map.GetAreaInfo` 換成在地化名稱。比對不到的保留英文名稱。
+- 圖示：城鎮用 `poi-town`，主城用 `poi-majorcity`，四個用戶端都有這兩個 atlas。
+- 去重：`Yatlas_towns2` 中與 `Yatlas_cities` 相距 80 碼以內的項目會在產生時移除。執行時 `Yatlas_LoadLandmarks` 會略過 `Yatlas_cities` 已有的 AreaPOI ID。
+
+| 用戶端 | 城鎮 | 主城 |
+|---|---|---|
+| Classic Era | 33 | 6 |
+| Anniversary | 60 | 9 |
+| MoP Classic | 115 | 10 |
+| 正式版 | 62 | 6 |
+
+其他仍由 API 回傳、沒有 atlas 的 POI，改用遊戲世界地圖相同的 `Interface\Minimap\POIIcons` 與 `C_Minimap.GetPOITextureCoords(textureIndex)` 繪製，不再套用舊的圓圈和星星。
+
 ### API 檢視（四個用戶端）
 
 以 [Gethe/wow-ui-source](https://github.com/Gethe/wow-ui-source) 對應組建的 `Blizzard_APIDocumentationGenerated` 為準：

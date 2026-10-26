@@ -14,7 +14,7 @@ Inputs
   * tools/data/areatrigger_teleport_*.csv  which AreaTrigger enters which instance (server data)
   * tools/data/map_corpse_*.csv            Map.db2 Corpse_0/1 (instance entrance) of old clients
 """
-import csv, json, os, re, struct, subprocess, sys
+import math, csv, json, os, re, struct, subprocess, sys
 from flavors import FLAVORS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -133,7 +133,7 @@ TOWN_RENAMED = {
 }
 
 
-def towns_block(Area, mapids, log):
+def towns_block(Area, mapids, log, cities=()):
     def norm(x): return re.sub(r'[^a-z0-9]', '', x.lower())
     idx = {}
     for r in Area.values():
@@ -145,7 +145,7 @@ def towns_block(Area, mapids, log):
             out.add(norm(r['AreaName_lang'])); r = Area.get(int(r['ParentAreaID']))
         return out
 
-    out, cur, zone, missing, keep = [], None, None, [], True
+    out, cur, zone, missing, keep, dup = [], None, None, [], True, []
     for line in old_towns().split('\n'):
         m = re.match(r'\t\["(\w+)"\] = \{', line)
         if m:
@@ -166,11 +166,76 @@ def towns_block(Area, mapids, log):
                 aid = TOWN_RENAMED[name]
             if aid is None:
                 missing.append(name); continue       # no longer in this client
+            if any(c == TOWN_CONTINENT[cur] and math.hypot(cy - float(y), cx - float(x)) < 80
+                   for c, cy, cx in cities):
+                dup.append(name); continue           # also a world map town (Yatlas_cities)
             line = f'{ind}{{"{name}",{y},{x}, {aid}}}{tail}'
         out.append(line)
     if missing:
         print('  towns without AreaTable match (dropped):', missing, file=log)
+    if dup:
+        print('  towns also in Yatlas_cities (dropped):', dup, file=log)
     return '\n'.join(out).rstrip() + '\n'
+
+
+# ---------------------------------------------------------------- towns and capitals (AreaPOI.db2)
+# The world map town / capital markers of the old continents. Classic Era and Anniversary still
+# return them from C_AreaPoiInfo; MoP Classic and Retail keep the rows but flag them hidden (512),
+# so they are written to the data for every client and drawn with the game's town / city atlas.
+#   Flags without 512 (hidden) and 128:  13 = town, 29 = capital
+#   Icon (Interface\Minimap\POIIcons index): town 4 (Era/TBC) or 5 (MoP/Retail); capital 5 (Era/TBC),
+#   6, or the faction capital icons 46-49 (Retail). Other icons with these flags are events
+#   (e.g. the Darkmoon Faire, icon 181) and are skipped.
+POI_TOWN_ICON = {'1': 4, '2': 4}            # by major build version; default 5
+
+def cities_block(POI, Area, Dir, mapids, build, log):
+    def norm(x): return re.sub(r'[^a-z0-9]', '', x.lower())
+    town_icon = POI_TOWN_ICON.get(build.split('.')[0], 5)
+    idx = {}
+    for r in Area.values():
+        idx.setdefault((int(r['ContinentID']), norm(r['AreaName_lang'])), []).append(int(r['ID']))
+    lists, n = {}, [0, 0]
+    for r in sorted(POI, key=lambda r: int(r['ID'])):
+        cont, flags, icon = int(r['ContinentID']), int(r['Flags']), int(r['Icon'])
+        if cont not in mapids or r['UiTextureAtlasMemberID'] != '0' or r['PlayerConditionID'] != '0':
+            continue
+        base = flags & ~(512 | 128)
+        if base == 13 or (base == 29 and icon == town_icon):
+            kind = 1
+        elif base == 29 and icon in (5, 6, 46, 47, 48, 49):
+            kind = 2
+        else:
+            continue
+        name = r['Name_lang']
+        # AreaPOI.AreaID is the zone the marker is in (not the town), so match the name and only
+        # use the zone to pick between areas of the same name
+        zone = int(r['AreaID'] or 0)
+        if zone > 0 and (zone not in Area or int(Area[zone]['ContinentID']) != cont):
+            continue        # the zone moved to another map (e.g. Eversong Woods in Midnight)
+        if zone > 0 and re.search(r'\(.+\)$', Area[zone]['AreaName_lang']):
+            continue        # legacy copy, e.g. "Silvermoon City (Burning Crusade)" in Midnight
+        base_name = re.sub(r'^The ', '', name)
+        c = []
+        for nm in (name, base_name, re.sub(r' City$', '', name), name + ' City', base_name + ' City'):
+            c = idx.get((cont, norm(nm)))
+            if c: break
+        if c and len(c) > 1 and zone > 0:
+            c = [a for a in c if zone in (a, int(Area[a]['ParentAreaID']))] or c
+        aid = c[0] if c else 0
+        lists.setdefault(cont, []).append((name, float(r['Pos_1']), float(r['Pos_0']), int(r['ID']), kind, aid))
+        n[kind - 1] += 1
+    out = ['-- Towns (kind 1) and capitals (kind 2) of the world map, from AreaPOI.db2\n',
+           '-- {name, worldY, worldX, AreaPOI ID, kind, AreaTableID (0 = keep the name)}\n',
+           'Yatlas_cities = {\n']
+    for cont in sorted(lists):
+        out.append(f'\t[{luastr(Dir[cont])}] = {{\n')
+        for name, y, x, pid, kind, aid in lists[cont]:
+            out.append(f'\t\t{{{luastr(name)}, {num(y)}, {num(x)}, {pid}, {kind}, {aid}}},\n')
+        out.append('\t},\n')
+    out.append('};\n\n')
+    print(f'  towns {n[0]}, capitals {n[1]} (AreaPOI)', file=log)
+    pos = [(c, v[1], v[2]) for c, l in lists.items() for v in l]
+    return ''.join(out), pos
 
 
 # ---------------------------------------------------------------- one flavour
@@ -423,7 +488,11 @@ def generate(name, cfg, log=sys.stdout):
     # ------------------------------------------------ towns
     w2('-- Towns: the hand picked list of the original Yatlas, matched to AreaTable IDs of this client\n')
     w2('-- {name, worldY, worldX, AreaTableID}; name is localized at load time via C_Map.GetAreaInfo\n')
-    w2(towns_block(Area, set(WORLD_IDS), log))
+    cities_lua, cities_pos = cities_block(B.table('AreaPOI'), Area, Dir, set(WORLD_IDS), BUILD, log)
+    w2(towns_block(Area, set(WORLD_IDS), log, cities_pos))
+
+    # ------------------------------------------------ towns and capitals
+    w2(cities_lua)
 
     # ------------------------------------------------ write
     head = (f'-- Yatlas map database for {cfg["label"]} ({BUILD})\n'

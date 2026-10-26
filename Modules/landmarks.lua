@@ -5,6 +5,7 @@
 local landmarkaltdungeon = {nil,nil,nil,nil,-1,"Dungeon"};     -- blue circle
 local landmarkaltraid = {nil,nil,nil,nil,-1,"Raid"};           -- green circle
 local landmarkalttown = {nil,nil,nil,nil,-4,"poi-town"};
+local landmarkaltcity = {nil,nil,nil,nil,5,"poi-majorcity"};
 
 local function atlasexists(atlas)
     return atlas and C_Texture and C_Texture.GetAtlasInfo
@@ -34,6 +35,16 @@ function set.getpoints(name, map)
         end
     end
 
+    -- world map towns and capitals (AreaPOI.db2); v[5] = 1 town, 2 capital
+    if(type(Yatlas_cities) == "table" and type(Yatlas_cities[map]) == "table") then
+        for h,v in ipairs(Yatlas_cities[map]) do
+            local x,y = Yatlas_Big2Mini_Coord(v[2],v[3]);
+
+            YAPoints_AddPoint(nil, "landmarks", v[1], x, y, nil,
+                    (v[5] == 2) and landmarkaltcity or landmarkalttown);
+        end
+    end
+
      -- 'other towns' ...we got these...from OURSELVES!
     if(type(Yatlas_towns2[map]) == "table") then
         for h,v in ipairs(Yatlas_towns2[map]) do
@@ -59,17 +70,21 @@ function set.setuppoint(point, env, dat)
         atlas = nil;
     end
 
+    -- legacy = draw the old Yatlas circle / star (no atlas and no POIIcons API)
+    local legacy = false;
     if(atlas) then
         tindex = nil;
     elseif(tindex == nil) then
         tindex = 4;
-    elseif(tindex >= 0 and tindex ~= 4 and tindex ~= 5 and Yatlas_GetPOITextureCoords == nil) then
-        tindex = 4;
+        legacy = true;
+    elseif(tindex >= 0 and Yatlas_GetPOITextureCoords == nil) then
+        tindex = (tindex == 5) and 5 or 4;
+        legacy = true;
     end
 
     if(atlas) then
         r,g,b = 1,1,1;
-    elseif(tindex == 4 or tindex == 5 or tindex < 0) then
+    elseif(tindex < 0 or legacy) then
         x1 = 0; y1 = 0;
         x2 = 1; y2 = 1;
 

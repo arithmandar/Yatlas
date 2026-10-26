@@ -1,62 +1,48 @@
 # Yatlas ChangeLog
 
 
-### v1.0.0 (in development)
+### v1.0.0 (Oct. 26, 2026)
 
-- Yatlas is now licensed under the GNU General Public License, version 2 (LICENSE, ## X-License)
-- Multi-client support with one download and one TOC (## Interface: 11509, 20506, 50504, 120105):
-  Retail 12.1.5, Mists of Pandaria Classic 5.5.4, Anniversary 2.5.6 and Classic Era 1.15.9
-- Client detection in Core/Constants.lua (YATLAS_CLIENT, from WOW_PROJECT_ID, the same approach as Atlas)
-- Map data split per client: Data/ClassicEra, Data/TBC, Data/Mists, Data/Mainline. Data/Data.xml loads
-  them all, and each file returns at once unless it matches the running client
-- Shared data and helpers moved to Data/Common.lua; the localization of names moved to Data/Localize.lua
-- New maps for Retail: Draenor, Broken Isles, Argus, Zandalar, Kul Tiras, Nazjatar, The Shadowlands,
+**One download for every client**
+
+- Yatlas now runs on Retail (12.1.5), Mists of Pandaria Classic (5.5.4), Anniversary (2.5.6) and
+  Classic Era (1.15.9). Each client uses map data built from its own game files
+- On a client that is not supported, Yatlas shows a short message instead of Lua errors
+
+**Maps**
+
+- Retail: new maps for Draenor, Broken Isles, Argus, Zandalar, Kul Tiras, Nazjatar, The Shadowlands,
   Zereth Mortis, Dragon Isles, The Forbidden Reach, Zaralek Cavern, Emerald Dream, Khaz Algar
   (surface and underground), Undermine, Siren Isle, K'aresh, Harandar, Voidstorm, and Quel'Thalas
   on the Eastern Kingdoms map
-- Retail instance entrances come from the client JournalInstanceEntrance table; Classic Era and
-  Anniversary entrances from the client AreaTrigger table and AzerothCore server data
-- The map menu now lists the maps in expansion order (it used to be random)
-- Removed the hand-made "mocking up" ocean filler tiles (232 per client); only real minimap tiles are drawn
-- Towns and capitals of the world map (AreaPOI.db2) are now part of the data for every client and use the
-  game's town / major city icons. Before, only Classic Era showed them (as the old blue circle and star
-  icons), because MoP Classic and Retail hide these markers from C_AreaPoiInfo
-- Other area POIs without an atlas use the game's own POI icons, the same as the world map
-- Mainline: new point set "Delves" with the delve entrances from C_AreaPoiInfo.GetDelvesForMap
-  (regular and bountiful icons, like the world map); it can be switched off in the point menu
-- Mainline: flight paths with a VisibilityConditionID (e.g. the 12.0 Quel'Thalas nodes, burned
-  Teldrassil, BfA war campaign outposts; 39 nodes) are only drawn when the client lists them, like
-  the world map, instead of for every character. The flight path list is refreshed after a
-  loading screen or a zone change
-- Point tooltips show a second line like the world map: "Undiscovered Flightpoint" /
-  "Undiscovered Alliance Flightpoint" for undiscovered flight paths (the game's
-  UNDISCOVERED_*_FLIGHTPOINT strings), and the description of landmarks and delves from the map API
-- Mainline: undiscovered flight paths (TaxiNode_Undiscovered from the map API) are drawn at the
-  size of the other flight paths and no longer dimmed a second time
-- New minimap button look: the game's world map icon (Interface\WorldMap\WorldMap-Icon, also the
-  TOC icon) in the round minimap button frame of the game (UI-Minimap-Background and
-  MiniMap-TrackingBorder), sized per client. Images/Button.blp and Button-Down.blp were removed
-- Landmarks submenu in the point menu: instances (dungeons and raids), capitals, towns, travel
-  (mainline: boats, zeppelins, portals and teleport networks from the map API) and other landmarks
-  can be switched on and off separately; "Landmarks" itself still switches all of them
-- The point menu lists the point sets in a fixed order (the load order of Modules/index.xml)
-- The map zooms out about four times further (down to 8 pixels per tile in the small window): map
-  tile textures are created on demand (up to 4096) instead of the fixed 256 from the XML. The mouse
-  wheel and the +/- buttons now zoom by about 20% per step
-- Mainline: new point set "Skyriding Races" with the race start points from
-  C_AreaPoiInfo.GetDragonridingRacesForMap; it can be switched off in the point menu
-- Retail: capitals use the faction icons of the world map (Alliance / Horde)
-- Retail: dungeon, raid and flight path icons are scaled up to match the larger Retail atlases
-- Minimap button: circles the real minimap center and size (Retail's minimap is 198x198, Classic 140x140),
-  and follows minimap size changes
-- Retail API: MouseIsOver() no longer exists, Region:IsMouseOver() is used instead; secret values from
-  UnitClass / UnitIsUnit are checked with issecretvalue before use
-- On an unsupported client Yatlas prints a message instead of raising Lua errors
-- Removed `## OptionalDeps: myAddOns` from the TOC (myAddOns is a 2005 addon manager that no longer exists;
-  Yatlas has no myAddOns code left)
-- Mists of Pandaria Classic data is unchanged (identical to v0.9.6)
-- One generator for all clients: tools/yatlas_data.py with tools/flavors.py
-  (replaces gen.py, assemble.py, towns.py, wdt.py); Docs/DataSources-5.5.4.md is now Docs/DataSources.md
+- The map menu lists the maps in expansion order
+- The map zooms out about four times further, and the mouse wheel and +/- buttons zoom in
+  smoother steps
+- The empty ocean filler tiles around the maps are gone
+
+**Points on the map**
+
+- Towns and capitals now show on every client, with the same icons as the world map; on Retail,
+  capitals use the Alliance and Horde icons
+- Retail: delve entrances, including bountiful delves
+- Retail: skyriding race start points
+- Landmarks can be filtered: instances, capitals, towns, travel (Retail: boats, zeppelins and
+  portals) and other landmarks each have their own switch
+- Tooltips show an extra line like the world map, for example "Undiscovered Flightpoint"
+- Retail: dungeon, raid and flight path icons are sized to match the world map, and undiscovered
+  flight paths are easier to see
+- Retail: flight paths that depend on your character's progress (for example in Quel'Thalas or
+  Teldrassil) only show when the world map shows them too
+- The point menu always lists the point types in the same order
+
+**Minimap button**
+
+- New look: the world map icon in a round frame, like other minimap buttons
+- Retail: the button circles the minimap correctly again
+
+**Other**
+
+- Yatlas is now licensed under the GNU General Public License, version 2
 
 ### v0.9.6 (Oct. 26, 2026)
 

@@ -53,11 +53,11 @@ You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggl
 - Dungeon and raid entrances, using the game's own icons
 - Smaller settlements, with localized names
 - Flight paths for your faction. Undiscovered ones are dimmed.
-- Delve entrances (mainline), including today's bountiful delves.
-- Skyriding race start points (mainline).
+- Delve entrances (Retail), including today's bountiful delves.
+- Skyriding race start points (Retail).
 - Party and raid members
 
-You can turn each type of point on or off from the options menu. Landmarks have a submenu with separate switches for instances, capitals, towns, travel (boats, zeppelins and portals, mainline) and other landmarks.
+You can turn each type of point on or off from the options menu. Landmarks have a submenu with separate switches for instances, capitals, towns, travel (boats, zeppelins and portals, Retail) and other landmarks.
 
 ### Known limitations
 

@@ -10,7 +10,7 @@ end
 YA_MAPS = {
 	[YA_UiMapName(13, "Eastern Kingdoms")] = {"Azeroth"},
 	[YA_UiMapName(12, "Kalimdor")] = {"Kalimdor"},
-	[YA_UiMapName(101, "Outland")] = {"Expansion01"},
+	[YA_UiMapName(1467, "Outland")] = {"Expansion01"},
 	[YA_UiMapName(113, "Northrend")] = {"Northrend"},
 	[YA_UiMapName(424, "Pandaria")] = {"HawaiiMainLand"},
 	[YA_UiMapName(207, "Deepholm")] = {"Deephome"},
@@ -25,7 +25,7 @@ YA_MAPS = {
 Yatlas_WorldMapIds = {
 	["Azeroth"] = 13,
 	["Kalimdor"] = 12,
-	["Expansion01"] = 101,
+	["Expansion01"] = 1467,
 	["Northrend"] = 113,
 	["HawaiiMainLand"] = 424,
 	["Deephome"] = 207,

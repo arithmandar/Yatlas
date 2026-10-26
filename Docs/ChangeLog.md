@@ -21,6 +21,9 @@
 - New tooltips for Goto Player (in both frames; also shows when the map is following you)
   and the Options button
 - Version text moved left so it no longer overlaps the switch, lock and close buttons
+- Fixed: "Outland" was the only continent not localized in the map menu. It used uiMapID 101,
+  which does not exist in 5.5.4; Outland is uiMapID 1467 there (987 is an orphan copy outside the
+  world map tree). This also fixes the continent-level flight path and landmark lookups for Outland
 - Fixed: pressing Esc in the large frame caused ADDON_ACTION_FORBIDDEN (RunBinding() is protected).
   The large frame no longer captures the keyboard; Esc closes it through the game's own panel handling,
   and the toggle and screenshot keys go straight to their normal bindings

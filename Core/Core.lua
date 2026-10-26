@@ -556,9 +556,7 @@ function YatlasFrameTemplate:GetMap()
 end
 
 -- Zoom = screen pixels per map tile. The XML pre-builds 256 tile textures; more are created
--- on demand, up to YATLAS_MAX_TILES, so the map can be zoomed out much further than before.
-YATLAS_MIN_ZOOM = 8;
-YATLAS_MAX_TILES = 4096;
+-- on demand, up to YATLAS_MAX_TILES (Core\Constants.lua), down to YATLAS_MIN_ZOOM.
 
 local function ya_tilecount(vf, z)
     return (math.ceil(vf:GetWidth()/z)+1) * (math.ceil(vf:GetHeight()/z)+1);

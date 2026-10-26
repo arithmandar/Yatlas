@@ -72,6 +72,11 @@ YA_FRAME_OPTION_DEFAULTS = {
     ["Zoom"] = 256,
 };
 
+-- Map zoom (screen pixels per map tile). The smallest zoom is also limited by the number of
+-- tile textures a frame may create (UI\Templates.xml pre-builds 256, the rest on demand).
+YATLAS_MIN_ZOOM = 8;
+YATLAS_MAX_TILES = 4096;
+
 -- ---------------------------------------------------------------------------
 -- Backdrops (the <Backdrop> XML tag was removed; frames inherit
 -- BackdropTemplate and call Yatlas_ApplyBackdrop with one of these)

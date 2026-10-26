@@ -23,6 +23,9 @@
 - Other area POIs without an atlas use the game's own POI icons, the same as the world map
 - Mainline: new point set "Delves" with the delve entrances from C_AreaPoiInfo.GetDelvesForMap
   (regular and bountiful icons, like the world map); it can be switched off in the point menu
+- The map zooms out about four times further (down to 8 pixels per tile in the small window): map
+  tile textures are created on demand (up to 4096) instead of the fixed 256 from the XML. The mouse
+  wheel and the +/- buttons now zoom by about 20% per step
 - Mainline: new point set "Skyriding Races" with the race start points from
   C_AreaPoiInfo.GetDragonridingRacesForMap; it can be switched off in the point menu
 - Retail: capitals use the faction icons of the world map (Alliance / Horde)

@@ -555,21 +555,48 @@ function YatlasFrameTemplate:GetMap()
     return self.opt.Map;
 end
 
+-- Zoom = screen pixels per map tile. The XML pre-builds 256 tile textures; more are created
+-- on demand, up to YATLAS_MAX_TILES, so the map can be zoomed out much further than before.
+YATLAS_MIN_ZOOM = 8;
+YATLAS_MAX_TILES = 4096;
+
+local function ya_tilecount(vf, z)
+    return (math.ceil(vf:GetWidth()/z)+1) * (math.ceil(vf:GetHeight()/z)+1);
+end
+
+-- zoom in (dir > 0) or out (dir < 0) by about 20%, at least one pixel per step
+function YatlasFrameTemplate:StepZoom(dir)
+    local z = self:GetZoom();
+    local nz = (dir > 0) and math.floor(z*1.2 + 0.5) or math.floor(z/1.2 + 0.5);
+
+    if(nz == z) then
+        nz = z + ((dir > 0) and 1 or -1);
+    end
+    self:SetZoom(nz);
+end
+
 function YatlasFrameTemplate:SetZoom(z, nocenter)
     local textureno = 1;
     local lm = self:GetName();
     local vf = _G[lm.."ViewFrame"];
+
+    z = math.floor(math.max(z, YATLAS_MIN_ZOOM));
+    z = math.min(z, math.floor(math.min(vf:GetWidth(), vf:GetHeight())));
+    while(ya_tilecount(vf, z) > YATLAS_MAX_TILES) do
+        z = z + 1;
+    end
 
     self.wzoom = math.floor(vf:GetWidth()/z)+1;
     self.hzoom = math.floor(vf:GetHeight()/z)+1;
     self.wzoom_real = math.ceil(vf:GetWidth()/z)+1;
     self.hzoom_real = math.ceil(vf:GetHeight()/z)+1;
 
-    if(_G[lm.."MapTexture"..(self.wzoom_real*self.hzoom_real)] == nil) then
-        return self:SetZoom(z+4);
-    elseif(z > vf:GetHeight() or z > vf:GetWidth()) then
-        return self:SetZoom(z-4);
+    for n = 1, self.wzoom_real*self.hzoom_real do
+        if(_G[lm.."MapTexture"..n] == nil) then
+            self:CreateTexture(lm.."MapTexture"..n, "BACKGROUND", "YatlasMapTextureTemplate");
+        end
     end
+
     local lastzoom = self.opt.Zoom;
     self.opt.Zoom = z;
 

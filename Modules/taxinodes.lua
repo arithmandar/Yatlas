@@ -118,11 +118,24 @@ function set.setuppoint(point, env, dat)
     end
 end
 
+-- the description the world map shows for undiscovered flight paths (FlightPointDataProvider)
+local function undiscoveredtext(faction)
+    if(faction == 1 and UNDISCOVERED_FACTION_FLIGHTPOINT and FACTION_HORDE) then
+        return UNDISCOVERED_FACTION_FLIGHTPOINT:format(FACTION_HORDE);
+    elseif(faction == 2 and UNDISCOVERED_FACTION_FLIGHTPOINT and FACTION_ALLIANCE) then
+        return UNDISCOVERED_FACTION_FLIGHTPOINT:format(FACTION_ALLIANCE);
+    end
+    return UNDISCOVERED_NEUTRAL_FLIGHTPOINT;     -- nil on clients without the string
+end
+
 function set.setuplegend(point, env, dat)
     env.iconsize = 16;
     set.setuppoint(point, env, dat);
 
     point.Text:SetText(dat.name);
+    if(dat.userdat.undiscovered) then
+        point.Desc:SetText(undiscoveredtext(dat.userdat.faction));
+    end
 end
 
 function set.configmenu(name, lm)

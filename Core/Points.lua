@@ -344,7 +344,15 @@ function YAPoints_UpdateTooltip(frame, tooltip, point, op)
             local legendfunc = sets[point.dat.setname].setuplegend;
             if(legendfunc) then
                 local legend = tooltip:GetNext();
+                legend.Desc:SetText(nil);
                 legendfunc(legend, env, point.dat);
+                local desc = legend.Desc:GetText();
+                if(desc and desc ~= "") then
+                    legend:SetHeight(16 + legend.Desc:GetStringHeight() + 1);
+                else
+                    legend.Desc:SetText(nil);
+                    legend:SetHeight(16);
+                end
             end
             -- tooltip:AddDataPoint(point.dat.name);
         end

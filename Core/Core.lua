@@ -1171,6 +1171,11 @@ function YatlasTooltipTemplate:GetNext()
     f.Text = f:CreateFontString(nil, "ARTWORK");
     f.Text:SetFontObject(GameFontHighlight);
     f.Text:SetPoint("TOPLEFT", f.Icon, 24, 0);
+
+    -- optional second line (set by setuplegend), like the description of the world map pins
+    f.Desc = f:CreateFontString(nil, "ARTWORK");
+    f.Desc:SetFontObject(GameFontNormalSmall);
+    f.Desc:SetPoint("TOPLEFT", f.Text, "BOTTOMLEFT", 0, -1);
   
     if(self.nextnew == 1) then
         f:SetPoint("TOPLEFT", self, "TOPLEFT", 8, -8);
@@ -1192,6 +1197,9 @@ function YatlasTooltipTemplate:FixSize()
         hei = hei + self.lines[h]:GetHeight() + 2;
         if(self.lines[h].Text:GetWidth() > wid) then
             wid = self.lines[h].Text:GetWidth();
+        end
+        if(self.lines[h].Desc:GetText() and self.lines[h].Desc:GetWidth() > wid) then
+            wid = self.lines[h].Desc:GetWidth();
         end
     end
     self:SetHeight(hei);

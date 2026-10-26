@@ -54,7 +54,7 @@ local function registerset(def)
         for _, v in ipairs(set.cache[map]) do
             local x,y = Yatlas_Big2Mini_Coord(v[1],v[2]);
 
-            YAPoints_AddPoint(nil, def.name, v[3], x, y, nil, {atlas = v[6]});
+            YAPoints_AddPoint(nil, def.name, v[3], x, y, nil, {atlas = v[6], description = v[4]});
         end
     end
 
@@ -89,6 +89,7 @@ local function registerset(def)
         set.setuppoint(point, env, dat);
 
         point.Text:SetText(dat.name);
+        point.Desc:SetText(dat.userdat.description);
     end
 
     function set.configmenu(name, lm)

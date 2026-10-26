@@ -178,6 +178,7 @@ function set.setuplegend(point, env, dat)
     set.setuppoint(point, env, dat);
 
     point.Text:SetText(dat.name);
+    point.Desc:SetText(dat.userdat[4]);     -- area POI description from the map API
 end
 
 function set.configmenu(name, lm)

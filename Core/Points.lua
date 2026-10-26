@@ -497,11 +497,13 @@ function YAPoints_Mobile_SetLocation(setname, name, map, x, y)
     for framename,v in pairs(frames) do
         local frame = _G[framename];
         if(frame:IsVisible()) then
-            local d = frame.mobilepoints[setname..":"..name];
-            d.locx = x;
-            d.locy = y;
-            d.locmap = map;
-            d:Update(frame);
+            local d = frame.mobilepoints and frame.mobilepoints[setname..":"..name];
+            if(d) then
+                d.locx = x;
+                d.locy = y;
+                d.locmap = map;
+                d:Update(frame);
+            end
         end
     end
 end
@@ -527,13 +529,28 @@ function YAPoints_SetupMobilePointF(frame, setname, name, itahm, prop, ...)
     whut[prop](whut, ...);
 end
 
+-- Call fn(point, frame) for a mobile point in every visible Yatlas frame.
+function YAPoints_ForEachMobilePoint(setname, name, fn)
+    for framename,v in pairs(frames) do
+        local frame = _G[framename];
+        if(frame and frame:IsVisible() and frame.mobilepoints) then
+            local d = frame.mobilepoints[setname..":"..name];
+            if(d) then
+                fn(d, frame);
+            end
+        end
+    end
+end
+
 function YAPoints_HideMobile(setname, name) 
     for framename,v in pairs(frames) do
         local frame = _G[framename];
         if(frame:IsVisible()) then
-            local d = frame.mobilepoints[setname..":"..name];
-            d.locmap = nil;
-            d:Update(frame);
+            local d = frame.mobilepoints and frame.mobilepoints[setname..":"..name];
+            if(d) then
+                d.locmap = nil;
+                d:Update(frame);
+            end
         end
     end
 end

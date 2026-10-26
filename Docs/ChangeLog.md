@@ -6,6 +6,10 @@
 - Reorganized the addon folders: Core/, Data/, UI/, Modules/ (was sets/), Images/ (was images/)
 - Textures converted from TGA to BLP; texture paths now use Images\
 - Bindings.xml stays in the addon root folder (WoW only loads it from there)
+- Player position uses the game's world map arrow (Interface\WorldMap\WorldMapArrow) and turns
+  with the facing (GetPlayerFacing); position and facing update every 0.05 s while Yatlas is open
+- Party and raid members use the game's WhiteCircle-RaidBlips dot in class colour
+  (Icon-PartyUnit is kept only as a fallback)
 
 ### v0.9.5 (Oct. 26, 2026)
 

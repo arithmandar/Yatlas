@@ -1,0 +1,277 @@
+AreaTriggerID,TargetMapID,Name
+45,189,Scarlet Monastery - Graveyard (Entrance)
+78,36,DeadMines Entrance
+101,34,Stormwind Stockades Entrance
+107,35,Stormwind Vault Entrance
+109,0,Stormwind Vault Instance
+119,0,DeadMines Instance Start
+121,0,Deadmines Instance End
+145,33,Shadowfang Keep Entrance
+194,0,Shadowfang keep - Entrance
+226,1,The Barrens - Wailing Caverns
+228,43,The Barrens - Wailing Caverns
+242,1,Razorfen Kraul Instance Start
+244,47,Razorfen Kraul Entrance
+257,48,Blackphantom Deeps Entrance
+259,1,Blackphantom Deeps Instance Start
+286,70,Uldaman Entrance
+288,0,Uldaman Instance Start
+322,0,Gnomeregan Instance Start
+324,90,Gnomeregan Entrance
+442,129,Razorfen Downs Entrance
+444,1,Razorfen Downs Instance Start
+446,109,Altar of Atal'Hakkar Entrance
+448,0,Altar Of Atal'Hakkar Instance Start
+503,0,Stockades Instance
+523,90,Gnomeregan Train Depot Entrance
+525,0,Gnomeregan Train Depot Instance
+527,1,Teddrassil - Ruth Theran
+542,1,Teddrassil - Darnassus
+602,0,Scarlet Monastery - Graveyard (Exit)
+604,0,Scarlet Monastery - Cathedral (Exit)
+606,0,Scarlet Monastery - Armory (Exit)
+608,0,Scarlet Monastery - Library (Exit)
+610,189,Scarlet Monastery - Cathedral (Entrance)
+612,189,Scarlet Monastery - Armory (Entrance)
+614,189,Scarlet Monastery - Library (Entrance)
+702,0,Stormwind - Wizard Sanctum Room
+704,0,Stormwind - Wizard Sanctum Tower Portal
+882,0,Uldaman Instance End
+902,70,Uldaman Exit
+922,1,Zul'Farrak Instance Start
+924,209,Zul'Farrak Entrance
+943,1,Leap of Faith - End of fall
+1064,1,Onyxia's Lair - Dustwallow Instance
+1466,230,Blackrock Depths Entrance
+1468,229,Blackrock Spire - Searing Gorge Instance (Inside)
+1470,0,Blackrock Spire Entrance
+1472,0,Blackrock Dephts - Searing Gorge Instance
+2068,0,Blackrock Spire - Jump Exit
+2166,0,Deeprun Tram - Ironforge Instance (Inside)
+2171,0,Deeprun Tram - Stormwind Instance (Inside)
+2173,369,Deeprun Tram - Stormwind Instance
+2175,369,Deeprun Tram - Ironforge Instance
+2214,329,Stratholme - Eastern Plaguelands Instance
+2216,329,Stratholme - Eastern Plaguelands Instance
+2217,329,Stratholme - Eastern Plaguelands Instance
+2221,0,Stratholme - Eastern Plaguelands Instance (Inside)
+2226,1,Ragefire Chasm - Ogrimmar Instance (Inside)
+2230,389,Ragefire Chasm - Ogrimmar Instance
+2406,0,Shadowfang - South Fall Target
+2407,0,Shadowfang - South Fall Target
+2408,0,Shadowfang Front Fall Exit Target
+2409,0,Shadowfang Front Fall Exit Target
+2410,0,Shadowfang - North Fall Target
+2411,0,Shadowfang - North Fall Target
+2530,1,Hall of Legends - Ogrimmar (Inside)
+2534,0,Stormwind (Inside) - Champions Hall
+2547,0,Scholomance - Exit Porch Target 001
+2548,0,Scholomance - Exit Porch Target 001
+2549,0,Scholomance - Exit Porch Target 001
+2567,289,Scholomance Entrance
+2568,0,Scholomance Instance
+2606,0,Alterac Valley - Horde Exit
+2608,0,Alterac Valley - Alliance Exit
+2848,249,Onyxia's Lair Entrance
+2886,409,The Molten Bridge
+2890,0,"The Molten Core, Exit (from inside of the Instance)"
+3126,1,"Maraudon, The Wicked Grotto [Purple Wing] (Exit)"
+3131,1,"Maraudon, Foulspore Cavern [Orange Wing] (Exit)"
+3133,349,"Maraudon, Foulspore Cavern [Orange Wing] (Entrance)"
+3134,349,"Maraudon, The Wicked Grotto [Purple Wing] (Entrance)"
+3183,429,"Dire Maul, East Wing [West] (Entrance)"
+3184,429,"Dire Maul, East Wing [South] (Entrance)"
+3185,429,"Dire Maul, East Wing [East] (Entrance)"
+3186,429,"Dire Maul, West Wing [South] (Entrance)"
+3187,429,"Dire Maul, West Wing [North] (Entrance)"
+3189,429,"Dire Maul, North Wing (Entrance)"
+3190,1,"Dire Maul, West Wing [South] (Exit)"
+3191,1,"Dire Maul, West Wing [North](Exit)"
+3193,1,"Dire Maul, North Wing (Exit)"
+3194,1,"Dire Maul, East Wing [West] (Exit)"
+3195,1,"Dire Maul, East Wing [South] (Exit)"
+3196,1,"Dire Maul, East Wing [East] (Exit)"
+3197,1,"Dire Maul, Alzzin the Wildshaper's broken wall [1-Way] (Exit)"
+3528,409,The Molten Core Window Entrance
+3529,409,The Molten Core Window(Lava) Entrance
+3726,469,Blackwing Lair - Blackrock Mountain - Eastern Kingdoms
+3728,229,"Blackrock Spire, Exit (from inside of Blackwing Lair Instance)"
+3928,309,Zul'Gurub Entrance 
+3930,0,Zul'Gurub Exit 
+3948,0,Arathi Basin Alliance Out
+3949,0,Arathi Basin Horde Out
+4006,1,Ruins Of Ahn'Qiraj (Inside)
+4008,509,Ruins Of Ahn'Qiraj (Outside)
+4010,531,Ahn'Qiraj Temple (Outside)
+4012,1,Ahn'Qiraj Temple (Inside)
+4131,532,"Karazhan, Main (Entrance)"
+4135,532,"Karazhan, Service (Entrance)"
+4145,530,The Shattered Halls (Exit)
+4147,530,The Blood Furnace (Exit)
+4149,530,Magtheridon's Lair (Exit)
+4150,543,Hellfire Ramparts (Entrance)
+4151,540,The Shattered Halls (Entrance)
+4152,542,The Blood Furnace (Entrance)
+4153,544,Magtheridon's Lair (Entrance)
+4297,530,Hellfire Ramparts (Exit)
+4304,530,Hellfire Ramparts - Omor Exit Target
+4311,534,"Battle Of Mount Hyjal, Alliance Base (Entrance)"
+4312,534,"Battle Of Mount Hyjal, Horde Base (Entrance)"
+4313,534,"Battle Of Mount Hyjal, Night Elf Base (Entrance)"
+4319,534,"Caverns Of Time, Battle Of Mount Hyjal (Entrance) "
+4320,269,"Caverns Of Time, Black Morass (Entrance)"
+4321,560,"Caverns Of Time, Old Hillsbrad Foothills (Entrance)"
+4322,1,"Caverns Of Time, Black Morass (Exit)"
+4323,1,"Caverns Of Time, Battle Of Mount Hyjal (Exit)"
+4324,1,"Caverns Of Time, Old Hillsbrad Foothills (Exit)"
+4352,0,Outland To Dark Portal
+4354,530,Dark Portal To Outland
+4363,546,The Underbog (Entrance)
+4364,545,The Steamvault (Entrance)
+4365,547,The Slave Pens (Entrance)
+4366,530,The Steamvault (Exit)
+4367,530,The Underbog (Exit)
+4379,530,The Slave Pens (Exit)
+4386,0,Sunstrider Isle to Eastern Plaguelands
+4397,530,Shadow Labyrinth (Exit)
+4399,530,Sethekk Halls (Exit)
+4401,530,Mana Tombs (Exit)
+4403,530,Auchenai Crypts (Exit)
+4404,558,Auchenai Crypts (Entrance)
+4405,557,Mana Tombs (Entrance)
+4406,556,Sethekk Halls (Entrance)
+4407,555,Shadow Labyrinth (Entrance)
+4409,530,Eastern Plaguelands To Sunstrider Isle
+4416,548,Serpentshrine Cavern (Entrance)
+4418,530,Serpentshrine Cavern (Exit)
+4436,0,"Karazhan, Main (Exit)"
+4455,530,The Mechanar (Exit)
+4457,530,The Eye (Exit)
+4459,530,The Botanica (Exit)
+4461,530,The Arcatraz (Exit)
+4467,553,The Botanica (Entrance)
+4468,552,The Arcatraz (Entrance)
+4469,554,The Mechanar (Entrance)
+4470,550,The Eye (Entrance)
+4487,1,Battle Of Mount Hyjal (Exit)
+4520,0,"Karazhan, Service (Exit)"
+4523,530,Socrethar's Seat To Mainland
+4534,530,Gruul's Lair (Exit)
+4535,565,Gruul's Lair (Entrance)
+4561,530,"Invasion Point, Cataclysm (Return Point)"
+4562,530,"Invasion Point, Cataclysm (Return Point)"
+4598,564,Black Temple (Entrance)
+4612,530,The Botanica
+4614,530,The Mechanar
+4619,530,Black Temple (Exit)
+4738,568,Zul'Aman (Entrance)
+4739,530,Zul'Aman (Exit)
+4741,571,Utgarde Pinnacle (exit)
+4743,571,Utgarde Keep (exit)
+4745,574,Utgarde Keep (entrance)
+4747,575,Utgarde Pinnacle (entrance)
+4885,530,Magisters' Terrace (Exit)
+4887,585,Magisters' Terrace (Entrance)
+4889,580,Sunwell Plateau (Entrance)
+4891,530,Sunwell Plateau (Exit)
+4917,559,Arena - Nagrand - Teleport Target - Game On
+4919,562,Arena - Bladesedge - Teleport Target - Game On
+4921,562,Arena - Bladesedge - Teleport Target - Game On
+4922,562,Arena - Bladesedge - Teleport Target - Game On
+4923,562,Arena - Bladesedge - Teleport Target - Game On
+4924,562,Arena - Bladesedge - Teleport Target - Game On
+4925,562,Arena - Bladesedge - Teleport Target - Game On
+4927,572,Arena - Undercity - Teleport Target - Game On
+4928,572,Arena - Undercity - Teleport Target - Game On
+4929,572,Arena - Undercity - Teleport Target - Game On
+4930,572,Arena - Undercity - Teleport Target - Game On
+4931,572,Arena - Undercity - Teleport Target - Game On
+4932,572,Arena - Undercity - Teleport Target - Game On
+4933,572,Arena - Undercity - Teleport Target - Game On
+4934,572,Arena - Undercity - Teleport Target - Game On
+4935,572,Arena - Undercity - Teleport Target - Game On
+4936,572,Arena - Undercity - Teleport Target - Game On
+4941,572,Arena - Undercity - Teleport Target - Game On
+4944,562,Arena - Bladesedge - Teleport Target - Game On
+4981,571,The Nexus (exit)
+4983,576,The Nexus (entrance)
+4998,600,Drak'Tharon Keep (entrance)
+5000,571,Drak'Tharon Keep (exit)
+5001,571,The Oculus (exit)
+5010,599,"Ulduar, Halls of Stone (entrance)"
+5012,571,"Ulduar, Halls of Stone (exit)"
+5051,571,"Zul'drak - Voltarus, base floor -> middle"
+5061,571,"Zul'drak - Voltarus, middle floor -> base"
+5079,571,"Zul'drak - Voltarus, middle floor -> top"
+5080,571,"Zul'drak - Voltarus, upper floor -> middle"
+5091,571,"Ulduar, Halls of Lightning (exit)"
+5093,602,"Ulduar, Halls of Lightning (entrance)"
+5113,571,Azjol-Nerub (exit back)
+5115,571,Azjol-Nerub (exit)
+5117,601,Azjol-Nerub (entrance)
+5127,0,Ebon Hold (E.K.) Top Return Target
+5128,0,Ebon Hold (E.K.) Top West Target
+5129,0,Ebon Hold (E.K.) Top Return Target
+5130,0,Ebon Hold (E.K.) Top South Target
+5131,0,Ebon Hold (E.K.) Top Return Target
+5132,0,Ebon Hold (E.K.) Top North Target
+5133,0,Ebon Hold (E.K.) Top Return Target
+5134,0,Ebon Hold (E.K.) Top East Target
+5135,0,Ebon Hold (E.K.) Middle -> Bottom Target
+5136,0,Ebon Hold (E.K.) Middle -> Bottom Target
+5137,0,Ebon Hold (E.K.) Bottom -> Middle Target
+5138,0,Ebon Hold (E.K.) Bottom -> Ground Target
+5148,1,CoT Stratholme - Exit Target
+5150,595,Culling of Stratholme (entrance)
+5181,1,Culling of Stratholme (exit 2)
+5191,533,"Naxxramas, East (Entrance)"
+5192,533,"Naxxramas, North (Entrance)"
+5193,533,"Naxxramas, West (Entrance)"
+5194,533,"Naxxramas, South (Entrance)"
+5196,571,"Naxxramas, North-East (Exit)"
+5197,571,"Naxxramas, North-West (Exit)"
+5198,571,"Naxxramas, South-East (Exit)"
+5199,571,"Naxxramas, South-West (Exit)"
+5205,604,Gundrak (entrance south)
+5206,604,Gundrak (entrance north)
+5209,608,Violet Hold (entrance)
+5211,571,Violet Hold (exit)
+5213,571,Ahn'Kahet (exit)
+5215,619,Ahn'Kahet (entrance)
+5231,571,Gundrak (exit south)
+5233,571,Gundrak (exit - 4)
+5235,571,Ahn'Kahet (exit)
+5241,571,"Chamber of Aspects, Obsidian Sanctum (exit)"
+5243,615,"Chamber of Aspects, Obsidian Sanctum (entrance)"
+5246,578,The Oculus (entrance)
+5258,624,Vault of Archavon (Entrance)
+5262,571,Vault of Archavon (Exit)
+5273,571,Dalaran Well teleporter
+5276,571,Gundrak (exit - 3)
+5277,571,Gundrak (exit north)
+5290,616,The Eye of Eternity (entrance)
+5326,617,Arena - Dalaran Arena - Teleport Target
+5328,617,Arena - Dalaran Arena - Teleport Target
+5329,617,Arena - Dalaran Arena - Teleport Target
+5330,617,Arena - Dalaran Arena - Teleport Target
+5331,617,Arena - Dalaran Arena - Teleport Target
+5338,571,Naxxanar Top -> Down
+5379,603,Ulduar Raid entrance
+5381,571,Ulduar Raid exit
+5447,618,Arena - Orgrimmar - Teleport Target 3
+5503,649,Trial of the Crusader (Entrance)
+5505,650,Trial of the Champion (Entrance)
+5508,571,Trial of the Crusader (Exit)
+5510,571,Trial of the Champion (Exit)
+5635,632,Forge of Souls (Entrance)
+5636,668,Halls of Reflection (Entrance)
+5637,658,Pit of Saron (Entrance)
+5642,571,Forge of Souls (Exit)
+5643,571,Pit of Saron (Exit)
+5646,571,Halls of Reflection (Exit)
+5668,571,IceCrown Citadel (Exit)
+5670,631,IceCrown Citadel (Entrance)
+5683,571,Pit of Saron (Exit)
+5688,571,Forge of Souls (Exit)
+5869,724,The Ruby Sanctum (Entrance)
+5872,571,The Ruby Sanctum (Exit)

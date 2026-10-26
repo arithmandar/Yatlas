@@ -55,8 +55,8 @@
 						GameTooltip:Hide();
 					</OnLeave>
 				</Scripts>
-				<NormalTexture file="Interface\AddOns\Yatlas\images\Button"/>
-				<PushedTexture file="Interface\AddOns\Yatlas\images\Button-Down"/>
+				<NormalTexture file="Interface\AddOns\Yatlas\Images\Button"/>
+				<PushedTexture file="Interface\AddOns\Yatlas\Images\Button-Down"/>
 				<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
 			</Button>
 		</Frames>

@@ -2,6 +2,8 @@
 
 更新日期：2026-10-25　目標用戶端：`wow_classic` 5.5.4.70579（目前正式服最新組建，TOC Interface `50504`）
 
+> 註：自 0.9.6 起檔案已重新整理目錄：`Compat.lua`、`Points.lua`、`Yatlas.lua` 移到 `Core/`（`Yatlas.lua` 改名為 `Core.lua`），`mapdb.lua`、`mapdb2.lua` 移到 `Data/`，`sets/` 改名為 `Modules/`，`images/` 改名為 `Images/`。本文以下仍沿用 0.9.4 當時的檔名。
+
 ## 一、資料表對應總覽
 
 | Yatlas 資料表 | 舊來源 (≤ 6.2) | 5.5.4 來源 | 狀態 |

@@ -38,7 +38,7 @@ end
 function set.setuppoint(point, env, dat) 
     local text, bg = point.Foreground, point.Icon;
 
-    local iconname = "Interface\\AddOns\\Yatlas\\images\\Icons\\Icon-Square";
+    local iconname = "Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Square";
     local iconszw = env.iconsize/2+2;
 
     -- ctmapmod knows best...

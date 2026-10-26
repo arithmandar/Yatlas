@@ -343,11 +343,11 @@ function YatlasFrameTemplate:UpdateLock()
 
     if(norm and push) then
         if(self.opt.Locked) then
-            norm:SetTexture("Interface\\AddOns\\Yatlas\\images\\LockButton-Locked-Up");
-            push:SetTexture("Interface\\AddOns\\Yatlas\\images\\LockButton-Locked-Down");
+            norm:SetTexture("Interface\\AddOns\\Yatlas\\Images\\LockButton-Locked-Up");
+            push:SetTexture("Interface\\AddOns\\Yatlas\\Images\\LockButton-Locked-Down");
         else
-            norm:SetTexture("Interface\\AddOns\\Yatlas\\images\\LockButton-Unlocked-Up");
-            push:SetTexture("Interface\\AddOns\\Yatlas\\images\\LockButton-Unlocked-Down");
+            norm:SetTexture("Interface\\AddOns\\Yatlas\\Images\\LockButton-Unlocked-Up");
+            push:SetTexture("Interface\\AddOns\\Yatlas\\Images\\LockButton-Unlocked-Down");
         end
     end
 end

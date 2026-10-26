@@ -1,6 +1,12 @@
 # Yatlas ChangeLog
 
 
+### v0.9.6 (in development)
+
+- Reorganized the addon folders: Core/, Data/, UI/, Modules/ (was sets/), Images/ (was images/)
+- Textures converted from TGA to BLP; texture paths now use Images\
+- Bindings.xml stays in the addon root folder (WoW only loads it from there)
+
 ### v0.9.5 (Oct. 26, 2026)
 
 - Town names (Yatlas_towns2) are now localized from the client AreaTable

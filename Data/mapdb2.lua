@@ -244,7 +244,7 @@ end
 
 -- Flight paths, from TaxiNodes.db2 (5.5.4.70579)
 -- {name, worldY, worldX, taxiNodeID, faction (0 neutral, 1 horde, 2 alliance), conditional}
--- name is localized at runtime from C_TaxiMap.GetTaxiNodesForMap (see sets/taxinodes.lua)
+-- name is localized at runtime from C_TaxiMap.GetTaxiNodesForMap (see Modules/taxinodes.lua)
 Yatlas_taxinodes = {
 	["Azeroth"] = {
 		{"Stormwind, Elwynn", 489.656006, -8841.05957, 2, 2, 0},

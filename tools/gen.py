@@ -241,7 +241,7 @@ for r in rd('TaxiNodes'):
 with open(f'{OUT}/taxinodes.lua', 'w') as f:
     f.write(f'-- Flight paths, from TaxiNodes.db2 ({BUILD})\n')
     f.write('-- {name, worldY, worldX, taxiNodeID, faction (0 neutral, 1 horde, 2 alliance), conditional}\n')
-    f.write('-- name is localized at runtime from C_TaxiMap.GetTaxiNodesForMap (see sets/taxinodes.lua)\n')
+    f.write('-- name is localized at runtime from C_TaxiMap.GetTaxiNodesForMap (see Modules/taxinodes.lua)\n')
     f.write('Yatlas_taxinodes = {\n')
     for mid in WORLD_IDS:
         if not taxi[mid]: continue

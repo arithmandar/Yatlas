@@ -1,4 +1,4 @@
--- NOTE: not loaded in 5.5.4 (see sets/index.xml). WorldSafeLocs is server-side only, so there is
+-- NOTE: not loaded in 5.5.4 (see Modules/index.xml). WorldSafeLocs is server-side only, so there is
 -- no client data for graveyards; Yatlas_graveyards is empty. Kept for a future re-implementation
 -- (possible lead: C_DeathInfo.GetGraveyardsForMap(uiMapID)).
 
@@ -27,7 +27,7 @@ function set.setuppoint(point, env, dat)
     bg:Show();
     bg:SetHeight(env.iconsize);
     bg:SetWidth(env.iconsize);
-    bg:SetTexture("Interface\\AddOns\\Yatlas\\images\\Icons\\Icon-Graveyard");
+    bg:SetTexture("Interface\\AddOns\\Yatlas\\Images\\Icons\\Icon-Graveyard");
     bg:SetVertexColor(1, 1, 1, 1);
 end
 

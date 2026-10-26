@@ -26,7 +26,7 @@
                 </Texture>
 			</Layer>
 			<Layer level="BORDER">
-				<Texture file="Interface\AddOns\Yatlas\images\frame-topleft">
+				<Texture file="Interface\AddOns\Yatlas\Images\frame-topleft">
 					<Size>
 						<AbsDimension x="512" y="512"/>
 					</Size>
@@ -38,7 +38,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\frame-botleft">
+				<Texture file="Interface\AddOns\Yatlas\Images\frame-botleft">
 					<Size>
 						<AbsDimension x="512" y="128"/>
 					</Size>
@@ -50,7 +50,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\frame-topright">
+				<Texture file="Interface\AddOns\Yatlas\Images\frame-topright">
 					<Size>
 						<AbsDimension x="128" y="512"/>
 					</Size>
@@ -62,7 +62,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\frame-botright">
+				<Texture file="Interface\AddOns\Yatlas\Images\frame-botright">
 					<Size>
 						<AbsDimension x="128" y="128"/>
 					</Size>
@@ -362,16 +362,16 @@
 				end
 			</OnClick>
 		</Scripts>
-		<NormalTexture file="Interface\AddOns\Yatlas\images\MagButton-Up"/>
-		<PushedTexture file="Interface\AddOns\Yatlas\images\MagButton-Down"/>
-		<DisabledTexture file="Interface\AddOns\Yatlas\images\MagButton-Disabled"/>
+		<NormalTexture file="Interface\AddOns\Yatlas\Images\MagButton-Up"/>
+		<PushedTexture file="Interface\AddOns\Yatlas\Images\MagButton-Down"/>
+		<DisabledTexture file="Interface\AddOns\Yatlas\Images\MagButton-Disabled"/>
 		<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
 	</Button>
 
 	<Frame name="BigYatlasFrame"  setAllPoints="true" frameStrata="FULLSCREEN" hidden="true" enableKeyboard="true" inherits="YatlasFrameTemplatePreBuilt">
 		<Layers>
 			<Layer level="ARTWORK">
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-top1">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-top1">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -383,7 +383,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-top2">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-top2">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -395,7 +395,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-top3">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-top3">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -407,7 +407,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-top4">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-top4">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -419,7 +419,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-mid1">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-mid1">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -431,7 +431,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-mid4">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-mid4">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -443,7 +443,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-bot1">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-bot1">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -455,7 +455,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-bot2">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-bot2">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -467,7 +467,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-bot3">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-bot3">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -479,7 +479,7 @@
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<Texture file="Interface\AddOns\Yatlas\images\bframe-bot4">
+				<Texture file="Interface\AddOns\Yatlas\Images\bframe-bot4">
 					<Size>
 						<AbsDimension x="256" y="256"/>
 					</Size>
@@ -793,9 +793,9 @@
 				end
 			</OnClick>
 		</Scripts>
-		<NormalTexture file="Interface\AddOns\Yatlas\images\MagButton-Up"/>
-		<PushedTexture file="Interface\AddOns\Yatlas\images\MagButton-Down"/>
-		<DisabledTexture file="Interface\AddOns\Yatlas\images\MagButton-Disabled"/>
+		<NormalTexture file="Interface\AddOns\Yatlas\Images\MagButton-Up"/>
+		<PushedTexture file="Interface\AddOns\Yatlas\Images\MagButton-Down"/>
+		<DisabledTexture file="Interface\AddOns\Yatlas\Images\MagButton-Disabled"/>
 		<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
 	</Button>
 

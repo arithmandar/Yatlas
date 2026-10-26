@@ -1,7 +1,7 @@
 # Yatlas ChangeLog
 
 
-### v0.9.6 (in development)
+### v0.9.6 (Oct. 26, 2026)
 
 - Reorganized the addon folders: Core/, Data/, UI/, Modules/ (was sets/), Images/ (was images/)
 - Textures converted from TGA to BLP; texture paths now use Images\

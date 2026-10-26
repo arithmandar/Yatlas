@@ -403,20 +403,20 @@ function YatlasFrameViewFrame_UpdatePointTooltip(self)
     local tp = _G[f.hoverTooltip];
 
     for h,v in pairs(f.pointframes) do
-        if(v.intooltip and not MouseIsOver(v)) then
+        if(v.intooltip and not v:IsMouseOver()) then
             YAPoints_UpdateTooltip(f, tp, v, "remove");
             tp.knownshownlines = tp.knownshownlines - 1;
-        elseif(not v.intooltip and MouseIsOver(v)) then
+        elseif(not v.intooltip and v:IsMouseOver()) then
             YAPoints_UpdateTooltip(f, tp, v, "add");
             tp.knownshownlines = tp.knownshownlines + 1;
         end
     end
 
     for h,v in pairs(f.mobilepointframes) do
-        if(v.intooltip and not MouseIsOver(v)) then
+        if(v.intooltip and not v:IsMouseOver()) then
             YAPoints_UpdateTooltip(f, tp, v, "remove");
             tp.knownshownlines = tp.knownshownlines - 1;
-        elseif(not v.intooltip and MouseIsOver(v) and v:IsShown()) then
+        elseif(not v.intooltip and v:IsMouseOver() and v:IsShown()) then
             YAPoints_UpdateTooltip(f, tp, v, "add");
             tp.knownshownlines = tp.knownshownlines + 1;
         end

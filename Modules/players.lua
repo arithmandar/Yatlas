@@ -34,6 +34,7 @@ end
 
 local function classcolor(unit)
     local _, class = UnitClass(unit);
+    class = Yatlas_NotSecret(class);
     local c = class and ((C_ClassColor and C_ClassColor.GetClassColor and C_ClassColor.GetClassColor(class))
             or (RAID_CLASS_COLORS and RAID_CLASS_COLORS[class]));
     if(c) then
@@ -110,7 +111,7 @@ function set.internal.HideUnit(u)
 end
 
 function set.internal.OnWorldMapUpdateUnit(u)
-    if(UnitIsUnit(u, "player") and u ~= "player") then
+    if(u ~= "player" and Yatlas_NotSecret(UnitIsUnit(u, "player"))) then
         -- hide other representations of the player (raidN == player)
         set.internal.HideUnit(u);
         return;

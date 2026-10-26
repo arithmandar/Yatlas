@@ -14,6 +14,16 @@
 -- ---------------------------------------------------------------------------
 
 Yatlas_GetAddOnMetadata = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata;
+
+-- Mainline (12.x) can return "secret values" (e.g. UnitName/UnitClass/UnitIsUnit in
+-- restricted content). They must not be compared, tested or used as table keys.
+-- Returns nil for a secret value, the value itself otherwise.
+function Yatlas_NotSecret(v)
+    if(issecretvalue and issecretvalue(v)) then
+        return nil;
+    end
+    return v;
+end
 Yatlas_GetPOITextureCoords = (C_Minimap and C_Minimap.GetPOITextureCoords) or GetPOITextureCoords;
 
 -- backdrop tables (YATLAS_BACKDROP_*) are defined in Core\Constants.lua

@@ -49,6 +49,7 @@ Version 1.0.0 adds Retail, Anniversary and Classic Era. The map data of every cl
   - Dungeon and raid entrances for every supported client
   - Smaller settlements and flight-path towns
   - Flight paths for your faction, with undiscovered ones dimmed
+  - Delve entrances (mainline), including today's bountiful delves
 - **Tooltips** when you hover over a point.
 - **Options:** transparency, icon size, which point types to show, and the minimap button and its position.
 

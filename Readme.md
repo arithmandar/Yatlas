@@ -53,6 +53,7 @@ You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggl
 - Dungeon and raid entrances, using the game's own icons
 - Smaller settlements, with localized names
 - Flight paths for your faction. Undiscovered ones are dimmed.
+- Delve entrances (mainline), including today's bountiful delves.
 - Party and raid members
 
 You can turn each type of point on or off from the options menu.
@@ -77,7 +78,7 @@ You can turn each type of point on or off from the options menu.
 | `Bindings.xml` | Key bindings (must stay in the addon root folder) |
 | `Core/` | `Compat.lua` (wrappers for the modern API), `Constants.lua` (client detection `YATLAS_CLIENT`, addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (map drawing and frame logic), `Points.lua` (point framework) |
 | `UI/` | Frames and templates: `Yatlas.xml` (normal and large frames), `Templates.xml`, `OptionsFrame.xml`, `Button.xml`/`Button.lua` (minimap button) |
-| `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, players, ...) |
+| `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, delves, players, ...) |
 | `Data/` | `Data.xml` loads `Common.lua` (shared data), one generated `mapdb.lua` + `mapdb2.lua` per client in `ClassicEra/`, `TBC/`, `Mists/`, `Mainline/` (minimap tiles, map areas, instances, towns, flight paths; each file returns at once on other clients) and `Localize.lua` |
 | `Locale/` | UI strings: enUS (default), deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW |
 | `Images/` | Addon textures and icons (BLP) |

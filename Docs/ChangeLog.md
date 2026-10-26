@@ -21,6 +21,8 @@
   game's town / major city icons. Before, only Classic Era showed them (as the old blue circle and star
   icons), because MoP Classic and Retail hide these markers from C_AreaPoiInfo
 - Other area POIs without an atlas use the game's own POI icons, the same as the world map
+- Mainline: new point set "Delves" with the delve entrances from C_AreaPoiInfo.GetDelvesForMap
+  (regular and bountiful icons, like the world map); it can be switched off in the point menu
 - Retail: capitals use the faction icons of the world map (Alliance / Horde)
 - Retail: dungeon, raid and flight path icons are scaled up to match the larger Retail atlases
 - Minimap button: circles the real minimap center and size (Retail's minimap is 198x198, Classic 140x140),

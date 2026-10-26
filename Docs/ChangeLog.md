@@ -23,6 +23,9 @@
 - Other area POIs without an atlas use the game's own POI icons, the same as the world map
 - Mainline: new point set "Delves" with the delve entrances from C_AreaPoiInfo.GetDelvesForMap
   (regular and bountiful icons, like the world map); it can be switched off in the point menu
+- New minimap button look: the game's world map icon (Interface\WorldMap\WorldMap-Icon, also the
+  TOC icon) in the round minimap button frame of the game (UI-Minimap-Background and
+  MiniMap-TrackingBorder), sized per client. Images/Button.blp and Button-Down.blp were removed
 - Landmarks submenu in the point menu: instances (dungeons and raids), capitals, towns, travel
   (mainline: boats, zeppelins, portals and teleport networks from the map API) and other landmarks
   can be switched on and off separately; "Landmarks" itself still switches all of them

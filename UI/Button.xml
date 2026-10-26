@@ -18,7 +18,7 @@
 		<Frames>
 			<Button name="TheYatlasButton">
 				<Size>
-					<AbsDimension x="32" y="32"/>
+					<AbsDimension x="31" y="31"/>
 				</Size>
 				<Anchors>
 					<Anchor point="TOPLEFT">
@@ -27,11 +27,31 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
+				<!-- the round minimap button look of the game's own tracking button: background,
+				     icon and border ring; sizes and offsets are set per client in YatlasButton_SetupLook -->
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture parentKey="Background" file="Interface\Minimap\UI-Minimap-Background"/>
+					</Layer>
+					<Layer level="ARTWORK">
+						<Texture parentKey="Icon" file="Interface\WorldMap\WorldMap-Icon"/>
+					</Layer>
+					<Layer level="OVERLAY">
+						<Texture parentKey="Border" file="Interface\Minimap\MiniMap-TrackingBorder"/>
+					</Layer>
+				</Layers>
 				<Scripts>
 					<OnLoad>
 						self:RegisterForDrag("RightButton");
 						self.dragme = false;
+						YatlasButton_SetupLook(self);
 					</OnLoad>
+					<OnMouseDown>
+						YatlasButton_SetPressed(self, true);
+					</OnMouseDown>
+					<OnMouseUp>
+						YatlasButton_SetPressed(self, false);
+					</OnMouseUp>
 					<OnDragStart> 
 						self.dragme = true;
 						self:LockHighlight() 
@@ -55,8 +75,6 @@
 						GameTooltip:Hide();
 					</OnLeave>
 				</Scripts>
-				<NormalTexture file="Interface\AddOns\Yatlas\Images\Button"/>
-				<PushedTexture file="Interface\AddOns\Yatlas\Images\Button-Down"/>
 				<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
 			</Button>
 		</Frames>

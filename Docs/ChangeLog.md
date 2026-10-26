@@ -22,6 +22,8 @@
 - Other area POIs without an atlas use the game's own POI icons, the same as the world map
 - Retail: capitals use the faction icons of the world map (Alliance / Horde)
 - Retail: dungeon, raid and flight path icons are scaled up to match the larger Retail atlases
+- Minimap button: circles the real minimap center and size (Retail's minimap is 198x198, Classic 140x140),
+  and follows minimap size changes
 - Retail API: MouseIsOver() no longer exists, Region:IsMouseOver() is used instead; secret values from
   UnitClass / UnitIsUnit are checked with issecretvalue before use
 - On an unsupported client Yatlas prints a message instead of raising Lua errors

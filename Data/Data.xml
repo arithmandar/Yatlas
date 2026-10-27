@@ -8,6 +8,8 @@
 	<Script file="TBC\mapdb2.lua"/>
 	<Script file="Mists\mapdb.lua"/>
 	<Script file="Mists\mapdb2.lua"/>
+	<Script file="Forever\mapdb.lua"/>
+	<Script file="Forever\mapdb2.lua"/>
 	<Script file="Mainline\mapdb.lua"/>
 	<Script file="Mainline\mapdb2.lua"/>
 	<!-- localize what was loaded -->

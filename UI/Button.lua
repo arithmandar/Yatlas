@@ -24,7 +24,7 @@ local BUTTON_LOOK = {
 local ICON_INSET = 0.05;    -- the icon's own rim is trimmed; pressing shows it in full
 
 function YatlasButton_SetupLook(button)
-    local look = (YATLAS_CLIENT and YATLAS_CLIENT.isRetail) and BUTTON_LOOK.mainline or BUTTON_LOOK.classic;
+    local look = (YATLAS_CLIENT and YATLAS_CLIENT.isMainlineUI) and BUTTON_LOOK.mainline or BUTTON_LOOK.classic;
 
     -- XML textures without <Anchors> are attached to all points of the button, which
     -- would override SetSize: clear the points first

@@ -63,6 +63,23 @@ FLAVORS = {
             (870, 1136, 613.852417, 1230.899292, 'WorldSafeLocs "Garrosh Raid - Exit Target"'),
         ],
     ),
+    'Forever': dict(
+        # World of Warcraft: Forever (WOW_PROJECT_CAMELOT = 18): the 1-60 world on the mainline engine
+        build='1.60.1.70630', check='isForever', label='World of Warcraft: Forever',
+        world=[
+            (0, 1415, 'Eastern Kingdoms'),
+            (1, 1414, 'Kalimdor'),
+            (2991, 2665, 'Zephras Isle'),   # 2665 = the continent entry, 2521 the zone
+        ],
+        # Forever's own Map.db2 has the entrances (Corpse) of the original instances; the new
+        # 1.60 dungeons have no entrance in the client data yet
+        teleports='azerothcore', corpse='self',
+        retired={13, 29, 44, 169, 598},   # test maps and the unused old Scarlet Monastery
+        instance_fixes=[
+            # Naxxramas floats above the Plaguelands; AreaTrigger 4055 is the attunement check
+            (0, 533, -3730.290039, 3133.149902, 'AreaTrigger 4055 (Naxxramas entrance)'),
+        ],
+    ),
     'Mainline': dict(
         build='12.1.5.70575', check='isRetail', label='Retail (Midnight)',
         world=[

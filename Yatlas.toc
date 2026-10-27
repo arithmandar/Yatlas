@@ -1,4 +1,4 @@
-## Interface: 11509, 20506, 50504, 120105, 120107
+## Interface: 11509, 16001, 20506, 50504, 120105, 120107
 ## Title: Yatlas
 ## Version: @project-version@
 ## Notes: Yet another atlas - browse the whole world on minimap terrain, with instance entrances, towns, flight paths and group members.

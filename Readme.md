@@ -12,6 +12,7 @@ Yatlas builds its maps from the game's minimap terrain tiles, not from the illus
 | **Mists of Pandaria Classic (5.5.4)** | Supported from v0.9.4 |
 | **Anniversary / Burning Crusade (2.5.6)** | Supported from v1.0.0 |
 | **Classic Era (1.15.9)** | Supported from v1.0.0 (Season of Discovery maps are not included) |
+| **World of Warcraft: Forever (1.60.1)** | Coming in v1.1.0 (the new 1.60 dungeons are not on the map yet) |
 | Other clients (Wrath, Cataclysm Classic) | Not supported |
 
 One download works in all supported clients: Yatlas detects the game version and loads only the map data for that client.
@@ -23,6 +24,7 @@ Releases are published on [CurseForge](https://www.curseforge.com/wow/addons/yat
 | Client | Maps |
 |---|---|
 | Classic Era | Eastern Kingdoms, Kalimdor |
+| World of Warcraft: Forever | Eastern Kingdoms, Kalimdor, Zephras Isle |
 | Anniversary (TBC) | Eastern Kingdoms, Kalimdor, Outland |
 | Mists of Pandaria Classic | Eastern Kingdoms, Kalimdor, Outland, Northrend, Pandaria, Deepholm, Tol Barad, Isle of Thunder, Darkmoon Island |
 | Retail | Eastern Kingdoms (with Quel'Thalas), Kalimdor, Outland, Northrend, Deepholm, Tol Barad, Pandaria, Isle of Thunder, Draenor, Broken Isles, Argus, Zandalar, Kul Tiras, Nazjatar, The Shadowlands, Zereth Mortis, Dragon Isles, The Forbidden Reach, Zaralek Cavern, Emerald Dream, Khaz Algar (surface and underground), Undermine, Siren Isle, K'aresh, Harandar, Voidstorm, Darkmoon Island |
@@ -80,7 +82,7 @@ You can turn each type of point on or off from the options menu. Landmarks have 
 | `Core/` | `Compat.lua` (wrappers for the modern API), `Constants.lua` (client detection `YATLAS_CLIENT`, addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (map drawing and frame logic), `Points.lua` (point framework) |
 | `UI/` | Frames and templates: `Yatlas.xml` (normal and large frames), `Templates.xml`, `OptionsFrame.xml`, `Button.xml`/`Button.lua` (minimap button) |
 | `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, delves, races, players, ...) |
-| `Data/` | `Data.xml` loads `Common.lua` (shared data), one generated `mapdb.lua` + `mapdb2.lua` per client in `ClassicEra/`, `TBC/`, `Mists/`, `Mainline/` (minimap tiles, map areas, instances, towns, flight paths; each file returns at once on other clients) and `Localize.lua` |
+| `Data/` | `Data.xml` loads `Common.lua` (shared data), one generated `mapdb.lua` + `mapdb2.lua` per client in `ClassicEra/`, `Forever/`, `TBC/`, `Mists/`, `Mainline/` (minimap tiles, map areas, instances, towns, flight paths; each file returns at once on other clients) and `Localize.lua` |
 | `Locale/` | UI strings: enUS (default), deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW |
 | `Images/` | Addon textures and icons (BLP) |
 | `tools/` | Python scripts that regenerate the map data (not included in releases) |

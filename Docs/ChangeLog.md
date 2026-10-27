@@ -1,6 +1,16 @@
 # Yatlas ChangeLog
 
 
+### v1.1.0 (in development)
+
+**World of Warcraft: Forever**
+
+- Yatlas now runs on World of Warcraft: Forever (1.60.1) with Eastern Kingdoms, Kalimdor and
+  Zephras Isle, built from the Forever game files
+- Instance entrances of the original dungeons and raids, flight paths, capitals and towns
+- The new Forever dungeons are not shown yet: the game files have no entrance positions for them
+
+
 ### v1.0.0 (Oct. 26, 2026)
 
 **One download for every client**

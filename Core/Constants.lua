@@ -37,13 +37,18 @@ YATLAS_CLIENT = {
     isClassicEra = IsProject(WOW_PROJECT_CLASSIC),
     isTBC        = IsProject(WOW_PROJECT_BURNING_CRUSADE_CLASSIC),
     isMists      = IsProject(WOW_PROJECT_MISTS_CLASSIC),
+    -- World of Warcraft: Forever; WOW_PROJECT_CAMELOT only exists in that client
+    isForever    = IsProject(WOW_PROJECT_CAMELOT or 18),
 };
 YATLAS_CLIENT.isAnyClassic = YATLAS_CLIENT.isClassicEra or YATLAS_CLIENT.isTBC or YATLAS_CLIENT.isMists;
+-- Forever runs on the mainline engine and interface (Minimap, atlases) with a 1-60 world
+YATLAS_CLIENT.isMainlineUI = YATLAS_CLIENT.isRetail or YATLAS_CLIENT.isForever;
 -- the Data\<flavour> folder in use, nil when Yatlas has no data for this client
 YATLAS_CLIENT.flavor = (YATLAS_CLIENT.isRetail and "Mainline")
     or (YATLAS_CLIENT.isClassicEra and "ClassicEra")
     or (YATLAS_CLIENT.isTBC and "TBC")
     or (YATLAS_CLIENT.isMists and "Mists")
+    or (YATLAS_CLIENT.isForever and "Forever")
     or nil;
 
 -- ---------------------------------------------------------------------------

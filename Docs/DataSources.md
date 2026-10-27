@@ -1,23 +1,24 @@
 # Yatlas 資料來源與 API 檢視
 
-更新日期：2026-10-26（v1.0.0 開發中）
+更新日期：2026-10-27（v1.1.0 開發中）
 
 ## 零、多用戶端架構（v1.0.0 起）
 
-Yatlas 從 v1.0.0 起用**單一 TOC** 支援四種用戶端，每種用戶端各有一份資料：
+Yatlas 從 v1.0.0 起用**單一 TOC** 支援多種用戶端（v1.1.0 起加入 Forever，共五種），每種用戶端各有一份資料：
 
 | 版本旗標 (`YATLAS_CLIENT`) | 用戶端 | 組建 | TOC Interface | 資料目錄 | 地圖 | 副本入口 | 飛行點 |
 |---|---|---|---|---|---|---|---|
 | `isClassicEra` | Classic Era | [1.15.9.70003](https://wago.tools/db2?build=1.15.9.70003) | 11509 | `Data/ClassicEra/` | 2 | 34 | 67 |
 | `isTBC` | Anniversary（燃燒的遠征） | [2.5.6.70006](https://wago.tools/db2?build=2.5.6.70006) | 20506 | `Data/TBC/` | 3 | 59 | 142 |
 | `isMists` | Mists of Pandaria Classic | [5.5.4.70579](https://wago.tools/db2?build=5.5.4.70579) | 50504 | `Data/Mists/` | 9 | 111 | 337 |
+| `isForever` | World of Warcraft: Forever | [1.60.1.70630](https://wago.tools/db2?build=1.60.1.70630) | 16001 | `Data/Forever/` | 3 | 26 | 74 |
 | `isRetail` | 正式版（Midnight） | [12.1.5.70575](https://wago.tools/db2?build=12.1.5.70575) | 120105 | `Data/Mainline/` | 28 | 188 | 749 |
 
 ### 載入流程
 
-1. `Core/Constants.lua` 依 `WOW_PROJECT_ID` 建立 `YATLAS_CLIENT`（寫法參照 Atlas 的 `Data/Constants.lua`）：`WOW_PROJECT_MAINLINE` = 1、`WOW_PROJECT_CLASSIC` = 2、`WOW_PROJECT_BURNING_CRUSADE_CLASSIC` = 5、`WOW_PROJECT_MISTS_CLASSIC` = 19。
-2. `Data/Data.xml` 依序載入 `Common.lua`、四個版本的 `mapdb.lua`／`mapdb2.lua`，最後載入 `Localize.lua`。
-3. 每個版本的資料檔第一行是 `if not (YATLAS_CLIENT and YATLAS_CLIENT.<旗標>) then return end`，所以只有符合目前用戶端的那一份會定義資料表，其他三份不佔記憶體。
+1. `Core/Constants.lua` 依 `WOW_PROJECT_ID` 建立 `YATLAS_CLIENT`（寫法參照 Atlas 的 `Data/Constants.lua`）：`WOW_PROJECT_MAINLINE` = 1、`WOW_PROJECT_CLASSIC` = 2、`WOW_PROJECT_BURNING_CRUSADE_CLASSIC` = 5、`WOW_PROJECT_MISTS_CLASSIC` = 19、`WOW_PROJECT_CAMELOT` = 18（Forever；這個常數只在 Forever 用戶端存在，所以程式寫成 `WOW_PROJECT_CAMELOT or 18`）。
+2. `Data/Data.xml` 依序載入 `Common.lua`、各版本的 `mapdb.lua`／`mapdb2.lua`，最後載入 `Localize.lua`。
+3. 每個版本的資料檔第一行是 `if not (YATLAS_CLIENT and YATLAS_CLIENT.<旗標>) then return end`，所以只有符合目前用戶端的那一份會定義資料表，其他版本的資料不佔記憶體。
 4. `Localize.lua` 在載入後把英文名稱換成用戶端的在地化名稱（`C_Map.GetAreaInfo`、`GetRealZoneText`、`C_Map.GetMapInfo`）。如果沒有任何一份資料符合（不支援的用戶端），它會建立空表並設定 `YATLAS_NO_DATA`，開啟視窗時只在聊天框顯示「不支援此用戶端」，不會產生 Lua 錯誤。
 5. `Data/Common.lua` 放各版本共用的手動資料（`Yatlas_PaperZoneNames`、`Yatlas_Landmarks`、`Yatlas_mapareas_adjust`、`Yatlas_Mobs`）與輔助函式（`Yatlas_UiMapName`、`Yatlas_MapName`、`Yatlas_GetMapList`）。地圖選單依 `YA_MAPS_ORDER`（資料片順序）排列。
 
@@ -35,6 +36,13 @@ Yatlas 從 v1.0.0 起用**單一 TOC** 支援四種用戶端，每種用戶端�
 **Anniversary（2.5.6）**
 - 地圖：東部王國、卡林多、外域（uiMap 1945）。
 - 副本入口的來源與 Classic Era 相同，加上外域的 AreaTrigger。
+
+**World of Warcraft: Forever（1.60.1，v1.1.0 起）**
+- 用戶端：mainline 引擎加上 Camelot 覆寫（`WOW_PROJECT_ID` = 18），所以介面相關的判斷用 `YATLAS_CLIENT.isMainlineUI`（mainline 或 Forever），例如小地圖按鈕的外觀。
+- 地圖：東部王國（uiMap 1415）、卡林多（1414）、Zephras Isle（Map 2991，uiMap 2665 是大陸層，2521 是區域層）。Mount Hyjal、Riverglades、Shen'dralas 這些新區域在原本的大陸上，會出現在區域清單裡。
+- 副本入口：與 Classic Era 相同（用戶端 `AreaTrigger` ＋ AzerothCore 對照表），缺漏的用 Forever 自己的 `Map.Corpse_*` 補上；納克薩瑪斯用同一個 AreaTrigger 4055 修正。排除 13、29、44、169、598。
+- 新副本：官方公布的九個新地城中，Hall of Thanes、Ruins of Lordaeron、Excavation Site: Wetlands、City of Dalaran 有 `Map` 資料列但沒有入口座標；The Drowned City、Krol'dok Stronghold、Alcaz Prison、Blackmaw Hold、Shaper's Terrace 不在 `Map.db2` 裡（可能是加密資料列）。這個組建沒有 `JournalInstance`／`JournalInstanceEntrance`，新增的 `AreaTrigger` 只有一筆，`GameObjects` 也沒有傳送門，所以依「沒有用戶端資料就不顯示」的原則暫不列出。
+- 城鎮與主城：`AreaPOI` 沒有 atlas，與 Classic Era 一樣用 Icon 分類。
 
 **Mists of Pandaria Classic（5.5.4）**
 - 與 v0.9.6 的 `Data/mapdb.lua`、`Data/mapdb2.lua` 逐表比對完全相同，只是搬到 `Data/Mists/`。詳細說明見第一～四節。

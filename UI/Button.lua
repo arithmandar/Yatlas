@@ -26,12 +26,7 @@ local ICON_INSET = 0.05;    -- the icon's own rim is trimmed; pressing shows it 
 function YatlasButton_SetupLook(button)
     local look = (YATLAS_CLIENT and YATLAS_CLIENT.isMainlineUI) and BUTTON_LOOK.mainline or BUTTON_LOOK.classic;
 
-    -- XML textures without <Anchors> are attached to all points of the button, which
-    -- would override SetSize: clear the points first
-    button.Border:ClearAllPoints();
-    button.Background:ClearAllPoints();
-    button.Icon:ClearAllPoints();
-
+    -- the textures have no points yet; give each its size and place
     button.Border:SetSize(look.border, look.border);
     button.Border:SetPoint("TOPLEFT");
 
@@ -115,3 +110,50 @@ end
 function YatlasButton_OnClick()
     YatlasFrame:Toggle();
 end
+
+-- The button on the minimap: YatlasButtonFrame holds TheYatlasButton (replaces UI\Button.xml)
+local function createButton()
+    local frame = Yatlas_CreateFrame{
+        name = "YatlasButtonFrame", parent = Minimap, size = {32, 32}, mouse = true, strata = "LOW",
+        anchor = {"TOPLEFT", Minimap, "RIGHT", 2, 0}, events = {"VARIABLES_LOADED"},
+        scripts = {
+            OnEvent = function(self, event, ...) YatlasButton_OnEvent(event, ...); end,
+        },
+    };
+
+    -- the round minimap button look of the game's own tracking button: background, icon and
+    -- border ring; sizes and offsets are set per client in YatlasButton_SetupLook
+    local button = Yatlas_CreateButton{
+        name = "TheYatlasButton", parent = frame, size = {31, 31}, anchor = {"TOPLEFT", nil, nil, 0, 0},
+        textures = {highlight = "Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight"},
+        scripts = {
+            OnMouseDown = function(self) YatlasButton_SetPressed(self, true); end,
+            OnMouseUp = function(self) YatlasButton_SetPressed(self, false); end,
+            OnDragStart = function(self)
+                self.dragme = true;
+                self:LockHighlight();
+            end,
+            OnDragStop = function(self)
+                self.dragme = false;
+                self:UnlockHighlight();
+            end,
+            OnUpdate = function(self)
+                if(self.dragme == true) then
+                    YatlasButton_BeingDragged();
+                end
+            end,
+        },
+        onClick = YatlasButton_OnClick,
+        onEnter = YatlasButton_OnEnter,
+    };
+    button.Background = Yatlas_CreateTexture(button, {layer = "BACKGROUND", file = "Interface\\Minimap\\UI-Minimap-Background"});
+    button.Icon = Yatlas_CreateTexture(button, {layer = "ARTWORK", file = "Interface\\WorldMap\\WorldMap-Icon"});
+    button.Border = Yatlas_CreateTexture(button, {layer = "OVERLAY", file = "Interface\\Minimap\\MiniMap-TrackingBorder"});
+
+    button:RegisterForDrag("RightButton");
+    button.dragme = false;
+    YatlasButton_SetupLook(button);
+end
+
+createButton();
+

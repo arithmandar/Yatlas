@@ -78,7 +78,7 @@ YA_FRAME_OPTION_DEFAULTS = {
 };
 
 -- Map zoom (screen pixels per map tile). The smallest zoom is also limited by the number of
--- tile textures a frame may create (UI\Templates.xml pre-builds 256, the rest on demand).
+-- tile textures are created on demand (Yatlas_CreateMapTexture in UI\Templates.lua)
 YATLAS_MIN_ZOOM = 8;
 YATLAS_MAX_TILES = 4096;
 YATLAS_ZOOM_STEP = 1.2;         -- mouse wheel and +/- buttons: about 20% per step

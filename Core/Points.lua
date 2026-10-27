@@ -236,23 +236,7 @@ function YAPoints_GetPoint(frame, id)
 
     -- create
     local viewframe = _G[frame:GetName().."ViewFrame"];
-    local f = CreateFrame("Button");
-
-    f:SetHeight(16);
-    f:SetWidth(16);
-    f:SetParent(viewframe);
-    f:EnableMouse(true);
-
-    f.Icon = f:CreateTexture(nil, "OVERLAY");
-    f.Icon:SetPoint("TOPLEFT", f);
-    
-    f.Foreground = f:CreateFontString(nil, "ARTWORK");
-    f.Foreground:SetFontObject(GameFontHighlight);
-    f.Foreground:SetTextColor(0, 0, 0);
-    f.Foreground:SetShadowOffset(-1, 0);
-    f.Foreground:SetPoint("TOPLEFT", f);
-
-    f:SetFrameLevel(f:GetFrameLevel() + 4);
+    local f = Yatlas_CreatePointButton(viewframe);
     f.Clear = YP_Clear;
     f.SetOffset = YP_SetOffset;
 
@@ -275,23 +259,7 @@ function YAPoints_AllocMobilePoint(frame, id)
 
     -- create
     local viewframe = _G[frame:GetName().."ViewFrame"];
-    local f = CreateFrame("Button");
-
-    f:SetHeight(16);
-    f:SetWidth(16);
-    f:SetParent(viewframe);
-    f:EnableMouse(true);
-
-    f.Icon = f:CreateTexture(nil, "OVERLAY");
-    f.Icon:SetPoint("TOPLEFT", f);
-    
-    f.Foreground = f:CreateFontString(nil, "ARTWORK");
-    f.Foreground:SetFontObject(GameFontHighlight);
-    f.Foreground:SetTextColor(0, 0, 0);
-    f.Foreground:SetShadowOffset(-1, 0);
-    f.Foreground:SetPoint("TOPLEFT", f);
-
-    f:SetFrameLevel(f:GetFrameLevel() + 4);
+    local f = Yatlas_CreatePointButton(viewframe);
     f.Clear = YP_Clear;
     f.SetOffset = YP_SetOffset;
     f.Update = YMP_Update;

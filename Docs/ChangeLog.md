@@ -10,6 +10,11 @@
 - Instance entrances of the original dungeons and raids, flight paths, capitals and towns
 - The new Forever dungeons are not shown yet: the game files have no entrance positions for them
 
+**Internal**
+
+- The frames are now built in Lua (`UI\Templates.lua`, `Yatlas.lua`, `OptionsFrame.lua`, `Button.lua`)
+  instead of XML; map tile textures are created on demand; the map frame logic moved to `Core\MapFrame.lua`
+
 
 ### v1.0.0 (Oct. 26, 2026)
 

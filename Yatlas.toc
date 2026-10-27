@@ -41,8 +41,9 @@ Locale\Locales.xml
 Data\Data.xml
 Core\Points.lua
 Core\Core.lua
-UI\Templates.xml
-UI\Yatlas.xml
-UI\OptionsFrame.xml
-UI\Button.xml
+Core\MapFrame.lua
+UI\Templates.lua
+UI\Yatlas.lua
+UI\OptionsFrame.lua
+UI\Button.lua
 Modules\index.xml

@@ -1,4 +1,4 @@
-﻿-- Addon metadata (YATLAS_TITLE, YATLAS_VERSION, ...) lives in Core\Constants.lua.
+-- Addon metadata (YATLAS_TITLE, YATLAS_VERSION, ...) lives in Core\Constants.lua.
 
 -- localize from this point on as needed
 YATLAS_HELP_TEXT = {

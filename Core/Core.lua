@@ -537,6 +537,7 @@ function YatlasFramePlayerJumpButton_Update(btn)
     if(btn:GetParent() and btn:GetParent().opt) then
         local t = btn:GetParent().opt.track;
 
+        --[[
         if(t) then
             tex = "Interface\\Buttons\\UI-Panel-Button-Down";
         else
@@ -545,6 +546,7 @@ function YatlasFramePlayerJumpButton_Update(btn)
 --        _G[btn:GetName().."Left"]:SetTexture(tex);
 --        _G[btn:GetName().."Middle"]:SetTexture(tex);
 --        _G[btn:GetName().."Right"]:SetTexture(tex);
+        ]]
         if(GameTooltip:IsOwned(btn)) then
             YatlasFramePlayerJumpButton_OnEnter(btn);
         end

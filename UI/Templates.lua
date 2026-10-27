@@ -155,8 +155,8 @@ end
 -- ---------------------------------------------------------------------------
 
 -- spec: name, parent, template, size, text, anchor, raise (frame level + 4), events,
---   tooltip = {title, text, anchor} (global string names), hideTooltip (OnLeave only),
---   onClick, onEnter, scripts = {OnX = fn},
+--   tooltip = {title, text, anchor} (global string names), onClick,
+--   onEnter (replaces the tooltip; OnLeave hides GameTooltip), scripts = {OnX = fn},
 --   textures = {normal, pushed, disabled, highlight} (highlight is added additively)
 function Yatlas_CreateButton(spec)
     local b = Yatlas_CreateFrame{
@@ -172,7 +172,7 @@ function Yatlas_CreateButton(spec)
             Yatlas_ShowButtonTooltip(self, L(tip[1]), L(tip[2]), tip[3]);
         end);
     end
-    if(tip or spec.hideTooltip or spec.onEnter) then
+    if(tip or spec.onEnter) then
         b:SetScript("OnLeave", hideTooltip);
     end
     if(spec.onEnter) then
@@ -257,7 +257,7 @@ function Yatlas_CreateDropDown(name, parent, anchor, load, event, label)
     local d = Yatlas_CreateFrame{
         type = "Button", name = name, parent = parent, template = "UIDropDownMenuTemplate",
         anchor = anchor,
-        scripts = {OnEvent = function(self, e) event(self, e); end},
+        scripts = {OnEvent = function(self, e, ...) event(self, e, ...); end},
     };
     if(label) then
         Yatlas_CreateText(d, {
@@ -395,6 +395,9 @@ function Yatlas_CreateMapFrame(spec)
         OnShow = function(self)
             if(YatlasOptions and YatlasOptions.Frames) then
                 local o = YatlasOptions.Frames[self:GetName()];
+                if(not o) then
+                    return;
+                end
                 if(o.track) then
                     YatlasFramePlayerJumpButton_Seek(self, o.track);
                 elseif(o.trackonshow) then
@@ -587,7 +590,7 @@ function Yatlas_CreateCheckBox(spec)
     return c;
 end
 
--- spec: name, parent, anchor, label (global string name), min, max, step, onChange, tooltip (onEnter)
+-- spec: name, parent, anchor, label (global string name), min, max, step, onChange, onEnter (tooltip)
 function Yatlas_CreateOptionSlider(spec)
     local s = Yatlas_CreateFrame{
         type = "Slider", name = spec.name, parent = spec.parent, template = "OptionsSliderTemplate",

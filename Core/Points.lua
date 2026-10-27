@@ -72,10 +72,10 @@ function YAPoints_OnMapChange(frame)
         end
     end
 
+    -- hide the mobile points of the previous map; their sets show them again on the next update
+    -- (the original compared mp.locMap with an undefined global, so this always hid every point)
     for id,mp in pairs(frame.mobilepoints) do
-        if(mp.locMap ~= map or not mp.locMap) then
-            mp:Hide();
-        end
+        mp:Hide();
     end
 
     -- force update
@@ -456,8 +456,8 @@ function YAPoints_AddMobilePoint(frame, setname, name, opt, userdat)
         tab.options = emptylist;
     end
 
-    if(options and options.setsubname) then
-        tab.setsubname = options.setsubname;
+    if(opt and opt.setsubname) then
+        tab.setsubname = opt.setsubname;
     else
         tab.setsubname = tab.setname;
     end

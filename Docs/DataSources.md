@@ -183,6 +183,7 @@ Yatlas 從 v1.0.0 起用**單一 TOC** 支援多種用戶端（v1.1.0 起加入 
 | players.lua | `RAID_ROSTER_UPDATE`、`PARTY_MEMBERS_CHANGED`；團隊迴圈誤用 `GetNumSubgroupMembers()` | `GROUP_ROSTER_UPDATE`；團隊時 `IsInRaid()` + `GetNumGroupMembers()`，隊伍時 `GetNumSubgroupMembers()`；OnEvent 改用參數 `event` |
 | sets/landmarks.lua | `GetPOITextureCoords()` | `Yatlas_GetPOITextureCoords()`；沒有 textureIndex 但有 atlasName 時用 `SetAtlas()` |
 | Locale/Yatlas-enUS.lua | `GetAddOnMetadata()` | `Yatlas_GetAddOnMetadata()` |
+| （v1.1.0 起） | 所有介面 XML（Templates、Yatlas、OptionsFrame、Button） | 改成 Lua 建立：`UI/Templates.lua`（共用的建立函式）、`UI/Yatlas.lua`、`UI/OptionsFrame.lua`、`UI/Button.lua`；下面幾列是當初修改 XML 時的紀錄 |
 | OptionsFrame.xml、Templates.xml | XML `<Backdrop>` | `inherits="BackdropTemplate"`，在 OnLoad 呼叫 `Yatlas_ApplyBackdrop()` |
 | OptionsFrame.xml | `OptionFrameBoxTemplate`（已不存在） | 自訂 `YatlasOptionBoxTemplate` |
 | OptionsFrame.xml | `PlaySound("gsTitleOptionOK")` | `Yatlas_PlaySound("GS_TITLE_OPTION_OK")`（`SOUNDKIT`） |

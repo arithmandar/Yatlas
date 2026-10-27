@@ -25,3 +25,12 @@ so only the data of the running client is kept in memory.
 To add a client: add an entry to `flavors.py`, add its flag to `YATLAS_CLIENT` in `Core/Constants.lua`,
 its two files to `Data/Data.xml` and its interface number to `Yatlas.toc`.
 See [`Docs/DataSources.md`](../Docs/DataSources.md) for where every table comes from.
+
+## UI load test (`uitest/`)
+
+`python3 tools/uitest/run.py [ClassicEra|TBC|Mists|Forever|Retail ...]` loads every file of
+`Yatlas.toc` in a minimal WoW UI mock (`uitest/mock.lua`, needs `pip install lupa`), fires the login
+events and clicks through the frames (zoom, drag, lock, drop-downs, options, large frame, minimap
+button, slash commands). It reports Lua errors, script errors and reads of undefined globals and
+exits with 1 when it finds any. It is a smoke test, not an emulation of the client: check layouts
+and textures in the game.

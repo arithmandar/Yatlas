@@ -113,15 +113,10 @@ YATLAS_BACKDROP_SLIDER = {
     insets = { left = 6, right = 6, top = 3, bottom = 3 },
 }
 
--- Events
+-- Events every Yatlas frame registers (YatlasFrameTemplate:OnLoad, Core\MapFrame.lua)
 YATLAS_EVENTS = {
     "VARIABLES_LOADED",
-    "ADDON_LOADED",
     "PLAYER_ENTERING_WORLD",
     "ZONE_CHANGED_NEW_AREA",
     "AREA_POIS_UPDATED",
-    "AREA_POIS_UPDATED",
 }
-
--- Last drag coordinates for movable frames
-YATLAS_LASTDRAGX, YATLAS_LASTDRAGY = nil, nil

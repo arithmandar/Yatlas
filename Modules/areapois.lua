@@ -11,10 +11,7 @@ end
 local sets = {}        -- every set below their caches are wiped on AREA_POIS_UPDATED
 local eventframe
 
-local function atlasexists(atlas)
-    return atlas and C_Texture and C_Texture.GetAtlasInfo
-            and C_Texture.GetAtlasInfo(atlas) ~= nil
-end
+local atlasexists = Yatlas_AtlasExists   -- cached, Core\Compat.lua
 
 local function createeventframe()
     if(eventframe) then
@@ -27,7 +24,7 @@ local function createeventframe()
         for _, set in ipairs(sets) do
             wipe(set.cache)
         end
-        YAPoints_ForceUpdate()
+        YAPoints_RequestUpdate()     -- coalesced, visible frames only
     end)
     eventframe:RegisterEvent("AREA_POIS_UPDATED")
 end

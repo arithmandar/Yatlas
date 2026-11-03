@@ -4,10 +4,6 @@ local pre = YATLAS_MINIMAP_PATH
 local MINI2BIGX = YATLAS_MINI2BIG_X
 local MINI2BIGY = YATLAS_MINI2BIG_Y
 local _G = _G
-local table = _G.table
-local getn = table.getn
-
-local dummyv = nil
 
 YatlasFrameTemplate = {}
 
@@ -24,12 +20,10 @@ function YatlasFrameTemplate:OnLoad()
     self.pointframes = {}
 
     self:RegisterForDrag("LeftButton")
-    self:RegisterEvent("VARIABLES_LOADED")
-    self:RegisterEvent("ADDON_LOADED")
-    -- WORLD_MAP_UPDATE no longer exists positions are polled in OnUpdate
-    self:RegisterEvent("PLAYER_ENTERING_WORLD")
-    self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-    self:RegisterEvent("AREA_POIS_UPDATED")
+    -- YATLAS_EVENTS: Core\Constants.lua. WORLD_MAP_UPDATE no longer exists, positions are polled in OnUpdate
+    for _, event in ipairs(YATLAS_EVENTS) do
+        self:RegisterEvent(event)
+    end
     viewframe:RegisterForDrag("RightButton","LeftButton")
     viewframe:EnableMouseWheel(true)
 
@@ -65,19 +59,19 @@ function YatlasFrameTemplate:OnEvent(event, ...)
         if(self.opt.track) then
             YatlasFramePlayerJumpButton_Seek(self, self.opt.track)
         end
-    elseif(event == "AREA_POIS_UPDATED") then
+    elseif(event == "AREA_POIS_UPDATED" or event == "PLAYER_ENTERING_WORLD") then
+        -- area POIs changed, or a loading screen (login, phase): reload the landmarks. Both frames
+        -- get the event: the reset is a cheap wipe, and the rebuilds are coalesced into one for the
+        -- visible frames (the landmarks set loads them again on demand, Modules\landmarks.lua).
         Yatlas_ResetLandmarks()
+        YAPoints_RequestUpdate()
+        if(event == "PLAYER_ENTERING_WORLD" and self.opt) then
+            self:OnWorldMapUpdate()
+        end
+    elseif(event == "ZONE_CHANGED_NEW_AREA") then
         if(self.opt) then
             self:OnWorldMapUpdate()
         end
-    elseif(event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA") then
-        if(self.opt) then
-            self:OnWorldMapUpdate()
-        end
-    end
-
-    if(self.OnEventExtra) then
-        self:OnEventExtra(event, ...)
     end
 end
 
@@ -99,7 +93,7 @@ function YatlasFrameTemplate:EnsureExistingOptions()
             YatlasOptions.Frames[name][h] = YatlasOptions[h]
             YatlasOptions[h] = nil
         elseif(type(v) == "table") then
-            -- don't copy reference.  copy value...unfortunately, we only 
+            -- don't copy reference.  copy value...unfortunately, we only
             -- copy one level deep, which seems good enough...
             YatlasOptions.Frames[name][h] = {}
             for x,k in pairs(v) do
@@ -127,12 +121,11 @@ function YatlasFrameTemplate:Toggle()
             self:Show()
         end
     else
-	if (self:IsVisible() ) then
-	    HideUIPanel(self)
-	else
-            -- SetupWorldMapScale()
+        if(self:IsVisible()) then
+            HideUIPanel(self)
+        else
             ShowUIPanel(self)
-	end
+        end
     end
 end
 
@@ -187,7 +180,7 @@ function YatlasFrameTemplate:ToggleLock()
         self.opt.Locked = false
     else
         self.opt.Locked = true
-    end   
+    end
     self:UpdateLock()
 end
 
@@ -209,7 +202,7 @@ function YatlasFrameTemplate:SetMap(mapname)
     local lm = self:GetName()
 
     self.opt.Map = mapname
-    
+
     local mapdropdown = _G[lm.."DropDown"]
     if(mapdropdown) then
         for i,v in ipairs(Yatlas_GetMapList()) do
@@ -269,7 +262,7 @@ function YatlasFrameDropDown2_Initialize(dropdown)
             func = YatlasFrameDropDownButton2_OnClick,
         }
         UIDropDownMenu_AddButton(info)
-    end 
+    end
 
 end
 
@@ -281,7 +274,7 @@ function YatlasFrameDropDownButton2_OnClick(self, frame, z)
     local zoom = frame:GetZoom()
 
     if(not z or not Yatlas_mapareas[map]) then return end
-    
+
     if(type(Yatlas_mapareas[map][z]) == "table") then
         local x, y, mx, my
 
@@ -307,12 +300,9 @@ function YatlasFrameTemplate:UpdateDropDown2()
     local vf = _G[vfname]
     local zoom = self.opt.Zoom
     local dd2 = _G[framename.."DropDown2"]
---print(tostring(framename).." "..tostring(vfname).." "..tostring(zoom).." "..tostring(dd2))
     if(dd2 and self.zonepulldowns) then
-        -- FIXME this isn't quite right somehow!! (besides height/width being flipped)
-        local zid = self:GetZoneIDs((vf:GetHeight()/zoom/2),(vf:GetWidth()/zoom/2))
+        local zid = self:GetZoneIDs()
         for i,v in ipairs(self.zonepulldowns) do
-	--print(tostring(v).." "..tostring(vid))
             if(v == zid) then
                 UIDropDownMenu_SetSelectedID(dd2, i)
                 UIDropDownMenu_SetText(dd2,Yatlas_areadb[zid])
@@ -340,10 +330,10 @@ end
 function YatlasFramePlayerJumpButton_Jump(btn)
     local f = btn:GetParent()
     local o = f.opt
-    
+
     o.track = nil
     YatlasFramePlayerJumpButton_Seek(f, "player")
-    
+
     YatlasFramePlayerJumpButton_Update(btn)
 end
 
@@ -360,7 +350,7 @@ function YatlasFramePlayerJumpButton_OnEnter(btn)
     end
 end
 
-function YatlasFramePlayerJumpButton_Seek(frame, unit) 
+function YatlasFramePlayerJumpButton_Seek(frame, unit)
     -- the unit position is now available directly, no need to cycle
     -- through the continents of the world map any more
     frame.trackseek = unit
@@ -482,7 +472,7 @@ function YatlasFrameTemplate:GetZoom()
     return self.opt and self.opt.Zoom or 256
 end
 
-local function ya_raw_setoff(texture, parent, px, py) 
+local function ya_raw_setoff(texture, parent, px, py)
     local zoom = _G[parent]:GetParent().opt.Zoom
     texture:ClearAllPoints()
     texture:SetPoint("TOPLEFT", parent,
@@ -511,35 +501,28 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
 
     if(zx ~= math.floor(self.opt.Location[1]) or forceupdate or
         zy ~= math.floor(self.opt.Location[2]) or mymap ~= self.lastmap) then
-        local v = {}
-        local jx, jy, nsv
+        local tiles = Yatlas_mapdb1[mymap]
 
         for hx = 1,wzoom_real do
-            v[hx] = {}
             for hy = 1,hzoom_real do
                 local tex = texturelayout[hx][hy]
-
-                -- get info
-                v[hx][hy] = Yatlas_mapdb1[mymap][format("%.2dx%.2d",zx+hx-1,zy+hy-1)]
-                if(v[hx][hy] == nil) then
-                    v[hx][hy] = dummyv
-                end
+                local tile = tiles[format("%.2dx%.2d",zx+hx-1,zy+hy-1)]
 
                 -- set textures
-                if(v[hx][hy]) then
-		    if(type(v[hx][hy]) == "number") then
-		        -- 5.5.4+: Yatlas_mapdb1 stores minimap tile FileDataIDs
-		        -- clamp the tile edges and turn off pixel snapping so that
-		        -- neighbouring tiles line up without visible gaps
-		        if(tex.SetSnapToPixelGrid and not tex.yatlasNoSnap) then
-		            tex:SetSnapToPixelGrid(false)
-		            tex:SetTexelSnappingBias(0)
-		            tex.yatlasNoSnap = true
-		        end
-		        tex:SetTexture(v[hx][hy], "CLAMP", "CLAMP")
-		    else
-		        tex:SetTexture(pre..mymap.."\\"..v[hx][hy][1])
-		    end
+                if(tile) then
+                    if(type(tile) == "number") then
+                        -- 5.5.4+: Yatlas_mapdb1 stores minimap tile FileDataIDs
+                        -- clamp the tile edges and turn off pixel snapping so that
+                        -- neighbouring tiles line up without visible gaps
+                        if(tex.SetSnapToPixelGrid and not tex.yatlasNoSnap) then
+                            tex:SetSnapToPixelGrid(false)
+                            tex:SetTexelSnappingBias(0)
+                            tex.yatlasNoSnap = true
+                        end
+                        tex:SetTexture(tile, "CLAMP", "CLAMP")
+                    else
+                        tex:SetTexture(pre..mymap.."\\"..tile[1])
+                    end
                     tex:SetVertexColor(1,1,1,1)
                 else
                     tex:SetTexture("Interface\\Buttons\\WHITE8X8")
@@ -550,7 +533,7 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
     end
 
     -- Do offset and clipping (:SetTexCoord and :SetHeight/Width)
-    -- We do the most thinking about border textures 
+    -- We do the most thinking about border textures
 
     local bottomh = vf:GetHeight()-zoom*(hzoom-2)-(zoom-py)
     local rightw = vf:GetWidth()-zoom*(wzoom-2)-(zoom-px)
@@ -675,7 +658,7 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
                 elseif(not needright_extra and h == wzoom_real-1) then
                     texturelayout[h][hzoom_real]:SetWidth(rightw)
                     texturelayout[h][hzoom_real]:SetTexCoord( 0, rightw/zoom, 0, bottomh/zoom)
-                    ya_raw_setoff(texturelayout[h][hzoom_real],vfname,px,py)                    
+                    ya_raw_setoff(texturelayout[h][hzoom_real],vfname,px,py)
                 else
                     texturelayout[h][hzoom_real]:SetWidth(zoom)
                     texturelayout[h][hzoom_real]:SetTexCoord( 0, 1, 0, bottomh/zoom)
@@ -683,7 +666,7 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
                 end
                 texturelayout[h][hzoom_real]:Show()
             end
-            
+
         else
             for h = 1,wzoom_real-1 do
                 texturelayout[h][hzoom_real]:Hide()
@@ -701,7 +684,7 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
                 elseif(not needbottom_extra and h == hzoom_real-1) then
                     texturelayout[wzoom_real][h]:SetHeight(bottomh)
                     texturelayout[wzoom_real][h]:SetTexCoord( 0, rightw/zoom, 0, bottomh/zoom)
-                    ya_raw_setoff(texturelayout[wzoom_real][h],vfname,px,py)    
+                    ya_raw_setoff(texturelayout[wzoom_real][h],vfname,px,py)
                 elseif(h == hzoom_real) then
                     if(needbottom_extra) then
                         texturelayout[wzoom_real][h]:SetHeight(bottomh)
@@ -715,7 +698,7 @@ function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
                     texturelayout[wzoom_real][h]:SetTexCoord( 0, rightw/zoom, 0, 1)
                     ya_raw_setoff(texturelayout[wzoom_real][h],vfname,px,py)
                 end
-                
+
             end
         else
             for h = 1,hzoom_real do
@@ -761,7 +744,7 @@ function YatlasFrameTemplate:GetZoneText(offx, offy)
     -- untested?
     local f = {self:GetZoneIDs(offx, offy)}
 
-    if(getn(f) < 1) then
+    if(#f < 1) then
         return YATLAS_UNKNOWN_ZONE
     end
 
@@ -773,32 +756,39 @@ function YatlasFrameTemplate:GetZoneText(offx, offy)
     return unpack(r)
 end
 
+-- The zone under the centre of the view (offx, offy: optional offset from the centre, in map
+-- tiles). Zones are bounding boxes that overlap, so the smallest box containing the point wins
+-- (with pairs() order, the old "first match" could change from one session to the next).
 function YatlasFrameTemplate:GetZoneIDs(offx, offy)
     local fm = self:GetName()
     local x, y = unpack(self.opt.Location)
     local zoom = self:GetZoom()
     local viewframe = _G[fm.."ViewFrame"]
 
-    local cx = x+(viewframe:GetWidth()/2)/zoom
-    local cy = y+(viewframe:GetHeight()/2)/zoom
+    local cx = x+(viewframe:GetWidth()/2)/zoom + (offx or 0)
+    local cy = y+(viewframe:GetHeight()/2)/zoom + (offy or 0)
 
     local cbx, cby = Yatlas_Mini2Big_Coord(cx, cy)
 
-    -- TODO: this isn't very accurate
     local maparea = Yatlas_mapareas[self.opt.Map]
+    if(type(maparea) ~= "table") then
+        return nil
+    end
+
+    local best, bestsize
     for h,k in pairs(maparea) do
-        if(h ~= 0 and cbx < k[1] and cbx > k[2] and cby < k[3] and cby > k[4])then
-            return h
+        if(h ~= 0 and type(k) == "table" and cbx < k[1] and cbx > k[2] and cby < k[3] and cby > k[4]) then
+            local size = (k[1] - k[2]) * (k[3] - k[4])
+            if(best == nil or size < bestsize or (size == bestsize and h < best)) then
+                best, bestsize = h, size
+            end
         end
     end
+    return best
 end
 
+-- follow the tracked unit (the landmarks set loads Yatlas_Landmarks on demand, Modules\landmarks.lua)
 function YatlasFrameTemplate:OnWorldMapUpdate()
-    -- update landmarks of the map we are showing
-    if(self.opt and Yatlas_LoadLandmarks(self.opt.Map)) then
-        YAPoints_ForceUpdate()
-    end
-
     if(self.trackseek or (self.opt and self.opt.track)) then
         self:OnWorldMapUpdateU(self.trackseek or self.opt.track)
     end
@@ -810,7 +800,7 @@ function YatlasFrameTemplate:OnWorldMapUpdateU(u)
     local viewframe = _G[lm.."ViewFrame"]
     local zoom = self.opt.Zoom
 
-    if(map == nil or Yatlas_mapdb1[map] == nil) then  
+    if(map == nil or Yatlas_mapdb1[map] == nil) then
         if(u == self.trackseek) then
             self.trackseek = nil
         end
@@ -855,35 +845,15 @@ function YatlasFrameViewFrame_OnDrag(self)
 
     fx = math.floor(x - self:GetLeft())/(zoom)
     fy = math.floor(y - self:GetBottom())/(zoom)
-    if(YATLAS_LASTDRAGX ~= nil) then
-        self:GetParent():AdjustLocation(YATLAS_LASTDRAGX - fx, YATLAS_LASTDRAGY - fy)
+    -- the last drag position is kept on the ViewFrame (reset in its OnDragStart)
+    if(self.lastdragx ~= nil) then
+        self:GetParent():AdjustLocation(self.lastdragx - fx, self.lastdragy - fy)
     end
 
-    YATLAS_LASTDRAGX = fx
-    YATLAS_LASTDRAGY = fy
+    self.lastdragx = fx
+    self.lastdragy = fy
 end
 
-function YatlasFrameViewFrame_UpdateCursorCoord(self)
-    local x, y = GetCursorPosition()
-    local owner = self:GetParent()
-    if(not owner or not owner.opt) then return end
-    local rx, ry = unpack(owner.opt.Location)
-    local top = self:GetTop()
-    local zoom = owner.opt.Zoom
-    
-    if(self.lastoux == x and self.lastouy == y) then
-        return
-    end
-    self.lastoux = x
-    self.lastouy = y
-
-    x = x / self:GetEffectiveScale()
-    y = y / self:GetEffectiveScale()
-
-    rx = rx + math.floor(x - self:GetLeft())/zoom
-    ry = ry + self:GetHeight()/zoom-math.floor(y - self:GetBottom())/zoom
-    local bigx, bigy = Yatlas_Mini2Big_Coord(rx,ry)
-end
 
 function YatlasFrameTemplate:OnUpdate(elapsed)
     self.update_time = self.update_time + elapsed
@@ -908,14 +878,14 @@ end
 
 function Yatlas_GetMapZones(map)
     -- map zone ids to name
-    local ret = {}    
+    local ret = {}
     if(Yatlas_ZoneIds[map]) then
-	for h,v in ipairs(Yatlas_ZoneIds[map]) do
-    	    tinsert(ret, Yatlas_areadb[v])
-	end
+        for h,v in ipairs(Yatlas_ZoneIds[map]) do
+            tinsert(ret, Yatlas_areadb[v])
+        end
     end
     table.sort(ret)
-    
+
     return unpack(ret)
 end
 

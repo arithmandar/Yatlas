@@ -20,10 +20,7 @@ local function cityalt(v)
     return landmarkaltcity
 end
 
-local function atlasexists(atlas)
-    return atlas and C_Texture and C_Texture.GetAtlasInfo
-            and C_Texture.GetAtlasInfo(atlas) ~= nil
-end
+local atlasexists = Yatlas_AtlasExists   -- cached, Core\Compat.lua
 
 local set = {name="landmarks"}
 
@@ -56,7 +53,10 @@ local function apikind(v)
     return "other"
 end
 
-function set.getpoints(name, map) 
+function set.getpoints(name, map)
+    -- loaded on demand, reset on AREA_POIS_UPDATED and loading screens (Core\MapFrame.lua)
+    Yatlas_LoadLandmarks(map)
+
     -- we got these from map api.  don't use if we see Megellan
     if(type(Yatlas_Landmarks[map]) == "table" and Magellan_Init == nil) then
         for h,v in ipairs(Yatlas_Landmarks[map]) do
@@ -195,7 +195,8 @@ function set.configmenu(name, lm)
         UIDropDownMenu_AddButton(info)
     elseif(UIDROPDOWNMENU_MENU_LEVEL == 2 and UIDROPDOWNMENU_MENU_VALUE == name) then
         for _, k in ipairs(KINDS) do
-            if(not k.mainline or (YATLAS_CLIENT and YATLAS_CLIENT.isRetail)) then
+            -- Forever runs the mainline UI and map API as well
+            if(not k.mainline or (YATLAS_CLIENT and YATLAS_CLIENT.isMainlineUI)) then
                 local info = {}
                 info.text = k.label()
                 info.func = YFOODropDown_do_toggle_normal

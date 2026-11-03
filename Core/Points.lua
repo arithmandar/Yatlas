@@ -2,14 +2,11 @@
 -- updating points on map changes, and managing mobile points.
 
 local _G = _G
-local table = _G.table
-local getn = table.getn
 
 local sets = {}
 local frames = {}
 
 -- state function
-local current_locx_xact, current_locy_xact
 local current_frame, current_viewframe
 local binsert
 
@@ -29,12 +26,51 @@ function YAPoints_RegisterFrame(a)
     frames[a] = 0
 end
 
+-- Rebuild the points of one frame now, or of every frame when frame is nil. Hidden frames are
+-- only marked: YAPoints_OnShow rebuilds them when they are shown again.
 function YAPoints_ForceUpdate(frame)
-    if( not frame) then
-        for h,v in pairs(frames) do
-            YAPoints_OnMapChange(_G[h])
+    if(frame) then
+        frame.yap_dirty = nil
+        return YAPoints_OnMapChange(frame)
+    end
+
+    for h in pairs(frames) do
+        local f = _G[h]
+        if(f and f.opt) then
+            if(f:IsShown()) then
+                f.yap_dirty = nil
+                YAPoints_OnMapChange(f)
+            else
+                f.yap_dirty = true
+            end
         end
+    end
+end
+
+-- Event driven rebuilds (AREA_POIS_UPDATED, taxi and zone events, ...): several events often
+-- arrive in the same frame, so they are coalesced into one YAPoints_ForceUpdate on the next frame.
+local update_pending = false
+local function flush_update()
+    update_pending = false
+    YAPoints_ForceUpdate()
+end
+
+function YAPoints_RequestUpdate()
+    if(update_pending) then
+        return
+    end
+    if(C_Timer and C_Timer.After) then
+        update_pending = true
+        C_Timer.After(0, flush_update)
     else
+        YAPoints_ForceUpdate()
+    end
+end
+
+-- a hidden frame missed some rebuilds: catch up before it is drawn
+function YAPoints_OnShow(frame)
+    if(frame.yap_dirty and frame.opt) then
+        frame.yap_dirty = nil
         YAPoints_OnMapChange(frame)
     end
 end
@@ -42,15 +78,10 @@ end
 function YAPoints_OnMapChange(frame)
     local lm = frame:GetName()
 
-    -- clear all points
-    local h = 1
-    while h > 0 do
-        local point = _G[lm.."Point"..h]
-        if(point) then
+    -- clear all points (they are unnamed frames now, kept in frame.pointframes)
+    for _, point in ipairs(frame.pointframes) do
+        if(point:IsShown()) then
             point:Clear()
-            h = h + 1
-        else
-            h = 0
         end
     end
 
@@ -118,9 +149,7 @@ function YAPoints_OnMove(frame, x, y)
     frame.yap_lastx = x
 end
 
-function YAPoints_OnUpdate(frame, ela) 
-    local lm = frame:GetName()
-
+function YAPoints_OnUpdate(frame, ela)
     for h,v in pairs(sets) do
         if(v.OnUpdate) then
             v.OnUpdate(h, frame, ela)
@@ -133,15 +162,11 @@ function YAPoints_Update(frame, x, y)
     local flr,cei=math.floor,math.ceil
     local z = frame:GetZoom()
     local hpoint = 1
-    local legend = {}
-    
+
     if(x == nil) then
         x = YatlasOptions.Frames[lm].Location[1]
         y = YatlasOptions.Frames[lm].Location[2]
     end
-    current_locx_xact = x
-    current_locy_xact = y
-
     current_frame = frame
     current_viewframe = _G[lm.."ViewFrame"]
 
@@ -164,14 +189,17 @@ function YAPoints_Update(frame, x, y)
     end
 
     -- fill vispoints
-    for xv = flr(x),cei(x+current_viewframe:GetWidth()/z),1 do
-        if(frame.points[xv] ~= nil) then 
-            for yv = flr(y),cei(y+current_viewframe:GetHeight()/z),1 do
-                if(frame.points[xv][yv] ~= nil) then
-                    for k,vv in pairs(frame.points[xv][yv]) do
-                        if(vv.x > x and vv.y > y and
-                                vv.x < x+current_viewframe:GetWidth()/z and 
-                                vv.y < y+current_viewframe:GetHeight()/z) then
+    local maxx = x + current_viewframe:GetWidth()/z
+    local maxy = y + current_viewframe:GetHeight()/z
+    local points = frame.points
+    for xv = flr(x),cei(maxx),1 do
+        local column = points[xv]
+        if(column ~= nil) then
+            for yv = flr(y),cei(maxy),1 do
+                local cell = column[yv]
+                if(cell ~= nil) then
+                    for k,vv in pairs(cell) do
+                        if(vv.x > x and vv.y > y and vv.x < maxx and vv.y < maxy) then
                             binsert(frame.vispoints[vv.setname], vv)
                         end
                     end
@@ -188,12 +216,10 @@ function YAPoints_Update(frame, x, y)
     }
 
     -- draw visible points
-    frame._common_pd = {}
     local id = 1
     for hset,set in pairs(frame.vispoints) do
         local showornotfunc = sets[hset].showme
         local pointfunc = sets[hset].setuppoint
-        local legendfunc = sets[hset].setuplegend
 
         for hval,val in pairs(set) do
             local point = YAPoints_GetPoint(frame, hpoint)
@@ -307,7 +333,7 @@ function YAPoints_UpdateTooltip(frame, tooltip, point, op)
         current_lm = lm,
         current_frame = frame,
         zoom = frame:GetZoom(),
- 	iconsize = 14,
+        iconsize = 14,
         islegend = true,
     }
 
@@ -361,15 +387,18 @@ function YP_Clear(point)
     point.Foreground:SetText("")
 end
 
-function YP_SetOffset(point, x, y) 
-    local z = current_frame:GetZoom()
-    local lm = current_frame:GetName()
-    local iconsz = YatlasOptions.Frames[lm].IconSize
+-- Place a point at map position x, y of the frame that owns it. The point's parent is the
+-- ViewFrame, whose parent is the Yatlas frame (the shared current_frame state could belong to
+-- the other frame when a mobile point is updated).
+function YP_SetOffset(point, x, y)
+    local vf = point:GetParent()
+    local opt = vf:GetParent().opt
+    local z = opt.Zoom
+    local half = opt.IconSize/2
+    local loc = opt.Location
 
     point:ClearAllPoints()
-    point:SetPoint("TOPLEFT", current_viewframe, "TOPLEFT", 
-           -(current_locx_xact - x)*z - iconsz/2,
-           (current_locy_xact - y)*z + iconsz/2)
+    point:SetPoint("TOPLEFT", vf, "TOPLEFT", (x - loc[1])*z - half, (loc[2] - y)*z + half)
 end
 
 function YP_OnEnter(self)
@@ -389,11 +418,12 @@ function YatlasFrameViewFrame_UpdatePointTooltip(self)
     local f = self:GetParent()
     local tp = _G[f.hoverTooltip]
 
+    -- cleared points stay anchored at the top left corner: only shown points can be hovered
     for h,v in pairs(f.pointframes) do
-        if(v.intooltip and not v:IsMouseOver()) then
+        if(v.intooltip and not (v:IsShown() and v:IsMouseOver())) then
             YAPoints_UpdateTooltip(f, tp, v, "remove")
             tp.knownshownlines = tp.knownshownlines - 1
-        elseif(not v.intooltip and v:IsMouseOver()) then
+        elseif(not v.intooltip and v:IsShown() and v:IsMouseOver()) then
             YAPoints_UpdateTooltip(f, tp, v, "add")
             tp.knownshownlines = tp.knownshownlines + 1
         end
@@ -472,12 +502,15 @@ function YAPoints_AddMobilePoint(frame, setname, name, opt, userdat)
         frame = current_frame
     end
 
-    point = YAPoints_AllocMobilePoint(frame, frame.nextmobilepoint)
-    point.dat = tab 
+    local point = YAPoints_AllocMobilePoint(frame, frame.nextmobilepoint)
+    if(not point) then
+        return
+    end
+    point.dat = tab
     frame.nextmobilepoint = frame.nextmobilepoint + 1
 
     frame.mobilepoints[setname..":"..name] = point
-    return getn(frame.mobilepoints)
+    return point
 end
 
 function YAPoints_Mobile_SetLocation(setname, name, map, x, y) 
@@ -516,14 +549,14 @@ function YAPoints_SetupMobilePointF(frame, setname, name, itahm, prop, ...)
     whut[prop](whut, ...)
 end
 
--- Call fn(point, frame) for a mobile point in every visible Yatlas frame.
-function YAPoints_ForEachMobilePoint(setname, name, fn)
+-- Call fn(point, frame, arg) for a mobile point in every visible Yatlas frame.
+function YAPoints_ForEachMobilePoint(setname, name, fn, arg)
     for framename,v in pairs(frames) do
         local frame = _G[framename]
         if(frame and frame:IsVisible() and frame.mobilepoints) then
             local d = frame.mobilepoints[setname..":"..name]
             if(d) then
-                fn(d, frame)
+                fn(d, frame, arg)
             end
         end
     end
@@ -633,7 +666,7 @@ end
 
 -- based on code by ???
 binsert = function( t, val)
-    local iStart, iEnd, iMid, iState =  1, table.getn( t ), 1, 0
+    local iStart, iEnd, iMid, iState =  1, #t, 1, 0
 
     -- Get Insertposition
     while iStart <= iEnd do

@@ -11,9 +11,7 @@ local MEMBER_ATLAS = "WhiteCircle-RaidBlips"
 local MEMBER_FALLBACK = YATLAS_ICON_PATH.."Icon-PartyUnit"
 local FAST_UPDATE = 0.05   -- player arrow position / facing, seconds
 
-local function atlasexists(name)
-    return C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(name) ~= nil
-end
+local atlasexists = Yatlas_AtlasExists   -- cached, Core\Compat.lua
 
 local function iconsize(frame)
     local opt = frame and YatlasOptions and YatlasOptions.Frames and YatlasOptions.Frames[frame:GetName()]
@@ -34,6 +32,8 @@ end
 -- Mainline (12.x) can return "secret values" (e.g. UnitName/UnitClass/UnitIsUnit in
 -- restricted content). They must not be compared, tested or used as table keys.
 -- Returns nil for a secret value, the value itself otherwise.
+local issecretvalue = rawget(_G, "issecretvalue")    -- 12.x only, nil on Classic
+
 local function Yatlas_NotSecret(v)
     if(issecretvalue and issecretvalue(v)) then
         return nil
@@ -54,6 +54,14 @@ end
 
 local function styleunit(point, frame, unit)
     local icon = point.Icon
+    -- only restyle when the look changes (unit token reused by another class, icon size option)
+    local _, class = UnitClass(unit)
+    local key = unit..":"..tostring(Yatlas_NotSecret(class))..":"..iconsize(frame)
+    if(point.yaStyle == key) then
+        return
+    end
+    point.yaStyle = key
+
     if(unit == "player") then
         icon:SetTexture(PLAYER_ARROW)
         icon:SetTexCoord(0, 1, 0, 1)
@@ -75,6 +83,10 @@ local function styleunit(point, frame, unit)
         point:SetFrameLevel(point:GetParent():GetFrameLevel() + 5)
     end
     icon:Show()
+end
+
+local function setfacing(point, frame, facing)
+    point.Icon:SetRotation(facing)
 end
 
 local addpoint = function(name, unit)
@@ -137,10 +149,7 @@ function set.internal.OnWorldMapUpdateUnit(u)
     local ux, uy = Yatlas_Big2Mini_Coord(bigx, bigy)
     unitlocations[u] = { map, ux, uy}
     YAPoints_Mobile_SetLocation("players", u, map, ux, uy)
-    -- class and size can change (unit token reused, icon size option), so restyle
-    YAPoints_ForEachMobilePoint("players", u, function(point, frame)
-        styleunit(point, frame, u)
-    end)
+    YAPoints_ForEachMobilePoint("players", u, styleunit, u)
 end
 
 -- Between the 0.5 s map updates, keep the player arrow moving and turning.
@@ -151,10 +160,7 @@ function set.internal.FastUpdate()
     end
     local ux, uy = Yatlas_Big2Mini_Coord(bigx, bigy)
     YAPoints_Mobile_SetLocation("players", "player", map, ux, uy)
-    local facing = GetPlayerFacing and GetPlayerFacing() or 0
-    YAPoints_ForEachMobilePoint("players", "player", function(point)
-        point.Icon:SetRotation(facing)
-    end)
+    YAPoints_ForEachMobilePoint("players", "player", setfacing, GetPlayerFacing and GetPlayerFacing() or 0)
 end
 
 function set.internal.CreateEventFrame()

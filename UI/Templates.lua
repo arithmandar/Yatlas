@@ -362,9 +362,8 @@ function Yatlas_CreateViewFrame(parent, size, anchor)
     v:SetScript("OnLeave", function(self) self.inme = false end)
     v:SetScript("OnDragStart", function(self)
         self.dragme = true
-        YATLAS_LASTDRAGX = nil
-        YATLAS_LASTDRAGY = nil
-        YA_elapsed = 0
+        self.lastdragx = nil      -- YatlasFrameViewFrame_OnDrag, Core\MapFrame.lua
+        self.lastdragy = nil
     end)
     v:SetScript("OnDragStop", function(self)
         self.dragme = false
@@ -374,9 +373,6 @@ function Yatlas_CreateViewFrame(parent, size, anchor)
     v:SetScript("OnUpdate", function(self)
         if(self.dragme) then
             YatlasFrameViewFrame_OnDrag(self)
-        end
-        if(self.inme and self:GetParent() == YatlasFrame and YatlasOptions.ShowCursorCoords) then
-            YatlasFrameViewFrame_UpdateCursorCoord(self)
         end
         if(self.inpoint) then
             YatlasFrameViewFrame_UpdatePointTooltip(self)
@@ -394,6 +390,8 @@ function Yatlas_CreateMapFrame(spec)
     spec.hidden = true
     spec.scripts = {
         OnShow = function(self)
+            -- rebuild the points if events changed them while the frame was hidden
+            YAPoints_OnShow(self)
             if(YatlasOptions and YatlasOptions.Frames) then
                 local o = YatlasOptions.Frames[self:GetName()]
                 if(not o) then

@@ -14,6 +14,16 @@
 
 - The frames are now built in Lua (`UI\Templates.lua`, `Yatlas.lua`, `OptionsFrame.lua`, `Button.lua`)
   instead of XML; map tile textures are created on demand; the map frame logic moved to `Core\MapFrame.lua`
+- Less work in the background: map point rebuilds caused by game events (area POIs, flight paths,
+  loading screens) are combined into one per frame and skipped while the map is closed, then done
+  when it opens; atlas lookups are cached; group member icons are only restyled when they change
+- The zone drop-down picks the smallest zone under the centre of the view, so it no longer changes
+  between sessions where zones overlap
+- Mainline / Forever: the "Travel" landmark category is also offered on Forever
+- Fixed: hovering the top left corner of the map could list hidden points in the tooltip; group
+  member positions could be drawn against the other Yatlas frame
+- Removed the unused MapNotes / GatherMate hooks (the GatherMate one would have broken that addon)
+  and unused cursor coordinate code
 
 
 ### v1.0.0 (Oct. 26, 2026)

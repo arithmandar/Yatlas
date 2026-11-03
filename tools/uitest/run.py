@@ -10,7 +10,7 @@ MOCK = os.path.join(HERE, 'mock.lua')
 # tile textures created on demand and the probes of the point framework
 IGNORE = re.compile(r'^(GatherMate|Gatherer_\w+|Magellan_\w+|MapNotes_\w+|myAddOns\w*|MYADDONS_\w+|SetupFullscreenScale|'
                     r'DELVES_LABEL|DRAGONRIDING_RACES_MAP_TOGGLE|WOW_PROJECT_CAMELOT|YATLAS_NO_DATA|YA_PD_ResetList|'
-                    r'ya_lastdragx|Yatlas_MapList|nil|\w+MapTexture\d+|\w+Point\d+|BigYatlasFrameLockButton) @')
+                    r'Yatlas_MapList|nil|\w+MapTexture\d+|\w+Point\d+|BigYatlasFrameLockButton) @')
 FLAVORS = [  # (label, WOW_PROJECT_ID, build, toc, extra project constants)
     ('ClassicEra', 2, '1.15.9', 11509),
     ('TBC', 5, '2.5.6', 20506),
@@ -81,7 +81,7 @@ def run(label, pid, build, toc, actions=True):
             ('VARIABLES_LOADED', 'MOCK.fire("VARIABLES_LOADED")'),
             ('PLAYER_LOGIN', 'MOCK.fire("PLAYER_LOGIN")'),
             ('PLAYER_ENTERING_WORLD', 'MOCK.fire("PLAYER_ENTERING_WORLD", true, false)'),
-            ('timers', 'for _,fn in ipairs(MOCK.timers or {}) do fn() end'),
+            ('timers', 'local t = MOCK.timers or {}; MOCK.timers = {}; for _,fn in ipairs(t) do fn() end'),
             ('tick', 'MOCK.tick(3)'),
             ('YatlasFrame:Toggle', 'YatlasFrame:Toggle()'),
             ('tick shown', 'MOCK.tick(5)'),
@@ -110,6 +110,18 @@ def run(label, pid, build, toc, actions=True):
             ('close', 'YatlasFrame:Hide()'),
             ('minimap button', 'TheYatlasButton:_run("OnEnter"); TheYatlasButton:_run("OnMouseDown"); TheYatlasButton:_run("OnMouseUp"); TheYatlasButton:_run("OnClick"); TheYatlasButton:_run("OnDragStart"); MOCK.tick(1); TheYatlasButton:_run("OnDragStop")'),
             ('zone change', 'MOCK.fire("ZONE_CHANGED_NEW_AREA"); MOCK.tick(2)'),
+            # event driven point rebuilds are coalesced into one timer, hidden frames only get marked
+            ('timers flushed', 'local t = MOCK.timers or {}; MOCK.timers = {}; for _,fn in ipairs(t) do fn() end'),
+            ('coalesce', 'YatlasFrame:Show(); MOCK.fire("AREA_POIS_UPDATED"); MOCK.fire("AREA_POIS_UPDATED"); '
+                         'MOCK.fire("PLAYER_ENTERING_WORLD", false, false); '
+                         'assert(#MOCK.timers == 1, "expected 1 coalesced update, got "..#MOCK.timers); local t = MOCK.timers or {}; MOCK.timers = {}; for _,fn in ipairs(t) do fn() end; '
+                         'assert(not YatlasFrame.yap_dirty, "shown frame left dirty")'),
+            ('hidden dirty', 'YatlasFrame:Hide(); BigYatlasFrame:Hide(); MOCK.fire("AREA_POIS_UPDATED"); local t = MOCK.timers or {}; MOCK.timers = {}; for _,fn in ipairs(t) do fn() end; '
+                             'assert(YatlasFrame.yap_dirty and BigYatlasFrame.yap_dirty, "hidden frames not marked dirty")'),
+            ('rebuild on show', 'YatlasFrame:Show(); assert(not YatlasFrame.yap_dirty, "OnShow did not rebuild"); '
+                                'MOCK.tick(2); YatlasFrame:Hide()'),
+            ('drag state', 'assert(rawget(_G, "YATLAS_LASTDRAGX") == nil and rawget(_G, "YA_elapsed") == nil, "drag globals leaked"); '
+                           'assert(rawget(_G, "point") == nil, "global point leaked")'),
             ('bindings', 'YatlasFrame:Toggle(); BigYatlasFrame:Toggle(); BigYatlasFrame:Toggle(); YatlasFrame:Toggle()'),
             ('slash', 'for k,fn in pairs(SlashCmdList) do if k:find("YATLAS") then fn("") end end'),
         ]

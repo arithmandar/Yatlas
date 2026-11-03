@@ -5,7 +5,6 @@
 YatlasOptions = {}
 
 function YatlasFrame_OnLoadExtra()
-    YatlasFrame.OnEventExtra = YatlasFrame_OnEventExtra
     YatlasFrame.YA_PD_allocText = "YA_PD_allocText"
     YatlasFrame.YA_PD_ResetList = "YA_PD_ResetList"
 
@@ -14,36 +13,9 @@ function YatlasFrame_OnLoadExtra()
 
     YatlasFrame.hoverTooltip = "YatlasTooltip"
 
-    -- initalize zones
-    for h,v in pairs(Yatlas_WorldMapIds) do
-        Yatlas_PaperZoneNames[h] = {Yatlas_GetMapZones(h)}
-    end
-
-    -- wrap mapnotes for updates
-    if(MapNotes_DeleteNote) then
-        YA_old_MapNotes_DeleteNote = MapNotes_DeleteNote
-        MapNotes_DeleteNote = function(...)
-            local v = YA_old_MapNotes_DeleteNote(...)
-            YAPoints_ForceUpdate()
-            return v
-        end
-        YA_old_MapNotes_WriteNote = MapNotes_WriteNote
-        MapNotes_WriteNote = function(...)
-            local v = YA_old_MapNotes_WriteNote(...)
-            YAPoints_ForceUpdate()
-            return v
-        end
-    end
-
-    -- wrap gatherer
-    if(GatherMate) then
-         YA_old_GatherMate = GatherMate
-         GatherMate = function(...)
-            local v = YA_old_GatherMate(...)
-            YAPoints_ForceUpdate()
-            return v
-        end
-    end
+    -- The MapNotes / GatherMate hooks were removed with their point sets (Modules\index.xml does
+    -- not load mapnotes, ctmapmod, gatherer or gathermate). The GatherMate one replaced the
+    -- GatherMate addon object with a function, which would have broken that addon.
 
     YatlasMAHelp = YATLAS_HELP_TEXT
 end
@@ -65,11 +37,6 @@ function BigYatlasFrame_OnLoadExtra()
     end
 
     BigYatlasFrame.hoverTooltip = "BigYatlasTooltip"
-end
-
-function YatlasFrame_OnEventExtra(self, event, ...)
-    local addon = ...
-
 end
 
 -- Switch between the normal and the large frame, keeping the map and

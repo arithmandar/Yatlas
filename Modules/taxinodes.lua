@@ -18,10 +18,7 @@ local FACTION_COLOR = {
     [2] = {0.3, 0.6, 1},
 }
 
-local function atlasexists(atlas)
-    return atlas and C_Texture and C_Texture.GetAtlasInfo
-            and C_Texture.GetAtlasInfo(atlas) ~= nil
-end
+local atlasexists = Yatlas_AtlasExists   -- cached, Core\Compat.lua
 
 local function playerfaction()
     local f = UnitFactionGroup("player")
@@ -43,7 +40,7 @@ local function createeventframe()
     eventframe = CreateFrame("Frame")
     eventframe:SetScript("OnEvent", function(self, event)
         Yatlas_ResetTaxiInfo()
-        YAPoints_ForceUpdate()
+        YAPoints_RequestUpdate()     -- coalesced, visible frames only
     end)
     eventframe:RegisterEvent("TAXIMAP_OPENED")
     eventframe:RegisterEvent("TAXI_NODE_STATUS_CHANGED")

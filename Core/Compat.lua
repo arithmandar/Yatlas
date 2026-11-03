@@ -26,6 +26,19 @@ local YATLAS_ATLAS_BASE = {dungeon = 22, raid = 22,
     taxinode_undiscovered = 18}                          -- Retail only (same size as the others)
 
 local yatlas_atlas_scale = {}
+local yatlas_atlas_exists = {}
+
+-- true when the client knows the atlas. The atlas list does not change during a session,
+-- so the answer is cached (point setup calls this for every visible point).
+function Yatlas_AtlasExists(atlas)
+    if(not atlas) then return false end
+    local ok = yatlas_atlas_exists[atlas]
+    if(ok == nil) then
+        ok = (C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(atlas) ~= nil) or false
+        yatlas_atlas_exists[atlas] = ok
+    end
+    return ok
+end
 
 function Yatlas_AtlasScale(atlas)
     if(not atlas) then return 1 end

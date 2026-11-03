@@ -117,6 +117,7 @@ function YAPoints_OnMapChange(frame)
 
     -- force update
     frame.yap_lastx = nil
+    frame.yap_tilex = nil
     YAPoints_OnMove(frame, unpack(YatlasOptions.Frames[lm].Location))
 end
 
@@ -134,9 +135,13 @@ function YAPoints_OnMove(frame, x, y)
         return
     end
 
-    -- update normal points and unit points
-    YAPoints_Update(frame, x, y)
---    YAPoints_UpdateP(frame)
+    -- The static points sit on the view's Canvas, which SetLocation moves while panning:
+    -- rebuild them only when the canvas origin (tile), the zoom or the canvas size changes.
+    if(frame.yap_tilex ~= frame.tilex or frame.yap_tiley ~= frame.tiley or
+            frame.yap_zoom ~= frame:GetZoom() or frame.yap_cols ~= frame.tilecols or
+            frame.yap_rows ~= frame.tilerows) then
+        YAPoints_Update(frame, x, y)
+    end
 
     -- hide/update mobile points as needed
     for id,mp in pairs(frame.mobilepoints) do
@@ -174,6 +179,13 @@ function YAPoints_Update(frame, x, y)
     if(frame.points == nil) then
         return YAPoints_OnMapChange(frame)
     end
+    -- no tile grid yet (SetZoom / SetLocation have not run)
+    if(frame.tilex == nil or frame.tilecols == nil) then
+        return
+    end
+    frame.yap_tilex, frame.yap_tiley = frame.tilex, frame.tiley
+    frame.yap_zoom = z
+    frame.yap_cols, frame.yap_rows = frame.tilecols, frame.tilerows
 
     -- clear all points
     for h, point in ipairs(frame.pointframes) do
@@ -188,9 +200,12 @@ function YAPoints_Update(frame, x, y)
         frame.vispoints[h] = {}
     end
 
-    -- fill vispoints
-    local maxx = x + current_viewframe:GetWidth()/z
-    local maxy = y + current_viewframe:GetHeight()/z
+    -- fill vispoints: everything on the canvas (the view plus the partial tiles at its right and
+    -- bottom edges); the view frame clips what hangs outside, so panning inside the canvas
+    -- needs no rebuild
+    x, y = frame.tilex, frame.tiley
+    local maxx = x + frame.tilecols
+    local maxy = y + frame.tilerows
     local points = frame.points
     for xv = flr(x),cei(maxx),1 do
         local column = points[xv]
@@ -199,7 +214,7 @@ function YAPoints_Update(frame, x, y)
                 local cell = column[yv]
                 if(cell ~= nil) then
                     for k,vv in pairs(cell) do
-                        if(vv.x > x and vv.y > y and vv.x < maxx and vv.y < maxy) then
+                        if(vv.x >= x and vv.y >= y and vv.x < maxx and vv.y < maxy) then
                             binsert(frame.vispoints[vv.setname], vv)
                         end
                     end
@@ -293,7 +308,7 @@ function YAPoints_AllocMobilePoint(frame, id)
     local viewframe = _G[frame:GetName().."ViewFrame"]
     local f = Yatlas_CreatePointButton(viewframe)
     f.Clear = YP_Clear
-    f.SetOffset = YP_SetOffset
+    f.SetOffset = YMP_SetOffset
     f.Update = YMP_Update
 
     f:SetScript("OnEnter", YP_OnEnter)
@@ -383,10 +398,23 @@ function YP_Clear(point)
     point.Foreground:SetText("")
 end
 
--- Place a point at map position x, y of the frame that owns it. The point's parent is the
--- ViewFrame, whose parent is the Yatlas frame (the shared current_frame state could belong to
--- the other frame when a mobile point is updated).
+-- Place a static point at map position x, y on the Canvas of the frame that owns it, relative to
+-- the canvas origin (frame.tilex, frame.tiley), so that it moves with the map while panning.
+-- The point's parent is the ViewFrame, whose parent is the Yatlas frame.
 function YP_SetOffset(point, x, y)
+    local vf = point:GetParent()
+    local frame = vf:GetParent()
+    local opt = frame.opt
+    local z = opt.Zoom
+    local half = opt.IconSize/2
+
+    point:ClearAllPoints()
+    point:SetPoint("TOPLEFT", vf.Canvas, "TOPLEFT", (x - frame.tilex)*z - half, (frame.tiley - y)*z + half)
+end
+
+-- Place a mobile point at map position x, y relative to the view (YMP_Update runs on every move;
+-- the shared current_frame state could belong to the other frame here).
+function YMP_SetOffset(point, x, y)
     local vf = point:GetParent()
     local opt = vf:GetParent().opt
     local z = opt.Zoom
@@ -414,12 +442,14 @@ function YatlasFrameViewFrame_UpdatePointTooltip(self)
     local f = self:GetParent()
     local tp = _G[f.hoverTooltip]
 
-    -- cleared points stay anchored at the top left corner: only shown points can be hovered
+    -- cleared points stay anchored at the top left corner: only shown points can be hovered;
+    -- static points may hang outside the clipped view (on the canvas edge tiles)
+    local inview = self:IsMouseOver()
     for h,v in pairs(f.pointframes) do
-        if(v.intooltip and not (v:IsShown() and v:IsMouseOver())) then
+        if(v.intooltip and not (inview and v:IsShown() and v:IsMouseOver())) then
             YAPoints_UpdateTooltip(f, tp, v, "remove")
             tp.knownshownlines = tp.knownshownlines - 1
-        elseif(not v.intooltip and v:IsShown() and v:IsMouseOver()) then
+        elseif(not v.intooltip and inview and v:IsShown() and v:IsMouseOver()) then
             YAPoints_UpdateTooltip(f, tp, v, "add")
             tp.knownshownlines = tp.knownshownlines + 1
         end

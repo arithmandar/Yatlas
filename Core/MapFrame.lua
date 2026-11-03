@@ -403,7 +403,6 @@ function YatlasFrameTemplate:StepZoom(dir)
 end
 
 function YatlasFrameTemplate:SetZoom(z, nocenter)
-    local textureno = 1
     local lm = self:GetName()
     local vf = _G[lm.."ViewFrame"]
 
@@ -413,28 +412,30 @@ function YatlasFrameTemplate:SetZoom(z, nocenter)
         z = z + 1
     end
 
-    self.wzoom = math.floor(vf:GetWidth()/z)+1
-    self.hzoom = math.floor(vf:GetHeight()/z)+1
-    self.wzoom_real = math.ceil(vf:GetWidth()/z)+1
-    self.hzoom_real = math.ceil(vf:GetHeight()/z)+1
-
-    for n = 1, self.wzoom_real*self.hzoom_real do
-        if(_G[lm.."MapTexture"..n] == nil) then
-            Yatlas_CreateMapTexture(self, n)
-        end
-    end
+    -- a grid of full size tiles covering the view plus one tile for the fractional offset;
+    -- the view frame clips whatever hangs over its right and bottom edges
+    local cols = math.ceil(vf:GetWidth()/z)+1
+    local rows = math.ceil(vf:GetHeight()/z)+1
+    self.tilecols, self.tilerows = cols, rows
 
     local lastzoom = self.opt.Zoom
     self.opt.Zoom = z
 
-    -- allocate textures
+    local canvas = vf.Canvas
+    canvas:SetSize(cols*z, rows*z)
+
+    local textureno = 1
     self.texturelayout = {}
-    for hw = 1,self.wzoom_real do
-        self.texturelayout[hw] = {}
-        for hh = 1,self.hzoom_real do
-            self.texturelayout[hw][hh] = _G[lm.."MapTexture"..textureno]
-            self.texturelayout[hw][hh].hx = hw
-            self.texturelayout[hw][hh].hy = hh
+    for hx = 1,cols do
+        local column = {}
+        self.texturelayout[hx] = column
+        for hy = 1,rows do
+            local tex = _G[lm.."MapTexture"..textureno] or Yatlas_CreateMapTexture(self, textureno)
+            tex:ClearAllPoints()
+            tex:SetPoint("TOPLEFT", canvas, "TOPLEFT", z*(hx-1), -z*(hy-1))
+            tex:SetSize(z, z)
+            tex:SetTexCoord(0, 1, 0, 1)
+            column[hy] = tex
             textureno = textureno + 1
         end
     end
@@ -442,16 +443,7 @@ function YatlasFrameTemplate:SetZoom(z, nocenter)
         _G[lm.."MapTexture"..textureno]:Hide()
         textureno = textureno + 1
     end
-
-    -- unclip all textures now, ESPECIALLY the middle textures
-    for hw = 1,self.wzoom_real do
-        for hh = 1,self.hzoom_real do
-            self.texturelayout[hw][hh]:Show()
-            self.texturelayout[hw][hh]:SetTexCoord(0, 1, 0, 1)
-            self.texturelayout[hw][hh]:SetHeight(z)
-            self.texturelayout[hw][hh]:SetWidth(z)
-        end
-    end
+    self.tilex = nil        -- the grid changed: SetLocation assigns every tile again
 
     if(nocenter or lastzoom == z) then
         self:AdjustLocation(0,0,true)
@@ -472,241 +464,43 @@ function YatlasFrameTemplate:GetZoom()
     return self.opt and self.opt.Zoom or 256
 end
 
-local function ya_raw_setoff(texture, parent, px, py)
-    local zoom = _G[parent]:GetParent().opt.Zoom
-    texture:ClearAllPoints()
-    texture:SetPoint("TOPLEFT", parent,
-            "TOPLEFT", (zoom)*(texture.hx-1) - px,
-            -(zoom)*(texture.hy-1) + py)
-end
-
+-- Show the map with its top left corner at map position x, y (in tiles). The canvas top left
+-- corner is the tile origin (self.tilex, self.tiley) = floor(x), floor(y): the tile textures are
+-- assigned again only when that origin, the map or the zoom changes; otherwise panning only
+-- moves the canvas (and the static points anchored on it, YP_SetOffset in Core\Points.lua).
 function YatlasFrameTemplate:SetLocation(x,y,forceupdate)
-    local zx, zy, mymap
-    local framename = self:GetName()
-    local vfname = framename.."ViewFrame"
-    local vf = _G[vfname]
-    local texturelayout = self.texturelayout
+    local vf = _G[self:GetName().."ViewFrame"]
     local zoom = self.opt.Zoom
-    local wzoom, hzoom = self.wzoom,self.hzoom
-    local wzoom_real,hzoom_real = self.wzoom_real, self.hzoom_real
+    local zx, zy = math.floor(x), math.floor(y)
+    local mymap = self.opt.Map
 
-    zx = math.floor(x)
-    zy = math.floor(y)
-    mymap = self.opt.Map
+    if(forceupdate or zx ~= self.tilex or zy ~= self.tiley or mymap ~= self.lastmap) then
+        local tiles = Yatlas_mapdb1[mymap] or {}
+        local texturelayout = self.texturelayout
 
-    -- offset calc
-    local px, py
-    px = math.floor((x-zx)*zoom)
-    py = math.floor((y-zy)*zoom)
-
-    if(zx ~= math.floor(self.opt.Location[1]) or forceupdate or
-        zy ~= math.floor(self.opt.Location[2]) or mymap ~= self.lastmap) then
-        local tiles = Yatlas_mapdb1[mymap]
-
-        for hx = 1,wzoom_real do
-            for hy = 1,hzoom_real do
+        for hx = 1,self.tilecols do
+            for hy = 1,self.tilerows do
                 local tex = texturelayout[hx][hy]
                 local tile = tiles[format("%.2dx%.2d",zx+hx-1,zy+hy-1)]
 
-                -- set textures
-                if(tile) then
-                    if(type(tile) == "number") then
-                        -- 5.5.4+: Yatlas_mapdb1 stores minimap tile FileDataIDs
-                        -- clamp the tile edges and turn off pixel snapping so that
-                        -- neighbouring tiles line up without visible gaps
-                        if(tex.SetSnapToPixelGrid and not tex.yatlasNoSnap) then
-                            tex:SetSnapToPixelGrid(false)
-                            tex:SetTexelSnappingBias(0)
-                            tex.yatlasNoSnap = true
-                        end
-                        tex:SetTexture(tile, "CLAMP", "CLAMP")
-                    else
-                        tex:SetTexture(pre..mymap.."\\"..tile[1])
-                    end
-                    tex:SetVertexColor(1,1,1,1)
+                if(type(tile) == "number") then
+                    -- 5.5.4+: Yatlas_mapdb1 stores minimap tile FileDataIDs
+                    tex:SetTexture(tile, "CLAMP", "CLAMP")
+                    tex:Show()
+                elseif(tile) then
+                    tex:SetTexture(pre..mymap.."\\"..tile[1])
+                    tex:Show()
                 else
-                    tex:SetTexture("Interface\\Buttons\\WHITE8X8")
-                    tex:SetVertexColor(0,0,0,1)
+                    -- no tile: the black background of the view frame shows through
+                    tex:Hide()
                 end
             end
         end
+        self.tilex, self.tiley = zx, zy
     end
 
-    -- Do offset and clipping (:SetTexCoord and :SetHeight/Width)
-    -- We do the most thinking about border textures
-
-    local bottomh = vf:GetHeight()-zoom*(hzoom-2)-(zoom-py)
-    local rightw = vf:GetWidth()-zoom*(wzoom-2)-(zoom-px)
-    local needbottom_extra = false
-    local needright_extra = false
-    local old_bottomh, old_rightw
-    if(bottomh > zoom) then
-        needbottom_extra = true
-        old_bottomh = bottomh
-        bottomh = zoom
-    end
-    if(rightw > zoom) then
-        needright_extra = true
-        old_rightw = rightw
-        rightw = zoom
-    end
-
-    -- center textures (easy)
-    for w = 2,wzoom-1 do
-        for h = 2,hzoom-1 do
-            ya_raw_setoff(texturelayout[w][h],vfname,px,py)
-        end
-    end
-
-    -- Upper left corner
-    texturelayout[1][1]:SetTexCoord( (x-zx), 1, (y-zy), 1)
-    texturelayout[1][1]:SetHeight( zoom-py)
-    texturelayout[1][1]:SetWidth( zoom-px)
-    ya_raw_setoff(texturelayout[1][1],vfname,0,0)
-
-    -- Upper right corner
-    if(px ~= 0 or wzoom ~= wzoom_real) then
-        texturelayout[wzoom][1]:Show()
-        texturelayout[wzoom][1]:SetTexCoord( 0, rightw/zoom, (y-zy), 1)
-        texturelayout[wzoom][1]:SetHeight( zoom-py)
-        texturelayout[wzoom][1]:SetWidth(rightw)
-        ya_raw_setoff(texturelayout[wzoom][1],vfname,px,0)
-    else
-        texturelayout[wzoom][1]:Hide()
-    end
-
-    -- Lower left corner
-    if(py ~= 0  or wzoom ~= wzoom_real) then
-        texturelayout[1][hzoom]:Show()
-        texturelayout[1][hzoom]:SetTexCoord( (x-zx), 1, 0, bottomh/zoom)
-        texturelayout[1][hzoom]:SetWidth( zoom-px)
-        texturelayout[1][hzoom]:SetHeight(bottomh)
-        ya_raw_setoff(texturelayout[1][hzoom],vfname,0,py)
-    else
-        texturelayout[1][hzoom]:Hide()
-    end
-
-    -- lower right corner
-    if((py ~= 0 and px ~= 0) or wzoom ~= wzoom_real) then
-        texturelayout[wzoom][hzoom]:Show()
-        texturelayout[wzoom][hzoom]:SetTexCoord( 0, rightw/zoom, 0, bottomh/zoom)
-        texturelayout[wzoom][hzoom]:SetHeight(bottomh)
-        texturelayout[wzoom][hzoom]:SetWidth(rightw)
-        ya_raw_setoff(texturelayout[wzoom][hzoom],vfname,px,py)
-    else
-        texturelayout[wzoom][hzoom]:Hide()
-    end
-
-    -- top line
-    for h = 2,wzoom-1 do
-        texturelayout[h][1]:SetTexCoord( 0, 1, (y-zy), 1)
-        texturelayout[h][1]:SetHeight( zoom-py)
-        ya_raw_setoff(texturelayout[h][1],vfname,px,0)
-    end
-
-    -- bottom line
-    if(py ~= 0 or wzoom ~= wzoom_real) then
-        for h = 2,wzoom-1 do
-            texturelayout[h][hzoom]:Show()
-            texturelayout[h][hzoom]:SetTexCoord( 0, 1, 0, bottomh/zoom)
-            texturelayout[h][hzoom]:SetHeight(bottomh)
-            ya_raw_setoff(texturelayout[h][hzoom],vfname, px,py)
-        end
-    else
-        for h = 2,wzoom-1 do
-            texturelayout[h][hzoom]:Hide()
-        end
-    end
-
-    -- left line
-    for h = 2,hzoom-1 do
-        texturelayout[1][h]:SetTexCoord( (x-zx), 1, 0, 1)
-        texturelayout[1][h]:SetWidth( zoom-px)
-        ya_raw_setoff(texturelayout[1][h],vfname,0,py)
-    end
-
-    -- right line
-    if(px ~= 0 or wzoom ~= wzoom_real) then
-        for h = 2,hzoom-1 do
-            texturelayout[wzoom][h]:Show()
-            texturelayout[wzoom][h]:SetTexCoord( 0, rightw/zoom, 0, 1)
-            texturelayout[wzoom][h]:SetWidth(rightw)
-            ya_raw_setoff(texturelayout[wzoom][h],vfname,px,py)
-        end
-    else
-        for h = 2,hzoom-1 do
-            texturelayout[wzoom][h]:Hide()
-        end
-    end
-
-    -- if our zoom is not a multiple of our size, we have a little extra we
-    -- need to worry about :X
-    if(wzoom_real ~= wzoom) then
-        if(needright_extra) then
-            rightw = (old_rightw-zoom)
-        end
-
-        if(needbottom_extra) then
-            bottomh = (old_bottomh-zoom)
-
-            for h = 1,wzoom_real-1 do
-                texturelayout[h][hzoom_real]:SetHeight(bottomh)
-                if(h == 1) then
-                    texturelayout[h][hzoom_real]:SetTexCoord( (x-zx), 1, 0, bottomh/zoom)
-                    texturelayout[h][hzoom_real]:SetWidth(zoom-px)
-                    ya_raw_setoff(texturelayout[h][hzoom_real],vfname,0,py)
-                elseif(not needright_extra and h == wzoom_real-1) then
-                    texturelayout[h][hzoom_real]:SetWidth(rightw)
-                    texturelayout[h][hzoom_real]:SetTexCoord( 0, rightw/zoom, 0, bottomh/zoom)
-                    ya_raw_setoff(texturelayout[h][hzoom_real],vfname,px,py)
-                else
-                    texturelayout[h][hzoom_real]:SetWidth(zoom)
-                    texturelayout[h][hzoom_real]:SetTexCoord( 0, 1, 0, bottomh/zoom)
-                    ya_raw_setoff(texturelayout[h][hzoom_real],vfname,px,py)
-                end
-                texturelayout[h][hzoom_real]:Show()
-            end
-
-        else
-            for h = 1,wzoom_real-1 do
-                texturelayout[h][hzoom_real]:Hide()
-            end
-        end
-
-        if(needright_extra) then
-            for h = 1,hzoom_real do
-                texturelayout[wzoom_real][h]:SetWidth(rightw)
-                texturelayout[wzoom_real][h]:Show()
-                if(h == 1) then
-                    texturelayout[wzoom_real][h]:SetTexCoord( 0, rightw/zoom, (y-zy), 1)
-                    texturelayout[wzoom_real][h]:SetHeight(zoom-py)
-                    ya_raw_setoff(texturelayout[wzoom_real][h],vfname,px,0)
-                elseif(not needbottom_extra and h == hzoom_real-1) then
-                    texturelayout[wzoom_real][h]:SetHeight(bottomh)
-                    texturelayout[wzoom_real][h]:SetTexCoord( 0, rightw/zoom, 0, bottomh/zoom)
-                    ya_raw_setoff(texturelayout[wzoom_real][h],vfname,px,py)
-                elseif(h == hzoom_real) then
-                    if(needbottom_extra) then
-                        texturelayout[wzoom_real][h]:SetHeight(bottomh)
-                        texturelayout[wzoom_real][h]:SetTexCoord( 0, rightw/zoom, 0, bottomh/zoom)
-                        ya_raw_setoff(texturelayout[wzoom_real][h],vfname,px,py)
-                    else
-                        texturelayout[wzoom_real][h]:Hide()
-                    end
-                else
-                    texturelayout[wzoom_real][h]:SetHeight(zoom)
-                    texturelayout[wzoom_real][h]:SetTexCoord( 0, rightw/zoom, 0, 1)
-                    ya_raw_setoff(texturelayout[wzoom_real][h],vfname,px,py)
-                end
-
-            end
-        else
-            for h = 1,hzoom_real do
-                texturelayout[wzoom_real][h]:Hide()
-            end
-        end
-
-    end
+    vf.Canvas:ClearAllPoints()
+    vf.Canvas:SetPoint("TOPLEFT", vf, "TOPLEFT", -(x-zx)*zoom, (y-zy)*zoom)
 
     -- set zone text
     if(not vf.dragme) then

@@ -26,6 +26,12 @@
   as a blurry square (the reused tooltip line kept the crop of the previous icon)
 - Fixed: hovering the top left corner of the map could list hidden points in the tooltip; group
   member positions could be drawn against the other Yatlas frame
+- Fixed: thin lines between map tiles while panning, and stray coloured strips left at the right /
+  bottom edge of the view after zooming out. The map is now a grid of full size tiles on a canvas
+  that the view clips at its edges, instead of tiles cropped one by one
+- Panning is lighter: within one map tile only the canvas moves (tile textures and map points are
+  rebuilt only when the view crosses into another tile, zooms or changes map); points at the edge of
+  the view are now cut off by the view instead of popping in and out
 - Removed the unused MapNotes / GatherMate hooks (the GatherMate one would have broken that addon)
   and unused cursor coordinate code
 

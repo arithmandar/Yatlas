@@ -110,7 +110,11 @@ end
 function W:GetValue() return self._value or 0; end
 function W:GetID() return self._id or 0; end
 function W:SetID(i) self._id = i; end
-function W:IsMouseOver() return false; end
+function W:IsMouseOver() return self._mouseover or false; end
+function W:SetClipsChildren(c) self._clips = c; end
+function W:DoesClipChildren() return self._clips; end
+function W:SetSnapToPixelGrid(s) self._snap = s; end
+function W:SetTexelSnappingBias(b) self._texelbias = b; end
 function W:IsMouseEnabled() return self._mouse; end
 function W:EnableMouse(e) self._mouse = e; end
 function W:SetAlpha(a) self._alpha = a; end

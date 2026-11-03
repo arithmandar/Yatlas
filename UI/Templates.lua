@@ -328,7 +328,12 @@ function Yatlas_CreateZoomButton(name, parent, anchor, panelName, panelAnchor, o
             highlight = HILIGHT_MOUSE,
         },
     }
-    panel = createZoomPanel(panelName, b, panelAnchor, owner)
+    -- the panel belongs to the Yatlas frame, not the button: the view frame clips its children
+    -- and the panel of the small frame opens below the view
+    local pa = {unpack(panelAnchor, 1, 5)}
+    pa[2] = pa[2] or b
+    panel = createZoomPanel(panelName, owner, pa, owner)
+    panel:SetFrameLevel(b:GetFrameLevel() + 2)
     return b
 end
 
@@ -358,6 +363,19 @@ function Yatlas_CreateViewFrame(parent, size, anchor)
     }
     v.lastoux = 0
     v.lastouy = 0
+    -- The view clips its children: the map tiles and the points are laid out at full size on
+    -- the Canvas (YatlasFrameTemplate:SetZoom / SetLocation, Core\MapFrame.lua) and the view
+    -- frame cuts them at its edges, so no tile is cropped by hand.
+    if(v.SetClipsChildren) then
+        v:SetClipsChildren(true)
+    end
+    v.Background = v:CreateTexture(nil, "BACKGROUND")
+    v.Background:SetTexture("Interface\\Buttons\\WHITE8X8")
+    v.Background:SetVertexColor(0, 0, 0, 1)
+    v.Background:SetAllPoints(v)
+    v.Canvas = CreateFrame("Frame", nil, v)
+    v.Canvas:SetSize(size[1], size[2])
+    v.Canvas:SetPoint("TOPLEFT", v, "TOPLEFT", 0, 0)
     v:SetScript("OnEnter", function(self) self.inme = true end)
     v:SetScript("OnLeave", function(self) self.inme = false end)
     v:SetScript("OnDragStart", function(self)
@@ -428,12 +446,20 @@ function Yatlas_CreateMapFrame(spec)
     return Yatlas_CreateFrame(spec)
 end
 
--- Map tile n of a Yatlas frame created on demand by YatlasFrameTemplate:SetZoom
+-- Map tile n of a Yatlas frame created on demand by YatlasFrameTemplate:SetZoom. Tiles live on
+-- the clipped Canvas of the view frame. Pixel snapping is off so that neighbouring tiles share
+-- their edges exactly (snapping each tile on its own leaves 1 px seams at fractional UI scales).
 function Yatlas_CreateMapTexture(frame, n)
-    return Yatlas_CreateTexture(frame, {
+    local vf = _G[frame:GetName().."ViewFrame"]
+    local t = Yatlas_CreateTexture(vf.Canvas, {
         name = frame:GetName().."MapTexture"..n, layer = "BACKGROUND",
-        size = {64, 64}, anchor = {"TOPLEFT", nil, nil, 6, -4},
+        size = {64, 64}, anchor = {"TOPLEFT", vf.Canvas, "TOPLEFT", 0, 0},
     })
+    if(t.SetSnapToPixelGrid) then
+        t:SetSnapToPixelGrid(false)
+        t:SetTexelSnappingBias(0)
+    end
+    return t
 end
 
 -- ---------------------------------------------------------------------------

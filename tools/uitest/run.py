@@ -139,6 +139,22 @@ def run(label, pid, build, toc, actions=True):
                               'assert(l.Icon._atlas == nil or (c[1] == 0 and c[2] == 1 and c[3] == 0 and c[4] == 1), '
                               '       "atlas drawn with old crop "..table.concat(c, ",")); '
                               'YAPoints_UpdateTooltip(YatlasFrame, YatlasTooltip, p, "remove"); YatlasFrame:Hide()'),
+            # map tiles: a full size grid on the clipped canvas; panning inside a tile only moves the canvas
+            ('tile grid', 'local f = YatlasFrame; f:Show(); MOCK.tick(2); f:StepZoom(-1); f:StepZoom(-1); f:StepZoom(-1); '
+                          'local vf = YatlasFrameViewFrame; assert(vf._clips, "view does not clip"); local z = f:GetZoom(); '
+                          'assert(f.tilecols == math.ceil(vf:GetWidth()/z)+1 and f.tilerows == math.ceil(vf:GetHeight()/z)+1, "grid size"); '
+                          'for hx = 1,f.tilecols do for hy = 1,f.tilerows do local t = f.texturelayout[hx][hy]; '
+                          '  assert(t:GetWidth() == z and t:GetHeight() == z, "tile not full size"); local c = t._texcoord; '
+                          '  assert(c[1] == 0 and c[2] == 1 and c[3] == 0 and c[4] == 1, "tile cropped"); '
+                          '  local _, rel, _, px, py = t:GetPoint(1); assert(rel == vf.Canvas and px == z*(hx-1) and py == -z*(hy-1), "tile anchor") end end; '
+                          'local n = f.tilecols*f.tilerows + 1; while _G["YatlasFrameMapTexture"..n] do assert(not _G["YatlasFrameMapTexture"..n]:IsShown(), "stray tile "..n); n = n + 1 end; '
+                          'local calls = 0; local old = YAPoints_Update; YAPoints_Update = function(...) calls = calls + 1; return old(...) end; '
+                          'local x, y = f:GetLocation(); local bx, by = math.floor(x), math.floor(y); '
+                          'f:SetLocation(bx + 0.25, by + 0.5); calls = 0; f:SetLocation(bx + 0.75, by + 0.125); '
+                          'local _, rel, _, cx, cy = vf.Canvas:GetPoint(1); '
+                          'assert(rel == vf and math.abs(cx + 0.75*z) < 1e-6 and math.abs(cy - 0.125*z) < 1e-6, "canvas offset "..cx..","..cy); '
+                          'assert(calls == 0, "points rebuilt inside one tile"); f:SetLocation(bx + 1.5, by + 0.5); '
+                          'YAPoints_Update = old; assert(calls == 1, "points not rebuilt on a new tile: "..calls); f:Hide()'),
             ('drag state', 'assert(rawget(_G, "YATLAS_LASTDRAGX") == nil and rawget(_G, "YA_elapsed") == nil, "drag globals leaked"); '
                            'assert(rawget(_G, "point") == nil, "global point leaked")'),
             ('bindings', 'YatlasFrame:Toggle(); BigYatlasFrame:Toggle(); BigYatlasFrame:Toggle(); YatlasFrame:Toggle()'),

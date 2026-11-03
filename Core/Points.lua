@@ -1,3 +1,9 @@
+-- The points management logic for Yatlas maps. Handles registration of point sets and frames,
+-- updating points on map changes, and managing mobile points.
+
+local _G = _G
+local table = _G.table
+local getn = table.getn
 
 local sets = {}
 local frames = {}

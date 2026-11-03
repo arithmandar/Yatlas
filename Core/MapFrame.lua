@@ -3,7 +3,9 @@
 local pre = YATLAS_MINIMAP_PATH
 local MINI2BIGX = YATLAS_MINI2BIG_X
 local MINI2BIGY = YATLAS_MINI2BIG_Y
-local _G=_G
+local _G = _G
+local table = _G.table
+local getn = table.getn
 
 local dummyv = nil
 

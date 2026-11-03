@@ -143,7 +143,8 @@ function YatlasFrameLockButton_OnEnter(self)
     if(not self:IsMouseOver()) then
         return;
     end
-    if(YatlasFrame.opt and YatlasFrame.opt.Locked) then
+    local frame = self:GetParent();
+    if(frame.opt and frame.opt.Locked) then
         Yatlas_ShowButtonTooltip(self, YATLAS_TOOLTIP_LOCKED_TITLE, YATLAS_TOOLTIP_LOCKED);
     else
         Yatlas_ShowButtonTooltip(self, YATLAS_TOOLTIP_UNLOCKED_TITLE, YATLAS_TOOLTIP_UNLOCKED);

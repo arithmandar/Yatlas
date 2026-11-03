@@ -9,7 +9,9 @@ end
 
 local function createYatlasFrame()
     local f = Yatlas_CreateMapFrame{
-        name = "YatlasFrame", size = {539, 628}, anchor = {"TOPLEFT", UIParent, nil, 64, -64},
+        name = "YatlasFrame",
+        size = {539, 628},
+        anchor = {"TOPLEFT", UIParent, nil, 64, -64},
         strata = "HIGH", toplevel = true, movable = true,
     };
 
@@ -24,14 +26,16 @@ local function createYatlasFrame()
         size = {256, 12}, anchor = {"TOP", nil, nil, 1, -17},
     });
     Yatlas_CreateText(f, {
-        name = "YatlasFrameVersion", layer = "OVERLAY", font = "GameFontHighlight", text = "YATLAS_VERSION",
-        size = {112, 12}, justify = "RIGHT", color = {0.4, 0.4, 0.4}, anchor = {"TOPRIGHT", nil, nil, -68, -18},
+        name = "YatlasFrameVersion", layer = "OVERLAY", 
+        font = "GameFontHighlight", text = "YATLAS_VERSION",
+        size = {112, 12}, justify = "RIGHT", color = {0.4, 0.4, 0.4}, 
+        anchor = {"TOPRIGHT", nil, nil, -68, -18},
     });
 
     local close = Yatlas_CreateCloseButton("YatlasFrameCloseButton", f,
         {"CENTER", f, "TOPRIGHT", -8, -25}, true);
-    local lock = Yatlas_CreateLockButton("YatlasFrameLockButton", f, {"RIGHT", close, "LEFT", 0, 0});
-    Yatlas_CreateSwitchButton("YatlasFrameSwitchButton", f, {"RIGHT", lock, "LEFT", 0, 0}, "Bigger");
+    local lock = Yatlas_CreateLockButton("YatlasFrameLockButton", f, {"RIGHT", close, "LEFT", 6, 0});
+    Yatlas_CreateSwitchButton("YatlasFrameSwitchButton", f, {"RIGHT", lock, "LEFT", 12, 0}, "Bigger");
     Yatlas_CreateViewFrame(f, {512, 512}, {"TOPLEFT", nil, nil, 22, -74});
     Yatlas_CreateDropDown("YatlasFrameDropDown", f, {"TOPLEFT", nil, nil, 58, -40},
         YatlasFrameDropDown_OnLoad, YatlasFrameDropDown_OnEvent);
@@ -57,7 +61,14 @@ local function createYatlasFrame()
 end
 
 local function createBigYatlasFrame()
-    local f = Yatlas_CreateMapFrame{name = "BigYatlasFrame", allPoints = UIParent, strata = "FULLSCREEN"};
+    local f = Yatlas_CreateMapFrame{
+        name = "BigYatlasFrame",
+        size = {1024, 768},
+        anchor = {"CENTER", UIParent, "CENTER", 0, 0},
+        --strata = "FULLSCREEN",
+        strata = "HIGH",
+        toplevel = true,
+        movable = true};
 
     -- 1024x768 area the controls are positioned in
     local guide = Yatlas_CreateFrame{
@@ -65,8 +76,10 @@ local function createBigYatlasFrame()
         anchor = {"CENTER", nil, "CENTER", 0, 0},
     };
     Yatlas_CreateText(guide, {
-        name = "BigYatlasPositioningGuideVersion", font = "GameFontHighlight", text = "YATLAS_VERSION",
-        size = {112, 12}, justify = "RIGHT", color = {0.4, 0.4, 0.4}, anchor = {"TOPRIGHT", nil, nil, -54, -6},
+        name = "BigYatlasPositioningGuideVersion", 
+        font = "GameFontHighlight", text = "YATLAS_VERSION",
+        size = {112, 12}, justify = "RIGHT", color = {0.4, 0.4, 0.4}, 
+        anchor = {"TOPRIGHT", nil, nil, -80, -6},
     });
 
     -- the frame is made of 4 x 3 textures of 256x256, centred on the screen
@@ -85,7 +98,8 @@ local function createBigYatlasFrame()
 
     local close = Yatlas_CreateCloseButton("BigYatlasFrameCloseButton", f,
         {"TOPRIGHT", guide, "TOP", 510, 0});
-    Yatlas_CreateSwitchButton("BigYatlasFrameSwitchButton", f, {"RIGHT", close, "LEFT", 8, 0}, "Smaller");
+    local lock = Yatlas_CreateLockButton("BigYatlasFrameLockButton", f, {"RIGHT", close, "LEFT", 6, 0});
+    Yatlas_CreateSwitchButton("BigYatlasFrameSwitchButton", f, {"RIGHT", lock, "LEFT", 8, 0}, "Smaller");
     local dd = Yatlas_CreateDropDown("BigYatlasFrameDropDown", f, {"TOP", guide, "TOP", -120, -35},
         YatlasFrameDropDown_OnLoad, YatlasFrameDropDown_OnEvent, "CONTINENT");
     local dd2 = Yatlas_CreateDropDown("BigYatlasFrameDropDown2", f, {"LEFT", dd, "RIGHT", 13, 0},

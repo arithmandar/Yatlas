@@ -129,6 +129,16 @@ def run(label, pid, build, toc, actions=True):
                                'l.Icon:SetWidth(25.6); l.Icon:SetHeight(25.6); YatlasTooltip:LayoutLine(l); '
                                'assert(l.Icon:GetWidth() == YATLAS_LEGEND_SLOT and l:GetHeight() == YATLAS_LEGEND_SLOT, "large icon not fitted"); '
                                'YAPoints_UpdateTooltip(YatlasFrame, YatlasTooltip, p, "remove"); YatlasFrame:Hide()'),
+            # a reused tooltip line must not keep the crop of the icon it showed before (POIIcons capital)
+            ('tooltip reuse', 'YatlasFrame:Show(); MOCK.tick(2); local p; '
+                              'for _,v in ipairs(YatlasFrame.pointframes) do if v:IsShown() and v.dat then p = v; break end end; '
+                              'YAPoints_UpdateTooltip(YatlasFrame, YatlasTooltip, p, "add"); YAPoints_UpdateTooltip(YatlasFrame, YatlasTooltip, p, "remove"); '
+                              'local l = YatlasTooltip.lines[1]; l.Icon:SetTexCoord(0.5, 0.625, 0, 0.125); '
+                              'YAPoints_UpdateTooltip(YatlasFrame, YatlasTooltip, p, "add"); '
+                              'local c = l.Icon._texcoord or {}; '
+                              'assert(l.Icon._atlas == nil or (c[1] == 0 and c[2] == 1 and c[3] == 0 and c[4] == 1), '
+                              '       "atlas drawn with old crop "..table.concat(c, ",")); '
+                              'YAPoints_UpdateTooltip(YatlasFrame, YatlasTooltip, p, "remove"); YatlasFrame:Hide()'),
             ('drag state', 'assert(rawget(_G, "YATLAS_LASTDRAGX") == nil and rawget(_G, "YA_elapsed") == nil, "drag globals leaked"); '
                            'assert(rawget(_G, "point") == nil, "global point leaked")'),
             ('bindings', 'YatlasFrame:Toggle(); BigYatlasFrame:Toggle(); BigYatlasFrame:Toggle(); YatlasFrame:Toggle()'),

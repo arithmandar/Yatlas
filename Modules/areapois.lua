@@ -71,7 +71,7 @@ local function registerset(def)
         bg:Show()
         if(atlasexists(atlas)) then
             iconsize = iconsize * Yatlas_AtlasScale(atlas)
-            bg:SetAtlas(atlas)
+            Yatlas_SetAtlas(bg, atlas)
         else
             bg:SetTexture(YATLAS_ICON_PATH..def.icon)
             bg:SetTexCoord(0, 1, 0, 1)

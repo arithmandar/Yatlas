@@ -165,7 +165,7 @@ function set.setuppoint(point, env, dat)
     bg:SetHeight(iconsize)
     bg:SetWidth(iconsize)
     if(atlas) then
-        bg:SetAtlas(atlas)
+        Yatlas_SetAtlas(bg, atlas)
     else
         bg:SetTexture(bgtextname)
         bg:SetTexCoord(x1, x2, y1, y2)

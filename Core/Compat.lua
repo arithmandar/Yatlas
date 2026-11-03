@@ -40,6 +40,14 @@ function Yatlas_AtlasExists(atlas)
     return ok
 end
 
+-- SetAtlas on a texture that is reused (point buttons, tooltip lines). Texture coordinates set
+-- earlier (the POIIcons sheet, SetRotation) are not reset by a plain SetAtlas and cropped the new
+-- atlas to a blurry patch, so reset them first and ask for the reset (resetTexCoords, 4th arg).
+function Yatlas_SetAtlas(tex, atlas)
+    tex:SetTexCoord(0, 1, 0, 1)
+    tex:SetAtlas(atlas, false, nil, true)
+end
+
 function Yatlas_AtlasScale(atlas)
     if(not atlas) then return 1 end
     local key = string.lower(atlas)

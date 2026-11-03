@@ -71,13 +71,14 @@ local function styleunit(point, frame, unit)
         -- keep the arrow above the group members
         point:SetFrameLevel(point:GetParent():GetFrameLevel() + 6)
     else
+        -- clear the rotation first: SetRotation changes the texture coordinates
+        icon:SetRotation(0)
         if(atlasexists(MEMBER_ATLAS)) then
-            icon:SetAtlas(MEMBER_ATLAS)
+            Yatlas_SetAtlas(icon, MEMBER_ATLAS)
         else
             icon:SetTexture(MEMBER_FALLBACK)
             icon:SetTexCoord(0, 1, 0, 1)
         end
-        icon:SetRotation(0)
         icon:SetVertexColor(classcolor(unit))
         placeicon(point, frame, YATLAS_MEMBER_SCALE)
         point:SetFrameLevel(point:GetParent():GetFrameLevel() + 5)

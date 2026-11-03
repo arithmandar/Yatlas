@@ -22,6 +22,8 @@
 - Mainline / Forever: the "Travel" landmark category is also offered on Forever
 - Fixed: icons in the map tooltip (landmarks, flight paths, delves) were drawn larger than their
   line on Retail and ran into the name and the next line; they are now centred in a fixed slot
+- Fixed: after hovering a delve or a spot with several landmarks, the next tooltip icons could show
+  as a blurry square (the reused tooltip line kept the crop of the previous icon)
 - Fixed: hovering the top left corner of the map could list hidden points in the tooltip; group
   member positions could be drawn against the other Yatlas frame
 - Removed the unused MapNotes / GatherMate hooks (the GatherMate one would have broken that addon)

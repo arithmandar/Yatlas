@@ -345,7 +345,7 @@ function YAPoints_UpdateTooltip(frame, tooltip, point, op)
             if(legendfunc) then
                 local legend = tooltip:GetNext()      -- nil after 32 lines
                 if(legend) then
-                    legend.Desc:SetText(nil)
+                    tooltip:ResetLine(legend)
                     legendfunc(legend, env, point.dat)
                     tooltip:LayoutLine(legend)
                 end

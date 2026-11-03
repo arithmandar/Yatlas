@@ -100,7 +100,7 @@ function set.setuppoint(point, env, dat)
 
     local atlas = (atlasexists(liveatlas) and liveatlas) or FACTION_ATLAS[faction]
     if(atlasexists(atlas)) then
-        bg:SetAtlas(atlas)
+        Yatlas_SetAtlas(bg, atlas)
         bg:SetHeight(iconsize * Yatlas_AtlasScale(atlas))
         bg:SetWidth(iconsize * Yatlas_AtlasScale(atlas))
         if(undiscovered and string.lower(atlas) ~= "taxinode_undiscovered") then

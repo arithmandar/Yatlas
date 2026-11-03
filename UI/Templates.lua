@@ -523,6 +523,20 @@ end
 -- its top left corner, so in a 16 px line large icons ran into the text and the next line. The
 -- icon is now centred in a fixed slot (scaled down to fit it), the name is centred on the icon
 -- row and the line is as tall as its content.
+-- Tooltip lines are reused for whatever point is hovered next: start each one from a clean icon
+-- (map points get the same from YP_Clear before every setuppoint). Without this, a line that last
+-- showed a POIIcons capital kept its texture coordinates, which cropped the next atlas.
+function YatlasTooltipTemplate:ResetLine(line)
+    local icon = line.Icon
+    icon:SetTexture(nil)
+    icon:SetTexCoord(0, 1, 0, 1)
+    icon:SetVertexColor(1, 1, 1, 1)
+    icon:SetWidth(YATLAS_LEGEND_ROW)
+    icon:SetHeight(YATLAS_LEGEND_ROW)
+    line.Text:SetText(nil)
+    line.Desc:SetText(nil)
+end
+
 function YatlasTooltipTemplate:LayoutLine(line)
     local icon = line.Icon
     local slot = YATLAS_LEGEND_SLOT

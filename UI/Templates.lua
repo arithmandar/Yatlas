@@ -478,7 +478,7 @@ function YatlasTooltipTemplate:OnLoad()
 end
 
 function YatlasTooltipTemplate:Show()
-    local r = getmetatable(self).__index.Show(self)
+    local r = self:RawShow()
     self:FixSize()
     return r
 end
@@ -499,7 +499,7 @@ function YatlasTooltipTemplate:GetNext()
 
     f.Text = f:CreateFontString(nil, "ARTWORK")
     f.Text:SetFontObject(GameFontHighlight)
-    f.Text:SetPoint("TOPLEFT", f.Icon, 24, 0)
+    f.Text:SetPoint("LEFT", f, "TOPLEFT", YATLAS_LEGEND_TEXT_X, -YATLAS_LEGEND_ROW/2)
 
     -- optional second line (set by setuplegend), like the description of the world map pins
     f.Desc = f:CreateFontString(nil, "ARTWORK")
@@ -516,6 +516,40 @@ function YatlasTooltipTemplate:GetNext()
     self.nextnew = self.nextnew + 1
     self.nextfree = self.nextfree + 1
     return f
+end
+
+-- Lay out a tooltip line after its set's setuplegend ran. setuppoint sizes the icon like a map
+-- point: mainline atlases are drawn larger (Yatlas_AtlasScale, up to 1.6x) and it is anchored by
+-- its top left corner, so in a 16 px line large icons ran into the text and the next line. The
+-- icon is now centred in a fixed slot (scaled down to fit it), the name is centred on the icon
+-- row and the line is as tall as its content.
+function YatlasTooltipTemplate:LayoutLine(line)
+    local icon = line.Icon
+    local slot = YATLAS_LEGEND_SLOT
+    local w = icon:GetWidth() or slot
+    local h = icon:GetHeight() or slot
+    if(w > slot or h > slot) then
+        local s = slot / math.max(w, h)
+        w, h = w * s, h * s
+        icon:SetWidth(w)
+        icon:SetHeight(h)
+    end
+
+    local row = math.max(YATLAS_LEGEND_ROW, math.ceil(h))
+    icon:ClearAllPoints()
+    icon:SetPoint("CENTER", line, "TOPLEFT", slot / 2, -row / 2)
+    line.Text:ClearAllPoints()
+    line.Text:SetPoint("LEFT", line, "TOPLEFT", YATLAS_LEGEND_TEXT_X, -row / 2)
+
+    local height = row
+    local desc = line.Desc:GetText()
+    if(desc and desc ~= "") then
+        local texth = line.Text:GetStringHeight() or 12
+        height = math.max(row, row / 2 + texth / 2) + 1 + line.Desc:GetStringHeight()
+    else
+        line.Desc:SetText(nil)
+    end
+    line:SetHeight(height)
 end
 
 function YatlasTooltipTemplate:FixSize()
@@ -549,6 +583,7 @@ function Yatlas_CreateTooltip(name, parent, anchor)
         name = name, parent = parent, strata = "TOOLTIP", anchor = anchor, hidden = true,
         backdrop = YATLAS_BACKDROP_TOOLTIP,
     }
+    t.RawShow = t.Show     -- the frame's own Show, YatlasTooltipTemplate:Show replaces it
     for h,v in pairs(YatlasTooltipTemplate) do
         t[h] = v
     end

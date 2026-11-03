@@ -88,6 +88,11 @@ YATLAS_PLAYER_SCALE = 1.5      -- your own arrow
 YATLAS_MEMBER_SCALE = 0.8      -- party and raid members
 YATLAS_ATLAS_MAX_SCALE = 1.6   -- cap for Yatlas_AtlasScale (larger mainline atlases)
 
+-- Hover tooltip lines (YatlasTooltipTemplate:LayoutLine, UI\Templates.lua)
+YATLAS_LEGEND_SLOT = 20        -- icon slot: icons are centred in it, larger ones scaled down
+YATLAS_LEGEND_ROW = 16         -- minimum height of the icon / name row
+YATLAS_LEGEND_TEXT_X = 24      -- left edge of the name (and of the description below it)
+
 -- ---------------------------------------------------------------------------
 -- Backdrops (the <Backdrop> XML tag was removed frames inherit
 -- BackdropTemplate and call Yatlas_ApplyBackdrop with one of these)

@@ -120,6 +120,15 @@ def run(label, pid, build, toc, actions=True):
                              'assert(YatlasFrame.yap_dirty and BigYatlasFrame.yap_dirty, "hidden frames not marked dirty")'),
             ('rebuild on show', 'YatlasFrame:Show(); assert(not YatlasFrame.yap_dirty, "OnShow did not rebuild"); '
                                 'MOCK.tick(2); YatlasFrame:Hide()'),
+            # hover tooltip: icons stay inside their slot and the line is as tall as the icon
+            ('tooltip layout', 'YatlasFrame:Show(); MOCK.tick(2); local p; '
+                               'for _,v in ipairs(YatlasFrame.pointframes) do if v:IsShown() and v.dat then p = v; break end end; '
+                               'assert(p, "no point shown"); YAPoints_UpdateTooltip(YatlasFrame, YatlasTooltip, p, "add"); '
+                               'local l = YatlasTooltip.lines[1]; assert(l and l:IsShown(), "no tooltip line"); '
+                               'assert(l.Icon:GetWidth() <= YATLAS_LEGEND_SLOT and l:GetHeight() >= l.Icon:GetHeight(), "icon outside its line"); '
+                               'l.Icon:SetWidth(25.6); l.Icon:SetHeight(25.6); YatlasTooltip:LayoutLine(l); '
+                               'assert(l.Icon:GetWidth() == YATLAS_LEGEND_SLOT and l:GetHeight() == YATLAS_LEGEND_SLOT, "large icon not fitted"); '
+                               'YAPoints_UpdateTooltip(YatlasFrame, YatlasTooltip, p, "remove"); YatlasFrame:Hide()'),
             ('drag state', 'assert(rawget(_G, "YATLAS_LASTDRAGX") == nil and rawget(_G, "YA_elapsed") == nil, "drag globals leaked"); '
                            'assert(rawget(_G, "point") == nil, "global point leaked")'),
             ('bindings', 'YatlasFrame:Toggle(); BigYatlasFrame:Toggle(); BigYatlasFrame:Toggle(); YatlasFrame:Toggle()'),

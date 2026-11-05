@@ -1,7 +1,7 @@
 # Yatlas ChangeLog
 
 
-### v1.1.0 (in development)
+### v1.1.0 (Nov. 05, 2026)
 
 **World of Warcraft: Forever**
 

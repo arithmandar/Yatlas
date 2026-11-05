@@ -1,172 +1,221 @@
+-- The points management logic for Yatlas maps. Handles registration of point sets and frames,
+-- updating points on map changes, and managing mobile points.
 
-local sets = {};
-local frames = {};
+local _G = _G
+
+local sets = {}
+local frames = {}
 
 -- state function
-local current_locx_xact, current_locy_xact;
-local current_frame, current_viewframe;
-local binsert;
+local current_frame, current_viewframe
+local binsert
 
 local nilfunc = function () end
-local emptylist = {};
+local emptylist = {}
 
-local setorder = {};     -- registration order (Modules/index.xml), used for the menu
+local setorder = {}     -- registration order (Modules/index.xml), used for the menu
 
 function YAPoints_RegisterSet(set)
     if(sets[set.name] == nil) then
-        tinsert(setorder, set.name);
+        tinsert(setorder, set.name)
     end
-    sets[set.name] = set;
+    sets[set.name] = set
 end
 
 function YAPoints_RegisterFrame(a)
-    frames[a] = 0;
+    frames[a] = 0
 end
 
+-- Rebuild the points of one frame now, or of every frame when frame is nil. Hidden frames are
+-- only marked: YAPoints_OnShow rebuilds them when they are shown again.
 function YAPoints_ForceUpdate(frame)
-    if( not frame) then
-        for h,v in pairs(frames) do
-            YAPoints_OnMapChange(_G[h]);
+    if(frame) then
+        frame.yap_dirty = nil
+        return YAPoints_OnMapChange(frame)
+    end
+
+    for h in pairs(frames) do
+        local f = _G[h]
+        if(f and f.opt) then
+            if(f:IsShown()) then
+                f.yap_dirty = nil
+                YAPoints_OnMapChange(f)
+            else
+                f.yap_dirty = true
+            end
         end
+    end
+end
+
+-- Event driven rebuilds (AREA_POIS_UPDATED, taxi and zone events, ...): several events often
+-- arrive in the same frame, so they are coalesced into one YAPoints_ForceUpdate on the next frame.
+local update_pending = false
+local function flush_update()
+    update_pending = false
+    YAPoints_ForceUpdate()
+end
+
+function YAPoints_RequestUpdate()
+    if(update_pending) then
+        return
+    end
+    if(C_Timer and C_Timer.After) then
+        update_pending = true
+        C_Timer.After(0, flush_update)
     else
-        YAPoints_OnMapChange(frame);
+        YAPoints_ForceUpdate()
+    end
+end
+
+-- a hidden frame missed some rebuilds: catch up before it is drawn
+function YAPoints_OnShow(frame)
+    if(frame.yap_dirty and frame.opt) then
+        frame.yap_dirty = nil
+        YAPoints_OnMapChange(frame)
     end
 end
 
 function YAPoints_OnMapChange(frame)
-    local lm = frame:GetName();
+    local lm = frame:GetName()
 
-    -- clear all points
-    local h = 1;
-    while h > 0 do
-        local point = _G[lm.."Point"..h];
-        if(point) then
-            point:Clear();
-            h = h + 1;
-        else
-            h = 0;
+    -- clear all points (they are unnamed frames now, kept in frame.pointframes)
+    for _, point in ipairs(frame.pointframes) do
+        if(point:IsShown()) then
+            point:Clear()
         end
     end
 
-    local pd_resetlist = _G[frame.YA_PD_ResetList];
-    if(pd_resetlist) then pd_resetlist(); end
+    local pd_resetlist = _G[frame.YA_PD_ResetList]
+    if(pd_resetlist) then pd_resetlist() end
 
     -- store all points for this map
-    frame.points = {};
-    current_frame = frame;
+    frame.points = {}
+    current_frame = frame
     for h,v in pairs(sets) do
         if(v.getpoints) then
-            v.getpoints(h, YatlasOptions.Frames[lm].Map);
+            v.getpoints(h, YatlasOptions.Frames[lm].Map)
         end
     end
 
     -- handle mobile points here to.
     -- Keep in mind, mobile points shouldn't be updated here specifically,
     -- but it gets the job done.
-    frame.mobilepoints = {};
-    frame.nextmobilepoint = 1;
+    frame.mobilepoints = {}
+    frame.nextmobilepoint = 1
     if(frame.mobilepointframes == nil) then frame.mobilepointframes = {} end
     for h,v in pairs(sets) do
         if(v.getmobilepoints) then
-            v.getmobilepoints(h);
+            v.getmobilepoints(h)
         end
     end
 
+    -- hide the mobile points of the previous map their sets show them again on the next update
+    -- (the original compared mp.locMap with an undefined global, so this always hid every point)
     for id,mp in pairs(frame.mobilepoints) do
-        if(mp.locMap ~= map or not mp.locMap) then
-            mp:Hide();
-        end
+        mp:Hide()
     end
 
     -- force update
-    frame.yap_lastx = nil;
-    YAPoints_OnMove(frame, unpack(YatlasOptions.Frames[lm].Location));
+    frame.yap_lastx = nil
+    frame.yap_tilex = nil
+    YAPoints_OnMove(frame, unpack(YatlasOptions.Frames[lm].Location))
 end
 
 function YAPoints_OnMove(frame, x, y)
-    local lm = frame:GetName();
+    local lm = frame:GetName()
     
     if(frames[lm] == 0) then
-        frames[lm] = 1;
-        return YAPoints_OnMapChange(frame);
+        frames[lm] = 1
+        return YAPoints_OnMapChange(frame)
     end
 
     -- if we have run at this x, y coord recently, don't do it again
     if(frame.yap_lastx == x and frame.yap_lasty == y) then
         -- no change
-        return;
+        return
     end
 
-    -- update normal points and unit points
-    YAPoints_Update(frame, x, y);
---    YAPoints_UpdateP(frame);
+    -- The static points sit on the view's Canvas, which SetLocation moves while panning:
+    -- rebuild them only when the canvas origin (tile), the zoom or the canvas size changes.
+    if(frame.yap_tilex ~= frame.tilex or frame.yap_tiley ~= frame.tiley or
+            frame.yap_zoom ~= frame:GetZoom() or frame.yap_cols ~= frame.tilecols or
+            frame.yap_rows ~= frame.tilerows) then
+        YAPoints_Update(frame, x, y)
+    end
 
     -- hide/update mobile points as needed
     for id,mp in pairs(frame.mobilepoints) do
         if(mp:IsShown()) then
-            mp:Update(frame);
+            mp:Update(frame)
         end
     end
 
-    frame.yap_lasty = y;
-    frame.yap_lastx = x;
+    frame.yap_lasty = y
+    frame.yap_lastx = x
 end
 
-function YAPoints_OnUpdate(frame, ela) 
-    local lm = frame:GetName();
-
+function YAPoints_OnUpdate(frame, ela)
     for h,v in pairs(sets) do
         if(v.OnUpdate) then
-            v.OnUpdate(h, frame, ela);
+            v.OnUpdate(h, frame, ela)
         end
     end
 end
 
 function YAPoints_Update(frame, x, y)
-    local lm = frame:GetName();
-    local flr,cei=math.floor,math.ceil;
-    local z = frame:GetZoom();
-    local hpoint = 1;
-    local legend = {};
-    
-    if(x == nil) then
-        x = YatlasOptions.Frames[lm].Location[1];
-        y = YatlasOptions.Frames[lm].Location[2];
-    end
-    current_locx_xact = x;
-    current_locy_xact = y;
+    local lm = frame:GetName()
+    local flr,cei=math.floor,math.ceil
+    local z = frame:GetZoom()
+    local hpoint = 1
 
-    current_frame = frame;
-    current_viewframe = _G[lm.."ViewFrame"];
+    if(x == nil) then
+        x = YatlasOptions.Frames[lm].Location[1]
+        y = YatlasOptions.Frames[lm].Location[2]
+    end
+    current_frame = frame
+    current_viewframe = _G[lm.."ViewFrame"]
 
     -- ensure that we have loaded the points already
     if(frame.points == nil) then
-        return YAPoints_OnMapChange(frame);
+        return YAPoints_OnMapChange(frame)
     end
+    -- no tile grid yet (SetZoom / SetLocation have not run)
+    if(frame.tilex == nil or frame.tilecols == nil) then
+        return
+    end
+    frame.yap_tilex, frame.yap_tiley = frame.tilex, frame.tiley
+    frame.yap_zoom = z
+    frame.yap_cols, frame.yap_rows = frame.tilecols, frame.tilerows
 
     -- clear all points
     for h, point in ipairs(frame.pointframes) do
         if(point and point:IsShown()) then
-            point:Clear();
+            point:Clear()
         end
     end
 
     -- init vispoints
-    frame.vispoints = {};
+    frame.vispoints = {}
     for h,v in pairs(sets) do
-        frame.vispoints[h] = {};
+        frame.vispoints[h] = {}
     end
 
-    -- fill vispoints
-    for xv = flr(x),cei(x+current_viewframe:GetWidth()/z),1 do
-        if(frame.points[xv] ~= nil) then 
-            for yv = flr(y),cei(y+current_viewframe:GetHeight()/z),1 do
-                if(frame.points[xv][yv] ~= nil) then
-                    for k,vv in pairs(frame.points[xv][yv]) do
-                        if(vv.x > x and vv.y > y and
-                                vv.x < x+current_viewframe:GetWidth()/z and 
-                                vv.y < y+current_viewframe:GetHeight()/z) then
-                            binsert(frame.vispoints[vv.setname], vv);
+    -- fill vispoints: everything on the canvas (the view plus the partial tiles at its right and
+    -- bottom edges); the view frame clips what hangs outside, so panning inside the canvas
+    -- needs no rebuild
+    x, y = frame.tilex, frame.tiley
+    local maxx = x + frame.tilecols
+    local maxy = y + frame.tilerows
+    local points = frame.points
+    for xv = flr(x),cei(maxx),1 do
+        local column = points[xv]
+        if(column ~= nil) then
+            for yv = flr(y),cei(maxy),1 do
+                local cell = column[yv]
+                if(cell ~= nil) then
+                    for k,vv in pairs(cell) do
+                        if(vv.x >= x and vv.y >= y and vv.x < maxx and vv.y < maxy) then
+                            binsert(frame.vispoints[vv.setname], vv)
                         end
                     end
                 end
@@ -179,46 +228,44 @@ function YAPoints_Update(frame, x, y)
         current_frame = current_frame,
         zoom = z,
         iconsize = YatlasOptions.Frames[lm].IconSize
-    };
+    }
 
     -- draw visible points
-    frame._common_pd = {};
-    local id = 1;
+    local id = 1
     for hset,set in pairs(frame.vispoints) do
-        local showornotfunc = sets[hset].showme;
-        local pointfunc = sets[hset].setuppoint;
-        local legendfunc = sets[hset].setuplegend;
+        local showornotfunc = sets[hset].showme
+        local pointfunc = sets[hset].setuppoint
 
         for hval,val in pairs(set) do
-            local point = YAPoints_GetPoint(frame, hpoint);
+            local point = YAPoints_GetPoint(frame, hpoint)
             local showmemaybe = 
                 (not showornotfunc and not YatlasOptions.Frames[lm].PointCfg[val.setsubname]) or
-                (showornotfunc and showornotfunc(val, lm) );
+                (showornotfunc and showornotfunc(val, lm) )
             
 
             if(point and showmemaybe) then
 
                 if(not val.options.commonpd) then
-                    val.id = id;
-                    id = id + 1;
+                    val.id = id
+                    id = id + 1
                 end
 
-                point:Clear();
-                point:Show();
+                point:Clear()
+                point:Show()
 
                 -- this gets changed around a lot
-                env.iconsize = YatlasOptions.Frames[lm].IconSize;
+                env.iconsize = YatlasOptions.Frames[lm].IconSize
 
                 -- call functions
-                point.dat = val;
+                point.dat = val
                 if(pointfunc) then
-                    pointfunc(point, env, val);
+                    pointfunc(point, env, val)
                 end
             elseif(point) then
-                hpoint = hpoint-1;
+                hpoint = hpoint-1
             end
 
-            hpoint = hpoint + 1;
+            hpoint = hpoint + 1
         end
     end
 end
@@ -226,105 +273,73 @@ end
 function YAPoints_GetPoint(frame, id)
     -- does point exist??
     if(frame.pointframes[id]) then
-        return frame.pointframes[id];
+        return frame.pointframes[id]
     end
 
     if(id > 4096) then
         -- this is too big by far
-        return;
+        return
     end
 
     -- create
-    local viewframe = _G[frame:GetName().."ViewFrame"];
-    local f = CreateFrame("Button");
+    local viewframe = _G[frame:GetName().."ViewFrame"]
+    local f = Yatlas_CreatePointButton(viewframe)
+    f.Clear = YP_Clear
+    f.SetOffset = YP_SetOffset
 
-    f:SetHeight(16);
-    f:SetWidth(16);
-    f:SetParent(viewframe);
-    f:EnableMouse(true);
+    f:SetScript("OnEnter", YP_OnEnter)
 
-    f.Icon = f:CreateTexture(nil, "OVERLAY");
-    f.Icon:SetPoint("TOPLEFT", f);
-    
-    f.Foreground = f:CreateFontString(nil, "ARTWORK");
-    f.Foreground:SetFontObject(GameFontHighlight);
-    f.Foreground:SetTextColor(0, 0, 0);
-    f.Foreground:SetShadowOffset(-1, 0);
-    f.Foreground:SetPoint("TOPLEFT", f);
-
-    f:SetFrameLevel(f:GetFrameLevel() + 4);
-    f.Clear = YP_Clear;
-    f.SetOffset = YP_SetOffset;
-
-    f:SetScript("OnEnter", YP_OnEnter);
-
-    frame.pointframes[id] = f;
-    return f;
+    frame.pointframes[id] = f
+    return f
 end
 
 function YAPoints_AllocMobilePoint(frame, id)
     -- does point exist??
     if(frame.mobilepointframes[id]) then
-        return frame.mobilepointframes[id];
+        return frame.mobilepointframes[id]
     end
 
     if(id > 1024) then
         -- this is too big by far
-        return;
+        return
     end
 
     -- create
-    local viewframe = _G[frame:GetName().."ViewFrame"];
-    local f = CreateFrame("Button");
+    local viewframe = _G[frame:GetName().."ViewFrame"]
+    local f = Yatlas_CreatePointButton(viewframe)
+    f.Clear = YP_Clear
+    f.SetOffset = YMP_SetOffset
+    f.Update = YMP_Update
 
-    f:SetHeight(16);
-    f:SetWidth(16);
-    f:SetParent(viewframe);
-    f:EnableMouse(true);
+    f:SetScript("OnEnter", YP_OnEnter)
 
-    f.Icon = f:CreateTexture(nil, "OVERLAY");
-    f.Icon:SetPoint("TOPLEFT", f);
-    
-    f.Foreground = f:CreateFontString(nil, "ARTWORK");
-    f.Foreground:SetFontObject(GameFontHighlight);
-    f.Foreground:SetTextColor(0, 0, 0);
-    f.Foreground:SetShadowOffset(-1, 0);
-    f.Foreground:SetPoint("TOPLEFT", f);
-
-    f:SetFrameLevel(f:GetFrameLevel() + 4);
-    f.Clear = YP_Clear;
-    f.SetOffset = YP_SetOffset;
-    f.Update = YMP_Update;
-
-    f:SetScript("OnEnter", YP_OnEnter);
-
-    frame.mobilepointframes[id] = f;
-    return f;
+    frame.mobilepointframes[id] = f
+    return f
 end
 
 function YAPoints_UpdateTooltip(frame, tooltip, point, op) 
-    local dat = point.dat;
-    local lm = frame:GetName();
+    local dat = point.dat
+    local lm = frame:GetName()
 
     if(not tooltip.points) then
-        tooltip.points = {};
+        tooltip.points = {}
     end
 
     if(op == "add") then
         if(point.intooltip == nil) then
-            tinsert(tooltip.points, point);
+            tinsert(tooltip.points, point)
 
-            point.intooltip = 1;
+            point.intooltip = 1
         end
     elseif(op == "remove") then
         for h,v in ipairs(tooltip.points) do
             if(v == point) then
-                tremove(tooltip.points, h);
-                break;
+                tremove(tooltip.points, h)
+                break
             end
         end
 
-        point.intooltip = nil;
+        point.intooltip = nil
     else
         -- ???
     end
@@ -333,45 +348,41 @@ function YAPoints_UpdateTooltip(frame, tooltip, point, op)
         current_lm = lm,
         current_frame = frame,
         zoom = frame:GetZoom(),
- 	iconsize = 14,
+        iconsize = 14,
         islegend = true,
-    };
+    }
 
     if(tooltip.points[1]) then
-        local vf = _G[lm.."ViewFrame"];
-        tooltip:Clear();
+        local vf = _G[lm.."ViewFrame"]
+        tooltip:Clear()
         for h,point in ipairs(tooltip.points) do
-            local legendfunc = sets[point.dat.setname].setuplegend;
+            local legendfunc = sets[point.dat.setname].setuplegend
             if(legendfunc) then
-                local legend = tooltip:GetNext();
-                legend.Desc:SetText(nil);
-                legendfunc(legend, env, point.dat);
-                local desc = legend.Desc:GetText();
-                if(desc and desc ~= "") then
-                    legend:SetHeight(16 + legend.Desc:GetStringHeight() + 1);
-                else
-                    legend.Desc:SetText(nil);
-                    legend:SetHeight(16);
+                local legend = tooltip:GetNext()      -- nil after 32 lines
+                if(legend) then
+                    tooltip:ResetLine(legend)
+                    legendfunc(legend, env, point.dat)
+                    tooltip:LayoutLine(legend)
                 end
             end
-            -- tooltip:AddDataPoint(point.dat.name);
+            -- tooltip:AddDataPoint(point.dat.name)
         end
-        tooltip:Show();
+        tooltip:Show()
     else
-        tooltip:Hide();
+        tooltip:Hide()
     end
 end
 
 function YAPoints_showmeornot(frame, val)
-    local showornotfunc = sets[val.setname].showme;
+    local showornotfunc = sets[val.setname].showme
 
     if(type(frame) ~= "string") then
-        frame = frame:GetName();
+        frame = frame:GetName()
     end
 
     return
         (not showornotfunc and not YatlasOptions.Frames[frame].PointCfg[val.setsubname]) or
-         (showornotfunc and showornotfunc(val, frame) );
+         (showornotfunc and showornotfunc(val, frame) )
 end
 
 ---
@@ -379,64 +390,83 @@ end
 ---
 
 function YP_Clear(point)
-    point:Hide();
-    point:ClearAllPoints();
-    point:SetPoint("TOPLEFT", point:GetParent());
-    point.Icon:SetTexture(nil);
-    point.Icon:SetTexCoord(0, 1, 0, 1);
-    point.Foreground:SetText("");
+    point:Hide()
+    point:ClearAllPoints()
+    point:SetPoint("TOPLEFT", point:GetParent())
+    point.Icon:SetTexture(nil)
+    point.Icon:SetTexCoord(0, 1, 0, 1)
+    point.Foreground:SetText("")
 end
 
-function YP_SetOffset(point, x, y) 
-    local z = current_frame:GetZoom();
-    local lm = current_frame:GetName();
-    local iconsz = YatlasOptions.Frames[lm].IconSize;
+-- Place a static point at map position x, y on the Canvas of the frame that owns it, relative to
+-- the canvas origin (frame.tilex, frame.tiley), so that it moves with the map while panning.
+-- The point's parent is the ViewFrame, whose parent is the Yatlas frame.
+function YP_SetOffset(point, x, y)
+    local vf = point:GetParent()
+    local frame = vf:GetParent()
+    local opt = frame.opt
+    local z = opt.Zoom
+    local half = opt.IconSize/2
 
-    point:ClearAllPoints();
-    point:SetPoint("TOPLEFT", current_viewframe, "TOPLEFT", 
-           -(current_locx_xact - x)*z - iconsz/2,
-           (current_locy_xact - y)*z + iconsz/2);
+    point:ClearAllPoints()
+    point:SetPoint("TOPLEFT", vf.Canvas, "TOPLEFT", (x - frame.tilex)*z - half, (frame.tiley - y)*z + half)
+end
+
+-- Place a mobile point at map position x, y relative to the view (YMP_Update runs on every move;
+-- the shared current_frame state could belong to the other frame here).
+function YMP_SetOffset(point, x, y)
+    local vf = point:GetParent()
+    local opt = vf:GetParent().opt
+    local z = opt.Zoom
+    local half = opt.IconSize/2
+    local loc = opt.Location
+
+    point:ClearAllPoints()
+    point:SetPoint("TOPLEFT", vf, "TOPLEFT", (x - loc[1])*z - half, (loc[2] - y)*z + half)
 end
 
 function YP_OnEnter(self)
-    local vf = self:GetParent(); 
-    local f = vf:GetParent();
-    local tp = _G[f.hoverTooltip];
+    local vf = self:GetParent() 
+    local f = vf:GetParent()
+    local tp = _G[f.hoverTooltip]
     
-    vf.inpoint = true;
+    vf.inpoint = true
     if(tp and tp.knownshownlines == nil) then
-        tp.knownshownlines = 0;
+        tp.knownshownlines = 0
     end
     
 end
 
 
 function YatlasFrameViewFrame_UpdatePointTooltip(self) 
-    local f = self:GetParent();
-    local tp = _G[f.hoverTooltip];
+    local f = self:GetParent()
+    local tp = _G[f.hoverTooltip]
 
+    -- cleared points stay anchored at the top left corner: only shown points can be hovered;
+    -- static points may hang outside the clipped view (on the canvas edge tiles)
+    local inview = self:IsMouseOver()
     for h,v in pairs(f.pointframes) do
-        if(v.intooltip and not v:IsMouseOver()) then
-            YAPoints_UpdateTooltip(f, tp, v, "remove");
-            tp.knownshownlines = tp.knownshownlines - 1;
-        elseif(not v.intooltip and v:IsMouseOver()) then
-            YAPoints_UpdateTooltip(f, tp, v, "add");
-            tp.knownshownlines = tp.knownshownlines + 1;
+        if(v.intooltip and not (inview and v:IsShown() and v:IsMouseOver())) then
+            YAPoints_UpdateTooltip(f, tp, v, "remove")
+            tp.knownshownlines = tp.knownshownlines - 1
+        elseif(not v.intooltip and inview and v:IsShown() and v:IsMouseOver()) then
+            YAPoints_UpdateTooltip(f, tp, v, "add")
+            tp.knownshownlines = tp.knownshownlines + 1
         end
     end
 
     for h,v in pairs(f.mobilepointframes) do
         if(v.intooltip and not v:IsMouseOver()) then
-            YAPoints_UpdateTooltip(f, tp, v, "remove");
-            tp.knownshownlines = tp.knownshownlines - 1;
+            YAPoints_UpdateTooltip(f, tp, v, "remove")
+            tp.knownshownlines = tp.knownshownlines - 1
         elseif(not v.intooltip and v:IsMouseOver() and v:IsShown()) then
-            YAPoints_UpdateTooltip(f, tp, v, "add");
-            tp.knownshownlines = tp.knownshownlines + 1;
+            YAPoints_UpdateTooltip(f, tp, v, "add")
+            tp.knownshownlines = tp.knownshownlines + 1
         end
     end
 
     if(tp.knownshownlines == 0) then
-        self.inpoint = nil;
+        self.inpoint = nil
     end
 end
 
@@ -451,29 +481,29 @@ function YAPoints_AddPoint(frame, setname, name, x, y, options, userdat)
         x = x, y = y,
         options = options,
         userdat = userdat
-    };
+    }
 
     if(tab.options == nil) then
-        tab.options = emptylist;
+        tab.options = emptylist
     end
 
     if(options and options.setsubname) then
-        tab.setsubname = options.setsubname;
+        tab.setsubname = options.setsubname
     else
-        tab.setsubname = tab.setname;
+        tab.setsubname = tab.setname
     end
 
     if(type(frame) ~= "table") then
-        frame = current_frame;
+        frame = current_frame
     end
 
-    local fx = math.floor(x);
-    local fy = math.floor(y);
+    local fx = math.floor(x)
+    local fy = math.floor(y)
 
-    if(frame.points[fx] == nil) then frame.points[fx] = {}; end
-    if(frame.points[fx][fy] == nil) then frame.points[fx][fy] = {}; end
+    if(frame.points[fx] == nil) then frame.points[fx] = {} end
+    if(frame.points[fx][fy] == nil) then frame.points[fx][fy] = {} end
 
-    tinsert(frame.points[fx][fy], tab);
+    tinsert(frame.points[fx][fy], tab)
 end
 
 function YAPoints_AddMobilePoint(frame, setname, name, opt, userdat) 
@@ -482,74 +512,77 @@ function YAPoints_AddMobilePoint(frame, setname, name, opt, userdat)
         name = name,
         options = opt,
         userdat = userdat
-    };
+    }
 
     if(tab.options == nil) then
-        tab.options = emptylist;
+        tab.options = emptylist
     end
 
-    if(options and options.setsubname) then
-        tab.setsubname = options.setsubname;
+    if(opt and opt.setsubname) then
+        tab.setsubname = opt.setsubname
     else
-        tab.setsubname = tab.setname;
+        tab.setsubname = tab.setname
     end
 
     if(type(frame) ~= "table") then
-        frame = current_frame;
+        frame = current_frame
     end
 
-    point = YAPoints_AllocMobilePoint(frame, frame.nextmobilepoint);
-    point.dat = tab; 
-    frame.nextmobilepoint = frame.nextmobilepoint + 1;
+    local point = YAPoints_AllocMobilePoint(frame, frame.nextmobilepoint)
+    if(not point) then
+        return
+    end
+    point.dat = tab
+    frame.nextmobilepoint = frame.nextmobilepoint + 1
 
-    frame.mobilepoints[setname..":"..name] = point;
-    return getn(frame.mobilepoints);
+    frame.mobilepoints[setname..":"..name] = point
+    return point
 end
 
 function YAPoints_Mobile_SetLocation(setname, name, map, x, y) 
     for framename,v in pairs(frames) do
-        local frame = _G[framename];
+        local frame = _G[framename]
         if(frame:IsVisible()) then
-            local d = frame.mobilepoints and frame.mobilepoints[setname..":"..name];
+            local d = frame.mobilepoints and frame.mobilepoints[setname..":"..name]
             if(d) then
-                d.locx = x;
-                d.locy = y;
-                d.locmap = map;
-                d:Update(frame);
+                d.locx = x
+                d.locy = y
+                d.locmap = map
+                d:Update(frame)
             end
         end
     end
 end
 
 function YAPoints_SetupMobilePoint(setname, name, itahm, prop, ...)
-    local whut;
+    local whut
     
     for framename,v in pairs(frames) do
-        local frame = _G[framename];
-        whut = frame.mobilepoints[setname..":"..name][itahm];
-        whut[prop](whut, ...);
+        local frame = _G[framename]
+        whut = frame.mobilepoints[setname..":"..name][itahm]
+        whut[prop](whut, ...)
     end
 end
 
 function YAPoints_SetupMobilePointF(frame, setname, name, itahm, prop, ...)
-    local whut;
+    local whut
 
     if(type(frame) ~= "table") then
-        frame = current_frame;
+        frame = current_frame
     end
 
-    whut = frame.mobilepoints[setname..":"..name][itahm];
-    whut[prop](whut, ...);
+    whut = frame.mobilepoints[setname..":"..name][itahm]
+    whut[prop](whut, ...)
 end
 
--- Call fn(point, frame) for a mobile point in every visible Yatlas frame.
-function YAPoints_ForEachMobilePoint(setname, name, fn)
+-- Call fn(point, frame, arg) for a mobile point in every visible Yatlas frame.
+function YAPoints_ForEachMobilePoint(setname, name, fn, arg)
     for framename,v in pairs(frames) do
-        local frame = _G[framename];
+        local frame = _G[framename]
         if(frame and frame:IsVisible() and frame.mobilepoints) then
-            local d = frame.mobilepoints[setname..":"..name];
+            local d = frame.mobilepoints[setname..":"..name]
             if(d) then
-                fn(d, frame);
+                fn(d, frame, arg)
             end
         end
     end
@@ -557,31 +590,31 @@ end
 
 function YAPoints_HideMobile(setname, name) 
     for framename,v in pairs(frames) do
-        local frame = _G[framename];
+        local frame = _G[framename]
         if(frame:IsVisible()) then
-            local d = frame.mobilepoints and frame.mobilepoints[setname..":"..name];
+            local d = frame.mobilepoints and frame.mobilepoints[setname..":"..name]
             if(d) then
-                d.locmap = nil;
-                d:Update(frame);
+                d.locmap = nil
+                d:Update(frame)
             end
         end
     end
 end
 
 function YMP_Update(point, frame)
-    local zoom = frame:GetZoom();
+    local zoom = frame:GetZoom()
     local vf = _G[frame:GetName().."ViewFrame"]
-    local map = frame:GetMap();
-    local minx, miny = frame:GetLocation();
-    local maxx, maxy = minx + vf:GetWidth()/zoom, miny + vf:GetHeight()/zoom;
+    local map = frame:GetMap()
+    local minx, miny = frame:GetLocation()
+    local maxx, maxy = minx + vf:GetWidth()/zoom, miny + vf:GetHeight()/zoom
 
     if(map == point.locmap and
             point.locx > minx and point.locx < maxx and
             point.locy > miny and point.locy < maxy) then
-        point:SetOffset(point.locx, point.locy);
-        point:Show();
+        point:SetOffset(point.locx, point.locy)
+        point:Show()
     else
-        point:Hide();
+        point:Hide()
     end
 end
 
@@ -593,53 +626,53 @@ end
 
 function YFOO_Init(self, frame)
     if(not frame) then
-        frame = self;
+        frame = self
     end
 
-    UIDropDownMenu_Initialize(frame, YFOODropDown_Initialize, "MENU");
-    UIDropDownMenu_SetButtonWidth(frame,50);
-    UIDropDownMenu_SetWidth(frame,50);
+    UIDropDownMenu_Initialize(frame, YFOODropDown_Initialize, "MENU")
+    UIDropDownMenu_SetButtonWidth(frame,50)
+    UIDropDownMenu_SetWidth(frame,50)
 end
 
 function YFOODropDown_Initialize()
-    local func;
+    local func
 
     if(current_frame == nil) then
-        return;
+        return
     end
 
-    local lm = current_frame:GetName();
+    local lm = current_frame:GetName()
 
     if(UIDROPDOWNMENU_MENU_LEVEL == 1) then
-        local info = {};
-        info.text = YATLAS_POINTS_SHOWPOINTS_TITLE;
-        info.notClickable = 1;
-        info.isTitle = 1;
-        info.notCheckable = 1;
-        UIDropDownMenu_AddButton(info);
+        local info = {}
+        info.text = YATLAS_POINTS_SHOWPOINTS_TITLE
+        info.notClickable = 1
+        info.isTitle = 1
+        info.notCheckable = 1
+        UIDropDownMenu_AddButton(info)
     end
 
     if(YatlasOptions.Frames and YatlasOptions.Frames[lm]) then
         for _,h in ipairs(setorder) do
-            func = sets[h].configmenu;
+            func = sets[h].configmenu
             if(func) then
-                func(h, lm);
+                func(h, lm)
             end
         end
     end
 end
 
 function YFOO_OnClick(self)
-    current_frame = self;
+    current_frame = self
     while(current_frame and not current_frame.SetLocation) do
         current_frame = current_frame:GetParent()
     end
 
     if(current_frame:GetName() == "BigYatlasFrame") then
-        BigYatlasTooltip:Hide();
+        BigYatlasTooltip:Hide()
     end
 
-    ToggleDropDownMenu(1, nil, _G[self:GetName().."DropDown"], self:GetName(), 0, 0);
+    ToggleDropDownMenu(1, nil, _G[self:GetName().."DropDown"], self:GetName(), 0, 0)
 end
 
 -- The modern UIDropDownMenu toggles the check mark before calling func and
@@ -647,9 +680,9 @@ end
 -- PointCfg[name] = true means "hidden", so store the inverse.
 function YFOODropDown_do_toggle_normal(self, arg1, arg2, checked)
     if(checked == nil) then
-        checked = UIDropDownMenuButton_GetChecked(self);
+        checked = UIDropDownMenuButton_GetChecked(self)
     end
-    YatlasOptions.Frames[current_frame:GetName()].PointCfg[self.value] = not checked;
+    YatlasOptions.Frames[current_frame:GetName()].PointCfg[self.value] = not checked
     YAPoints_ForceUpdate(current_frame)
 end
 
@@ -659,7 +692,7 @@ end
 
 -- based on code by ???
 binsert = function( t, val)
-    local iStart, iEnd, iMid, iState =  1, table.getn( t ), 1, 0
+    local iStart, iEnd, iMid, iState =  1, #t, 1, 0
 
     -- Get Insertposition
     while iStart <= iEnd do

@@ -21,6 +21,7 @@ Yatlas draws the world from the game's own minimap terrain tiles instead of the 
 | **Mists of Pandaria Classic (5.5.4)** | Supported from v0.9.4 |
 | **Anniversary / Burning Crusade (2.5.6)** | Supported from v1.0.0 |
 | **Classic Era (1.15.9)** | Supported from v1.0.0 (Season of Discovery maps are not included) |
+| **World of Warcraft: Forever (1.60.1)** | Coming in v1.1.0 (the new 1.60 dungeons are not on the map yet) |
 | Other clients (Wrath, Cataclysm Classic) | Not supported |
 
 One download works in all supported clients: Yatlas detects the game version and loads only the map data for that client.

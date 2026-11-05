@@ -13,18 +13,8 @@
 -- Renamed / moved globals
 -- ---------------------------------------------------------------------------
 
-Yatlas_GetAddOnMetadata = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata;
-
--- Mainline (12.x) can return "secret values" (e.g. UnitName/UnitClass/UnitIsUnit in
--- restricted content). They must not be compared, tested or used as table keys.
--- Returns nil for a secret value, the value itself otherwise.
-function Yatlas_NotSecret(v)
-    if(issecretvalue and issecretvalue(v)) then
-        return nil;
-    end
-    return v;
-end
-Yatlas_GetPOITextureCoords = (C_Minimap and C_Minimap.GetPOITextureCoords) or GetPOITextureCoords;
+Yatlas_GetAddOnMetadata = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata
+Yatlas_GetPOITextureCoords = (C_Minimap and C_Minimap.GetPOITextureCoords) or GetPOITextureCoords
 
 -- Icon scale for an atlas, relative to its Classic size. Retail replaced some map atlases with
 -- larger, padded high resolution versions (Dungeon / Raid: 22 -> 32, TaxiNode_*: 18 -> 21 in
@@ -33,34 +23,57 @@ local YATLAS_ATLAS_BASE = {dungeon = 22, raid = 22,
     ["delves-regular"] = 20, ["delves-bountiful"] = 17,   -- Retail only (30 / 25)
     racing = 22,                                          -- Retail only (32, drawn at 22)
     taxinode_neutral = 18, taxinode_alliance = 18, taxinode_horde = 18,
-    taxinode_undiscovered = 18};                          -- Retail only (same size as the others)
-local yatlas_atlas_scale = {};
-function Yatlas_AtlasScale(atlas)
-    if(not atlas) then return 1; end
-    local key = string.lower(atlas);
-    local scale = yatlas_atlas_scale[key];
-    if(scale == nil) then
-        scale = 1;
-        local base = YATLAS_ATLAS_BASE[key];
-        local info = base and C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(atlas);
-        if(info and info.width and info.width > base) then
-            scale = math.min(info.width / base, YATLAS_ATLAS_MAX_SCALE);
-        end
-        yatlas_atlas_scale[key] = scale;
+    taxinode_undiscovered = 18}                          -- Retail only (same size as the others)
+
+local yatlas_atlas_scale = {}
+local yatlas_atlas_exists = {}
+
+-- true when the client knows the atlas. The atlas list does not change during a session,
+-- so the answer is cached (point setup calls this for every visible point).
+function Yatlas_AtlasExists(atlas)
+    if(not atlas) then return false end
+    local ok = yatlas_atlas_exists[atlas]
+    if(ok == nil) then
+        ok = (C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(atlas) ~= nil) or false
+        yatlas_atlas_exists[atlas] = ok
     end
-    return scale;
+    return ok
+end
+
+-- SetAtlas on a texture that is reused (point buttons, tooltip lines). Texture coordinates set
+-- earlier (the POIIcons sheet, SetRotation) are not reset by a plain SetAtlas and cropped the new
+-- atlas to a blurry patch, so reset them first and ask for the reset (resetTexCoords, 4th arg).
+function Yatlas_SetAtlas(tex, atlas)
+    tex:SetTexCoord(0, 1, 0, 1)
+    tex:SetAtlas(atlas, false, nil, true)
+end
+
+function Yatlas_AtlasScale(atlas)
+    if(not atlas) then return 1 end
+    local key = string.lower(atlas)
+    local scale = yatlas_atlas_scale[key]
+    if(scale == nil) then
+        scale = 1
+        local base = YATLAS_ATLAS_BASE[key]
+        local info = base and C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(atlas)
+        if(info and info.width and info.width > base) then
+            scale = math.min(info.width / base, YATLAS_ATLAS_MAX_SCALE)
+        end
+        yatlas_atlas_scale[key] = scale
+    end
+    return scale
 end
 
 -- backdrop tables (YATLAS_BACKDROP_*) are defined in Core\Constants.lua
 function Yatlas_ApplyBackdrop(frame, backdrop)
     if(frame and frame.SetBackdrop) then
-        frame:SetBackdrop(backdrop);
+        frame:SetBackdrop(backdrop)
     end
 end
 
 function Yatlas_PlaySound(kitname)
     if(SOUNDKIT and SOUNDKIT[kitname]) then
-        PlaySound(SOUNDKIT[kitname]);
+        PlaySound(SOUNDKIT[kitname])
     end
 end
 
@@ -68,24 +81,24 @@ end
 -- Map.db2 ID <-> Directory
 -- ---------------------------------------------------------------------------
 
-local ya_dir_by_mapid;
+local ya_dir_by_mapid
 
 function Yatlas_MapIDToDirectory(mapid)
     if(mapid == nil) then
-        return nil;
+        return nil
     end
 
     if(ya_dir_by_mapid == nil) then
-        ya_dir_by_mapid = {};
+        ya_dir_by_mapid = {}
         for dir, id in pairs(Yatlas_WorldMapIds2) do
             -- only maps we actually have minimap tiles for
             if(Yatlas_mapdb1[dir]) then
-                ya_dir_by_mapid[id] = dir;
+                ya_dir_by_mapid[id] = dir
             end
         end
     end
 
-    return ya_dir_by_mapid[mapid];
+    return ya_dir_by_mapid[mapid]
 end
 
 -- ---------------------------------------------------------------------------
@@ -95,40 +108,40 @@ end
 -- returns map, bigx, bigy  (nil if the unit isn't on a map Yatlas knows)
 function Yatlas_GetUnitLocation(unit)
     if(not UnitExists(unit)) then
-        return nil;
+        return nil
     end
 
-    local worldx, worldy, mapid;
+    local worldx, worldy, mapid
 
     -- world coordinates straight from the client (open world only)
     if(UnitPosition) then
-        local _;
-        worldx, worldy, _, mapid = UnitPosition(unit);
+        local _
+        worldx, worldy, _, mapid = UnitPosition(unit)
     end
 
     -- otherwise go through the ui map of the unit
     if(worldx == nil and C_Map and C_Map.GetBestMapForUnit) then
-        local uimap = C_Map.GetBestMapForUnit(unit);
-        local pos = uimap and C_Map.GetPlayerMapPosition(uimap, unit);
+        local uimap = C_Map.GetBestMapForUnit(unit)
+        local pos = uimap and C_Map.GetPlayerMapPosition(uimap, unit)
         if(pos) then
-            local cont, world = C_Map.GetWorldPosFromMapPos(uimap, pos);
+            local cont, world = C_Map.GetWorldPosFromMapPos(uimap, pos)
             if(world) then
-                mapid = cont;
-                worldx, worldy = world:GetXY();
+                mapid = cont
+                worldx, worldy = world:GetXY()
             end
         end
     end
 
     if(worldx == nil) then
-        return nil;
+        return nil
     end
 
-    local map = Yatlas_MapIDToDirectory(mapid);
+    local map = Yatlas_MapIDToDirectory(mapid)
     if(map == nil) then
-        return nil;
+        return nil
     end
 
-    return map, worldy, worldx;
+    return map, worldy, worldx
 end
 
 -- ---------------------------------------------------------------------------
@@ -136,63 +149,63 @@ end
 -- ---------------------------------------------------------------------------
 
 -- Collects the area POIs that getter(uiMapID) returns for the zones of a Yatlas map.
--- Returns a list of {bigx, bigy, name, description, textureIndex, atlasName, areaPoiID};
+-- Returns a list of {bigx, bigy, name, description, textureIndex, atlasName, areaPoiID}
 -- skip(poiID, info) can filter POIs out.
 function Yatlas_CollectAreaPOIs(map, getter, skip)
-    local list = {};
+    local list = {}
 
     if(map == nil or getter == nil or not (C_AreaPoiInfo and C_Map and C_Map.GetWorldPosFromMapPos)
             or type(Yatlas_UiMapIds[map]) ~= "table") then
-        return list;
+        return list
     end
 
-    local mapid = Yatlas_WorldMapIds2[map];
-    local seen = {};
+    local mapid = Yatlas_WorldMapIds2[map]
+    local seen = {}
 
     for _, uimap in pairs(Yatlas_UiMapIds[map]) do
         for _, poi in ipairs(getter(uimap) or {}) do
             if(not seen[poi]) then
-                local info = C_AreaPoiInfo.GetAreaPOIInfo(uimap, poi);
+                local info = C_AreaPoiInfo.GetAreaPOIInfo(uimap, poi)
 
                 if(info and info.position and not (skip and skip(poi, info))) then
-                    local cont, world = C_Map.GetWorldPosFromMapPos(uimap, info.position);
+                    local cont, world = C_Map.GetWorldPosFromMapPos(uimap, info.position)
 
                     if(world and (mapid == nil or cont == mapid)) then
-                        local worldx, worldy = world:GetXY();
-                        seen[poi] = true;
+                        local worldx, worldy = world:GetXY()
+                        seen[poi] = true
                         tinsert(list, {worldy, worldx, info.name, info.description,
-                                       info.textureIndex, info.atlasName, poi});
+                                       info.textureIndex, info.atlasName, poi})
                     end
                 end
             end
         end
     end
 
-    return list;
+    return list
 end
 
 -- fills Yatlas_Landmarks[map] with {bigx, bigy, name, description, textureIndex, atlasName}
 function Yatlas_LoadLandmarks(map)
     if(map == nil or Yatlas_Landmarks[map] ~= nil) then
-        return false;
+        return false
     end
 
     Yatlas_Landmarks[map] = Yatlas_CollectAreaPOIs(map,
         C_AreaPoiInfo and C_AreaPoiInfo.GetAreaPOIForMap,
         function(poi, info)
-            -- towns and capitals come from Yatlas_cities (Data); delves and races have their own sets
+            -- towns and capitals come from Yatlas_cities (Data) delves and races have their own sets
             return (Yatlas_CityPOIs and Yatlas_CityPOIs[poi])
                 or (info.atlasName and (string.find(info.atlasName, "^delves%-")
-                                        or info.atlasName == "racing"));
-        end);
+                                        or info.atlasName == "racing"))
+        end)
 
-    return true;
+    return true
 end
 
 -- area POIs (e.g. capture points, world events) changed: rebuild on demand
 function Yatlas_ResetLandmarks()
     for h in pairs(Yatlas_Landmarks) do
-        Yatlas_Landmarks[h] = nil;
+        Yatlas_Landmarks[h] = nil
     end
 end
 
@@ -200,48 +213,48 @@ end
 -- Flight paths as the client sees them (localized name, discovered state)
 -- ---------------------------------------------------------------------------
 
-local ya_taxiinfo = {};
+local ya_taxiinfo = {}
 
 -- returns [taxiNodeID] = MapTaxiNodeInfo for every flight path on a Yatlas map
 function Yatlas_GetTaxiInfo(map)
     if(map == nil) then
-        return {};
+        return {}
     end
     if(ya_taxiinfo[map]) then
-        return ya_taxiinfo[map];
+        return ya_taxiinfo[map]
     end
 
-    local list = {};
-    ya_taxiinfo[map] = list;
+    local list = {}
+    ya_taxiinfo[map] = list
 
     if(not (C_TaxiMap and C_TaxiMap.GetTaxiNodesForMap)) then
-        return list;
+        return list
     end
 
-    local uimaps = {};
+    local uimaps = {}
     if(Yatlas_WorldMapIds[map]) then
-        tinsert(uimaps, Yatlas_WorldMapIds[map]);
+        tinsert(uimaps, Yatlas_WorldMapIds[map])
     end
     if(type(Yatlas_UiMapIds[map]) == "table") then
         for _, uimap in pairs(Yatlas_UiMapIds[map]) do
-            tinsert(uimaps, uimap);
+            tinsert(uimaps, uimap)
         end
     end
 
     for _, uimap in ipairs(uimaps) do
-        local nodes = C_TaxiMap.GetTaxiNodesForMap(uimap) or {};
+        local nodes = C_TaxiMap.GetTaxiNodesForMap(uimap) or {}
         for _, info in ipairs(nodes) do
             if(info.nodeID and list[info.nodeID] == nil) then
-                list[info.nodeID] = info;
+                list[info.nodeID] = info
             end
         end
     end
 
-    return list;
+    return list
 end
 
 function Yatlas_ResetTaxiInfo()
     for h in pairs(ya_taxiinfo) do
-        ya_taxiinfo[h] = nil;
+        ya_taxiinfo[h] = nil
     end
 end

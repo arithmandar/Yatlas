@@ -10,4 +10,4 @@ ignore:
     - tools
     - Docs/CurseForge-Description.md
     - Docs/DataSources.md
-
+    - Images/PSD

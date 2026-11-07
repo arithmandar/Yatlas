@@ -6,6 +6,10 @@ manual-changelog:
     
 enable-nolib-creation: no
 
+# configs for WowInterface
+wowi-archive-previous: yes
+wowi-create-changelog: no
+
 ignore:
     - tools
     - Docs/CurseForge-Description.md

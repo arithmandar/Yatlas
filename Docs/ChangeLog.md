@@ -1,5 +1,8 @@
 # Yatlas ChangeLog
 
+### v1.1.1 (Nov. 07, 2026)
+
+- Added auto-packaging support for WowInterface archives
 
 ### v1.2.0 (In development)
 

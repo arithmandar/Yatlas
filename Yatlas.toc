@@ -13,7 +13,7 @@
 ## Notes-zhCN: Yet another atlas - 以小地图地形浏览整个世界，并标示副本入口、城镇、飞行点与队友位置。
 ## Notes-zhTW: Yet another atlas - 以小地圖地形瀏覽整個世界，並標示副本入口、城鎮、飛行點與隊友位置。
 ## Author: arithmandar
-## X-Credits: Boo Diddly (original author)
+## X-Credits: Boo Diddly (formal author)
 ## X-License: GPLv2
 ## X-Date: @project-date-iso@
 ## DefaultState: Enabled
@@ -33,6 +33,7 @@
 ## X-Website: https://www.curseforge.com/wow/addons/yatlas
 ## IconTexture: Interface\WorldMap\WorldMap-Icon
 ## X-Curse-Project-ID: 2172
+## X-WoWI-ID: 19130
 
 Core\Compat.lua
 Core\Constants.lua

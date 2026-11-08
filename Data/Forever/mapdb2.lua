@@ -114,8 +114,8 @@ Yatlas_taxinodes = {
 		{"Eastwall Tower, Eastern Plaguelands", -4742.850098, 2499.22998, 86, 0, 0},
 		{"Crown Guard Tower, Eastern Plaguelands", -3658.469971, 1857.560059, 87, 0, 0},
 		{"Rog'mar, Riverglades", -4782.959961, -7923.740234, 3203, 1, 0},
-		{"zzOLDBolder'ok, Riverglades", -1100.050049, -6554.930176, 3206, 1, 1},
-		{"zzOLDRiverglades, Farholde Keep", -515.47998, -711.47998, 3207, 2, 0},
+--		{"zzOLDBolder'ok, Riverglades", -1100.050049, -6554.930176, 3206, 1, 1},
+--		{"zzOLDRiverglades, Farholde Keep", -515.47998, -711.47998, 3207, 2, 0},
 		{"Farholde Keep, Riverglades", -4830.470215, -9104.099609, 3276, 2, 0},
 	},
 	["Kalimdor"] = {
@@ -155,7 +155,7 @@ Yatlas_taxinodes = {
 		{"Marshal's Refuge, Un'Goro Crater", -1142.699951, -6113.819824, 79, 0, 0},
 		{"Ratchet, The Barrens", -3773.01001, -894.590027, 80, 0, 0},
 		{"Summit of Eternity, Mount Hyjal", -3306.699951, 5283.189941, 559, 0, 0},
-		{"zzOLDPowderfuse Port, Riverglades", -3773.01001, -894.590027, 3208, 0, 0},
+--		{"zzOLDPowderfuse Port, Riverglades", -3773.01001, -894.590027, 3208, 0, 0},
 		{"Tainted Foothills, Mount Hyjal", -2836.350098, 4393.52002, 3242, 0, 0},
 	},
 };

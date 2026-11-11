@@ -21,9 +21,60 @@ jobs:
       contents: write
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0  # Required so the packager can read git history for changelogs
+
+      # Pre-install the packager's apt dependencies ourselves (subversion for the
+      # svn externals in .pkgmeta, pandoc for the WoWInterface changelog).
+      # BigWigsMods/packager runs a bare `apt-get install` with no timeout or
+      # mirror fallback, so an Ubuntu mirror/DNS outage fails the whole release
+      # (exit code 100). With the tools already present, the packager skips its
+      # own install step.
+      - name: Install packager dependencies
+        shell: bash
+        run: |
+          set -uo pipefail
+          FALLBACK_MIRRORS=(
+            "https://mirrors.edge.kernel.org/ubuntu/"
+            "https://mirror.math.princeton.edu/pub/ubuntu/"
+          )
+
+          apt_install() {
+            sudo DEBIAN_FRONTEND=noninteractive timeout --kill-after=10 120 \
+              apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 \
+              install -yq --no-install-recommends "$@"
+          }
+
+          use_fallback_mirrors() {
+            echo "Switching apt to non-ubuntu.com mirrors"
+            if [ -f /etc/apt/apt-mirrors.txt ]; then
+              printf '%s\n' "${FALLBACK_MIRRORS[@]}" | sudo tee /etc/apt/apt-mirrors.txt >/dev/null
+            fi
+            for f in /etc/apt/sources.list /etc/apt/sources.list.d/*.sources /etc/apt/sources.list.d/*.list; do
+              [ -f "$f" ] || continue
+              sudo sed -i -E "s#https?://([a-z0-9.-]+\.)?(archive|security)\.ubuntu\.com/ubuntu/?#${FALLBACK_MIRRORS[0]}#g" "$f"
+            done
+            sudo timeout --kill-after=10 180 apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 update -q || true
+          }
+
+          install_with_retry() {
+            local cmd=$1 pkg=$2
+            command -v "$cmd" &>/dev/null && { echo "$pkg already installed"; return 0; }
+            for attempt in 1 2 3; do
+              echo "::group::Install $pkg (attempt $attempt)"
+              if apt_install "$pkg"; then echo "::endgroup::"; return 0; fi
+              echo "::endgroup::"
+              [ "$attempt" -eq 1 ] && use_fallback_mirrors
+              sleep 10
+            done
+            return 1
+          }
+
+          install_with_retry svn subversion || { echo "::error::Could not install subversion (needed for svn externals)"; exit 1; }
+          install_with_retry pandoc pandoc || echo "::warning::Could not install pandoc; WoWInterface changelog will not be converted to BBCode"
+          svn --version --quiet
+          command -v pandoc &>/dev/null && pandoc --version | head -1 || true
 
       # Dry Run: Triggered via workflow_dispatch with dry_run=true (adds -d flag)
       - name: Package Addon (Dry Run)
@@ -48,7 +99,7 @@ jobs:
       # Upload artifact for inspection during Dry Run
       - name: Upload Test Package Artifact
         if: github.event_name == 'workflow_dispatch' && inputs.dry_run
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Yatlas-Test-Package
           path: .release/*.zip

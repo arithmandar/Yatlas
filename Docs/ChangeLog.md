@@ -1,6 +1,6 @@
 # Yatlas ChangeLog
 
-### v1.2.1 (Nov. 11, 2026)
+### v1.2.1 (Nov. 12, 2026)
 
 - Updated LibDataBroker external url
 

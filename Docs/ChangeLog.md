@@ -1,5 +1,9 @@
 # Yatlas ChangeLog
 
+### v1.2.1 (Nov. 11, 2026)
+
+- Updated LibDataBroker external url
+
 ### v1.2.0 (Nov. 11, 2026)
 
 **Minimap button**

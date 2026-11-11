@@ -1,159 +1,97 @@
+-- The minimap button, handled by LibDBIcon-1.0 through a LibDataBroker-1.1 launcher.
+-- LibDBIcon places the button on round, square and other custom minimap shapes (GetMinimapShape),
+-- so Yatlas no longer positions, drags or skins its own button.
 
+local ADDON_NAME = "Yatlas"
+local ICON = "Interface\\AddOns\\Yatlas\\Images\\Icons\\Yatlas"
 
-function YatlasButton_OnEvent(event) 
-    if(event == "VARIABLES_LOADED") then
-        YatlasOptionsButtonSlider:SetValue(YatlasOptions.ButtonLocation)
-        YatlasButton_Update()
-        -- Retail Edit Mode / other addons can resize the minimap
-        if(not YatlasButtonFrame.sizehooked) then
-            YatlasButtonFrame.sizehooked = true
-            Minimap:HookScript("OnSizeChanged", function()
-                if(YatlasOptions) then YatlasButton_Update() end
-            end)
+local LDB = LibStub("LibDataBroker-1.1")
+local LDBIcon = LibStub("LibDBIcon-1.0")
+
+local launcher = LDB:NewDataObject(ADDON_NAME, {
+    type = "launcher",
+    label = ADDON_NAME,
+    icon = ICON,
+    OnClick = function(self, button)
+        if(button == "RightButton") then
+            YatlasOptions_Toggle()
+        else
+            YatlasFrame:Toggle()
         end
+    end,
+    OnTooltipShow = function(tooltip)
+        if(not tooltip or not tooltip.AddLine) then return end
+        tooltip:AddLine(YATLAS_BUTTON_TOOLTIP1)
+        tooltip:AddLine(YATLAS_BUTTON_TOOLTIP2, 1, 1, 1)
+        tooltip:AddLine(YATLAS_BUTTON_TOOLTIP4, 1, 1, 1)
+        tooltip:AddLine(YATLAS_BUTTON_TOOLTIP3, 1, 1, 1)
+    end,
+})
+
+-- YatlasOptions.Minimap is the LibDBIcon db: hide, minimapPos (degrees, 0 = right, 90 = top), lock.
+-- Before 1.2.0 the button used YatlasOptions.ShowButton and YatlasOptions.ButtonLocation
+-- (degrees, 0 = left, 90 = top); they are converted once and removed.
+local function minimapdb()
+    local db = YatlasOptions.Minimap
+    if(type(db) ~= "table") then
+        db = {}
+        if(YatlasOptions.ShowButton == false) then
+            db.hide = true
+        end
+        if(type(YatlasOptions.ButtonLocation) == "number") then
+            db.minimapPos = (180 - YatlasOptions.ButtonLocation) % 360
+        end
+        YatlasOptions.Minimap = db
     end
+    YatlasOptions.ShowButton = nil
+    YatlasOptions.ButtonLocation = nil
+    return db
 end
 
--- Look of the button: the game's round minimap button textures (UI-Minimap-Background,
--- MiniMap-TrackingBorder) around Interface\WorldMap\WorldMap-Icon, the icon of the TOC.
--- The border texture has its ring in the top left corner mainline draws it a bit smaller.
-local BUTTON_LOOK = {
-    mainline = {border = 50, background = 24, icon = 18},
-    classic  = {border = 53, background = 20, bgx = 7, bgy = -5, icon = 17, iconx = 7, icony = -6},
-}
-local ICON_INSET = 0.05    -- the icon's own rim is trimmed pressing shows it in full
+function YatlasButton_IsShown()
+    return not (YatlasOptions.Minimap and YatlasOptions.Minimap.hide)
+end
 
-function YatlasButton_SetupLook(button)
-    local look = (YATLAS_CLIENT and YATLAS_CLIENT.isMainlineUI) and BUTTON_LOOK.mainline or BUTTON_LOOK.classic
-
-    -- the textures have no points yet give each its size and place
-    button.Border:SetSize(look.border, look.border)
-    button.Border:SetPoint("TOPLEFT")
-
-    button.Background:SetSize(look.background, look.background)
-    button.Icon:SetSize(look.icon, look.icon)
-    if(look.bgx) then
-        button.Background:SetPoint("TOPLEFT", look.bgx, look.bgy)
-        button.Icon:SetPoint("TOPLEFT", look.iconx, look.icony)
+function YatlasButton_SetShown(shown)
+    local db = minimapdb()
+    db.hide = not shown
+    if(shown) then
+        LDBIcon:Show(ADDON_NAME)
     else
-        button.Background:SetPoint("CENTER")
-        button.Icon:SetPoint("CENTER")
+        LDBIcon:Hide(ADDON_NAME)
     end
-
-    YatlasButton_SetPressed(button, false)
-end
-
-function YatlasButton_SetPressed(button, pressed)
-    local d = pressed and 0 or ICON_INSET
-    button.Icon:SetTexCoord(d, 1 - d, d, 1 - d)
-end
-
--- The button circles the minimap at (minimap radius + 8), measured from the minimap center.
--- The minimap is 140x140 in Classic but 198x198 in Retail, so the size is read at run time
--- instead of the old fixed 70 / 78 offsets.
-local function minimapradius()
-    return (Minimap:GetWidth() or 140) / 2 + 8
 end
 
 function YatlasButton_Update()
-    if(YatlasOptions.ShowButton) then
-        local r = minimapradius()
-        YatlasButtonFrame:ClearAllPoints()
-        YatlasButtonFrame:SetPoint("CENTER", Minimap, "CENTER",
-            -(r * cos(YatlasOptions.ButtonLocation)),
-            r * sin(YatlasOptions.ButtonLocation))
-        YatlasButtonFrame:Show()
-    else
-        YatlasButtonFrame:Hide()
-    end
-end
-
-function YatlasButton_BeingDragged()
-    -- angle of the cursor around the minimap center (0 = left, 90 = top)
-    local scale = Minimap:GetEffectiveScale()
-    local xpos, ypos = GetCursorPosition()
-    local cx, cy = Minimap:GetCenter()
-
-    xpos = cx - xpos / scale
-    ypos = ypos / scale - cy
-
-    YatlasButton_SetPosition(math.deg(math.atan2(ypos, xpos)))
-end
-
-function YatlasButton_OnEnter(self)
-    GameTooltip:SetOwner(self, "ANCHOR_LEFT")
-    GameTooltip:SetText(YATLAS_BUTTON_TOOLTIP1)
-    GameTooltip:AddLine(YATLAS_BUTTON_TOOLTIP2)
-    GameTooltip:AddLine(YATLAS_BUTTON_TOOLTIP3)
-    GameTooltip:Show()
-end
-
-function YatlasButton_SetPosition(v)
-    if(v < 0) then
-        v = v + 360
-    end
-    if(v == YatlasOptions.ButtonLocation) then
-        return
-    end
-
-    YatlasOptionsButtonSlider:SetValue(YatlasOptions.ButtonLocation)
-
-    YatlasOptions.ButtonLocation = v
-    YatlasButton_Update()
+    YatlasButton_SetShown(YatlasButton_IsShown())
 end
 
 function YatlasButton_GetPosition()
-    return YatlasOptions.ButtonLocation
+    local db = YatlasOptions.Minimap
+    return floor(((db and db.minimapPos) or 225) + 0.5) % 360
 end
 
-
-function YatlasButton_OnClick()
-    YatlasFrame:Toggle()
+function YatlasButton_SetPosition(v)
+    v = v % 360
+    if(YatlasButton_GetPosition() == v) then
+        return
+    end
+    local db = minimapdb()
+    db.minimapPos = v
+    LDBIcon:Refresh(ADDON_NAME, db)
 end
 
--- The button on the minimap: YatlasButtonFrame holds TheYatlasButton (replaces UI\Button.xml)
-local function createButton()
-    local frame = Yatlas_CreateFrame{
-        name = "YatlasButtonFrame", parent = Minimap, size = {32, 32}, mouse = true, strata = "LOW",
-        anchor = {"TOPLEFT", Minimap, "RIGHT", 2, 0}, events = {"VARIABLES_LOADED"},
-        scripts = {
-            OnEvent = function(self, event, ...) YatlasButton_OnEvent(event, ...) end,
-        },
-    }
+local loader = CreateFrame("Frame")
+loader:RegisterEvent("ADDON_LOADED")
+loader:SetScript("OnEvent", function(self, event, name)
+    if(name ~= ADDON_NAME) then return end
+    self:UnregisterEvent("ADDON_LOADED")
 
-    -- the round minimap button look of the game's own tracking button: background, icon and
-    -- border ring sizes and offsets are set per client in YatlasButton_SetupLook
-    local button = Yatlas_CreateButton{
-        name = "TheYatlasButton", parent = frame, size = {31, 31}, anchor = {"TOPLEFT", nil, nil, 0, 0},
-        textures = {highlight = "Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight"},
-        scripts = {
-            OnMouseDown = function(self) YatlasButton_SetPressed(self, true) end,
-            OnMouseUp = function(self) YatlasButton_SetPressed(self, false) end,
-            OnDragStart = function(self)
-                self.dragme = true
-                self:LockHighlight()
-            end,
-            OnDragStop = function(self)
-                self.dragme = false
-                self:UnlockHighlight()
-            end,
-            OnUpdate = function(self)
-                if(self.dragme == true) then
-                    YatlasButton_BeingDragged()
-                end
-            end,
-        },
-        onClick = YatlasButton_OnClick,
-        onEnter = YatlasButton_OnEnter,
-    }
-    button.Background = Yatlas_CreateTexture(button, {layer = "BACKGROUND", file = "Interface\\Minimap\\UI-Minimap-Background"})
-    button.Icon = Yatlas_CreateTexture(button, {layer = "ARTWORK", file = "Interface\\WorldMap\\WorldMap-Icon"})
-    button.Border = Yatlas_CreateTexture(button, {layer = "OVERLAY", file = "Interface\\Minimap\\MiniMap-TrackingBorder"})
-
-    button:RegisterForDrag("RightButton")
-    button.dragme = false
-    YatlasButton_SetupLook(button)
-end
-
-createButton()
-
+    if(type(YatlasOptions) ~= "table") then
+        YatlasOptions = {}
+    end
+    LDBIcon:Register(ADDON_NAME, launcher, minimapdb())
+    if(YatlasOptionsButtonSlider) then
+        YatlasOptionsButtonSlider:SetValue(YatlasButton_GetPosition())
+    end
+end)

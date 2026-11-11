@@ -10,7 +10,7 @@ MOCK = os.path.join(HERE, 'mock.lua')
 # tile textures created on demand and the probes of the point framework
 IGNORE = re.compile(r'^(GatherMate|Gatherer_\w+|Magellan_\w+|MapNotes_\w+|myAddOns\w*|MYADDONS_\w+|SetupFullscreenScale|'
                     r'DELVES_LABEL|DRAGONRIDING_RACES_MAP_TOGGLE|WOW_PROJECT_CAMELOT|YATLAS_NO_DATA|YA_PD_ResetList|'
-                    r'Yatlas_MapList|nil|\w+MapTexture\d+|\w+Point\d+|BigYatlasFrameLockButton) @')
+                    r'Yatlas_MapList|LibStub|GetMinimapShape|AddonCompartmentFrame|nil|\w+MapTexture\d+|\w+Point\d+|BigYatlasFrameLockButton) @')
 FLAVORS = [  # (label, WOW_PROJECT_ID, build, toc, extra project constants)
     ('ClassicEra', 2, '1.15.9', 11509),
     ('TBC', 5, '2.5.6', 20506),
@@ -77,7 +77,10 @@ def run(label, pid, build, toc, actions=True):
     steps = []
     if actions:
         steps = [
-            ('ADDON_LOADED', 'MOCK.fire("ADDON_LOADED", "Yatlas")'),
+            ('ADDON_LOADED', 'YatlasOptions = {ShowButton = false, ButtonLocation = 90}; MOCK.fire("ADDON_LOADED", "Yatlas"); '
+                             'assert(YatlasOptions.Minimap.hide == true and YatlasOptions.Minimap.minimapPos == 90, "old button settings not migrated"); '
+                             'assert(YatlasOptions.ShowButton == nil and YatlasOptions.ButtonLocation == nil, "old button settings kept"); '
+                             'YatlasButton_SetShown(true)'),
             ('VARIABLES_LOADED', 'MOCK.fire("VARIABLES_LOADED")'),
             ('PLAYER_LOGIN', 'MOCK.fire("PLAYER_LOGIN")'),
             ('PLAYER_ENTERING_WORLD', 'MOCK.fire("PLAYER_ENTERING_WORLD", true, false)'),
@@ -108,7 +111,12 @@ def run(label, pid, build, toc, actions=True):
             ('big zoom', 'BigYatlasFrameZoomButton:_run("OnClick"); BigYatlasFrameZoomFramePlusButton:_run("OnClick")'),
             ('big switch back', 'BigYatlasFrameSwitchButton:_run("OnClick")'),
             ('close', 'YatlasFrame:Hide()'),
-            ('minimap button', 'TheYatlasButton:_run("OnEnter"); TheYatlasButton:_run("OnMouseDown"); TheYatlasButton:_run("OnMouseUp"); TheYatlasButton:_run("OnClick"); TheYatlasButton:_run("OnDragStart"); MOCK.tick(1); TheYatlasButton:_run("OnDragStop")'),
+            ('minimap button', 'local b = LibDBIcon10_Yatlas; assert(b, "LibDBIcon button not registered"); '
+                               'b:_run("OnEnter"); b:_run("OnLeave"); b:_run("OnMouseDown"); b:_run("OnMouseUp"); '
+                               'b:_run("OnClick", "LeftButton"); b:_run("OnClick", "RightButton"); b:_run("OnClick", "RightButton"); '
+                               'b:_run("OnDragStart"); MOCK.tick(1); b:_run("OnDragStop"); '
+                               'YatlasOptionsButtonSlider:SetValue(45); assert(YatlasOptions.Minimap.minimapPos == 45, "slider did not move the button"); '
+                               'YatlasButton_SetShown(false); assert(YatlasOptions.Minimap.hide, "hide not saved"); YatlasButton_SetShown(true)'),
             ('zone change', 'MOCK.fire("ZONE_CHANGED_NEW_AREA"); MOCK.tick(2)'),
             # event driven point rebuilds are coalesced into one timer, hidden frames only get marked
             ('timers flushed', 'local t = MOCK.timers or {}; MOCK.timers = {}; for _,fn in ipairs(t) do fn() end'),

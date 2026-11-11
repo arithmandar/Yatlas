@@ -136,6 +136,12 @@ function W:SetVertexColor(...) self._vc = {...}; end
 function W:GetVertexColor() return 1, 1, 1, 1; end
 function W:SetTextColor(...) self._tc = {...}; end
 function W:SetDesaturated(d) self._desat = d; end
+-- animations (LibDBIcon fades its button): groups and animations accept any setter
+local A = {};
+A.__index = function(t, k) return rawget(A, k) or function() end; end
+function A:CreateAnimation() return setmetatable({}, A); end
+function A:IsPlaying() return false; end
+function W:CreateAnimationGroup() return setmetatable({}, A); end
 function W:SetBackdrop(b) self._backdrop = b; end
 function W:SetBackdropColor(...) self._bdc = {...}; end
 function W:SetBackdropBorderColor(...) self._bdbc = {...}; end
@@ -208,6 +214,9 @@ local function applyTemplate(f, template)
             f._w, f._h = 32, 32;
         elseif t == "UIPanelButtonTemplate" or t == "GameMenuButtonTemplate" then
             if n then f:CreateFontString(n.."Text"); end
+        elseif t == "GameTooltipTemplate" then
+            for _,m in ipairs({"SetOwner", "AddLine", "AddDoubleLine", "ClearLines", "SetText"}) do f[m] = function() end; end
+            f.NumLines = function() return 0; end
         elseif t == "BackdropTemplate" then
             f._backdropTemplate = true;
         else
@@ -327,6 +336,7 @@ function GetCVar() return "0"; end
 function GetCVarBool() return false; end
 function SetCVar() end
 function hooksecurefunc(t, n, fn) if type(t) == "string" then fn = n; n = t; t = _G; end local old = t[n]; t[n] = function(...) local r = {old(...)}; fn(...); return unpack(r); end end
+function securecallfunction(fn, ...) return fn(...); end
 function securecall(fn, ...) if type(fn) == "string" then fn = _G[fn] end return fn(...); end
 function geterrorhandler() return function(e) table.insert(MOCK.errors, "errorhandler: "..tostring(e)) end; end
 function seterrorhandler() end

@@ -40,13 +40,6 @@ function YatlasFrameTemplate:OnEvent(event, ...)
             YatlasOptions = {}
         end
 
-        if(YatlasOptions.ShowButton == nil) then
-            YatlasOptions.ShowButton = true
-        end
-        if(YatlasOptions.ButtonLocation == nil) then
-            YatlasOptions.ButtonLocation = 0
-        end
-
         self:EnsureExistingOptions()
 
         self.opt = YatlasOptions.Frames[framename]

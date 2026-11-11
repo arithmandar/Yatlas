@@ -54,6 +54,11 @@ local function createOptionsFrame()
         backdrop = YATLAS_BACKDROP_DIALOG, hidden = true,
     }
     UIPanelWindows["YatlasOptionsFrame"] = { area = "center", pushable = 0, whileDead = 1 }
+    -- the minimap button can be dragged (LibDBIcon) while the dialog is closed: sync on show
+    f:HookScript("OnShow", function()
+        YatlasOptionsButtonEnable:SetChecked(YatlasButton_IsShown())
+        YatlasOptionsButtonSlider:SetValue(YatlasButton_GetPosition())
+    end)
 
     local header = Yatlas_CreateTexture(f, {
         name = "YatlasOptionsFrameHeader", file = "Interface\\DialogFrame\\UI-DialogBox-Header",
@@ -67,11 +72,10 @@ local function createOptionsFrame()
         name = "YatlasOptionsButtonEnable", parent = f, anchor = {"TOPLEFT", nil, nil, 24, -29},
         label = "YATLAS_OPTIONS_ENABLEBUTTON",
         onEvent = function(self)
-            self:SetChecked(YatlasOptions.ShowButton)
+            self:SetChecked(YatlasButton_IsShown())
         end,
         onClick = function(self)
-            YatlasOptions.ShowButton = self:GetChecked() and true or false
-            YatlasButton_Update()
+            YatlasButton_SetShown(self:GetChecked() and true or false)
         end,
     }
 

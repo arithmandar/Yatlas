@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 tools/.cache/
+
+# libraries fetched by the packager (.pkgmeta externals)
+Libs/*/

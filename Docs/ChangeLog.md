@@ -2,7 +2,13 @@
 
 ### v1.2.0 (Nov. 11, 2026)
 
-- Transit minimap icon to use LibDBIcon-1.0
+**Minimap button**
+
+- The minimap button is now handled by LibDBIcon-1.0 (with LibDataBroker-1.1), so it follows square and other custom minimap shapes and can be managed by minimap button collector addons
+- New icon: `Images\Icons\Yatlas.blp`
+- Left-click opens Yatlas, right-click opens the options, drag (left button) moves the button
+- The saved button visibility and position are carried over to the new button (`YatlasOptions.Minimap`)
+- Also available as a LibDataBroker launcher (`Yatlas`) for broker display addons
 
 ### v1.1.2 (Nov. 08, 2026)
 
@@ -11,11 +17,6 @@
 ### v1.1.1 (Nov. 07, 2026)
 
 - Added auto-packaging support for WowInterface archives
-
-### v1.2.0 (In development)
-
-- Development started
-
 
 ### v1.1.0 (Nov. 05, 2026)
 

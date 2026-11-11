@@ -79,8 +79,9 @@ You can turn each type of point on or off from the options menu. Landmarks have 
 |---|---|
 | `Yatlas.toc` | Addon metadata and load order |
 | `Bindings.xml` | Key bindings (must stay in the addon root folder) |
+| `Libs/` | `Libs.xml` loads LibStub, CallbackHandler-1.0, LibDataBroker-1.1 and LibDBIcon-1.0; the libraries themselves are fetched by the packager (`.pkgmeta` externals) |
 | `Core/` | `Compat.lua` (wrappers for the modern API), `Constants.lua` (client detection `YATLAS_CLIENT`, addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (saved options, slash commands, frame switching, third-party addon hooks), `MapFrame.lua` (map drawing and frame logic), `Points.lua` (point framework) |
-| `UI/` | Frames built in Lua: `Templates.lua` (frame/button/slider factories, hover tooltip), `Yatlas.lua` (normal and large frames), `OptionsFrame.lua`, `Button.lua` (minimap button) |
+| `UI/` | Frames built in Lua: `Templates.lua` (frame/button/slider factories, hover tooltip), `Yatlas.lua` (normal and large frames), `OptionsFrame.lua`, `Button.lua` (minimap button through LibDBIcon-1.0) |
 | `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, delves, races, players, ...) |
 | `Data/` | `Data.xml` loads `Common.lua` (shared data), one generated `mapdb.lua` + `mapdb2.lua` per client in `ClassicEra/`, `Forever/`, `TBC/`, `Mists/`, `Mainline/` (minimap tiles, map areas, instances, towns, flight paths; each file returns at once on other clients) and `Localize.lua` |
 | `Locale/` | UI strings: enUS (default), deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW |

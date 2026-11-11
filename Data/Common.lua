@@ -34,6 +34,7 @@ Yatlas_mapareas_adjust = {
 
 -- Graveyards: disabled.
 -- WorldSafeLocs is server-side only in the modern clients; no client data source is available.
+-- C_DeathInfo.GetGraveyardsForMap() returns an empty table in 5.5.4 (tested alive, dead, and as a ghost).
 -- Kept as an empty table so Modules/graveyards.lua can be re-enabled later.
 Yatlas_graveyards = {};
 

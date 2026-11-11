@@ -1,6 +1,8 @@
 -- NOTE: not loaded in 5.5.4 (see Modules/index.xml). WorldSafeLocs is server-side only, so there is
--- no client data for graveyards Yatlas_graveyards is empty. Kept for a future re-implementation
--- (possible lead: C_DeathInfo.GetGraveyardsForMap(uiMapID)).
+-- no client data for graveyards Yatlas_graveyards is empty. Kept for a future re-implementation.
+-- C_DeathInfo.GetGraveyardsForMap(uiMapID) is not usable: in 5.5.4 it returns an empty table when
+-- alive, dead, and as a ghost at the graveyard. It only feeds Blizzard's selectable graveyard
+-- feature (server sent via REQUEST_CEMETERY_LIST_RESPONSE), which the Classic world map disables.
 
 local set = {name="graveyards"}
 

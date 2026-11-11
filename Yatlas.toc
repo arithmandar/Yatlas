@@ -31,7 +31,7 @@
 ## Category-zhCN: 地图
 ## Category-zhTW: 地圖
 ## X-Website: https://www.curseforge.com/wow/addons/yatlas
-## IconTexture: Interface\WorldMap\WorldMap-Icon
+## IconTexture: Interface\AddOns\Yatlas\Images\Icons\Yatlas
 ## X-Curse-Project-ID: 2172
 ## X-WoWI-ID: 19130
 

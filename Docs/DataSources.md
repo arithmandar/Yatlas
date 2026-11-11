@@ -154,7 +154,10 @@ Yatlas 從 v1.0.0 起用**單一 TOC** 支援多種用戶端（v1.1.0 起加入 
 - 先前的版本曾沿用 git 歷史中 6.0（19005）的舊資料，但那不是 5.5.4 用戶端的資料，無法確認是否正確，因此改為停用：
   - `sets/index.xml` 不再載入 `sets/graveyards.lua`（檔案保留，方便日後恢復）。
   - `mapdb.lua` 的 `Yatlas_graveyards` 改為空表；`mapdb2.lua` 的 `YA_BL_gy()` 黑名單一併移除；產生器也不再產生墓地資料。
-- 日後可能的線索：5.5.4 的 API 文件中有 `C_DeathInfo.GetGraveyardsForMap(uiMapID)`（執行期 API，回傳 UiMap 正規化座標）。目前**尚未實作**，待確認在 MoP Classic 中的實際行為後再處理。
+- `C_DeathInfo.GetGraveyardsForMap(uiMapID)` 已確認不可用（2026-11 在 5.5.4 遊戲內測試）：
+  - 角色活著、死亡、釋放靈魂後抵達墓地（鬼魂狀態），`/dump` 的結果都是空表。
+  - Blizzard 只在 `SelectableGraveyardDataProvider`（可選擇墓地功能）中使用這個 API，資料由伺服器透過 `REQUEST_CEMETERY_LIST_RESPONSE` 送達；Classic 系列（Vanilla/TBC/Wrath/Cata，Mists 沿用 Cata）的世界地圖都把這個資料提供器註解掉。
+  - 結論：5.5.4 沒有可用的墓地座標來源，此功能維持停用。
 
 ## 三、驗證
 - 兩個檔案都能在 Lua 5.1 正確載入（以 lupa 搭配 WoW API stub 測試）。

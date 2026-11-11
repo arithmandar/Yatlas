@@ -4,8 +4,9 @@
 ..\..\..\FrameXML\UI.xsd">
 	<Script file="landmarks.lua"/>
 	<!-- graveyards: disabled for 5.5.4. WorldSafeLocs is server-side only in the modern client,
-	     so there is no client data for graveyard positions. A possible future source is the
-	     runtime API C_DeathInfo.GetGraveyardsForMap(uiMapID).
+	     so there is no client data for graveyard positions. The runtime API
+	     C_DeathInfo.GetGraveyardsForMap(uiMapID) was tested in 5.5.4 and returns an empty table
+	     (alive, dead, and as a ghost at the graveyard), so it is not a usable source either.
 	<Script file="graveyards.lua"/>
 	-->
 	<Script file="taxinodes.lua"/>

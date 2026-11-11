@@ -10,6 +10,12 @@ enable-nolib-creation: no
 wowi-archive-previous: yes
 wowi-create-changelog: no
 
+externals:
+    Libs/LibStub: 
+        url: https://repos.curseforge.com/wow/libstub/trunk
+    Libs/LibDBIcon-1.0: 
+        url: https://repos.curseforge.com/wow/libdbicon-1-0/trunk/LibDBIcon-1.0
+
 ignore:
     - tools
     - Docs/CurseForge-Description.md

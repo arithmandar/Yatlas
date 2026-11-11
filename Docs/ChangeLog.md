@@ -1,5 +1,9 @@
 # Yatlas ChangeLog
 
+### v1.2.0 (Nov. 11, 2026)
+
+- Transit minimap icon to use LibDBIcon-1.0
+
 ### v1.1.2 (Nov. 08, 2026)
 
 - Removed redundant old data

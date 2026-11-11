@@ -35,6 +35,7 @@
 ## X-Curse-Project-ID: 2172
 ## X-WoWI-ID: 19130
 
+Libs\Libs.xml
 Core\Compat.lua
 Core\Constants.lua
 Locale\Locales.xml

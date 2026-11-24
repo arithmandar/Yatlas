@@ -1,8 +1,6 @@
--- Addon wide setup: saved options, slash commands, support for other addons and switching
+-- Addon wide setup: slash commands, support for other addons and switching
 -- between the two frames. The map frame logic (YatlasFrameTemplate) is in Core\MapFrame.lua,
 -- the frames themselves are built in UI\Yatlas.lua.
-
-YatlasOptions = {}
 
 function YatlasFrame_OnLoadExtra()
     YatlasFrame.YA_PD_allocText = "YA_PD_allocText"

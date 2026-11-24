@@ -6,6 +6,7 @@ local MINI2BIGY = YATLAS_MINI2BIG_Y
 local _G = _G
 
 YatlasFrameTemplate = {}
+YatlasFrameTemplate.EnsureExistingOptions = Yatlas_EnsureFrameOptions
 
 function YatlasFrameTemplate:OnLoad()
     local lm = self:GetName()
@@ -64,36 +65,6 @@ function YatlasFrameTemplate:OnEvent(event, ...)
     elseif(event == "ZONE_CHANGED_NEW_AREA") then
         if(self.opt) then
             self:OnWorldMapUpdate()
-        end
-    end
-end
-
-function YatlasFrameTemplate:EnsureExistingOptions()
-    if(YatlasOptions.Frames == nil) then
-        YatlasOptions.Frames = {}
-    end
-
-    local name = self:GetName()
-
-    if(YatlasOptions.Frames[name] == nil) then
-        YatlasOptions.Frames[name] = {}
-    end
-
-    for h,v in pairs(YA_FRAME_OPTION_DEFAULTS) do
-        if(YatlasOptions.Frames[name][h] ~= nil) then
-            -- don't do anything!
-        elseif(YatlasOptions[h] ~= nil) then
-            YatlasOptions.Frames[name][h] = YatlasOptions[h]
-            YatlasOptions[h] = nil
-        elseif(type(v) == "table") then
-            -- don't copy reference.  copy value...unfortunately, we only
-            -- copy one level deep, which seems good enough...
-            YatlasOptions.Frames[name][h] = {}
-            for x,k in pairs(v) do
-                YatlasOptions.Frames[name][h][x] = k
-            end
-        else
-            YatlasOptions.Frames[name][h] = v
         end
     end
 end

@@ -15,6 +15,8 @@ local launcher = LDB:NewDataObject(ADDON_NAME, {
     OnClick = function(self, button)
         if(button == "RightButton") then
             YatlasOptions_Toggle()
+        elseif(YatlasOptions.MinimapLargeView) then
+            BigYatlasFrame:Toggle()
         else
             YatlasFrame:Toggle()
         end
@@ -28,32 +30,12 @@ local launcher = LDB:NewDataObject(ADDON_NAME, {
     end,
 })
 
--- YatlasOptions.Minimap is the LibDBIcon db: hide, minimapPos (degrees, 0 = right, 90 = top), lock.
--- Before 1.2.0 the button used YatlasOptions.ShowButton and YatlasOptions.ButtonLocation
--- (degrees, 0 = left, 90 = top); they are converted once and removed.
-local function minimapdb()
-    local db = YatlasOptions.Minimap
-    if(type(db) ~= "table") then
-        db = {}
-        if(YatlasOptions.ShowButton == false) then
-            db.hide = true
-        end
-        if(type(YatlasOptions.ButtonLocation) == "number") then
-            db.minimapPos = (180 - YatlasOptions.ButtonLocation) % 360
-        end
-        YatlasOptions.Minimap = db
-    end
-    YatlasOptions.ShowButton = nil
-    YatlasOptions.ButtonLocation = nil
-    return db
-end
-
 function YatlasButton_IsShown()
     return not (YatlasOptions.Minimap and YatlasOptions.Minimap.hide)
 end
 
 function YatlasButton_SetShown(shown)
-    local db = minimapdb()
+    local db = Yatlas_EnsureMinimapOptions()
     db.hide = not shown
     if(shown) then
         LDBIcon:Show(ADDON_NAME)
@@ -76,7 +58,7 @@ function YatlasButton_SetPosition(v)
     if(YatlasButton_GetPosition() == v) then
         return
     end
-    local db = minimapdb()
+    local db = Yatlas_EnsureMinimapOptions()
     db.minimapPos = v
     LDBIcon:Refresh(ADDON_NAME, db)
 end
@@ -90,7 +72,7 @@ loader:SetScript("OnEvent", function(self, event, name)
     if(type(YatlasOptions) ~= "table") then
         YatlasOptions = {}
     end
-    LDBIcon:Register(ADDON_NAME, launcher, minimapdb())
+    LDBIcon:Register(ADDON_NAME, launcher, Yatlas_EnsureMinimapOptions())
     if(YatlasOptionsButtonSlider) then
         YatlasOptionsButtonSlider:SetValue(YatlasButton_GetPosition())
     end

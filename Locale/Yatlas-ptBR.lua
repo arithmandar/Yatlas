@@ -19,6 +19,7 @@ YATLAS_OPTIONS_TITLE = "Opções do Yatlas";
 YATLAS_OPTIONS_BUTTONPOS = "Posição do botão do minimapa";
 YATLAS_OPTIONS_BUTTONPOS_TIP = "%d graus";
 YATLAS_OPTIONS_ENABLEBUTTON = "Mostrar botão do minimapa";
+YATLAS_OPTIONS_BUTTONLARGEVIEW = "Clique no minimapa abre a visão grande";
 YATLAS_OPTIONS_TRACKONSHOW = "Centralizar no jogador ao abrir";
 YATLAS_OPTIONS_ALPHA = "Transparência";
 YATLAS_OPTIONS_ICONSIZE = "Tamanho dos ícones";

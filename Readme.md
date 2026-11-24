@@ -47,6 +47,8 @@ Both views use the same controls:
 - **Goto Player** centres the map on your character. Shift-click it to keep following you as you move.
 - The button next to the close button switches between the normal and the large view, keeping the current map and position.
 
+In **Options**, you can choose whether the minimap button opens the normal or large view. Right-clicking the minimap button always opens the options.
+
 You can set the key bindings under **Key Bindings → AddOns → Yatlas** (Toggle Yatlas Frame, Toggle Large Yatlas Frame).
 
 ### Points on the map
@@ -80,8 +82,8 @@ You can turn each type of point on or off from the options menu. Landmarks have 
 | `Yatlas.toc` | Addon metadata and load order |
 | `Bindings.xml` | Key bindings (must stay in the addon root folder) |
 | `Libs/` | `Libs.xml` loads LibStub, CallbackHandler-1.0, LibDataBroker-1.1 and LibDBIcon-1.0; the libraries themselves are fetched by the packager (`.pkgmeta` externals) |
-| `Core/` | `Compat.lua` (wrappers for the modern API), `Constants.lua` (client detection `YATLAS_CLIENT`, addon metadata from the TOC, incl. author and credits, texture paths, option defaults, backdrops), `Core.lua` (saved options, slash commands, frame switching, third-party addon hooks), `MapFrame.lua` (map drawing and frame logic), `Points.lua` (point framework) |
-| `UI/` | Frames built in Lua: `Templates.lua` (frame/button/slider factories, hover tooltip), `Yatlas.lua` (normal and large frames), `OptionsFrame.lua`, `Button.lua` (minimap button through LibDBIcon-1.0) |
+| `Core/` | `Compat.lua` (wrappers for the modern API), `Constants.lua` (client detection `YATLAS_CLIENT`, addon metadata, texture paths, backdrops), `Options.lua` (option defaults, migrations and dialog handlers), `Core.lua` (slash commands and frame switching), `MapFrame.lua` (map drawing and frame logic), `Points.lua` (point framework) |
+| `UI/` | Frames built in Lua: `Templates.lua` (frame/button/slider factories, hover tooltip), `Yatlas.lua` (normal and large frames), `OptionsFrame.lua` (options dialog layout), `Button.lua` (minimap button through LibDBIcon-1.0) |
 | `Modules/` | Point sets loaded by `Modules/index.xml` (landmarks, flight paths, delves, races, players, ...) |
 | `Data/` | `Data.xml` loads `Common.lua` (shared data), one generated `mapdb.lua` + `mapdb2.lua` per client in `ClassicEra/`, `Forever/`, `TBC/`, `Mists/`, `Mainline/` (minimap tiles, map areas, instances, towns, flight paths; each file returns at once on other clients) and `Localize.lua` |
 | `Locale/` | UI strings: enUS (default), deDE, esES/esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW |

@@ -1,5 +1,11 @@
 # Yatlas ChangeLog
 
+### v1.2.2 (Nov. 24, 2026)
+
+- Added an option to open the large view with the minimap button; the normal view remains the default
+- Display current transparency and icon size values next to their sliders
+- Centralized option defaults, migrations and dialog handlers in `Core\Options.lua`
+
 ### v1.2.1 (Nov. 12, 2026)
 
 - Updated LibDataBroker external url

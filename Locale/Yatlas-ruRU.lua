@@ -19,6 +19,7 @@ YATLAS_OPTIONS_TITLE = "Настройки Yatlas";
 YATLAS_OPTIONS_BUTTONPOS = "Положение кнопки у миникарты";
 YATLAS_OPTIONS_BUTTONPOS_TIP = "%d°";
 YATLAS_OPTIONS_ENABLEBUTTON = "Показывать кнопку у миникарты";
+YATLAS_OPTIONS_BUTTONLARGEVIEW = "Кнопка миникарты открывает большую карту";
 YATLAS_OPTIONS_TRACKONSHOW = "Переходить к игроку при открытии";
 YATLAS_OPTIONS_ALPHA = "Прозрачность";
 YATLAS_OPTIONS_ICONSIZE = "Размер значков";

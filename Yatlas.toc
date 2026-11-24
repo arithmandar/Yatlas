@@ -42,6 +42,7 @@ Locale\Locales.xml
 
 Data\Data.xml
 Core\Points.lua
+Core\Options.lua
 Core\Core.lua
 Core\MapFrame.lua
 UI\Templates.lua

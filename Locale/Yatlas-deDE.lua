@@ -19,6 +19,7 @@ YATLAS_OPTIONS_TITLE = "Yatlas-Optionen";
 YATLAS_OPTIONS_BUTTONPOS = "Position des Minikarten-Buttons";
 YATLAS_OPTIONS_BUTTONPOS_TIP = "%d°";
 YATLAS_OPTIONS_ENABLEBUTTON = "Minikarten-Button anzeigen";
+YATLAS_OPTIONS_BUTTONLARGEVIEW = "Minikarten-Klick öffnet große Ansicht";
 YATLAS_OPTIONS_TRACKONSHOW = "Beim Öffnen zum Spieler springen";
 YATLAS_OPTIONS_ALPHA = "Transparenz";
 YATLAS_OPTIONS_ICONSIZE = "Symbolgröße";

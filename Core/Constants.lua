@@ -64,19 +64,6 @@ YATLAS_MINIMAP_PATH = "World\\Minimaps\\"    -- only for the old tile names tile
 YATLAS_MINI2BIG_X = 533.3333
 YATLAS_MINI2BIG_Y = 533.3333
 
--- ---------------------------------------------------------------------------
--- Per-frame option defaults (YatlasOptions.Frames[frame])
--- ---------------------------------------------------------------------------
-YA_FRAME_OPTION_DEFAULTS = {
-    ["Locked"] = true,
-    ["Map"] = "Kalimdor",
-    ["Location"] = {31.0625, 33.250},
-    ["Alpha"] = 1,
-    ["IconSize"] = 14,
-    ["PointCfg"] = {},
-    ["Zoom"] = 256,
-}
-
 -- Map zoom (screen pixels per map tile). The smallest zoom is also limited by the number of
 -- tile textures are created on demand (Yatlas_CreateMapTexture in UI\Templates.lua)
 YATLAS_MIN_ZOOM = 8

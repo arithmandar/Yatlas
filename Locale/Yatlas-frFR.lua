@@ -19,6 +19,7 @@ YATLAS_OPTIONS_TITLE = "Options de Yatlas";
 YATLAS_OPTIONS_BUTTONPOS = "Position du bouton de la minicarte";
 YATLAS_OPTIONS_BUTTONPOS_TIP = "%d degrés";
 YATLAS_OPTIONS_ENABLEBUTTON = "Afficher le bouton de la minicarte";
+YATLAS_OPTIONS_BUTTONLARGEVIEW = "Clic sur la minicarte : grande vue";
 YATLAS_OPTIONS_TRACKONSHOW = "Centrer sur le joueur à l’ouverture";
 YATLAS_OPTIONS_ALPHA = "Transparence";
 YATLAS_OPTIONS_ICONSIZE = "Taille des icônes";

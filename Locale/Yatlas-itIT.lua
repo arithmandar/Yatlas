@@ -19,6 +19,7 @@ YATLAS_OPTIONS_TITLE = "Opzioni di Yatlas";
 YATLAS_OPTIONS_BUTTONPOS = "Posizione del pulsante della minimappa";
 YATLAS_OPTIONS_BUTTONPOS_TIP = "%d gradi";
 YATLAS_OPTIONS_ENABLEBUTTON = "Mostra il pulsante della minimappa";
+YATLAS_OPTIONS_BUTTONLARGEVIEW = "Clic sulla minimappa apre la vista grande";
 YATLAS_OPTIONS_TRACKONSHOW = "Centra sul giocatore all’apertura";
 YATLAS_OPTIONS_ALPHA = "Trasparenza";
 YATLAS_OPTIONS_ICONSIZE = "Dimensione icone";

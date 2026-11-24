@@ -82,6 +82,7 @@ def run(label, pid, build, toc, actions=True):
                              'assert(YatlasOptions.ShowButton == nil and YatlasOptions.ButtonLocation == nil, "old button settings kept"); '
                              'YatlasButton_SetShown(true)'),
             ('VARIABLES_LOADED', 'MOCK.fire("VARIABLES_LOADED")'),
+            ('default minimap action', 'assert(not YatlasOptionsButtonLargeView:GetChecked(), "large view should be off by default")'),
             ('PLAYER_LOGIN', 'MOCK.fire("PLAYER_LOGIN")'),
             ('PLAYER_ENTERING_WORLD', 'MOCK.fire("PLAYER_ENTERING_WORLD", true, false)'),
             ('timers', 'local t = MOCK.timers or {}; MOCK.timers = {}; for _,fn in ipairs(t) do fn() end'),
@@ -103,7 +104,16 @@ def run(label, pid, build, toc, actions=True):
             ('player jump shift', 'MOCK.shift=true; YatlasFramePlayerJumpButton:_run("OnClick"); MOCK.shift=false'),
             ('player jump enter', 'YatlasFramePlayerJumpButton:_run("OnEnter")'),
             ('options button', 'YatlasFrameOptionsButton:_run("OnClick")'),
-            ('options sliders', 'YatlasOptionsAlphaSlider:SetValue(0.5); YatlasOptionsIconSizeSlider:SetValue(20); YatlasOptionsButtonSlider:SetValue(90); YatlasOptionsButtonSlider:_run("OnEnter")'),
+            ('options sliders', 'YatlasOptionsAlphaSlider:SetValue(0.5); YatlasOptionsIconSizeSlider:SetValue(20); '
+                                'assert(YatlasOptionsAlphaSlider.ValueText:GetText() == "0.50" and YatlasOptionsIconSizeSlider.ValueText:GetText() == "20", "slider values not shown"); '
+                                'YatlasOptionsButtonSlider:SetValue(90); YatlasOptionsButtonSlider:_run("OnEnter")'),
+            ('options slider frame selection', 'local first = YatlasOptionsFrameSelect.currFrame; '
+                                               'local second = first == YatlasFrame and BigYatlasFrame or YatlasFrame; '
+                                               'YatlasOptionsFrameSelect.currFrame = second; YatlasOptionsFrame_Update(); '
+                                               'assert(YatlasOptionsAlphaSlider.ValueText:GetText() == string.format("%.2f", YatlasOptions.Frames[second:GetName()].Alpha), "alpha value not updated"); '
+                                               'assert(YatlasOptionsIconSizeSlider.ValueText:GetText() == string.format("%.0f", YatlasOptions.Frames[second:GetName()].IconSize), "icon value not updated"); '
+                                               'YatlasOptionsFrameSelect.currFrame = first; YatlasOptionsFrame_Update(); '
+                                               'assert(YatlasOptionsAlphaSlider.ValueText:GetText() == "0.50" and YatlasOptionsIconSizeSlider.ValueText:GetText() == "20", "slider values not restored")'),
             ('options checks', 'YatlasOptionsButtonEnable:SetChecked(false); YatlasOptionsButtonEnable:_run("OnClick"); YatlasOptionsButtonEnable:SetChecked(true); YatlasOptionsButtonEnable:_run("OnClick"); YatlasOptionsTrackOnShow:SetChecked(true); YatlasOptionsTrackOnShow:_run("OnClick")'),
             ('options okay', 'YatlasOptionsFrameOkay:_run("OnClick")'),
             ('switch to big', 'YatlasFrameSwitchButton:_run("OnClick")'),
@@ -111,6 +121,19 @@ def run(label, pid, build, toc, actions=True):
             ('big zoom', 'BigYatlasFrameZoomButton:_run("OnClick"); BigYatlasFrameZoomFramePlusButton:_run("OnClick")'),
             ('big switch back', 'BigYatlasFrameSwitchButton:_run("OnClick")'),
             ('close', 'YatlasFrame:Hide()'),
+            ('minimap view option', 'local b = LibDBIcon10_Yatlas; '
+                                    'b:_run("OnClick", "LeftButton"); assert(YatlasFrame:IsShown() and not BigYatlasFrame:IsShown(), "default click did not open normal view"); '
+                                    'b:_run("OnClick", "LeftButton"); assert(not YatlasFrame:IsShown(), "normal view did not toggle closed"); '
+                                    'YatlasOptionsButtonLargeView:SetChecked(true); YatlasOptionsButtonLargeView:_run("OnClick"); '
+                                    'assert(YatlasOptions.MinimapLargeView == true, "large view choice not saved"); '
+                                    'b:_run("OnClick", "LeftButton"); assert(BigYatlasFrame:IsShown() and not YatlasFrame:IsShown(), "click did not open large view"); '
+                                    'b:_run("OnClick", "LeftButton"); assert(not BigYatlasFrame:IsShown(), "large view did not toggle closed"); '
+                                    'b:_run("OnClick", "RightButton"); assert(YatlasOptionsFrame:IsShown() and YatlasOptionsButtonLargeView:GetChecked(), "right click did not show saved choice"); '
+                                    'b:_run("OnClick", "RightButton"); assert(not YatlasOptionsFrame:IsShown(), "right click did not close options"); '
+                                    'YatlasOptionsButtonLargeView:SetChecked(false); YatlasOptionsButtonLargeView:_run("OnClick"); '
+                                    'assert(YatlasOptions.MinimapLargeView == false, "normal view choice not saved"); '
+                                    'b:_run("OnClick", "LeftButton"); assert(YatlasFrame:IsShown() and not BigYatlasFrame:IsShown(), "click did not return to normal view"); '
+                                    'b:_run("OnClick", "LeftButton")'),
             ('minimap button', 'local b = LibDBIcon10_Yatlas; assert(b, "LibDBIcon button not registered"); '
                                'b:_run("OnEnter"); b:_run("OnLeave"); b:_run("OnMouseDown"); b:_run("OnMouseUp"); '
                                'b:_run("OnClick", "LeftButton"); b:_run("OnClick", "RightButton"); b:_run("OnClick", "RightButton"); '
